@@ -9,10 +9,7 @@ Topics:
 ## Project Description
 
 ### Initialize Project
- 
 
 ### Notes/Hints
-
-
 
 ## Extra Credit
