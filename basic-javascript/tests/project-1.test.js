@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const funcs = require('../src/project-1.js');
+const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you, 
 // except, for some reason, none of our current assertions are working.

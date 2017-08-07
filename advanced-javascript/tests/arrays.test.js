@@ -20,6 +20,7 @@ describe('Arrays', () => {
       const each = arrayFunctions.each;
       expect(each).to.be.a('string');
     });
+    // begin here
   });
 
   describe('`map`', () => {
