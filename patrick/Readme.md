@@ -17,7 +17,7 @@ Topics:
 ### Initialize Project
 
 - Be sure to `npm install` to include the necessary dependancies. - DONE √
-- To run your tests run the command over the corresponding directory/file that you're working in. ex. `npm run watch basic-javascript/tests/project-1.test.js`.
+- To run your tests run the command over the corresponding directory/file that you're working in. ex. `npm run watch basic-javascript/tests/project-1.test.js`. - DONE √
   - This command will actually re-execute every time a change is saved in that file, so you can see your tests improve without having to run the command over and over again.
 - Once you're done with all the tests for that directory, run `npm test directory/tests`.
 - Get started in the `basic-javascript` directory then move onto `advanced-javascript` when you're done.
