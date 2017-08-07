@@ -48,8 +48,8 @@ Topics:
     it('should call a given callback', () => {
       const callBack = sinon.spy();
       const each = arrayFunctions.each;
-      each(myArr, callBack);
-      expect(callBack).to.have.callCount(2);
+      each([1,2], callBack);
+      expect(callBack).to.have.callCount(2); // will pass test
     });
 ```
 
