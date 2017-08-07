@@ -5,8 +5,10 @@ Topics:
  * Test Driven Development
  * [`Mocha`](https://mochajs.org/)
  * [`Chai`](http://chaijs.com/api/)
+  * [Assertion Styles](http://chaijs.com/guide/styles/)
  * [`Assert`](http://chaijs.com/api/assert)
  * [`Expect`](http://chaijs.com/api/expect/)
+ * [`Sinon`](http://chaijs.com/plugins/sinon-chai/)
 
 ## Project Description
 
@@ -23,6 +25,33 @@ Topics:
 ### Notes/Hints
 
 - Have fun watching your Nyan cat grow! 
+- Test suite
+
+```
+  // a test suite is made up of test assertions. 
+  // you can have multiple suites in a file. In mocha we use `describe()` to wrap a suite.
+  // you can also have a suite full of suites.
+
+  describe('Foo', () => { // this is a suite
+    describe('Foo.bar', () => { // this is a suite
+      it('should be a function', () => { // this is an assertion block
+        const foo = foo.bar;
+        expect(foo).to.be.a('function'); // this is an assertion using `expect`
+        assert.typeOf(foo, 'function'); // this is an assertion using `assert`
+      });
+    });
+  });
+```
+- sinon spy example
+```
+  // an example of a spy using sinon. 
+    it('should call a given callback', () => {
+      const callBack = sinon.spy();
+      const each = arrayFunctions.each;
+      each(myArr, callBack);
+      expect(callBack).to.have.callCount(2);
+    });
+```
 
 ## Extra Credit
 
