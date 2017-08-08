@@ -11,13 +11,24 @@ describe('Project-3 Functions', () => {
       assert.typeOf(makeCat, 'function');
       assert.isFunction(makeCat);
     });
-    it.skip('should return a `string`', () => {
+    it('should return a `object`', () => {
       const makeCat = funcs.makeCat;
-      assert.isTYPE(makeCat('Eddie Spagetti', 4), 'string')
+      assert.isObject(makeCat('Eddie Spagetti', 4))
     });
-    it.skip('should return a `VALUE`', () => {
+    it('new cat Object includes `{name: \'Eddie Spagetti\'}`', () => {
       const makeCat = funcs.makeCat;
-      assert.isVALUE(makeCat(PARAMETERS), VALUE)
+      assert.include(makeCat('Eddie Spagetti', 4),
+        {name: 'Eddie Spagetti'})
+    });
+    it('new cat Object includes `{age: 4}`', () => {
+      const makeCat = funcs.makeCat;
+      assert.include(makeCat('Eddie Spagetti', 4),
+        {age: 4})
+    });
+    it('new cat Object includes `{meow}`', () => {
+      const makeCat = funcs.makeCat;
+      assert.property(makeCat('nyan', 52), 'meow')
+      assert.isFunction(makeCat('nyan', 52).meow)
     });
   });
 
