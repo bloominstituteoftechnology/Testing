@@ -69,7 +69,7 @@ describe('Project-3 Functions', () => {
     it('should invoke the method', () => { // NOT MY BEST WORK...
       const arr = [ 1, 2, 3, 4 ];
       const method = 'pop';
-      assert.operator(arr, '!==', invokeMethod(arr, method))
+      assert.operator(arr, '!==', invokeMethod(arr, method));
       // pop().should.have.been.calledWith("invokeMethod(arr, method)"); // HMMMMM?
     });
     // it.skip('should return a `VALUE`', () => {
@@ -83,10 +83,10 @@ describe('Project-3 Functions', () => {
       assert.isFunction(multiplyMysteryNumberByFive);
     });
     it('should return a `Number`', () => {
-      assert.isNumber(multiplyMysteryNumberByFive({mysteryNumber: 10}))
+      assert.isNumber(multiplyMysteryNumberByFive({mysteryNumber: 10}));
     });
     it('should return a value of `50`', () => {
-      assert.equal(multiplyMysteryNumberByFive({mysteryNumber: 10}), 50)
+      assert.equal(multiplyMysteryNumberByFive({mysteryNumber: 10}), 50);
     });
   });
 
@@ -96,7 +96,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(deleteProperty);
     });
     it('should return an `Object`', () => {
-      assert.isObject(deleteProperty({1: 2, 3: 4}, 1))
+      assert.isObject(deleteProperty({1: 2, 3: 4}, 1));
     });
     it('should NOT have property `1`', () => {
       assert.notProperty(deleteProperty({1: 'a', 2: 'b'}, 1), 1);
@@ -108,11 +108,16 @@ describe('Project-3 Functions', () => {
     it('should be a function', () => {
       assert.isFunction(newUser);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(newUser(PARAMETERS))
+    it('should return an `Object`', () => {
+      assert.isObject(newUser('Frank', 'frank@bank.crank', 'sc00byd00'))
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(newUser(PARAMETERS), VALUE)
+    it('should return all `{Key: Value} pairs`', () => {
+      assert.property(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'name');
+      assert.propertyVal(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'name', 'Frank');
+      assert.property(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'email');
+      assert.propertyVal(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'email', 'frank@bank.crank');
+      assert.property(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'password');
+      assert.propertyVal(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'password', 'sc00byd00');
     });
   });
 
