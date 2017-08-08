@@ -140,16 +140,19 @@ describe('Project-3 Functions', () => {
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('hasProperty', () => {
+    const hasProperty = funcs.hasProperty;
+    it('should be a function', () => {
+      assert.isFunction(hasProperty);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS))
+    it('should return a `Boolean`', () => {
+      assert.isBoolean(hasProperty({email: 'x@x.x'}, 'email'));
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should return `false`', () => {
+      assert.isFalse(hasProperty({email: 'x@x.x'}, 'password'));
+    });
+    it('should return `true`', () => {
+      assert.isTrue(hasProperty({email: 'x@x.x'}, 'email'));
     });
   });
 
