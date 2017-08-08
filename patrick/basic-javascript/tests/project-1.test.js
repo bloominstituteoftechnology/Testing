@@ -22,7 +22,7 @@ describe('Project-1 Functions', () => {
       assert.typeOf(multiplyByTen(5), 'number');
     });
     // see if the expected return output is the correct outcome.
-    it('should return the value 50', () => {
+    it('should return the value `50`', () => {
       const multiplyByTen = funcs.multiplyByTen;
       assert.equal(multiplyByTen(5), 50);
     });
@@ -33,8 +33,14 @@ describe('Project-1 Functions', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const subFive = funcs.subtractFive;
+      assert.typeOf(subFive(22), 'number');
+    });
+    it('returns a value of `17`');
+    const subFive = funcs.subtractFive;
+    assert.equal(subFive(22), 17);
+
   });
 
   describe('`areSameLength`', () => {
@@ -42,8 +48,18 @@ describe('Project-1 Functions', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
     });
-    it('returns a Boolean');
-    it('returns a value of XXX');
+    it('returns a Boolean', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.typeOf(areSameLength('abc', 'def'), 'boolean');
+    });
+    it('returns a value of `false`', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.equal(areSameLength('abc', 'defg'), false);
+    });
+    it('returns a value of `true`', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.equal(areSameLength('abc', 'def'), true);
+    });
   });
 
   describe('`areEqual`', () => {
@@ -51,8 +67,18 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
     });
-    it('returns a Boolean');
-    it('returns a value of XXX');
+    it('returns a Boolean', () => {
+      const areEqual = funcs.areEqual;
+      assert.typeOf(areEqual(1, 1), 'boolean');
+    });
+    it('returns a value of `false`', () => {
+      const areEqual = funcs.areEqual;
+      assert.equal(areEqual(true, false), false);
+    });
+    it('returns a value of `true`', () => {
+      const areEqual = funcs.areEqual;
+      assert.equal(areEqual(true, true), true);
+    });
   });
 
   describe('`lessThanNinety`', () => {
@@ -60,8 +86,19 @@ describe('Project-1 Functions', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
     });
-    it('returns a Boolean');
-    it('returns a value of XXX');
+    it('returns a Boolean', () => {
+      const lessThanNinety = funcs.lessThanNinety;
+      assert.typeOf(lessThanNinety(1), 'boolean');
+    });
+    it('returns a value of `false`', () => {
+      const lessThanNinety = funcs.lessThanNinety;
+      assert.equal(lessThanNinety(100), false);
+    });
+    it('returns a value of `true`', () => {
+      const lessThanNinety = funcs.lessThanNinety;
+      assert.equal(lessThanNinety(10), true);
+    });
+
   });
 
   describe('`greaterThanFifty`', () => {
@@ -69,8 +106,18 @@ describe('Project-1 Functions', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
-    it('returns a Boolean');
-    it('returns a value of XXX');
+    it('returns a Boolean', () => {
+      const greaterThanFifty = funcs.greaterThanFifty;
+      assert.typeOf(greaterThanFifty(1), 'boolean');
+    });
+    it('returns a value of `false`', () => {
+      const greaterThanFifty = funcs.greaterThanFifty;
+      assert.equal(greaterThanFifty(1), false);
+    });
+    it('returns a value of `true`', () => {
+      const greaterThanFifty = funcs.greaterThanFifty;
+      assert.equal(greaterThanFifty(100), true);
+    });
   });
 
   describe('`add`', () => {
