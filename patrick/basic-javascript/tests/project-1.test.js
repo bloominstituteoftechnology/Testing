@@ -37,10 +37,10 @@ describe('Project-1 Functions', () => {
       const subFive = funcs.subtractFive;
       assert.typeOf(subFive(22), 'number');
     });
-    it('returns a value of `17`');
-    const subFive = funcs.subtractFive;
-    assert.equal(subFive(22), 17);
-
+    it('returns a value of `17`', () => {
+      const subFive = funcs.subtractFive;
+      assert.equal(subFive(22), 17);
+    });
   });
 
   describe('`areSameLength`', () => {
@@ -98,7 +98,6 @@ describe('Project-1 Functions', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.equal(lessThanNinety(10), true);
     });
-
   });
 
   describe('`greaterThanFifty`', () => {
@@ -125,8 +124,14 @@ describe('Project-1 Functions', () => {
       const add = funcs.add;
       assert.typeOf(add, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const add = funcs.add;
+      assert.typeOf(add(1, 2), 'number');
+    });
+    it('returns a value of `3`', () => {
+      const add = funcs.add;
+      assert.equal(add(1, 2), 3);
+    });
   });
 
   describe('`subtract`', () => {
@@ -134,8 +139,14 @@ describe('Project-1 Functions', () => {
       const subtract = funcs.subtract;
       assert.typeOf(subtract, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const subtract = funcs.subtract;
+      assert.typeOf(subtract(5, 3), 'number');
+    });
+    it('returns a value of `2`', () => {
+      const subtract = funcs.subtract;
+      assert.equal(subtract(5, 3), 2);
+    });
   });
 
   describe('`divide`', () => {
@@ -143,8 +154,14 @@ describe('Project-1 Functions', () => {
       const divide = funcs.divide;
       assert.typeOf(divide, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const divide = funcs.divide;
+      assert.typeOf(divide(10, 2), 'number');
+    });
+    it('returns a value of `5`', () => {
+      const divide = funcs.divide;
+      assert.equal(divide(10, 2), 5);
+    });
   });
 
   describe('`multiply`', () => {
@@ -152,8 +169,14 @@ describe('Project-1 Functions', () => {
       const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function')
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const multiply = funcs.multiply;
+      assert.typeOf(multiply(3, 2), 'number');
+    });
+    it('returns a value of `6`', () => {
+      const multiply = funcs.multiply;
+      assert.equal(multiply(3, 2), 6);
+    });
   });
 
   describe('`getRemainder`', () => {
@@ -161,8 +184,18 @@ describe('Project-1 Functions', () => {
       const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const getRemainder = funcs.getRemainder;
+      assert.typeOf(getRemainder(10, 2), 'number');
+    });
+    it('returns a value of `0`', () => {
+      const getRemainder = funcs.getRemainder;
+      assert.equal(getRemainder(10, 2), 0);
+    });
+    it('returns a value of `1`', () => {
+      const getRemainder = funcs.getRemainder;
+      assert.equal(getRemainder(11, 2), 1);
+    });
   });
 
   describe('`isEven`', () => {
@@ -170,8 +203,18 @@ describe('Project-1 Functions', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
     });
-    it('returns a Boolean');
-    it('returns a value of XXX');
+    it('returns a Boolean', () => {
+      const isEven = funcs.isEven;
+      assert.typeOf(isEven(1), 'boolean');
+    });
+    it('returns a value of `false`', () => {
+      const isEven = funcs.isEven;
+      assert.equal(isEven(3), false);
+    });
+    it('returns a value of `true`', () => {
+      const isEven = funcs.isEven;
+      assert.equal(isEven(2), true);
+    });
   });
 
   describe('`isOdd`', () => {
@@ -179,8 +222,18 @@ describe('Project-1 Functions', () => {
       const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
     });
-    it('returns a Boolean');
-    it('returns a value of XXX');
+    it('returns a Boolean', () => {
+      const isOdd = funcs.isOdd;
+      assert.typeOf(isOdd(1), 'boolean');
+    });
+    it('returns a value of `false`', () => {
+      const isOdd = funcs.isOdd;
+      assert.equal(isOdd(2), false);
+    });
+    it('returns a value of `true`', () => {
+      const isOdd = funcs.isOdd;
+      assert.equal(isOdd(3), true);
+    });
   });
 
   describe('`square`', () => {
@@ -188,8 +241,14 @@ describe('Project-1 Functions', () => {
       const square = funcs.square;
       assert.typeOf(square, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const square = funcs.square;
+      assert.typeOf(square(3), 'number');
+    });
+    it('returns a value of `9`', () => {
+      const square = funcs.square;
+      assert.equal(square(3), 9);
+    });
   });
 
   describe('`cube`', () => {
@@ -197,8 +256,14 @@ describe('Project-1 Functions', () => {
       const cube = funcs.cube;
       assert.typeOf(cube, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const cube = funcs.cube;
+      assert.typeOf(cube(4), 'number');
+    });
+    it('returns a value of `64`', () => {
+      const cube = funcs.cube;
+      assert.equal(cube(4), 64);
+    });
   });
 
   describe('`raiseToPower`', () => {
@@ -206,8 +271,14 @@ describe('Project-1 Functions', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const raiseToPower = funcs.raiseToPower;
+      assert.typeOf(raiseToPower(2, 3), 'number');
+    });
+    it('returns a value of `8`', () => {
+      const raiseToPower = funcs.raiseToPower;
+      assert.equal(raiseToPower(2, 3), 8);
+    });
   });
 
   describe('`roundNumber`', () => {
@@ -215,8 +286,18 @@ describe('Project-1 Functions', () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const roundNumber = funcs.roundNumber;
+      assert.typeOf(roundNumber(3.1), 'number');
+    });
+    it('returns a value of 3', () => {
+      const roundNumber = funcs.roundNumber;
+      assert.equal(roundNumber(3.4), 3);
+    });
+    it('returns a value of 4', () => {
+      const roundNumber = funcs.roundNumber;
+      assert.equal(roundNumber(3.5), 4);
+    });
   });
 
   describe('`roundUp`', () => {
@@ -224,17 +305,33 @@ describe('Project-1 Functions', () => {
       const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, 'function');
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const roundUp = funcs.roundUp;
+      assert.typeOf(roundUp(3.1), 'number');
+    });
+    it('returns a value of 4', () => {
+      const roundUp = funcs.roundUp;
+      assert.equal(roundUp(3.1), 4);
+    });
+    it('returns a value of 3', () => {
+      const roundUp = funcs.roundUp;
+      assert.equal(roundUp(3.0), 3);
+    });
   });
 
   describe('`addExclamationPoint`', () => {
     it('should be a function', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
-      assert.typeOf(addExclamationPoint, 'function')
+      assert.typeOf(addExclamationPoint, 'function');
     });
-    it('returns a string');
-    it('returns a value of XXX');
+    it('returns a string', () => {
+      const addExclamationPoint = funcs.addExclamationPoint;
+      assert.typeOf(addExclamationPoint('string'), 'string');
+    });
+    it('returns a value of `It\'s a string!`', () => {
+      const addExclamationPoint = funcs.addExclamationPoint;
+      assert.equal(addExclamationPoint('It\'s a string'), 'It\'s a string!');
+    });
   });
 
   describe('`combineNames`', () => {
@@ -242,8 +339,14 @@ describe('Project-1 Functions', () => {
       const combineNames = funcs.combineNames;
       assert.typeOf(combineNames, 'function')
     });
-    it('returns a string');
-    it('returns a value of XXX');
+    it('returns a string', () => {
+      const combineNames = funcs.combineNames;
+      assert.typeOf(combineNames('bob', 'smith'), 'string')
+    });
+    it('returns a value of `Ryan Hamblin`', () => {
+      const combineNames = funcs.combineNames;
+      assert.equal(combineNames('Ryan', 'Hamblin'), 'Ryan Hamblin')
+    });
   });
 
   describe('`getGreeting`', () => {
@@ -251,8 +354,14 @@ describe('Project-1 Functions', () => {
       const getGreeting = funcs.getGreeting;
       assert.typeOf(getGreeting, 'function')
     });
-    it('returns a string');
-    it('returns a value of XXX');
+    it('returns a string', () => {
+      const getGreeting = funcs.getGreeting;
+      assert.typeOf(getGreeting('Frank'), 'string')
+    });
+    it('returns a value of `Hello Frank!`', () => {
+      const getGreeting = funcs.getGreeting;
+      assert.equal(getGreeting('Frank'), 'Hello Frank!')
+    });
   });
 
   describe('`getRectangleArea`', () => {
@@ -260,8 +369,14 @@ describe('Project-1 Functions', () => {
       const getRectangleArea = funcs.getRectangleArea;
       assert.typeOf(getRectangleArea, 'function')
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const getRectangleArea = funcs.getRectangleArea;
+      assert.typeOf(getRectangleArea(10, 20), 'number')
+    });
+    it('returns a value of `200`', () => {
+      const getRectangleArea = funcs.getRectangleArea;
+      assert.equal(getRectangleArea(10, 20), 200)
+    });
   });
 
   describe('`getTriangleArea`', () => {
@@ -269,8 +384,14 @@ describe('Project-1 Functions', () => {
       const getTriangleArea = funcs.getTriangleArea;
       assert.typeOf(getTriangleArea, 'function')
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const getTriangleArea = funcs.getTriangleArea;
+      assert.typeOf(getTriangleArea(4, 5), 'number')
+    });
+    it('returns a value of `10`', () => {
+      const getTriangleArea = funcs.getTriangleArea;
+      assert.equal(getTriangleArea(4, 5), 10)
+    });
   });
 
   describe('`getCircleArea`', () => {
@@ -278,8 +399,14 @@ describe('Project-1 Functions', () => {
       const getCircleArea = funcs.getCircleArea;
       assert.typeOf(getCircleArea, 'function')
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const getCircleArea = funcs.getCircleArea;
+      assert.typeOf(getCircleArea(10), 'number')
+    });
+    it('returns a value of `314.1592653589793`', () => {
+      const getCircleArea = funcs.getCircleArea;
+      assert.equal(getCircleArea(10), 314.1592653589793)
+    });
   });
 
   describe('`getRectangularPrismVolume`', () => {
@@ -287,8 +414,14 @@ describe('Project-1 Functions', () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
       assert.typeOf(getRectangularPrismVolume, 'function')
     });
-    it('returns a number');
-    it('returns a value of XXX');
+    it('returns a number', () => {
+      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+      assert.typeOf(getRectangularPrismVolume(3, 4, 5), 'number')
+    });
+    it('returns a value of `60`', () => {
+      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+      assert.equal(getRectangularPrismVolume(3, 4, 5), 60)
+    });
   });
 
 });
