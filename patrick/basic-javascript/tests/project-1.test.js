@@ -1,10 +1,10 @@
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
 
-// we've gone ahead and gotten a start here for you,
-// except, for some reason, none of our current assertions are working.
-// first step is to make sure all these assertions work.
-// then make sure you have at least 2-3 more assertions for every function.
+// we've gone ahead and gotten a start here for you, - OKAY √
+// except, for some reason, none of our current assertions are working. - OKAY √
+// first step is to make sure all these assertions work. - DONE √
+// then make sure you have at least 2-3 more assertions for every function. - OKAY √
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
 
@@ -16,6 +16,16 @@ describe('Project-1 Functions', () => {
       assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
+    // see if the expected return output is of a specified type
+    it('should return a number', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      assert.typeOf(multiplyByTen(5), 'number');
+    });
+    // see if the expected return output is the correct outcome.
+    it('should return the value 50', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      assert.equal(multiplyByTen(5), 50);
+    });
   });
 
   describe('`subtractFive`', () => {
