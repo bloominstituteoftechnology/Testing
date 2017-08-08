@@ -18,14 +18,14 @@ Topics:
 
 - Be sure to `npm install` to include the necessary dependancies. - DONE √
 - To run your tests run the command over the corresponding directory/file that you're working in. ex. `npm run watch basic-javascript/tests/project-1.test.js`. - DONE √
-  - This command will actually re-execute every time a change is saved in that file, so you can see your tests improve without having to run the command over and over again.
-- Once you're done with all the tests for that directory, run `npm test directory/tests`.
-- Get started in the `basic-javascript` directory then move onto `advanced-javascript` when you're done.
+  - This command will actually re-execute every time a change is saved in that file, so you can see your tests improve without having to run the command over and over again. - OKAY √
+- Once you're done with all the tests for that directory, run `npm test directory/tests`. - OKAY √
+- Get started in the `basic-javascript` directory then move onto `advanced-javascript` when you're done. - OKAY √
 
 ### Notes/Hints
 
-- Have fun watching your Nyan cat grow!
-- Test suite
+- Have fun watching your Nyan cat grow! - YaY √
+- Test suite - swEEt!!! √
 
 ```
   // a test suite is made up of test assertions.
