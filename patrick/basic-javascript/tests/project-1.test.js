@@ -42,7 +42,7 @@ describe('Project-1 Functions', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
     });
-    it('returns a number');
+    it('returns a Boolean');
     it('returns a value of XXX');
   });
 
@@ -51,7 +51,7 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
     });
-    it('returns a number');
+    it('returns a Boolean');
     it('returns a value of XXX');
   });
 
@@ -60,7 +60,7 @@ describe('Project-1 Functions', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
     });
-    it('returns a number');
+    it('returns a Boolean');
     it('returns a value of XXX');
   });
 
@@ -69,7 +69,7 @@ describe('Project-1 Functions', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
-    it('returns a number');
+    it('returns a Boolean');
     it('returns a value of XXX');
   });
 
@@ -123,7 +123,7 @@ describe('Project-1 Functions', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
     });
-    it('returns a number');
+    it('returns a Boolean');
     it('returns a value of XXX');
   });
 
@@ -132,7 +132,7 @@ describe('Project-1 Functions', () => {
       const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
     });
-    it('returns a number');
+    it('returns a Boolean');
     it('returns a value of XXX');
   });
 
