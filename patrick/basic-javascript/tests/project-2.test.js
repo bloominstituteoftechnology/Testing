@@ -168,6 +168,7 @@ describe('Project-2 Functions', () => {
       const returnFirst = funcs.returnFirst;
       assert.typeOf(returnFirst([ 1, 2, 3 ]), 'number');
     });
+    it('should return `1`');
   });
 
   describe('returnLast', () => {
@@ -180,6 +181,7 @@ describe('Project-2 Functions', () => {
       const returnLast = funcs.returnLast;
       assert.typeOf(returnLast([ 1, 2, 3 ]), 'number');
     });
+    it('should return `3`');
   });
 
   describe('getArrayLength', () => {
@@ -191,6 +193,7 @@ describe('Project-2 Functions', () => {
       const getArrayLength = funcs.getArrayLength;
       assert.typeOf(getArrayLength([ 1, 2, 3 ]), 'number');
     });
+    it('should return `3`');
   });
 
   describe('incrementByOne', () => {
@@ -202,6 +205,7 @@ describe('Project-2 Functions', () => {
       const incrementByOne = funcs.incrementByOne;
       assert.typeOf(incrementByOne([ 1, 2, 3 ]), 'array');
     });
+    it('should return `[ 2, 3, 4 ]`');
   });
 
   describe('addItemToArray', () => {
@@ -213,6 +217,7 @@ describe('Project-2 Functions', () => {
       const addItemToArray = funcs.addItemToArray;
       assert.typeOf(addItemToArray([ 1, 2, 3 ]), 'array');
     });
+    it('should return `[ 1, 2, 3, "banana" ]`');
   });
 
   describe('addItemToFront', () => {
@@ -224,6 +229,7 @@ describe('Project-2 Functions', () => {
       const addItemToFront = funcs.addItemToFront;
       assert.typeOf(addItemToFront([ 1, 2, 3 ]), 'array');
     });
+    it('should return `[ "banana", 1, 2, 3 ]`');
   });
 
   describe('wordsToSentence', () => {
@@ -237,6 +243,7 @@ describe('Project-2 Functions', () => {
         ['say', 'hello', 'to', 'my', 'little', 'friend']),
         'string');
     });
+    it('should return `say hello to my little friend`');
   });
 
   describe('contains', () => {
@@ -248,6 +255,8 @@ describe('Project-2 Functions', () => {
       const contains = funcs.contains;
       assert.typeOf(contains([ 1, 2, 3 ], 3), 'boolean');
     });
+    it('should return `false`');
+    it('should return `true`');
   });
 
   describe('addNumbers', () => {
@@ -259,6 +268,7 @@ describe('Project-2 Functions', () => {
       const addNumbers = funcs.addNumbers;
       assert.typeOf(addNumbers([ 1, 2, 3 ]), 'number');
     });
+    it('should return `6`');
   });
 
   describe('averageTestScore', () => {
@@ -270,6 +280,7 @@ describe('Project-2 Functions', () => {
       const averageTestScore = funcs.averageTestScore;
       assert.typeOf(averageTestScore([ 1, 2, 3 ]), 'number');
     });
+    it('should return `2`');
   });
 
   describe('largestNumber', () => {
@@ -281,6 +292,7 @@ describe('Project-2 Functions', () => {
       const largestNumber = funcs.largestNumber;
       assert.typeOf(largestNumber([ 234, 1, 2, 3, 555]), 'number');
     });
+    it('should return `555`');
   });
 
 });
