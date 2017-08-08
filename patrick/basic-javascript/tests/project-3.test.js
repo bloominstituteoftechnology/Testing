@@ -60,6 +60,7 @@ describe('Project-3 Functions', () => {
     });
   });
 
+  // NOT RETURNING ANYTHING, JUST SIDE EFFECT
   describe('invokeMethod', () => {
     const invokeMethod = funcs.invokeMethod;
     it('should be a function', () => {
@@ -69,23 +70,23 @@ describe('Project-3 Functions', () => {
       const arr = [ 1, 2, 3, 4 ];
       const method = 'pop';
       assert.operator(arr, '!==', invokeMethod(arr, method))
-      // pop().should.have.been.calledWith("invokeMethod(arr, method)");
+      // pop().should.have.been.calledWith("invokeMethod(arr, method)"); // HMMMMM?
     });
     // it.skip('should return a `VALUE`', () => {
     //   assert.isVALUE(invokeMethod(PARAMETERS), VALUE)
     // });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('multiplyMysteryNumberByFive', () => {
+    const multiplyMysteryNumberByFive = funcs.multiplyMysteryNumberByFive;
+    it('should be a function', () => {
+      assert.isFunction(multiplyMysteryNumberByFive);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+    it('should return a `Number`', () => {
+      assert.isNumber(multiplyMysteryNumberByFive({mysteryNumber: 10}))
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should return a value of `50`', () => {
+      assert.equal(multiplyMysteryNumberByFive({mysteryNumber: 10}), 50)
     });
   });
 
