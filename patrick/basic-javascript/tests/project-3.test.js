@@ -109,7 +109,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(newUser);
     });
     it('should return an `Object`', () => {
-      assert.isObject(newUser('Frank', 'frank@bank.crank', 'sc00byd00'))
+      assert.isObject(newUser('Frank', 'frank@bank.crank', 'sc00byd00'));
     });
     it('should return all `{Key: Value} pairs`', () => {
       assert.property(newUser('Frank', 'frank@bank.crank', 'sc00byd00'), 'name');
@@ -121,13 +121,32 @@ describe('Project-3 Functions', () => {
     });
   });
 
+  describe('hasEmail', () => {
+    const hasEmail = funcs.hasEmail;
+    it('should be a function', () => {
+      assert.isFunction(hasEmail);
+    });
+    it('should return a `Boolean`', () => {
+      const user = {};
+      assert.isBoolean(hasEmail(user));
+    });
+    it('should return `false`', () => {
+      const user = {};
+      assert.isFalse(hasEmail(user))
+    });
+    it('should return `true`', () => {
+      const user = {email: 'x@x.x'};
+      assert.isTrue(hasEmail(user))
+    });
+  });
+
   describe('NAME', () => {
     const NAME = funcs.NAME;
     it.skip('should be a function', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -140,7 +159,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -153,7 +172,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -166,7 +185,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -179,7 +198,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -192,7 +211,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -205,20 +224,7 @@ describe('Project-3 Functions', () => {
       assert.isFunction(NAME);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
-    });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
-    });
-  });
-
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
-    });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
       assert.isVALUE(NAME(PARAMETERS), VALUE)
@@ -237,10 +243,10 @@ describe('Project-3 Functions', () => {
 //       assert.isFunction(NAME);
 //     });
 //     it.skip('should return a `TYPE`', () => {
-//       assert.isTYPE(NAME(PARAMETERS), TYPE)
+//       assert.isTYPE(NAME(PARAMETERS))
 //     });
 //     it.skip('should return a `VALUE`', () => {
-//       assert.isVALUE(NAME(PARAMETERS), VALUE)
+//       assert.equal(NAME(PARAMETERS), VALUE)
 //     });
 //   });
 //
