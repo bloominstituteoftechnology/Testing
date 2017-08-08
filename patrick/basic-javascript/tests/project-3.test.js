@@ -172,16 +172,23 @@ describe('Project-3 Functions', () => {
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('updatePassword', () => {
+    const updatePassword = funcs.updatePassword;
+    it('should be a function', () => {
+      assert.isFunction(updatePassword);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS))
+    it('should return an `Object`', () => {
+      assert.isObject(updatePassword({password: 'sc00byd00'}, 'sc00bysn@cks'))
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should change the old password to the new password', () => {
+      const newPword = updatePassword({password: 'sc00byd00'}, 'sc00bysn@cks')
+      const samePword = {password: 'sc00bysn@cks'}
+      assert.operator(newPword.password, '===', samePword.password);
+    });
+    // REDUNDANT
+    it('should have a password value of `sc00bysn@cks`', () => {
+      const newPword = updatePassword({password: 'sc00byd00'}, 'sc00bysn@cks')
+      assert.propertyVal(newPword, 'password', 'sc00bysn@cks');
     });
   });
 
