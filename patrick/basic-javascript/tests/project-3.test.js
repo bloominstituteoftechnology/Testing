@@ -221,16 +221,24 @@ describe('Project-3 Functions', () => {
     }});
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('sumUserPostLikes', () => {
+    const sumUserPostLikes = funcs.sumUserPostLikes;
+    const userPosts = sumUserPostLikes({posts: [
+                                          {likes: 3},
+                                          {likes: 2},
+                                          {likes: 15},
+                                          {likes: 117},
+                                          {likes: 1},
+                                          {likes: 0}
+                                        ]});
+    it('should be a function', () => {
+      assert.isFunction(sumUserPostLikes);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS))
+    it('should return a `Number`', () => {
+      assert.isNumber(userPosts)
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should return `138`', () => {
+      assert.equal(userPosts, 138)
     });
   });
 
