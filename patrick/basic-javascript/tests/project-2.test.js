@@ -10,6 +10,7 @@ describe('Project-2 Functions', () => {
       const getBiggest = funcs.getBiggest;
       assert.typeOf(getBiggest, 'function');
     });
+    it('should return a number');
   });
 
   describe('greeting', () => {
@@ -17,6 +18,7 @@ describe('Project-2 Functions', () => {
       const greeting = funcs.greeting;
       assert.typeOf(greeting, 'function');
     });
+    it('should return a string');
   });
 
   describe('isTenOrFive', () => {
@@ -24,6 +26,7 @@ describe('Project-2 Functions', () => {
       const isTenOrFive = funcs.isTenOrFive;
       assert.typeOf(isTenOrFive, 'function');
     });
+    it('should return a Boolean');
   });
 
   describe('isInRange', () => {
@@ -31,6 +34,7 @@ describe('Project-2 Functions', () => {
       const isInRange = funcs.isInRange;
       assert.typeOf(isInRange, 'function');
     });
+    it('should return a Boolean');
   });
 
   describe('isInteger', () => {
@@ -38,6 +42,7 @@ describe('Project-2 Functions', () => {
       const isInteger = funcs.isInteger;
       assert.typeOf(isInteger, 'function');
     });
+    it('should return a Boolean');
   });
 
   describe('fizzBuzz', () => {
@@ -45,6 +50,7 @@ describe('Project-2 Functions', () => {
       const fizzBuzz = funcs.fizzBuzz;
       assert.typeOf(fizzBuzz, 'function');
     });
+    it('should return a string');
   });
 
   describe('isPrime', () => {
@@ -52,6 +58,7 @@ describe('Project-2 Functions', () => {
       const isPrime = funcs.isPrime;
       assert.typeOf(isPrime, 'function');
     });
+    it('should return a Boolean');
   });
 
   describe('returnFirst', () => {
@@ -59,6 +66,7 @@ describe('Project-2 Functions', () => {
       const returnFirst = funcs.returnFirst;
       assert.typeOf(returnFirst, 'function');
     });
+    it('should return a number'); // Should we test all types? Or is it worth type testing this kind of function?
   });
 
   describe('returnLast', () => {
@@ -66,6 +74,7 @@ describe('Project-2 Functions', () => {
       const returnLast = funcs.returnLast;
       assert.typeOf(returnLast, 'function');
     });
+    it('should return a number'); // Same Q? as above
   });
 
   describe('getArrayLength', () => {
@@ -73,6 +82,7 @@ describe('Project-2 Functions', () => {
       const getArrayLength = funcs.getArrayLength;
       assert.typeOf(getArrayLength, 'function');
     });
+    it('should return a number');
   });
 
   describe('incrementByOne', () => {
@@ -80,6 +90,7 @@ describe('Project-2 Functions', () => {
       const incrementByOne = funcs.incrementByOne;
       assert.typeOf(incrementByOne, 'function');
     });
+    it('should return an array');
   });
 
   describe('addItemToArray', () => {
@@ -87,6 +98,7 @@ describe('Project-2 Functions', () => {
       const addItemToArray = funcs.addItemToArray;
       assert.typeOf(addItemToArray, 'function');
     });
+    it('should return an array');
   });
 
   describe('addItemToFront', () => {
@@ -94,6 +106,7 @@ describe('Project-2 Functions', () => {
       const addItemToFront = funcs.addItemToFront;
       assert.typeOf(addItemToFront, 'function');
     });
+    it('should return an array');
   });
 
   describe('wordsToSentence', () => {
@@ -101,6 +114,7 @@ describe('Project-2 Functions', () => {
       const wordsToSentence = funcs.wordsToSentence;
       assert.typeOf(wordsToSentence, 'function');
     });
+    it('should return a string');
   });
 
   describe('contains', () => {
@@ -108,6 +122,7 @@ describe('Project-2 Functions', () => {
       const contains = funcs.contains;
       assert.typeOf(contains, 'function');
     });
+    it('should return a Boolean');
   });
 
   describe('addNumbers', () => {
@@ -115,6 +130,7 @@ describe('Project-2 Functions', () => {
       const addNumbers = funcs.addNumbers;
       assert.typeOf(addNumbers, 'function');
     });
+    it('should return a number');
   });
 
   describe('averageTestScore', () => {
@@ -122,6 +138,7 @@ describe('Project-2 Functions', () => {
       const averageTestScore = funcs.averageTestScore;
       assert.typeOf(averageTestScore, 'function');
     });
+    it('should return a number');
   });
 
   describe('largestNumber', () => {
@@ -129,6 +146,7 @@ describe('Project-2 Functions', () => {
       const largestNumber = funcs.largestNumber;
       assert.typeOf(largestNumber, 'function');
     });
+    it('should return a number');
   });
 
 });
