@@ -1,9 +1,13 @@
 const assert = require('chai').assert;
 const funcs = require('../src/project-3');
 
-// To handle invokeMethod
-const sinon = require('sinon');
-const sinonChai = require('sinon-chai');
+// // To handle invokeMethod
+// // const sinon = require('sinon');
+// // const sinonChai = require('sinon-chai');
+// var chai = require("chai");
+// var sinon = require("sinon");
+// sinon.assert.expose(chai.assert, { prefix: "" });
+// // https://github.com/domenic/sinon-chai
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
@@ -61,10 +65,11 @@ describe('Project-3 Functions', () => {
     it('should be a function', () => {
       assert.isFunction(invokeMethod);
     });
-    it.skip('should invoke the method', () => { // SKIPPING FOR NOW
+    it('should invoke the method', () => { // NOT MY BEST WORK...
       const arr = [ 1, 2, 3, 4 ];
-      const method = 'length';
-      assert.operator(arr, '===', invokeMethod(arr, method))
+      const method = 'pop';
+      assert.operator(arr, '!==', invokeMethod(arr, method))
+      // pop().should.have.been.calledWith("invokeMethod(arr, method)");
     });
     // it.skip('should return a `VALUE`', () => {
     //   assert.isVALUE(invokeMethod(PARAMETERS), VALUE)
