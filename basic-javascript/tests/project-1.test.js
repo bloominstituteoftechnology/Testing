@@ -149,8 +149,11 @@ describe('Project-1 Functions', () => {
       const divide = funcs.divide;
       assert.typeOf(divide, 'function');
     });
-    it('', () => {
-      assert.equal(funcs.add(2, 3), 5);
+    it('if ten divided by two equals five, then it is true', () => {
+      assert.equal(funcs.divide(10, 2), 5);
+    });
+    it('if ten divided by two does not equals five, then it is false', () => {
+      assert.notEqual(funcs.divide(10, 2), 6);
     });
   });
 
@@ -159,12 +162,27 @@ describe('Project-1 Functions', () => {
       const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function')
     });
+    it('if ten times two equals twenty, it is true', () => {
+      assert.equal(funcs.multiply(10, 2), 20);
+    });
+    it('if ten times two does equals twenty, it is false', () => {
+      assert.notEqual(funcs.multiply(10, 2), 25);
+    });
   });
 
   describe('`getRemainder`', () => {
     it('should be a function', () => {
       const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
+    });
+    it('if ten divided by two has no remainder, it is true', () => {
+      assert.equal(funcs.getRemainder(10, 2), 0);
+    });
+    it('if ten divided by three has remainder or one, it is true', () => {
+      assert.equal(funcs.getRemainder(10, 3), 1);
+    });
+    it('if zero divided by three has no remainder, it is true', () => {
+      assert.equal(funcs.getRemainder(0, 3), 0);
     });
   });
 
@@ -173,12 +191,24 @@ describe('Project-1 Functions', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
     });
+    it('if the number is even, then it is true', () => {
+      assert.isTrue(funcs.isEven(10));
+    });
+    it('if the number is not even, then it is false', () => {
+      assert.isFalse(funcs.isEven(11));
+    });
   });
 
   describe('`isOdd`', () => {
     it('should be a function', () => {
       const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
+    });
+    it('if the number is odd, it is true', () => {
+      assert.isTrue(funcs.isOdd(11));
+    });
+    it('if the number is not odd, it is false', () => {
+      assert.isFalse(funcs.isOdd(10));
     });
   });
 
@@ -187,12 +217,24 @@ describe('Project-1 Functions', () => {
       const square = funcs.square;
       assert.typeOf(square, 'function');
     });
+    it('if the square of two is four, it is true', () => {
+      assert.equal(funcs.square(2), 4);
+    });
+    it('if the square of negative two is four, it is true', () => {
+      assert.equal(funcs.square(-2), 4);
+    });
   });
 
   describe('`cube`', () => {
     it('should be a function', () => {
       const cube = funcs.cube;
       assert.typeOf(cube, 'function');
+    });
+    it('if the cube of two is eight, it is true', () => {
+      assert.equal(funcs.cube(2), 8);
+    });
+    it('if the cube of -two is eight, it is true', () => {
+      assert.equal(funcs.cube(-2), -8);
     });
   });
 
@@ -201,12 +243,36 @@ describe('Project-1 Functions', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
     });
+    it('if two raised to the power of three is eight then it is true', () => {
+      assert.equal(funcs.raiseToPower(2, 3), 8);
+    });
+    it('if two raised to the power of negative three is negative eight then it is true', () => {
+      assert.equal(funcs.raiseToPower(2, -3), .125);
+    });
+    it('if two raised to the power of zero is one then it is true', () => {
+      assert.equal(funcs.raiseToPower(2, 0), 1);
+    });
   });
 
   describe('`roundNumber`', () => {
     it('should be a function', () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, 'function');
+    });
+    it('if 2.4 rounded is 2, it is true ', () => {
+      assert.equal(funcs.roundNumber(2.4), 2);
+    });
+    it('if 2.5 rounded is 3, it is true ', () => {
+      assert.equal(funcs.roundNumber(2.5), 3);
+    });
+    it('if 2.6 rounded is 3, it is true ', () => {
+      assert.equal(funcs.roundNumber(2.6), 3);
+    });
+    it('if -2.4 rounded is -2, it is true ', () => {
+      assert.equal(funcs.roundNumber(-2.4), -2);
+    });
+    it('if -2.6 rounded is -3, it is true ', () => {
+      assert.equal(funcs.roundNumber(-2.6), -3);
     });
   });
 
@@ -215,12 +281,30 @@ describe('Project-1 Functions', () => {
       const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, 'function');
     });
+    it('if 2.9 rounded is 3, it is true ', () => {
+      assert.equal(funcs.roundUp(2.9), 3);
+    });
+    it('if 2.1 rounded is 3, it is false ', () => {
+      assert.equal(funcs.roundUp(2.1), 3);
+    });
+    it('if -2.9 rounded is -3, it is true ', () => {
+      assert.equal(funcs.roundUp(-2.9), -2);
+    });
+    it('if -2.1 rounded is -3, it is true ', () => {
+      assert.equal(funcs.roundUp(-2.1), -2);
+    });
   });
 
   describe('`addExclamationPoint`', () => {
     it('should be a function', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
       assert.typeOf(addExclamationPoint, 'function')
+    });
+    it('if str has an ! on the end, its true', () => {
+      assert.equal(funcs.addExclamationPoint('hello'), 'hello!');
+    });
+    it('if empty str has an !, its true', () => {
+      assert.equal(funcs.addExclamationPoint(''), '!');
     });
   });
 
