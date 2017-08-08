@@ -16,6 +16,7 @@ const addProperty = (object, property) => {
 
 const invokeMethod = (object, method) => {
 	object[method]();
+	// return object[method]();
 };
 
 const multiplyMysteryNumberByFive = mysteryNumberObject => {

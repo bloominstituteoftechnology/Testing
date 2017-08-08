@@ -1,6 +1,10 @@
 const assert = require('chai').assert;
 const funcs = require('../src/project-3');
 
+// To handle invokeMethod
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
 describe('Project-3 Functions', () => {
@@ -40,7 +44,11 @@ describe('Project-3 Functions', () => {
     it('should return an `Object`', () => {
       assert.isObject(addProperty({}, 1));
     });
-    it('should return the added proprty', () => {
+    it('should be able to have properties added to it', () => {
+      assert.isExtensible(addProperty(new Object, 1));
+      assert.isExtensible(addProperty(new Array, 1));
+    });
+    it('should return the added property', () => {
       assert.property(addProperty({}, 1), 1);
       assert.propertyVal(addProperty({}, 1), 1, null);
       // console.log(addProperty({}, 1));
@@ -48,17 +56,19 @@ describe('Project-3 Functions', () => {
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('invokeMethod', () => {
+    const invokeMethod = funcs.invokeMethod;
+    it('should be a function', () => {
+      assert.isFunction(invokeMethod);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+    it.skip('should invoke the method', () => { // SKIPPING FOR NOW
+      const arr = [ 1, 2, 3, 4 ];
+      const method = 'length';
+      assert.operator(arr, '===', invokeMethod(arr, method))
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
-    });
+    // it.skip('should return a `VALUE`', () => {
+    //   assert.isVALUE(invokeMethod(PARAMETERS), VALUE)
+    // });
   });
 
   describe('NAME', () => {
