@@ -168,7 +168,10 @@ describe('Project-2 Functions', () => {
       const returnFirst = funcs.returnFirst;
       assert.typeOf(returnFirst([ 1, 2, 3 ]), 'number');
     });
-    it('should return `1`');
+    it('should return `1`', () => {
+      const returnFirst = funcs.returnFirst;
+      assert.equal(returnFirst([ 1, 2, 3 ]), 1);
+    });
   });
 
   describe('returnLast', () => {
@@ -181,7 +184,10 @@ describe('Project-2 Functions', () => {
       const returnLast = funcs.returnLast;
       assert.typeOf(returnLast([ 1, 2, 3 ]), 'number');
     });
-    it('should return `3`');
+    it('should return `3`', () => {
+      const returnLast = funcs.returnLast;
+      assert.equal(returnLast([ 1, 2, 3 ]), 3);
+    });
   });
 
   describe('getArrayLength', () => {
@@ -193,9 +199,14 @@ describe('Project-2 Functions', () => {
       const getArrayLength = funcs.getArrayLength;
       assert.typeOf(getArrayLength([ 1, 2, 3 ]), 'number');
     });
-    it('should return `3`');
+    it('should return `3`', () => {
+      const getArrayLength = funcs.getArrayLength;
+      assert.equal(getArrayLength([ 1, 2, 3 ]), 3);
+    });
   });
 
+
+  // ABOUT HERE I STARTED LOOKING INTO THE ASSERT DOCS: http://chaijs.com/api/assert/
   describe('incrementByOne', () => {
     it('should be a function', () => {
       const incrementByOne = funcs.incrementByOne;
@@ -203,33 +214,49 @@ describe('Project-2 Functions', () => {
     });
     it('should return an array', () => {
       const incrementByOne = funcs.incrementByOne;
-      assert.typeOf(incrementByOne([ 1, 2, 3 ]), 'array');
+      // assert.typeOf(incrementByOne([ 1, 2, 3 ]), 'array');
+      assert.isArray(incrementByOne([ 1, 2, 3 ])); // SHORTER SYNTAX
     });
-    it('should return `[ 2, 3, 4 ]`');
+    it('should return `[ 2, 3, 4 ]`', () => {
+      const incrementByOne = funcs.incrementByOne;
+      // assert.equal(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]);    // WHY DOESN'T EQUAL WORK?
+      assert.sameMembers(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]); // SAME MEMBERS
+      assert.sameOrderedMembers(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]); // SAME ORDERED MEMBERS
+    });
   });
 
   describe('addItemToArray', () => {
     it('should be a function', () => {
       const addItemToArray = funcs.addItemToArray;
-      assert.typeOf(addItemToArray, 'function');
+      // assert.typeOf(addItemToArray, 'function');
+      assert.isFunction(addItemToArray);
     });
     it('should return an array', () => {
       const addItemToArray = funcs.addItemToArray;
-      assert.typeOf(addItemToArray([ 1, 2, 3 ]), 'array');
+      // assert.typeOf(addItemToArray([ 1, 2, 3 ]), 'array');
+      assert.isArray(addItemToArray([ 1, 2, 3 ]));
     });
-    it('should return `[ 1, 2, 3, "banana" ]`');
+    it('should return `[ 1, 2, 3, "banana" ]`', () => {
+      const addItemToArray = funcs.addItemToArray;
+      assert.sameOrderedMembers(addItemToArray([ 1, 2, 3 ], 'banana'), [ 1, 2, 3, 'banana' ]);
+    });
   });
 
   describe('addItemToFront', () => {
     it('should be a function', () => {
       const addItemToFront = funcs.addItemToFront;
-      assert.typeOf(addItemToFront, 'function');
+      // assert.typeOf(addItemToFront, 'function');
+      assert.isFunction(addItemToFront);
     });
     it('should return an array', () => {
       const addItemToFront = funcs.addItemToFront;
-      assert.typeOf(addItemToFront([ 1, 2, 3 ]), 'array');
+      // assert.typeOf(addItemToFront([ 1, 2, 3 ]), 'array');
+      assert.isArray(addItemToFront([ 1, 2, 3 ]));
     });
-    it('should return `[ "banana", 1, 2, 3 ]`');
+    it('should return `[ "banana", 1, 2, 3 ]`', () => {
+      const addItemToFront = funcs.addItemToFront;
+      assert.sameOrderedMembers(addItemToFront([ 1, 2, 3 ], 'banana'), [ 'banana', 1, 2, 3 ]);
+    });
   });
 
   describe('wordsToSentence', () => {
@@ -239,11 +266,18 @@ describe('Project-2 Functions', () => {
     });
     it('should return a string', () => {
       const wordsToSentence = funcs.wordsToSentence;
-      assert.typeOf(wordsToSentence(
-        ['say', 'hello', 'to', 'my', 'little', 'friend']),
-        'string');
+      // assert.typeOf(wordsToSentence(
+      //   ['say', 'hello', 'to', 'my', 'little', 'friend']),
+      //   'string');
+      assert.isString(wordsToSentence(
+        ['say', 'hello', 'to', 'my', 'little', 'friend']));
     });
-    it('should return `say hello to my little friend`');
+    it('should return `say hello to my little friend`', () => {
+      const wordsToSentence = funcs.wordsToSentence;
+      assert.equal(wordsToSentence(
+        ['say', 'hello', 'to', 'my', 'little', 'friend']),
+        `say hello to my little friend`);
+    });
   });
 
   describe('contains', () => {
@@ -253,46 +287,67 @@ describe('Project-2 Functions', () => {
     });
     it('should return a Boolean', () => {
       const contains = funcs.contains;
-      assert.typeOf(contains([ 1, 2, 3 ], 3), 'boolean');
+      // assert.typeOf(contains([ 1, 2, 3 ], 3), 'boolean');
+      assert.isBoolean(contains([ 1, 2, 3 ], 3));
     });
-    it('should return `false`');
-    it('should return `true`');
+    it('should return `false`', () => {
+      const contains = funcs.contains;
+      assert.isFalse(contains([ 1, 2, 3 ], 4));
+    });
+    it('should return `true`', () => {
+      const contains = funcs.contains;
+      assert.isTrue(contains([ 1, 2, 3 ], 3));
+    });
   });
 
   describe('addNumbers', () => {
     it('should be a function', () => {
       const addNumbers = funcs.addNumbers;
-      assert.typeOf(addNumbers, 'function');
+      // assert.typeOf(addNumbers, 'function');
+      assert.isFunction(addNumbers);
     });
     it('should return a number', () => {
       const addNumbers = funcs.addNumbers;
-      assert.typeOf(addNumbers([ 1, 2, 3 ]), 'number');
+      // assert.typeOf(addNumbers([ 1, 2, 3 ]), 'number');
+      assert.isNumber(addNumbers([ 1, 2, 3 ]));
     });
-    it('should return `6`');
+    it('should return `6`', () => {
+      const addNumbers = funcs.addNumbers;
+      assert.equal(addNumbers([ 1, 2, 3 ]), 6);
+    });
   });
 
   describe('averageTestScore', () => {
     it('should be a function', () => {
       const averageTestScore = funcs.averageTestScore;
-      assert.typeOf(averageTestScore, 'function');
+      // assert.typeOf(averageTestScore, 'function');
+      assert.isFunction(averageTestScore);
     });
     it('should return a number', () => {
       const averageTestScore = funcs.averageTestScore;
-      assert.typeOf(averageTestScore([ 1, 2, 3 ]), 'number');
+      // assert.typeOf(averageTestScore([ 1, 2, 3 ]), 'number');
+      assert.isNumber(averageTestScore([ 1, 2, 3 ]));
     });
-    it('should return `2`');
+    it('should return `2`', () => {
+      const averageTestScore = funcs.averageTestScore;
+      assert.equal(averageTestScore([ 1, 2, 3 ]), 2);
+    });
   });
 
   describe('largestNumber', () => {
     it('should be a function', () => {
       const largestNumber = funcs.largestNumber;
-      assert.typeOf(largestNumber, 'function');
+      // assert.typeOf(largestNumber, 'function');
+      assert.isFunction(largestNumber);
     });
     it('should return a number', () => {
       const largestNumber = funcs.largestNumber;
-      assert.typeOf(largestNumber([ 234, 1, 2, 3, 555]), 'number');
+      // assert.typeOf(largestNumber([ 234, 1, 2, 3, 555]), 'number');
+      assert.isNumber(largestNumber([ 234, 1, 2, 3, 555]));
     });
-    it('should return `555`');
+    it('should return `555`', () => {
+      assert.equal(largestNumber([ 234, 1, 2, 3, 555]), 555)
+    });
   });
 
 });
