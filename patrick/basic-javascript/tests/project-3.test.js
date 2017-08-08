@@ -206,17 +206,19 @@ describe('Project-3 Functions', () => {
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('setUsersToPremium', () => {
+    const setUsersToPremium = funcs.setUsersToPremium;
+    const noPremium = setUsersToPremium([ {isPremium: false}, {isPremium: false}, {isPremium: false} ]);
+    it('should be a function', () => {
+      assert.isFunction(setUsersToPremium);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS))
+    it('should return an `Array`', () => {
+      assert.isArray(noPremium);
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
-    });
+    it('should return a `VALUE`', () => {
+      for (let i = 0; i < noPremium.length; i++) {
+      assert.propertyVal(noPremium[i], 'isPremium', true);
+    }});
   });
 
   describe('NAME', () => {
