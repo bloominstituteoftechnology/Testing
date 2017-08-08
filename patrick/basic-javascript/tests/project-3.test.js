@@ -156,16 +156,19 @@ describe('Project-3 Functions', () => {
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('verifyPassword', () => {
+    const verifyPassword = funcs.verifyPassword;
+    it('should be a function', () => {
+      assert.isFunction(verifyPassword);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS))
+    it('should return a `Boolean`', () => {
+      assert.isBoolean(verifyPassword({password: 'sc00byd00'}, 'sc00byd00'));
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should return `false`', () => {
+      assert.isFalse(verifyPassword({password: 'sc00byd00'}, 'd00bysc00'));
+    });
+    it('should return `true`', () => {
+      assert.isTrue(verifyPassword({password: 'sc00byd00'}, 'sc00byd00'));
     });
   });
 
