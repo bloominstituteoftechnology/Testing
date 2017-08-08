@@ -21,6 +21,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, 5);
     });
   });
+
   describe('`greeting`', () => {
     it('should return Guten Tag!', () => {
       const greeting = funcs.greeting;
@@ -43,6 +44,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, 'Hello!');
     });
   });
+
   describe('`isTenOrFive`', () => {
     it('should return true', () => {
       const isTenOrFive = funcs.isTenOrFive;
@@ -60,6 +62,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, false);
     });
   });
+
   describe('`isInRange`', () => {
     it('should return true', () => {
       const isInRange = funcs.isInRange;
@@ -72,6 +75,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, false);
     });
   });
+
   describe('`isInteger`', () => {
     it('should return true', () => {
       const isInteger = funcs.isInteger;
@@ -84,6 +88,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, false);
     });
   });
+
   describe('`should return fizzBuzz`', () => {
     it('should return true', () => {
       const fizzBuzz = funcs.fizzBuzz;
@@ -106,6 +111,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, 2);
     });
   });
+
   describe('`isPrime`', () => {
     it('should return false', () => {
       const isPrime = funcs.isPrime;
@@ -123,6 +129,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, true);
     });
   });
+
   describe('`returnFirst`', () => {
     it('should return 1', () => {
       const returnFirst = funcs.returnFirst;
@@ -131,6 +138,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, 1);
     });
   });
+
   describe('`returnLast`', () => {
     it('should return 4', () => {
       const returnLast = funcs.returnLast;
@@ -139,6 +147,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, 4);
     });
   });
+
   describe('`getArrayLength`', () => {
     it('should return 4', () => {
       const getArrayLength = funcs.getArrayLength;
@@ -147,6 +156,7 @@ describe('Project-2 Functions', () => {
       assert.equal(result, 4);
     });
   });
+
   describe('`incrementByOne`', () => {
     it('should return [2, 3, 4, 5]', () => {
       const incrementByOne = funcs.incrementByOne;
@@ -155,6 +165,7 @@ describe('Project-2 Functions', () => {
       assert.includeOrderedMembers(result, [2, 3, 4, 5] );
     });
   });
+
   describe('`addItemToArray`', () => {
     it('should return [1, 2, 3, 4, 5]', () => {
       const addItemToArray = funcs.addItemToArray;
@@ -163,6 +174,7 @@ describe('Project-2 Functions', () => {
       assert.includeOrderedMembers(result, [1, 2, 3, 4, 5] );
     });
   });
+
   describe('`addItemToFront`', () => {
     it('should return [1, 2, 3, 4, 5]', () => {
       const addItemToFront = funcs.addItemToFront;
@@ -171,44 +183,55 @@ describe('Project-2 Functions', () => {
     assert.includeOrderedMembers(result, [1, 2, 3, 4, 5] );
     });
   });
-  // describe('`wordsToSentence`', () => {
-  //   it('should return 4', () => {
-  //     const wordsToSentence = funcs.wordsToSentence;
-  //     const testArray = [1, 2, 3, 4];
-  //     const result = wordsToSentence(testArray);
-  //     assert.equal(result, 4);
-  //   });
-  // });
-  // describe('`contains`', () => {
-  //   it('should return 4', () => {
-  //     const contains = funcs.contains;
-  //     const testArray = [1, 2, 3, 4];
-  //     const result = contains(testArray);
-  //     assert.equal(result, 4);
-  //   });
-  // });
-  // describe('`addNumbers`', () => {
-  //   it('should return 4', () => {
-  //     const addNumbers = funcs.addNumbers;
-  //     const testArray = [1, 2, 3, 4];
-  //     const result = addNumbers(testArray);
-  //     assert.equal(result, 4);
-  //   });
-  // });
-  // describe('`averageTestScore`', () => {
-  //   it('should return 4', () => {
-  //     const averageTestScore = funcs.averageTestScore;
-  //     const testArray = [1, 2, 3, 4];
-  //     const result = averageTestScore(testArray);
-  //     assert.equal(result, 4);
-  //   });
-  // });
-  // describe('`largestNumber`', () => {
-  //   it('should return 4', () => {
-  //     const largestNumber = funcs.largestNumber;
-  //     const testArray = [1, 2, 3, 4];
-  //     const result = largestNumber(testArray);
-  //     assert.equal(result, 4);
-  //   });
-  // });
+
+  describe('`wordsToSentence`', () => {
+    it('should return hello world', () => {
+      const wordsToSentence = funcs.wordsToSentence;
+      const testArray = ['hello', 'world'];
+      const result = wordsToSentence(testArray);
+      assert.equal(result, 'hello world');
+    });
+  });
+
+  describe('`contains`', () => {
+    it('should return true', () => {
+      const contains = funcs.contains;
+      const testArray = [1, 2, 3, 4];
+      const result = contains(testArray, 3);
+      assert.equal(result, true);
+    });
+    it('should return false', () => {
+      const contains = funcs.contains;
+      const testArray = [1, 2, 3, 4];
+      const result = contains(testArray, 5);
+      assert.equal(result, false);
+    });
+  });
+
+  describe('`addNumbers`', () => {
+    it('should return 10', () => {
+      const addNumbers = funcs.addNumbers;
+      const testArray = [1, 2, 3, 4];
+      const result = addNumbers(testArray);
+      assert.equal(result, 10);
+    });
+  });
+
+  describe('`averageTestScore`', () => {
+    it('should return 2.5', () => {
+      const averageTestScore = funcs.averageTestScore;
+      const testArray = [1, 2, 3, 4];
+      const result = averageTestScore(testArray);
+      assert.equal(result, 2.5);
+    });
+  });
+  
+  describe('`largestNumber`', () => {
+    it('should return 4', () => {
+      const largestNumber = funcs.largestNumber;
+      const testArray = [1, 2, 3, 4];
+      const result = largestNumber(testArray);
+      assert.equal(result, 4);
+    });
+  });
 });
