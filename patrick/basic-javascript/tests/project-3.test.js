@@ -90,16 +90,16 @@ describe('Project-3 Functions', () => {
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('deleteProperty', () => {
+    const deleteProperty = funcs.deleteProperty;
+    it('should be a function', () => {
+      assert.isFunction(deleteProperty);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS), TYPE)
+    it('should return an `Object`', () => {
+      assert.isObject(deleteProperty({1: 2, 3: 4}, 1))
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should NOT have property `1`', () => {
+      assert.notProperty(deleteProperty({1: 'a', 2: 'b'}, 1), 1);
     });
   });
 
