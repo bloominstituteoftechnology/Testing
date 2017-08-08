@@ -28,11 +28,11 @@ describe('Project-3 Functions', () => {
     });
     it.skip('should return a TYPE', () => {
       const NAME = funcs.NAME;
-      asset.isTYPE(NAME(PARAMETERS), TYPE)
+      assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
     it.skip('should return a VALUE', () => {
       const NAME = funcs.NAME;
-      asset.isVALUE(NAME(PARAMETERS), VALUE)
+      assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
   });
 
