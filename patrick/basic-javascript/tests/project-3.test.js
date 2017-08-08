@@ -3,34 +3,19 @@ const funcs = require('../src/project-3');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
-// makeCat,
-// addProperty,
-// invokeMethod,
-// multiplyMysteryNumberByFive,
-// deleteProperty,
-// newUser,
-// hasEmail,
-// hasProperty,
-// verifyPassword,
-// updatePassword,
-// addFriend,
-// setUsersToPremium,
-// sumUserPostLikes,
-// addCalculateDiscountPriceMethod
-
 describe('Project-3 Functions', () => {
 
   describe('makeCat', () => {
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       const makeCat = funcs.makeCat;
       assert.typeOf(makeCat, 'function');
       assert.isFunction(makeCat);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `string`', () => {
       const makeCat = funcs.makeCat;
-      assert.isTYPE(makeCat(PARAMETERS), TYPE)
+      assert.isTYPE(makeCat('Eddie Spagetti', 4), 'string')
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const makeCat = funcs.makeCat;
       assert.isVALUE(makeCat(PARAMETERS), VALUE)
     });
@@ -42,11 +27,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -58,11 +43,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -74,11 +59,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -90,11 +75,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -106,11 +91,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -122,11 +107,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -138,11 +123,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -154,11 +139,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -170,11 +155,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -186,11 +171,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -202,11 +187,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -218,11 +203,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -234,11 +219,11 @@ describe('Project-3 Functions', () => {
       assert.typeOf(NAME, 'function');
       assert.isFunction(NAME);
     });
-    it.skip('should return a TYPE', () => {
+    it.skip('should return a `TYPE`', () => {
       const NAME = funcs.NAME;
       assert.isTYPE(NAME(PARAMETERS), TYPE)
     });
-    it.skip('should return a VALUE', () => {
+    it.skip('should return a `VALUE`', () => {
       const NAME = funcs.NAME;
       assert.isVALUE(NAME(PARAMETERS), VALUE)
     });
@@ -246,3 +231,24 @@ describe('Project-3 Functions', () => {
 
 
 });
+
+// // TEMPLATE
+// describe('Project-# Functions', () => {
+//
+//   describe('NAME', () => {
+//     it.skip('should be a function', () => {
+//       const NAME = funcs.NAME;
+//       assert.typeOf(NAME, 'function');
+//       assert.isFunction(NAME);
+//     });
+//     it.skip('should return a `TYPE`', () => {
+//       const NAME = funcs.NAME;
+//       assert.isTYPE(NAME(PARAMETERS), TYPE)
+//     });
+//     it.skip('should return a `VALUE`', () => {
+//       const NAME = funcs.NAME;
+//       assert.isVALUE(NAME(PARAMETERS), VALUE)
+//     });
+//   });
+//
+// });
