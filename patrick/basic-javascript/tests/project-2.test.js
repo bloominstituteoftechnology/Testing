@@ -14,6 +14,14 @@ describe('Project-2 Functions', () => {
       const getBiggest = funcs.getBiggest;
       assert.typeOf(getBiggest(1, 100), 'number');
     });
+    it('should return `100`', () => {
+      const getBiggest = funcs.getBiggest;
+      assert.equal(getBiggest(1, 100), 100);
+    });
+    it('should return `1000`', () => {
+      const getBiggest = funcs.getBiggest;
+      assert.equal(getBiggest(1000, 100), 1000);
+    });
   });
 
   describe('greeting', () => {
@@ -24,6 +32,14 @@ describe('Project-2 Functions', () => {
     it('should return a string', () => {
       const greeting = funcs.greeting;
       assert.typeOf(greeting(''), 'string');
+    });
+    it('should return `Guten Tag!`', () => {
+      const greeting = funcs.greeting;
+      assert.equal(greeting('German'), 'Guten Tag!');
+    });
+    it('should return `Hola!`', () => {
+      const greeting = funcs.greeting;
+      assert.equal(greeting('Spanish'), 'Hola!');
     });
   });
 
@@ -36,6 +52,18 @@ describe('Project-2 Functions', () => {
       const isTenOrFive = funcs.isTenOrFive;
       assert.typeOf(isTenOrFive(25), 'boolean');
     });
+    it('should return false', () => {
+      const isTenOrFive = funcs.isTenOrFive;
+      assert.equal(isTenOrFive(11), false);
+    });
+    it('should return true', () => {
+      const isTenOrFive = funcs.isTenOrFive;
+      assert.equal(isTenOrFive(5), true);
+    });
+    it('should return true', () => {
+      const isTenOrFive = funcs.isTenOrFive;
+      assert.equal(isTenOrFive(10), true);
+    });
   });
 
   describe('isInRange', () => {
@@ -46,6 +74,14 @@ describe('Project-2 Functions', () => {
     it('should return a Boolean', () => {
       const isInRange = funcs.isInRange;
       assert.typeOf(isInRange(35), 'boolean');
+    });
+    it('should return false', () => {
+      const isInRange = funcs.isInRange;
+      assert.equal(isInRange(1), false);
+    });
+    it('should return true', () => {
+      const isInRange = funcs.isInRange;
+      assert.equal(isInRange(35), true);
     });
   });
 
@@ -58,6 +94,18 @@ describe('Project-2 Functions', () => {
       const isInteger = funcs.isInteger;
       assert.typeOf(isInteger(2.5), 'boolean');
     });
+    it('should return false', () => {
+      const isInteger = funcs.isInteger;
+      assert.equal(isInteger(2.5), false);
+    });
+    it('should return true', () => {
+      const isInteger = funcs.isInteger;
+      assert.equal(isInteger(2.0), true);
+    });
+    it('should return true', () => {
+      const isInteger = funcs.isInteger;
+      assert.equal(isInteger(2), true);
+    });
   });
 
   describe('fizzBuzz', () => {
@@ -69,6 +117,26 @@ describe('Project-2 Functions', () => {
       const fizzBuzz = funcs.fizzBuzz;
       assert.typeOf(fizzBuzz(213), 'string');
     });
+    it('should return a number', () => {
+      const fizzBuzz = funcs.fizzBuzz;
+      assert.typeOf(fizzBuzz(214), 'number');
+    });
+    it('should return `214`', () => {
+      const fizzBuzz = funcs.fizzBuzz;
+      assert.equal(fizzBuzz(214), 214);
+    });
+    it('should return `fizz`', () => {
+      const fizzBuzz = funcs.fizzBuzz;
+      assert.equal(fizzBuzz(3), 'fizz');
+    });
+    it('should return `buzz`', () => {
+      const fizzBuzz = funcs.fizzBuzz;
+      assert.equal(fizzBuzz(5), 'buzz');
+    });
+    it('should return `fizzbuzz`', () => {
+      const fizzBuzz = funcs.fizzBuzz;
+      assert.equal(fizzBuzz(15), 'fizzbuzz');
+    });
   });
 
   describe('isPrime', () => {
@@ -79,6 +147,14 @@ describe('Project-2 Functions', () => {
     it('should return a Boolean', () => {
       const isPrime = funcs.isPrime;
       assert.typeOf(isPrime(121), 'boolean');
+    });
+    it('should return false', () => {
+      const isPrime = funcs.isPrime;
+      assert.equal(isPrime(4), false);
+    });
+    it('should return true', () => {
+      const isPrime = funcs.isPrime;
+      assert.equal(isPrime(7), true);
     });
   });
 
