@@ -24,12 +24,23 @@ describe('Node Extra Credit Tests', () => {
     it('should return an `Array`', () => {
       expect(peopleGetter()).to.be.an('array');
     });
+    it('should return `1` from users[0].id', () => {
+      expect(peopleGetter()[0].id).to.equal( 1 );
+    });
+
   });
 
   describe('`peopleSetter`', () => {
+    const peopleSetter = nodeFuncs.peopleSetter,
+          anObj = { id: 10,
+                  first_name: 'Culver',
+                  last_name: 'Hairsnape',
+                  email: 'chairsnape9@go.com' };
     it('should be a `Function`', () => {
-      const peopleSetter = nodeFuncs.peopleSetter;
       expect(peopleSetter).to.be.a('function');
+    });
+    it('should return an `Array`', () => {
+      expect(peopleSetter(anObj)).to.be.an('array');
     });
   });
 
