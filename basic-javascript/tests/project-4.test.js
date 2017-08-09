@@ -215,7 +215,6 @@ describe('Project-4 Functions', () => {
       cacheFunction(11);
       cacheFunction(11);
       cacheFunction(11);
-
       sinon.assert.calledThrice(callback);
     });
 
