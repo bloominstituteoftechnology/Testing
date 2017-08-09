@@ -220,6 +220,7 @@ describe('Project-2 Functions', () => {
     it('should return `[ 2, 3, 4 ]`', () => {
       const incrementByOne = funcs.incrementByOne;
       // assert.equal(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]);    // WHY DOESN'T EQUAL WORK?
+      assert.deepEqual(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]); // <---- Thank you JESH!
       assert.sameMembers(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]); // SAME MEMBERS
       assert.sameOrderedMembers(incrementByOne([ 1, 2, 3 ]), [ 2, 3, 4 ]); // SAME ORDERED MEMBERS
     });
@@ -346,6 +347,7 @@ describe('Project-2 Functions', () => {
       assert.isNumber(largestNumber([ 234, 1, 2, 3, 555]));
     });
     it('should return `555`', () => {
+      const largestNumber = funcs.largestNumber;
       assert.equal(largestNumber([ 234, 1, 2, 3, 555]), 555)
     });
   });
