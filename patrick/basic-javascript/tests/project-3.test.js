@@ -235,23 +235,26 @@ describe('Project-3 Functions', () => {
       assert.isFunction(sumUserPostLikes);
     });
     it('should return a `Number`', () => {
-      assert.isNumber(userPosts)
+      assert.isNumber(userPosts);
     });
     it('should return `138`', () => {
-      assert.equal(userPosts, 138)
+      assert.equal(userPosts, 138);
     });
   });
 
-  describe('NAME', () => {
-    const NAME = funcs.NAME;
-    it.skip('should be a function', () => {
-      assert.isFunction(NAME);
+  describe('addCalculateDiscountPriceMethod', () => {
+    const addCalculateDiscountPriceMethod = funcs.addCalculateDiscountPriceMethod;
+    const storeItem = { price: 25, discountPercentage: .15 };
+    const applyDiscountToItem = addCalculateDiscountPriceMethod(storeItem);
+    const retrieveNewPrice = applyDiscountToItem.calculateDiscountPrice();
+    it('should be a function', () => {
+      assert.isFunction(addCalculateDiscountPriceMethod);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(NAME(PARAMETERS))
+    it('should return an `Object`', () => {
+      assert.isObject(addCalculateDiscountPriceMethod({}));
     });
-    it.skip('should return a `VALUE`', () => {
-      assert.isVALUE(NAME(PARAMETERS), VALUE)
+    it('should return a store item with the discounted price', () => {
+      assert.equal(retrieveNewPrice, 21.25);
     });
   });
 
