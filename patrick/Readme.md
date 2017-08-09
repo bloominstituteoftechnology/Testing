@@ -67,6 +67,6 @@ Topics:
 
 ## Extra Credit
 
-- Congratulations you wonderful developer you! You have survived the basic requirements and are now ready to put your big TDD skills to the test!
-- Pop open the `node-extra-credit` file and study up on testing node endpoints.
-- Use either `assert` or `expect` its your time to shine so pick a style and stick with it.
+- Congratulations you wonderful developer you! You have survived the basic requirements and are now ready to put your big TDD skills to the test! - OKAY √
+- Pop open the `node-extra-credit` file and study up on testing node endpoints. - OKAY √
+- Use either `assert` or `expect` its your time to shine so pick a style and stick with it. - OKAY √
