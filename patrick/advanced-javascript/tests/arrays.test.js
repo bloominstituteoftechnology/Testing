@@ -20,7 +20,29 @@ describe('Arrays', () => {
       const each = arrayFunctions.each;
       expect(each).to.be.a('function');
     });
-    // begin here
+    it('should invoke the callback with `SOMETHING AMAZING`', () => {
+      const each = arrayFunctions.each;
+      const cb = sinon.spy();
+      const elements = [ 1, 2, 3 ];
+      each(elements, cb);
+      for (let i = 0; i < elements.length; i++) {
+    		expect(cb).to.have.been.calledWith(elements[i]);
+    	}
+    });
+    it('should invoke a callback `ONCE`', () => {
+      const each = arrayFunctions.each;
+      const cb = sinon.spy();
+      const elements = [ 1 ];
+      each(elements, cb);
+      expect(cb).to.have.been.calledOnce;
+    });
+    it('should invoke a callback `THRICE`', () => {
+      const each = arrayFunctions.each;
+      const cb = sinon.spy();
+      const elements = [ 1, 2, 3 ];
+      each(elements, cb);
+      expect(cb).to.have.been.calledThrice;
+    });
   });
 
   describe('`map`', () => {
