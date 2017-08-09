@@ -31,17 +31,29 @@ describe('Node Extra Credit Tests', () => {
   });
 
   describe('`peopleSetter`', () => {
-    const peopleSetter = nodeFuncs.peopleSetter,
-          anObj = { id: 10,
-                  first_name: 'Culver',
-                  last_name: 'Hairsnape',
-                  email: 'chairsnape9@go.com' };
+    const peopleSetter = nodeFuncs.peopleSetter;
     it('should be a `Function`', () => {
       expect(peopleSetter).to.be.a('function');
     });
     it('should return an `Array`', () => {
-      expect(peopleSetter(anObj)).to.be.an('array');
+      const anObj1 = { id: 11,
+                    first_name: 'Bob',
+                    last_name: 'O',
+                    email: 'bob@o.bob' },
+            peopleSet1 = peopleSetter(anObj1);
+      expect(peopleSet1).to.be.an('array');
+      // console.log(peopleSet1);
     });
+    it('should increase Array length by 1', () => {
+      const anObj2 = { id: 12,
+                    first_name: 'May',
+                    last_name: 'Mei',
+                    email: 'may@mei.maymei' },
+            peopleSet2 = peopleSetter(anObj2);
+      expect(peopleSet2).to.be.length( 12 );
+      // console.log(peopleSet2);
+    });
+
   });
 
 });
