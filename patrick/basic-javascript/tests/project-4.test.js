@@ -11,10 +11,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(multiplyArguments);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(multiplyArguments(PARAMETERS))
+      assert.RETURN_TYPE(multiplyArguments(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(multiplyArguments(PARAMETERS), VALUE)
+      assert.CHECK(multiplyArguments(PARAMETERS), VALUE)
     });
   });
 
@@ -23,11 +23,11 @@ describe('Project-4 Functions', () => {
     it('should be a function', () => {
       assert.isFunction(invokeCallback);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(invokeCallback(PARAMETERS))
+    it.skip('should invoke callBack', () => {
+      assert.INVOKE_CB(invokeCallback(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(invokeCallback(PARAMETERS), VALUE)
+      assert.CHECK(invokeCallback(PARAMETERS), VALUE)
     });
   });
 
@@ -36,11 +36,11 @@ describe('Project-4 Functions', () => {
     it('should be a function', () => {
       assert.isFunction(sumArray);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(sumArray(PARAMETERS))
+    it.skip('should invoke callBack', () => {
+      assert.INVOKE_CB(sumArray(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(sumArray(PARAMETERS), VALUE)
+      assert.CHECK(sumArray(PARAMETERS), VALUE)
     });
   });
 
@@ -49,11 +49,11 @@ describe('Project-4 Functions', () => {
     it('should be a function', () => {
       assert.isFunction(forEach);
     });
-    it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(forEach(PARAMETERS))
+    it.skip('should invoke callBack', () => {
+      assert.INVOKE_CB(forEach(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(forEach(PARAMETERS), VALUE)
+      assert.CHECK(forEach(PARAMETERS), VALUE)
     });
   });
 
@@ -63,10 +63,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(map);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(map(PARAMETERS))
+      assert.RETURN_TYPE(map(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(map(PARAMETERS), VALUE)
+      assert.CHECK(map(PARAMETERS), VALUE)
     });
   });
 
@@ -76,10 +76,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(getUserConstructor);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(getUserConstructor(PARAMETERS))
+      assert.RETURN_TYPE(getUserConstructor(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(getUserConstructor(PARAMETERS), VALUE)
+      assert.CHECK(getUserConstructor(PARAMETERS), VALUE)
     });
   });
 
@@ -89,10 +89,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(addPrototypeMethod);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(addPrototypeMethod(PARAMETERS))
+      assert.RETURN_TYPE(addPrototypeMethod(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(addPrototypeMethod(PARAMETERS), VALUE)
+      assert.CHECK(addPrototypeMethod(PARAMETERS), VALUE)
     });
   });
 
@@ -102,10 +102,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(addReverseString);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(addReverseString(PARAMETERS))
+      assert.RETURN_TYPE(addReverseString(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(addReverseString(PARAMETERS), VALUE)
+      assert.CHECK(addReverseString(PARAMETERS), VALUE)
     });
   });
 
@@ -115,10 +115,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(nFactorial);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(nFactorial(PARAMETERS))
+      assert.RETURN_TYPE(nFactorial(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(nFactorial(PARAMETERS), VALUE)
+      assert.CHECK(nFactorial(PARAMETERS), VALUE)
     });
   });
 
@@ -128,10 +128,10 @@ describe('Project-4 Functions', () => {
       assert.isFunction(cacheFunction);
     });
     it.skip('should return a `TYPE`', () => {
-      assert.isTYPE(cacheFunction(PARAMETERS))
+      assert.RETURN_TYPE(cacheFunction(PARAMETERS))
     });
     it.skip('should return a `VALUE`', () => {
-      assert.equal(cacheFunction(PARAMETERS), VALUE)
+      assert.CHECK(cacheFunction(PARAMETERS), VALUE)
     });
   });
 
