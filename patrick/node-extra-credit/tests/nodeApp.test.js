@@ -17,14 +17,14 @@ const nodeFuncs = require('../src/nodeApp.js');
 describe('Node Extra Credit Tests', () => {
 
   describe('`peopleGetter`', () => {
-    it('should be an `Object`', () => {
+    it('should be a `Function`', () => {
       const peopleGetter = nodeFuncs.peopleGetter;
       expect(peopleGetter).to.be.an('function');
     });
   });
 
   describe('`peopleSetter`', () => {
-    it('should be an `Object`', () => {
+    it('should be a `Function`', () => {
       const peopleSetter = nodeFuncs.peopleSetter;
       expect(peopleSetter).to.be.an('function');
     });
