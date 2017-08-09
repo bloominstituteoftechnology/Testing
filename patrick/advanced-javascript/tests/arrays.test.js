@@ -18,11 +18,9 @@ describe('Arrays', () => {
   describe('`each`', () => {
     const each = arrayFunctions.each;
     it('should be a function', () => {
-      // const each = arrayFunctions.each;
       expect(each).to.be.a('function');
     });
     it('should invoke the callback with `SOMETHING AMAZING`', () => {
-      // const each = arrayFunctions.each;
       const cb = sinon.spy();
       const elements = [ 1, 2, 3 ];
       each(elements, cb);
@@ -31,14 +29,12 @@ describe('Arrays', () => {
     	}
     });
     it('should invoke a callback `ONCE`', () => {
-      // const each = arrayFunctions.each;
       const cb = sinon.spy();
       const elements = [ 1 ];
       each(elements, cb);
       expect(cb).to.have.been.calledOnce;
     });
     it('should invoke a callback `THRICE`', () => {
-      // const each = arrayFunctions.each;
       const cb = sinon.spy();
       const elements = [ 1, 2, 3 ];
       each(elements, cb);
