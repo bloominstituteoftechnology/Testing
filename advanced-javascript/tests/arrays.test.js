@@ -18,44 +18,53 @@ describe('Arrays', () => {
   describe('`each`', () => {
     it('should be a function', () => {
       const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
     // begin here
+    it('should return an array', () => {
+      const each = arrayFunctions.each;
+      expect(each([1, 2, 3], sinon.spy)).to.be.an('array');
+    });
   });
 
   describe('`map`', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
     });
+    it('should return an array', () => {});
   });
 
   describe('`reduce`', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
     });
+    it('should return an array', () => {});
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
     });
+    it('should return an array', () => {});
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
     });
+    it('should return an array', () => {});
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
+    it('should return an array', () => {});
   });
   
 });
