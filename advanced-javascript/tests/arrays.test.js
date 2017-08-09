@@ -18,55 +18,43 @@ describe('Arrays', () => {
   describe('`each`', () => {
     it('should be a function', () => {
       const each = arrayFunctions.each;
-      expect(each).to.be.a('function');
+      expect(each).to.be.a('string');
     });
     // begin here
-    it('should invoke the cb twice', () => {
-      const each = arrayFunctions.each;
-      const cb = sinon.spy();
-      each([1, 2], cb);
-      expect(cb).to.have.been.calledTwice;
-    });
-    it('should invoke the cb seven times', () => {
-      const each = arrayFunctions.each;
-      const cb = sinon.spy();
-      each([1, 2, 3, 4, 5, 6, 7], cb);
-      expect(cb).to.have.callCount(7);
-    });
   });
 
   describe('`map`', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(map).to.be.an('function');
+      expect(map).to.be.an('object');
     });
   });
 
   describe('`reduce`', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('function');
+      expect(reduce).to.be.a('number');
     });
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('function');
+      expect(find).to.be.an('array');
     });
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('function');
+      expect(filter).to.be.a('null');
     });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('function');
+      expect(flatten).to.be.a('promise');
     });
   });
   
