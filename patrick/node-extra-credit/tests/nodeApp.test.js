@@ -17,16 +17,19 @@ const nodeFuncs = require('../src/nodeApp.js');
 describe('Node Extra Credit Tests', () => {
 
   describe('`peopleGetter`', () => {
+    const peopleGetter = nodeFuncs.peopleGetter;
     it('should be a `Function`', () => {
-      const peopleGetter = nodeFuncs.peopleGetter;
-      expect(peopleGetter).to.be.an('function');
+      expect(peopleGetter).to.be.a('function');
+    });
+    it('should return an `Array`', () => {
+      expect(peopleGetter()).to.be.an('array');
     });
   });
 
   describe('`peopleSetter`', () => {
     it('should be a `Function`', () => {
       const peopleSetter = nodeFuncs.peopleSetter;
-      expect(peopleSetter).to.be.an('function');
+      expect(peopleSetter).to.be.a('function');
     });
   });
 
