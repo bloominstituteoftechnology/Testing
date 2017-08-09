@@ -1,36 +1,36 @@
 // const assert = require('chai').expect; // <--- was this intentional?
 const expect = require('chai').expect;
 
-const funcs = require('../src/closure');
+const closureFunc = require('../src/closure');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
-describe('Closure', () => {
+describe('Advanced-JS: Closure', () => {
 
   describe('`counter`', () => {
     it('should be a function', () => {
-      const counter = funcs.counter;
+      const counter = closureFunc.counter;
       expect(counter).to.be.a('function');
     });
   });
 
   describe('`counterFactory`', () => {
     it('should be a function', () => {
-      const counterFactory = funcs.counterFactory;
+      const counterFactory = closureFunc.counterFactory;
       expect(counterFactory).to.be.a('function');
     });
   });
 
   describe('`cacheFunction`', () => {
     it('should be a function', () => {
-      const cacheFunction = funcs.cacheFunction;
+      const cacheFunction = closureFunc.cacheFunction;
       expect(cacheFunction).to.be.a('function');
     });
   });
 
   describe('`limitFunctionCallCount`', () => {
     it('should be a function', () => {
-      const limitFunctionCallCount = funcs.limitFunctionCallCount;
+      const limitFunctionCallCount = closureFunc.limitFunctionCallCount;
       expect(limitFunctionCallCount).to.be.a('function');
     });
   });

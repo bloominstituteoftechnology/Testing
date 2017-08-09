@@ -13,7 +13,7 @@ chai.use(sinonChai);
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
 
-describe('Arrays', () => {
+describe('Advanced-JS: Arrays', () => {
 
   describe('`each`', () => {
     const each = arrayFunctions.each;
