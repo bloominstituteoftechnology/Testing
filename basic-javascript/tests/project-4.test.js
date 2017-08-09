@@ -52,4 +52,61 @@ describe('Project-4 Functions', () => {
       assert(callback.calledWith(5));
     });
   });
+  describe('`getUserConstructor`', () => {
+    it('should invoke the callback on each array element', () => {
+      const getUserConstructor = funcs.getUserConstructor;
+      //const spy1 = sinon.spy(getUserConstructor);
+      const User = getUserConstructor();
+      // spy for User function
+      const user1 = new User({
+        username: 'austenIsAwesome',
+        name: 'Austen Allred',
+        email: 'austen@lambdaschool.com',
+        password: '123LambdaSchoolRocks!',
+      });
+      let spy = sinon.spy(user1, 'sayHi');
+      assert.equal(user1.username, 'austenIsAwesome');
+      assert.equal(user1.name, 'Austen Allred');
+      assert.equal(user1.email, 'austen@lambdaschool.com');
+      assert.equal(user1.password, '123LambdaSchoolRocks!');
+      user1.sayHi();
+      assert.equal(spy.returnValues[0], 'Hello, my name is Austen Allred');
+    });
+  });
+  describe('`addPrototypeMethod`', () => {
+    it('should add sayHi to User', () => {
+      const addPrototypeMethod = funcs.addPrototypeMethod;
+      const User = function User(userObj) {
+        this.username = userObj.username;
+      };
+      addPrototypeMethod(User);
+      let newUser = new User({username: 'Bob'});
+      let spy = sinon.spy(newUser, 'sayHi');
+      newUser.sayHi();
+      assert.equal(spy.returnValues[0], 'Hello World!');
+    });
+  });
+  describe('`addReverseString`', () => {
+    it('should invoke the callback', () => {
+      const addReverseString = funcs.addReverseString;
+      addReverseString();
+      const dumb = 'dumb';
+      const result = dumb.reverse();
+      assert.equal(result, 'bmud');
+    });
+  });
+  describe('`nFactorial`', () => {
+    it('should provide the correct result', () => {
+      const nFactorial = funcs.nFactorial;
+      const number = 5;
+      const result = nFactorial(5);
+      assert.equal(result, 120);
+    });
+  });
+  describe('`cacheFunction`', () => {
+    it('should return the callback function', () => {
+      const cacheFunction = funcs.cacheFunction;
+      const callback = sinon.spy();
+    });
+  });
 });
