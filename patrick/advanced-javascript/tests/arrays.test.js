@@ -26,7 +26,7 @@ describe('Arrays', () => {
       each(elements, cb);
       for (let i = 0; i < elements.length; i++) {
     		expect(cb).to.have.been.calledWith(elements[i]);
-    	}
+    	};
     });
     it('should invoke a callback `ONCE`', () => {
       const cb = sinon.spy();
@@ -43,9 +43,33 @@ describe('Arrays', () => {
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
       expect(map).to.be.an('function');
+    });
+    it('should return an `Array`', () => {
+      const cb = sinon.spy();
+      const elements = [ 1 ];
+      expect(map(elements, cb)).to.be.an('array');
+    });
+    it('should return a different array than passed in', () => {
+      const cb = sinon.spy();
+      const elements = [ 1, 2, 3 ];
+      expect(map(elements, cb)).to.not.equal(elements);
+    });
+    it('should invoke the mapped callback with `SOMETHING AMAZING`', () => {
+      const cb = sinon.spy();
+      const elements = [ 1, 2, 3 ];
+      map(elements, cb);
+      for (let i = 0; i < elements.length; i++) {
+        expect(cb).to.have.been.calledWith(elements[i]);
+      };
+    });
+    it('should invoke a callback `THRICE`', () => {
+      const cb = sinon.spy();
+      const elements = [ 1, 2, 3 ];
+      map(elements, cb);
+      expect(cb).to.have.been.calledThrice;
     });
   });
 
