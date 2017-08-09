@@ -17,9 +17,9 @@ const peopleGetter = () => {
 };
 
 const peopleSetter = (obj) => {
-  const users = users;
-  users.push(obj);
-  return users;
+  const moreUsers = users;
+  moreUsers.push(obj);
+  return moreUsers;
 };
 
 
