@@ -12,6 +12,8 @@ chai.use(sinonChai);
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
+const elem = [1, 2, 3];
+const cb = sinon.spy();
 
 describe('Arrays', () => {
 
@@ -21,9 +23,12 @@ describe('Arrays', () => {
       expect(each).to.be.a('function');
     });
     // begin here
-    it('should return an array', () => {
+    it('should invoke the cb with array provided', () => {
       const each = arrayFunctions.each;
-      expect(each([1, 2, 3], sinon.spy)).to.be.an('array');
+      each(elem, cb);
+      for (let i = 0; i < elem.length; i++) {
+        expect(cb).to.be.calledWith(elem[i]);
+      }
     });
   });
 
@@ -32,7 +37,17 @@ describe('Arrays', () => {
       const map = arrayFunctions.map;
       expect(map).to.be.an('function');
     });
-    it('should return an array', () => {});
+    it('should return an array', () => {
+      const map = arrayFunctions.map;
+      expect(map([1, 2, 3], sinon.spy())).to.be.an('array');
+    });
+    it('should invoke the cb with array provided', () => {
+      const map = arrayFunctions.map;
+      map(elem, cb);
+      for (let i = 0; i < elem.length; i++) {
+        expect(cb).to.be.calledWith(elem[i]);
+      }
+    });
   });
 
   describe('`reduce`', () => {
@@ -40,7 +55,13 @@ describe('Arrays', () => {
       const reduce = arrayFunctions.reduce;
       expect(reduce).to.be.a('function');
     });
-    it('should return an array', () => {});
+    it('should invoke the cb with array provided', () => {
+      const reduce = arrayFunctions.reduce;
+      reduce(elem, cb);
+      for (let i = 0; i < elem.length; i++) {
+        expect(cb).to.be.calledWith(elem[i]);
+      }
+    });
   });
 
   describe('`find`', () => {
@@ -48,7 +69,13 @@ describe('Arrays', () => {
       const find = arrayFunctions.find;
       expect(find).to.be.an('function');
     });
-    it('should return an array', () => {});
+    it('should invoke the cb with array provided', () => {
+      const find = arrayFunctions.find;
+      find(elem, cb);
+      for (let i = 0; i < elem.length; i++) {
+        expect(cb).to.be.calledWith(elem[i]);
+      }
+    });
   });
 
   describe('`filter`', () => {
@@ -56,7 +83,13 @@ describe('Arrays', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
-    it('should return an array', () => {});
+    it('should invoke the cb with array provided', () => {
+      const filter = arrayFunctions.filter;
+      filter(elem, cb);
+      for (let i = 0; i < elem.length; i++) {
+        expect(cb).to.be.calledWith(elem[i]);
+      }
+    });
   });
 
   describe('`flatten`', () => {
@@ -64,7 +97,13 @@ describe('Arrays', () => {
       const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
     });
-    it('should return an array', () => {});
+    it('should invoke the cb with array provided', () => {
+      const flatten = arrayFunctions.flatten;
+      flatten(elem, cb);
+      for (let i = 0; i < elem.length; i++) {
+        expect(cb).to.be.calledWith(elem[i]);
+      }
+    });
   });
   
 });
