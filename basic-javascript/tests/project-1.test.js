@@ -1,15 +1,14 @@
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
 
-// we've gone ahead and gotten a start here for you, 
+// we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
-// first step is to make sure all these assertions work. 
+// first step is to make sure all these assertions work.
 // then make sure you have at least 2-3 more assertions for every function.
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
 
 describe('Project-1 Functions', () => {
-
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
@@ -77,7 +76,7 @@ describe('Project-1 Functions', () => {
   describe('`multiply`', () => {
     it('should be a function', () => {
       const multiply = funcs.multiply;
-      assert.typeOf(multiply, 'number')
+      assert.typeOf(multiply, 'number');
     });
   });
 
@@ -140,50 +139,49 @@ describe('Project-1 Functions', () => {
   describe('`addExclamationPoint`', () => {
     it('should be a function', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
-      assert.typeOf(addExclamationPoint, 'string')
+      assert.typeOf(addExclamationPoint, 'string');
     });
   });
 
   describe('`combineNames`', () => {
     it('should be a function', () => {
       const combineNames = funcs.combineNames;
-      assert.typeOf(combineNames, 'string')
+      assert.typeOf(combineNames, 'string');
     });
   });
 
   describe('`getGreeting`', () => {
     it('should be a function', () => {
       const getGreeting = funcs.getGreeting;
-      assert.typeOf(getGreeting, 'string')
+      assert.typeOf(getGreeting, 'string');
     });
   });
 
   describe('`getRectangleArea`', () => {
     it('should be a function', () => {
       const getRectangleArea = funcs.getRectangleArea;
-      assert.typeOf(getRectangleArea, 'string')
+      assert.typeOf(getRectangleArea, 'string');
     });
   });
 
   describe('`getTriangleArea`', () => {
     it('should be a function', () => {
       const getTriangleArea = funcs.getTriangleArea;
-      assert.typeOf(getTriangleArea, 'string')
+      assert.typeOf(getTriangleArea, 'string');
     });
   });
 
   describe('`getCircleArea`', () => {
     it('should be a function', () => {
       const getCircleArea = funcs.getCircleArea;
-      assert.typeOf(getCircleArea, 'string')
+      assert.typeOf(getCircleArea, 'string');
     });
   });
 
   describe('`getRectangularPrismVolume`', () => {
     it('should be a function', () => {
-      const getRectangularPrismVolum = funcs.getRectangularPrismVolum;
-      assert.typeOf(getRectangularPrismVolume, 'string')
+      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+      assert.typeOf(getRectangularPrismVolume, 'string');
     });
   });
-
 });

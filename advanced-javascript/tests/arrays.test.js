@@ -2,19 +2,19 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const arrayFunctions = require('../src/arrays');
+
 const expect = chai.expect;
 chai.use(sinonChai);
 
-// we've gone ahead and gotten a start here for you, 
+// we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
-// first step is to make sure all these assertions work. 
+// first step is to make sure all these assertions work.
 // then make sure you have at least 2-3 more assertions for every function.
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
 
 describe('Arrays', () => {
-
   describe('`each`', () => {
     it('should be a function', () => {
       const each = arrayFunctions.each;
@@ -57,5 +57,4 @@ describe('Arrays', () => {
       expect(flatten).to.be.a('promise');
     });
   });
-  
 });

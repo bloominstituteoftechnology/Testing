@@ -1,7 +1,7 @@
 const chai = require('chai');
-const expect = chai.expect;
 const nodeFuncs = require('../src/nodeApp.js');
 
+const expect = chai.expect;
 
 // for the extra credit you have two functions to provide test coverage for.
 // you'll check to see what the return data is coming back from your getter fn. eg. type, array of objects and length of the array etc.
