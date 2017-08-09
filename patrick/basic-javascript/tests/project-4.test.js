@@ -7,7 +7,7 @@ describe('Project-4 Functions', () => {
 
   describe('multiplyArguments', () => {
     const multiplyArguments = funcs.multiplyArguments;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(multiplyArguments);
     });
     it.skip('should return a `TYPE`', () => {
@@ -20,7 +20,7 @@ describe('Project-4 Functions', () => {
 
   describe('invokeCallback', () => {
     const invokeCallback = funcs.invokeCallback;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(invokeCallback);
     });
     it.skip('should return a `TYPE`', () => {
@@ -33,7 +33,7 @@ describe('Project-4 Functions', () => {
 
   describe('sumArray', () => {
     const sumArray = funcs.sumArray;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(sumArray);
     });
     it.skip('should return a `TYPE`', () => {
@@ -46,7 +46,7 @@ describe('Project-4 Functions', () => {
 
   describe('forEach', () => {
     const forEach = funcs.forEach;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(forEach);
     });
     it.skip('should return a `TYPE`', () => {
@@ -59,7 +59,7 @@ describe('Project-4 Functions', () => {
 
   describe('map', () => {
     const map = funcs.map;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(map);
     });
     it.skip('should return a `TYPE`', () => {
@@ -72,7 +72,7 @@ describe('Project-4 Functions', () => {
 
   describe('getUserConstructor', () => {
     const getUserConstructor = funcs.getUserConstructor;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(getUserConstructor);
     });
     it.skip('should return a `TYPE`', () => {
@@ -85,7 +85,7 @@ describe('Project-4 Functions', () => {
 
   describe('addPrototypeMethod', () => {
     const addPrototypeMethod = funcs.addPrototypeMethod;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(addPrototypeMethod);
     });
     it.skip('should return a `TYPE`', () => {
@@ -98,7 +98,7 @@ describe('Project-4 Functions', () => {
 
   describe('addReverseString', () => {
     const addReverseString = funcs.addReverseString;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(addReverseString);
     });
     it.skip('should return a `TYPE`', () => {
@@ -111,7 +111,7 @@ describe('Project-4 Functions', () => {
 
   describe('nFactorial', () => {
     const nFactorial = funcs.nFactorial;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(nFactorial);
     });
     it.skip('should return a `TYPE`', () => {
@@ -124,7 +124,7 @@ describe('Project-4 Functions', () => {
 
   describe('cacheFunction', () => {
     const cacheFunction = funcs.cacheFunction;
-    it.skip('should be a function', () => {
+    it('should be a function', () => {
       assert.isFunction(cacheFunction);
     });
     it.skip('should return a `TYPE`', () => {
