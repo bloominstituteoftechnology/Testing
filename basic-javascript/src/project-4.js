@@ -53,9 +53,6 @@ const addPrototypeMethod = (Constructor) => {
 };
 
 const addReverseString = () => {
-  String.prototype.reverse = function () {
-    return this.split('').reverse().join('');
-  };
 };
 
 const nFactorial = (n) => {
