@@ -18,7 +18,7 @@ const sumArray = (numbers, cb) => {
   for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
   }
-  cb(sum);
+  return cb(sum);
 };
 
 const forEach = (arr, cb) => {

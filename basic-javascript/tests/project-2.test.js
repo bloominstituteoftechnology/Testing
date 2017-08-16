@@ -29,12 +29,12 @@ describe('Project-2 Functions', () => {
     });
     it('should output a string', () => {
       const greeting = funcs.greeting;
-      const language = 'German'
+      const language = 'German';
       assert.typeOf(greeting(language), 'string');
     });
     it('should properly output a language', () => {
       const greeting = funcs.greeting;
-      const language = 'Spanish'
+      const language = 'Spanish';
       assert.equal(greeting(language), 'Hola!');
     });
   });
@@ -76,7 +76,7 @@ describe('Project-2 Functions', () => {
     });
     it('should properly check if the number is between 20 and 50', () => {
       const isInRange = funcs.isInRange;
-      const number = Math.floor(Math.random() * (50 - 20) + 20);
+      const number = Math.floor((Math.random() * (50 - 20)) + 20);
       assert.equal(isInRange(number), true);
     });
   });
@@ -115,6 +115,36 @@ describe('Project-2 Functions', () => {
       const fizzBuzz = funcs.fizzBuzz;
       const number = 11;
       assert.equal(fizzBuzz(number), number);
+    });
+  });
+  describe('`isPrime`', () => {
+    it('should be a function', () => {
+      const isPrime = funcs.isPrime;
+      assert.typeOf(isPrime, 'function');
+    });
+    it('should return false if the number being check is less than 0', () => {
+      const isPrime = funcs.isPrime;
+      const number = -1;
+      assert.equal(isPrime(number), false);
+    });
+    it('should return false if the number is 1', () => {
+      const isPrime = funcs.isPrime;
+      const number = 1;
+      assert.equal(isPrime(number), false);
+    });
+    it('should return false if the number is 0', () => {
+      const isPrime = funcs.isPrime;
+      const number = 0;
+      assert.equal(isPrime(number), false);
+    });
+    it('should return true if number is prime', () => {
+      const isPrime = funcs.isPrime;
+      assert.equal(isPrime(3), true);
+      assert.equal(isPrime(5), true);
+      assert.equal(isPrime(7), true);
+      assert.equal(isPrime(11), true);
+      assert.equal(isPrime(13), true);
+      assert.equal(isPrime(24), false);
     });
   });
 });
