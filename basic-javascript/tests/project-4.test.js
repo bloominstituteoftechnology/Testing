@@ -22,8 +22,8 @@ describe('Project-4 Functions', () => {
       const numbers3 = 3;
       const numbers4 = 4;
       const numbers5 = 5;
-      const numFactorial = 120
-      assert.equal(multiplyArguments(numbers1,numbers2,numbers3,numbers4,
+      const numFactorial = 120;
+      assert.equal(multiplyArguments(numbers1, numbers2, numbers3, numbers4,
         numbers5), 120);
     });
   });
@@ -38,7 +38,7 @@ describe('Project-4 Functions', () => {
   describe('`sumArray`', () => {
     it('should invoke callback function', () => {
       const sumArray = funcs.sumArray;
-      const numbersArray = [1,2,3,4]
+      const numbersArray = [1, 2, 3, 4];
       const cb = sinon.spy();
       sumArray(numbersArray, cb);
       expect(cb).to.have.callCount(1);
@@ -55,7 +55,7 @@ describe('Project-4 Functions', () => {
   describe('`forEach`', () => {
     it('should invoke callback function', () => {
       const forEach = funcs.forEach;
-      const numbersArray = [1,2,3,4]
+      const numbersArray = [1, 2, 3, 4];
       const cb = sinon.spy();
       forEach(numbersArray, cb);
       expect(cb).to.have.callCount(4);
@@ -64,24 +64,24 @@ describe('Project-4 Functions', () => {
   describe('`map`', () => {
     it('should invoke callback function', () => {
       const map = funcs.map;
-      const numbersArray = [1,2,3,4]
+      const numbersArray = [1, 2, 3, 4];
       const cb = sinon.spy();
       map(numbersArray, cb);
       expect(cb).to.have.callCount(4);
     });
     it('should return an array', () => {
       const map = funcs.map;
-      const numbersArray = [1,2,3,4]
+      const numbersArray = [1, 2, 3, 4];
       const cb = sinon.spy();
       assert.typeOf(map(numbersArray, cb), 'array');
     });
     it('should return an array with proper values', () => {
       const map = funcs.map;
-      const numbersArray = [1,2,3,4]
+      const numbersArray = [1, 2, 3, 4];
       const cb = (value) => {
         return value * 2;
-      }
-      expect(map(numbersArray,cb)).to.deep.equal([2,4,6,8]);
+      };
+      expect(map(numbersArray, cb)).to.deep.equal([2, 4, 6, 8]);
     });
   });
   describe('`getUserConstructor`', () => {
@@ -92,11 +92,32 @@ describe('Project-4 Functions', () => {
         name: 'Matt',
         email: 'mhigbee@superfriends.com',
         password: 'asdfkaasdfasdf'
-      }
+      };
       assert.typeOf(getUserConstructor(userObj), 'function');
     });
   });
-  //Go back and do addPrototypeMethod
+  // Go back and do addPrototypeMethod
+  describe('addPrototypeMethod', () => {
+    it('should add a method to constructor prototype', () => {
+      const addPrototypeMethod = funcs.addPrototypeMethod;
+      const propss = { name: 'Doc McStuffins', age: 22 };
+      const Person = function Person(name) {
+        this.name = name;
+      };
+      addPrototypeMethod(Person);
+      assert.typeOf(Person.prototype.sayHi, 'function');
+    });
+    it('should return the string \'Hello World!\'', () => {
+      const addPrototypeMethod = funcs.addPrototypeMethod;
+      const propss = { name: 'Doc McStuffins', age: 22 };
+      const Person = function Person(name) {
+        this.name = name;
+      };
+      addPrototypeMethod(Person);
+      assert.equal(Person.prototype.sayHi(), 'Hello World!');
+    });
+  });
+
   describe('`nFactorial`', () => {
     it('should return 1 if input is 1', () => {
       const nFactorial = funcs.nFactorial;
@@ -121,14 +142,16 @@ describe('Project-4 Functions', () => {
       expect(cacheFunction(5)).to.equal(15);
     });
     it('should cache function results', () => {
-      const cb = sinon.spy();
+      const cb = sinon.stub();
+      cb.withArgs('banana').returns(1);
+      cb.withArgs('apple').returns(2);
       const cacheFunction = funcs.cacheFunction(cb);
       cacheFunction('banana');
       cacheFunction('banana');
       cacheFunction('banana');
-      cacheFunction('banana');
-      cacheFunction('banana');
-      expect(cb).to.have.callCount(1);
+      cacheFunction('apple');
+      cacheFunction('apple');
+      expect(cb).to.have.callCount(2);
     });
   });
 });
