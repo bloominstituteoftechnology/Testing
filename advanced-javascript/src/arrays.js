@@ -28,14 +28,14 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
+  elements.forEach((element, item) => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
 };
 
 const flatten = (elements) => {
-  const flattenedArr = reduce(elements, (memo, item) => {
+  const flattenedArr = elements.reduce((memo, item) => {
     if (Array.isArray(item)) return memo.concat(flatten(item));
     return memo.concat(item);
   }, []);
