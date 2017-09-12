@@ -3,9 +3,10 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 
 const expect = chai.expect;
-const assert = chai.assert;
+
 chai.use(sinonChai);
 const funcs = require('../src/project-1');
+const assert = require('chai').assert;
 
 
 // we've gone ahead and gotten a start here for you,
@@ -27,7 +28,7 @@ describe('Project-1 Functions', () => {
     });
     it('should equal 80', () => {
       expect(funcs.multiplyByTen(8)).to.equal(80);
-    })
+    });
   });
 
   describe('`subtractFive`', () => {
@@ -233,7 +234,6 @@ describe('Project-1 Functions', () => {
     it('should return a first name and a last name joined by a space', () => {
       expect(funcs.combineNames('John', 'Doe')).to.equal('John Doe');
     });
-    
   });
 
   describe('`getGreeting`', () => {
