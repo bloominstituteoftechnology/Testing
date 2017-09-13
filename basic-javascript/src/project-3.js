@@ -83,11 +83,10 @@ const sumUserPostLikes = (user) => {
 };
 
 const addCalculateDiscountPriceMethod = (storeItem) => {
-  const calculateDiscountPrice = () => {
-    const discount = this.price * this.discountPercentage;
-    return this.price - discount;
+  storeItem.calculateDiscountPrice = () => {
+    const discount = storeItem.price * storeItem.discountPercentage;
+    return storeItem.price - discount;
   };
-  storeItem.calculateDiscountPrice = calculateDiscountPrice;
   return storeItem;
 };
 
