@@ -52,7 +52,7 @@ describe('Project-2 Functions', () => {
       expect(isTenOrFive('five')).to.equal(false);
     });
   });
-  
+
   describe('isInRange', () => {
     const isInRange = funcs.isInRange;
     it('should be a function', () => {
@@ -114,7 +114,7 @@ describe('Project-2 Functions', () => {
       assert.typeOf(returnFirst, 'function');
     });
     it('should return an array\'s first element', () => {
-      expect(returnFirst([0,1,2])).to.equal(0);
+      expect(returnFirst([0, 1, 2])).to.equal(0);
     });
     it('should return an array\'s first element', () => {
       expect(returnFirst([])).to.equal(undefined);
@@ -127,7 +127,7 @@ describe('Project-2 Functions', () => {
       assert.typeOf(returnLast, 'function');
     });
     it('should return an array\'s last element', () => {
-      expect(returnLast([0,1,2])).to.equal(2);
+      expect(returnLast([0, 1, 2])).to.equal(2);
     });
     it('should return an array\'s last element', () => {
       expect(returnLast([])).to.equal(undefined);
@@ -140,49 +140,114 @@ describe('Project-2 Functions', () => {
       assert.typeOf(getArrayLength, 'function');
     });
     it('should return an array\'s length', () => {
-      expect(getArrayLength([0,1,2])).to.equal(3);
+      expect(getArrayLength([0, 1, 2])).to.equal(3);
     });
     it('should return an array\'s length', () => {
       expect(getArrayLength([])).to.equal(0);
     });
   });
 
-  // describe('incrementByOne', () => {
-  //   const incrementByOne = funcs.incrementByOne;
-  //   it('should be a function', () => {
-  //     assert.typeOf(incrementByOne, 'function');
-  //   });
-  //   it('should increment each element in an array by one', () => {
-  //     expect(incrementByOne([0,1,2,3])).to.equal([1,2,3,4]);
-  //   });
-  //   it('should increment each element in an array by one', () => {
-  //     expect(incrementByOne([5])).to.equal([6]);
-  //   });
-  // });
+  describe('incrementByOne', () => {
+    const incrementByOne = funcs.incrementByOne;
+    it('should be a function', () => {
+      assert.typeOf(incrementByOne, 'function');
+    });
+    it('should increment each array element by one', () => {
+      expect(incrementByOne([0, 1, 2])).to.deep.equal([1, 2, 3]);
+    });
+    it('should increment each array element by one', () => {
+      expect(incrementByOne([])).to.deep.equal([]);
+    });
+  });
 
-  // describe('addItemToArray', () => {
-  //   const addItemToArray = funcs.addItemToArray;
-  //   it('should be a function', () => {
-  //     assert.typeOf(addItemToArray, 'function');
-  //   });
-  //   it('should add a item to an array', () => {
-  //     expect(funcs.addItemToArray([0,1,2], 3)).to.equal([0,1,2,3]);
-  //   });
-  //   it('should add an item to an array', () => {
-  //     expect(addItemToArray([], 0)).to.equal([0]);
-  //   });
-  // });
+  describe('addItemToArray', () => {
+    const addItemToArray = funcs.addItemToArray;
+    it('should be a function', () => {
+      assert.typeOf(addItemToArray, 'function');
+    });
+    it('should add a item to an array', () => {
+      expect(funcs.addItemToArray([0, 1, 2], 3)).to.deep.equal([0, 1, 2, 3]);
+    });
+    it('should add an item to an array', () => {
+      expect(addItemToArray([], 0)).to.deep.equal([0]);
+    });
+  });
 
-  // describe('addItemToFront', () => {
-  //   const addItemToFront = funcs.addItemToFront;
-  //   it('should be a function', () => {
-  //     assert.typeOf(addItemToFront, 'function');
-  //   });
-  //   it('should add an element to the front of an array', () => {
-  //     expect(addItemToFront([0,1,2], 3)).to.equal([3,0,1,2]);
-  //   });
-  //   it('should add an element to the front of an array', () => {
-  //     expect(addItemToFront([], 0)).to.equal([0]);
-  //   });
-  // });
+  describe('addItemToFront', () => {
+    const addItemToFront = funcs.addItemToFront;
+    it('should be a function', () => {
+      assert.typeOf(addItemToFront, 'function');
+    });
+    it('should add an element to the front of an array', () => {
+      expect(addItemToFront([0, 1, 2], 3)).to.deep.equal([3, 0, 1, 2]);
+    });
+    it('should add an element to the front of an array', () => {
+      expect(addItemToFront([], 0)).to.deep.equal([0]);
+    });
+  });
+
+  describe('wordsToSentence', () => {
+    const wordsToSentence = funcs.wordsToSentence;
+    it('should be a function', () => {
+      assert.typeOf(wordsToSentence, 'function');
+    });
+    it('should return a sentence', () => {
+      expect(wordsToSentence(['Hello', 'World'])).to.equal('Hello World');
+    });
+  });
+
+  describe('contains', () => {
+    const contains = funcs.contains;
+    it('should be a function', () => {
+      assert.typeOf(contains, 'function');
+    });
+    it('should return a boolean if contained', () => {
+      expect(contains([0, 1, 2], 2)).to.equal(true);
+    });
+    it('should return a boolean if contained', () => {
+      expect(contains([], 'Hello')).to.equal(false);
+    });
+  });
+
+  describe('addNumbers', () => {
+    const addNumbers = funcs.addNumbers;
+    it('should be a function', () => {
+      assert.typeOf(addNumbers, 'function');
+    });
+    it('should return a reduced array', () => {
+      expect(addNumbers([0, 1, 2])).to.equal(3);
+    });
+    it('should return a reduced array', () => {
+      expect(addNumbers([])).to.equal(0);
+    });
+  });
+
+  describe('averageTestScore', () => {
+    const averageTestScore = funcs.averageTestScore;
+    it('should be a function', () => {
+      assert.typeOf(averageTestScore, 'function');
+    });
+    it('should return the average test score', () => {
+      expect(averageTestScore([3, 3, 3, 3, 3, 3, 3, 3, 3])).to.equal(3);
+    });
+    it('should return the average test score', () => {
+      expect(averageTestScore([100, 80, 60])).to.equal(80);
+    });
+  });
+
+  describe('largestNumber', () => {
+    const largestNumber = funcs.largestNumber;
+    it('should be a function', () => {
+      assert.typeOf(largestNumber, 'function');
+    });
+    it('should return the largest number', () => {
+      expect(largestNumber([0, 1, 2])).to.equal(2);
+    });
+    it('should return the largest number', () => {
+      expect(largestNumber([])).to.equal(0);
+    });
+    it('should return the largest number', () => {
+      expect(largestNumber([-50, -25])).to.equal(0);
+    });
+  });
 });
