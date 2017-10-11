@@ -16,45 +16,100 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
-    // begin here
+    it('should run the callback', () => {
+      const tA = ['one', 'two', 'three'];
+      const cb = sinon.spy();
+      each(tA, cb);
+      expect(cb.called).to.equal(true);
+    });
+    it('should run the callback for each item', () => {
+      const tA = ['one', 'two', 'three'];
+      const cb = sinon.spy();
+      each(tA, cb);
+      expect(cb.callCount).to.equal(3);
+    });
+    it('should pass index to the callback', () => {
+      const tA = ['one', 'two', 'three'];
+      const indexes = [];
+      const cb = (element, index) => { 
+        indexes.push(index);
+      };
+      each(tA, cb);
+      expect(indexes.join()).to.equal([0, 1, 2].join());
+    });
+    it('should pass elements to the callback', () => {
+      const tA = ['one', 'two', 'three'];
+      const elements = [];
+      const cb = (element, index) => { 
+        elements.push(element);
+      };
+      each(tA, cb);
+      expect(elements.join()).to.equal(tA.join());
+    });
+  
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
+    const tA = ['one', 'two', 'three'];
+    const modded = ['one potato', 'two potato', 'three potato'];
+    const cb = (item) => {
+      item = item + ' potato';
+      return item;
+    }
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
+    });
+    it('should return an array', () => {
+      const map = arrayFunctions.map;
+      expect(map(tA, cb)).to.be.an('array');
+    });
+    it('should return an array with correct cb mods', () => {
+      const map = arrayFunctions.map;
+      expect(map(tA, cb)).to.deep.equal(modded);
+    });
+    it('should run the callback', () => {
+      const cbSpy = sinon.spy();
+      map(tA, cbSpy);
+      expect(cbSpy.called).to.equal(true);
+    });
+    it('should run the callback for each item', () => {
+      const cbSpy = sinon.spy();
+      map(tA, cbSpy);
+      expect(cbSpy.callCount).to.equal(3);
     });
   });
 
   describe('`reduce`', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
     });
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
     });
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
     });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
   });
 });
