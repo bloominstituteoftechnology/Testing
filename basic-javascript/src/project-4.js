@@ -53,8 +53,10 @@ const addPrototypeMethod = (Constructor) => {
 };
 
 const addReverseString = () => {
-  String.prototype.reverse = function () {
-    return this.split('').reverse().join('');
+  String.prototype.reverse = function reverse() {
+    return this.split('')
+      .reverse()
+      .join('');
   };
 };
 
@@ -88,5 +90,5 @@ module.exports = {
   addPrototypeMethod,
   addReverseString,
   nFactorial,
-  cacheFunction
+  cacheFunction,
 };
