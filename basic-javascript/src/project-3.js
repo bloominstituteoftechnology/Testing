@@ -4,7 +4,7 @@ const makeCat = (name, age) => {
     age,
     meow() {
       return 'Meow!';
-    }
+    },
   };
   return newCat;
 };
@@ -31,7 +31,7 @@ const newUser = (name, email, password) => {
   const object = {
     name,
     email,
-    password
+    password,
   };
   return object;
 };
@@ -105,5 +105,5 @@ module.exports = {
   addFriend,
   setUsersToPremium,
   sumUserPostLikes,
-  addCalculateDiscountPriceMethod
+  addCalculateDiscountPriceMethod,
 };
