@@ -16,45 +16,90 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
-    // begin here
+    it('should call the cb for each element of array with the element value and index', () => {
+      const spy = sinon.spy();
+      const arr = [1, 2, 4];
+      each(arr, spy);
+      arr.forEach((v, i) => {
+        expect(spy.getCall(i)).to.have.be.calledWith(arr[i], i);
+      });
+      expect(spy).to.have.been.callCount(arr.length);
+    });
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
+    });
+    it('map should call callback for each element', () => {
+      const spy = sinon.spy();
+      const arr = [1, 2, 3];
+      const mapped = map(arr, spy);
+      mapped.forEach((dummy, i) => {
+        expect(spy.getCall(i)).to.have.be.calledWith(arr[i]);
+      });
+      expect(spy).to.have.been.callCount(arr.length);
     });
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
+    });
+    it('reduce should call callback for each element', () => {
+      const add = (memo, item) => {
+        return memo + item;
+      };
+      const arr = [1, 2, 3, 4];
+      expect(reduce(arr, add)).to.be.eq(10);
+      const multiply = (memo, item) => {
+        return memo * item;
+      };
+      expect(reduce(arr, multiply, 5)).to.be.eq(120);
     });
   });
 
   describe('`find`', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
+    });
+    it('should find the matching value', () => {
+      const spy = sinon.stub();
+      spy.withArgs(4).returns(true);
+      const arr = [1, 2, 3, 4, 5, 6];
+      expect(find(arr, spy)).to.be.eq(4);
     });
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
+    });
+    it('should find the matching values', () => {
+      const spy = sinon.stub();
+      spy.withArgs(4).returns(true);
+      spy.withArgs(6).returns(true);
+      const arr = [1, 2, 3, 4, 5, 6];
+      expect(filter(arr, spy)).to.be.eql([4, 6]);
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
+    });
+    it('should flatten array', () => {
+      const arr = [1, 2, [3, 4], 5, [6, [7, 8, 9]]];
+      expect(flatten(arr)).to.be.eql([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
   });
 });

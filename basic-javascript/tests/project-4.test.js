@@ -65,7 +65,7 @@ describe('Project-4 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(map, 'function');
     });
-    it('foreach should call callback for each element', () => {
+    it('map should call callback for each element', () => {
       const spy = sinon.spy();
       const arr = [1, 2, 3];
       const mapped = map(arr, spy);
