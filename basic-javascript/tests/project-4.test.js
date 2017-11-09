@@ -77,27 +77,19 @@ describe('Project-4 Functions', () => {
   });
   describe('getUserConstructor', () => {
     const getUserConstructor = funcs.getUserConstructor;
-    let User = getUserConstructor();
+    const User = getUserConstructor();
     it('should be a function', () => {
       assert.typeOf(User, 'function');
     });
-    const uthis = {
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      sayHi: User.sayHi
-    };
-    User = User.bind(uthis);
-    it('User', () => {
-      User({
+    it('User tests', () => {
+      const Mark = new User({
         username: 'Mark User',
         name: 'Mark',
         email: 'Mark@email',
         password: 'testMarkPassord'
       });
-      expect(uthis.sayHi()).to.be.eq('Hello, my name is Mark');
-      expect(uthis.username).to.be.eq('Mark User');
+      expect(Mark.sayHi()).to.be.eq('Hello, my name is Mark');
+      expect(Mark.username).to.be.eq('Mark User');
     });
   });
   describe('addPrototypeMethod', () => {
