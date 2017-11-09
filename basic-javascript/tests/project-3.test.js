@@ -66,7 +66,7 @@ describe('Project-3 Functions', () => {
     });
     it('should return a number', () => {
       const multiplyMysteryNumberByFive = funcs.multiplyMysteryNumberByFive;
-      assert.isNaN(multiplyMysteryNumberByFive({ mysteryNumber: "test" }));
+      assert.isNaN(multiplyMysteryNumberByFive({ mysteryNumber: 'test' }));
     });
     it('should multiply mystery number by five', () => {
       const multiplyMysteryNumberByFive = funcs.multiplyMysteryNumberByFive;
@@ -137,6 +137,41 @@ describe('Project-3 Functions', () => {
       const hasProperty = funcs.hasProperty;
       assert.isFalse(hasProperty({ prop: 'value' }, 'id'));
       assert.isTrue(hasProperty({ prop: 43 }, 'prop'));
+    });
+  });
+
+  describe('`verifyPassword`', () => {
+    it('should be a function', () => {
+      const verifyPassword = funcs.verifyPassword;
+      assert.isFunction(verifyPassword);
+    });
+    it('should return a boolean', () => {
+      const verifyPassword = funcs.verifyPassword;
+      assert.isBoolean(verifyPassword({ password: 'qwerty' }, 'uiop'));
+    });
+    it('should verify password', () => {
+      const verifyPassword = funcs.verifyPassword;
+      assert.isFalse(verifyPassword({ password: 'qwerty' }, 'uiop'));
+      assert.isTrue(verifyPassword({ password: 'qwerty' }, 'qwerty'));
+    });
+  });
+
+  describe('`updatePassword`', () => {
+    it('should be a function', () => {
+      const updatePassword = funcs.updatePassword;
+      assert.isFunction(updatePassword);
+    });
+    it('should return a boolean', () => {
+      const updatePassword = funcs.updatePassword;
+      assert.isObject(updatePassword({ password: 'qwerty' }, 'uiop'));
+    });
+    it('should check if password was updated', () => {
+      const updatePassword = funcs.updatePassword;
+      const object = {
+        password: 'qwerty'
+      };
+      updatePassword(object, '1234');
+      assert.strictEqual(object.password, '1234');
     });
   });
 });
