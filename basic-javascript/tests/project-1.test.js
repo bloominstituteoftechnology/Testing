@@ -163,6 +163,9 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function');
+      assert.equal(multiply(1, 0), 0);
+      assert.equal(multiply(2, 45), 90);
+      assert.equal(multiply(Infinity, Infinity), Infinity);
     });
   });
 
@@ -177,6 +180,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
+      assert.equal(isEven(2), true);
+      assert.equal(isEven(3), false);
     });
   });
 
@@ -184,6 +189,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
+      assert.equal(isOdd(1), true);
+      assert.equal(isOdd(2), false);
     });
   });
 
@@ -191,6 +198,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const square = funcs.square;
       assert.typeOf(square, 'function');
+      assert.equal(square(2), 4);
+      assert.equal(square(3), 9);
     });
   });
 
@@ -198,6 +207,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const cube = funcs.cube;
       assert.typeOf(cube, 'function');
+      assert.equal(cube(2), 8);
+      assert.equal(cube(3), 27);
     });
   });
 
@@ -205,6 +216,7 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
+      assert.equal(raiseToPower(2, 4), 16);
     });
   });
 
@@ -212,6 +224,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, 'function');
+      assert.equal(roundNumber(5.5), 6);
+      assert.equal(roundNumber(2.2), 2);
     });
   });
 
@@ -219,6 +233,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, 'function');
+      assert.equal(roundUp(2.2), 3);
+      assert.equal(roundUp(1.01), 2);
     });
   });
 
@@ -226,6 +242,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
       assert.typeOf(addExclamationPoint, 'function');
+      assert.equal(addExclamationPoint('yes'), 'yes!');
+      assert.equal(addExclamationPoint('what?'), 'what?!');
     });
   });
 
@@ -233,6 +251,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const combineNames = funcs.combineNames;
       assert.typeOf(combineNames, 'function');
+      assert.equal(combineNames('wallace', 'gromit'), 'wallace gromit');
+      assert.equal(combineNames('mr.', 'x'), 'mr. x');
     });
   });
 
@@ -240,6 +260,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const getGreeting = funcs.getGreeting;
       assert.typeOf(getGreeting, 'function');
+      assert.equal(getGreeting('Mr. Spoon'), 'Hello Mr. Spoon!');
+      assert.equal(getGreeting('Button Moon'), 'Hello Button Moon!');
     });
   });
 
@@ -247,6 +269,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const getRectangleArea = funcs.getRectangleArea;
       assert.typeOf(getRectangleArea, 'function');
+      assert.equal(getRectangleArea(7, 5), 35);
+      assert.equal(getRectangleArea(10, 1), 10);
     });
   });
 
@@ -254,6 +278,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const getTriangleArea = funcs.getTriangleArea;
       assert.typeOf(getTriangleArea, 'function');
+      assert.equal(getTriangleArea(7, 5), 17.5);
+      assert.equal(getTriangleArea(10, 100), 500);
     });
   });
 
@@ -261,6 +287,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const getCircleArea = funcs.getCircleArea;
       assert.typeOf(getCircleArea, 'function');
+      assert.equal(getCircleArea(3.5), 38.48451000647496);
+      assert.equal(getCircleArea(8), 201.06192982974676);
     });
   });
 
@@ -268,6 +296,8 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
       assert.typeOf(getRectangularPrismVolume, 'function');
+      assert.equal(getRectangularPrismVolume(4, 5, 7), 140);
+      assert.equal(getRectangularPrismVolume(8, 10, 14), 1120);
     });
   });
 });
