@@ -9,7 +9,7 @@ const multiplyArguments = (...args) => {
   return argumentsSum;
 };
 
-const invokeCallback = (cb) => {
+const invokeCallback = cb => {
   cb();
 };
 
@@ -53,8 +53,10 @@ const addPrototypeMethod = (Constructor) => {
 };
 
 const addReverseString = () => {
-  String.prototype.reverse = function () {
-    return this.split('').reverse().join('');
+  String.prototype.reverse = function x() {
+    return this.split('')
+      .reverse()
+      .join('');
   };
 };
 
