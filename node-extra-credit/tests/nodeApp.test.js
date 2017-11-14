@@ -10,3 +10,34 @@ const expect = chai.expect;
 // this isn't a real live api, you'd normally have to deal with some async actions etc. for this, you'll simply be updating a static array of users.
 
 // have fun!
+describe('peopleGetter', () => {
+  it('should be a function', () => {
+    const peopleGetter = nodeFuncs.peopleGetter;
+    expect(peopleGetter).to.be.a('function');
+  });
+  it('should return an array of users', () => {
+    const peopleGetter = nodeFuncs.peopleGetter;
+    const people = peopleGetter();
+    expect(people).to.be.an('array');
+  });
+});
+describe('peopleSetter', () => {
+  it('should be a function', () => {
+    const peopleSetter = nodeFuncs.peopleSetter;
+    expect(peopleSetter).to.be.a('function');
+  });
+  it('should add a user to the data', () => {
+    const peopleSetter = nodeFuncs.peopleSetter;
+    const peopleGetter = nodeFuncs.peopleGetter;
+    const currentUsers = peopleGetter();
+
+    const user = {
+      id: currentUsers.length + 1,
+      first_name: 'Christian',
+      last_name: 'Franco',
+      email: 'contact@francoslab.com'
+    };
+    const newUsers = peopleSetter(user);
+    expect(newUsers.length).to.be.equal(currentUsers.length + 1);
+  });
+});
