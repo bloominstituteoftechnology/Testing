@@ -13,8 +13,8 @@ const map = (elements, cb) => {
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-  each((element, item) => {
-    memo = cb(memo, item);
+  each(elements, (element, i) => {
+    memo = cb(memo, element);
   });
   return memo;
 };
@@ -28,8 +28,8 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
-    if (cb(item)) filteredValues.push(item);
+  each(elements, (element, i) => {
+    if (cb(element)) filteredValues.push(element);
   });
   return filteredValues;
 };
