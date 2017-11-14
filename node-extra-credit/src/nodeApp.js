@@ -1,4 +1,4 @@
-const users = [
+let users = [
   { id: 1, first_name: 'Tilly', last_name: 'Bradborne', email: 'tbradborne0@wordpress.org' },
   { id: 2, first_name: 'Lesli', last_name: 'Gammett', email: 'lgammett1@xinhuanet.com' },
   { id: 3, first_name: 'Sylvester', last_name: 'Aston', email: 'saston2@wikipedia.org' },
@@ -17,7 +17,7 @@ const peopleGetter = () => {
 };
 
 const peopleSetter = (obj) => {
-  users.push(obj);
+  users = [...users, obj];
   return users;
 };
 
