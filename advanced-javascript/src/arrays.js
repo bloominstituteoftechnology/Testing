@@ -34,11 +34,15 @@ const filter = (elements, cb) => {
   return filteredValues;
 };
 
-const flatten = (elements) => {
-  const flattenedArr = reduce(elements, (memo, item) => {
-    if (Array.isArray(item)) return memo.concat(flatten(item));
-    return memo.concat(item);
-  }, []);
+const flatten = elements => {
+  const flattenedArr = reduce(
+    elements,
+    (memo, item) => {
+      if (Array.isArray(item)) return memo.concat(flatten(item));
+      return memo.concat(item);
+    },
+    []
+  );
   return flattenedArr;
 };
 
