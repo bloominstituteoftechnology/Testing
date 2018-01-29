@@ -8,34 +8,39 @@ describe('keys', () => {
       assert(keys).to.be.a('function');
     });
   });
+  
   describe('values', () => {
     it('should be a function', () => {
       const values = objectFunctions.values;
       assert(values).to.be.a('function');
     });
   });
+  
   describe('mapObject', () => {
     it('should be a function', () => {
       const mapObject = objectFunctions.mapObject;
       assert(mapObject).to.be.a('function');
     });
   });
+  
   describe('pairs', () => {
     it('should be a function', () => {
       const pairs = objectFunctions.pairs;
       assert(pairs).to.be.a('function');
     });
   });
+  
   describe('invert', () => {
     it('should be a function', () => {
       const invert = objectFunctions.invert;
       assert(invert).to.be.a('function');
     });
   });
+  
   describe('defaults', () => {
     it('should be a function', () => {
       const defaults = objectFunctions.defaults;
       assert(defaults).to.be.a('function');
     });
   });
-  
+});
