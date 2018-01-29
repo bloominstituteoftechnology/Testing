@@ -338,11 +338,11 @@ describe("Project-1 Functions", () => {
     it("should be a function", () => {
       assert.typeOf(getCircleArea, "function");
     });
-    it("should return the area of a circle by multiplying 0.5 base x height", () => {
-      assert.equal(getTriangleArea(5, 10), 25);
+    it("should return the area of a circle by squaring the radius and multiplying by PI", () => {
+      assert.equal(getCircleArea(5), Math.PI * 5 * 5);
     });
     it("should be a type of number", () => {
-      assert.typeOf(getTriangleArea(5, 10), "number");
+      assert.typeOf(getCircleArea(5), "number");
     });
   });
 
@@ -350,6 +350,12 @@ describe("Project-1 Functions", () => {
     const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
     it("should be a function", () => {
       assert.typeOf(getRectangularPrismVolume, "function");
+    });
+    it("should return the rectangular prism volume by multiplying 3 numbers together (lxwxh)", () => {
+      assert.equal(getRectangularPrismVolume(3, 5, 4), 60);
+    });
+    it("should be a type of number", () => {
+      assert.typeOf(getRectangularPrismVolume(5, 10, 6), "number");
     });
   });
 });
