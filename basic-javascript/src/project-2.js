@@ -7,7 +7,7 @@ const getBiggest = (x, y) => {
   return y;
 };
 
-const greeting = language => {
+const greeting = (language) => {
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -18,28 +18,28 @@ const greeting = language => {
   }
 };
 
-const isTenOrFive = num => {
+const isTenOrFive = (num) => {
   if (num === 10 || num === 5) {
     return true;
   }
   return false;
 };
 
-const isInRange = num => {
+const isInRange = (num) => {
   if (num < 50 && num > 20) {
     return true;
   }
   return false;
 };
 
-const isInteger = num => {
+const isInteger = (num) => {
   if (Math.floor(num) === num) {
     return true;
   }
   return false;
 };
 
-const fizzBuzz = num => {
+const fizzBuzz = (num) => {
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -50,7 +50,7 @@ const fizzBuzz = num => {
   return num;
 };
 
-const isPrime = num => {
+const isPrime = (num) => {
   if (num < 0) {
     return false;
   }
@@ -65,19 +65,19 @@ const isPrime = num => {
   return true;
 };
 
-const returnFirst = arr => {
+const returnFirst = (arr) => {
   return arr[0];
 };
 
-const returnLast = arr => {
+const returnLast = (arr) => {
   return arr[arr.length - 1];
 };
 
-const getArrayLength = arr => {
+const getArrayLength = (arr) => {
   return arr.length;
 };
 
-const incrementByOne = arr => {
+const incrementByOne = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -94,7 +94,7 @@ const addItemToFront = (arr, item) => {
   return arr;
 };
 
-const wordsToSentence = words => {
+const wordsToSentence = (words) => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
@@ -119,7 +119,7 @@ const contains = (arr, item) => {
   return false;
 };
 
-const addNumbers = numbers => {
+const addNumbers = (numbers) => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOfNumbers += numbers[i];
@@ -127,7 +127,7 @@ const addNumbers = numbers => {
   return sumOfNumbers;
 };
 
-const averageTestScore = testScores => {
+const averageTestScore = (testScores) => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
@@ -137,7 +137,7 @@ const averageTestScore = testScores => {
   return totalSumScores / numberOfScore;
 };
 
-const largestNumber = numbers => {
+const largestNumber = (numbers) => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {
