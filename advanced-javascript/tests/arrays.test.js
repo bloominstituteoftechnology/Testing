@@ -15,45 +15,90 @@ chai.use(sinonChai);
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
 
 describe('Arrays', () => {
+  let dataArray = [];
+
+  beforeEach(() => {
+    dataArray = ['apples', 'bananas', 'oranges', 'kiwi', 'strawberry'];
+  });
+
+  afterEach(() => {
+    dataArray = [];
+  });
+
   describe('`each`', () => {
+    const { each } = arrayFunctions;
+    const callback = sinon.spy();
+
     it('should be a function', () => {
-      const { each } = arrayFunctions;
       expect(each).to.be.a('function');
     });
-    // begin here
+
+    it('should execute callback function atleast once', () => {
+      each(dataArray, callback);
+      expect(callback).to.have.callCount(dataArray.length);
+    });
   });
 
   describe('`map`', () => {
+    const { map } = arrayFunctions;
+    const callback = sinon.spy();
+
     it('should be a function', () => {
-      const { map } = arrayFunctions;
       expect(map).to.be.an('function');
+    });
+
+    it('should execute callback function atleast once', () => {
+      const arrayMap = map(dataArray, callback);
+      expect(callback).to.have.callCount(dataArray.length);
+    });
+
+    it('should return new array', () => {
+      const arrayMap = map(dataArray, callback);
+      expect(arrayMap).to.have.lengthOf(dataArray.length);
+      expect(arrayMap).to.not.equal(dataArray);
     });
   });
 
   describe('`reduce`', () => {
+    const { reduce } = arrayFunctions;
+    const callback = sinon.spy();
+
     it('should be a function', () => {
-      const { reduce } = arrayFunctions;
       expect(reduce).to.be.a('function');
+    });
+
+    it('should execute callback function atleast once', () => {
+      const arrayReduced = reduce(dataArray, callback);
+      expect(callback).to.have.callCount(dataArray.length);
+    });
+
+    it('should return correct sum using reduce', () => {
+      const arraySum = reduce([1, 2, 3, 4], (a, b) => a + b);
+      expect(arraySum).to.be.a('number');
+      expect(arraySum).to.equal(10);
     });
   });
 
   describe('`find`', () => {
+    const { find } = arrayFunctions;
+
     it('should be a function', () => {
-      const { find } = arrayFunctions;
       expect(find).to.be.an('function');
     });
   });
 
   describe('`filter`', () => {
+    const { filter } = arrayFunctions;
+
     it('should be a function', () => {
-      const { filter } = arrayFunctions;
       expect(filter).to.be.a('function');
     });
   });
 
   describe('`flatten`', () => {
+    const { flatten } = arrayFunctions;
+
     it('should be a function', () => {
-      const { flatten } = arrayFunctions;
       expect(flatten).to.be.a('function');
     });
   });
