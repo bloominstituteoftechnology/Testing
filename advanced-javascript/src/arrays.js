@@ -13,6 +13,8 @@ const map = (elements, cb) => {
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
+  // there must be an error?
+  // each on line 3 is supposed to take a callback
   each((element, item) => {
     memo = cb(memo, item);
   });
