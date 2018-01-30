@@ -3,12 +3,12 @@
 
 /* eslint-disable no-unused-vars, arrow-body-style */
 
-const keys = obj => {
+const keys = (obj) => {
   return Object.keys(obj);
 };
 
-const values = obj => {
-  return Object.keys(obj).map(key => {
+const values = (obj) => {
+  return Object.keys(obj).map((key) => {
     return obj[key];
   });
 };
@@ -20,8 +20,8 @@ const mapObject = (obj, cb) => {
 
 const pairs = obj => Object.keys(obj).map(key => [key, obj[key]]);
 
-const invert = obj => {
-  Object.keys(obj).forEach(key => {
+const invert = (obj) => {
+  Object.keys(obj).forEach((key) => {
     const newKey = obj[key];
     obj[newKey] = key;
     delete obj[key];
@@ -30,7 +30,7 @@ const invert = obj => {
 };
 
 const defaults = (obj, defaultProps) => {
-  Object.keys(defaultProps).forEach(key => {
+  Object.keys(defaultProps).forEach((key) => {
     if (Object.prototype.hasOwnProperty.call(obj, key)) return;
     obj[key] = defaultProps[key];
   });
