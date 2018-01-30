@@ -13,7 +13,9 @@ const map = (elements, cb) => {
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-  each((element, item) => {
+  // there must be an error?
+  // each on line 3 is supposed to take a
+  each(elements, (item) => {
     memo = cb(memo, item);
   });
   return memo;
@@ -28,7 +30,8 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
+  // need elements to iterate over the array
+  each(elements, (item) => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
