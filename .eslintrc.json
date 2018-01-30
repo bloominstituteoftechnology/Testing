@@ -1,8 +1,11 @@
 {
   "extends": "airbnb-base",
-  "plugins": ["import"],
-  "consistent-return": 0,
-  "env": { "mocha": true },
+  "plugins": [
+    "import"
+  ],
+  "env": {
+    "mocha": true
+  },
   "rules": {
     "no-param-reassign": 0,
     "max-len": 0,
