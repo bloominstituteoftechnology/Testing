@@ -55,14 +55,13 @@ describe('Arrays', () => {
     });
     it('should call a callback for each item of the array and ', () => {
       const callBack = sinon.spy();
-      const array = [1, 2, 3];
       const callback = (total, sum) => total + 1;
-      expect(arrayFunctions.reduce(array, callback)).to.equal(7);
+      expect(arrayFunctions.reduce(testArray, callback)).to.equal(3);
     });
     it('should call a callback for each item of the array', () => {
       const callBack = sinon.spy();
       reduce(testArray, callBack);
-      expect(callBack).to.have.callCount(3);
+      expect(callBack).to.have.callCount(2);
     });
   });
 
@@ -80,11 +79,15 @@ describe('Arrays', () => {
 
   describe('`filter`', () => {
     const filter = arrayFunctions.filter;
+    const callBack = sinon.spy();
     it('should be a function', () => {
       expect(filter).to.be.a('function');
     });
+    const output = filter(testArray, callBack);
+    it('should return an array', () => {
+      expect(output).to.be.a('array');
+    });
     it('should call a callback for each item of the array', () => {
-      const callBack = sinon.spy();
       filter(testArray, callBack);
       expect(callBack).to.have.callCount(3);
     });
@@ -92,13 +95,16 @@ describe('Arrays', () => {
 
   describe('`flatten`', () => {
     const flatten = arrayFunctions.flatten;
+    const array = [[1, 2], [1, 3], [1, 4]];
+    const output = flatten(array);
     it('should be a function', () => {
       expect(flatten).to.be.a('function');
     });
-    it('should call a callback for each item of the array', () => {
-      const callBack = sinon.spy();
-      flatten(testArray, callBack);
-      expect(callBack).to.have.callCount(3);
+    it('should return an array', () => {
+      expect(output).to.be.a('array');
+    });
+    it('should flatten array', () => {
+      expect(output).to.eql([1, 2, 1, 3, 1, 4])
     });
   });
 
