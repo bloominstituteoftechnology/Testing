@@ -4,8 +4,8 @@
   "description": "Topics:",
   "main": "index.js",
   "scripts": {
-    "test": "eslint */tests/*.js && eslint */src/*.js && mocha -R nyan",
-    "watch": "mocha -R nyan --watch"
+    "test": "eslint */tests/*.js && eslint */src/*.js && mocha -R nyan */tests/*",
+    "watch": "mocha -R nyan --watch */tests/*"
   },
   "author": "",
   "license": "ISC",
