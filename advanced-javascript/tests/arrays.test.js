@@ -15,46 +15,98 @@ chai.use(sinonChai);
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
 
 describe('Arrays', () => {
+  let testArray = [];
+  beforeEach(() => {
+    testArray = [1, 2, 3];
+  });
+
+  afterEach(() => {
+    testArray = [];
+  });
+
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
-    // begin here
+    it('should call a callback for each item of the array', () => {
+      const callBack = sinon.spy();
+      each(testArray, callBack);
+      expect(callBack).to.have.callCount(3);
+    });
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
+    });
+    it('should call a callback for each item of the array', () => {
+      const callBack = sinon.spy();
+      map(testArray, callBack);
+      expect(callBack).to.have.callCount(3);
     });
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
+    });
+    it('should call a callback for each item of the array and ', () => {
+      const callBack = sinon.spy();
+      const callback = (total, sum) => total + 1;
+      expect(arrayFunctions.reduce(testArray, callback)).to.equal(3);
+    });
+    it('should call a callback for each item of the array', () => {
+      const callBack = sinon.spy();
+      reduce(testArray, callBack);
+      expect(callBack).to.have.callCount(2);
     });
   });
 
   describe('`find`', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
+    });
+    it('should call a callback for each item of the array', () => {
+      const callBack = sinon.spy();
+      find(testArray, callBack);
+      expect(callBack).to.have.callCount(3);
     });
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
+    const callBack = sinon.spy();
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
+    });
+    const output = filter(testArray, callBack);
+    it('should return an array', () => {
+      expect(output).to.be.a('array');
+    });
+    it('should call a callback for each item of the array', () => {
+      filter(testArray, callBack);
+      expect(callBack).to.have.callCount(3);
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
+    const array = [[1, 2], [1, 3], [1, 4]];
+    const output = flatten(array);
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
+    });
+    it('should return an array', () => {
+      expect(output).to.be.a('array');
+    });
+    it('should flatten array', () => {
+      expect(output).to.eql([1, 2, 1, 3, 1, 4])
     });
   });
+
 });
+
