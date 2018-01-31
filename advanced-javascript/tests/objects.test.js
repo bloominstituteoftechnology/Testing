@@ -60,10 +60,11 @@ describe('Objects', () => {
             expect(objectFunctions.mapObject).to.be.a('function');
         });
         it('should return key value pairs', () => {
-            console.log('test', objectFunctions.mapObject(testObject))
-            console.log('test', testObject);
-
-            expect(objectFunctions.mapObject(testObject)).to.eql([['one', 1], ['two', 2], ['three', 3], ['four', 4]]);
+            // console.log('mapobject', mapObject(testObject, callBack));
+            const callBack = sinon.spy();
+            const output = mapObject(testObject, callBack)
+            expect(output).to.eql(testObject);
+            expect(output.one).to.eql(testObject.one);
         });
         it('should invoke callback as many as there are items in the object', () => {
             const callBack = sinon.spy();
@@ -83,7 +84,9 @@ describe('Objects', () => {
         });
         it('should return key value pairs', () => {
             expect(pairs(testObject)).to.eql([['one', 1], ['two', 2], ['three', 3], ['four', 4]]);
+            expect(pairs(testObject)).to.have.lengthOf(4);
         });
+
     });
 
     describe('invert', () => {
@@ -95,7 +98,12 @@ describe('Objects', () => {
             expect(objectFunctions.invert(testObject)).to.be.a('object');
         });
         it('should return key value pairs inverted', () => {
-            expect(invert(testObject)).to.eql([['four', 4], ['three', 3], ['two', 2], ['one', 1]]);
+            const output = invert(testObject);
+            console.log('output', output);
+            expect(output['1']).to.eql('one');
+            expect(output['2']).to.eql('two');
+            expect(output['3']).to.eql('three');
+            expect(output['4']).to.eql('four');
         });
     });
 
@@ -105,6 +113,7 @@ describe('Objects', () => {
             expect(objectFunctions.defaults).to.be.a('function');
         });
         it('should return an object', () => {
+
             expect(objectFunctions.defaults(testObject)).to.be.a('object');
         });
         it('should return key value pairs defaultsed', () => {

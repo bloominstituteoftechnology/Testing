@@ -46,38 +46,39 @@ describe('Arrays', () => {
       each(testArray, callBack);
       expect(callBack).to.have.callCount(3);
     });
+  });
 
-    describe('`reduce`', () => {
-      it('should be a function', () => {
-        const reduce = arrayFunctions.reduce;
-        expect(reduce).to.be.a('function');
-      });
-      it('should call a callback for each item of the array and ', () => {
-        const array = [1, 2, 3];
-        const callback = (total, sum) => total + 1;
-        expect(arrayFunctions.reduce(array, callback)).to.equal(7);
-      });
+  describe('`reduce`', () => {
+    it('should be a function', () => {
+      const reduce = arrayFunctions.reduce;
+      expect(reduce).to.be.a('function');
     });
-
-
-    describe('`find`', () => {
-      it('should be a function', () => {
-        const find = arrayFunctions.find;
-        expect(find).to.be.an('function');
-      });
-    });
-
-    describe('`filter`', () => {
-      it('should be a function', () => {
-        const filter = arrayFunctions.filter;
-        expect(filter).to.be.a('function');
-      });
-    });
-
-    describe('`flatten`', () => {
-      it('should be a function', () => {
-        const flatten = arrayFunctions.flatten;
-        expect(flatten).to.be.a('function');
-      });
+    it('should call a callback for each item of the array and ', () => {
+      const array = [1, 2, 3];
+      const callback = (total, sum) => total + 1;
+      expect(arrayFunctions.reduce(array, callback)).to.equal(7);
     });
   });
+
+  describe('`find`', () => {
+    it('should be a function', () => {
+      const find = arrayFunctions.find;
+      expect(find).to.be.an('function');
+    });
+  });
+
+  describe('`filter`', () => {
+    it('should be a function', () => {
+      const filter = arrayFunctions.filter;
+      expect(filter).to.be.a('function');
+    });
+  });
+
+  describe('`flatten`', () => {
+    it('should be a function', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(flatten).to.be.a('function');
+    });
+  });
+
+});

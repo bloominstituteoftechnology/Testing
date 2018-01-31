@@ -22,11 +22,11 @@ const pairs = obj => Object.keys(obj).map(key => [key, obj[key]]);
 
 const invert = obj => {
   Object.keys(obj).forEach(key => {
-    const newKey = obj[key];
-    obj[newKey] = key;
-    delete obj[key];
+    const newKey = obj[key]; // access value of object property
+    obj[newKey] = key; // make values the keys and vice versa
+    delete obj[key]; // delete old key
   });
-  return obj;
+  return obj; // return new object
 };
 
 const defaults = (obj, defaultProps) => {
