@@ -1,3 +1,4 @@
+/* eslint-disable */
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
 
@@ -17,9 +18,9 @@ describe('Project-1 Functions', () => {
     it('should return a number', () => {
       const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen(5, 10), 'number');
-      });
+    });
     it('should be multiplyByTen', () => {
-      const multiplyByTen =funcs.multiplyByTen; 
+      const multiplyByTen = funcs.multiplyByTen;
       assert.strictEqual(multiplyByTen(5, 10), 50);
     });
   });
@@ -32,9 +33,9 @@ describe('Project-1 Functions', () => {
     it('should return a number', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive(10, 5), 'number');
-      });
+    });
     it('should be subtractFive', () => {
-      const subtractFive = funcs.subtractFive; 
+      const subtractFive = funcs.subtractFive;
       assert.strictEqual(subtractFive(10, 5), 5);
     });
   });
@@ -46,11 +47,11 @@ describe('Project-1 Functions', () => {
     });
     it('should return a number', () => {
       const areSameLength = funcs.areSameLength;
-      assert.typeOf(areSameLength(9, 9), 'number');
-  });
+      assert.typeOf(areSameLength(9, 9), 'boolean');
+    });
     it('should be areSameLength', () => {
       const areSameLength = funcs.areSameLength;
-      assert.strictEqualf(areSameLength(9, 9), 9);
+      assert.strictEqual(areSameLength('9', 'b'), true);
     });
   });
 
@@ -61,11 +62,11 @@ describe('Project-1 Functions', () => {
     });
     it('should return a number', () => {
       const areEqual = funcs.areEqual;
-      assert.typeOf(areEqual(9, 9), 'number');
-  });
+      assert.typeOf(areEqual(9, 9), 'boolean');
+    });
     it('should be areEqual', () => {
       const areEqual = funcs.areEqual;
-      assert.strictEqual(areEqual(9, 9), 9);
+      assert.strictEqual(areEqual(9, 9), true);
     });
   });
 
@@ -76,13 +77,9 @@ describe('Project-1 Functions', () => {
     });
     it('should return a number', () => {
       const lessThanNinety = funcs.lessThanNinety;
-      assert.typeOf(lessThanNinety(89), 'number');
-    it('should be lessThanNinety', () => {
-      const lessThanNinety = funcs.lessThanNinety;
-      assert.strictEqual(lessThanNinety(89), 89);
-      });
+      assert.typeOf(lessThanNinety(89), true);
     });
-
+  });
 
   describe('`greaterThanFifty`', () => {
     it('should be a function', () => {
@@ -92,7 +89,8 @@ describe('Project-1 Functions', () => {
     it('should return a number', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'number');
-    it('should be greaterThanFiftyr', () => {
+    });
+    it('should be greaterThanFifty', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.strictEqual(greaterThanFifty(51), 51);
     });
@@ -105,18 +103,19 @@ describe('Project-1 Functions', () => {
     });
     it('should return a number', () => {
       const add = funcs.add;
-      assert.typeOf(add (1), 'number');
+      assert.typeOf(add(1), 'number');
     });
     it('should be add', () => {
       const add = funcs.add;
-        assert.equal(add (1), 1);
-      });
+      assert.equal(add(1), 1);
+    });
+  });
 
   describe('`subtract`', () => {
     it('should be a function', () => {
       const subtract = funcs.subtract(2);
       assert.typeOf(subtract, 'number');
-      assert.equal(subtract (10, 2), 8);
+      assert.equal(subtract(10, 2), 8);
     });
   });
 
@@ -124,10 +123,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const divide = funcs.divide(2);
       assert.typeOf(divide, 'number');
-      assert.equal(divide (10, 2), 5);
+      assert.equal(divide(10, 2), 5);
     });
   });
-   
+
   describe('`multiply`', () => {
     it('should be a function', () => {
       const multiply = funcs.multiply(2);
@@ -139,11 +138,11 @@ describe('Project-1 Functions', () => {
   describe('`getRemainder`', () => {
     it('should be a function', () => {
       const getRemainder = funcs.getRemainder(2);
-      assert.typeOf(getRemainder(6%2), 'number');
+      assert.typeOf(getRemainder(6 % 2), 'number');
       assert.equal(remainder(6, 2), 0);
     });
   });
-   
+
   describe('`isEven`', () => {
     it('should be a function', () => {
       const isEven = funcs.isEven(2);
@@ -159,7 +158,7 @@ describe('Project-1 Functions', () => {
       assert.equal(isOdd(5), 5)
     });
   });
-   
+
   describe('`square`', () => {
     it('should be a function', () => {
       const square = funcs.square(2);
@@ -174,7 +173,7 @@ describe('Project-1 Functions', () => {
       assert.typeOf(cube, 'number');
       assert.equal(cube(5), 125);
     });
-    });
+  });
 
   describe('`raiseToPower`', () => {
     it('should be a function', () => {
@@ -182,7 +181,7 @@ describe('Project-1 Functions', () => {
       assert.typeOf(raiseToPower, 'number');
       assert.equal(cube(5), 125);
     });
-   
+  });
 
   describe('`roundNumber`', () => {
     it('should be a function', () => {
@@ -202,17 +201,17 @@ describe('Project-1 Functions', () => {
   describe('`addExclamationPoint`', () => {
     it('should be a function', () => {
       const addExclamationPoint = funcs.addExclamationPoint(2);
-      assert.typeOf(addExclamationPoint(16!), 'number');
-      assert.equal(addExclamationPoint(16!), 6);
+      assert.typeOf(addExclamationPoint(16), 'string');
+      assert.equal(addExclamationPoint(16), '16!');
     });
-    });
-   
+  })
+
   describe('`combineNames`', () => {
     it('should be a function', () => {
       const combineNames = funcs.combineNames(2);
       assert.typeOf(combineNames, 'number');
       assert.equal(combineNames(5.14), 6);
-  });
+    });
   });
 
   describe('`getGreeting`', () => {
@@ -221,36 +220,29 @@ describe('Project-1 Functions', () => {
       assert.typeOf(getGreeting, 'greeting');
       assert.equal(getGreeting("hello"), 6);
     });
-    });
-   
+  });
+
   describe('`getRectangleArea`', () => {
     it('should be a function', () => {
       const getRectangleArea = funcs.getRectangleArea(2);
-      assert.typeOf(getRectangleArea, 'number');
-      assert.equal(getRectangleArea(6), 6);
-    });
-  });
-
-  describe('`getTriangleArea`', () => {
-    it('should be a function', () => {
-      const getTriangleArea = funcs.getTriangleArea(2);
-      assert.typeOf(getTriangleArea, 'number');
-      assert.equal(getTriangleArea(64), 64);
+      assert.typeOf(getRectangleArea, 'function');
+      assert.equal(getRectangleArea(6), );
     });
   });
 
   describe('`getCircleArea`', () => {
     it('should be a function', () => {
-      const getCircleArea = funcs.getCircleArea(2);
-      assert.typeOf(getCircleArea, 'number');
-      assert.equal(getCircleArea(64), 64);
+      const getCircleArea = funcs.getCircleArea;
+      assert.typeOf(getCircleArea, 'function');
+      assert.equal(getCircleArea(8), 201.06192982974676);
     });
   });
 
   describe('`getRectangularPrismVolume`', () => {
     it('should be a function', () => {
-      const getRectangularPrismVolume = funcs.getRectangularPrismVolume(2);
-      assert.typeOf(getRectangularPrismVolume, 'number');
-      assert.equal(getRectangularPrismVolume(64), 64);
+      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+      assert.typeOf(getRectangularPrismVolume, 'function');
+      assert.equal(getRectangularPrismVolume(2, 2, 2), 8);
     });
   });
+});

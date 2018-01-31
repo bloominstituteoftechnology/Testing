@@ -20,7 +20,6 @@ describe('Arrays', () => {
       const each = arrayFunctions.each;
       expect(each).to.be.a('string');
     });
-    // begin here
   });
 
   describe('`map`', () => {
@@ -29,6 +28,7 @@ describe('Arrays', () => {
       expect(map).to.be.an('object');
     });
   });
+  it()
 
   describe('`reduce`', () => {
     it('should be a function', () => {
