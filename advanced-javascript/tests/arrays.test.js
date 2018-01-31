@@ -85,6 +85,22 @@ describe('Arrays', () => {
     it('should be a function', () => {
       expect(find).to.be.an('function');
     });
+
+    it('should find the item we are searching for', () => {
+      const callBack = (element) => {
+        return element === 'turtle' ? element : undefined;
+      };
+      const foundElement = find([1, 2, 'turtle', 'blue'], callBack);
+      expect(foundElement).to.equal('turtle');
+    });
+
+    it('should return an item with the same type as what we are seaching for', () => {
+      const callBack = (element) => {
+        return element === 3 ? element : undefined;
+      };
+      const foundElement = find([1, 3, 'orange', 'banana'], callBack);
+      expect(foundElement).to.be.a('number');
+    });
   });
 
   describe('`filter`', () => {
@@ -93,6 +109,18 @@ describe('Arrays', () => {
     it('should be a function', () => {
       expect(filter).to.be.a('function');
     });
+
+    it('should return items that meet the filter', () => {
+      const callBack = (element) => { return element > 10; };
+      const filteredArray = filter([1, 133, 244, 32, 3], callBack);
+      expect(filteredArray).to.eql([133, 244, 32]);
+    });
+
+    it('should return an array', () => {
+      const callBack = (element) => { return element > 1; };
+      const filteredArray = filter([1, 2, 3], callBack);
+      expect(filteredArray).to.be.an('array');
+    });
   });
 
   describe('`flatten`', () => {
@@ -100,6 +128,16 @@ describe('Arrays', () => {
 
     it('should be a function', () => {
       expect(flatten).to.be.a('function');
+    });
+
+    it('should flatten nested arrays', () => {
+      const flatArray = flatten([1, 2, [3, [4]]]);
+      expect(flatArray).to.eql([1, 2, 3, 4]);
+    });
+
+    it('should return an array', () => {
+      const flatArray = flatten([1, 2, [3, [4, [5]]]]);
+      expect(flatArray).to.be.an('array');
     });
   });
 });
