@@ -30,9 +30,9 @@ const invert = obj => {
 };
 
 const defaults = (obj, defaultProps) => {
-  Object.keys(defaultProps).forEach(key => {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) return;
-    obj[key] = defaultProps[key];
+  Object.keys(defaultProps).forEach(key => { // create an array of keys using defaultprops object
+    if (Object.prototype.hasOwnProperty.call(obj, key)) return; // check if object has the key, if doesn't have key then will populate it
+    obj[key] = defaultProps[key]; // set obj keys to those of default props keys
   });
   return obj;
 };

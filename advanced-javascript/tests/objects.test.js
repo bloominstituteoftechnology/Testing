@@ -99,7 +99,7 @@ describe('Objects', () => {
         });
         it('should return key value pairs inverted', () => {
             const output = invert(testObject);
-            console.log('output', output);
+            // console.log('output', output);
             expect(output['1']).to.eql('one');
             expect(output['2']).to.eql('two');
             expect(output['3']).to.eql('three');
@@ -113,11 +113,17 @@ describe('Objects', () => {
             expect(objectFunctions.defaults).to.be.a('function');
         });
         it('should return an object', () => {
-
-            expect(objectFunctions.defaults(testObject)).to.be.a('object');
+            const defaultProps = { 'ten': 10, 'two': 2, 'twelve': 12 };
+            expect(objectFunctions.defaults(testObject, defaultProps)).to.be.a('object');
         });
-        it('should return key value pairs defaultsed', () => {
-            expect(defaults(testObject)).to.eql([['four', 4], ['three', 3], ['two', 2], ['one', 1]]);
+        it('should return key value pairs defaulted', () => {
+            const defaultProps = { 'ten': 10, 'two': 2, 'twelve': 12 };
+            const output = defaults(testObject, defaultProps);
+            console.log('output', output);
+            expect(output['one']).to.eql(1);
+            expect(output['two']).to.eql(2);
+            expect(output['ten']).to.eql(10);
+            expect(output['twelve']).to.eql(12);
         });
     });
 
