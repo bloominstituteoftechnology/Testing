@@ -136,22 +136,22 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
-      assert.equal(isEven(4), 4);
+      assert.equal(isEven(4), true);
     });
   });
 
   describe('`isOdd`', () => {
     it('should be a function', () => {
       const isOdd = funcs.isOdd;
-      assert.typeOf(isOdd, 'number');
-      assert.equal(isOdd(5), 5)
+      assert.typeOf(isOdd, 'function');
+      assert.equal(isOdd(5), true)
     });
   });
 
   describe('`square`', () => {
     it('should be a function', () => {
       const square = funcs.square;
-      assert.typeOf(square, 'number');
+      assert.typeOf(square, 'function');
       assert.equal(square(5), 25);
     });
   });
@@ -159,7 +159,7 @@ describe('Project-1 Functions', () => {
   describe('`cube`', () => {
     it('should be a function', () => {
       const cube = funcs.cube;
-      assert.typeOf(cube, 'number');
+      assert.typeOf(cube, 'function');
       assert.equal(cube(5), 125);
     });
   });
@@ -167,24 +167,24 @@ describe('Project-1 Functions', () => {
   describe('`raiseToPower`', () => {
     it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
-      assert.typeOf(raiseToPower, 'number');
-      assert.equal(cube(5), 125);
+      assert.typeOf(raiseToPower, 'function');
+      assert.equal(raisetoPower(5, 3), 125);
     });
   });
 
   describe('`roundNumber`', () => {
     it('should be a function', () => {
       const roundNumber = funcs.roundNumber;
-      assert.typeOf(roundNumber, 'number');
-      assert.equal(roundNumber(5.14), 5);
+      assert.typeOf(roundNumber, 'function');
+      assert.equal(roundNumber(5.64), 6);
     });
   });
 
   describe('`roundUp`', () => {
     it('should be a function', () => {
       const roundUp = funcs.roundUp;
-      assert.typeOf(roundUp, 'number');
-      assert.equal(roundUp(5.14), 6);
+      assert.typeOf(roundUp, 'function');
+      assert.equal(roundUp(5.64), 6);
     });
   });
   describe('`addExclamationPoint`', () => {
@@ -198,16 +198,16 @@ describe('Project-1 Functions', () => {
   describe('`combineNames`', () => {
     it('should be a function', () => {
       const combineNames = funcs.combineNames;
-      assert.typeOf(combineNames, 'number');
-      assert.equal(combineNames(5.14), 6);
+      assert.typeOf(combineNames, 'function');
+      assert.equal(combineNames('sarika', 'mirchandani'), "sarika mirchandani");
     });
   });
 
   describe('`getGreeting`', () => {
     it('should be a function', () => {
       const getGreeting = funcs.getGreeting;
-      assert.typeOf(getGreeting, 'greeting');
-      assert.equal(getGreeting("hello"), 6);
+      assert.typeOf(getGreeting, 'function');
+      assert.equal(getGreeting('sarika'), "Hello sarika!");
     });
   });
 
@@ -215,7 +215,7 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const getRectangleArea = funcs.getRectangleArea;
       assert.typeOf(getRectangleArea, 'function');
-      assert.equal(getRectangleArea, true);
+      assert.equal(getRectangleArea(10, 10), 100);
     });
   });
 
