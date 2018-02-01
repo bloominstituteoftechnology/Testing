@@ -3,194 +3,176 @@ const funcs = require('../src/project-2');
 
 // whoops.. there is no test suite for this file. 
 //You'll simply just have to create one :/
+//describe('`raiseToPower`', () => {
+//it('should be a function', () => {
+//   const raiseToPower = funcs.raiseToPower;
+//   assert.typeOf(raiseToPower, 'function');
+//  assert.equal(raiseToPower(5, 3), 125);
+//});
+// });
 
-describe getBiggest = (x, y) => {
+describe('`getBiggest`', () => {
     it('should be a function', () => {
-        if (x > y) {
-            return x;
-        } else if (x === y) {
-            return y;
-        }
-        return y;
+        const getBiggest = funcs.getBiggest;
+        assert.typeOf(getBiggest, 'function');
+        assert.equal(getBiggest(x, y), true);
+    });
+});
+
+describe('`greeting`', () => {
+    it('should be a function', () => {
+        const getGreeting = funcs.getGreeting;
+        assert.typeOf(getGreeting, 'function');
+        assert.equal(getGreeting('German', true);
+    });
+});
+
+describe(`'isTenOrFive`', () => {
+    it('should be a function', () => {
+        const isTenOrFive = funcs.isTenOrFive;
+        assert.typeOf(isTenOrFive, 'function');
+        assert.equal(isTenOrFive, true);
+    });
+});
+
+describe(`'isInRange`', () => {
+    it('should be a function', () => {
+        const isInRange = funcs.isInRange;
+        assert.typeOf(isInRange, 'function');
+        assert.equal(isInRange, true);
+    });
+});
+
+describe(`'isInteger`', () => {
+    it('should be a function', () => {
+        const isInteger = funcs.isInRange;
+        assert.typeOf(isInteger, 'function');
+        assert.equal(isInteger, true);
     };
 
-    describe greeting = language => {
-        it('should be a function', () => {
-            switch (language) {
-                case 'German':
-                    return 'Guten Tag!';
-                case 'Spanish':
-                    return 'Hola!';
-                default:
-                    return 'Hello!';
-            }
-        };
+describe(`'fizzBuzz`', () => {
+    it('should be a function', () => {
+        const fizzBuzz = funcs.fizzBuzz;
+        assert.typeOf(fizzBuzz, 'function');
+        assert.equal(fizzBuzz, true);
 
-        describe isTenOrFive = num => {
-            it('should be a function', () => {
+describe`'isPrime`', () => {
+    it('should be a function', () => {
+        const isPrime = funcs.isPrime;
+        assert.typeOf(isPrime, 'function');
+        assert.equal(isPrime, true);
 
-                if (num === 10 || num === 5) {
-                    return true;
-                }
-                return false;
-            };
 
-            describe isInRange = num => {
+describe returnFirst = arr => {
                 it('should be a function', () => {
-
-
-                    if (num < 50 && num > 20) {
-                        return true;
-                    }
-                    return false;
+                    return arr[0];
                 };
 
-                describe isInteger = num => {
+                describe returnLast = arr => {
                     it('should be a function', () => {
-                        if (Math.floor(num) === num) {
-                            return true;
-                        }
-                        return false;
+                        return arr[arr.length - 1];
                     };
 
-                    describe fizzBuzz = num => {
+                    describe getArrayLength = arr => {
                         it('should be a function', () => {
-                            if (num % 5 === 0 && num % 3 === 0) {
-                                return 'fizzbuzz';
-                            } else if (num % 5 === 0) {
-                                return 'buzz';
-                            } else if (num % 3 === 0) {
-                                return 'fizz';
-                            }
-                            return num;
+                            return arr.length;
                         };
 
-                        describe isPrime = num => {
+                        describe incrementByOne = arr => {
                             it('should be a function', () => {
-                                if (num < 0) {
-                                    return false;
+                                for (let i = 0; i < arr.length; i++) {
+                                    arr[i]++;
                                 }
-                                if (num === 1 || num === 0) {
-                                    return false;
-                                }
-                                for (let i = 2; i < num; i++) {
-                                    if (num % i === 0) {
-                                        return false;
-                                    }
-                                }
-                                return true;
+                                return arr;
                             };
 
-                            describe returnFirst = arr => {
+                            describe addItemToArray = (arr, item) => {
                                 it('should be a function', () => {
-                                    return arr[0];
+                                    arr.push(item);
+                                    return arr;
                                 };
 
-                                describe returnLast = arr => {
+                                describe addItemToFront = (arr, item) => {
                                     it('should be a function', () => {
-                                        return arr[arr.length - 1];
+                                        arr.unshift(item);
+                                        return arr;
                                     };
 
-                                    describe getArrayLength = arr => {
+                                    describe wordsToSentence = words => {
                                         it('should be a function', () => {
-                                            return arr.length;
+                                            let newSentence = '';
+                                            for (let i = 0; i < words.length; i++) {
+                                                if (i === 0) {
+                                                    newSentence += `${words[i]}`;
+                                                } else {
+                                                    newSentence += ` ${words[i]}`;
+                                                }
+                                            }
+                                            return newSentence;
                                         };
 
-                                        describe incrementByOne = arr => {
+                                        describe contains = (arr, item) => {
                                             it('should be a function', () => {
+                                                let itemCounter = 0;
                                                 for (let i = 0; i < arr.length; i++) {
-                                                    arr[i]++;
+                                                    if (arr[i] === item) {
+                                                        itemCounter++;
+                                                    }
                                                 }
-                                                return arr;
+                                                if (itemCounter > 0) {
+                                                    return true;
+                                                }
+                                                return false;
                                             };
 
-                                            describe addItemToArray = (arr, item) => {
+                                            describe addNumbers = numbers => {
                                                 it('should be a function', () => {
-                                                    arr.push(item);
-                                                    return arr;
+                                                    let sumOfNumbers = 0;
+                                                    for (let i = 0; i < numbers.length; i++) {
+                                                        sumOfNumbers += numbers[i];
+                                                    }
+                                                    return sumOfNumbers;
                                                 };
 
-                                                describe addItemToFront = (arr, item) => {
+                                                describe averageTestScore = testScores => {
                                                     it('should be a function', () => {
-                                                        arr.unshift(item);
-                                                        return arr;
+                                                        let totalSumScores = 0;
+                                                        let numberOfScore = 0;
+                                                        for (let i = 0; i < testScores.length; i++) {
+                                                            totalSumScores += testScores[i];
+                                                            numberOfScore++;
+                                                        }
+                                                        return totalSumScores / numberOfScore;
                                                     };
 
-                                                    describe wordsToSentence = words => {
+                                                    describe largestNumber = numbers => {
                                                         it('should be a function', () => {
-                                                            let newSentence = '';
-                                                            for (let i = 0; i < words.length; i++) {
-                                                                if (i === 0) {
-                                                                    newSentence += `${words[i]}`;
-                                                                } else {
-                                                                    newSentence += ` ${words[i]}`;
+                                                            let biggestInteger = 0;
+                                                            for (let i = 0; i < numbers.length; i++) {
+                                                                if (numbers[i] > biggestInteger) {
+                                                                    biggestInteger = numbers[i];
                                                                 }
                                                             }
-                                                            return newSentence;
+                                                            return biggestInteger;
                                                         };
 
-                                                        describe contains = (arr, item) => {
-                                                            it('should be a function', () => {
-                                                                let itemCounter = 0;
-                                                                for (let i = 0; i < arr.length; i++) {
-                                                                    if (arr[i] === item) {
-                                                                        itemCounter++;
-                                                                    }
-                                                                }
-                                                                if (itemCounter > 0) {
-                                                                    return true;
-                                                                }
-                                                                return false;
-                                                            };
-
-                                                            describe addNumbers = numbers => {
-                                                                it('should be a function', () => {
-                                                                    let sumOfNumbers = 0;
-                                                                    for (let i = 0; i < numbers.length; i++) {
-                                                                        sumOfNumbers += numbers[i];
-                                                                    }
-                                                                    return sumOfNumbers;
-                                                                };
-
-                                                                describe averageTestScore = testScores => {
-                                                                    it('should be a function', () => {
-                                                                        let totalSumScores = 0;
-                                                                        let numberOfScore = 0;
-                                                                        for (let i = 0; i < testScores.length; i++) {
-                                                                            totalSumScores += testScores[i];
-                                                                            numberOfScore++;
-                                                                        }
-                                                                        return totalSumScores / numberOfScore;
-                                                                    };
-
-                                                                    describe largestNumber = numbers => {
-                                                                        it('should be a function', () => {
-                                                                            let biggestInteger = 0;
-                                                                            for (let i = 0; i < numbers.length; i++) {
-                                                                                if (numbers[i] > biggestInteger) {
-                                                                                    biggestInteger = numbers[i];
-                                                                                }
-                                                                            }
-                                                                            return biggestInteger;
-                                                                        };
-
-                                                                        module.exports = {
-                                                                            getBiggest,
-                                                                            greeting,
-                                                                            isTenOrFive,
-                                                                            isInRange,
-                                                                            isInteger,
-                                                                            fizzBuzz,
-                                                                            isPrime,
-                                                                            returnFirst,
-                                                                            returnLast,
-                                                                            getArrayLength,
-                                                                            incrementByOne,
-                                                                            addItemToArray,
-                                                                            addItemToFront,
-                                                                            wordsToSentence,
-                                                                            contains,
-                                                                            addNumbers,
-                                                                            averageTestScore,
-                                                                            largestNumber
-                                                                        };
+                                                        module.exports = {
+                                                            getBiggest,
+                                                            greeting,
+                                                            isTenOrFive,
+                                                            isInRange,
+                                                            isInteger,
+                                                            fizzBuzz,
+                                                            isPrime,
+                                                            returnFirst,
+                                                            returnLast,
+                                                            getArrayLength,
+                                                            incrementByOne,
+                                                            addItemToArray,
+                                                            addItemToFront,
+                                                            wordsToSentence,
+                                                            contains,
+                                                            addNumbers,
+                                                            averageTestScore,
+                                                            largestNumber
+                                                        };
