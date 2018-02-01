@@ -168,7 +168,7 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
-      assert.equal(raisetoPower(5, 3), 125);
+      assert.equal(raiseToPower(5, 3), 125);
     });
   });
 
