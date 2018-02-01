@@ -3,187 +3,184 @@ const funcs = require('../src/project-2');
 
 // whoops.. there is no test suite for this file. 
 //You'll simply just have to create one :/
-//describe('`raiseToPower`', () => {
-//it('should be a function', () => {
-//   const raiseToPower = funcs.raiseToPower;
-//   assert.typeOf(raiseToPower, 'function');
-//  assert.equal(raiseToPower(5, 3), 125);
-//});
-// });
 
-describe('`getBiggest`', () => {
-    it('should be a function', () => {
-        const getBiggest = funcs.getBiggest;
-        assert.typeOf(getBiggest, 'function');
-        assert.equal(getBiggest(x, y), true);
+describe('Project Two', () => {
+    let dataArray = [];
+    beforeEach(() => {
+        dataArray = ['box', 'table', 'mirror', 'cart'];
     });
-});
-
-describe('`Greeting`', () => {
-    it('should be a function', () => {
-        const getGreeting = funcs.getGreeting;
-        assert.typeOf(getGreeting, 'function');
-        assert.equal(getGreeting('German', true);
+    afterEach(() => {
+        dataArray = [];
     });
-});
 
-describe('`isTenOrFive`', () => {
-    it('should be a function', () => {
-        const isTenOrFive = funcs.isTenOrFive;
-        assert.typeOf(isTenOrFive, 'function');
-        assert.equal(isTenOrFive, true);
+
+    describe('`getBiggest`', () => {
+        it('should be a function', () => {
+            const getBiggest = funcs.getBiggest;
+            assert.typeOf(getBiggest, 'function');
+            assert.typeOf(getBiggest(1, 2), 'number');
+            assert.equal(getBiggest(5, 10), 10);
+        });
     });
-});
 
-describe('`isInRange`', () => {
-    it('should be a function', () => {
-        const isInRange = funcs.isInRange;
-        assert.typeOf(isInRange, 'function');
-        assert.equal(isInRange, true);
+    describe('`Greeting`', () => {
+        it('should be a function', () => {
+            const greeting = funcs.greeting;
+            assert.typeOf(greeting, 'function');
+            assert.typeOf(greeting(), 'string');
+            assert.equal(greeting('German'), 'Guten Tag!');
+        });
     });
-});
 
-describe('`isInteger`', () => {
-    it('should be a function', () => {
-        const isInteger = funcs.isInRange;
-        assert.typeOf(isInteger, 'function');
-        assert.equal(isInteger, true);
+    describe('`isTenOrFive`', () => {
+        it('should be a function', () => {
+            const isTenOrFive = funcs.isTenOrFive;
+            assert.typeOf(isTenOrFive, 'function');
+            assert.typeOf(isTenOrFive(1), 'boolean');
+            assert.equal(isTenOrFive(6), false);
+        });
     });
-});
 
-describe('`fizzBuzz`', () => {
-    it('should be a function', () => {
-        const fizzBuzz = funcs.fizzBuzz;
-        assert.typeOf(fizzBuzz, 'function');
-        assert.equal(fizzBuzz, true);
+    describe('`isInRange`', () => {
+        it('should be a function', () => {
+            const isInRange = funcs.isInRange;
+            assert.typeOf(isInRange, 'function');
+            assert.typeOf(isInRange(1), 'boolean');
+            assert.equal(isInRange(20), false);
+        });
     });
-});
 
-describe('`isPrime`', () => {
-    it('should be a function', () => {
-        const isPrime = funcs.isPrime;
-        assert.typeOf(isPrime, 'function');
-        assert.equal(isPrime, true);
+    describe('`isInteger`', () => {
+        it('should be a function', () => {
+            const isInteger = funcs.isInRange;
+            assert.typeOf(isInteger, 'function'); // Type of data it is
+            assert.typeOf(isInteger(1), 'boolean'); // Type of answer it gives when executed
+            assert.equal(isInteger(45), true); // if the return is correct
+        });
     });
-});
 
-
-describe('`returnFirst`', () => {
-    it('should be a function', () => {
-        const returnFirst = funcs.returnFirst;
-        assert.typeOf(returnFirst, 'function');
-        assert.equal(returnFirst, true);
+    describe('`fizzBuzz`', () => {
+        it('should be a function', () => {
+            const fizzBuzz = funcs.fizzBuzz;
+            assert.typeOf(fizzBuzz, 'function');
+            assert.typeOf(fizzBuzz(15), 'string');
+            assert.equal(fizzBuzz(1), 1);
+            assert.equal(fizzBuzz(9), 'fizz');
+            assert.equal(fizzBuzz(10), 'buzz');
+            assert.equal(fizzBuzz(15), 'fizzbuzz');
+        });
     });
-});
 
-describe('`returnLast`' = arr => {
-    it('should be a function', () => {
-        const returnLast = funcs.returnLast;
-        assert.typeOf(returnLast, 'function');
-        assert.equal(returnLast, true);
+    describe('`isPrime`', () => {
+        it('should be a function', () => {
+            const isPrime = funcs.isPrime;
+            assert.typeOf(isPrime, 'function');
+            assert.typeOf(isPrime(4), 'boolean');
+            assert.equal(isPrime(13), true);
+        });
     });
+
+
+    describe('`returnFirst`', () => {
+        it('should be a function', () => {
+            const returnFirst = funcs.returnFirst;
+            assert.typeOf(returnFirst(0), 'function');
+            assert.typeOf(returnFirst(1), 'number');
+            assert.equal(returnFirst(0), true);
+        });
+    });
+
+    describe('`returnLast`', () => {
+        it('should be a function', () => {
+            const returnLast = funcs.returnLast;
+            assert.typeOf(returnLast(0), 'function');
+            assert.equal(returnLast(0), true);
+        });
+    });
+
+    describe('`getArrayLength`', () => {
+        it('should be a function', () => {
+            const getArrayLength = funcs.getArrayLength;
+            assert.typeOf(getArrayLength(0), 'function');
+            assert.equal(getArrayLength(0), true);
+        });
+    });
+
+    describe('`incrementByOne`', () => {
+        it('should be a function', () => {
+            const incrementByOne = funcs.incrementByOne;
+            assert.typeOf(incrementByOne(0), 'function');
+            assert.equal(incrementByOne(0), true);
+        });
+    });
+
+
+    describe('`addItemToArray`', () => {
+        it('should be a function', () => {
+            const addItemToArray = funcs.addItemToArray;
+            assert.typeOf(addItemToArray(0), 'function');
+            assert.equal(addItemToArray(0), true);
+        });
+    });
+
+    describe('`incrementByOne`', () => {
+        it('should be a function', () => {
+            const incrementByOne = funcs.incrementByOne;
+            assert.typeOf(incrementByOne(0), 'function');
+            assert.equal(incrementByOne(0), true);
+        });
+    });
+
+    describe('`wordsToSentence`', () => {
+        it('should be a function', () => {
+            const wordsToSentence = funcs.wordsToSentence;
+            assert.typeOf(wordsToSentence(0), 'function');
+            assert.typeOf(wordsToSentence(0), 'string');
+            assert.equal(wordsToSentence(0), true);
+        });
+    });
+
+    describe('`contains`', () => {
+        it('should be a function', () => {
+            const contains = funcs.contains;
+            assert.typeOf(contains, 'function');
+            assert.typeOf(contains([7, 8]), 'number');
+            assert.equal(contains([7, 8]), ([7, 8]));
+        });
+    });
+
+    describe('`addNumbers`', () => {
+        it('should be a function', () => {
+            const addNumbers = funcs.addNumbers;
+            assert.typeOf(addNumbers, 'function');
+            assert.typeOf(addNumbers([6, 5]), 'number');
+            assert.equal(addNumbers([8, 5]), 13);
+        });
+    });
+    describe('`averageTestScore`', () => {
+        it('should be a function', () => {
+            const averageTestScore = funcs.averageTestScore;
+            assert.typeOf(averageTestScore, 'function');
+            assert.typeOf(averageTestScore([50, 60]), 'number');
+            assert.equal(averageTestScore([50, 60]), 55);
+        });
+    });
+
+    describe('`largestNumber`', () => {
+        it('should be a function', () => {
+            const largestNumber = funcs.largestNumber;
+            assert.typeOf(largestNumber, 'function');
+            assert.typeOf(largestNumber([10, 5]), 'number');
+            assert.equal(largestNumber(
+                [
+                    12,
+                    60,
+                    2,
+                    3,
+                    5
+                ]
+            ), 60);
+        });
+    });
+
 });
-
-describe('`getArrayLength'`= arr => {
-                    it('should be a function', () => {
-                        return arr.length;
-                    };
-
-                    describe incrementByOne = arr => {
-                        it('should be a function', () => {
-                            for (let i = 0; i < arr.length; i++) {
-                                arr[i]++;
-                            }
-                            return arr;
-                        };
-
-                        describe addItemToArray = (arr, item) => {
-                            it('should be a function', () => {
-                                arr.push(item);
-                                return arr;
-                            };
-
-                            describe addItemToFront = (arr, item) => {
-                                it('should be a function', () => {
-                                    arr.unshift(item);
-                                    return arr;
-                                };
-
-                                describe wordsToSentence = words => {
-                                    it('should be a function', () => {
-                                        let newSentence = '';
-                                        for (let i = 0; i < words.length; i++) {
-                                            if (i === 0) {
-                                                newSentence += `${words[i]}`;
-                                            } else {
-                                                newSentence += ` ${words[i]}`;
-                                            }
-                                        }
-                                        return newSentence;
-                                    };
-
-                                    describe contains = (arr, item) => {
-                                        it('should be a function', () => {
-                                            let itemCounter = 0;
-                                            for (let i = 0; i < arr.length; i++) {
-                                                if (arr[i] === item) {
-                                                    itemCounter++;
-                                                }
-                                            }
-                                            if (itemCounter > 0) {
-                                                return true;
-                                            }
-                                            return false;
-                                        };
-
-                                        describe addNumbers = numbers => {
-                                            it('should be a function', () => {
-                                                let sumOfNumbers = 0;
-                                                for (let i = 0; i < numbers.length; i++) {
-                                                    sumOfNumbers += numbers[i];
-                                                }
-                                                return sumOfNumbers;
-                                            };
-
-                                            describe averageTestScore = testScores => {
-                                                it('should be a function', () => {
-                                                    let totalSumScores = 0;
-                                                    let numberOfScore = 0;
-                                                    for (let i = 0; i < testScores.length; i++) {
-                                                        totalSumScores += testScores[i];
-                                                        numberOfScore++;
-                                                    }
-                                                    return totalSumScores / numberOfScore;
-                                                };
-
-                                                describe largestNumber = numbers => {
-                                                    it('should be a function', () => {
-                                                        let biggestInteger = 0;
-                                                        for (let i = 0; i < numbers.length; i++) {
-                                                            if (numbers[i] > biggestInteger) {
-                                                                biggestInteger = numbers[i];
-                                                            }
-                                                        }
-                                                        return biggestInteger;
-                                                    };
-
-                                                    module.exports = {
-                                                        getBiggest,
-                                                        greeting,
-                                                        isTenOrFive,
-                                                        isInRange,
-                                                        isInteger,
-                                                        fizzBuzz,
-                                                        isPrime,
-                                                        returnFirst,
-                                                        returnLast,
-                                                        getArrayLength,
-                                                        incrementByOne,
-                                                        addItemToArray,
-                                                        addItemToFront,
-                                                        wordsToSentence,
-                                                        contains,
-                                                        addNumbers,
-                                                        averageTestScore,
-                                                        largestNumber
-                                                    };
