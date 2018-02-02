@@ -84,33 +84,36 @@ describe('Project Two', () => {
     describe('`returnFirst`', () => {
         it('should be a function', () => {
             const returnFirst = funcs.returnFirst;
-            assert.typeOf(returnFirst(0), 'function');
-            assert.typeOf(returnFirst(1), 'number');
-            assert.equal(returnFirst(0), true);
+            assert.typeOf(returnFirst, 'function');
+            assert.typeOf(returnFirst([1, 2]), 'number');
+            assert.equal(returnFirst([2, 4]), 2);
         });
     });
 
     describe('`returnLast`', () => {
         it('should be a function', () => {
             const returnLast = funcs.returnLast;
-            assert.typeOf(returnLast(0), 'function');
-            assert.equal(returnLast(0), true);
+            assert.typeOf(returnLast, 'function');
+            assert.typeOf(returnLast([1, 2]), 'number');
+            assert.equal(returnLast([1, 2]), 2 );
         });
     });
 
     describe('`getArrayLength`', () => {
         it('should be a function', () => {
             const getArrayLength = funcs.getArrayLength;
-            assert.typeOf(getArrayLength(0), 'function');
-            assert.equal(getArrayLength(0), true);
+            assert.typeOf(getArrayLength(dataArray), 'function');
+            assert.typeOf(getArrayLength(dataArray), 'number');
+            assert.equal(getArrayLength(dataArray), 4);
         });
     });
 
     describe('`incrementByOne`', () => {
         it('should be a function', () => {
             const incrementByOne = funcs.incrementByOne;
-            assert.typeOf(incrementByOne(0), 'function');
-            assert.equal(incrementByOne(0), true);
+            assert.typeOf(incrementByOne([1, 2]), 'function');
+            assert.typeOf(incrementByOne([1, 2]), 'number');
+            assert.equal(incrementByOne([1, 2]), [2, 3]);
         });
     });
 
@@ -118,25 +121,19 @@ describe('Project Two', () => {
     describe('`addItemToArray`', () => {
         it('should be a function', () => {
             const addItemToArray = funcs.addItemToArray;
-            assert.typeOf(addItemToArray(0), 'function');
-            assert.equal(addItemToArray(0), true);
+            assert.typeOf(addItemToArray(1, 2), 'boolean');
+            assert.typeOf(addItemToArray(1, 2), 'number');
+            assert.equal(addItemToArray(1, 2), true);
         });
     });
 
-    describe('`incrementByOne`', () => {
-        it('should be a function', () => {
-            const incrementByOne = funcs.incrementByOne;
-            assert.typeOf(incrementByOne(0), 'function');
-            assert.equal(incrementByOne(0), true);
-        });
-    });
 
     describe('`wordsToSentence`', () => {
         it('should be a function', () => {
             const wordsToSentence = funcs.wordsToSentence;
-            assert.typeOf(wordsToSentence(0), 'function');
-            assert.typeOf(wordsToSentence(0), 'string');
-            assert.equal(wordsToSentence(0), true);
+            assert.typeOf(wordsToSentence, 'function');
+            assert.typeOf(wordsToSentence(['how', 'are', 'you']), 'string');
+            assert.equal(wordsToSentence(['how', 'are', 'you']), 'how are you');
         });
     });
 
@@ -144,8 +141,8 @@ describe('Project Two', () => {
         it('should be a function', () => {
             const contains = funcs.contains;
             assert.typeOf(contains, 'function');
-            assert.typeOf(contains([7, 8]), 'number');
-            assert.equal(contains([7, 8]), ([7, 8]));
+            assert.typeOf(contains(5), 'boolean');
+            assert.equal(contains(5), false);
         });
     });
 
