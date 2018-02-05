@@ -3,6 +3,9 @@ const multiplyByTen = (num) => {
 };
 
 const subtractFive = (num) => {
+  // if (typeOf num !== 'number') {
+    // return ('Type a number only please');
+  // }
   return num - 5;
 };
 
