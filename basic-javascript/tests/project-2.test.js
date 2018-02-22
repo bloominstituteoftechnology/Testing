@@ -10,7 +10,6 @@ describe('PROJECT 2', () => {
     standardMockArray = ['Chicken Tendies', 'Conconuties'];
   });
 
-
   afterEach(() => {
     standardMockArray = [];
   });
@@ -36,11 +35,11 @@ describe('PROJECT 2', () => {
       assert.typeOf(greeting, 'function');
     });
     it('should return a string', () => {
-      const testCall = greeting(German);
+      const testCall = greeting('German');
       assert.typeOf(testCall, 'string');
     });
     it('should return a specific language', () => {
-      const testCall = greeting(German);
+      const testCall = greeting('German');
       assert.strictEqual(testCall, 'Guten Tag!');
     });
   });
@@ -52,21 +51,44 @@ describe('PROJECT 2', () => {
     });
     it('should return a boolean', () => {
       const testCall = isTenOrFive(5);
-      assert.typeOf(testCall, 'true');
+      assert.strictEqual(testCall, true);
     });
     it('should return a boolean', () => {
       const testCall = isTenOrFive(10);
-      assert.typeOf(testCall, 'true');
+      assert.strictEqual(testCall, true);
     });
     it('should return a boolean', () => {
       const testCall = isTenOrFive(4);
-      assert.typeOf(testCall, 'false');
+      assert.strictEqual(testCall, false);
     });
   });
 
-  describe('isInRange', () => {});
+  describe('isInRange', () => {
+    const isInRange = funcs.isInRange;
+    it('should be a function', () => {
+      assert.typeOf(isInRange, 'function');
+    });
+    // it('should return true if number is less than 50', () => {
+    //   const testCall = isInRange(25);
+    //   assert.isBelow(testCall, 50,);
+    // });
 
-  describe('isInteger', () => {});
+  });
+
+  describe('isInteger', () => {
+    const isInteger = funcs.isInteger;
+    it('should be a function', () => {
+      assert.typeOf(isInteger, 'function');
+    });
+    it('should return a boolean', () => {
+      const inCall = isInteger(2.5);
+      assert.strictEqual(inCall, false);
+    });
+    it('should return a boolean', () => {
+      const inCall = isInteger(2);
+      assert.strictEqual(inCall, true);
+    });
+  });
 
   describe('fizzBuzz', () => {});
 

@@ -163,7 +163,7 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(cube, 'function');
     });
-    if('should return a cube of a number', () => {
+    it('should return a cube of a number', () => {
       expect(cube(3)).to.equal(27);
     });
   });
@@ -263,4 +263,5 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(getRectangularPrismVolume, 'function');
     });
+  });
 });
