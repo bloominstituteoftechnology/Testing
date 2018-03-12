@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
+const expect = require('chai').expect;
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -42,6 +43,9 @@ describe('Project-1 Functions', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
     });
+    it('should return true if args are the same length', () => {
+      expect(funcs.areSameLength('hello', 'world')).to.be.true;
+    });
   });
 
   describe('`areEqual`', () => {
@@ -49,12 +53,27 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
     });
+    it('should return true if args are equal', () => {
+      const areEqual = funcs.areEqual;
+      assert.equal(areEqual(3, 3), true);
+    });
+    it('should return false if args are not equal', () => {
+      const areEqual = funcs.areEqual;
+      assert.equal(areEqual(3, 4), false);
+    });
   });
 
   describe('`lessThanNinety`', () => {
     it('should be a function', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
+    });
+    it('should return true if arg is less than ninety', () => {
+      expect(funcs.lessThanNinety(15)).to.equal(true);
+    });
+    it('should return false if arg is greater than or equal to ninety', () => {
+      expect(funcs.lessThanNinety(9001)).to.equal(false);
+      expect(funcs.lessThanNinety(90)).to.equal(false);
     });
   });
 
