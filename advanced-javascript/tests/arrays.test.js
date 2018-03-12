@@ -35,7 +35,15 @@ describe('Arrays', () => {
   describe('`map`', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(map).to.be.an('function');
+      expect(map).to.be.a('function');
+    });
+    it('should return a new array with mapped elements', () => {
+      const callback = sinon.spy();
+      const elements = [8999, 9000, 9001];
+      expect(arrayFunctions.map(elements, callback));
+      expect(callback).to.have.been.calledWith(8999);
+      expect(callback).to.have.been.calledWith(9000);
+      expect(callback).to.have.been.calledWith(9001);
     });
   });
 
