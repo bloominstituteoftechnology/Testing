@@ -161,6 +161,14 @@ describe('Project-1 Functions', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
     });
+    it('should return true if a number is even', () => {
+      const isEven = funcs.isEven;
+      assert.equal(isEven(14), true);
+    });
+    it('should return false if a number is not even', () => {
+      const isEven = funcs.isEven;
+      assert.equal(isEven(7), false);
+    });
   });
 
   describe('`isOdd`', () => {
@@ -168,12 +176,24 @@ describe('Project-1 Functions', () => {
       const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
     });
+    it('should return true if a number is odd', () => {
+      expect(funcs.isOdd(9001)).to.equal(true);
+    });
+    it('should return false if a number is even', () => {
+      expect(funcs.isOdd(9002)).to.equal(false);
+    });
   });
 
   describe('`square`', () => {
     it('should be a function', () => {
       const square = funcs.square;
       assert.typeOf(square, 'function');
+    });
+    it('Should return a number squared', () => {
+      const square = funcs.square;
+      const sixteen = square(4);
+      assert.typeOf(sixteen, 'number');
+      assert.equal(sixteen, 16);
     });
   });
 
