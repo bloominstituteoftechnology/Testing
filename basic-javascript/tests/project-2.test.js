@@ -74,5 +74,110 @@ describe('Project-2 Functions', () => {
     it('should return false if the number is a fraction', () => {
       assert.strictEqual(funcs.isInteger(1/2), false);
     });
-  })
+   });
+
+  describe('fizzBuzz', () => {
+    it('should be a function', () => {
+	  assert.typeOf(funcs.fizzBuzz, 'function');
+	});
+	it('should return buzz if number is divisible by five', () => {
+	  assert(funcs.fizzBuzz(5), 'buzz');
+	});
+	it ('should return fizz if number is divisible by three', () => {
+	  assert(funcs.fizzBuzz(3), 'fizz');
+	});
+	it('should return fizzbuzz if number is divisible by both three and five', () => {
+	  assert(funcs.fizzBuzz(15), 'fizzbuzz');
+	});
+	it ('should return the number if it isn\'t divisible by three or five', () => {
+	  assert(funcs.fizzBuzz(7), 7);
+	});
+  });
+
+  describe('isPrime', () => {
+    it('should be a function', () => {
+      assert.typeOf(funcs.isPrime, 'function');
+    });
+    it('should return false if the number is negative', () => {
+      assert.strictEqual(funcs.isPrime(-1), false);
+    });
+    it('should return false if the number is 1 or 0', () => {
+      assert.strictEqual(funcs.isPrime(1), false);
+      assert.strictEqual(funcs.isPrime(0), false);
+    });
+    it('should return false if the number is not prime', () => {
+      assert.strictEqual(funcs.isPrime(21), false);
+    });
+    it('should return true if the number is prime', () => {
+      assert(funcs.isPrime(13), true);
+    });
+  });
+
+  describe('returnFirst', () => {
+    it('should be a function', () => {
+      assert.typeOf(funcs.returnFirst, 'function');
+    });
+    it('should return the first item in the array', () => {
+      assert(funcs.returnFirst([1, 2, 3, 4]), 1);
+    });
+  });
+
+  describe('returnLast', () => {
+  	it('should be a function', () => {
+  		assert.typeOf(funcs.returnLast, 'function');
+  	});
+  	it('should return the last item in the array', () => {
+  		assert(funcs.returnLast([1, 2, 3, 4]), 4);
+  	});
+  });
+
+  describe('getArrayLength', () => {
+  	it('should be a function', () => {
+  		assert.typeOf(funcs.getArrayLength, 'function');
+  	});
+  	it('should return the length of the array', () => {
+  		assert(funcs.getArrayLength([1, 2, 3, 4]), 4);
+  	});
+  });
+
+  describe('incrementByOne', () => {
+  	it('should be a function', () => {
+  		assert.typeOf(funcs.incrementByOne, 'function');
+  	});
+  	it('should increment each item in the array by 1', () => {
+  		assert(funcs.incrementByOne([1, 2, 3, 4]), [2, 3, 4, 5]);
+  	});
+  });
+
+  describe('addItemToArray', () => {
+  	it('should be a function', () => {
+  		assert.typeOf(funcs.addItemToArray, 'function');
+  	});
+  	it('should properly add an item to the end of the array', () => {
+  		assert(funcs.addItemToArray([1, 2, 3], 4), [1, 2, 3, 4]);
+  	});
+  });
+
+  describe('addItemToFront', () => {
+  	it('should be a function', () => {
+  		assert.typeOf(funcs.addItemToFront, 'function');
+  	});
+  	it('should properly add an item to the beginning of the array', () => {
+  		assert(funcs.addItemToFront([2, 3, 4], 1), [1, 2, 3, 4]);
+  	});
+  });
+
+  describe('wordsToSentence', () => {
+  	it('should be a function', () => {
+  		assert.typeOf(funcs.wordsToSentence, 'function');
+  	});
+  	it('should add multiple words to make a sentence', () => {
+  		assert(funcs.wordsToSentence(['the', 'dog', 'barked']), 'the dog barked');
+  	});
+  	it('should return a string', () => {
+  		assert.typeOf(funcs.wordsToSentence(['the', 'dog', 'barked']), 'string');
+  	});
+  });
 });
+
+
