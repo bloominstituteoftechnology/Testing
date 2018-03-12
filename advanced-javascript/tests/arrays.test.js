@@ -50,7 +50,8 @@ describe('Arrays', () => {
   describe('`reduce`', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('function');
+      const reducer = (acc, curr) => acc * curr;
+      expect(reduce([1, 2, 3, 4, 5], reducer, 1)).to.equal(120);
     });
   });
 
@@ -58,6 +59,16 @@ describe('Arrays', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
       expect(find).to.be.an('function');
+    });
+    it('should pass elements to cb and find an element in the arr', () => {
+      const callback = element => element > 8;
+      const elements = [7, 8, 9];
+      expect(arrayFunctions.find(elements, callback)).to.equal(9);
+    });
+    it('should return undefined if element is not in arr', () => {
+      const callback = element => element > 10;
+      const elements = [7, 8, 9];
+      expect(arrayFunctions.find(elements, callback)).to.equal(undefined);
     });
   });
 
