@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, max-len */
+/* eslint-disable */
 
 const each = (elements, cb) => {
   for (let i = 0; i < elements.length; i++) {
@@ -13,7 +13,7 @@ const map = (elements, cb) => {
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-  each((element, item) => {
+  each(elements, item => {
     memo = cb(memo, item);
   });
   return memo;
@@ -28,7 +28,7 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
+  each(elements, item => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;

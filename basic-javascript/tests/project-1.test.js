@@ -118,6 +118,9 @@ describe('Project-1 Functions', () => {
     it ('should properly divide two numbers', () => {
       assert(funcs.divide(10, 5), 2);
     });
+    it('should return NaN if we divide by 0', () => {
+      assert(funcs.divide(5, 0), NaN);
+    });
   });
 
   describe('`multiply`', () => {

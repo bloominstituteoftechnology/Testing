@@ -178,6 +178,45 @@ describe('Project-2 Functions', () => {
   		assert.typeOf(funcs.wordsToSentence(['the', 'dog', 'barked']), 'string');
   	});
   });
+
+  describe('contains', () => {
+    it('should be a function', () => {
+      assert.typeOf(funcs.contains, 'function');
+    });
+    it('should return true if the item is included in the array', () => {
+      assert(funcs.contains(['a', 'b', 'c'], 'c'), true);
+    });
+    it('should return false if the item is not included in the array', () => {
+      assert.strictEqual(funcs.contains([1, 2, 3], 'blue'), false);
+    });
+  });
+
+  describe('addNumbers', () => {
+    it('should be a function', () => {
+      assert.typeOf(funcs.addNumbers, 'function');
+    });
+    it('should find the sum of all the elemnents in an array', () => {
+      assert(funcs.addNumbers([1, 2, 3]), 6);
+    });
+  });
+
+  describe('averageTestScore', () => {
+    it('should be a function', () => {
+      assert.typeOf(funcs.averageTestScore, 'function');
+    });
+    it('should find the average of all the numbers in the array', () => {
+      assert(funcs.averageTestScore([80, 80, 70, 70, 100]), 80);
+    });
+  });
+
+  describe('largestNumber', () => {
+    it('should be a function', () => {
+      assert.typeOf(funcs.largestNumber, 'function');
+    });
+    it('should return the largest number in the array', () => {
+      assert(funcs.largestNumber([1, 2, 3, 4]), 4);
+    });
+  });
 });
 
 
