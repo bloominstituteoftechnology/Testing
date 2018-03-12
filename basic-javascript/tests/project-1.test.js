@@ -82,6 +82,13 @@ describe('Project-1 Functions', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
+    it('should return true if args is greater than fifty', () => {
+      expect(funcs.greaterThanFifty(9001)).to.equal(true);
+      expect(funcs.greaterThanFifty(90)).to.equal(true);
+    });
+    it('should return false if args is greater than fifty', () => {
+      expect(funcs.greaterThanFifty(15)).to.equal(false);
+    })
   });
 
   describe('`add`', () => {
@@ -89,6 +96,12 @@ describe('Project-1 Functions', () => {
       const add = funcs.add;
       assert.typeOf(add, 'function');
     });
+    it('should return the sum when given two numbers', () => {
+      const add = funcs.add;
+      const four = add(2, 2);
+      assert.typeOf(four, 'number');
+      assert.equal(four, 4);
+    })
   });
 
   describe('`subtract`', () => {
@@ -96,6 +109,12 @@ describe('Project-1 Functions', () => {
       const subtract = funcs.subtract;
       assert.typeOf(subtract, 'function');
     });
+    it('should return the difference given two numbers', () => {
+      const subtract = funcs.subtract;
+      const zero = subtract(2, 2);
+      assert.typeOf(zero, 'number');
+      assert.equal(zero, 0);
+    })
   });
 
   describe('`divide`', () => {
@@ -103,6 +122,12 @@ describe('Project-1 Functions', () => {
       const divide = funcs.divide;
       assert.typeOf(divide, 'function');
     });
+    it('should return the quotient given two numbers', () => {
+      const divide = funcs.divide;
+      const one = divide(2, 2);
+      assert.typeOf(one, 'number');
+      assert.equal(one, 1);
+    })
   });
 
   describe('`multiply`', () => {
@@ -110,6 +135,12 @@ describe('Project-1 Functions', () => {
       const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function');
     });
+    it('should return the product of two numbers', () => {
+      const multiply = funcs.multiply;
+      const four = multiply(2, 2);
+      assert.typeOf(four, 'number');
+      assert.equal(four, 4);
+    })
   });
 
   describe('`getRemainder`', () => {
