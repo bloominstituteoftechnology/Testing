@@ -148,6 +148,12 @@ describe('Project-1 Functions', () => {
       const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
     });
+    it('should return the remainder of two numbers', () => {
+      const getRemainder = funcs.getRemainder;
+      const two = getRemainder(7, 5);
+      assert.typeOf(two, 'number');
+      assert.equal(two, 2);
+    })
   });
 
   describe('`isEven`', () => {
