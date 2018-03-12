@@ -181,12 +181,21 @@ describe('Project-1 Functions', () => {
       const cube = funcs.cube;
       assert.typeOf(cube, 'function');
     });
+    it ('should return the cube of a number', () => {
+      assert(funcs.cube(3), 27);
+    });
   });
 
   describe('`raiseToPower`', () => {
     it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
+    });
+    it ('should raise a number to the specified power', () => {
+      assert(funcs.raiseToPower(2, 3), 8);
+    });
+    it ('should raise a number to the specified power', () => {
+      assert(funcs.raiseToPower(2, -2), 0.25);
     });
   });
 
@@ -195,12 +204,24 @@ describe('Project-1 Functions', () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, 'function');
     });
+    it ('should return the number rounded to the nearest integer', () => {
+      assert(funcs.roundNumber(1.7), 2);
+    });
+    it ('should return the number rounded to the nearest integer', () => {
+      assert(funcs.roundNumber(1.4), 1);
+    });
   });
 
   describe('`roundUp`', () => {
     it('should be a function', () => {
       const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, 'function');
+    });
+    it ('should return the number rounded up to the nearest integer', () => {
+      assert(funcs.roundUp(1.7), 2);
+    });
+    it ('should return the number rounded up to the nearest integer', () => {
+      assert(funcs.roundUp(1.4), 2);
     });
   });
 
@@ -209,12 +230,18 @@ describe('Project-1 Functions', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
       assert.typeOf(addExclamationPoint, 'function');
     });
+    it ('should add an exclamation point to the end of a string', () => {
+      assert(funcs.addExclamationPoint('hello'), 'hello!');
+    });
   });
 
   describe('`combineNames`', () => {
     it('should be a function', () => {
       const combineNames = funcs.combineNames;
       assert.typeOf(combineNames, 'function');
+    });
+    it ('should combine two names with a space inbetween', () => {
+      assert(funcs.combineNames('Betty', 'Sue'), 'Betty Sue');
     });
   });
 
@@ -223,12 +250,18 @@ describe('Project-1 Functions', () => {
       const getGreeting = funcs.getGreeting;
       assert.typeOf(getGreeting, 'function');
     });
+    it ('should return hello plus the name entered', () => {
+      assert(funcs.getGreeting('Rob'), 'Hello Rob');
+    });
   });
 
   describe('`getRectangleArea`', () => {
     it('should be a function', () => {
       const getRectangleArea = funcs.getRectangleArea;
       assert.typeOf(getRectangleArea, 'function');
+    });
+    it ('should calculate the area of a rectangle based on length and width', () => {
+      assert(funcs.getRectangleArea(2, 3), 6);
     });
   });
 
@@ -237,6 +270,9 @@ describe('Project-1 Functions', () => {
       const getTriangleArea = funcs.getTriangleArea;
       assert.typeOf(getTriangleArea, 'function');
     });
+    it ('should calculate the area of a triangle based on its base and height', () => {
+      assert(funcs.getTriangleArea(2, 3), 3);
+    });
   });
 
   describe('`getCircleArea`', () => {
@@ -244,12 +280,18 @@ describe('Project-1 Functions', () => {
       const getCircleArea = funcs.getCircleArea;
       assert.typeOf(getCircleArea, 'function');
     });
+    it ('should calculate the area of a circle based on its radius', () => {
+      assert(funcs.getCircleArea(2), 12.56636);
+    });
   });
 
   describe('`getRectangularPrismVolume`', () => {
     it('should be a function', () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
       assert.typeOf(getRectangularPrismVolume, 'function');
+    });
+    it ('should find the volume of a rectangular prism based on its width, height, and length', () => {
+      assert(funcs.getRectangularPrismVolume(4, 2, 3), 24);
     });
   });
 });
