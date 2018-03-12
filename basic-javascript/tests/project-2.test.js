@@ -1,3 +1,5 @@
+/* eslint-disable prefer-destructuring */
+
 const assert = require('chai').assert;
 const funcs = require('../src/project-2');
 

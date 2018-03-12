@@ -34,7 +34,7 @@ const filter = (elements, cb) => {
   return filteredValues;
 };
 
-const flatten = elements => {
+const flatten = (elements) => {
   const flattenedArr = reduce(
     elements,
     (memo, item) => {
