@@ -6,14 +6,28 @@ describe('objects', () => {
   describe('`keys`', () => {
     it('should be a function', () => {
       const { keys } = objectFunctions;
+
       assert(keys).to.be.a('function');
     });
+    it('should return an array', () => {
+      const { keys } = objectFunctions;
+      const obj = { powerLevel: '9001' };
+
+      assert(keys(obj)).to.be.an('array')
+    })
   });
   describe('`values`', () => {
     it('should be a function', () => {
       const { values } = objectFunctions;
+
       assert(values).to.be.a('function');
     });
+    it('should return an array', () => {
+      const { values } = objectFunctions;
+      const obj = { foo: 'bar' }
+
+      assert(values(obj)).to.be.an('array')
+    })
   });
   describe('`mapObject`', () => {
     it('should be a function', () => {
