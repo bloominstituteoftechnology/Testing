@@ -77,6 +77,14 @@ describe('Arrays', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
+    it('should return an array of items passing the truth test', () => {
+      const filter = arrayFunctions.filter
+      const arr = [1, 2, 3,];
+      const check = filter(arr, n => n < 5);
+
+      expect(check).to.be.an('array');
+      expect(check.length).equal(3);
+    })
   });
 
   describe('`flatten`', () => {
@@ -84,5 +92,12 @@ describe('Arrays', () => {
       const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
     });
+    it('should return a flattened array regardless of how deeply nested it is', () => {
+      const flatten = arrayFunctions.flatten;
+      const arr = [1, [2], [[3]], [[[4]]]];
+      const flat = flatten(arr);
+
+      expect(flat).to.have.ordered.members([1, 2, 3, 4]);
+    })
   });
 });
