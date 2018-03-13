@@ -8,12 +8,14 @@ const each = (elements, cb) => {
 
 const map = (elements, cb) => {
   const mappedArr = [];
-  each(elements, item => mappedArr.push(cb(item)));
+  each(elements, (item) => {
+    mappedArr.push(cb(item)));
+  });
   return mappedArr;
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-  each((element, item) => {
+  each(element, (item) => {
     memo = cb(memo, item);
   });
   return memo;
