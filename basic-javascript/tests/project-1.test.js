@@ -22,7 +22,7 @@ describe('Project-1 Functions', () => {
       const twenty = multiplyByTen(2);
       assert.typeOf(twenty, 'number');
       assert.equal(twenty, 20);
-    })
+    });
   });
 
   describe('`subtractFive`', () => {
@@ -88,7 +88,7 @@ describe('Project-1 Functions', () => {
     });
     it('should return false if args is greater than fifty', () => {
       expect(funcs.greaterThanFifty(15)).to.equal(false);
-    })
+    });
   });
 
   describe('`add`', () => {
@@ -101,7 +101,7 @@ describe('Project-1 Functions', () => {
       const four = add(2, 2);
       assert.typeOf(four, 'number');
       assert.equal(four, 4);
-    })
+    });
   });
 
   describe('`subtract`', () => {
@@ -114,7 +114,7 @@ describe('Project-1 Functions', () => {
       const zero = subtract(2, 2);
       assert.typeOf(zero, 'number');
       assert.equal(zero, 0);
-    })
+    });
   });
 
   describe('`divide`', () => {
@@ -127,7 +127,7 @@ describe('Project-1 Functions', () => {
       const one = divide(2, 2);
       assert.typeOf(one, 'number');
       assert.equal(one, 1);
-    })
+    });
   });
 
   describe('`multiply`', () => {
@@ -140,7 +140,7 @@ describe('Project-1 Functions', () => {
       const four = multiply(2, 2);
       assert.typeOf(four, 'number');
       assert.equal(four, 4);
-    })
+    });
   });
 
   describe('`getRemainder`', () => {
@@ -153,7 +153,7 @@ describe('Project-1 Functions', () => {
       const two = getRemainder(7, 5);
       assert.typeOf(two, 'number');
       assert.equal(two, 2);
-    })
+    });
   });
 
   describe('`isEven`', () => {
@@ -202,12 +202,21 @@ describe('Project-1 Functions', () => {
       const cube = funcs.cube;
       assert.typeOf(cube, 'function');
     });
+    it('should return the cuberoot of a number');
+    const { cube } = funcs;
+    const twentySeven = cube(3);
+    assert.equal(twentySeven, 27);
   });
 
   describe('`raiseToPower`', () => {
     it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
+    });
+    it('should take in a number and an exponent and return the solution', () => {
+      const { raiseToPower } = funcs;
+
+      expect(raiseToPower(4, 2), 16);
     });
   });
 
@@ -216,6 +225,10 @@ describe('Project-1 Functions', () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, 'function');
     });
+    it('should round a number to the nearest whole value', () => {
+      const { roundNumber } = funcs;
+      expect(roundNumber(5.2), 6);
+    });
   });
 
   describe('`roundUp`', () => {
@@ -223,6 +236,9 @@ describe('Project-1 Functions', () => {
       const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, 'function');
     });
+    it('should round a number up to the next whole value');
+    const { roundUp } = funcs;
+    assert(roundUp(1.1), 2);
   });
 
   describe('`addExclamationPoint`', () => {
