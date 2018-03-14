@@ -20,6 +20,7 @@ describe('Arrays', () => {
   describe('`each`', () => {
     it('should be a function', () => {
       const each = arrayFunctions.each;
+
       expect(each).to.be.a('function');
     });
     it('should invoke a callback for elements in the array', () => {
@@ -78,13 +79,13 @@ describe('Arrays', () => {
       expect(filter).to.be.a('function');
     });
     it('should return an array of items passing the truth test', () => {
-      const filter = arrayFunctions.filter
-      const arr = [1, 2, 3,];
+      const filter = arrayFunctions.filter;
+      const arr = [1, 2, 3];
       const check = filter(arr, n => n < 5);
 
       expect(check).to.be.an('array');
       expect(check.length).equal(3);
-    })
+    });
   });
 
   describe('`flatten`', () => {
@@ -98,6 +99,6 @@ describe('Arrays', () => {
       const flat = flatten(arr);
 
       expect(flat).to.have.ordered.members([1, 2, 3, 4]);
-    })
+    });
   });
 });
