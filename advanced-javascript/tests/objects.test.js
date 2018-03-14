@@ -32,8 +32,13 @@ describe('objects', () => {
   describe('`mapObject`', () => {
     it('should be a function', () => {
       const { mapObject } = objectFunctions;
+
       assert(mapObject).to.be.a('function');
     });
+    it(`should return an array`, () => {
+      const { mapObject } = objectFunctions;
+      const
+    })
   });
   describe('`pairs`', () => {
     it('should be a function', () => {
