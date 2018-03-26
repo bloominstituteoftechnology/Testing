@@ -18,9 +18,16 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
       expect(each).to.be.a('function');
+    });
+    it('should invoke callback on each array element', () => {
+      let finalString = '';
+      each(['stuff', 'things', 'whatnot'], (el) => {
+        finalString += el;
+      });
+      expect(finalString).to.equal('stuffthingswhatnot');
     });
   });
 
