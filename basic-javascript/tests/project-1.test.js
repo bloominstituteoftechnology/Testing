@@ -14,7 +14,11 @@ describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
+    });
+    it('should return a numb multiplied by 10', () => {
+      const multiplyByTen = funcs.multiplyByTen(10);
+      assert.equal(multiplyByTen, 100, 'it should equal 10');
     });
     // begin here
   });
