@@ -160,6 +160,12 @@ describe('Project-1 Functions', () => {
       const divide = funcs.divide;
       assert.typeOf(divide, 'function');
     });
+    it('should return 5', () => {
+      const divide = funcs.divide;
+      const num1 = 20;
+      const num2 = 4;
+      assert.strictEqual(divide(num1, num2), 5);
+    });
   });
 
   describe('`multiply`', () => {

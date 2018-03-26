@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint */tests/*.js && eslint */src/*.js && mocha -R list",
-    "watch": "mocha -R list --watch"
+    "watch": "mocha -R nyan --watch"
   },
   "author": "",
   "license": "ISC",

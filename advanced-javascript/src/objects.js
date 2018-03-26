@@ -19,7 +19,7 @@ const mapObject = (obj, cb) => {
 };
 
 const pairs = (obj) => {
-  Object.keys(obj).map((key) => [key, obj[key]]);
+  return Object.keys(obj).map((key) => [key, obj[key]]);
 };
 
 const invert = (obj) => {

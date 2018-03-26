@@ -53,4 +53,38 @@ describe('`pairs`', () => {
     const { pairs } = objectFunctions;
     assert(pairs).to.be.a('function');
   });
+  it('should return [[a,1],[b,2],[c,3]]', () => {
+    const { pairs } = objectFunctions;
+    const object = { a: 1, b: 2, c: 3 };
+    assert(pairs(object)).to.deep.equal([['a', 1], ['b', 2], ['c', 3]]);
+  });
+});
+
+describe('`invert`', () => {
+  it('should be a function', () => {
+    const { invert } = objectFunctions;
+    assert(invert).to.be.a('function');
+  });
+  it('should return {1:a,2:b,3:c}', () => {
+    const { invert } = objectFunctions;
+    const object = { a: 1, b: 2, c: 3 };
+    assert(invert(object)).to.deep.equal({ 1: 'a', 2: 'b', 3: 'c' });
+  });
+});
+
+describe('`defaults', () => {
+  it('should be a function', () => {
+    const { defaults } = objectFunctions;
+    assert(defaults).to.be.a('function');
+  });
+  it('should return {a:1,b:2,c:3,d:4}', () => {
+    const { defaults } = objectFunctions;
+    const obj = { a: 1, c: 3 };
+    const defaultProps = {
+      a: 1, b: 2, c: 3, d: 4
+    };
+    assert(defaults(obj, defaultProps)).to.deep.equal({
+      a: 1, b: 2, c: 3, d: 4
+    });
+  });
 });
