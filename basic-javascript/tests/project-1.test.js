@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
+const expect = require('chai').expect;
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -14,9 +15,16 @@ describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
+    it('should be a number', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      // assert.typeOf(multiplyByTen, 'function');
+      const result = multiplyByTen(10);
+      assert.typeOf(result, 'number');
+      // expect(multiplyByTen).to.be.a('function');
+    });
   });
 
   describe('`subtractFive`', () => {
