@@ -80,9 +80,15 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`greaterThanFifty`', () => {
+    const greaterThanFifty = funcs.greaterThanFifty;
     it('should be a function', () => {
-      const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
+    });
+    it('should be a boolean', () => {
+      assert.isBoolean(greaterThanFifty(1), true);
+    });
+    it('should be false', () => {
+      assert.isFalse(greaterThanFifty(1), false);
     });
   });
 
