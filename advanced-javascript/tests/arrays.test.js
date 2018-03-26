@@ -102,14 +102,27 @@ describe('Arrays', () => {
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
+    });
+    it('should filter down an item', () => {
+      // const testArr = [1, 2, 3, 3, 4];
+      const callback = (item) => {
+        return true;
+      };
+      // console.log(callback)
+      filter(testArr, callback)
     });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
+    it('should flatten nested array', () => {
+      const testArr = [[2]];
+      const flattenedArr = flatten(testArr);
+      expect(flattenedArr).to.eql([2]);
+    })
   });
 });
