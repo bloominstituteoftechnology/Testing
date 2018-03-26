@@ -2,8 +2,6 @@
 
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
-const sinon = require('sinon');
-const sinonChai = require('sinon-chai')
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
 // first step is to make sure all these assertions work.
@@ -18,6 +16,10 @@ describe('Project-1 Functions', () => {
       assert.typeOf(multiplyByTen, 'number');
     });
     // begin here
+    it('should equals to 100', () => {
+      const multiplyByTen = funcs.multiplyByTen(5);
+      assert.equal(multiplyByTen, 50);
+    })
   });
 
   describe('`subtractFive`', () => {
@@ -32,6 +34,10 @@ describe('Project-1 Functions', () => {
       const areSameLength = funcs.areSameLength('test', 'none');
       assert.typeOf(areSameLength, 'boolean');
     });
+    it('should report true', () => {
+      const areSameLength = funcs.areSameLength('test', 'none');
+      assert.equal(areSameLength, true);
+    })
   });
 
   describe('`areEqual`', () => {
@@ -39,6 +45,10 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual(5, 5);
       assert.typeOf(areEqual, 'boolean');
     });
+    it('should report false', () => {
+      const areEqual = funcs.areEqual(5, 6);
+      assert.equal(areEqual, false);
+    })
   });
 
   describe('`lessThanNinety`', () => {
@@ -161,10 +171,16 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`getRectangleArea`', () => {
+    const { getRectangleArea } = funcs;
+    
     it('should be a function', () => {
-      const getRectangleArea = funcs.getRectangleArea(2, 4);
-      assert.typeOf(getRectangleArea, 'number');
+      // const getRectangleArea = funcs.getRectangleArea(2, 4);
+      assert.typeOf(getRectangleArea, 'function');
     });
+    it('should return the area', () => {
+      const area = getRectangleArea(2, 4);
+      assert.typeOf(area, 'number');
+    })
   });
 
   describe('`getTriangleArea`', () => {
