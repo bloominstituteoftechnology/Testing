@@ -55,4 +55,24 @@ describe('Project-2 Functions', () => {
       assert.equal(results, true);
     });
   });
+  describe('fizzBuzz', () => {
+    it('should be a function', () => {
+      const fizzBuzz = funcs.fizzBuzz;
+      assert.typeOf(fizzBuzz, 'function');
+    });
+    it('should be a string', () => {
+      const results = funcs.fizzBuzz(5);
+      assert.typeOf(results, 'string');
+    });
+  });
+  describe('isPrime', () => {
+    it('should be a function', () => {
+      const isPrime = funcs.isPrime;
+      assert.typeOf(isPrime, 'function');
+    });
+    it('should be a boolean', () => {
+      const result = funcs.isPrime(1);
+      assert.typeOf(result, 'boolean'); 
+    });
+  });
 });
