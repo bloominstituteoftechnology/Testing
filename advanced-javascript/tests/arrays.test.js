@@ -107,12 +107,26 @@ describe('Arrays', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
-    // it('should execute the callback on each array element', () => {
-    //   const filter = arrayFunctions.filter;
-    //   const cb = sinon.spy();
-    //   filter([1, 2, 3, 4], cb);
-    //   expect(cb).to.have.callCount(4);
-    // });
+    it('should execute the callback on each array element', () => {
+      const filter = arrayFunctions.filter;
+      const cb = sinon.spy();
+      filter([1, 2, 3], cb);
+      expect(cb).to.have.callCount(3);
+    });
+    it('should return an expected output given a specific input', () => {
+      const filter = arrayFunctions.filter;
+      const cb = (element) => {
+        if (element === 2) return true;
+      };
+      expect(filter([1, 2, 2, 3], cb)).to.eql([2, 2]);
+    });
+    it('should return an output with data type: array', () => {
+      const filter = arrayFunctions.filter;
+      const cb = (element) => {
+        if (element === 2) return true;
+      };
+      expect(filter([1, 2, 2, 3], cb)).to.be.an('array');
+    });
   });
 
   describe('`flatten`', () => {

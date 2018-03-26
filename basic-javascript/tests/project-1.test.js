@@ -47,6 +47,18 @@ describe('Project-1 Functions', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
     });
+    it('should return true if lengths are the same', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.equal(areSameLength('hi', 'yo'), true);
+    });
+    it('should return false if lengths are not the same', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.equal(areSameLength('hi', 'hello'), false);
+    });
+    it('should return an output with type: boolean', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.typeOf(areSameLength('hi', 'hello'), 'boolean');
+    });
   });
 
   describe('`areEqual`', () => {
