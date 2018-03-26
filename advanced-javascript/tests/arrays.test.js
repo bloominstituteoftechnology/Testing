@@ -1,4 +1,4 @@
-/* eslint-disable prefer-destructuring */
+/* eslint-disable prefer-destructuring, no-unused-expressions */
 
 const chai = require('chai');
 const sinon = require('sinon');
@@ -36,12 +36,23 @@ describe('Arrays', () => {
       });
       expect(count).to.equal(9);
     });
+    it('should call the callback passed to it for each element in array given', () => {
+      const mockCallback = sinon.spy();
+      expect(mockCallback.callCount).to.equal(0);
+      each([1, 2, 3, 'four'], mockCallback);
+      expect(mockCallback.callCount).to.equal(4);
+    });
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
       expect(map).to.be.an('function');
+    });
+    it('should return an array', () => {
+      const arr = [];
+      const result = map(arr, n => (n * n));
+      expect(Array.isArray(result)).to.be.true;
     });
   });
 
