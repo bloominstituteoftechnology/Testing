@@ -66,6 +66,7 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
     });
+    // it('should return ')
   });
 
   describe('`lessThanNinety`', () => {

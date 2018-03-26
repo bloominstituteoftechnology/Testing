@@ -8,8 +8,13 @@ const arrayFunctions = require('../src/arrays');
 const expect = chai.expect;
 chai.use(sinonChai);
 
-const each = arrayFunctions.each;
-const map = arrayFunctions.map;
+const { each } = arrayFunctions;
+const { map } = arrayFunctions;
+const { reduce } = arrayFunctions;
+const { find } = arrayFunctions;
+const { filter } = arrayFunctions;
+const { flatten } = arrayFunctions;
+
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -62,17 +67,14 @@ describe('Arrays', () => {
 
   describe('`reduce`', () => {
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
       expect(reduce).to.be.a('function');
     });
     it('should execute the callback on each array element', () => {
-      const reduce = arrayFunctions.reduce;
       const cb = sinon.spy();
       reduce([1, 2, 3, 4], cb);
       expect(cb).to.have.callCount(3);
     });
     it('should return the expected output given a specific input', () => {
-      const reduce = arrayFunctions.reduce;
       const cb = (a, b) => {
         return (a > b) ? a : b;
       };
@@ -82,46 +84,39 @@ describe('Arrays', () => {
 
   describe('`find`', () => {
     it('should be a function', () => {
-      const find = arrayFunctions.find;
       expect(find).to.be.an('function');
     });
     it('should execute the callback on each array element', () => {
-      const find = arrayFunctions.find;
       const cb = sinon.spy();
       find([1, 2, 3, 4], cb);
       expect(cb).to.have.callCount(4);
     });
     it('should return the expected output given a specific input', () => {
-      const find = arrayFunctions.find;
       const cb = (element) => {
         if (element === 3) return true;
       };
       const setSpy = sinon.spy(cb);
       expect(find([1, 2, 3, 4, 5], setSpy)).to.equal(3);
-      console.log(setSpy.returnValues);
+      // console.log(setSpy.returnValues);
     });
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
     it('should execute the callback on each array element', () => {
-      const filter = arrayFunctions.filter;
       const cb = sinon.spy();
       filter([1, 2, 3], cb);
       expect(cb).to.have.callCount(3);
     });
     it('should return an expected output given a specific input', () => {
-      const filter = arrayFunctions.filter;
       const cb = (element) => {
         if (element === 2) return true;
       };
       expect(filter([1, 2, 2, 3], cb)).to.eql([2, 2]);
     });
     it('should return an output with data type: array', () => {
-      const filter = arrayFunctions.filter;
       const cb = (element) => {
         if (element === 2) return true;
       };
@@ -131,15 +126,12 @@ describe('Arrays', () => {
 
   describe('`flatten`', () => {
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
     });
     it('should return an output with the type: array', () => {
-      const flatten = arrayFunctions.flatten;
       expect(flatten([1, 2, 3])).to.be.an('array');
     });
     it('should return an expected output given a specific input', () => {
-      const flatten = arrayFunctions.flatten;
       const result = [1, 2, 3, 4, 5];
       expect(flatten([1, [2, [3]], 4, 5])).to.eql(result);
     });
