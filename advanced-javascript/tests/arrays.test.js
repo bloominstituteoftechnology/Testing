@@ -51,7 +51,7 @@ describe('Arrays', () => {
     });
     it('should return [1,4,9,16]', () => {
       const map = arrayFunctions.map;
-      const callBack = element => {
+      const callBack = (element) => {
         return (element *= element);
       };
       const array = [1, 2, 3, 4];
