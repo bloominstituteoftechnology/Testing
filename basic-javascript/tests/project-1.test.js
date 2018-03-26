@@ -192,23 +192,47 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`getRemainder`', () => {
+    const getRemainder = funcs.getRemainder;
     it('should be a function', () => {
-      const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
+    });
+
+    it('should be equal to 0', () => {
+      expect(getRemainder(null, num)).to.equal(0);
+    });
+
+    it('should do something', () => {
+      expect(getRemainder(num, num)).to.equal(0);
     });
   });
 
   describe('`isEven`', () => {
+    const isEven = funcs.isEven;
     it('should be a function', () => {
-      const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
+    });
+    
+    it('should not return false', () => {
+      expect(isEven(num)).to.not.be.false;
+    });
+    
+    it('should return false', () => {
+      expect(isEven(num + 1)).to.be.false;
     });
   });
 
   describe('`isOdd`', () => {
+    const isOdd = funcs.isOdd;
     it('should be a function', () => {
-      const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, 'function');
+    });
+    
+    it('should not return true', () => {
+      expect(isOdd(num)).to.not.be.true;
+    });
+    
+    it('should return true', () => {
+      expect(isOdd(num + 1)).to.be.true;
     });
   });
 
