@@ -94,12 +94,32 @@ describe('Project-1 Functions', () => {
             const lessThanNinety = funcs.lessThanNinety;
             assert.typeOf(lessThanNinety, 'function');
         });
+        it('should be less than 90', () => {
+            const num = 80;
+            const lessThanNinety = funcs.lessThanNinety(num);
+            assert(lessThanNinety, '`num` is less than 90');
+        });
+        it('should be less than 90', () => {
+            const num = 100;
+            const lessThanNinety = funcs.lessThanNinety(num);
+            assert.isNotOk(lessThanNinety, '`num` is NOT less than 90');
+        });
     });
 
     describe('`greaterThanFifty`', () => {
         it('should be a function', () => {
             const greaterThanFifty = funcs.greaterThanFifty;
             assert.typeOf(greaterThanFifty, 'function');
+        });
+        it('should be greater than 50', () => {
+            const num = 80;
+            const greaterThanFifty = funcs.greaterThanFifty(num);
+            assert(greaterThanFifty, '`num` is greater than 50');
+        });
+        it('should be greater than 50', () => {
+            const num = 40;
+            const greaterThanFifty = funcs.greaterThanFifty(num);
+            assert.isNotOk(greaterThanFifty, '`num` is NOT greater than 50');
         });
     });
 
