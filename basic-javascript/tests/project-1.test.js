@@ -8,15 +8,17 @@ const funcs = require('../src/project-1');
 // first step is to make sure all these assertions work.
 // then make sure you have at least 2-3 more assertions for every function.
 // hint 1. - you need to pass data to the functions and get expected output.
-// hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
+// hint 2. - you should test to see if the expected return output is of
+//         - a specified type, as well as the correct outcome.
 
+      
 describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'object');
     });
-    // begin here
+    // expect(multiplyByTen).to.be.a('function');
   });
 
   describe('`subtractFive`', () => {
