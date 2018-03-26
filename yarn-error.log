@@ -1,0 +1,63 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn test
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.9.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "ls-testing",
+    "version": "1.0.1",
+    "description": "Topics:",
+    "main": "index.js",
+    "scripts": {
+      "test": "eslint */tests/*.js && eslint */src/*.js && mocha -R nyan",
+      "watch": "mocha -R nyan --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "chai": "^4.1.1",
+      "eslint": "^4.10.0",
+      "eslint-config-airbnb-base": "^12.1.0",
+      "eslint-plugin-import": "^2.2.0",
+      "mocha": "^4.0.1",
+      "regenerator-runtime": "^0.11.0",
+      "sinon": "^4.1.2",
+      "sinon-chai": "^2.12.0"
+    },
+    "dependencies": {
+      "babel-preset-es2015": "^6.24.0",
+      "eslint-config-airbnb": "^16.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c eslint */tests/*.js && eslint */src/*.js && mocha -R nyan
+  Directory: /home/marionette/Projects/Testing
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:180:13)
+      at maybeClose (internal/child_process.js:936:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
