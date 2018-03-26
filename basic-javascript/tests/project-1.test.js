@@ -26,23 +26,34 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`subtractFive`', () => {
+    const subtractFive = funcs.subtractFive;
     it('should be a function', () => {
-      const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
+    });
+    it('should return five less between number passed in', () => {
+      const five = subtractFive(10);
+      assert.typeOf(five, 'number');
+      assert.deepEqual(five, 5);
     });
   });
 
   describe('`areSameLength`', () => {
+    const areSameLength = funcs.areSameLength;
     it('should be a function', () => {
-      const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
+    });
+    it('should return true if functions are same length', () => {
+      expect(areSameLength('abcde','fghij')).to.be.true;
     });
   });
 
   describe('`areEqual`', () => {
+    const areEqual = funcs.areEqual;
     it('should be a function', () => {
-      const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
+    });
+    it('should return false if not equal', () => {
+      assert.deepEqual(areEqual(3,4), false, '3 and 4 are not equal');
     });
   });
 
