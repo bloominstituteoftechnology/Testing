@@ -27,16 +27,29 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`subtractFive`', () => {
+    const subtractFive = funcs.subtractFive;
     it('should be a function', () => {
-      const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
+    });
+    it('should equal 5', () => {
+      assert.equal(subtractFive(10), 5);
+    });
+    it('should be a number', () => {
+      assert.typeOf(subtractFive(10), 'number');
+      assert.isNotNaN(subtractFive(10), 'expect to equal 5');
     });
   });
 
   describe('`areSameLength`', () => {
+    const areSameLength = funcs.areSameLength;
     it('should be a function', () => {
-      const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
+    });
+    it('should be a boolean', () => {
+      assert.isBoolean(areSameLength('string1', 'string2'), 'expected a boolean');
+    });
+    it('should return false with strings "Jon" and "Aaron" ', () => {
+      assert.isFalse(areSameLength('Jon', 'Aaron'), false);
     });
   });
 
