@@ -26,8 +26,6 @@ describe('Arrays', () => {
       const each = arrayFunctions.each;
       const callBack = sinon.spy();
       each([1], callBack);
-      // Linter complains, this works too:
-      // expect(callBack).to.have.calledOnce;
       expect(callBack).to.have.callCount(1);
     });
     it('should perform the callback 3 times', () => {
@@ -35,6 +33,20 @@ describe('Arrays', () => {
       const callBack = sinon.spy();
       each([1, 2, 3], callBack);
       expect(callBack).to.have.callCount(3);
+    });
+    it('should return [1,2,3]', () => {
+      const each = arrayFunctions.each;
+      const callBack = (element, index) => {
+        return;
+      };
+      const array = [1, 2, 3];
+      expect(each(array, callBack)).to.deep.equal([1, 2, 3]);
+    });
+    it('second call should equal 2', () => {
+      const each = arrayFunctions.each;
+      const spyCallBack = sinon.spy(x => x + 2);
+      each([4, 5, 6], spyCallBack);
+      expect(spyCallBack.secondCall.returnValue).to.equal(7);
     });
   });
 
@@ -67,8 +79,17 @@ describe('Arrays', () => {
     it('should perform the callback twice', () => {
       const reduce = arrayFunctions.reduce;
       const callBack = sinon.spy();
-      const array = [1, 2];
-      expect(callBack).to.have.calledTwice();
+      const array = [1, 2, 3];
+      reduce(array, callBack);
+      expect(callBack).to.have.callCount(2);
+    });
+    it('should return 6', () => {
+      const reduce = arrayFunctions.reduce;
+      const callBack = (memo, element) => {
+        return (memo += element);
+      };
+      const array = [1, 2, 3];
+      expect(reduce(array, callBack)).to.equal(6);
     });
   });
 
@@ -77,12 +98,40 @@ describe('Arrays', () => {
       const find = arrayFunctions.find;
       expect(find).to.be.a('function');
     });
+    it('should be called 3 times', () => {
+      const find = arrayFunctions.find;
+      const callBack = sinon.spy();
+      const array = [0, 1, 2];
+      find(array, callBack);
+      // expect(callBack).to.have.callCount(3);
+      expect(callBack.calledThrice, true);
+    });
+    it('should return the found 2', () => {
+      const find = arrayFunctions.find;
+      const num = 2;
+      const array = [0, 1, 2];
+      const check = (element) => {
+        if (element === num) return true;
+      };
+      const callBack = sinon.spy(check);
+      expect(find(array, callBack)).to.equal(2);
+    });
   });
 
+  // const callBack = sinon.spy((element) => {
+  //   if (element > 20) return true;
+  // });
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
+    });
+    it('should be called 5 times', () => {
+      const filter = arrayFunctions.filter;
+      const callBack = sinon.spy();
+      const array = [10, 20, 30, 40, 50];
+      filter(array, callBack);
+      expect(callBack).to.have.callCount(5);
     });
   });
 
@@ -90,6 +139,16 @@ describe('Arrays', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
+    });
+    it('should return [1,2,3]', () => {
+      const flatten = arrayFunctions.flatten;
+      const array = [1, 2, 3];
+      expect(flatten(array)).to.deep.equal([1, 2, 3]);
+    });
+    it('should return [1,2,3,4,5]', () => {
+      const flatten = arrayFunctions.flatten;
+      const array = [[1], [2, 3], 4, [[5]]];
+      expect(flatten(array)).to.deep.equal([1, 2, 3, 4, 5]);
     });
   });
 });

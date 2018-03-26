@@ -19,7 +19,7 @@ describe('Project-1 Functions', () => {
     it('should return 10', () => {
       const multiplyByTen = funcs.multiplyByTen;
       const num = 1;
-      assert.equal(multiplyByTen(1), 10);
+      assert.equal(multiplyByTen(num), 10);
     });
     it('should be a number', () => {
       const multiplyByTen = funcs.multiplyByTen;
