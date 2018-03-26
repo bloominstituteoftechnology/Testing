@@ -56,8 +56,22 @@ describe('Project-1 Functions', () => {
 
   describe('`areSameLength`', () => {
     it('should be a function', () => {
-      const areSameLength = funcs.areSameLength;
-      assert.typeOf(areSameLength, 'number');
+      const { areSameLength } = funcs;
+      assert.typeOf(areSameLength, 'function');
+    });
+    it('should return a boolean', () => {
+      const { areSameLength } = funcs;
+      const result = areSameLength('this', 'that');
+      assert.typeOf(result, 'boolean');
+    });
+    it('should return the correct boolean value', () => {
+      const { areSameLength } = funcs;
+      const tests = [['this', 'that'], ['this', 'other thing']];
+      const answers = [true, false];
+      tests.forEach((each, i) => {
+        const result = areSameLength(each[0], each[1]);
+        assert.equal(result, answers[i]);
+      });
     });
   });
 
@@ -70,8 +84,21 @@ describe('Project-1 Functions', () => {
 
   describe('`lessThanNinety`', () => {
     it('should be a function', () => {
-      const lessThanNinety = funcs.lessThanNinety;
-      assert.typeOf(lessThanNinety, 'number');
+      const { lessThanNinety } = funcs;
+      assert.typeOf(lessThanNinety, 'function');
+    });
+    it('should return a boolean value', () => {
+      const { lessThanNinety } = funcs;
+      const result = lessThanNinety(20);
+      assert.typeOf(result, 'boolean');
+    });
+    it('should return the corrent boolean value', () => {
+      const tests = [80, 90, 100, 0, -90];
+      const answers = [true, false, false, true, true];
+      tests.forEach((each, i) => {
+        const result = lessThanNinety(each);
+        assert.equal(result, answers[i]);
+      });
     });
   });
 
@@ -119,8 +146,22 @@ describe('Project-1 Functions', () => {
 
   describe('`isEven`', () => {
     it('should be a function', () => {
-      const isEven = funcs.isEven;
-      assert.typeOf(isEven, 'number');
+      const { isEven } = funcs;
+      assert.typeOf(isEven, 'function');
+    });
+    it('should return a boolean value', () => {
+      const { isEven } = funcs;
+      const result = isEven(20);
+      assert.typeOf(result, 'boolean');
+    });
+    it('should return the corrent boolean value', () => {
+      const { isEven } = funcs;
+      const tests = [1, 2, 3, 0, -1, -2];
+      const answers = [false, true, false, true, false, true];
+      tests.forEach((each, i) => {
+        const result = isEven(each);
+        assert.equal(result, answers[i]);
+      });
     });
   });
 
@@ -168,8 +209,22 @@ describe('Project-1 Functions', () => {
 
   describe('`addExclamationPoint`', () => {
     it('should be a function', () => {
-      const addExclamationPoint = funcs.addExclamationPoint;
-      assert.typeOf(addExclamationPoint, 'string');
+      const { addExclamationPoint } = funcs;
+      assert.typeOf(addExclamationPoint, 'function');
+    });
+    it('should return a string', () => {
+      const { addExclamationPoint } = funcs;
+      const result = addExclamationPoint('Nathan kicks ass');
+      assert.typeOf(result, 'string');
+    });
+    it('should properly add an exclamation point to the end of the string', () => {
+      const { addExclamationPoint } = funcs;
+      const tests = ['Nathan kicks ass', ''];
+      const answers = ['Nathan kicks ass!', '!'];
+      tests.forEach((each, i) => {
+        const result = addExclamationPoint(each);
+        assert.equal(result, answers[i]);
+      });
     });
   });
 
