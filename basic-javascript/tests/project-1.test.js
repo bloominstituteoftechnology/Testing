@@ -11,6 +11,10 @@ const funcs = require('../src/project-1');
 // hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
 
 describe('Project-1 Functions', () => {
+  const num = 10;
+  const emptyArray = []; 
+  const nullNum = null;
+  const undefinedNum = undefined;
   describe('`multiplyByTen`', () => {
     const multiplyByTen = funcs.multiplyByTen;
 
@@ -19,37 +23,52 @@ describe('Project-1 Functions', () => {
     });
 
     it('should return a value of 100', () => {
-      const num = 10;
       assert.equal(multiplyByTen(num), 100);
     });
 
     it('should return 0', () => {
-      const num = [];
-      assert.equal(multiplyByTen(num), 0);
+      assert.equal(multiplyByTen(emptyArray), 0);
     });
 
     it('should return 0', () => {
-      const num = null;
-      assert.equal(multiplyByTen(num), 0);
+      assert.equal(multiplyByTen(nullNum), 0);
     });
 
     it('should return NaN', () => {
-      const num = undefined;
-      assert.typeOf(multiplyByTen(num), 'number');
+      assert.typeOf(multiplyByTen(undefinedNum), 'number');
     });
   });
 
   describe('`subtractFive`', () => {
+    const subtractFive = funcs.subtractFive;
     it('should be a function', () => {
-      const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
+    });
+
+    it('should return a value of 5', () => {
+      assert.equal(subtractFive(num), 5);
+    });
+
+    it('should return a value of -5', () => {
+      assert.equal(subtractFive(nullNum), -5);
     });
   });
 
   describe('`areSameLength`', () => {
+    const areSameLength = funcs.areSameLength;
+    const str1 = 'string1';
+    const str2 = 'string2';
+    const str3 = 'stringy3';
     it('should be a function', () => {
-      const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
+    });
+
+    it('should return a value of true', () => {
+      assert.equal(areSameLength(str1, str2), true);
+    });
+
+    it('should return a value of false', () => {
+      assert.equal(areSameLength(str1, str3), false);
     });
   });
 
