@@ -39,16 +39,36 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`areSameLength`', () => {
+    const areSameLength = funcs.areSameLength;
     it('should be a function', () => {
-      const areSameLength = funcs.areSameLength;
-      assert.typeOf(areSameLength, 'number');
+      assert.typeOf(areSameLength, 'function');
+    });
+    it('should return true', () => {
+      const result = areSameLength('True', 'True');
+      assert.equal(result, true);
+    });
+    it('should return false', () => {
+      const result = areSameLength('False', 'True');
+      assert.equal(result, false);
     });
   });
 
   describe('`areEqual`', () => {
+    const areEqual = funcs.areEqual;
     it('should be a function', () => {
-      const areEqual = funcs.areEqual;
-      assert.typeOf(areEqual, 'number');
+      assert.typeOf(areEqual, 'function');
+    });
+    it('should return true', () => {
+      const result = areEqual(3, 3);
+      assert.equal(result, true);
+    });
+    it('should return true', () => {
+      const result = areEqual('5', '5');
+      assert.equal(result, true);
+    });
+    it('should return false', () => {
+      const result = areEqual('52', '5');
+      assert.equal(result, false);
     });
   });
 
