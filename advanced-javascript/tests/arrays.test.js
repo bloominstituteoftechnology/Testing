@@ -8,6 +8,16 @@ const arrayFunctions = require('../src/arrays');
 const expect = chai.expect;
 chai.use(sinonChai);
 
+const {
+  each,
+  map,
+  reduce,
+  find,
+  filter,
+  flatten
+} = arrayFunctions;
+
+
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
 // first step is to make sure all these assertions work.
@@ -17,12 +27,26 @@ chai.use(sinonChai);
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
 
 describe('Arrays', () => {
+  // let testArr = [];
+  
+  // beforeEach(() => {
+  //   testArr = ['Monday', 'Tuesday', 'Noday', 'Friyay'];
+  // });
+
+  // afterEach(() => {
+  //   testArr = [];
+  // });
+  
   describe('`each`', () => {
+    const callback = sinon.spy();
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      // const each = arrayFunctions.each;
+      expect(each).to.be.a('function');
     });
     // begin here
+    // it('Should execute a cb atleast once', () => {
+    //   each
+    // })
   });
 
   describe('`map`', () => {

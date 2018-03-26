@@ -20,6 +20,14 @@ describe('Project-1 Functions', () => {
       const multiplyByTen = funcs.multiplyByTen(5);
       assert.equal(multiplyByTen, 50);
     })
+    it('should return the correct answer', ()=> {
+      const tests = [10, -5];
+      const answers = [100, -50];
+      tests.forEach((each, i) => {
+        const result = funcs.multiplyByTen(each);
+        assert.equal(result, answers[i]);
+      });
+    });
   });
 
   describe('`subtractFive`', () => {
