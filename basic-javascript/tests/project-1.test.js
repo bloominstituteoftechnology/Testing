@@ -58,11 +58,10 @@ describe('Project-1 Functions', () => {
         });
         it('param1 should be string', () => {
             const string1 = 'lola';
-            const string2 = 'lole';
+            const string2 = 'lol';
             funcs.areSameLength(string1, string2);
             assert(string1.length !== string2.length, ' `string1.length` is NOT equals to `string2.length` ');
         });
-
     });
 
     describe('`areEqual`', () => {
