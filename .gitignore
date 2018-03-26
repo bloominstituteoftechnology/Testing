@@ -1,7 +1,7 @@
 *.swp
 node_modules
 *.DS_STORE
-
+yarn.lock
 ### Vim ###
 # swap
 .sw[a-p]
@@ -13,4 +13,3 @@ Session.vim
 *~
 # auto-generated tag files
 tags
-
