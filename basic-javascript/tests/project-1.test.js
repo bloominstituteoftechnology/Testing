@@ -31,6 +31,14 @@ describe('Project-1 Functions', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
     });
+    it('should return a number', () => {
+      const subtractFive = funcs.subtractFive(10);
+      assert.typeOf(subtractFive, 'number');
+    });
+    it('should multiply the variable by 10', () => {
+      const subtractFive = funcs.subtractFive(15);
+      assert.equal(subtractFive, 10, 'subtractFive(15) should return 10');
+    });
   });
 
   describe('`areSameLength`', () => {
