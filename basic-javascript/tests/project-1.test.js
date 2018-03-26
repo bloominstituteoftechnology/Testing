@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -14,9 +15,21 @@ describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
+    it('expected 5 to equal 50', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      assert.equal(multiplyByTen(5), 50);
+    });
+    it('expected 5 to equal 50', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      assert.equal(multiplyByTen(-5), -50);
+    });
+    it('expected multiplyByTen(5) to return a Number', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      expect(multiplyByTen(5)).to.be.a('number');
+    });
   });
 
   describe('`subtractFive`', () => {
@@ -123,6 +136,8 @@ describe('Project-1 Functions', () => {
       assert.typeOf(raiseToPower, 'object');
     });
   });
+
+/////////////////// STEVEN DO ALL BELOW//////////////////////////////
 
   describe('`roundNumber`', () => {
     it('should be a function', () => {
