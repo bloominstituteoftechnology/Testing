@@ -3,6 +3,11 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const funcs = require('../src/project-1');
+const itParam = require("mocha-param");
+
+
+
+const errMess = "nooo why fail??";
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -23,7 +28,7 @@ describe('Project-1 Functions', () => {
       expect(multiplyByTen(5)).to.be.a('number');
       assert.typeOf(multiplyByTen(5), 'number');
     });
-    it('should have a value of 10', () => {
+    it('should have a value of 50', () => {
       expect(multiplyByTen(5)).to.equal(50);
       assert.equal(multiplyByTen(5), 50);
     });
@@ -52,11 +57,11 @@ describe('Project-1 Functions', () => {
     });
     // begin here
     it('should have a return type of boolean', () => {
-      expect(areSameLength('abc', 'def')).to.be.a('boolean');
+      expect(areSameLength('abc', 'def'), "no why fail??").to.be.a('boolean');
       assert.isBoolean(areSameLength('abc', 'def'), 'boolean');
     });
     it('should have a value of true', () => {
-      expect(areSameLength('abc', 'def'), 'nooo why fail??').to.be.true;
+      expect(areSameLength('abc', 'abc'), "no why fail??").to.equal(true);
       assert.isNotTrue(areSameLength('abc', 'daef'), false);
     });
   });
@@ -68,48 +73,86 @@ describe('Project-1 Functions', () => {
     });
     // begin here
     it('should have a return type of boolean', () => {
-      expect(areEqual('abc', 'def')).to.be.a('boolean');
+      expect(areEqual('abc', 'def'), "nooo why fail??").to.be.a('boolean');
       assert.isBoolean(areEqual('abc', 'def'), 'boolean');
     });
     it('should have a value of true', () => {
-      expect(areEqual('abc', 'abc'), 'nooo why fail??').to.be.true;
+      expect(areEqual('abc', 'abc'), 'nooo why fail??').to.equal(true);
       assert.isNotTrue(areEqual('abc', 'daef'), false);
     });
   });
 
   describe('`lessThanNinety`', () => {
+    const lessThanNinety = funcs.lessThanNinety;
     it('should be a function', () => {
-      const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
+    });
+    it('should have a return type of boolean', () => {
+      expect(lessThanNinety(83), "nooo why fail??").to.be.a('boolean');
+      assert.isBoolean(lessThanNinety(92), 'boolean');
+    });
+    it('should have a value of true', () => {
+      expect(lessThanNinety(83), 'nooo why fail??').to.equal(true);
+      assert.isNotTrue(lessThanNinety(92), false);
     });
   });
 
   describe('`greaterThanFifty`', () => {
+    const greaterThanFifty = funcs.greaterThanFifty;
     it('should be a function', () => {
-      const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
+    it("should have a return type of boolean", () => {
+      expect(greaterThanFifty(56), "nooo why fail??").to.be.a("boolean");
+      assert.isBoolean(greaterThanFifty(65), "boolean");
+    });
+    it("should have a value of true", () => {
+      expect(greaterThanFifty(56), "nooo why fail??").to.equal(true);
+      assert.isNotTrue(greaterThanFifty(49));
+    })
   });
 
   describe('`add`', () => {
+    const add = funcs.add;
     it('should be a function', () => {
-      const add = funcs.add;
+      expect(add).to.be.a("function");
       assert.typeOf(add, 'function');
     });
+    it("should return a type of number", () => {
+      expect(add(4, 3), "nooo why fail??").to.be.a("number");
+      assert.typeOf(add(4, 3), "number");
+    });
+    it("should return a value of 7", () => {
+      expect(add(4, 3), "nooo why fail??").to.equal(7);
+      assert(add(4, 3), 7);
+    });
+    // it("the type of the parameters should be a number", () => {
+    //   itParam("test value is a number", [1, 2, 3])
+    // })
   });
 
   describe('`subtract`', () => {
+    const subtract = funcs.subtract;
     it('should be a function', () => {
-      const subtract = funcs.subtract;
+      expect(subtract).to.be.a("function");
       assert.typeOf(subtract, 'function');
     });
+    it("should return a type of number", () => {
+      expect(subtract(4, 3), errMess).to.be.a("number");
+      assert.typeOf(subtract(4, 3), "number");
+    })
   });
 
   describe('`divide`', () => {
+    const divide = funcs.divide;
     it('should be a function', () => {
-      const divide = funcs.divide;
+      expect(divide).to.be.a("function");
       assert.typeOf(divide, 'function');
     });
+    it("should return a type of number", () => {
+      expect(divide(4, 2), errMess).to.be.a("number");
+      assert.typeOf(divide(4, 2), "number");
+    })
   });
 
   describe('`multiply`', () => {

@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.0",
-    "eslint-config-airbnb": "^16.1.0"
+    "chai-param": "^0.1.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "mocha-param": "^2.0.0"
   }
 }
