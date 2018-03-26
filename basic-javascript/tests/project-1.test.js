@@ -55,11 +55,11 @@ describe('Project-1 Functions', () => {
             funcs.areSameLength(string1, string2);
             assert(string1.length === string2.length, '`string1` equals length `string2`');
         });
-        it('param1 should be string', () => {
+        it('should be the same length', () => {
             const string1 = 'lola';
             const string2 = 'lol';
-            funcs.areSameLength(string1, string2);
-            assert(string1.length !== string2.length, ' `string1.length` is NOT equals to `string2.length` ');
+            const areSameLength = funcs.areSameLength(string1, string2);
+            assert.isNotOk(areSameLength, ' `string1.length` is NOT same length `string2.length` ');
         });
     });
 
