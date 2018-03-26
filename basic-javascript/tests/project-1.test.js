@@ -15,7 +15,7 @@ describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
     it('should be 40', () => {
@@ -27,7 +27,7 @@ describe('Project-1 Functions', () => {
   describe('`subtractFive`', () => {
     it('should be a function', () => {
       const subtractFive = funcs.subtractFive;
-      assert.typeOf(subtractFive, 'array');
+      assert.typeOf(subtractFive, 'function');
     });
     it('should be 5', () => {
       const subtractFive = funcs.subtractFive;
@@ -38,7 +38,7 @@ describe('Project-1 Functions', () => {
   describe('`areSameLength`', () => {
     it('should be a function', () => {
       const areSameLength = funcs.areSameLength;
-      assert.typeOf(areSameLength, 'number');
+      assert.typeOf(areSameLength, 'function');
     });
     it('should be smae length', () => {
       const areSameLength = funcs.areSameLength;
@@ -49,7 +49,7 @@ describe('Project-1 Functions', () => {
   describe('`areEqual`', () => {
     it('should be a function', () => {
       const areEqual = funcs.areEqual;
-      assert.typeOf(areEqual, 'number');
+      assert.typeOf(areEqual, 'function');
     });
     it('should be equal', () => {
       const areEqual = funcs.areEqual;
@@ -60,7 +60,7 @@ describe('Project-1 Functions', () => {
   describe('`lessThanNinety`', () => {
     it('should be a function', () => {
       const lessThanNinety = funcs.lessThanNinety;
-      assert.typeOf(lessThanNinety, 'number');
+      assert.typeOf(lessThanNinety, 'function');
     });
     it('should be less than ninety', () => {
       const lessThanNinety = funcs.lessThanNinety;
@@ -71,7 +71,7 @@ describe('Project-1 Functions', () => {
   describe('`greaterThanFifty`', () => {
     it('should be a function', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
-      assert.typeOf(greaterThanFifty, 'number');
+      assert.typeOf(greaterThanFifty, 'function');
     });
     it('should be greater than fifty', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
@@ -82,7 +82,7 @@ describe('Project-1 Functions', () => {
   describe('`add`', () => {
     it('should be a function', () => {
       const add = funcs.add;
-      assert.typeOf(add, 'number');
+      assert.typeOf(add, 'function');
     });
     it('should provide 10', () => {
       const add = funcs.add;
@@ -93,7 +93,7 @@ describe('Project-1 Functions', () => {
   describe('`subtract`', () => {
     it('should be a function', () => {
       const subtract = funcs.subtract;
-      assert.typeOf(subtract, 'number');
+      assert.typeOf(subtract, 'function');
     });
     it('should provide 5', () => {
       const subtract = funcs.subtract;
@@ -104,7 +104,7 @@ describe('Project-1 Functions', () => {
   describe('`divide`', () => {
     it('should be a function', () => {
       const divide = funcs.divide;
-      assert.typeOf(divide, 'number');
+      assert.typeOf(divide, 'function');
     });
     it('should provide 10', () => {
       const divide = funcs.divide;
@@ -115,7 +115,7 @@ describe('Project-1 Functions', () => {
   describe('`multiply`', () => {
     it('should be a function', () => {
       const multiply = funcs.multiply;
-      assert.typeOf(multiply, 'number');
+      assert.typeOf(multiply, 'function');
     });
     it('should provide 36', () => {
       const multiply = funcs.multiply;
@@ -126,7 +126,7 @@ describe('Project-1 Functions', () => {
   describe('`getRemainder`', () => {
     it('should be a function', () => {
       const getRemainder = funcs.getRemainder;
-      assert.typeOf(getRemainder, 'number');
+      assert.typeOf(getRemainder, 'function');
     });
     it('should provide 2', () => {
       const getRemainder = funcs.getRemainder;
@@ -137,7 +137,7 @@ describe('Project-1 Functions', () => {
   describe('`isEven`', () => {
     it('should be a function', () => {
       const isEven = funcs.isEven;
-      assert.typeOf(isEven, 'number');
+      assert.typeOf(isEven, 'function');
     });
     it('should return true', () => {
       const isEven = funcs.isEven;
@@ -148,7 +148,7 @@ describe('Project-1 Functions', () => {
   describe('`isOdd`', () => {
     it('should be a function', () => {
       const isOdd = funcs.isOdd;
-      assert.typeOf(isOdd, 'number');
+      assert.typeOf(isOdd, 'function');
     });
     it('should return false', () => {
       const isOdd = funcs.isOdd;
@@ -159,7 +159,7 @@ describe('Project-1 Functions', () => {
   describe('`square`', () => {
     it('should be a function', () => {
       const square = funcs.square;
-      assert.typeOf(square, 'object');
+      assert.typeOf(square, 'function');
     });
     it('should provide 25', () => {
       const square = funcs.square;
@@ -170,7 +170,7 @@ describe('Project-1 Functions', () => {
   describe('`cube`', () => {
     it('should be a function', () => {
       const cube = funcs.cube;
-      assert.typeOf(cube, 'object');
+      assert.typeOf(cube, 'function');
     });
     it('should return 8', () => {
       const cube = funcs.cube;
@@ -181,7 +181,7 @@ describe('Project-1 Functions', () => {
   describe('`raiseToPower`', () => {
     it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
-      assert.typeOf(raiseToPower, 'object');
+      assert.typeOf(raiseToPower, 'function');
     });
     it('should return 4', () => {
       const raiseToPower = funcs.raiseToPower;
@@ -192,7 +192,7 @@ describe('Project-1 Functions', () => {
   describe('`roundNumber`', () => {
     it('should be a function', () => {
       const roundNumber = funcs.roundNumber;
-      assert.typeOf(roundNumber, 'object');
+      assert.typeOf(roundNumber, 'function');
     });
     it('should return a 5', () => {
       const roundNumber = funcs.roundNumber;
@@ -203,7 +203,7 @@ describe('Project-1 Functions', () => {
   describe('`roundUp`', () => {
     it('should be a function', () => {
       const roundUp = funcs.roundUp;
-      assert.typeOf(roundUp, 'object');
+      assert.typeOf(roundUp, 'function');
     });
     it('should return 6', () => {
       const roundUp = funcs.roundUp;
@@ -214,7 +214,7 @@ describe('Project-1 Functions', () => {
   describe('`addExclamationPoint`', () => {
     it('should be a function', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
-      assert.typeOf(addExclamationPoint, 'string');
+      assert.typeOf(addExclamationPoint, 'function');
     });
     it('should add exclamation point!', () => {
       const addExclamationPoint = funcs.addExclamationPoint;
@@ -225,7 +225,7 @@ describe('Project-1 Functions', () => {
   describe('`combineNames`', () => {
     it('should be a function', () => {
       const combineNames = funcs.combineNames;
-      assert.typeOf(combineNames, 'string');
+      assert.typeOf(combineNames, 'function');
     });
     it('should combine names', () => {
       const combineNames = funcs.combineNames;
@@ -236,7 +236,7 @@ describe('Project-1 Functions', () => {
   describe('`getGreeting`', () => {
     it('should be a function', () => {
       const getGreeting = funcs.getGreeting;
-      assert.typeOf(getGreeting, 'string');
+      assert.typeOf(getGreeting, 'function');
     });
     it('should return a greeting', () => {
       const getGreeting = funcs.getGreeting;
@@ -247,7 +247,7 @@ describe('Project-1 Functions', () => {
   describe('`getRectangleArea`', () => {
     it('should be a function', () => {
       const getRectangleArea = funcs.getRectangleArea;
-      assert.typeOf(getRectangleArea, 'string');
+      assert.typeOf(getRectangleArea, 'function');
     });
     it('should return 25', () => {
       const getRectangleArea = funcs.getRectangleArea;
@@ -258,7 +258,7 @@ describe('Project-1 Functions', () => {
   describe('`getTriangleArea`', () => {
     it('should be a function', () => {
       const getTriangleArea = funcs.getTriangleArea;
-      assert.typeOf(getTriangleArea, 'string');
+      assert.typeOf(getTriangleArea, 'function');
     });
     it('should return 50', () => {
       const getTriangleArea = funcs.getTriangleArea;
@@ -269,7 +269,7 @@ describe('Project-1 Functions', () => {
   describe('`getCircleArea`', () => {
     it('should be a function', () => {
       const getCircleArea = funcs.getCircleArea;
-      assert.typeOf(getCircleArea, 'string');
+      assert.typeOf(getCircleArea, 'function');
     });
     it('should return 50.27', () => {
       const getCircleArea = funcs.getCircleArea;
@@ -280,7 +280,7 @@ describe('Project-1 Functions', () => {
   describe('`getRectangularPrismVolume`', () => {
     it('should be a function', () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
-      assert.typeOf(getRectangularPrismVolume, 'string');
+      assert.typeOf(getRectangularPrismVolume, 'function');
     });
     it('should return 8', () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
