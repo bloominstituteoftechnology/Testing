@@ -12,11 +12,31 @@ const funcs = require('../src/project-1');
 
 describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
+    const multiplyByTen = funcs.multiplyByTen;
+
     it('should be a function', () => {
-      const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'function');
     });
-    // begin here
+
+    it('should return a value of 100', () => {
+      const num = 10;
+      assert.equal(multiplyByTen(num), 100);
+    });
+
+    it('should return 0', () => {
+      const num = [];
+      assert.equal(multiplyByTen(num), 0);
+    });
+
+    it('should return 0', () => {
+      const num = null;
+      assert.equal(multiplyByTen(num), 0);
+    });
+
+    it('should return NaN', () => {
+      const num = undefined;
+      assert.typeOf(multiplyByTen(num), 'number');
+    });
   });
 
   describe('`subtractFive`', () => {
