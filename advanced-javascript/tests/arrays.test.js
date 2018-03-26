@@ -86,8 +86,17 @@ describe('Arrays', () => {
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
     });
+    it('should find correct element', () => {
+      const testArr = [1, 2, 3];
+      const testParam = 2;
+      const callback = (param) => {
+        if (param === testParam) return param
+      }
+      const foundElement = find(testArr, callback)
+      expect(foundElement).to.equal(2);
+    })
   });
 
   describe('`filter`', () => {
