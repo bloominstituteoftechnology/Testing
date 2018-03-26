@@ -176,86 +176,134 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`square`', () => {
-    it('should be a function', () => {
-      const square = funcs.square;
-      assert.typeOf(square, 'object');
+    const square = funcs.square;
+    it('should be a function', () => { 
+      assert.typeOf(square, 'function');
     });
+    it('should return square', () => {
+      const isSquare = square(9);
+      assert.equal(isSquare, 81)
+    })
   });
 
   describe('`cube`', () => {
-    it('should be a function', () => {
       const cube = funcs.cube;
-      assert.typeOf(cube, 'object');
+      it('should be a function', () => {
+      assert.typeOf(cube, 'function');
     });
+    it('should return square root', () => {
+      const cubed = cube(3);
+      assert.equal(cubed, 27)
+    })
   });
 
   describe('`raiseToPower`', () => {
-    it('should be a function', () => {
       const raiseToPower = funcs.raiseToPower;
-      assert.typeOf(raiseToPower, 'object');
+      it('should be a function', () => {
+      assert.typeOf(raiseToPower, 'function');
     });
+    it('should return value raised to power', () => {
+      const powered = raiseToPower(5, 3);
+      assert.equal(powered, 125)
+    })
   });
 
   describe('`roundNumber`', () => {
+    const roundNumber = funcs.roundNumber;
     it('should be a function', () => {
-      const roundNumber = funcs.roundNumber;
-      assert.typeOf(roundNumber, 'object');
+      assert.typeOf(roundNumber, 'function');
     });
+    it('should round a number', () => {
+      const rounded = roundNumber(99.1);
+      assert.equal(rounded, 99)
+    })
   });
 
   describe('`roundUp`', () => {
+    const roundUp = funcs.roundUp;
     it('should be a function', () => {
-      const roundUp = funcs.roundUp;
-      assert.typeOf(roundUp, 'object');
+      assert.typeOf(roundUp, 'function');
     });
+    it('should round num up', () => {
+      const roundedUp = roundUp(99.9);
+      assert.equal(roundedUp, 100) 
+    })
   });
 
   describe('`addExclamationPoint`', () => {
+    const addExclamationPoint = funcs.addExclamationPoint;
     it('should be a function', () => {
-      const addExclamationPoint = funcs.addExclamationPoint;
-      assert.typeOf(addExclamationPoint, 'string');
+      assert.typeOf(addExclamationPoint, 'function');
     });
+    it('should add !', () => {
+      const x = addExclamationPoint('Hello')
+      assert.equal(x, 'Hello!')
+    })
   });
 
   describe('`combineNames`', () => {
-    it('should be a function', () => {
       const combineNames = funcs.combineNames;
-      assert.typeOf(combineNames, 'string');
+      it('should be a function', () => {
+      assert.typeOf(combineNames, 'function');
     });
+    it('should combine names', () => {
+      const combine = combineNames('Mike', 'Streltsoff');
+      assert.equal(combine, 'Mike Streltsoff')
+    })
   });
 
   describe('`getGreeting`', () => {
+    const getGreeting = funcs.getGreeting;
     it('should be a function', () => {
-      const getGreeting = funcs.getGreeting;
-      assert.typeOf(getGreeting, 'string');
+      assert.typeOf(getGreeting, 'function');
     });
+    it('should return greeting', () => {
+      const greeting = getGreeting('Terrie');
+      assert.equal(greeting,'Hello Terrie!') 
+    })
   });
 
   describe('`getRectangleArea`', () => {
+    const getRectangleArea = funcs.getRectangleArea;
     it('should be a function', () => {
-      const getRectangleArea = funcs.getRectangleArea;
-      assert.typeOf(getRectangleArea, 'string');
+      assert.typeOf(getRectangleArea, 'function');
     });
+    it('should return area of rectangle', () => {
+      const area = getRectangleArea(4, 8);
+      assert.equal(area, 32)
+    })
   });
 
   describe('`getTriangleArea`', () => {
+    const getTriangleArea = funcs.getTriangleArea;
     it('should be a function', () => {
-      const getTriangleArea = funcs.getTriangleArea;
-      assert.typeOf(getTriangleArea, 'string');
+      assert.typeOf(getTriangleArea, 'function');
     });
+    it('should return triangle area', () => {
+      const triArea = getTriangleArea(4, 8);
+      assert.equal(triArea, 16) 
+    })
   });
 
   describe('`getCircleArea`', () => {
+    const getCircleArea = funcs.getCircleArea;
     it('should be a function', () => {
-      const getCircleArea = funcs.getCircleArea;
-      assert.typeOf(getCircleArea, 'string');
+      assert.typeOf(getCircleArea, 'function');
     });
+    it('should return circle area', () => {
+      const cirArea = getCircleArea(10, 10);
+      assert.equal(cirArea, 314.1592653589793)
+    })
   });
 
   describe('`getRectangularPrismVolume`', () => {
+    const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
     it('should be a function', () => {
-      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
-      assert.typeOf(getRectangularPrismVolume, 'string');
+      assert.typeOf(getRectangularPrismVolume, 'function');
     });
+    it('should return area of prism', () => {
+      const priArea = getRectangularPrismVolume(7, 64, 21);
+      assert.equal(priArea, 9408)
+    })
   });
 });
