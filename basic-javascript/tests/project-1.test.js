@@ -211,44 +211,63 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`combineNames`', () => {
+    const combineNames = funcs.combineNames;
     it('should be a function', () => {
-      const combineNames = funcs.combineNames;
       assert.typeOf(combineNames, 'function');
     });
+    it('should combine 2 strings', () => {
+      assert.strictEqual(combineNames('name1', 'name2'), 'name1 name2');
+    })
   });
 
   describe('`getGreeting`', () => {
+    const getGreeting = funcs.getGreeting;
     it('should be a function', () => {
-      const getGreeting = funcs.getGreeting;
       assert.typeOf(getGreeting, 'function');
+    });
+    it('should greet user after recieving username', () => {
+      const name = 'Brad';
+      expect(getGreeting(name)).to.equal('Hello Brad!')
     });
   });
 
   describe('`getRectangleArea`', () => {
+    const getRectangleArea = funcs.getRectangleArea;
     it('should be a function', () => {
-      const getRectangleArea = funcs.getRectangleArea;
       assert.typeOf(getRectangleArea, 'function');
     });
+    it('should return area of rectangle given l and w', () => {
+      expect(getRectangleArea(3,4)).to.equal(12);
+    })
   });
 
   describe('`getTriangleArea`', () => {
+    const getTriangleArea = funcs.getTriangleArea;
     it('should be a function', () => {
-      const getTriangleArea = funcs.getTriangleArea;
       assert.typeOf(getTriangleArea, 'function');
     });
+    it('should return area of rectangle given b, h', () => {
+      expect(getTriangleArea(3,4)).to.equal(.5*3*4);
+    })
   });
 
   describe('`getCircleArea`', () => {
+    const getCircleArea = funcs.getCircleArea;
     it('should be a function', () => {
-      const getCircleArea = funcs.getCircleArea;
       assert.typeOf(getCircleArea, 'function');
     });
+    it('should return the area of a circle given a radius', () => {
+      expect(getCircleArea(2)).to.equal(Math.PI * 4)
+    })
   });
 
   describe('`getRectangularPrismVolume`', () => {
+    const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
     it('should be a function', () => {
-      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
       assert.typeOf(getRectangularPrismVolume, 'function');
     });
+    it('should return area of rectangular prism', () => {
+      assert.strictEqual(getRectangularPrismVolume(23,12,36), (23*12*36));
+    })
   });
 });
