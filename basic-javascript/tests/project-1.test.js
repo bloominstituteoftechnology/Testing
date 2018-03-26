@@ -41,7 +41,7 @@ describe('Project-1 Functions', () => {
         });
         it('number should be positive', () => {
             let num = 2;
-            assert(num > -1, '`num` > -1');
+            assert(num > -1, '`num` is positive');
         });
     });
 
@@ -54,7 +54,7 @@ describe('Project-1 Functions', () => {
             const string1 = 'lola';
             const string2 = 'lola';
             funcs.areSameLength(string1, string2);
-            assert(string1 === string2, '`string1` is equals to `string2`');
+            assert(string1.length === string2.length, '`string1` equals length `string2`');
         });
         it('param1 should be string', () => {
             const string1 = 'lola';
