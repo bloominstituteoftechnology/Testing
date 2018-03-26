@@ -14,8 +14,9 @@ const values = (obj) => {
 };
 
 const mapObject = (obj, cb) => {
-  Object.keys(obj).forEach((key) => (obj[key] = cb(obj[key])));
-  return obj;
+  const newObj = Object.assign({}, obj);
+  Object.keys(newObj).forEach((key) => (newObj[key] = cb(newObj[key])));
+  return newObj;
 };
 
 const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
