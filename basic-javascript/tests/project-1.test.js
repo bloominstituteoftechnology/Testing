@@ -71,6 +71,12 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(lessThanNinety, 'function');
     });
+    it('should be a boolean', () => {
+      assert.isBoolean(lessThanNinety(1), true);
+    });
+    it('should be false', () => {
+      assert.isFalse(lessThanNinety(91), false);
+    });
   });
 
   describe('`greaterThanFifty`', () => {
