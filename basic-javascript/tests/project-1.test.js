@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -12,13 +13,18 @@ const funcs = require('../src/project-1');
 
 describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
+    const multiplyByTen = funcs.multiplyByTen;
     it('should be a function', () => {
-      const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'function');
     });
-    // begin here
-    // it('should be a number', () => {
-    //   expect(multiplyByTen).to.be.a('number');
+    it('should return a number', () => {
+      assert.typeOf(multiplyByTen(1), 'number');
+      // assert.isNotNaN(multiplyByTen(2), "shouldn't be NaN");
+    });
+    it('should return 10', () => {
+      assert.equal(multiplyByTen(1), 10);
+    });
+    // it('should result with a number', () => {
     // });
   });
 
