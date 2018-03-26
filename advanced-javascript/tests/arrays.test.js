@@ -29,6 +29,13 @@ describe('Arrays', () => {
       });
       expect(finalString).to.equal('stuffthingswhatnot');
     });
+    it('should pass the element and the index to the callback', () => {
+      let count = 0;
+      each([1, 2, 3], (element, index) => {
+        count += element + index;
+      });
+      expect(count).to.equal(9);
+    });
   });
 
   describe('`map`', () => {
