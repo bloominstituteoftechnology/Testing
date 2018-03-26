@@ -1,4 +1,4 @@
-/* eslint-disable prefer-destructuring */
+/* eslint-disable */
 
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
@@ -10,27 +10,58 @@ const funcs = require('../src/project-1');
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
 
-describe('Project-1 Functions', () => {
+describe('Project-1 Func Test Suite', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'function');
     });
-   
+    it('should be a number', () => {
+      const multiplyByTen = funcs.multiplyByTen(10);
+      assert.typeOf(multiplyByTen, 'number');
+    });
+    it('should return the right number', () => {
+      const multiplyByTen = funcs.multiplyByTen(10);
+      assert.equal(multiplyByTen, 100, 'multiplyByTen(10) equals 100');
+    });
   });
 
+
   describe('`subtractFive`', () => {
+
     it('should be a function', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
     });
+
+    it('should be a number', () => {
+      const subtractFive = funcs.subtractFive;
+      assert.typeOf(subtractFive, 'number');
+    });
+
+    it('should return the correct number', () => {
+      const subtractFive = funcs.subtractFive(10);
+      assert.equal(subtractFive,5,'subtractFive(10)equals5');
+    });
+
   });
 
   describe('`areSameLength`', () => {
+
     it('should be a function', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
     });
+
+    it('should return a boolean', () => {
+      const areSameLength = funcs.areSameLength;
+      assert.typeOf(areSameLength, 'boolean')
+    });
+
+    it('should return a boolean value', () => {
+      const areSameLength = funcs.areSameLength('hi', 'hello');
+      assert.equals()
+    })
   });
 
   describe('`areEqual`', () => {
