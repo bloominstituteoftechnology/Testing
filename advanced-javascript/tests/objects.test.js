@@ -7,3 +7,10 @@ const objectFunctions = require('../src/objects');
 
   });
 }); */
+
+describe('keys', () => {
+  it('should be a function', () => {
+    const { keys } = objectFunctions;
+    assert(keys).to.be.a('function');
+  });
+});
