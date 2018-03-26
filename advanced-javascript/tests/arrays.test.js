@@ -27,15 +27,15 @@ const {
 // hint 3. - if the function you're testing requires a * callback *, make sure you use a spy like sinon
 
 describe('Arrays', () => {
-  // let testArr = [];
+  let testArr = [];
   
-  // beforeEach(() => {
-  //   testArr = ['Monday', 'Tuesday', 'Noday', 'Friyay'];
-  // });
+  beforeEach(() => {
+    testArr = ['Monday', 'Tuesday', 'Noday', 'Friyay'];
+  });
 
-  // afterEach(() => {
-  //   testArr = [];
-  // });
+  afterEach(() => {
+    testArr = [];
+  });
   
   describe('`each`', () => {
     const callback = sinon.spy();
@@ -44,16 +44,32 @@ describe('Arrays', () => {
       expect(each).to.be.a('function');
     });
     // begin here
-    // it('Should execute a cb atleast once', () => {
-    //   each
-    // })
+    it('should execute callback atleast once', () => {
+      each(testArr, callback);
+      expect(callback).to.have.callCount(testArr.length);
+    });
   });
 
   describe('`map`', () => {
+    const callback = sinon.spy();
+    
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
     });
+    it('should execute callback atleast once', () => {
+      map(testArr, callback);
+      expect(callback).to.have.callCount(testArr.length);
+    })
+    it('should map elements to objects', () => {
+      const callback = (item) => {
+        return { 
+          item,
+        };
+      };
+      const mappedArray = map(testArr, callback);
+      expect(mappedArray[0]).to.be.an('object');
+    })
   });
 
   describe('`reduce`', () => {
