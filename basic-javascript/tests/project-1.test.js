@@ -73,23 +73,47 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`areEqual`', () => {
+    const areEqual = funcs.areEqual;
     it('should be a function', () => {
-      const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
+    });
+
+    it('should return true', () => {
+      assert.equal(areEqual(num, num), true);
+    });
+
+    it('should return false', () => {
+      assert.equal(areEqual(num, nullNum), false);
     });
   });
 
   describe('`lessThanNinety`', () => {
+    const lessThanNinety = funcs.lessThanNinety;
     it('should be a function', () => {
-      const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
+    });
+
+    it('should return true', () => {
+      assert.equal(lessThanNinety(num), true);
+    });
+
+    it('should return false', () => {
+      assert.equal(lessThanNinety(100), false);
     });
   });
 
   describe('`greaterThanFifty`', () => {
+    const greaterThanFifty = funcs.greaterThanFifty;
     it('should be a function', () => {
-      const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
+    });
+
+    it('should return false', () => {
+      assert.equal(greaterThanFifty(num), false);
+    });
+
+    it('should return true', () => {
+      assert.equal(greaterThanFifty(100), true);
     });
   });
 
