@@ -161,4 +161,88 @@ describe('Project-2 Functions', () => {
           expect(result).to.be.an('array').that.includes(2, 8);
         })
     });
+    describe('`addItemToArray`', () => {
+        const addItemToArray = funcs.addItemToArray;
+        it('should be a function', () => {
+          assert.typeOf(addItemToArray, 'function');
+        });
+        it('should return an array', () => {
+          const result = addItemToArray([ 5, 10, 7 ]);
+          assert.typeOf(result, 'array');
+        })
+        it('should increment each element by 1', () => {
+          const result = addItemToArray([1, 7], 5);
+          assert.equal(result[2], 5);
+        })
+    });
+    describe('`addItemToFront`', () => {
+        const addItemToFront = funcs.addItemToFront;
+        it('should be a function', () => {
+          assert.typeOf(addItemToFront, 'function');
+        });
+        it('should return an array', () => {
+          const result = addItemToFront([ 5, 10, 7 ]);
+          assert.typeOf(result, 'array');
+        })
+        it('should increment each element by 1', () => {
+          const result = addItemToFront([1, 7], 2);
+          assert.equal(result[0], 2)
+        })
+    });
+
+    describe('`wordsToSentence`', () => {
+        const wordsToSentence = funcs.wordsToSentence;
+        it('should be a function', () => {
+          assert.typeOf(wordsToSentence, 'function');
+        });
+        it('should return h e l l o', () => {
+          const result = wordsToSentence('hello');
+          assert.equal(result, 'h e l l o');
+        })
+    });
+    describe('`contains`', () => {
+        const contains = funcs.contains;
+        it('should be a function', () => {
+          assert.typeOf(contains, 'function');
+        });
+        it('should return true', () => {
+          const result = contains(['a', 'b', 'c'], 'c');
+          assert.equal(result, true);
+        });
+        it('should return false', () => {
+          const result = contains(['a', 'b', 'c'], 'd');
+          assert.equal(result, false);
+        });
+    });
+    describe('`addNumbers`', () => {
+        const addNumbers = funcs.addNumbers;
+        it('should be a function', () => {
+          assert.typeOf(addNumbers, 'function');
+        });
+        it('should return 16', () => {
+          const result = addNumbers([2, 4, 7, 3]);
+          assert.equal(result, 16);
+        });
+    });
+    describe('`averageTestScore`', () => {
+        const averageTestScore = funcs.averageTestScore;
+        it('should be a function', () => {
+          assert.typeOf(averageTestScore, 'function');
+        });
+        it('should return 4', () => {
+          const result = averageTestScore([2, 4, 7, 3]);
+          assert.equal(result, 4);
+        });
+    });
+    describe('`largestNumber`', () => {
+        const largestNumber = funcs.largestNumber;
+        it('should be a function', () => {
+          assert.typeOf(largestNumber, 'function');
+        });
+        it('should return 7', () => {
+          const result = largestNumber([2, 4, 7, 3]);
+          assert.equal(result, 7);
+        });
+    });
+
 });
