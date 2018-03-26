@@ -13,24 +13,28 @@ const expect = require('chai').expect;
 
 describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
+    const multiplyByTen = funcs.multiplyByTen;
     it('should be a function', () => {
-      const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'function');
     });
-    // begin here
     it('should be a number', () => {
-      const multiplyByTen = funcs.multiplyByTen;
-      // assert.typeOf(multiplyByTen, 'function');
       const result = multiplyByTen(10);
       assert.typeOf(result, 'number');
-      // expect(multiplyByTen).to.be.a('function');
     });
   });
 
   describe('`subtractFive`', () => {
+    const subtractFive = funcs.subtractFive;
     it('should be a function', () => {
-      const subtractFive = funcs.subtractFive;
-      assert.typeOf(subtractFive, 'array');
+      assert.typeOf(subtractFive, 'function');
+    });
+    it('should return a 5', () => {
+      const result = subtractFive(10);
+      assert.equal(result, 5);
+    });
+    it('should return -5', () => {
+      const result = subtractFive(0);
+      assert.equal(result, -5);
     });
   });
 
