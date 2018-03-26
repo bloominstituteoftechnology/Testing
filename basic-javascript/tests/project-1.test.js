@@ -54,15 +54,21 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`areEqual`', () => {
+    const areEqual = funcs.areEqual;
     it('should be a function', () => {
-      const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
+    });
+    it('should be a boolean', () => {
+      assert.isBoolean(areEqual(4, 5), 'expected a boolean');
+    });
+    it('should return false with numbers 4 and 5 ', () => {
+      assert.isFalse(areEqual(4, 5), false);
     });
   });
 
   describe('`lessThanNinety`', () => {
+    const lessThanNinety = funcs.lessThanNinety;
     it('should be a function', () => {
-      const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
     });
   });
@@ -103,9 +109,15 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`getRemainder`', () => {
+    const getRemainder = funcs.getRemainder;
     it('should be a function', () => {
-      const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
+    });
+    it('should return a number', () => {
+      assert.typeOf(getRemainder(5, 4), 'number');
+    });
+    it('should return 1', () => {
+      assert.equal(getRemainder(5, 4), 1);
     });
   });
 
@@ -152,16 +164,28 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`roundUp`', () => {
+    const roundUp = funcs.roundUp;
     it('should be a function', () => {
-      const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, 'function');
+    });
+    it('should return a number', () => {
+      assert.typeOf(roundUp(1.12), 'number');
+    });
+    it('should return 2', () => {
+      assert.equal(roundUp(1.12), 2);
     });
   });
 
   describe('`addExclamationPoint`', () => {
+    const addExclamationPoint = funcs.addExclamationPoint;
     it('should be a function', () => {
-      const addExclamationPoint = funcs.addExclamationPoint;
       assert.typeOf(addExclamationPoint, 'function');
+    });
+    it('should return a string', () => {
+      assert.typeOf(addExclamationPoint('Hello'), 'string');
+    });
+    it('should return "Hello!"', () => {
+      assert.equal(addExclamationPoint('Hello'), 'Hello!');
     });
   });
 
