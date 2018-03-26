@@ -73,11 +73,10 @@ describe('Arrays', () => {
     });
     it('should return the expected output given a specific input', () => {
       const reduce = arrayFunctions.reduce;
-      // const cb = (element, acc) => {
-      //   if (element > acc) return element;
-      // };
-
-      expect(reduce(1, 3, 5)).to.equal(6);
+      const cb = (a, b) => {
+        return (a > b) ? a : b;
+      };
+      expect(reduce([1, 3, 4], cb)).to.equal(4);
     });
   });
 
