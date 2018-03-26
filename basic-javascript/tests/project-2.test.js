@@ -38,13 +38,13 @@ describe('Project-2 Functions', () => {
     describe('isTenOrFive', () => {
         const isTenOrFive = funcs.isTenOrFive;
         it('should be a function', () => {
-            assert.typeOf(funcs.isTenOrFive, 'function');
+            assert.typeOf(isTenOrFive, 'function');
         });
         it('should return true', () => {
             assert(isTenOrFive(10), true);
         })
         it('should return false', () => {
-            assert(isTenOrFive(1), false);
+            assert.strictEqual(isTenOrFive(1), false);
         });
     });
 
@@ -57,7 +57,7 @@ describe('Project-2 Functions', () => {
             assert(isInRange(30), true);
         })
         it('should return false', () => {
-            assert(isInRange(10), false);
+            assert.strictEqual(isInRange(10), false);
         });
     });
 
@@ -70,7 +70,7 @@ describe('Project-2 Functions', () => {
             assert(isInteger(3), true);
         })
         it('should return false', () => {
-            assert(isInteger(0.9), false);
+            assert.strictEqual(isInteger(0.9), false);
         });
     });
 
@@ -96,9 +96,9 @@ describe('Project-2 Functions', () => {
             assert.typeOf(isPrime, 'function');
         });
         it('should return false', () => {
-            assert(isPrime(-1), false);
-            assert(isPrime(10), false);
-            assert(isPrime(1), false);
+            assert.strictEqual(isPrime(-1), false);
+            assert.strictEqual(isPrime(10), false);
+            assert.strictEqual(isPrime(1), false);
         });
         it('should return true', () => {
             assert(isPrime(7), true);
@@ -184,7 +184,7 @@ describe('Project-2 Functions', () => {
             assert(contains([1, 2, 3, 3, 4, 3], 3), true);
         });
         it('should return false', () => {
-            assert(contains([1, 2, 4], 3), false);
+            assert.strictEqual(contains([1, 2, 4], 3), false);
         });
     });
 
