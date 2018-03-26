@@ -2,7 +2,6 @@
 
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
-const expect = require('chai').expect;
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -90,7 +89,6 @@ describe('Project-1 Functions', () => {
   describe('`greaterThanFifty`', () => {
     const greaterThanFifty = funcs.greaterThanFifty;
     it('should be a function', () => {
-      const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
     it('should return true', () => {
