@@ -11,20 +11,46 @@ const funcs = require('../src/project-1');
 // hint 2. - you should test to see if the expected return output is of
 //         - a specified type, as well as the correct outcome.
 
-      
 describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
-      const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      const { multiplyByTen } = funcs;
+      assert.typeOf(multiplyByTen, 'function');
     });
-    // expect(multiplyByTen).to.be.a('function');
+    it('should return a number', () => {
+      const { multiplyByTen } = funcs;
+      const result = multiplyByTen(1);
+      assert.typeOf(result, 'number');
+    });
+    it('should return the correct number', () => {
+      const { multiplyByTen } = funcs;
+      const tests = [5, 23, 0, -5];
+      const answers = [50, 230, 0, -50];
+      tests.forEach((each, i) => {
+        const result = multiplyByTen(each);
+        assert.equal(result, answers[i]);
+      });
+    });
   });
 
   describe('`subtractFive`', () => {
     it('should be a function', () => {
-      const subtractFive = funcs.subtractFive;
-      assert.typeOf(subtractFive, 'array');
+      const { subtractFive } = funcs;
+      assert.typeOf(subtractFive, 'function');
+    });
+    it('should return a number', () => {
+      const { subtractFive } = funcs;
+      const result = subtractFive(10);
+      assert.typeOf(result, 'number');
+    });
+    it('should return the correct number', () => {
+      const { subtractFive } = funcs;
+      const tests = [5, 23, 0, -5];
+      const answers = [0, 18, -5, -10];
+      tests.forEach((each, i) => {
+        const result = subtractFive(each);
+        assert.equal(result, answers[i]);
+      });
     });
   });
 
