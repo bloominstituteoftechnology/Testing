@@ -34,11 +34,11 @@ describe('Project-1 Functions', () => {
     it('should subtract five', () => {
       const subtractFive = funcs.subtractFive;
       assert.equal(subtractFive(10), 5);
-    })
+    });
     it('should return a number', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive(10), 'number');
-    })
+    });
   });
 
   describe('`areSameLength`', () => {
@@ -49,11 +49,11 @@ describe('Project-1 Functions', () => {
     it('should return a boolean', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength('hi', 'hi'), 'boolean');
-    })
+    });
     it('should work', () => {
       const areSameLength = funcs.areSameLength;
       assert.equal(areSameLength('hi', 'hi'), true);
-    })
+    });
   });
 
   describe('`areEqual`', () => {
@@ -64,11 +64,11 @@ describe('Project-1 Functions', () => {
     it('should return a boolean', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual(5, 5), 'boolean');
-    })
+    });
     it('should work', () => {
       const areEqual = funcs.areEqual;
       assert.equal(areEqual(5, 5), true);
-    })
+    });
   });
 
   describe('`lessThanNinety`', () => {
@@ -79,7 +79,7 @@ describe('Project-1 Functions', () => {
     it('should return a boolean', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety(50), 'boolean');
-    })
+    });
   });
 
   describe('`greaterThanFifty`', () => {
