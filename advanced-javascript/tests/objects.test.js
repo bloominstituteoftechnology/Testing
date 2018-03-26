@@ -42,7 +42,7 @@ describe('`mapObject`', () => {
   it('should return an object with all values of 1', () => {
     const { mapObject } = objectFunctions;
     const object = { a: 1, b: 2, c: 3 };
-    const setToOne = (x) => (x = 1);
+    const setToOne = x => (x = 1);
     const callBack = sinon.spy(setToOne);
     assert(mapObject(object, callBack)).to.deep.equal({ a: 1, b: 1, c: 1 });
   });
@@ -52,5 +52,5 @@ describe('`pairs`', () => {
   it('should be a function', () => {
     const { pairs } = objectFunctions;
     assert(pairs).to.be.a('function');
-  })
-})
+  });
+});
