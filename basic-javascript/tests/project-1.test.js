@@ -16,12 +16,12 @@ describe('Project-1 Functions', () => {
       const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'function');
     });
-		  it('output should return a number', () => {
-			  assert.typeOf(funcs.multiplyByTen(10), 'number');
-		});
-			it('output should return correct number', () => {
-					assert.equal(funcs.multiplyByTen(10), 100);
-		});
+    it('output should return a number', () => {
+      assert.typeOf(funcs.multiplyByTen(10), 'number');
+    });
+    it('output should return correct number', () => {
+      assert.equal(funcs.multiplyByTen(10), 100);
+    });
   });
 
   describe('`subtractFive`', () => {
@@ -29,11 +29,11 @@ describe('Project-1 Functions', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
     });
-		 it('output should return a number', () => {
-        assert.typeOf(funcs.subtractFive(20), 'number');
-   });
-      it('output should return correct number', () => {
-           assert.equal(funcs.subtractFive(20), 15);
+    it('output should return a number', () => {
+      assert.typeOf(funcs.subtractFive(20), 'number');
+    });
+    it('output should return correct number', () => {
+      assert.equal(funcs.subtractFive(20), 15);
     });
   });
 
@@ -42,11 +42,11 @@ describe('Project-1 Functions', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
     });
-		 it('output should return a boolean', () => {
-         assert.typeOf(funcs.areSameLength('Dani', 'kitty'), 'boolean');
-     });
-      it('output should return correct boolean', () => {
-         assert.isTrue(funcs.areSameLength('hello','world'));
+    it('output should return a boolean', () => {
+      assert.typeOf(funcs.areSameLength('Dani', 'kitty'), 'boolean');
+    });
+    it('output should return correct boolean', () => {
+      assert.isTrue(funcs.areSameLength('hello', 'world'));
     });
   });
 
@@ -55,12 +55,12 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
     });
-		 it('output should return a boolean', () => {
-        assert.typeOf(funcs.areEqual('bird', 'Hook'), 'boolean');
-     });
-      it('output should return correct boolean', () => {
-         assert.isFalse(funcs.areEqual('Leon', 'Terrie'));
-     });
+    it('output should return a boolean', () => {
+      assert.typeOf(funcs.areEqual('bird', 'Hook'), 'boolean');
+    });
+    it('output should return correct boolean', () => {
+      assert.isFalse(funcs.areEqual('Leon', 'Terrie'));
+    });
   });
 
   describe('`lessThanNinety`', () => {
@@ -68,15 +68,17 @@ describe('Project-1 Functions', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
     });
-     it('output should return a boolean', () => {
-          assert.typeOf(funcs.lessThanNinety(89), 'boolean');
-     });
-       it('output should return true if the number is less than Ninety', () => {
-         assert.isTrue(funcs.lessThanNinety(70), 30);
-     });
-			 it('output should return false if the number is greater than Ninety', () => {
-           assert.isFalse(funcs.lessThanNinety(120, 96));
-     });
+    it('output should return a boolean', () => {
+      assert.typeOf(funcs.lessThanNinety(89), 'boolean');
+    });
+    it('should return the corrent boolean value', () => {
+      const tests = [80, 90, 100, 0, -90];
+      const answers = [true, false, false, true, true];
+      tests.forEach((each, i) => {
+        const result = funcs.lessThanNinety(each);
+        assert.equal(result, answers[i]);
+      });
+    });
   });
 
   describe('`greaterThanFifty`', () => {
@@ -84,28 +86,44 @@ describe('Project-1 Functions', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
-		 it('output should return a boolean', () => {
-            assert.typeOf(funcs.greaterThanFifty(57), 'boolean');
-       });
-         it('output should return true if the number is greater than Fifty', () => {
-           assert.isTrue(funcs.greaterThanFifty(67), 68);
-       });
-        it('output should return false if the number is less than Fifty', () => {
-             assert.isFalse(funcs.lessThanNinety(13, 40));
-      });
-   });
+    it('output should return a boolean', () => {
+      assert.typeOf(funcs.greaterThanFifty(57), 'boolean');
+    });
+    it('output should return correct boolean', () => {
+      assert.isTrue(funcs.greaterThanFifty(67), 68);
+      assert.isFalse(funcs.greaterThanFifty(13, 40));
+    });
+  });
 
   describe('`add`', () => {
     it('should be a function', () => {
       const add = funcs.add;
-      assert.typeOf(add, 'number');
+      assert.typeOf(add, 'function');
+    });
+    it('should return a number', () => {
+      assert.typeOf(funcs.add(6, 5), 'number');
+    });
+    it('should return correct number', () => {
+      assert.equal(funcs.add(6, 5), 11);
+      assert.equal(funcs.add(10, 5), 15);
+      assert.equal(funcs.add(-2, 5), 3);
+      assert.equal(funcs.add(6, 30), 36);
     });
   });
 
   describe('`subtract`', () => {
     it('should be a function', () => {
       const subtract = funcs.subtract;
-      assert.typeOf(subtract, 'number');
+      assert.typeOf(subtract, 'function');
+    });
+    it('should return a number', () => {
+      assert.typeOf(funcs.subtract(6, 5), 'number');
+    });
+    it('should return correct number', () => {
+      assert.equal(funcs.subtract(6, 5), 1);
+      assert.equal(funcs.subtract(10, 5), 5);
+      assert.equal(funcs.subtract(-2, 5), -7);
+      assert.equal(funcs.subtract(100, 60), 40);
     });
   });
 
@@ -132,8 +150,22 @@ describe('Project-1 Functions', () => {
 
   describe('`isEven`', () => {
     it('should be a function', () => {
-      const isEven = funcs.isEven;
-      assert.typeOf(isEven, 'number');
+      const { isEven } = funcs;
+      assert.typeOf(isEven, 'function');
+    });
+    it('should return a boolean value', () => {
+      const { isEven } = funcs;
+      const result = isEven(20);
+      assert.typeOf(result, 'boolean');
+    });
+    it('should return the corrent boolean value', () => {
+      const { isEven } = funcs;
+      const tests = [1, 2, 3, 0, -1, -2];
+      const answers = [false, true, false, true, false, true];
+      tests.forEach((each, i) => {
+        const result = isEven(each);
+        assert.equal(result, answers[i]);
+      });
     });
   });
 
