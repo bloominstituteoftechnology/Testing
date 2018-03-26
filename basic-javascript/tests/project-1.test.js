@@ -208,79 +208,119 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`cube`', () => {
+    const cube = funcs.cube;
     it('should be a function', () => {
-      const cube = funcs.cube;
-      assert.typeOf(cube, 'object');
+      assert.typeOf(cube, 'function');
+    });
+    it('should return 27', () => {
+      const result = cube(3);
+      assert.equal(result, 27);
     });
   });
 
   describe('`raiseToPower`', () => {
+    const raiseToPower = funcs.raiseToPower;
     it('should be a function', () => {
-      const raiseToPower = funcs.raiseToPower;
-      assert.typeOf(raiseToPower, 'object');
+      assert.typeOf(raiseToPower, 'function');
+    });
+    it('should return 8', () => {
+      const result = raiseToPower(2, 3);
+      assert.equal(result, 8);
     });
   });
 
   describe('`roundNumber`', () => {
+    const roundNumber = funcs.roundNumber;
     it('should be a function', () => {
-      const roundNumber = funcs.roundNumber;
-      assert.typeOf(roundNumber, 'object');
+      assert.typeOf(roundNumber, 'function');
+    });
+    it('should return 2', () => {
+      const result = roundNumber(2.4);
+      assert.equal(result, 2);
+    });
+    it('should return 3', () => {
+      const result = roundNumber(2.6);
+      assert.equal(result, 3);
     });
   });
 
   describe('`roundUp`', () => {
+    const roundUp = funcs.roundUp;
     it('should be a function', () => {
-      const roundUp = funcs.roundUp;
-      assert.typeOf(roundUp, 'object');
+      assert.typeOf(roundUp, 'function');
+    });
+    it('should return 5', () => {
+      const result = roundUp(4.1);
+      assert.equal(result, 5);
     });
   });
 
   describe('`addExclamationPoint`', () => {
+    const addExclamationPoint = funcs.addExclamationPoint;
     it('should be a function', () => {
-      const addExclamationPoint = funcs.addExclamationPoint;
-      assert.typeOf(addExclamationPoint, 'string');
+      assert.typeOf(addExclamationPoint, 'function');
+    });
+    it('should return hello world!', () => {
+      const result = addExclamationPoint('hello world');
+      assert.equal(result, 'hello world!');
     });
   });
 
   describe('`combineNames`', () => {
+    const combineNames = funcs.combineNames;
     it('should be a function', () => {
-      const combineNames = funcs.combineNames;
-      assert.typeOf(combineNames, 'string');
+      assert.typeOf(combineNames, 'function');
+    });
+    it('should return Sergey Nam', () => {
+      const result = combineNames('Sergey', 'Nam');
+      assert.equal(result, 'Sergey Nam');
     });
   });
 
   describe('`getGreeting`', () => {
+    const getGreeting = funcs.getGreeting;
     it('should be a function', () => {
-      const getGreeting = funcs.getGreeting;
-      assert.typeOf(getGreeting, 'string');
+      assert.typeOf(getGreeting, 'function');
+    });
+    it('should return Hello Sergey!', () => {
+      const result = getGreeting('Sergey');
+      assert.equal(result, 'Hello Sergey!');
     });
   });
 
   describe('`getRectangleArea`', () => {
+    const getRectangleArea = funcs.getRectangleArea;
     it('should be a function', () => {
-      const getRectangleArea = funcs.getRectangleArea;
-      assert.typeOf(getRectangleArea, 'string');
+      assert.typeOf(getRectangleArea, 'function');
+    });
+    it('should return 24', () => {
+      const result = getRectangleArea(6, 4);
+      assert.equal(result, 24);
     });
   });
 
   describe('`getTriangleArea`', () => {
+    const getTriangleArea = funcs.getTriangleArea;
     it('should be a function', () => {
-      const getTriangleArea = funcs.getTriangleArea;
-      assert.typeOf(getTriangleArea, 'string');
+      assert.typeOf(getTriangleArea, 'function');
+    });
+    it('should return 12', () => {
+      const result = getTriangleArea(6, 4);
+      assert.equal(result, 12);
     });
   });
 
   describe('`getCircleArea`', () => {
     it('should be a function', () => {
       const getCircleArea = funcs.getCircleArea;
-      assert.typeOf(getCircleArea, 'string');
+      assert.typeOf(getCircleArea, 'function');
     });
   });
 
   describe('`getRectangularPrismVolume`', () => {
     it('should be a function', () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
-      assert.typeOf(getRectangularPrismVolume, 'string');
+      assert.typeOf(getRectangularPrismVolume, 'function');
     });
   });
 });
