@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const funcs = require('../src/project-2');
+const expect = require('chai').expect;
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Project-2 Functions', () => {
@@ -134,5 +135,30 @@ describe('Project-2 Functions', () => {
           const result = returnLast([5, 10, 7]);
           assert.equal(result, 7);
         });
+    });
+    describe('`getArrayLength`', () => {
+        const getArrayLength = funcs.getArrayLength;
+        it('should be a function', () => {
+          assert.typeOf(getArrayLength, 'function');
+        });
+        it('should be number 3', () => {
+          const result = getArrayLength([5, 10, 7]);
+          assert.equal(result, 3);
+        });
+    });
+    describe('`incrementByOne`', () => {
+        const incrementByOne = funcs.incrementByOne;
+        it('should be a function', () => {
+          assert.typeOf(incrementByOne, 'function');
+        });
+        it('should return an array', () => {
+          const result = incrementByOne([ 5, 10, 7 ]);
+          assert.typeOf(result, 'array');
+        })
+        it('should increment each element by 1', () => {
+          const result = incrementByOne([1, 7]);
+          //assert.equal(result, [2, 8]);
+          expect(result).to.be.an('array').that.includes(2, 8);
+        })
     });
 });
