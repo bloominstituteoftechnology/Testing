@@ -18,17 +18,32 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
-    // begin here
+    it('should iterate for every element in the array', () => {
+      const cb = sinon.spy();
+      each([1, 2, 3], cb);
+      expect(cb).to.have.callCount(3);
+    });
+    // need to test that items are being passed into callback
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
+    });
+    it('should iterate for every element in the array', () => {
+      const cb = sinon.spy();
+      map([1, 2, 3], cb);
+      expect(cb).to.have.callCount(3);
+    });
+    it('it should properly handle the elements in the callback', () => {
+      const cb = x => x + 2;
+      const result = map([1, 2, 3], cb);
+      expect(result).to.equal([3, 4, 5]);
     });
   });
 
