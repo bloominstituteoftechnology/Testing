@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -15,6 +16,8 @@ describe('Project-1 Functions', () => {
   const emptyArray = []; 
   const nullNum = null;
   const undefinedNum = undefined;
+  const negativeNum = -20;
+  const stringNum = '5';
   describe('`multiplyByTen`', () => {
     const multiplyByTen = funcs.multiplyByTen;
 
@@ -118,31 +121,74 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`add`', () => {
+    const add = funcs.add;
     it('should be a function', () => {
-      const add = funcs.add;
       assert.typeOf(add, 'function');
+    });
+
+    it('should return 20', () => {
+      assert.equal(add(num, num), 20);
+    });
+
+    it('should return 0', () => {
+      assert.equal(add(nullNum, nullNum), 0);
+    });
+
+    it('should return 10', () => {
+      assert.equal(add(num, nullNum), 10);
     });
   });
 
   describe('`subtract`', () => {
+    const subtract = funcs.subtract;
+
     it('should be a function', () => {
-      const subtract = funcs.subtract;
       assert.typeOf(subtract, 'function');
+    });
+
+    it('should return 0', () => {
+      assert.equal(subtract(num, num), 0);
+    });
+
+    it('should return 30', () => {
+      assert.equal(subtract(num, negativeNum), 30);
+    });
+
+    it('should return 5', () => {
+      assert.equal(subtract(num, stringNum), 5);
     });
   });
 
   describe('`divide`', () => {
+    const divide = funcs.divide;
     it('should be a function', () => {
-      const divide = funcs.divide;
       assert.typeOf(divide, 'function');
+    });
+
+    it('should not return true', () => {
+      expect(divide(num, nullNum)).to.not.equal(true);
+    });
+
+    it('should not return true', () => {
+      expect(divide(undefinedNum, num)).to.not.equal(true);
     });
   });
 
   describe('`multiply`', () => {
+    const multiply = funcs.multiply;
     it('should be a function', () => {
-      const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function');
     });
+  
+    it('should be equal to 100 ', () => {
+      expect(multiply(num, num)).to.equal(100);
+    });
+
+    it('should be equal to 50 ', () => {
+      expect(multiply(stringNum, num)).to.equal(50);
+    });
+
+
   });
 
   describe('`getRemainder`', () => {
