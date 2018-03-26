@@ -182,30 +182,30 @@ describe('Project-1 Functions', () => {
     });
     it('should return square', () => {
       const isSquare = square(9);
-      assert.equal(isSquare, 81)
-    })
+      assert.equal(isSquare, 81);
+    });
   });
 
   describe('`cube`', () => {
-      const cube = funcs.cube;
-      it('should be a function', () => {
+    const cube = funcs.cube;
+    it('should be a function', () => {
       assert.typeOf(cube, 'function');
     });
     it('should return square root', () => {
       const cubed = cube(3);
-      assert.equal(cubed, 27)
-    })
+      assert.equal(cubed, 27);
+    });
   });
 
   describe('`raiseToPower`', () => {
-      const raiseToPower = funcs.raiseToPower;
-      it('should be a function', () => {
+    const raiseToPower = funcs.raiseToPower;
+    it('should be a function', () => {
       assert.typeOf(raiseToPower, 'function');
     });
     it('should return value raised to power', () => {
       const powered = raiseToPower(5, 3);
       assert.equal(powered, 125)
-    })
+    });
   });
 
   describe('`roundNumber`', () => {
@@ -215,8 +215,8 @@ describe('Project-1 Functions', () => {
     });
     it('should round a number', () => {
       const rounded = roundNumber(99.1);
-      assert.equal(rounded, 99)
-    })
+      assert.equal(rounded, 99);
+    });
   });
 
   describe('`roundUp`', () => {
@@ -226,8 +226,8 @@ describe('Project-1 Functions', () => {
     });
     it('should round num up', () => {
       const roundedUp = roundUp(99.9);
-      assert.equal(roundedUp, 100) 
-    })
+      assert.equal(roundedUp, 100);
+    });
   });
 
   describe('`addExclamationPoint`', () => {
@@ -236,20 +236,20 @@ describe('Project-1 Functions', () => {
       assert.typeOf(addExclamationPoint, 'function');
     });
     it('should add !', () => {
-      const x = addExclamationPoint('Hello')
-      assert.equal(x, 'Hello!')
-    })
+      const x = addExclamationPoint('Hello');
+      assert.equal(x, 'Hello!');
+    });
   });
 
   describe('`combineNames`', () => {
-      const combineNames = funcs.combineNames;
-      it('should be a function', () => {
+    const combineNames = funcs.combineNames;
+    it('should be a function', () => {
       assert.typeOf(combineNames, 'function');
     });
     it('should combine names', () => {
       const combine = combineNames('Mike', 'Streltsoff');
-      assert.equal(combine, 'Mike Streltsoff')
-    })
+      assert.equal(combine, 'Mike Streltsoff');
+    });
   });
 
   describe('`getGreeting`', () => {
@@ -259,8 +259,8 @@ describe('Project-1 Functions', () => {
     });
     it('should return greeting', () => {
       const greeting = getGreeting('Terrie');
-      assert.equal(greeting,'Hello Terrie!') 
-    })
+      assert.equal(greeting, 'Hello Terrie!');
+    });
   });
 
   describe('`getRectangleArea`', () => {
@@ -270,8 +270,8 @@ describe('Project-1 Functions', () => {
     });
     it('should return area of rectangle', () => {
       const area = getRectangleArea(4, 8);
-      assert.equal(area, 32)
-    })
+      assert.equal(area, 32);
+    });
   });
 
   describe('`getTriangleArea`', () => {
@@ -281,8 +281,8 @@ describe('Project-1 Functions', () => {
     });
     it('should return triangle area', () => {
       const triArea = getTriangleArea(4, 8);
-      assert.equal(triArea, 16) 
-    })
+      assert.equal(triArea, 16);
+    });
   });
 
   describe('`getCircleArea`', () => {
@@ -292,8 +292,8 @@ describe('Project-1 Functions', () => {
     });
     it('should return circle area', () => {
       const cirArea = getCircleArea(10, 10);
-      assert.equal(cirArea, 314.1592653589793)
-    })
+      assert.equal(cirArea, 314.1592653589793);
+    });
   });
 
   describe('`getRectangularPrismVolume`', () => {
@@ -303,7 +303,7 @@ describe('Project-1 Functions', () => {
     });
     it('should return area of prism', () => {
       const priArea = getRectangularPrismVolume(7, 64, 21);
-      assert.equal(priArea, 9408)
-    })
+      assert.equal(priArea, 9408);
+    });
   });
 });
