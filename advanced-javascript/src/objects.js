@@ -18,7 +18,9 @@ const mapObject = (obj, cb) => {
   return obj;
 };
 
-const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
+const pairs = (obj) => {
+  console.log(Object.keys(obj).map((key) => [key, obj[key]]));
+};
 
 const invert = (obj) => {
   Object.keys(obj).forEach((key) => {
