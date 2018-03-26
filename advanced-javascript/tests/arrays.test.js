@@ -52,7 +52,6 @@ describe('Arrays', () => {
 
   describe('`map`', () => {
     const callback = sinon.spy();
-    
     it('should be a function', () => {
       const map = arrayFunctions.map;
       expect(map).to.be.an('function');
@@ -69,13 +68,18 @@ describe('Arrays', () => {
       };
       const mappedArray = map(testArr, callback);
       expect(mappedArray[0]).to.be.an('object');
-    })
+    });
   });
 
   describe('`reduce`', () => {
+    const callback = sinon.spy();
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
+    });
+    it('should return sum', () => {
+      const sum = reduce([1, 2, 3], (a, b) => a + b);
+      expect(sum).that.equal(6);
     });
   });
 
