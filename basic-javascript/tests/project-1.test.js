@@ -19,7 +19,7 @@ describe('Project-1 Functions', () => {
     });
     it('should return a number', () => {
       assert.typeOf(multiplyByTen(1), 'number');
-      // assert.isNotNaN(multiplyByTen(2), "shouldn't be NaN");
+      assert.isNotNaN(multiplyByTen(2), "shouldn't be NaN");
     });
     it('should return 10', () => {
       assert.equal(multiplyByTen(1), 10);
