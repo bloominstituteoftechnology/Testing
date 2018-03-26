@@ -45,15 +45,17 @@ describe('Arrays', () => {
       const cb = (item) => {
         return item * 2;
       };
-      const result = map([1, 2, 3], cb);
-
-      expect(result).to.equal([2, 4, 6]);
+      const setSpy = sinon.spy(cb);
+      const result = map([1, 2, 3], setSpy);
+      expect(result).to.eql([2, 4, 6]);
+      // console.log('setSpy.returnValues', setSpy.returnValues);
     });
     it('should return an output with type: array', () => {
       const cb = (item) => {
         return item * 2;
       };
-      const result = map([1, 2, 3], cb);
+      const setSpy = sinon.spy(cb);
+      const result = map([1, 2, 3], setSpy);
       expect(result).to.be.an('array');
     });
   });
@@ -63,12 +65,41 @@ describe('Arrays', () => {
       const reduce = arrayFunctions.reduce;
       expect(reduce).to.be.a('function');
     });
+    it('should execute the callback on each array element', () => {
+      const reduce = arrayFunctions.reduce;
+      const cb = sinon.spy();
+      reduce([1, 2, 3, 4], cb);
+      expect(cb).to.have.callCount(3);
+    });
+    it('should return the expected output given a specific input', () => {
+      const reduce = arrayFunctions.reduce;
+      // const cb = (element, acc) => {
+      //   if (element > acc) return element;
+      // };
+
+      expect(reduce(1, 3, 5)).to.equal(6);
+    });
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
       expect(find).to.be.an('function');
+    });
+    it('should execute the callback on each array element', () => {
+      const find = arrayFunctions.find;
+      const cb = sinon.spy();
+      find([1, 2, 3, 4], cb);
+      expect(cb).to.have.callCount(4);
+    });
+    it('should return the expected output given a specific input', () => {
+      const find = arrayFunctions.find;
+      const cb = (element) => {
+        if (element === 3) return true;
+      };
+      const setSpy = sinon.spy(cb);
+      expect(find([1, 2, 3, 4, 5], setSpy)).to.equal(3);
+      console.log(setSpy.returnValues);
     });
   });
 
@@ -77,12 +108,27 @@ describe('Arrays', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
+    // it('should execute the callback on each array element', () => {
+    //   const filter = arrayFunctions.filter;
+    //   const cb = sinon.spy();
+    //   filter([1, 2, 3, 4], cb);
+    //   expect(cb).to.have.callCount(4);
+    // });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
+    });
+    it('should return an output with the type: array', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(flatten([1, 2, 3])).to.be.an('array');
+    });
+    it('should return an expected output given a specific input', () => {
+      const flatten = arrayFunctions.flatten;
+      const result = [1, 2, 3, 4, 5];
+      expect(flatten([1, [2, [3]], 4, 5])).to.eql(result);
     });
   });
 });
