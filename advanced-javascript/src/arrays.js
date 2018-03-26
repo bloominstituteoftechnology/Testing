@@ -9,7 +9,7 @@ const each = (elements, cb) => {
 const map = (elements, cb) => {
   const mappedArr = [];
   each(elements, (item) => {
-    mappedArr.push(cb(item)));
+    mappedArr.push(cb(item));
   });
   return mappedArr;
 };
