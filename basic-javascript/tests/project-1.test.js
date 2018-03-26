@@ -24,9 +24,8 @@ describe('Project-1 Functions', () => {
         it('should return a num times(*) 10', () => {
             const num = 2;
             const multiplyByTen = funcs.multiplyByTen(num);
-            assert.equal(multiplyByTen, 20, 'it should be equals to 20');
+            assert.equal(multiplyByTen, 20, 'should be multiplied by 10');
         });
-
     });
 
     describe('`subtractFive`', () => {
@@ -37,7 +36,7 @@ describe('Project-1 Functions', () => {
         it('should subtract 5 from num', () => {
             const num = 6;
             const subtractFive = funcs.subtractFive(num);
-            assert.equal(subtractFive, 1, 'it should be equals to 1');
+            assert.equal(subtractFive, 1, 'it should be 5 the number to subtract.');
         });
         it('number should be positive', () => {
             let num = 2;
