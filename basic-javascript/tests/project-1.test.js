@@ -72,7 +72,7 @@ describe('Project-1 Functions', () => {
           assert.typeOf(funcs.lessThanNinety(89), 'boolean');
      });
        it('output should return true if the number is less than Ninety', () => {
-         assert.isTrue(funcs.lessThanNinety(20), 15);
+         assert.isTrue(funcs.lessThanNinety(70), 30);
      });
 			 it('output should return false if the number is greater than Ninety', () => {
            assert.isFalse(funcs.lessThanNinety(120, 96));
@@ -82,9 +82,18 @@ describe('Project-1 Functions', () => {
   describe('`greaterThanFifty`', () => {
     it('should be a function', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
-      assert.typeOf(greaterThanFifty, 'number');
+      assert.typeOf(greaterThanFifty, 'function');
     });
-  });
+		 it('output should return a boolean', () => {
+            assert.typeOf(funcs.greaterThanFifty(57), 'boolean');
+       });
+         it('output should return true if the number is greater than Fifty', () => {
+           assert.isTrue(funcs.greaterThanFifty(67), 68);
+       });
+        it('output should return false if the number is less than Fifty', () => {
+             assert.isFalse(funcs.lessThanNinety(13, 40));
+      });
+   });
 
   describe('`add`', () => {
     it('should be a function', () => {
