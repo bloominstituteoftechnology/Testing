@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const sinon = require('sinon');
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -17,6 +18,10 @@ describe('Project-1 Functions', () => {
       assert.typeOf(multiplyByTen, 'object');
     });
     // begin here
+    it('should have a number', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      assert.typeOf(multiplyByTen.num, 'number');
+    });
   });
 
   describe('`subtractFive`', () => {
