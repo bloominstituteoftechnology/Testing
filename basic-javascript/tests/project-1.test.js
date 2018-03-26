@@ -28,9 +28,9 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(subtractFive, 'function');
     });
-    it('should return the subtraction of a num and 5', () => {
-      const subtraction = subtractFive(6);
-      assert.equal(subtraction, 1);
+    it('should return the difference of a num and 5', () => {
+      const diff = subtractFive(6);
+      assert.equal(diff, 1);
     });
   });
 
@@ -87,51 +87,91 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`add`', () => {
+    const add = funcs.add;
     it('should be a function', () => {
-      const add = funcs.add;
-      assert.typeOf(add, 'number');
+      assert.typeOf(add, 'function');
+    });
+    it('should return addition of two nums', () => {
+      const sum = add(4, 5);
+      assert.equal(sum, 9);
+    });
+    it('should return addition of two nums', () => {
+      const sum = add(6, 8);
+      assert.equal(sum, 14);
     });
   });
 
   describe('`subtract`', () => {
+    const subtract = funcs.subtract;
     it('should be a function', () => {
-      const subtract = funcs.subtract;
-      assert.typeOf(subtract, 'number');
+      assert.typeOf(subtract, 'function');
+    });
+    it('should return difference of two nums', () => {
+      const diff = subtract(8, 6);
+      assert.equal(diff, 2);
     });
   });
 
   describe('`divide`', () => {
+    const divide = funcs.divide;
     it('should be a function', () => {
-      const divide = funcs.divide;
-      assert.typeOf(divide, 'number');
+      assert.typeOf(divide, 'function');
+    });
+    it('should return division of two nums', () => {
+      const div = divide(10, 5);
+      assert.equal(div, 2);
     });
   });
 
   describe('`multiply`', () => {
+    const multiply = funcs.multiply;
     it('should be a function', () => {
-      const multiply = funcs.multiply;
-      assert.typeOf(multiply, 'number');
+      assert.typeOf(multiply, 'function');
+    });
+    it('should return product of two nums', () => {
+      const prod = multiply(8, 8);
+      assert.equal(prod, 64);
     });
   });
 
   describe('`getRemainder`', () => {
+    const getRemainder = funcs.getRemainder;
     it('should be a function', () => {
-      const getRemainder = funcs.getRemainder;
-      assert.typeOf(getRemainder, 'number');
+      assert.typeOf(getRemainder, 'function');
+    });
+    it('should return remainder of two nums', () => {
+      const modulo = getRemainder(35, 8);
+      assert.equal(modulo, 3);
     });
   });
 
   describe('`isEven`', () => {
+    const isEven = funcs.isEven;
     it('should be a function', () => {
-      const isEven = funcs.isEven;
-      assert.typeOf(isEven, 'number');
+      assert.typeOf(isEven, 'function');
+    });
+    it('should return true if num is even', () => {
+      const checkEven = isEven(2);
+      assert.equal(checkEven, true);
+    });
+    it('should return false if num is not even', () => {
+      const checkEven = isEven(3);
+      assert.equal(checkEven, false);
     });
   });
 
   describe('`isOdd`', () => {
+    const isOdd = funcs.isOdd;
     it('should be a function', () => {
-      const isOdd = funcs.isOdd;
-      assert.typeOf(isOdd, 'number');
+      assert.typeOf(isOdd, 'function');
+    });
+    it('should return true if num is odd', () => {
+      const checkOdd = isOdd(13);
+      assert.equal(checkOdd, true);
+    });
+    it('should return false if num is not odd', () => {
+      const checkOdd = isOdd(12);
+      assert.equal(checkOdd, false);
     });
   });
 
