@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const should = require('chai').should();
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -16,21 +17,52 @@ describe('Project-1 Functions', () => {
             const multiplyByTen = funcs.multiplyByTen;
             assert.typeOf(multiplyByTen, 'function');
         });
-        // begin here
+        it('should be a num', () => {
+            let num = 2;
+            num.should.be.a('number');
+        });
+        it('should return a num times(*) 10', () => {
+            const num = 2;
+            const multiplyByTen = funcs.multiplyByTen(num);
+            assert.equal(multiplyByTen, 20, 'it should be equals to 20');
+        });
+
     });
 
     describe('`subtractFive`', () => {
         it('should be a function', () => {
             const subtractFive = funcs.subtractFive;
-            assert.typeOf(subtractFive, 'array');
+            assert.typeOf(subtractFive, 'function');
+        });
+        it('should subtract 5 from num', () => {
+            const num = 6;
+            const subtractFive = funcs.subtractFive(num);
+            assert.equal(subtractFive, 1, 'it should be equals to 1');
+        });
+        it('number should be positive', () => {
+            let num = 2;
+            assert(num > -1, '`num` > -1');
         });
     });
 
     describe('`areSameLength`', () => {
         it('should be a function', () => {
             const areSameLength = funcs.areSameLength;
-            assert.typeOf(areSameLength, 'number');
+            assert.typeOf(areSameLength, 'function');
         });
+        it('param1 should be string', () => {
+            const string1 = 'lola';
+            const string2 = 'lola';
+            funcs.areSameLength(string1, string2);
+            assert(string1 === string2, '`string1` is equals to `string2`');
+        });
+        it('param1 should be string', () => {
+            const string1 = 'lola';
+            const string2 = 'lole';
+            funcs.areSameLength(string1, string2);
+            assert(string1.length !== string2.length, ' `string1.length` is NOT equals to `string2.length` ');
+        });
+
     });
 
     describe('`areEqual`', () => {
