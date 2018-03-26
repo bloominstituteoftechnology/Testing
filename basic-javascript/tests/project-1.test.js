@@ -311,16 +311,24 @@ describe('Project-1 Functions', () => {
   });
 
   describe('`getCircleArea`', () => {
+    const getCircleArea = funcs.getCircleArea;
     it('should be a function', () => {
-      const getCircleArea = funcs.getCircleArea;
       assert.typeOf(getCircleArea, 'function');
+    });
+    it('should return ~154', () => {
+      const result = getCircleArea(7);
+      assert.equal(result, Math.PI * 49);
     });
   });
 
   describe('`getRectangularPrismVolume`', () => {
+    const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
     it('should be a function', () => {
-      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
       assert.typeOf(getRectangularPrismVolume, 'function');
+    });
+    it('should return 64', () => {
+      const result = getRectangularPrismVolume(8, 4, 2);
+      assert.equal(result, 64);
     });
   });
 });
