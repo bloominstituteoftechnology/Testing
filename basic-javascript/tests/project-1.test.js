@@ -14,22 +14,39 @@ describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
     });
-    // begin here
+		  it('output should return a number', () => {
+			  assert.typeOf(funcs.multiplyByTen(10), 'number');
+		});
+			it('output should return correct number', () => {
+					assert.equal(funcs.multiplyByTen(10), 100);
+		});
   });
 
   describe('`subtractFive`', () => {
     it('should be a function', () => {
       const subtractFive = funcs.subtractFive;
-      assert.typeOf(subtractFive, 'array');
+      assert.typeOf(subtractFive, 'function');
+    });
+		 it('output should return a number', () => {
+        assert.typeOf(funcs.subtractFive(20), 'number');
+   });
+      it('output should return correct number', () => {
+           assert.equal(funcs.subtractFive(20), 15);
     });
   });
 
   describe('`areSameLength`', () => {
     it('should be a function', () => {
       const areSameLength = funcs.areSameLength;
-      assert.typeOf(areSameLength, 'number');
+      assert.typeOf(areSameLength, 'function');
+    });
+		 it('output should return a boolean', () => {
+         assert.typeOf(funcs.areSameLength('Dani', 'kitty'), 'boolean');
+     });
+      it('output should return correct boolean', () => {
+         assert.isTrue(funcs.areSameLength('hello','world'));
     });
   });
 
