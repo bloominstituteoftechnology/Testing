@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 const assert = require('chai').assert;
+const sinon = require('sinon');
 const funcs = require('../src/project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
@@ -129,8 +130,53 @@ describe('Project-2 Functions', () => {
       });
       it('should return array with elements incremented by one', () => {
          const arr = [5, 3, 1];
-         const sec = arr;
-         assert.strictEqual(incrementByOne(arr), sec.map(e => e++));
+         assert.sameOrderedMembers(incrementByOne(arr), [6, 4, 2]);
       });
    });
+
+   describe('`addItemToArray`', () => {
+      const { addItemToArray } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(addItemToArray, 'function');
+      });
+      it('should return array with an element pushed to the end', () => {
+         const arr = [5, 3, 1];
+         assert.sameOrderedMembers(addItemToArray(arr, 4), [5, 3, 1, 4]);
+      });
+   });
+
+   describe('addItemToFront', () => {
+      const { addItemToFront } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(addItemToFront, 'function');
+      });
+      it('should return array with an element pushed to the end', () => {
+         const arr = [5, 3, 1];
+         assert.sameOrderedMembers(addItemToFront(arr, 4), [4, 5, 3, 1]);
+      });
+   });
+
+   describe('`wordsToSentence`', () => {
+      const { wordsToSentence } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(wordsToSentence, 'function');
+      });
+      it('should have an array as the parameter', () => {
+         const cb = sinon.spy();
+         const proxy = wordsToSentence(cb);
+         console.log('proxy is', proxy);
+         assert.isArray(proxy, 'is not an array');
+      })
+      it('should return array with an element pushed to the end', () => {
+         const arr = ['A', 'simple', 'sentence'];
+         assert.strictEqual(wordsToSentence(arr), 'A simple sentence');
+      });
+   });
+
+   describe('contains', () => {
+      const { contains } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(contains, 'function');
+      });
+   })
 });
