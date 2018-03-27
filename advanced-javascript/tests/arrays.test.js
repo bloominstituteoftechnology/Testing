@@ -31,17 +31,32 @@ describe('Arrays', () => {
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
       expect(map).to.be.an('function');
     });
+
+    it('should return a array of items', () => {
+      const cb = sinon.spy();
+      map([0, -3, 125, 6.03], cb);
+      expect(cb).to.have.callCount(4);
+    });
+    
+    
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
       expect(reduce).to.be.a('function');
     });
+
+    it('should return a array of items', () => {
+      const cb = sinon.spy();
+      reduce([0, -3, 125, 6.03], cb);
+      expect(cb).to.have.callCount(3);
+    });
+    
   });
 
   describe('`find`', () => {
