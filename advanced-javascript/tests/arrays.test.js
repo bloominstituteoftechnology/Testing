@@ -5,7 +5,7 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const arrayFunctions = require('../src/arrays');
 
-const expect = chai.expect;
+const assert = chai.assert;
 chai.use(sinonChai);
 
 // we've gone ahead and gotten a start here for you,
@@ -18,45 +18,74 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      assert.typeOf(each, 'function');
     });
-    // begin here
+    it('should use callback function', () => {
+      const spy = sinon.spy();
+      each([1, 2, 3, 4], spy);
+      assert.equal(spy.callCount, 4);
+    });
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      assert.typeOf(map, 'function');
+    });
+    it('should use callback function', () => {
+      const spy = sinon.spy();
+      map([1, 2, 3, 4], spy);
+      assert.equal(spy.callCount, 4);
+    });
+    it('should correctly apply callback', () => {
+      const cb = x => x + 1;
+      const result = map([1, 2, 3, 4, 5], cb);
+      assert.equal(result, [2, 3, 4, 5, 6]);
     });
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      assert.typeOf(reduce, 'function');
+    });
+    it('should use callback function', () => {
+      const spy = sinon.spy();
+      reduce([1, 2, 3, 4], spy);
+      assert.equal(spy.callCount, 4);
     });
   });
 
   describe('`find`', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      assert.typeOf(find, 'function');
+    });
+    it('should use callback function', () => {
+      const spy = sinon.spy();
+      find([1, 2, 3, 4], spy);
+      assert.equal(spy.callCount, 4);
     });
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      assert.typeOf(filter, 'function');
+    });
+    it('should use callback function', () => {
+      const spy = sinon.spy();
+      filter([1, 2, 3, 4], spy);
+      assert.equal(spy.callCount, 4);
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      assert.typeOf(flatten, 'function');
     });
   });
 });
