@@ -44,4 +44,19 @@ describe('Project-2 Functions', () => {
         });
     });
 
+    describe('`isTenOrFive`', () => {
+        const isTenOrFive = funcs.isTenOrFive;
+        it('should be a function', () => {
+            assert.typeOf(isTenOrFive, 'function');
+        });
+        it('should be 10 or 5', () => {
+            const resp = isTenOrFive(10);
+            assert(resp, 'num is 10 or 5');
+        });
+        it('should be 10 or 5', () => {
+            const resp = isTenOrFive(3);
+            assert.isNotOk(resp, 'num is not 10 or 5');
+        });
+    });
+
 });
