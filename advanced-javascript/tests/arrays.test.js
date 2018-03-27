@@ -43,9 +43,16 @@ describe('Arrays', () => {
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
       expect(map).to.be.a('function');
+    });
+    it('should return an array', () => {
+      expect(map([1, 2], x => x + 1)).to.be.an('array');
+    });
+    it('first value should equal 2', () => {
+      const result = map([1, 2], x => x + 1);
+      expect(result[0]).to.equal(2);
     });
   });
 
