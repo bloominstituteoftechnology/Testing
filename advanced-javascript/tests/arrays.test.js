@@ -8,15 +8,7 @@ const arrayFunctions = require('../src/arrays');
 const expect = chai.expect;
 chai.use(sinonChai);
 
-const {
-  each,
-  map,
-  reduce,
-  find,
-  filter,
-  flatten
-} = arrayFunctions;
-
+const { each, map, reduce, find, filter, flatten } = arrayFunctions;
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -28,7 +20,7 @@ const {
 
 describe('Arrays', () => {
   let testArr = [];
-  
+
   beforeEach(() => {
     testArr = ['Monday', 'Tuesday', 'Noday', 'Friyay'];
   });
@@ -36,7 +28,7 @@ describe('Arrays', () => {
   afterEach(() => {
     testArr = [];
   });
-  
+
   describe('`each`', () => {
     const callback = sinon.spy();
     it('should be a function', () => {
@@ -59,10 +51,10 @@ describe('Arrays', () => {
     it('should execute callback atleast once', () => {
       map(testArr, callback);
       expect(callback).to.have.callCount(testArr.length);
-    })
+    });
     it('should map elements to objects', () => {
-      const callback = (item) => {
-        return { 
+      const callback = item => {
+        return {
           item,
         };
       };
@@ -91,12 +83,12 @@ describe('Arrays', () => {
     it('should find correct element', () => {
       const testArr = [1, 2, 3];
       const testParam = 2;
-      const callback = (param) => {
-        if (param === testParam) return param
-      }
-      const foundElement = find(testArr, callback)
+      const callback = param => {
+        if (param === testParam) return param;
+      };
+      const foundElement = find(testArr, callback);
       expect(foundElement).to.equal(2);
-    })
+    });
   });
 
   describe('`filter`', () => {
@@ -104,13 +96,11 @@ describe('Arrays', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
-    it('should filter down an item', () => {
-      // const testArr = [1, 2, 3, 3, 4];
-      const callback = (item) => {
-        return true;
-      };
-      // console.log(callback)
-      filter(testArr, callback)
+    it('should have been called the right number of times', () => {
+      const testArr = [1, 2, 3, 3, 4];
+      const callback = sinon.spy(el => el === 3);
+      filter(testArr, callback);
+      expect(callback).to.have.been.callCount(testArr.length);
     });
   });
 
@@ -123,6 +113,6 @@ describe('Arrays', () => {
       const testArr = [[2]];
       const flattenedArr = flatten(testArr);
       expect(flattenedArr).to.eql([2]);
-    })
+    });
   });
 });
