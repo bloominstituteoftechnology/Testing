@@ -52,7 +52,6 @@ describe('objects', () => {
     const testObj = { key1: 'value 1', key2: 'value 2' };
     const testInvert = invert(testObj);
     it('should not contain an original key', () => {
-      console.log(testInvert);
       assert.isNotTrue(
         Object.prototype.hasOwnProperty.call(testInvert, 'key1'),
       );
