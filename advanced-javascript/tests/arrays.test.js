@@ -50,16 +50,18 @@ describe('Arrays', () => {
     });
   });
 
-  // describe('`reduce`', () => {
-  //   it('should be a function', () => {
-  //     const reduce = arrayFunctions.reduce;
-  //     expect(reduce).to.be.a('function');
-  //   });
-  //   it('', () => {
-  //     const reduce = arrayFunctions.reduce;
-  //     const spyCb = sinon.spy([4, 5, 6], x => x * 2);
-  //   });
-  // });
+  describe('`reduce`', () => {
+    it('should be a function', () => {
+      const reduce = arrayFunctions.reduce;
+      expect(reduce).to.be.a('function');
+    });
+    it('should return number 15', () => {
+      const spyCallBack = sinon.spy((memo, item) => memo + item);
+      const reduce = arrayFunctions.reduce;
+      const result = reduce([4, 5, 6], spyCallBack, 0);
+      expect(result).to.equal(15);
+    });
+  });
 
   describe('`find`', () => {
     it('should be a function', () => {
@@ -75,23 +77,39 @@ describe('Arrays', () => {
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
+<<<<<<< HEAD
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
       const r = filter([2, 3], (x)=>{
         return x > 2
       });
       console.log(r);
+=======
+    it('should return the length of 2', () => {
+      const spyCallBack = sinon.spy((item) => item > 2);
+      const result = filter([2, 3 ,4], spyCallBack);
+      // console.log(result);
+      // expect(result).to.be.an('array');
+      expect(result.length).to.equal(2);
+>>>>>>> 5bd3660237787e74b6c7fbe520cd36e3fb245b1f
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
+    });
+    it('should return the length of [1, 2, 3, 4]', () => {
+      const spyCallBack = sinon.spy();
+      const result = flatten([1, [2, 3], 4], spyCallBack);
+      console.log(result);
+      // expect(result).to.be.an('array');
+      expect(result.length).to.equal(4);
     });
   });
 });
