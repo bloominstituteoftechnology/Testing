@@ -1,4 +1,5 @@
-/* eslint-disable prefer-destructuring */
+/* eslint-disable */
+/* prefer-destructuring */
 
 const chai = require('chai');
 const sinon = require('sinon');
@@ -18,45 +19,64 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const spy = sinon.spy();
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
-    // begin here
+    it("should run the callback on each element in the array", () => {
+      const spy = sinon.spy();
+      each([1, 2, 3], spy);
+      expect(spy).to.have.callCount(3);
+    })
   });
 
   describe('`map`', () => {
+    const spy = sinon.spy();
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.a('function');
     });
+    it("should run the callback on each element", () => {
+      map([1, 2, 3], spy);
+      expect(spy).to.have.callCount(3);
+    });
+    it("should return an array", () => {
+      expect(map([1, 2, 3], spy)).to.be.an("array");
+    })
   });
 
   describe('`reduce`', () => {
+    const spy = sinon.spy();
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
     });
+    it("it should run the callback on each element", () => {
+      reduce([1, 2, 3], spy);
+      expect(spy).to.have.callCount(2);
+    })
+
   });
 
   describe('`find`', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
     });
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
   });
 });
