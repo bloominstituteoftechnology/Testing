@@ -79,6 +79,13 @@ describe('Arrays', () => {
       const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
     });
+    it('should be a function', () => {
+      const filter = arrayFunctions.filter;
+      const r = filter([2, 3], (x)=>{
+        return x > 2
+      });
+      console.log(r);
+    });
   });
 
   describe('`flatten`', () => {
