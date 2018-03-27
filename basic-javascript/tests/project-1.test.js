@@ -279,23 +279,32 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`combineNames`', () => {
+        const combineNames = funcs.combineNames;
         it('should be a function', () => {
-            const combineNames = funcs.combineNames;
             assert.typeOf(combineNames, 'function');
         });
+        it('should return combined names', () => {
+            const name1 = 'German', name2 = 'Roy';
+            const res = combineNames(name1, name2);
+            assert.equal(res, 'German Roy');
+        })
     });
 
     describe('`getGreeting`', () => {
+        const getGreeting = funcs.getGreeting;
         it('should be a function', () => {
-            const getGreeting = funcs.getGreeting;
             assert.typeOf(getGreeting, 'function');
+        });
+        it('should return greeting', () => {
+            const res = getGreeting('world');
+            assert.equal(res,'Hello world!');
         });
     });
 
     describe('`getRectangleArea`', () => {
         it('should be a function', () => {
-            const getRectangleArea = funcs.getRectangleArea;
-            assert.typeOf(getRectangleArea, 'function');
+            const res = funcs.getRectangleArea;
+            assert.typeOf(res, 'function');
         });
     });
 
@@ -306,8 +315,8 @@ describe('Project-1 Functions', () => {
         });
         it('should return triangle area', () => {
             const num1 = 3, num2 = 16;
-            const triArea = getTriangleArea(num1, num2);
-            assert.equal(triArea, 24);
+            const res = getTriangleArea(num1, num2);
+            assert.equal(res, 24);
         });
     });
 
