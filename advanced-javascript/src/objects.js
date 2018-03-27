@@ -1,7 +1,7 @@
 // Complete the following underscore functions.
 // Reference http://underscorejs.org/ for examples.
 
-/* eslint-disable no-unused-vars, arrow-body-style, arrow-parens */
+/* eslint-disable */
 
 const keys = (obj) => {
   return Object.keys(obj);
