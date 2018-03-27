@@ -201,7 +201,7 @@ describe('Project-1 Functions', () => {
       expect(getRemainder(null, num)).to.equal(0);
     });
 
-    it('should do something', () => {
+    it('should return 0', () => {
       expect(getRemainder(num, num)).to.equal(0);
     });
   });
@@ -241,6 +241,8 @@ describe('Project-1 Functions', () => {
       const square = funcs.square;
       assert.typeOf(square, 'function');
     });
+
+
   });
 
   describe('`cube`', () => {
