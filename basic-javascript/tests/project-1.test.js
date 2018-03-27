@@ -166,12 +166,30 @@ describe('Project-1 Functions', () => {
       const num2 = 4;
       assert.strictEqual(divide(num1, num2), 5);
     });
+    it('should return a number', () => {
+      const divide = funcs.divide;
+      const num1 = 20;
+      const num2 = 4;
+      assert.isNumber(divide(num1, num2));
+    });
   });
 
   describe('`multiply`', () => {
     it('should be a function', () => {
       const multiply = funcs.multiply;
       assert.typeOf(multiply, 'function');
+    });
+    it('should return 80', () => {
+      const multiply = funcs.multiply;
+      const num1 = 20;
+      const num2 = 4;
+      assert.strictEqual(multiply(num1, num2), 80);
+    });
+    it('should return a number', () => {
+      const multiply = funcs.multiply;
+      const num1 = 20;
+      const num2 = 4;
+      assert.isNumber(multiply(num1, num2));
     });
   });
 
@@ -180,12 +198,34 @@ describe('Project-1 Functions', () => {
       const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, 'function');
     });
+    it('should return 1', () => {
+      const getRemainder = funcs.getRemainder;
+      const num1 = 4;
+      const num2 = 3;
+      assert.strictEqual(getRemainder(num1, num2), 1);
+    });
+    it('should return a number', () => {
+      const getRemainder = funcs.getRemainder;
+      const num1 = 4;
+      const num2 = 3;
+      assert.isNumber(getRemainder(num1, num2));
+    });
   });
 
   describe('`isEven`', () => {
     it('should be a function', () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, 'function');
+    });
+    it('should return true', () => {
+      const isEven = funcs.isEven;
+      const num = 8;
+      assert.isTrue(isEven(8));
+    });
+    it('should return a boolean', () => {
+      const isEven = funcs.isEven;
+      const num = 8;
+      assert.isBoolean(isEven(8));
     });
   });
 
