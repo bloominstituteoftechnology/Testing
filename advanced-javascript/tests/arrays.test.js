@@ -55,21 +55,34 @@ describe('Arrays', () => {
     it("it should run the callback on each element", () => {
       reduce([1, 2, 3], spy);
       expect(spy).to.have.callCount(2);
-    })
-
+    });
   });
 
   describe('`find`', () => {
     const find = arrayFunctions.find;
+    const spy = sinon.spy(num => num > 2);
     it('should be a function', () => {
-      expect(find).to.be.an('function');
+      expect(find).to.be.a('function');
+    });
+    it("it should run the callback on each element", () => {
+      const count = find([1, 2, 3], spy);
+      expect(count).to.equal(3);
     });
   });
 
+  // TypeError: cb is not a function.....wtf?????
   describe('`filter`', () => {
     const filter = arrayFunctions.filter;
+    const spy = sinon.spy(num => num > 2)
+    const result = filter([1,2,3], spy);
     it('should be a function', () => {
       expect(filter).to.be.a('function');
+    });
+    it("Return value should be an array", () => {
+      expect(result).to.be.a('array');
+    });
+    it("it should return filtered value", () => {
+      expect(result.length).to.equal(1);
     });
   });
 
