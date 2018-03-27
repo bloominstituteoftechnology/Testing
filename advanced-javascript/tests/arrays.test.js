@@ -23,7 +23,6 @@ const addTwo = x => x += 2;
 const sum = (x, y) => x + y;
 const lessThanTwo = x => x < 2;
 describe('Arrays', () => {
-
   describe('`each`', () => {
     const each = arrayFunctions.each;
     it('should be a function', () => {
