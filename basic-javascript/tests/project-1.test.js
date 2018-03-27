@@ -2,6 +2,7 @@
 
 const assert = require('chai').assert;
 const should = require('chai').should();
+const expect = require('chai').expect;
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -12,16 +13,13 @@ const funcs = require('../src/project-1');
 // hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
 
 describe('Project-1 Functions', () => {
+
     describe('`multiplyByTen`', () => {
         it('should be a function', () => {
             const multiplyByTen = funcs.multiplyByTen;
             assert.typeOf(multiplyByTen, 'function');
         });
-        it('should be a num', () => {
-            let num = 2;
-            num.should.be.a('number');
-        });
-        it('should return a num times(*) 10', () => {
+        it('should return a num multiply by 10', () => {
             const num = 2;
             const multiplyByTen = funcs.multiplyByTen(num);
             assert.equal(multiplyByTen, 20, 'should be multiplied by 10');
@@ -38,10 +36,6 @@ describe('Project-1 Functions', () => {
             const subtractFive = funcs.subtractFive(num);
             assert.equal(subtractFive, 1, 'it should be 5 the number to subtract.');
         });
-        it('number should be positive', () => {
-            let num = 2;
-            assert(num > -1, '`num` is positive');
-        });
     });
 
     describe('`areSameLength`', () => {
@@ -49,11 +43,11 @@ describe('Project-1 Functions', () => {
             const areSameLength = funcs.areSameLength;
             assert.typeOf(areSameLength, 'function');
         });
-        it('param1 should be string', () => {
+        it('should be same length', () => {
             const string1 = 'lola';
-            const string2 = 'lola';
-            funcs.areSameLength(string1, string2);
-            assert(string1.length === string2.length, '`string1` equals length `string2`');
+            const string2 = 'lala';
+            const areSameLength = funcs.areSameLength(string1, string2);
+            assert(areSameLength, '`string1` is equals length than`string2`');
         });
         it('should be the same length', () => {
             const string1 = 'lola';
@@ -127,12 +121,22 @@ describe('Project-1 Functions', () => {
             const add = funcs.add;
             assert.typeOf(add, 'function');
         });
+        it('should return the sum of two numbers', () => {
+            const num1 = 1, num2 = 3;
+            const add = funcs.add(num1, num2);
+            assert.equal(add, 4);
+        });
     });
 
     describe('`subtract`', () => {
         it('should be a function', () => {
             const subtract = funcs.subtract;
             assert.typeOf(subtract, 'function');
+        });
+        it('should return the difference of two numbers', () => {
+            const num1 = 3, num2 = 1;
+            const subtractRes = funcs.subtract(num1, num2);
+            assert.equal(subtractRes, 2, '`num1` - `num2` is equals to `subtractRes`');
         });
     });
 
@@ -141,12 +145,22 @@ describe('Project-1 Functions', () => {
             const divide = funcs.divide;
             assert.typeOf(divide, 'function');
         });
+        it('should return the division of two number', () => {
+            const num1 = 20, num2 = 2;
+            const res = funcs.divide(num1, num2);
+            assert.equal(res, 10, '`num1` / `num2` is equals to `res`');
+        });
     });
 
     describe('`multiply`', () => {
         it('should be a function', () => {
             const multiply = funcs.multiply;
             assert.typeOf(multiply, 'function');
+        });
+        it('should return the product of two number', () => {
+            const num1 = 2, num2 = 5;
+            const res = funcs.multiply(num1, num2);
+            assert.equal(res, 10, '`num1` * `num2` is equals to `res`');
         });
     });
 

@@ -1,10 +1,10 @@
 /* eslint-disable arrow-parens */
 
-const multiplyByTen = num => {
+const multiplyByTen = (num) => {
     return num * 10;
 };
 
-const subtractFive = num => {
+const subtractFive = (num) => {
     return num - 5;
 };
 
