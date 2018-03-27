@@ -98,9 +98,14 @@ describe('Arrays', () => {
   });
 
   describe('`find`', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.find;
       expect(find).to.be.an('function');
+    });
+    it('should return the first element that passes the truth test', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const result = find(arr, num => (num === 5));
+      expect(result).to.equal(5);
     });
   });
 
