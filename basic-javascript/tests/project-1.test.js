@@ -181,12 +181,12 @@ describe('Project-1 Functions', () => {
             const isEven = funcs.isEven;
             assert.typeOf(isEven, 'function');
         });
-        it('should return true if number is even', () => {
+        it('should return is even number', () => {
             const num = 50;
             const res = funcs.isEven(num);
             assert(res, '`num` is even number');
         });
-        it('should return true if number is even', () => {
+        it('should return not even number', () => {
             const num = 49;
             const res = funcs.isEven(num);
             assert.isNotOk(res, '`num` is Not even number');
@@ -197,6 +197,17 @@ describe('Project-1 Functions', () => {
         it('should be a function', () => {
             const isOdd = funcs.isOdd;
             assert.typeOf(isOdd, 'function');
+        });
+        it('should return is Not odd', () => {
+            const num = 13;
+            const res = funcs.isEven(num);
+            assert.isNotOk(res, '`num` is Not odd number');
+
+        });
+        it('should return is odd', () => {
+            const num = 12;
+            const res = funcs.isEven(num);
+            assert(res, '`num` is odd number');
         });
     });
 
