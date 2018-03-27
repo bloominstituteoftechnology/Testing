@@ -23,11 +23,33 @@ describe('Arrays', () => {
       expect(each).to.be.a('function');
     });
     it('should iterate for every element in the array', () => {
-      const cb = sinon.spy();
-      each([1, 2, 3], cb);
-      expect(cb).to.have.callCount(3);
+      const spy = sinon.spy();
+      each([1, 2, 3], spy);
+      expect(spy).to.have.callCount(3);
     });
-    // need to test that items are being passed into callback
+    it('should pass each element through the callback', () => {
+      // let sum = 0;
+      // each([1, 2, 3], x => sum += x);
+      // expect(sum).to.equal(6);
+
+      // const spy = sinon.spy();
+      // each([1, 2, 3], spy);
+      // expect(spy).calledWith(1);
+      // expect(spy).calledWith(2);
+      // expect(spy).calledWith(3);
+
+      const spy = sinon.spy();
+      const test = [1, 3, 5, 1, 5, 7];
+      each(test, spy);
+      const results = spy.args;
+      const array = test.map((each, i) => [each, i]);
+      expect(results).to.deep.equal(array);
+    });
+    it('should pass each element and index through the callback', () => {
+      let sum = 0;
+      each([1, 2, 3], (x, i) => (sum = sum + x + i));
+      expect(sum).to.equal(9);
+    });
   });
 
   describe('`map`', () => {
@@ -36,42 +58,62 @@ describe('Arrays', () => {
       expect(map).to.be.an('function');
     });
     it('should iterate for every element in the array', () => {
-      const cb = sinon.spy();
-      map([1, 2, 3], cb);
-      expect(cb).to.have.callCount(3);
+      const spy = sinon.spy();
+      map([1, 2, 3], spy);
+      expect(spy).to.have.callCount(3);
+    });
+    it('should return an array', () => {
+      expect(map([1, 2, 3], x => x + 2)).to.be.an('array');
     });
     it('it should properly handle the elements in the callback', () => {
-      const cb = x => x + 2;
-      const result = map([1, 2, 3], cb);
-      expect(result).to.equal([3, 4, 5]);
+      const spy = sinon.spy(x => x + 2);
+      map([1, 2, 3], spy);
+      const results = spy.returnValues;
+      // results = map([1, 2, 3], x => x + 2);
+      expect(results).to.deep.equal([3, 4, 5]);
     });
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
+    });
+    it('should iterate for every element in the array', () => {
+      const spy = sinon.spy();
+      reduce([1, 2, 3], spy);
+      expect(spy).to.have.callCount(2);
+    });
+    it('should return the correct number', () => {
+      expect(reduce([1, 2, 3], x => x + 2)).to.equal(5);
+    });
+    it('it should properly handle the elements in the callback', () => {
+      const spy = sinon.spy(x => x + 2);
+      reduce([1, 2, 3], spy);
+      const results = spy.returnValues;
+      // results = reduce([1, 2, 3], x => x + 2);
+      expect(results).to.deep.equal([3, 5]);
     });
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
     });
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
     });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
   });
 });
