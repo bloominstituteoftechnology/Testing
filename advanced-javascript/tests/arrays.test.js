@@ -54,6 +54,17 @@ describe('Arrays', () => {
       const result = map(arr, n => (n * n));
       expect(Array.isArray(result)).to.be.true;
     });
+    it('should pass each item into the transform function', () => {
+      const arr = [1, 2, 3];
+      const mappedArr = map(arr, n => (n * 2));
+      expect(mappedArr).to.eql([2, 4, 6]).but.not.equal([2, 4, 6]);
+    });
+    it('should call the callback passed to it for each element in array given', () => {
+      const mockCallback = sinon.spy();
+      expect(mockCallback.callCount).to.equal(0);
+      map([1, 2, 3, 'four'], mockCallback);
+      expect(mockCallback.callCount).to.equal(4);
+    });
   });
 
   describe('`reduce`', () => {
