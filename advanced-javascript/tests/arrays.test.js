@@ -126,7 +126,7 @@ describe('Arrays', () => {
     it('should return a flattened array', () => {
       const arr = [1, 2, 3, [4, 5]];
       const flattened = [1, 2, 3, 4, 5];
-      expect(flatten(arr)).to.equal(flattened);
+      expect(flatten(arr)).to.deep.equal(flattened);
       expect(flatten(arr)).to.be.an('array');
     });
   });
