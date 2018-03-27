@@ -18,45 +18,83 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const cb = sinon.spy();
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
     // begin here
+    it('should invoke a callback once', () => {
+      each([1, 2, 3], cb);
+      expect(cb).to.have.callCount(3);
+    });
   });
 
   describe('`map`', () => {
+    const cb = sinon.spy();
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.a('function');
+    });
+    it('should invoke a callback once', () => {
+      map([1, 2, 3], cb);
+      expect(cb).to.have.callCount(3);
+    });
+    it('should return an array', () => {
+      expect(map([1, 2, 3], cb)).to.be.an('array');
     });
   });
 
   describe('`reduce`', () => {
+    const cb = sinon.spy();
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
+    });
+    it('should invoke a callback once', () => {
+      const sum = (a, b) => {
+        return a + b;
+      };
+      expect(reduce([1, 2, 3], sum, 0)).to.equal(6);
     });
   });
 
   describe('`find`', () => {
+    const cb = sinon.spy();
+    const find = arrayFunctions.find;
+    const elements = (el) => {
+      if (el === 2) return true;
+      return false;
+    };
     it('should be a function', () => {
-      const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.a('function');
+    });
+    it('should return the element', () => {
+      expect(find([1, 2, 3], elements)).to.equal(2);
+    });
+    it('should return undefined', () => {
+      expect(find([1, 3], elements)).to.equal(undefined);
     });
   });
 
   describe('`filter`', () => {
+    const cb = sinon.spy();
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
+    });
+    it('should return an array', () => {
+      expect(filter([1, 2, 3], cb)).to.be.an('array');
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
+    });
+    it('should return a flattened array', () => {
+      expect(flatten([[[1, 2]], [3]])).to.deep.equal([1, 2, 3]);
     });
   });
 });
