@@ -37,10 +37,10 @@ describe('Arrays', () => {
       expect(count).to.equal(9);
     });
     it('should call the callback passed to it for each element in array given', () => {
-      const mockCallback = sinon.spy();
-      expect(mockCallback.callCount).to.equal(0);
-      each([1, 2, 3, 'four'], mockCallback);
-      expect(mockCallback.callCount).to.equal(4);
+      const spy = sinon.spy();
+      expect(spy.callCount).to.equal(0);
+      each([1, 2, 3, 'four'], spy);
+      expect(spy.callCount).to.equal(4);
     });
   });
 
@@ -60,17 +60,40 @@ describe('Arrays', () => {
       expect(mappedArr).to.eql([2, 4, 6]).but.not.equal([2, 4, 6]);
     });
     it('should call the callback passed to it for each element in array given', () => {
-      const mockCallback = sinon.spy();
-      expect(mockCallback.callCount).to.equal(0);
-      map([1, 2, 3, 'four'], mockCallback);
-      expect(mockCallback.callCount).to.equal(4);
+      const spy = sinon.spy();
+      expect(spy.callCount).to.equal(0);
+      map([1, 2, 3, 'four'], spy);
+      expect(spy.callCount).to.equal(4);
     });
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
       expect(reduce).to.be.a('function');
+    });
+    it('should reduce the array\'s contents to a single value', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const result = reduce(arr, (memo, num) => (memo + num));
+      expect(result).to.equal(15);
+    });
+    it('should accept a memo argument', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const result = reduce(arr, (memo, num) => (memo + num), 10);
+      expect(result).to.equal(25);
+    });
+    it('should handle any type of data in the array', () => {
+      const arr = ['h', 'e', 'l', 'l', 'o', '!'];
+      const result = reduce(arr, (memo, num) => (memo + num));
+      expect(result).to.equal('hello!');
+    });
+    it('should call the given callback per every item but one in the array and return an expected value', () => {
+      const stub = sinon.stub();
+      stub.returns(25);
+      const arr = [1, 2, 3, 4, 5];
+      const result = reduce(arr, stub);
+      expect(result).to.equal(25);
+      expect(stub.callCount).to.equal(4);
     });
   });
 
