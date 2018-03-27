@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run watch tests/project-1.test.js
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js test basic-javascript/tests/project-2.test.js
 
 PATH: 
   C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\Mike\AppData\Local\atom\bin
@@ -1631,7 +1631,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c mocha -R nyan --watch tests/project-1.test.js
+  Arguments: /d /s /c eslint */tests/*.js && eslint */src/*.js && mocha -R nyan basic-javascript/tests/project-2.test.js
   Directory: C:\Users\Mike\Desktop\Learning Workspace\Lambda\Week 12\Testing
   Output:
   

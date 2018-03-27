@@ -11,8 +11,8 @@ const funcs = require('../src/project-1');
 // hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
 
 describe('Project-1 Functions', () => {
-  const multiplyByTen = funcs.multiplyByTen;
   describe('`multiplyByTen`', () => {
+    const multiplyByTen = funcs.multiplyByTen;
     it('should be a function', () => {
       assert.typeOf(multiplyByTen, 'function');
     });
@@ -58,10 +58,10 @@ describe('Project-1 Functions', () => {
     });
     it('should be a boolean', () => {
       assert.typeOf(areEqual(10, 10), 'boolean');
-    })
+    });
     it('should return expected outcome', () => {
       assert.strictEqual(areEqual(10, 10), true);
-    })
+    });
   });
 
   describe('`lessThanNinety`', () => {
