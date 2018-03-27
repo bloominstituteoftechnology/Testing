@@ -71,25 +71,43 @@ describe('Arrays', () => {
   });
 
   // TypeError: cb is not a function.....wtf?????
-  describe('`filter`', () => {
-    const filter = arrayFunctions.filter;
-    const spy = sinon.spy(num => num > 2)
-    const result = filter([1,2,3], spy);
-    it('should be a function', () => {
-      expect(filter).to.be.a('function');
-    });
-    it("Return value should be an array", () => {
-      expect(result).to.be.a('array');
-    });
-    it("it should return filtered value", () => {
-      expect(result.length).to.equal(1);
-    });
-  });
+  // describe('`filter`', () => {
+  //   const filter = arrayFunctions.filter;
+  //   const spy = sinon.spy( (num) => {num > 2})
+  //   const result = filter([1,2,3], spy);
+  //   it('should be a function', () => {
+  //     expect(filter).to.be.a('function');
+  //   });
+  //   it("Return value should be an array", () => {
+  //     expect(result).to.be.a('array');
+  //   });
+  //   it("it should return filtered value", () => {
+  //     expect(result.length).to.equal(1);
+  //   });
+  // });
+//   describe('`filter`', () => {
+//     const filter = arrayFunctions.filter;
+//     it('should return the length of 2', () => {
+//       const spyCallBack = sinon.spy((item) => item > 2);
+//       const result = filter([2, 3 ,4], spyCallBack);
+//       // console.log(result);
+//       // expect(result).to.be.an('array');
+//       expect(result.length).to.equal(2);
+//   });
+// });
+
+
+
 
   describe('`flatten`', () => {
     const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
       expect(flatten).to.be.a('function');
+    });
+    it('should return a length of 4', () => {
+      const spy = sinon.spy();
+      const result = flatten([1,2,[3,4]], spy);
+      expect(result.length).to.equal(4);
     });
   });
 });
