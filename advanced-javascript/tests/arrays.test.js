@@ -52,7 +52,7 @@ describe('Arrays', () => {
     it('should return an array', () => {
       const arr = [];
       const result = map(arr, n => (n * n));
-      expect(Array.isArray(result)).to.be.true;
+      expect(result).to.be.an('array');
     });
     it('should pass each item into the transform function', () => {
       const arr = [1, 2, 3];
@@ -110,16 +110,50 @@ describe('Arrays', () => {
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
       expect(filter).to.be.a('function');
+    });
+    it('should return an array', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const results = filter(arr, num => (num === 5));
+      expect(results).to.be.an('array');
+    });
+    it('should return an empty array if no elements pass truth test', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const results = filter(arr, num => (num === 10));
+      expect(results).to.be.an('array');
+      expect(results.length).to.equal(0);
+    });
+    it('should return an array with all elements that pass truth test', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const results = filter(arr, num => (num % 2 === 0));
+      expect(results[0]).to.equal(2);
+      expect(results[1]).to.equal(4);
+      expect(results.length).to.equal(2);
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
       expect(flatten).to.be.a('function');
+    });
+    it('should return an array', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const results = flatten(arr);
+      expect(results).to.be.an('array');
+    });
+    it('should return a flattened array when given a nested array', () => {
+      const arr = [1, 2, 3, 4, 5, [6], [7]];
+      const results = flatten(arr);
+      expect(results).to.be.an('array');
+      expect(results).to.eql([1, 2, 3, 4, 5, 6, 7]).but.not.equal([1, 2, 3, 4, 5, 6, 7]);
+    });
+    it('should return a flattened array regardless of how deep the array nesting is', () => {
+      const arr = [1, [2], [[3]], [[[4]]]];
+      const results = flatten(arr);
+      expect(results).to.eql([1, 2, 3, 4]).but.not.equal([1, 2, 3, 4]);
     });
   });
 });
