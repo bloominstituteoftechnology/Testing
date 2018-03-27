@@ -212,10 +212,15 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`square`', () => {
+        const square = funcs.square;
         it('should be a function', () => {
-            const square = funcs.square;
             assert.typeOf(square, 'function');
         });
+        it('should return square', () => {
+            const num = 12;
+            const res = square(num);
+            assert.equal(res, 144);
+        })
     });
 
     describe('`cube`', () => {
