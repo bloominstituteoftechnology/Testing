@@ -94,7 +94,7 @@ describe('Arrays', () => {
       expect(flatten).to.be.a('function');
     });
     it('should return a flattened array', () => {
-      expect(flatten([[[1, 2]], [3]]), [1, 2, 2]);
+      expect(flatten([[[1, 2]], [3]])).to.deep.equal([1, 2, 3]);
     });
   });
 });
