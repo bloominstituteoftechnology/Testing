@@ -224,17 +224,27 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`cube`', () => {
+        const cube = funcs.cube;
         it('should be a function', () => {
-            const cube = funcs.cube;
             assert.typeOf(cube, 'function');
         });
+        it('should return cube', () => {
+            const num = 3;
+            const res = cube(num);
+            assert.equal(res, 27);
+        })
     });
 
     describe('`raiseToPower`', () => {
+        const raiseToPower = funcs.raiseToPower;
         it('should be a function', () => {
-            const raiseToPower = funcs.raiseToPower;
             assert.typeOf(raiseToPower, 'function');
         });
+        it('should return response raised to power', () => {
+            const num1 = 2, num2 = 3;
+            const res = raiseToPower(num1, num2);
+            assert.equal(res, 8)
+        })
     });
 
     describe('`roundNumber`', () => {
