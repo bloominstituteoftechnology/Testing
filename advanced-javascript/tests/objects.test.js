@@ -58,7 +58,16 @@ describe('objects', () => {
       );
     });
     it('should contain an inverted property', () => {
-      assert.equal(testInvert['value 2'], 'key2')
-    })
+      assert.equal(testInvert['value 2'], 'key2');
+    });
+  });
+
+  describe('`defaults`', () => {
+    const testObj = { key1: 'value 1', key2: 'value 2' };
+    const defaultsObj = { key1: 'value 1', key2: 'value 2', key3: 'value 3' };
+    const testDefaults = defaults(testObj, defaultsObj)
+    it('should contain a new default property', () => {
+      assert.equal(testDefaults['key3'], 'value 3');
+    });
   });
 });
