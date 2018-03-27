@@ -300,9 +300,14 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`getTriangleArea`', () => {
+        const getTriangleArea = funcs.getTriangleArea;
         it('should be a function', () => {
-            const getTriangleArea = funcs.getTriangleArea;
             assert.typeOf(getTriangleArea, 'function');
+        });
+        it('should return triangle area', () => {
+            const num1 = 3, num2 = 16;
+            const triArea = getTriangleArea(num1, num2);
+            assert.equal(triArea, 24);
         });
     });
 
