@@ -59,4 +59,19 @@ describe('Project-2 Functions', () => {
         });
     });
 
+    describe('`isInRange`', () => {
+        const isInRange = funcs.isInRange;
+        it('should be a function', () => {
+            assert.typeOf(isInRange, 'function');
+        });
+        it('should be in range', () => {
+            const resp = isInRange(40);
+            assert(resp, '40 is in range');
+        });
+        it('should be in range', () => {
+            const resp = isInRange(900);
+            assert.isNotOk(resp, '900 is not in range');
+        });
+    });
+
 });
