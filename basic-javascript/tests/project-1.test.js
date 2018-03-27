@@ -248,17 +248,27 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`roundNumber`', () => {
+        const roundNumber = funcs.roundNumber;
         it('should be a function', () => {
-            const roundNumber = funcs.roundNumber;
             assert.typeOf(roundNumber, 'function');
         });
+        it('should round a number', () => {
+            const num = 49.1;
+            const rounded = roundNumber(num);
+            assert.equal(rounded, 49);
+        })
     });
 
     describe('`roundUp`', () => {
+        const roundUp = funcs.roundUp;
         it('should be a function', () => {
-            const roundUp = funcs.roundUp;
             assert.typeOf(roundUp, 'function');
         });
+        it('should round num up', () => {
+            const num = 99.9;
+            const roundedUp = roundUp(num);
+            assert.equal(roundedUp, 100);
+        })
     });
 
     describe('`addExclamationPoint`', () => {
@@ -297,16 +307,26 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`getCircleArea`', () => {
+        const getCircleArea = funcs.getCircleArea;
         it('should be a function', () => {
-            const getCircleArea = funcs.getCircleArea;
             assert.typeOf(getCircleArea, 'function');
         });
+        it('should return circle area', () => {
+            const num1 = 20, num2 = 20;
+            const res = getCircleArea(num1, num2);
+            assert.equal(res, 1256.6370614359173)
+        })
     });
 
     describe('`getRectangularPrismVolume`', () => {
+        const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
         it('should be a function', () => {
-            const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
             assert.typeOf(getRectangularPrismVolume, 'function');
         });
+        it('should return area of prism', () => {
+            const num1 = 4, num2 = 34, num3 = 21;
+            const res = getRectangularPrismVolume(num1, num2, num3);
+            assert.equal(res, 2856)
+        })
     });
 });
