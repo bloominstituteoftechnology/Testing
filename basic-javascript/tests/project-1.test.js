@@ -272,10 +272,14 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`addExclamationPoint`', () => {
+        const addExclamationPoint = funcs.addExclamationPoint;
         it('should be a function', () => {
-            const addExclamationPoint = funcs.addExclamationPoint;
             assert.typeOf(addExclamationPoint, 'function');
         });
+        it('should add exclamation', () => {
+            const res = addExclamationPoint('Hello');
+            assert.equal(res, 'Hello!')
+        })
     });
 
     describe('`combineNames`', () => {
@@ -302,10 +306,15 @@ describe('Project-1 Functions', () => {
     });
 
     describe('`getRectangleArea`', () => {
+        const getRectangleArea = funcs.getRectangleArea;
         it('should be a function', () => {
-            const res = funcs.getRectangleArea;
-            assert.typeOf(res, 'function');
+            assert.typeOf(getRectangleArea, 'function');
         });
+        it('should return rectangle\'s area', () => {
+            const num1 = 3, num2 = 5;
+            const res = getRectangleArea(num1, num2);
+            assert.equal(res, 15);
+        })
     });
 
     describe('`getTriangleArea`', () => {
