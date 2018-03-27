@@ -18,45 +18,69 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
-    // begin here
+    it('should be called three times for an array of length 3', () => {
+      const spyCallBack = sinon.spy();
+      each([1, 2, 3], spyCallBack);
+      expect(spyCallBack.calledThrice, true);
+    });
+    it('second call should equal 2', () => {
+      const add2 = x => x + 2;
+      const spyCallBack = sinon.spy(add2);
+      each([4, 5, 6], spyCallBack);
+      expect(spyCallBack.secondCall.returnValue).to.equal(7);
+    });
+    it('should return 120', () => {
+      let count = 1;
+      each([4, 5, 6], (element) => {
+        count *= element;
+      });
+      expect(count).to.equal(120);
+    });
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.a('function');
+    });
+    it('should return an array', () => {
+      expect(map([1, 2], x => x + 1)).to.be.an('array');
+    });
+    it('first value should equal 2', () => {
+      const result = map([1, 2], x => x + 1);
+      expect(result[0]).to.equal(2);
     });
   });
 
   describe('`reduce`', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
     });
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.a('function');
     });
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
     });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
   });
 });
