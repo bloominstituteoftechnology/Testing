@@ -161,12 +161,12 @@ describe('Project-2 Functions', () => {
       it('should be a function', () => {
          assert.typeOf(wordsToSentence, 'function');
       });
-      it('should have an array as the parameter', () => {
-         const cb = sinon.spy();
-         const proxy = wordsToSentence(cb);
-         console.log('proxy is', proxy);
-         assert.isArray(proxy, 'is not an array');
-      })
+    //   it('should have an array as the parameter', () => {
+    //      const cb = sinon.spy();
+    //      const proxy = wordsToSentence(cb);
+    //      console.log('proxy is', proxy);
+    //      assert.isArray(proxy, 'is not an array');
+    //   })
       it('should return array with an element pushed to the end', () => {
          const arr = ['A', 'simple', 'sentence'];
          assert.strictEqual(wordsToSentence(arr), 'A simple sentence');
@@ -178,5 +178,42 @@ describe('Project-2 Functions', () => {
       it('should be a function', () => {
          assert.typeOf(contains, 'function');
       });
+      it('should return true if contains() properly', () => {
+        const arr = [5, 3, 1];
+          assert.strictEqual(contains(arr, 3), true);
+      }) 
+   })
+
+   describe('addNumbers', () => {
+      const { addNumbers } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(addNumbers, 'function');
+      });
+      it('should return sum of numbers in following array', () => {
+        const arr = [5, 3, 1];
+          assert.strictEqual(addNumbers(arr), 9);
+      }) 
+   })
+
+   describe('averageTestScore', () => {
+      const { averageTestScore } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(averageTestScore, 'function');
+      });
+      it('should return average of following array', () => {
+        const arr = [5, 3, 1];
+          assert.strictEqual(averageTestScore(arr), 3);
+      }) 
+   })
+
+   describe('largestNumber', () => {
+      const { largestNumber } = funcs;
+      it('should be a function', () => {
+         assert.typeOf(largestNumber, 'function');
+      });
+      it('should return average of following array', () => {
+        const arr = [5, 3, 1];
+          assert.strictEqual(largestNumber(arr), 5);
+      }) 
    })
 });
