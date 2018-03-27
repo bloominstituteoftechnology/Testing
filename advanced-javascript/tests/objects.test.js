@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
 const objectFunctions = require('../src/objects');
+const sinon = require('sinon');
 
 const { keys, values, mapObject, pairs, invert, defaults } = objectFunctions;
 
@@ -21,5 +22,16 @@ describe('objects', () => {
     it('should contain the value as array element', () => {
       assert.equal(objValues[0], 'value 1');
     });
+  });
+
+  describe('`mapObject`', () => {
+    const spy = sinon.spy(el => (el += '1'));
+    const testMapObj = mapObject(testObj, spy);
+    it('should modify the string correctly', () => {
+      assert.equal(testMapObj['key1'], 'value 11');
+    });
+    it('should call the cb the correct number of times', () => {
+      assert.equal(spy.callCount, 2);
+    })
   });
 });
