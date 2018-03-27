@@ -169,12 +169,27 @@ describe('Project-1 Functions', () => {
             const getRemainder = funcs.getRemainder;
             assert.typeOf(getRemainder, 'function');
         });
+        it('should return the remainder of two numbers', () => {
+            const num1 = 50, num2 = 32;
+            const res = funcs.getRemainder(num1, num2);
+            assert.equal(res, 18);
+        });
     });
 
     describe('`isEven`', () => {
         it('should be a function', () => {
             const isEven = funcs.isEven;
             assert.typeOf(isEven, 'function');
+        });
+        it('should return true if number is even', () => {
+            const num = 50;
+            const res = funcs.isEven(num);
+            assert(res, '`num` is even number');
+        });
+        it('should return true if number is even', () => {
+            const num = 49;
+            const res = funcs.isEven(num);
+            assert.isNotOk(res, '`num` is Not even number');
         });
     });
 
