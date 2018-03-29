@@ -14,6 +14,8 @@ const map = (elements, cb) => {
   return mappedArr;
 };
 
+
+
 const reduce = (elements, cb, memo = elements.shift()) => {
   each(elements, (item) => {
     memo = cb(memo, item);
