@@ -1,44 +1,142 @@
 /* eslint-disable prefer-destructuring */
-
+const expect = require('chai').expect;
 const assert = require('chai').assert;
 const funcs = require('../src/project-1');
 
+// not sure this is right but
+const{ multiplyByTen,
+  subtractFive,
+  areSameLength,
+  areEqual,
+  lessThanNinety,
+  greaterThanFifty,
+  add,
+  subtract,
+  divide,
+  multiply,
+  getRemainder,
+  isEven,
+  isOdd,
+  square,
+  cube,
+  raiseToPower,
+  roundNumber,
+  roundUp,
+  addExclamationPoint,
+  combineNames,
+  getGreeting,
+  getRectangleArea,
+  getTriangleArea,
+  getCircleArea,
+  getRectangularPrismVolume} = require('../src/project-1');
+//const expect = require('chai').expect;
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
 // first step is to make sure all these assertions work.
 // then make sure you have at least 2-3 more assertions for every function.
 // hint 1. - you need to pass data to the functions and get expected output.
-// hint 2. - you should test to see if the expected return output is of a specified type, as well as the correct outcome.
+// hint 2. - you should test to see if the expected return output is of a specified type,
+// as well as the correct outcome.
 
-describe('Project-1 Functions', () => {
-  describe('`multiplyByTen`', () => {
+/* eslint-disable prefer-destructuring */
+//const expect = require('chai').expect;
+const assert = require('chai').assert;
+const funcs = require('../src/project-1');
+const {
+  multiplyByTen,
+  subtractFive,
+  areSameLength,
+  areEqual,
+  lessThanNinety,
+  greaterThanFifty,
+  add,
+  subtract,
+  divide,
+  multiply,
+  getRemainder,
+  isEven,
+  isOdd,
+  square,
+  cube,
+  raiseToPower,
+  roundNumber,
+  roundUp,
+  addExclamationPoint,
+  combineNames,
+  getGreeting,
+  getRectangleArea,
+  getTriangleArea,
+  getCircleArea,
+  getRectangularPrismVolume}= require('../src/project-1');
+
+// not sure this is right but
+
+//const expect = require('chai').expect;
+// we've gone ahead and gotten a start here for you,
+// except, for some reason, none of our current assertions are working.
+// first step is to make sure all these assertions work.
+// then make sure you have at least 2-3 more assertions for every function.
+// hint 1. - you need to pass data to the functions and get expected output.
+// hint 2. - you should test to see if the expected return output is of a specified type,
+// as well as the correct outcome.
+
+describe('Project-1 Functions', () => { // suite of suites
+
+  //multiply by 10
+ describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
+    const multiplyByTen = funcs.multiplyByTen;
+    const a = 2;
+    const product = multiplyByTen(a);
+    expect(product).to.be.a('number');
+    expect(product).to.equal(20);
   });
+ });
 
-  describe('`subtractFive`', () => {
+    describe('`subtractFive`', () => {
     it('should be a function', () => {
       const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'array');
     });
-  });
+  const subtractFive =funcs.subtractFive;
+  const a=10;
+  const difference =subtractFive(a);
+  expect(difference).to.be.a('number');
+  expect(difference).to.equal(5);
+ });
+});
+// dont'know if I need });
 
-  describe('`areSameLength`', () => {
+    describe('`areSameLength`', () => {
     it('should be a function', () => {
       const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'number');
     });
-  });
+const areSameLength =funcs.areSameLength;
+const a=10;
+const samelength =areSameLength(a)
+expect(samelength)to.be.a('number');
+expect(samelength)to.equal(10);
+    });
+      });
 
   describe('`areEqual`', () => {
     it('should be a function', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'number');
     });
+const areEqual =funcs.areEqual;
+const a=10;
+const equals =areEqual(a)
+expect(equals)to.be.a('number');
+expect(equals)to.equal(10);
+
   });
+});
 
   describe('`lessThanNinety`', () => {
     it('should be a function', () => {
