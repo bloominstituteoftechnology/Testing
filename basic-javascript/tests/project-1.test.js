@@ -67,6 +67,13 @@ describe('Project-1 Functions', () => {
       const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
     });
+    it('should contain varaibles that are strictly equal to each other', () => {
+      const {areEqual} = funcs;
+      let var1 = 'type';
+      let var2 = 'type';
+      let comparison = var1 === var2;
+      assert.equal(comparison, true);
+    })
   });
 
   describe('`lessThanNinety`', () => {
