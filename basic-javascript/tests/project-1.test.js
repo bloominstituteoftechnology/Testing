@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -81,6 +82,16 @@ describe('Project-1 Functions', () => {
       const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
     });
+    it('should contain a variable that is a number', () => {
+      const { lessThanNinety } = funcs;
+      let param1 = 0;
+      assert.typeOf(param1, 'number');
+    })
+    it('should return true if the given number is less than 90 or false if greater than 90', () => {
+      const { lessThanNinety } = funcs;
+      let comparison = 0;
+      expect(comparison).to.be.below(90);
+    })
   });
 
   describe('`greaterThanFifty`', () => {
@@ -88,6 +99,16 @@ describe('Project-1 Functions', () => {
       const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
     });
+    it('should contain a variable that is a number', () => {
+      const { greaterThanFifty } = funcs;
+      let param1 = 0;
+      assert.typeOf(param1, 'number');
+    })
+    it('should return true if the given number is less than 90 or false if greater than 90', () => {
+      const { greaterThanFifty } = funcs;
+      let comparison = 60;
+      expect(comparison).to.be.above(50);
+    })
   });
 
   describe('`add`', () => {
