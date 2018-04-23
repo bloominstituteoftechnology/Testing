@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const chai = require('chai');
+const assert = require('chai').assert;
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const arrayFunctions = require('../src/arrays');
@@ -18,45 +19,61 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      expect(each).to.be.a('function');
     });
     // begin here
+    it('should hold the correct values', () => {
+      let temp = [];
+      each([1,2,3,4],(e,i)=>{
+        temp.push(e);
+      });
+      assert.equal(temp[0],1);
+      assert.equal(temp[1],2);
+      assert.equal(temp[2],3);
+    });
   });
-
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      expect(map).to.be.an('function');
+    });
+    it('should return the correct array', () => {
+      const temp = map([2,4,6],(e)=>{
+        return e * 2;
+      });
+      assert.equal(temp[0],4);
+      assert.equal(temp[1],8);
+      assert.equal(temp[2],12);
     });
   });
 
   describe('`reduce`', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      expect(reduce).to.be.a('function');
     });
   });
 
   describe('`find`', () => {
     it('should be a function', () => {
       const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      expect(find).to.be.an('function');
     });
   });
 
   describe('`filter`', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      expect(filter).to.be.a('function');
     });
   });
 
   describe('`flatten`', () => {
     it('should be a function', () => {
       const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      expect(flatten).to.be.a('function');
     });
   });
 });
