@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.0",
+    "chai-asserttype": "^1.0.5",
     "eslint-config-airbnb": "^16.1.0"
   },
   "repository": "https://github.com/ElizabethMcKenzie/Testing.git"

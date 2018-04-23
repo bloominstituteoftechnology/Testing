@@ -1,4 +1,5 @@
 /* eslint-disable arrow-parens */
+num = 1;
 
 const multiplyByTen = num => {
   return num * 10;
