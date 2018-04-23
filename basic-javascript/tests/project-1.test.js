@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const funcs = require('../src/project-1');
 
 // we've gone ahead and gotten a start here for you,
@@ -14,36 +15,87 @@ describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
     it('should be a function', () => {
       const multiplyByTen = funcs.multiplyByTen;
-      assert.typeOf(multiplyByTen, 'object');
+      assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
+    it('should be a number', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      const product = multiplyByTen(2);
+      assert.typeOf(product, 'number');
+    });
+    it('should return as 20', () => {
+      const multiplyByTen = funcs.multiplyByTen;
+      const product = multiplyByTen(2);
+      assert.equal(product, 20);
+    });
   });
 
   describe('`subtractFive`', () => {
     it('should be a function', () => {
       const subtractFive = funcs.subtractFive;
-      assert.typeOf(subtractFive, 'array');
+      assert.typeOf(subtractFive, 'function');
+    });
+    it('should be a number', () => {
+      const subtractFive = funcs.subtractFive;
+      const diff = subtractFive(10);
+      assert.typeOf(diff, 'number');
+    });
+    it('should return 5', () => {
+      const subtractFive = funcs.subtractFive;
+      const diff = subtractFive(10);
+      assert.equal(diff, 5);
     });
   });
 
   describe('`areSameLength`', () => {
     it('should be a function', () => {
       const areSameLength = funcs.areSameLength;
-      assert.typeOf(areSameLength, 'number');
+      assert.typeOf(areSameLength, 'function');
+    });
+    it('should be a boolean', () => {
+      const areSameLength = funcs.areSameLength;
+      const str = areSameLength('luis', 'diaz');
+      expect(str).to.be.a('boolean');
+    });
+    it('should be boolean showing equal in length', () => {
+      const areSameLength = funcs.areSameLength;
+      const compared = areSameLength('luis', 'diaz');
+      assert.equal(compared, true);
     });
   });
 
   describe('`areEqual`', () => {
     it('should be a function', () => {
       const areEqual = funcs.areEqual;
-      assert.typeOf(areEqual, 'number');
+      assert.typeOf(areEqual, 'function');
+    });
+    it('should be a boolean', () => {
+      const areEqual = funcs.areEqual;
+
+      assert.typeOf(areEqual(2, 2), 'boolean');
+    });
+    it('should be true', () => {
+      const areEqual = funcs.areEqual;
+
+      assert.equal(areEqual(2, 2), true);
     });
   });
 
   describe('`lessThanNinety`', () => {
     it('should be a function', () => {
       const lessThanNinety = funcs.lessThanNinety;
-      assert.typeOf(lessThanNinety, 'number');
+      assert.typeOf(lessThanNinety, 'function');
+    });
+    it('should be a boolean', () => {
+      const lessThanNinety = funcs.lessThanNinety;
+      assert.typeOf(lessThanNinety(50), 'boolean');
+    });
+    it('should be true if less than 90', () => {
+      const lessThanNinety = funcs.lessThanNinety;
+      assert.equal(lessThanNinety(80), true);
+    });
+    it('should be false if more than 90', () => {
+      const lessThanNinety = funcs.lessThanNinety;
     });
   });
 
