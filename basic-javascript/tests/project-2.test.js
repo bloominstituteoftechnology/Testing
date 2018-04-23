@@ -42,116 +42,116 @@ describe('basic-javascript-project-2.js', () => {
       assert.equal(greeting('spanish'), 'Hello!');
     });
   });
-  // describe('isTenOrFive', () => {
-  //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
-  //   });
-  // });
+  describe('isTenOrFive', () => {
+    it('should return true if 10 or 5', () => {
+      assert.equal();
+      assert.equal();
+      assert.equal();
+    });
+  });
   // describe('isInRange', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('isInteger', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('fizzBuzz', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('isPrime', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('returnFirst', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('returnLast', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('getArrayLength', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('incrementByOne', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('addItemToArray', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('addItemToFront', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('wordsToSencence', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('contains', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('addNumbers', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('averageTestScore', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
   // describe('largestNumber', () => {
   //   it('', () => {
-  //     assert();
-  //     assert();
-  //     assert();
+  //     assert.equal();
+  //     assert.equal();
+  //     assert.equal();
   //   });
   // });
 });
