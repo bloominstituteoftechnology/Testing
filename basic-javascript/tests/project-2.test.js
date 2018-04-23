@@ -11,6 +11,10 @@ describe('Project 2 Functions', () => {
     it('should be a function', () => {
       expect(getBiggest).to.be.a('function');
     });
+    it('should return a number', () => {
+      const result = getBiggest(3, 7);
+      expect(result).to.be.a('number');
+    });
     it('should return the larger of two numbers', () => {
       const num1 = 23;
       const num2 = 107;
@@ -23,6 +27,10 @@ describe('Project 2 Functions', () => {
     const greeting = funcs.greeting;
     it('should be a function', () => {
       expect(greeting).to.be.a('function');
+    });
+    it('should return a string', () => {
+      const result = greeting();
+      expect(result).to.be.a('string');
     });
     it('should return a German greeting if given the parameter German', () => {
       const result = greeting('German');
@@ -63,87 +71,111 @@ describe('Project 2 Functions', () => {
     it('should return true if the number is in the range between 20 and 50', () => {});
   });
   describe('isInteger', () => {
+    const isInteger = funcs.isInteger;
     it('should be a function', () => {
-      const isInteger = funcs.isInteger;
       expect(isInteger).to.be.a('function');
     });
   });
   describe('fizzBuzz', () => {
+    const fizzBuzz = funcs.fizzBuzz;
     it('should be a function', () => {
-      const fizzBuzz = funcs.fizzBuzz;
       expect(fizzBuzz).to.be.a('function');
+    });
+    it('should return a string', () => {
+      const result = fizzBuzz(15);
+      expect(result).to.be.a('string');
     });
   });
   describe('isPrime', () => {
+    const isPrime = funcs.isPrime;
     it('should be a function', () => {
-      const isPrime = funcs.isPrime;
       expect(isPrime).to.be.a('function');
     });
   });
   describe('returnFirst', () => {
+    const returnFirst = funcs.returnFirst;
     it('should be a function', () => {
-      const returnFirst = funcs.returnFirst;
       expect(returnFirst).to.be.a('function');
     });
   });
   describe('returnLast', () => {
+    const returnLast = funcs.returnLast;
     it('should be a function', () => {
-      const returnLast = funcs.returnLast;
       expect(returnLast).to.be.a('function');
     });
   });
   describe('getArrayLength', () => {
+    const getArrayLength = funcs.getArrayLength;
     it('should be a function', () => {
-      const getArrayLength = funcs.getArrayLength;
       expect(getArrayLength).to.be.a('function');
+    });
+    it('should return a number', () => {
+      const result = getArrayLength([3, 7]);
+      expect(result).to.be.a('number');
     });
   });
   describe('incrementByOne', () => {
+    const incrementByOne = funcs.incrementByOne;
     it('should be a function', () => {
-      const incrementByOne = funcs.incrementByOne;
       expect(incrementByOne).to.be.a('function');
     });
   });
   describe('addItemToArray', () => {
+    const addItemToArray = funcs.addItemToArray;
     it('should be a function', () => {
-      const addItemToArray = funcs.addItemToArray;
       expect(addItemToArray).to.be.a('function');
     });
   });
   describe('addItemToFront', () => {
+    const addItemToFront = funcs.addItemToFront;
     it('should be a function', () => {
-      const addItemToFront = funcs.addItemToFront;
       expect(addItemToFront).to.be.a('function');
     });
   });
   describe('wordsToSentence', () => {
+    const wordsToSentence = funcs.wordsToSentence;
     it('should be a function', () => {
-      const wordsToSentence = funcs.wordsToSentence;
       expect(wordsToSentence).to.be.a('function');
+    });
+    it('should return a string', () => {
+      const result = wordsToSentence(['a', 'sentence']);
+      expect(result).to.be.a('string');
     });
   });
   describe('contains', () => {
+    const contains = funcs.contains;
     it('should be a function', () => {
-      const contains = funcs.contains;
       expect(contains).to.be.a('function');
     });
   });
   describe('addNumbers', () => {
+    const addNumbers = funcs.addNumbers;
     it('should be a function', () => {
-      const addNumbers = funcs.addNumbers;
       expect(addNumbers).to.be.a('function');
+    });
+    it('should return a number', () => {
+      const result = addNumbers(3, 7);
+      expect(result).to.be.a('number');
     });
   });
   describe('averageTestScore', () => {
+    const averageTestScore = funcs.averageTestScore;
     it('should be a function', () => {
-      const averageTestScore = funcs.averageTestScore;
       expect(averageTestScore).to.be.a('function');
+    });
+    it('should return a number', () => {
+      const result = averageTestScore(3, 7);
+      expect(result).to.be.a('number');
     });
   });
   describe('largestNumber', () => {
+    const largestNumber = funcs.largestNumber;
     it('should be a function', () => {
-      const largestNumber = funcs.largestNumber;
       expect(largestNumber).to.be.a('function');
+    });
+    it('should return a number', () => {
+      const result = largestNumber([3, 7]);
+      expect(result).to.be.a('number');
     });
   });
 });
