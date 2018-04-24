@@ -30,44 +30,56 @@ describe('Arrays', () => {
     });
   });
 
-  // describe('`map`', () => {
-  //   it('should be a function', () => {
-  //     const map = arrayFunctions.map;
-  //     expect(map).to.be.an('function');
-  //   });
-  // });
+  describe('`map`', () => {
+    const map = arrayFunctions.map;
+    let cb = sinon.spy();
+    let result = map([1, 2, 3, 4, 5, 6], () => cb());
+    it('should be a function', () => {
+      expect(map).to.be.an('function');
+    });
+    it('should return an array', () => {
+      expect(result).to.be.an('array');
+    });
+    cb = sinon.spy();
+    result = map(['one', 'two', 'three'], () => cb);
+  });
 
   // describe('`reduce`', () => {
-  //   it('should be a function', () => {
   //     const reduce = arrayFunctions.reduce;
+  //   it('should be a function', () => {
   //     expect(reduce).to.be.a('function');
   //   });
   // });
 
   // describe('`find`', () => {
-  //   it('should be a function', () => {
   //     const find = arrayFunctions.find;
+  //   it('should be a function', () => {
   //     expect(find).to.be.an('function');
   //   });
   // });
 
   describe('`filter`', () => {
     const filter = arrayFunctions.filter;
-    const spy = sinon.spy();
+    let cb = sinon.spy();
     const result = filter(['earth', 'air', 'wind', 'fire', 'spirit'], () =>
-      spy()
-    );
+      cb());
     it('should be a function', () => {
       expect(filter).to.be.a('function');
     });
     it('should return an array', () => {
       expect(result).to.be.an('array');
     });
+    it('cb should be called once for each item in the array', () => {
+      expect(cb).to.have.a.callCount(5);
+      cb = sinon.spy();
+      filter([1, 2, 3], () => cb());
+      expect(cb).to.have.a.callCount(3);
+    });
   });
 
   // describe('`flatten`', () => {
-  //   it('should be a function', () => {
   //     const flatten = arrayFunctions.flatten;
+  //   it('should be a function', () => {
   //     expect(flatten).to.be.a('function');
   //   });
   // });

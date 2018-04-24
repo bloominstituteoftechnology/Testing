@@ -6,13 +6,13 @@ const each = (elements, cb) => {
   }
 };
 
-// const map = (elements, cb) => {
-//   const mappedArr = [];
-//   each(elements, (item) => {
-//     mappedArr.push(cb(item));
-//   });
-//   return mappedArr;
-// };
+const map = (elements, cb) => {
+  const mappedArr = [];
+  each(elements, (item) => {
+    mappedArr.push(cb(item));
+  });
+  return mappedArr;
+};
 
 // const reduce = (elements, cb, memo = elements.shift()) => {
 //   each(elements, (item) => {
@@ -30,7 +30,7 @@ const each = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each(elements, (element, item) => {
+  each(elements, (item) => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
@@ -52,9 +52,9 @@ const filter = (elements, cb) => {
 
 module.exports = {
   each,
-  // map,
+  map,
   // reduce,
   // find,
-  filter,
+  filter
   // flatten,
 };
