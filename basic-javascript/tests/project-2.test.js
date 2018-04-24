@@ -100,6 +100,30 @@ describe('Project-2 Functions', () => {
       assert.equal(isInteger(38 && 39), true);
     });
   });
+
+  describe('`fizzBuzz`', () => {
+    const fizzBuzz = funcs.fizzBuzz;
+  
+    it('should be a string', () => {
+      assert.typeOf(fizzBuzz, 'function');
+    });
+    const num = 15;
+  
+    it('should return fizzbuzz', () => {
+      assert.equal(fizzBuzz(num), 'fizzbuzz');
+    });
+    it('it should return buzz', () => {
+      assert.equal(fizzBuzz(5), 'buzz');
+    });
+    it('should return fizz', () => {
+      assert.equal(fizzBuzz(3), 'fizz');
+    });
+  
+    it('should return num', () => {
+      assert.equal(fizzBuzz(2), 2);
+    });
+  });
+  
   
 
   describe('`isPrime`', () => {
