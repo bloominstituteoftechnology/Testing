@@ -98,7 +98,8 @@ describe('objects', () => {
   });
   describe('`defaults`', () => {
     const defaults = objectFunctions.defaults;
-    const callBack = sinon.spy(n => n+1);
+    // const callBack = sinon.spy(n => n+1);
+    const newObj = { z: 'a' };
     it('should be an function', () => {
       expect(defaults).to.be.an('function');
     });
@@ -106,14 +107,14 @@ describe('objects', () => {
     it('should return an object ', () => {
       const obj = { a: 'b' };
 
-      const result = defaults(obj, callBack);
+      const result = defaults(obj, newObj);
       expect(result).to.be.an('object');
     });
 
-    // it('should return correct key and value ', () => {
-    //   const obj = { a: 'b' };
-    //   const result = defaults(obj, callBack);
-    //   expect(result).to.be.equal({a: "b"});
-    // });
+    it('should return correct key and value ', () => {
+      const obj = { a: 'b' };
+      const result = defaults(obj, newObj);
+      expect(result).to.be.eql({ a: 'b' , z: 'a'});
+    });
   });
 });
