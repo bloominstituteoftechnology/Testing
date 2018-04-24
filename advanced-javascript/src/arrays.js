@@ -14,12 +14,12 @@ const map = (elements, cb) => {
   return mappedArr;
 };
 
-// const reduce = (elements, cb, memo = elements.shift()) => {
-//   each(elements, (item) => {
-//     memo = cb(memo, item);
-//   });
-//   return memo;
-// };
+const reduce = (elements, cb, memo = elements.shift()) => {
+  each(elements, (item) => {
+    memo = cb(memo, item);
+  });
+  return memo;
+};
 
 // const find = (elements, cb) => {
 //   for (let i = 0; i < elements.length; i++) {
@@ -53,7 +53,7 @@ const filter = (elements, cb) => {
 module.exports = {
   each,
   map,
-  // reduce,
+  reduce,
   // find,
   filter
   // flatten,

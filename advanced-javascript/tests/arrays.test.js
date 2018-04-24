@@ -6,6 +6,7 @@ const sinonChai = require('sinon-chai');
 const arrayFunctions = require('../src/arrays');
 
 const expect = chai.expect;
+const assert = chai.assert;
 chai.use(sinonChai);
 
 // we've gone ahead and gotten a start here for you,
@@ -32,24 +33,40 @@ describe('Arrays', () => {
 
   describe('`map`', () => {
     const map = arrayFunctions.map;
-    let cb = sinon.spy();
-    let result = map([1, 2, 3, 4, 5, 6], () => cb());
+    let cb = sinon.spy(item => item * 2);
+    let result = map([1, 2, 3, 4, 5, 6], item => cb(item));
+    let expected = [2, 4, 6, 8, 10, 12];
     it('should be a function', () => {
       expect(map).to.be.an('function');
     });
     it('should return an array', () => {
       expect(result).to.be.an('array');
     });
-    cb = sinon.spy();
-    result = map(['one', 'two', 'three'], () => cb);
+
+    it('should return a new altered array', () => {
+      assert.deepEqual(result, expected);
+      cb = sinon.spy(item => item + 2);
+      result = map(['one', 'two', 'three'], item => cb(item));
+      expected = ['one2', 'two2', 'three2'];
+      assert.deepEqual(result, expected);
+    });
   });
 
-  // describe('`reduce`', () => {
-  //     const reduce = arrayFunctions.reduce;
-  //   it('should be a function', () => {
-  //     expect(reduce).to.be.a('function');
-  //   });
-  // });
+  describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
+    const cb = sinon.spy((sum, num) => sum + num);
+    const result = reduce([4, 3, 2, 1], cb);
+    it('should be a function', () => {
+      expect(reduce).to.be.a('function');
+    });
+    it('should return a number', () => {
+      assert.typeOf(result, 'number');
+    });
+    it('should return sum of all numbers from array', () => {
+      assert.equal(result, 10);
+      assert.equal(reduce([-4, -3, -2, -1], cb), -10);
+    });
+  });
 
   // describe('`find`', () => {
   //     const find = arrayFunctions.find;
