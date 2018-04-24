@@ -22,6 +22,11 @@ describe('Project-1 Functions', () => {
       multiplyByTen.should.be.a('function');
     });
     // begin here
+    it('result should be a number that is a product of 10', () => {
+      const num = 30;
+      const result = multiplyByTen(num);
+      assert.equal(result, 300);
+    });
   });
 
   describe('`subtractFive`', () => {
@@ -29,6 +34,11 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(subtractFive, 'array');
       expect(subtractFive).to.be.a('function');
+    });
+    it('should be a difference of five', () => {
+      const num = 35;
+      const result = subtractFive(num);
+      assert.equal(result, 30);
     });
   });
 
@@ -38,6 +48,18 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(areSameLength, 'number');
       assert.typeOf(areSameLength, 'function');
     });
+    it('should return true if strings have the same length', () => {
+      const str1 = 'same';
+      const str2 = 'five';
+      const result = areSameLength(str1, str2);
+      assert.equal(result, true);
+    });
+    it('should return false if strings have the same length', () => {
+      const str1 = 'same';
+      const str2 = 'fives';
+      const result = areSameLength(str1, str2);
+      assert.equal(result, false);
+    });
   });
 
   describe('`areEqual`', () => {
@@ -45,6 +67,20 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(areEqual, 'number');
       areEqual.should.be.a('function');
+    });
+
+    // you can use notStrictEqual also
+
+    // test true
+    it('should return true if arguments are strictly equal', () => {
+      // assert.strictEqual(areEqual('5', 5), true); // fail
+      assert.strictEqual(areEqual(5, 5), true); // pass
+    });
+
+    // test false
+    it('should return false if arguments are strictly equal', () => {
+      // assert.strictEqual(areEqual('5', 5), true); // fail
+      assert.strictEqual(areEqual('5', 5), false); // pass
     });
   });
 
@@ -54,6 +90,15 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(lessThanNinety, 'number');
       expect(lessThanNinety).to.be.a('function');
     });
+    it('should return true if number is less than 90', () => {
+      // assert.equal(lessThanNinety(90), true); // fail
+      assert.equal(lessThanNinety(80), true); // pass
+    });
+    it('should return false if number is greater than or equal to 90', () => {
+      // assert.equal(lessThanNinety(80), false); // fail
+      assert.equal(lessThanNinety(90), false);
+      assert.equal(lessThanNinety(100), false);
+    });
   });
 
   describe('`greaterThanFifty`', () => {
@@ -61,6 +106,15 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(greaterThanFifty, 'number');
       assert.typeOf(greaterThanFifty, 'function');
+    });
+    it('should return true if the number is greater than 50', () => {
+      // assert.equal(greaterThanFifty(50), true); // fail
+      assert.equal(greaterThanFifty(55), true);
+    });
+    it('should return false if the number is equal to or less than fifty', () => {
+      // assert.equal(greaterThanFifty(60), false); // fail
+      assert.equal(greaterThanFifty(50), false);
+      assert.equal(greaterThanFifty(40), false);
     });
   });
 
@@ -70,6 +124,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(add, 'number');
       add.should.be.a('function');
     });
+    it('result should be a number, equal to the sum of two numbers', () => {
+      // assert.equal(add(2, 3), 6); // fail
+      assert.equal(add(2, 3), 5); // pass
+    });
   });
 
   describe('`subtract`', () => {
@@ -77,6 +135,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(subtract, 'number');
       expect(subtract).to.be.a('function');
+    });
+    it('result should be a difference of two numbers', () => {
+      // assert.equal(subtract(4, 5), 1); // fail
+      assert.equal(subtract(4, 5), -1); // pass
     });
   });
 
@@ -86,6 +148,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(divide, 'number');
       assert.typeOf(divide, 'function');
     });
+    it(' divide by 3 should equal 3', () => {
+      // assert.equal(divide(9, 3), 4); // fail
+      assert.equal(divide(9, 3), 3); // pass
+    });
   });
 
   describe('`multiply`', () => {
@@ -93,6 +159,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(multiply, 'number');
       multiply.should.be.a('function');
+    });
+    it('multiply 4 by 3 should equal 12', () => {
+      // assert.equal(multiply(4, 3), 4); // fail
+      assert.equal(multiply(4, 3), 12); // pass
     });
   });
 
@@ -102,6 +172,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(getRemainder, 'number');
       expect(getRemainder).to.be.a('function');
     });
+    it('getRemainder 4 modular 3 should equal 1', () => {
+      // assert.equal(getRemainder(4, 3), 4); // fail
+      assert.equal(getRemainder(4, 3), 1); // pass
+    });
   });
 
   describe('`isEven`', () => {
@@ -109,6 +183,14 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(isEven, 'number');
       assert.typeOf(isEven, 'function');
+    });
+    it('Should return true if num is even', () => {
+      // assert.equal(isEven(5), true); // fail
+      assert.equal(isEven(4), true); // pass
+    });
+    it('Should return false if num is odd', () => {
+      // assert.equal(isEven(4), false); // fail
+      assert.equal(isEven(5), false); // pass
     });
   });
 
@@ -118,6 +200,14 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(isOdd, 'number');
       isOdd.should.be.a('function');
     });
+    it('Should return true if num is odd', () => {
+      // assert.equal(isOdd(4), true); // fail
+      assert.equal(isOdd(5), true); // pass
+    });
+    it('Should return false if num is even', () => {
+      // assert.equal(isOdd(5), false); // fail
+      assert.equal(isOdd(4), false); // pass
+    });
   });
 
   describe('`square`', () => {
@@ -126,6 +216,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(square, 'object');
       expect(square).to.be.a('function');
     });
+    it('4 square should return 16', () => {
+      // assert.equal(square(4), 15); // fail
+      assert.equal(square(4), 16); // pass
+    });
   });
 
   describe('`cube`', () => {
@@ -133,6 +227,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(cube, 'object');
       assert.typeOf(cube, 'function');
+    });
+    it('3 cube should return 27', () => {
+      // assert.equal(cube(3), 9); // fail
+      assert.equal(cube(3), 27); // pass
     });
   });
 
