@@ -12,45 +12,89 @@ const funcs = require('../src/project-1');
 
 describe('Project-1 Functions', () => {
   describe('`multiplyByTen`', () => {
+    const multiplyByTen = funcs.multiplyByTen;
     it('should be a function', () => {
-      const multiplyByTen = funcs.multiplyByTen;
       assert.typeOf(multiplyByTen, 'function');
     });
     // begin here
+    it('should return (number * 10)', () => {
+      const num = 11;
+      assert.equal(multiplyByTen(num), 110);
+    });
   });
 
   describe('`subtractFive`', () => {
+    const subtractFive = funcs.subtractFive;
     it('should be a function', () => {
-      const subtractFive = funcs.subtractFive;
       assert.typeOf(subtractFive, 'function');
+    });
+    it('should return (number - 5)', () => {
+      const num = 23;
+      assert.equal(subtractFive(num), 18);
     });
   });
 
   describe('`areSameLength`', () => {
+    const areSameLength = funcs.areSameLength;
     it('should be a function', () => {
-      const areSameLength = funcs.areSameLength;
       assert.typeOf(areSameLength, 'function');
+    });
+    it('should return TRUE if string lengths are equal', () => {
+      const str1 = 'this';
+      const str2 = 'true';
+      assert.equal(areSameLength(str1, str2), true);
+    });
+    it('should return FALSE if string lengths are NOT equal', () => {
+      const str1 = 'this';
+      const str2 = 'false';
+      assert.equal(areSameLength(str1, str2), false);
     });
   });
 
   describe('`areEqual`', () => {
+    const areEqual = funcs.areEqual;
     it('should be a function', () => {
-      const areEqual = funcs.areEqual;
       assert.typeOf(areEqual, 'function');
+    });
+    it('should return TRUE if values are equilvalent', () => {
+      const x = 14;
+      const y = 14;
+      assert.equal(areEqual(x, y), true);
+    });
+    it('should return FALSE if values are NOT equilvalent', () => {
+      const x = 14;
+      const y = 41;
+      assert.equal(areEqual(x, y), false);
     });
   });
 
   describe('`lessThanNinety`', () => {
+    const lessThanNinety = funcs.lessThanNinety;
     it('should be a function', () => {
-      const lessThanNinety = funcs.lessThanNinety;
       assert.typeOf(lessThanNinety, 'function');
+    });
+    it('should return TRUE if value is less than 90', () => {
+      const num = 45;
+      assert.equal(lessThanNinety(num), true);
+    });
+    it('should return FALSE if value is greater than 90', () => {
+      const num = 135;
+      assert.equal(lessThanNinety(num), false);
     });
   });
 
   describe('`greaterThanFifty`', () => {
+    const greaterThanFifty = funcs.greaterThanFifty;
     it('should be a function', () => {
-      const greaterThanFifty = funcs.greaterThanFifty;
       assert.typeOf(greaterThanFifty, 'function');
+    });
+    it('should return TRUE if value is greater than 50', () => {
+      const num = 100;
+      assert.equal(greaterThanFifty(num), true);
+    });
+    it('should return FALSE if value is less than 50', () => {
+      const num = 25;
+      assert.equal(greaterThanFifty(num), false);
     });
   });
 
