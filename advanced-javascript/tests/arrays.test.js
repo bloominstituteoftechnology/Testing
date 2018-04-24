@@ -32,12 +32,11 @@ describe('Arrays', () => {
       });
       expect(count).to.equal(9);
     });
-    // it('should call the callback passed to it for each element in array given', () => {
-    //   const callBackMockFn = jest.fn(); // this function is going to act as your callback, if it's not called your test will fail.
-    //   expect(callBackMockFn.mock.calls.length).toBe(0);
-    //   arrayMethods.each([1, 2, 3, 'four'], callBackMockFn);
-    //   expect(callBackMockFn.mock.calls.length).toBe(4);
-    // });
+    it('should call the callback passed to it for each element in array given', () => {
+      const spy = sinon.spy();
+      arrayFunctions.each([1, 2, 3, 4], spy);
+      expect(spy).to.have.been.calledThrice;
+    });
   });
 
   describe('`map`', () => {
