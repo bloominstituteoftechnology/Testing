@@ -209,12 +209,22 @@ describe('Project-1 Functions', () => {
       const square = funcs.square;
       assert.typeOf(square, 'function');
     });
+    it('should return a squared value', () => {
+      const num = 2;
+      const val = num * num;
+      assert.equal(val, 4, 'value squared');
+    });
   });
 
   describe('`cube`', () => {
     it('should be a function', () => {
       const cube = funcs.cube;
       assert.typeOf(cube, 'function');
+    });
+    it('should return a cubed value', () => {
+      const num = 2;
+      const val = num * num * num;
+      assert.equal(val, 8, 'value squared');
     });
   });
 
@@ -223,12 +233,20 @@ describe('Project-1 Functions', () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, 'function');
     });
+    it('should raise the value to the power given.', () => {
+      const num = 2;
+      const ex = 3;
+      const val = num ** ex;
+      assert.equal(val, 8, 'value powered up');
+    });
   });
 
   describe('`roundNumber`', () => {
     it('should be a function', () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, 'function');
+    });
+    it('should round the value given.', () => {
     });
   });
 
