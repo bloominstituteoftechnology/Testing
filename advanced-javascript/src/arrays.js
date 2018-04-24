@@ -21,32 +21,32 @@ const reduce = (elements, cb, memo = elements.shift()) => {
   return memo;
 };
 
-const find = (elements, cb) => {
-  for (let i = 0; i < elements.length; i++) {
-    if (cb(elements[i])) return elements[i];
-  }
-  return undefined;
-};
+// const find = (elements, cb) => {
+//   for (let i = 0; i < elements.length; i++) {
+//     if (cb(elements[i])) return elements[i];
+//   }
+//   return undefined;
+// };
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
+  each(elements, (item) => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
 };
 
-const flatten = (elements) => {
-  const flattenedArr = reduce(
-    elements,
-    (memo, item) => {
-      if (Array.isArray(item)) return memo.concat(flatten(item));
-      return memo.concat(item);
-    },
-    []
-  );
-  return flattenedArr;
-};
+// const flatten = (elements) => {
+//   const flattenedArr = reduce(
+//     elements,
+//     (memo, item) => {
+//       if (Array.isArray(item)) return memo.concat(flatten(item));
+//       return memo.concat(item);
+//     },
+//     []
+//   );
+//   return flattenedArr;
+// };
 
 /* eslint-enable no-unused-vars, max-len */
 
@@ -54,7 +54,7 @@ module.exports = {
   each,
   map,
   reduce,
-  find,
-  filter,
-  flatten
+  // find,
+  filter
+  // flatten,
 };
