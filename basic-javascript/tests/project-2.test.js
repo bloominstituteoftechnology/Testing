@@ -88,7 +88,7 @@ describe('Project-2 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(isInteger, 'function');
     });
-  
+
     it('should return true if num equal when rounded', () => {
       const num = 27,
         num1 = 27;
@@ -103,12 +103,12 @@ describe('Project-2 Functions', () => {
 
   describe('`fizzBuzz`', () => {
     const fizzBuzz = funcs.fizzBuzz;
-  
+
     it('should be a string', () => {
       assert.typeOf(fizzBuzz, 'function');
     });
     const num = 15;
-  
+
     it('should return fizzbuzz', () => {
       assert.equal(fizzBuzz(num), 'fizzbuzz');
     });
@@ -118,13 +118,11 @@ describe('Project-2 Functions', () => {
     it('should return fizz', () => {
       assert.equal(fizzBuzz(3), 'fizz');
     });
-  
+
     it('should return num', () => {
       assert.equal(fizzBuzz(2), 2);
     });
   });
-  
-  
 
   describe('`isPrime`', () => {
     const isPrime = funcs.isPrime;
@@ -199,7 +197,7 @@ describe('Project-2 Functions', () => {
       assert.typeOf(addItemToFront, 'function');
     });
     it('should add an item to the front of an array', () => {
-        assert.equal(funcs.addItemToFront([1,2,3], 4), [4,1,2,3]);
+      assert.equal(funcs.addItemToFront([1, 2, 3], 4), [4, 1, 2, 3]);
     });
   });
 
@@ -251,7 +249,5 @@ describe('Project-2 Functions', () => {
       const largestNumber = funcs.largestNumber;
       assert.typeOf(largestNumber, 'function');
     });
-
-
   });
 });
