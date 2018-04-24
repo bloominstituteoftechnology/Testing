@@ -35,7 +35,7 @@ describe('Project-1 Functions', () => {
       assert.equal(subtractFive(10), 5);
     });
     it('should return a number', () => {
-      assert.typeOf(subtractFive(10), 'number');
+      assert.typeOf(subtractFive(), 'number');
     });
   });
 

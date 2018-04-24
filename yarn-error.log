@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn test
+  /usr/local/bin/node /usr/local/bin/yarn run watch advanced-javascript/tests/array.test.js
 
 PATH: 
   /Users/ajuber/Documents/mongodb/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/ajuber/Documents/mongodb/bin
@@ -20,7 +20,7 @@ npm manifest:
     "description": "Topics:",
     "main": "index.js",
     "scripts": {
-      "test": "mocha",
+      "test": "eslint */tests/*.js && eslint */src/*.js && mocha -R nyan",
       "watch": "mocha -R nyan --watch"
     },
     "author": "",
@@ -1637,7 +1637,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c mocha
+  Arguments: -c mocha -R nyan --watch advanced-javascript/tests/array.test.js
   Directory: /Users/ajuber/LambdaSchool/week-12-testing/Pair-Programming/Testing
   Output:
   
