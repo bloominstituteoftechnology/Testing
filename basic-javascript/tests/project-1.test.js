@@ -153,6 +153,12 @@ describe("Project-1 Functions", () => {
       const getRemainder = funcs.getRemainder;
       assert.typeOf(getRemainder, "function");
     });
+    it('should return remainder after x divided into y', () => {
+      const getRemainder = funcs.getRemainder;
+      expect(getRemainder(5,4)).to.equal(1);
+      expect(getRemainder(23,10)).to.equal(3);
+      expect(getRemainder(34,26)).to.equal(8);
+    })
   });
 
   describe("`isEven`", () => {
@@ -160,6 +166,12 @@ describe("Project-1 Functions", () => {
       const isEven = funcs.isEven;
       assert.typeOf(isEven, "function");
     });
+    it('should return true if even, false if odd', () => {
+      const isEven = funcs.isEven;
+      expect(isEven(24)).to.equal(true);
+      expect(isEven(25)).to.equal(false);
+      expect(isEven(26)).to.equal(true);
+    })
   });
 
   describe("`isOdd`", () => {
@@ -167,6 +179,12 @@ describe("Project-1 Functions", () => {
       const isOdd = funcs.isOdd;
       assert.typeOf(isOdd, "function");
     });
+    it('should return true if odd, false if even', () => {
+      const isOdd = funcs.isOdd;
+      expect(isOdd(24)).to.equal(false);
+      expect(isOdd(25)).to.equal(true);
+      expect(isOdd(26)).to.equal(false);
+    })
   });
 
   describe("`square`", () => {
@@ -174,6 +192,12 @@ describe("Project-1 Functions", () => {
       const square = funcs.square;
       assert.typeOf(square, "function");
     });
+    it('should return the input squared', () => {
+      const square = funcs.square;
+      expect(square(5)).to.equal(25);
+      expect(square(6)).to.equal(36);
+      expect(square(10)).to.equal(100);
+    })
   });
 
   describe("`cube`", () => {
@@ -181,6 +205,12 @@ describe("Project-1 Functions", () => {
       const cube = funcs.cube;
       assert.typeOf(cube, "function");
     });
+    it('should return the input cubed', () => {
+      const cube = funcs.cube;
+      expect(cube(5)).to.equal(125);
+      expect(cube(3)).to.equal(27);
+      expect(cube(1)).to.equal(1);
+    })
   });
 
   describe("`raiseToPower`", () => {
@@ -188,6 +218,12 @@ describe("Project-1 Functions", () => {
       const raiseToPower = funcs.raiseToPower;
       assert.typeOf(raiseToPower, "function");
     });
+    it('should return the first arg to the power of the second arg', () => {
+      const raiseToPower = funcs.raiseToPower;
+      expect(raiseToPower(4,3)).to.equal(64);
+      expect(raiseToPower(2,4)).to.equal(16);
+      expect(raiseToPower(2341,1)).to.equal(2341);
+    })
   });
 
   describe("`roundNumber`", () => {
@@ -195,6 +231,12 @@ describe("Project-1 Functions", () => {
       const roundNumber = funcs.roundNumber;
       assert.typeOf(roundNumber, "function");
     });
+    it('should return the input rounded to the closest integer', () => {
+      const roundNumber = funcs.roundNumber;
+      expect(roundNumber(3.56)).to.equal(4);
+      expect(roundNumber(67.9)).to.equal(68);
+      expect(roundNumber(34.3)).to.equal(34);
+    })
   });
 
   describe("`roundUp`", () => {
@@ -202,6 +244,12 @@ describe("Project-1 Functions", () => {
       const roundUp = funcs.roundUp;
       assert.typeOf(roundUp, "function");
     });
+    it('should return the input rounded up to the closest integer', () => {
+      const roundUp = funcs.roundUp;
+      expect(roundUp(3.56)).to.equal(4);
+      expect(roundUp(67.9)).to.equal(68);
+      expect(roundUp(34.3)).to.equal(35);
+    })
   });
 
   describe("`addExclamationPoint`", () => {
@@ -209,6 +257,12 @@ describe("Project-1 Functions", () => {
       const addExclamationPoint = funcs.addExclamationPoint;
       assert.typeOf(addExclamationPoint, "function");
     });
+    it('should return the inputted string with an exclamation point appended its end', () => {
+      const addExclamationPoint = funcs.addExclamationPoint;
+      expect(addExclamationPoint('Go home')).to.equal('Go home!');
+      expect(addExclamationPoint('Vamanos')).to.equal('Vamanos!');
+      expect(addExclamationPoint('Lako Vale')).to.equal('Lako Vale!');
+    })
   });
 
   describe("`combineNames`", () => {
@@ -216,6 +270,12 @@ describe("Project-1 Functions", () => {
       const combineNames = funcs.combineNames;
       assert.typeOf(combineNames, "function");
     });
+    it('should return inputted strings as a single string seperated by a space', () => {
+      const combineNames = funcs.combineNames;
+      expect(combineNames('Benny', 'Henny')).to.equal('Benny Henny');
+      expect(combineNames('Bob', 'Blob')).to.equal('Bob Blob');
+      expect(combineNames('Gerald', 'Waskvitchmicha')).to.equal('Gerald Waskvitchmicha');
+    })
   });
 
   describe("`getGreeting`", () => {
@@ -223,6 +283,12 @@ describe("Project-1 Functions", () => {
       const getGreeting = funcs.getGreeting;
       assert.typeOf(getGreeting, "function");
     });
+    it('should return greeting of Hello space <name>!', () => {
+      const getGreeting = funcs.getGreeting;
+      expect(getGreeting('Eliza')).to.equal('Hello Eliza!');
+      expect(getGreeting('Timothy')).to.equal('Hello Timothy!');
+      expect(getGreeting('Jasmine')).to.equal('Hello Jasmine!');
+    })
   });
 
   describe("`getRectangleArea`", () => {
@@ -230,6 +296,12 @@ describe("Project-1 Functions", () => {
       const getRectangleArea = funcs.getRectangleArea;
       assert.typeOf(getRectangleArea, "function");
     });
+    it('should return the area of a rectangle with the given length and width', () => {
+      const getRectangleArea = funcs.getRectangleArea;
+      expect(getRectangleArea(3,4)).to.equal(12);
+      expect(getRectangleArea(12,5)).to.equal(60);
+      expect(getRectangleArea(12,10)).to.equal(120);
+    })
   });
 
   describe("`getTriangleArea`", () => {
@@ -237,6 +309,12 @@ describe("Project-1 Functions", () => {
       const getTriangleArea = funcs.getTriangleArea;
       assert.typeOf(getTriangleArea, "function");
     });
+    it('should return the area of a triangle with the given base and height', () => {
+      const getTriangleArea = funcs.getTriangleArea;
+      expect(getTriangleArea(4,4)).to.equal(8);
+      expect(getTriangleArea(12,5)).to.equal(30);
+      expect(getTriangleArea(12,10)).to.equal(60);
+    })
   });
 
   describe("`getCircleArea`", () => {
@@ -244,6 +322,13 @@ describe("Project-1 Functions", () => {
       const getCircleArea = funcs.getCircleArea;
       assert.typeOf(getCircleArea, "function");
     });
+    // // // Not sure why this is not working
+    // it('should return the area of a circle with the given radius', () => {
+    //   const getCircleArea = funcs.getCircleArea;
+    //   expect(getCircleArea(4)).to.equal(​​​​​50.26548245743669​​​​​);
+    //   expect(getCircleArea(1)).to.equal(​​​​​3.141592653589793​​​​​);
+    //   expect(getCircleArea(24)).to.equal(​​​​​1809.5573684677208​​​​​);
+    // })
   });
 
   describe("`getRectangularPrismVolume`", () => {
@@ -251,5 +336,11 @@ describe("Project-1 Functions", () => {
       const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
       assert.typeOf(getRectangularPrismVolume, "function");
     });
+    it('should return the volume of a prism with the given width, height, and length', () => {
+      const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+      expect(getRectangularPrismVolume(4,4,4)).to.equal(64);
+      expect(getRectangularPrismVolume(1,2,5)).to.equal(10);
+      expect(getRectangularPrismVolume(12,10,3)).to.equal(360);
+    })
   });
 });
