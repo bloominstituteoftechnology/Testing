@@ -248,16 +248,28 @@ describe('Project-2 functions', () => {
       const arr1 = [233.33, 3, 443, 3, 2];
       const incrementByOne = funcs.incrementByOne;
       const incremented = incrementByOne(arr1);
-      // expect(incremented).to.equal([234.33, 4, 444, 4, 3]);
+      expect(incremented).to.deep.equal([234.33, 4, 444, 4, 3]);
     });
   });
-
-  // finish below
 
   describe('addItemToArray', () => {
     it('should be a function', () => {
       const addItemToArray = funcs.addItemToArray;
       assert.typeOf(addItemToArray, 'function');
+    });
+    it('should return an array', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 11;
+      const addItemToArray = funcs.addItemToArray;
+      const newArr = addItemToArray(arr1, item1);
+      expect(newArr).to.be.an('array');
+    });
+    it('should add item to the back of array', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 'hi';
+      const addItemToArray = funcs.addItemToArray;
+      const newArr = addItemToArray(arr1, item1);
+      expect(newArr).to.deep.equal([233.33, 3, 443, 3, 2, 'hi']);
     });
   });
 
@@ -266,12 +278,38 @@ describe('Project-2 functions', () => {
       const addItemToFront = funcs.addItemToFront;
       assert.typeOf(addItemToFront, 'function');
     });
+    it('should return an array', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 'hi';
+      const addItemToFront = funcs.addItemToFront;
+      const newArr = addItemToFront(arr1, item1);
+      expect(newArr).to.be.an('array');
+    });
+    it('should add item to the front of array', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 11;
+      const addItemToFront = funcs.addItemToFront;
+      const newArr = addItemToFront(arr1, item1);
+      expect(newArr).to.deep.equal([11, 233.33, 3, 443, 3, 2]);
+    });
   });
 
   describe('wordsToSentence', () => {
     it('should be a function', () => {
       const wordsToSentence = funcs.wordsToSentence;
       assert.typeOf(wordsToSentence, 'function');
+    });
+    it('should return an string', () => {
+      const arr1 = ['I', 'went', 'to', 'the', 'store'];
+      const wordsToSentence = funcs.wordsToSentence;
+      const sentence = wordsToSentence(arr1);
+      expect(sentence).to.be.an('string');
+    });
+    it('should return all of the words joined to a sentence', () => {
+      const arr1 = ['I', 'went', '2', 'the', 'zoo'];
+      const wordsToSentence = funcs.wordsToSentence;
+      const sentence = wordsToSentence(arr1);
+      expect(sentence).to.equal('I went 2 the zoo');
     });
   });
 
@@ -280,11 +318,45 @@ describe('Project-2 functions', () => {
       const contains = funcs.contains;
       assert.typeOf(contains, 'function');
     });
+    it('should return a boolean', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 40;
+      const contains = funcs.contains;
+      const doesContain = contains(arr1, item1);
+      expect(doesContain).to.be.an('boolean');
+    });
+    it('if the item is not in the array returns false', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 5;
+      const contains = funcs.contains;
+      const doesContain = contains(arr1, item1);
+      expect(doesContain).to.equal(false);
+    });
+    it('if the item appears in the array returns true', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const item1 = 3;
+      const contains = funcs.contains;
+      const doesContain = contains(arr1, item1);
+      expect(doesContain).to.equal(true);
+    });
   });
+
   describe('addNumbers', () => {
     it('should be a function', () => {
       const addNumbers = funcs.addNumbers;
       assert.typeOf(addNumbers, 'function');
+    });
+    it('should return an number', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const addNumbers = funcs.addNumbers;
+      const addedNumbers = addNumbers(arr1);
+      expect(addedNumbers).to.be.an('number');
+    });
+    it('should add together all of the numbers in the array', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const addNumbers = funcs.addNumbers;
+      const addedNumbers = addNumbers(arr1);
+      expect(addedNumbers).to.equal(684.33);
     });
   });
 
@@ -293,12 +365,36 @@ describe('Project-2 functions', () => {
       const averageTestScore = funcs.averageTestScore;
       assert.typeOf(averageTestScore, 'function');
     });
+    it('should return an number', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const averageTestScore = funcs.averageTestScore;
+      const average = averageTestScore(arr1);
+      expect(average).to.be.an('number');
+    });
+    it('should add all of the numbers in the array and then divide by the total number of numbers', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const averageTestScore = funcs.averageTestScore;
+      const average = averageTestScore(arr1);
+      expect(average).to.equal(136.866);
+    });
   });
 
   describe('largestNumber', () => {
     it('should be a function', () => {
       const largestNumber = funcs.largestNumber;
       assert.typeOf(largestNumber, 'function');
+    });
+    it('should return a number', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const largestNumber = funcs.largestNumber;
+      const largest = largestNumber(arr1);
+      expect(largest).to.be.an('number');
+    });
+    it('should return the largest number in an array', () => {
+      const arr1 = [233.33, 3, 443, 3, 2];
+      const largestNumber = funcs.largestNumber;
+      const largest = largestNumber(arr1);
+      expect(largest).to.equal(443);
     });
   });
 });
