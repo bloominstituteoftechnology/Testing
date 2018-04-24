@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run watch project-1.test.js
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run watch advanced-javascript/tests/arrays..test.js
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -1637,7 +1637,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c mocha -R nyan --watch project-1.test.js
+  Arguments: -c mocha -R nyan --watch advanced-javascript/tests/arrays..test.js
   Directory: /Users/jeremyjones/Lambda/CS8/Week12/Testing
   Output:
   
