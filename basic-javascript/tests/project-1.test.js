@@ -318,7 +318,7 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(getRectangleArea, 'function');
     });
-    it('should return the combined variables', () => {
+    it('should return the Rectangle area', () => {
       expect(getRectangleArea(6, 4)).to.equal(24);
       expect(getRectangleArea(12, 5)).to.equal(60);
     });
@@ -332,6 +332,13 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(getTriangleArea, 'function');
     });
+    it('should return the triangle area', () => {
+      expect(getTriangleArea(6, 4)).to.equal(12);
+      expect(getTriangleArea(12, 5)).to.equal(30);
+    });
+    it('Should return a number', () => {
+      expect(getTriangleArea(12, 5)).to.be.a('number');
+    });
   });
 
   describe('`getCircleArea`', () => {
@@ -339,12 +346,26 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       assert.typeOf(getCircleArea, 'function');
     });
+    it('should return the Circle area', () => {
+      expect(getCircleArea(4, 4)).to.equal(50.26548245743669);
+      expect(getCircleArea(12, 12)).to.equal(452.3893421169302);
+    });
+    it('Should return a number', () => {
+      expect(getCircleArea(12, 12)).to.be.a('number');
+    });
   });
 
   describe('`getRectangularPrismVolume`', () => {
     const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
     it('should be a function', () => {
       assert.typeOf(getRectangularPrismVolume, 'function');
+    });
+    it('should return the Rectangular Prism Volume', () => {
+      expect(getRectangularPrismVolume(2, 4, 12)).to.equal(96);
+      expect(getRectangularPrismVolume(3, 7, 4)).to.equal(84);
+    });
+    it('Should return a number', () => {
+      expect(getRectangularPrismVolume(3, 9, 2)).to.be.a('number');
     });
   });
 });
