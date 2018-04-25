@@ -39,4 +39,13 @@ describe('Objects', () => {
       const output = mapObject(obj, x => x++);
     });
   });
+  describe('pairs', () => {
+    const pairs = objectFunctions.pairs;
+    it('should return an array of arrays', () => {
+      const output = pairs(obj);
+      assert.typeOf(output, 'array');
+      assert.typeOf(output[0], 'array');
+      assert.typeOf(output[1], 'array');
+    });
+  });
 });
