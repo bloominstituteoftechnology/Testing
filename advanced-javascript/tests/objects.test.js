@@ -46,6 +46,7 @@ describe('Objects', () => {
       assert.typeOf(output, 'array');
       assert.typeOf(output[0], 'array');
       assert.typeOf(output[1], 'array');
+      assert.typeOf(output[2], 'array');
     });
   });
 });
