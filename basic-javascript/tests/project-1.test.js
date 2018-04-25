@@ -216,7 +216,7 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(square, 'object');
       expect(square).to.be.a('function');
     });
-    it('4 square should return 16', () => {
+    it('Should return 16  when you square 4', () => {
       // assert.equal(square(4), 15); // fail
       assert.equal(square(4), 16); // pass
     });
@@ -228,7 +228,7 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(cube, 'object');
       assert.typeOf(cube, 'function');
     });
-    it('3 cube should return 27', () => {
+    it('should return 27 when you cube 3 ', () => {
       // assert.equal(cube(3), 9); // fail
       assert.equal(cube(3), 27); // pass
     });
@@ -240,6 +240,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(raiseToPower, 'object');
       raiseToPower.should.be.a('function');
     });
+    it('should return 64 when raiseToPower 2 by 6 ', () => {
+      // assert.equal(raiseToPower(2, 6), 65); // fail
+      assert.equal(raiseToPower(2, 6), 64); // pass
+    });
   });
 
   describe('`roundNumber`', () => {
@@ -247,6 +251,11 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(roundNumber, 'object');
       expect(roundNumber).to.be.a('function');
+    });
+    it('should return 5 when round 4.5 ', () => {
+      // assert.equal(roundNumber(4.5), 4); // fail
+      assert.equal(roundNumber(4.4), 4); // pass
+      assert.equal(roundNumber(4.5), 5); // pass
     });
   });
 
@@ -256,6 +265,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(roundUp, 'object');
       assert.typeOf(roundUp, 'function');
     });
+    it('should return 5 when round 4.5 ', () => {
+      // assert.equal(roundUp(4.3), 4); // fail
+      assert.equal(roundUp(4.3), 5); // pass
+    });
   });
 
   describe('`addExclamationPoint`', () => {
@@ -263,6 +276,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(addExclamationPoint, 'string');
       addExclamationPoint.should.be.a('function');
+    });
+    it('should return Hello World!', () => {
+      // assert.equal(addExclamationPoint('Hello World!'), 'Hello World!'); // fail
+      assert.equal(addExclamationPoint('Hello World'), 'Hello World!'); // pass
     });
   });
 
@@ -272,6 +289,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(combineNames, 'string');
       expect(combineNames).to.be.a('function');
     });
+    it('should return Edward Manda', () => {
+      // assert.equal(combineNames('Edward', 'Mandas'), 'Edward Manda'); // fail
+      assert.equal(combineNames('Edward', 'Manda'), 'Edward Manda'); // pass
+    });
   });
 
   describe('`getGreeting`', () => {
@@ -279,6 +300,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(getGreeting, 'string');
       assert.typeOf(getGreeting, 'function');
+    });
+    it('should return Hello World', () => {
+      // assert.equal(getGreeting('Edward'), 'hi Edward'); // fail
+      assert.equal(getGreeting('Edward'), 'Hello Edward!'); // pass
     });
   });
 
@@ -288,6 +313,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(getRectangleArea, 'string');
       getRectangleArea.should.be.a('function');
     });
+    it('should return 30 when you have length 6 and width 5', () => {
+      // assert.equal(getRectangleArea(5, 6), 31); // fail
+      assert.equal(getRectangleArea(5, 6), 30); // pass
+    });
   });
 
   describe('`getTriangleArea`', () => {
@@ -295,6 +324,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(getTriangleArea, 'string');
       expect(getTriangleArea).to.be.a('function');
+    });
+    it('should return 20 when you have base 4 and height 10', () => {
+      // assert.equal(getTriangleArea(4, 10), 40); // fail
+      assert.equal(getTriangleArea(4, 10), 20); // pass
     });
   });
 
@@ -304,6 +337,10 @@ describe('Project-1 Functions', () => {
       // assert.typeOf(getCircleArea, 'string');
       assert.typeOf(getCircleArea, 'function');
     });
+    it('should return correct area given radius 6 -- cheating alittle here because We dealing with PI ', () => {
+      // assert.equal(getCircleArea(6), 5); // fail
+      assert.equal(getCircleArea(6), 36 * Math.PI); // pass
+    });
   });
 
   describe('`getRectangularPrismVolume`', () => {
@@ -311,6 +348,10 @@ describe('Project-1 Functions', () => {
     it('should be a function', () => {
       // assert.typeOf(getRectangularPrismVolume, 'string');
       assert.typeOf(getRectangularPrismVolume, 'function');
+    });
+    it('should return 60 when given width of 3 height of 4 and length of 5', () => {
+      // getRectangularPrismVolume(3, 4, 5).should.equal(61); // fail
+      getRectangularPrismVolume(3, 4, 5).should.equal(60); // pass
     });
   });
 });
