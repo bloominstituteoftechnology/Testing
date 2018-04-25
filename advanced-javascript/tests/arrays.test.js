@@ -5,6 +5,7 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const arrayFunctions = require('../src/arrays');
 
+const assert = chai.expect;
 const expect = chai.expect;
 chai.use(sinonChai);
 
