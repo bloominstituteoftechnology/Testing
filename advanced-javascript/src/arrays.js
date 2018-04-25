@@ -28,6 +28,7 @@ const find = (elements, cb) => {
   return undefined;
 };
 
+// Contains an error
 const filter = (elements, cb) => {
   const filteredValues = [];
   each((element, item) => {
