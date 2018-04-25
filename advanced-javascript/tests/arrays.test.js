@@ -6,6 +6,10 @@ const sinonChai = require('sinon-chai');
 const arrayFunctions = require('../src/arrays');
 
 const expect = chai.expect;
+// add should and assert
+const assert = chai.assert;
+const should = chai.should();
+
 chai.use(sinonChai);
 
 // we've gone ahead and gotten a start here for you,
@@ -18,45 +22,51 @@ chai.use(sinonChai);
 
 describe('Arrays', () => {
   describe('`each`', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const each = arrayFunctions.each;
-      expect(each).to.be.a('string');
+      // expect(each).to.be.a('string'); // fail
+      expect(each).to.be.a('function'); // pass
     });
     // begin here
   });
 
   describe('`map`', () => {
+    const map = arrayFunctions.map;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(map).to.be.an('object');
+      // expect(map).to.be.an('object'); // fail
+      expect(map).to.be.a('function'); // pass
     });
   });
 
   describe('`reduce`', () => {
+    const reduce = arrayFunctions.reduce;
     it('should be a function', () => {
-      const reduce = arrayFunctions.reduce;
-      expect(reduce).to.be.a('number');
+      // expect(reduce).to.be.a('number'); // fail
+      expect(reduce).to.be.a('function'); // pass
     });
   });
 
   describe('`find`', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.find;
-      expect(find).to.be.an('array');
+      // expect(find).to.be.an('array'); // fail
+      expect(find).to.be.a('function'); // pass
     });
   });
 
   describe('`filter`', () => {
+    const filter = arrayFunctions.filter;
     it('should be a function', () => {
-      const filter = arrayFunctions.filter;
-      expect(filter).to.be.a('null');
+      // expect(filter).to.be.a('null'); // fail
+      expect(filter).to.be.a('function'); // pass
     });
   });
 
   describe('`flatten`', () => {
+    const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
-      const flatten = arrayFunctions.flatten;
-      expect(flatten).to.be.a('promise');
+      // expect(flatten).to.be.a('promise'); // fail
+      expect(flatten).to.be.a('function'); // pass
     });
   });
 });
