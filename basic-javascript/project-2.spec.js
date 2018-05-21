@@ -168,4 +168,18 @@ describe('Project 2', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('incrementByOne', () => {
+        it('should increment each element of an array by one', () => {
+            // arrange
+            const expected = [0, 1, 2, 3, 4, 5];
+            const incrementByOne = funcs.incrementByOne;
+
+            // act
+            const actual = incrementByOne([-1, 0, 1, 2, 3, 4]);
+
+            // assert
+            expect(actual).toEqual(expected);
+        });
+    });
 })
