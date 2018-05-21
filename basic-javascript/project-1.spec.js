@@ -272,7 +272,7 @@ describe('roundNumber', () => {
     })
 })
 
-// roundNumber
+// roundUp
 describe('roundUp', () => {
     it('rounds the number up', () => {
         // arrange 
@@ -283,5 +283,19 @@ describe('roundUp', () => {
 
         // assert
         expect(actual).toEqual(16)
+    })
+})
+
+// addExclamationPoint
+describe('addExclamationPoint', () => {
+    it('adds a exclaimation point to the end of the string', () => {
+        // arrange
+        const addExclamationPoint = funcs.addExclamationPoint;
+
+        // act
+        const actual = addExclamationPoint('red');
+
+        // assert
+        expect(actual).toBe('red!')
     })
 })
