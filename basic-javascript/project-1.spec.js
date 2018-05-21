@@ -153,3 +153,14 @@ describe("square function", () => {
 		expect(square).toBe(expected);
 	});
 });
+
+describe("cube function", () => {
+	// arrange
+	const expected = 1000;
+	// act
+	const cube = funcs.cube(10);
+	// assert
+	it("check if args cube correctly", () => {
+		expect(cube).toBe(expected);
+	});
+});
