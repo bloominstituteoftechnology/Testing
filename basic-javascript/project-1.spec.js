@@ -268,6 +268,20 @@ describe('roundNumber', () => {
         const actual = roundNumber(16);
 
         // assert
-        expect(actual).toEqual(20)
+        expect(actual).toEqual(16)
+    })
+})
+
+// roundNumber
+describe('roundUp', () => {
+    it('rounds the number up', () => {
+        // arrange 
+        const roundUp = funcs.roundUp;
+
+        // act
+        const actual = roundUp(15.2);
+
+        // assert
+        expect(actual).toEqual(16)
     })
 })
