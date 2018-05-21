@@ -315,7 +315,6 @@ describe('combineNames', () => {
 })
 
 // getGreeting
-
 describe('getGreeting', () => {
     it('should add hello before the name', () => {
         // arrange 
@@ -330,7 +329,6 @@ describe('getGreeting', () => {
 })
 
 // getRectangleArea
-
 describe('getRectangleArea', () => {
     it('return the area of a rectangle', () => {
         // arrange
@@ -341,5 +339,19 @@ describe('getRectangleArea', () => {
 
         // assert
         expect(actual).toEqual(21)
+    })
+})
+
+// getTriangleArea
+describe('getTriangleArea', () => {
+    it('return the area of a triangle', () => {
+        // arrange
+        const getTriangleArea = funcs.getTriangleArea;
+
+        // act
+        const actual = getTriangleArea(20, 4);
+
+        // assert 
+        expect(actual).toEqual(40);
     })
 })
