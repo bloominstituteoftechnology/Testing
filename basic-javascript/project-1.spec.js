@@ -55,4 +55,19 @@ describe('Project 1', () => {
             expect(actual).toBeTruthy();
         });
     });
+
+    describe('lessThanNinety', () => {
+        it('should return a boolean value', () => {
+            // arrange
+            const lessThanNinety = funcs.lessThanNinety;
+
+            // act
+            const actual = lessThanNinety(30);
+            const actual2 = lessThanNinety(300);            
+
+            // assert
+            expect(actual).toBeTruthy();
+            expect(actual2).toBeFalsy();            
+        });
+    });
 })
