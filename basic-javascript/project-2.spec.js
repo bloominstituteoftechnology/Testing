@@ -239,4 +239,18 @@ describe('Project 2', () => {
             expect(actual2).toBeFalsy();
         });
     });
+
+    describe('addNumbers', () => {
+        it('should return the sum of all numbers in an array', () => {
+            // arrange
+            const expected = 147;
+            const addNumbers = funcs.addNumbers;
+
+            // act
+            const actual = addNumbers([1, 56, 90]);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
