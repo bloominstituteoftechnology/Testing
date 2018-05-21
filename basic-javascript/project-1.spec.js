@@ -341,4 +341,18 @@ describe('Project 1', () => {
             expect(actual).toEqual(expected);
         });
     });
+
+    describe('getRectangularPrismVolume', () => {
+        it('returns the volume of a rectangular prism', () => {
+            // arrange
+            const expected = 240;
+            const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+
+            // act
+            const actual = getRectangularPrismVolume(5, 6, 8);
+
+            // assert
+            expect(actual).toEqual(expected);
+        });
+    });
 })
