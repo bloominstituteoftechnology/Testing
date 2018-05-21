@@ -155,3 +155,9 @@ describe('addExclamationPoint', () => {
         expect(funcs.addExclamationPoint(10)).toEqual(10+'!');
     })
 })
+
+describe('combineNames', () => {
+    it('should combine names', () => {
+        expect(funcs.combineNames('John', 'Smith')).toBe('John Smith');
+    })
+})
