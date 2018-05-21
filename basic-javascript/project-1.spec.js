@@ -126,7 +126,7 @@ describe('greaterThanFifty', () => {
 // add
 
 describe('add', () => {
-    it('should add two numbers', () => {
+    it('should be the sum of the two numbers', () => {
         // arrange
         const add = funcs.add;
 
