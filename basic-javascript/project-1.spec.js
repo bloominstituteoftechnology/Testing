@@ -137,3 +137,9 @@ describe('raiseToPower', () => {
         expect(funcs.raiseToPower(10, 2)).toEqual(100);
     })
 })
+
+describe('roundNumber', () => {
+    it('should check rounded up number', () => {
+        expect(funcs.roundNumber(9.8)).toEqual(10);
+    })
+})
