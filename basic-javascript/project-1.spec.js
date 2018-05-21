@@ -10,5 +10,9 @@ it('subtractFive', () => {
 })
 
 it('areSameLength', () => {
-    expect(funcs.areSameLength())
+    expect(funcs.areSameLength('kenzie', 'amanda')).toBeTruthy()
+})
+
+it('areEqual', () => {
+    expect(funcs.areEqual('8', '4 * 2')).toBeTruthy()
 })
