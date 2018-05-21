@@ -1,3 +1,9 @@
-const funcs = require('../src/project-2');
+const funcs = require('./project-2');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
+describe('check if biggest is returned',()=>{
+    it('should return the biggest of two numbers',()=>{
+        const bigboy = funcs.getBiggest
+        let big = bigboy(3,6)
+        expect(big).toEqual(6)
+    })
+})
