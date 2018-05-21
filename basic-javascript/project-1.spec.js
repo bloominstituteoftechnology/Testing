@@ -161,3 +161,9 @@ describe('combineNames', () => {
         expect(funcs.combineNames('John', 'Smith')).toBe('John Smith');
     })
 })
+
+describe('getGreeting', () => {
+    it('should return Hello in front and exclamation point after', () => {
+        expect(funcs.getGreeting('John')).toBe('Hello John!');
+    })
+})
