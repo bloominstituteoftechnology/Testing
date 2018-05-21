@@ -92,6 +92,20 @@ test('lessThanNinety 50 < 90', ()=> {
     expect(funcs.lessThanNinety(90.01)).toEqual(false);
 });
 //////////////////////////////////////////////////////////
+
+// Test greaterThanFifty
+// test x < 50
+test('greaterThanFifty 49.99 < 50', () => {
+    const result = funcs.greaterThanFifty(49.99)
+    expect(result).toEqual(false);
+});
+
+// test x > 50
+test('greaterThanFifty 49.99 < 50', () => {
+    const result = funcs.greaterThanFifty(51)
+    expect(result).toEqual(true);
+});
+//////////////////////////////////////////////////////////
 // Test add function
 // testing add two positive numbers
 test('add 1 + 2 to equal 3', () => {
@@ -190,6 +204,26 @@ test('divide 25 / 0', () => {
 // test divide a negative number by 0
 test('divide -25 / 0', () => {
     expect(funcs.divide(-25, 0)).toBe(-Infinity);
+});
+/////////////////////////////////////////////////////////
+
+// Test getRemainder
+// test 25 mod 5 = 0
+test('getRemainder 25 mod 5', ()=> {
+    const result = funcs.getRemainder(25,5);
+    expect(result).toBe(0);
+});
+
+// test 25 mod 4 = 1
+test('getRemainder 25 mod 1', ()=> {
+    const result = funcs.getRemainder(25,4);
+    expect(result).toBe(1);
+});
+
+// test -25 mod 4 = 1
+test('getRemainder 25 mod 1', ()=> {
+    const result = funcs.getRemainder(-25,4);
+    expect(result).toBe(-1);
 });
 /////////////////////////////////////////////////////////
 
