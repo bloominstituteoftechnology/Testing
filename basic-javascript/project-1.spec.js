@@ -14,7 +14,7 @@ test('add 1 + 0 to equal 1', () => {
 });
 
 // testing add two negative numbers
-test('add -1 + (-2_ to equal -3', () => {
+test('add -1 + (-2) to equal -3', () => {
     expect(funcs.add(-1,-2)).toBe(-3);
 });
 
@@ -74,5 +74,32 @@ test('multiply 5* 0', ()=> {
 test('multiply -5* 0', ()=> {
     expect(funcs.multiply(5, 0)).toBe(0);
 });
-
 /////////////////////////////////////////////////////////
+
+// Test Divide
+// test divide 25 / 5
+test('divide 25 / 5', () => {
+    expect(funcs.divide(25, 5)).toBe(5);
+});
+
+// test divide a negative and positive number
+test('divide -25 / 5', () => {
+    expect(funcs.divide(-25, 5)).toBe(-5);
+});
+
+// test divide two negative numbers
+test('divide -25 / 5', () => {
+    expect(funcs.divide(-25, -5)).toBe(5);
+});
+
+// test divide a number by 0
+test('divide 25 / 0', () => {
+    expect(funcs.divide(25, 0)).toBe(Infinity);
+});
+
+// test divide a negative number by 0
+test('divide -25 / 0', () => {
+    expect(funcs.divide(-25, 0)).toBe(-Infinity);
+});
+/////////////////////////////////////////////////////////
+
