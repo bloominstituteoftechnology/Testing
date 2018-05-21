@@ -211,3 +211,33 @@ describe('check if two strings are combined',()=>{
         expect(oneString).toBe("Jacob Lyerla")
     })
 })
+describe('check if greeting was added to the name',()=>{
+    it('should add greeting before the passed name',()=>{
+        const getGreeting    = funcs.getGreeting
+        const greeting = getGreeting('Jacob Lyerla')
+        expect(greeting).toBe("Hello Jacob Lyerla!")
+    })
+})
+describe('check if the area of rectangle was returned',()=>{
+    it('should  get the area of a rectangle ',()=>{
+        const getRectangleArea = funcs.getRectangleArea
+        const rectangle = getRectangleArea(55,55)
+        expect(rectangle).toBe(3025)
+    })
+})
+describe('check if the area of triangle was returned',()=>{
+    it('should get the are of a triangle',()=>{
+        const triangle = funcs.getTriangleArea
+        const tri = triangle(3,5)
+        expect(tri).toBe(7.5)
+    })
+})
+describe('',()=>{
+    it('',()=>{
+        const combine = funcs.combineNames
+        const oneString = combine()
+        expect(oneString).toBe()
+    })
+})
+
+
