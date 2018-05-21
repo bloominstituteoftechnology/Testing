@@ -313,3 +313,18 @@ describe('combineNames', () => {
         expect(actual).toBe('Santa Claus')
     })
 })
+
+// getGreeting
+
+describe('getGreeting', () => {
+    it('should add hello before the name', () => {
+        // arrange 
+        const getGreeting = funcs.getGreeting;
+
+        // act
+        const actual = getGreeting('Sam');
+
+        // assert
+        expect(actual).toBe('Hello Sam!')
+    })
+})
