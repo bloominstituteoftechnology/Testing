@@ -219,3 +219,14 @@ describe("combineNames function", () => {
 		expect(combineNames).toBe(expected);
 	});
 });
+
+describe("getGreeting function", () => {
+	// arrange
+	const expected = 'Hello name!';
+	// act
+	const getGreeting = funcs.getGreeting('name');
+	// assert
+	it("returns a greeting", () => {
+		expect(getGreeting).toBe(expected);
+	});
+});
