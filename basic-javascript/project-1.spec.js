@@ -355,3 +355,17 @@ describe('getTriangleArea', () => {
         expect(actual).toEqual(40);
     })
 })
+
+// getCircleArea
+describe('getCircleArea', () => {
+    it('return the area of a circle', () => {
+        // arrange 
+        const getCircleArea = funcs.getCircleArea;
+
+        // act
+        const actual = getCircleArea(20, 20)
+
+        // assert 
+        expect(actual).toEqual(1256.6370614359173)
+    })
+})
