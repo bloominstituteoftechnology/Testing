@@ -1,15 +1,16 @@
 {
-  "name": "testingjs",
+  "name": "test",
   "version": "1.1.0",
   "description": "Practice exercises to learn the syntax for testing javascript code.",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch"
   },
-  "author": "",
+  "author": "Henry",
   "license": "ISC",
   "devDependencies": {
     "jest": "^22.4.4"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": "https://github.com/Remastered21/Testing.git"
 }
