@@ -48,3 +48,38 @@ it('Expected greater than 50', () => {
 it('Should add up to 20', () => {
   expect(funcs.add(3, 5)).toBe(8)
 })
+
+it('Should subtract to 3', () => {
+  expect(funcs.subtract(10, 7)).toBe(3)
+})
+
+it('Should divide to 2', () => {
+  expect(funcs.divide(10, 5)).toBe(2)
+})
+
+it('Should multiply to 15', () => {
+  expect(funcs.multiply(5, 3)).toBe(15)
+})
+
+it('Should get remainder of 2', () => {
+  expect(funcs.getRemainder(5, 3)).toBe(2)
+})
+
+it('Should check if number is even', () => {
+  expect(funcs.isEven(4)).toBeTruthy()
+  expect(funcs.isEven(5)).toBeFalsy()
+})
+
+it('Should check if number is odd',() => {
+  expect(funcs.isOdd(6)).toBeFalsy()
+  expect(funcs.isOdd(3)).toBeTruthy()
+})
+
+it('Number should be squared', () => {
+  expect(funcs.square(3)).toBe(9)
+})
+
+it('Number should be cubed', () => {
+  expect(funcs.cube(3)).toBe(27)
+})
+
