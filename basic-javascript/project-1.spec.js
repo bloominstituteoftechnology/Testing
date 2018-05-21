@@ -263,3 +263,14 @@ describe("getCircleArea function", () => {
 		expect(getCircleArea).toBe(expected);
 	});
 });
+
+describe("getRectangularPrismVolume function", () => {
+	// arrange
+	const expected = 60;
+	// act
+	const getRectangularPrismVolume = funcs.getRectangularPrismVolume(4, 5, 3);
+	// assert
+	it("returns a rectangular prism's volume", () => {
+		expect(getRectangularPrismVolume).toBe(expected);
+	});
+});
