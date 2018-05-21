@@ -1,4 +1,4 @@
-const arrayFunctions = require('../src/arrays');
+const arrayFunctions = require("./arrays");
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -7,11 +7,11 @@ const arrayFunctions = require('../src/arrays');
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
-describe('Arrays', () => {
-  describe('map', () => {
-    it('should be a function', () => {
+describe("Arrays", () => {
+  describe("map", () => {
+    it("should be a function", () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe("object");
     });
   });
 });
