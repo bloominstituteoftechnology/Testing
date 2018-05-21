@@ -21,3 +21,17 @@ describe("subtractFive function", () => {
 		expect(subtractFive).toBe(expected);
 	});
 });
+
+describe("areSameLength function", () => {
+	// arrange
+	const expected = true;
+	// act
+	const areSameLength = funcs.areSameLength("abc", "def");
+	// assert
+	it("check if strings are the same length", () => {
+		expect(areSameLength).toBe(expected);
+	});
+});
+
+
+
