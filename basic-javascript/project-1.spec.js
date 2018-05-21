@@ -33,5 +33,16 @@ describe("areSameLength function", () => {
 	});
 });
 
+describe("areEqual function", () => {
+	// arrange
+	const expected = true;
+	// act
+	const areEqual = funcs.areEqual(10, 10);
+	// assert
+	it("both both arguments should be equal", () => {
+		expect(areEqual).toEqual(expected);
+	});
+});
+
 
 
