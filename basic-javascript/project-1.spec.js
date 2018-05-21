@@ -230,3 +230,14 @@ describe("getGreeting function", () => {
 		expect(getGreeting).toBe(expected);
 	});
 });
+
+describe("getRectangleArea function", () => {
+	// arrange
+	const expected = 20;
+	// act
+	const getRectangleArea = funcs.getRectangleArea(5, 4);
+	// assert
+	it("returns a rectangle's area", () => {
+		expect(getRectangleArea).toBe(expected);
+	});
+});
