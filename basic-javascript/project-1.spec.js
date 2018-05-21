@@ -139,7 +139,13 @@ describe('raiseToPower', () => {
 })
 
 describe('roundNumber', () => {
-    it('should check rounded up number', () => {
+    it('should check rounded up or down number', () => {
         expect(funcs.roundNumber(9.8)).toEqual(10);
+    })
+})
+
+describe('roundUp', () => {
+    it('should check number rounded up', () => {
+        expect(funcs.roundUp(9.3)).toEqual(10);
     })
 })
