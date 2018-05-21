@@ -2,6 +2,49 @@ const funcs = require('./project-1');
 
 // write your tests here
 
+// Test multiplyByTen
+// test 5 * 10
+test('multiplyByTen 5 * 10 to equal 50', ()=> {
+
+    const product = funcs.multiplyByTen(5);
+    expect(product).toBe(50);
+});
+
+// test -5 * 10
+test('multiplyByTen -5 * 10 to equal 50', ()=> {
+
+    const product = funcs.multiplyByTen(-5);
+    expect(product).toBe(-50);
+});
+
+// test 0 * 10
+test('multiplyByTen 0 * 10 to equal 50', ()=> {
+
+    const product = funcs.multiplyByTen(0);
+    expect(product).toBe(0);
+});
+/////////////////////////////////////////////////////////
+
+// Test subtractFive
+// test 10 - 5
+test('subtractFive 10 - 5 = 5', ()=> {
+    const number = funcs.subtractFive(10);
+    expect(number).toBe(5);
+});
+
+// test -10 - 5
+test('subtractFive -10 - 5 = 15', ()=> {
+    const number = funcs.subtractFive(-10);
+    expect(number).toBe(-15);
+});
+
+// test 0 - 5
+test('subtractFive 0 - 5 = 15', ()=> {
+    const number = funcs.subtractFive(0);
+    expect(number).toBe(-5);
+});
+/////////////////////////////////////////////////////////
+
 // Test add function
 // testing add two positive numbers
 test('add 1 + 2 to equal 3', () => {
