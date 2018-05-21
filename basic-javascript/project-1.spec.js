@@ -327,4 +327,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('getCircleArea', () => {
+        it('returns the area of a circle', () => {
+            // arrange
+            const expected = 25 * Math.PI;
+            const getCircleArea = funcs.getCircleArea;
+
+            // act
+            const actual = getCircleArea(5);
+
+            // assert
+            expect(actual).toEqual(expected);
+        });
+    });
 })
