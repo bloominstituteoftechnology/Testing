@@ -18,4 +18,21 @@ describe('Project 2', () => {
             expect(actual3).toBe(2);                        
         });
     });
+
+    describe('greeting', () => {
+        it('should return a greeting', () => {
+            // arrange
+            const greeting = funcs.greeting;
+
+            // act
+            const actual = greeting('German');
+            const actual2 = greeting('Spanish');
+            const actual3 = greeting('hey there!');
+
+            // assert
+            expect(actual).toBe('Guten Tag!');
+            expect(actual2).toBe('Hola!');
+            expect(actual3).toBe('Hello!');
+        });
+    });
 })
