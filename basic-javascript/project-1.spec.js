@@ -299,3 +299,17 @@ describe('addExclamationPoint', () => {
         expect(actual).toBe('red!')
     })
 })
+
+// combineNames
+describe('combineNames', () => {
+    it('should add the first and last name', () => {
+        // arrange
+        const combineNames = funcs.combineNames;
+
+        // act
+        const actual = combineNames('Santa', 'Claus');
+
+        // assert
+        expect(actual).toBe('Santa Claus')
+    })
+})
