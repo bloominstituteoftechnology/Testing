@@ -3,7 +3,7 @@ const funcs = require('./project-2');
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Project 2', () => {
     describe('getBiggest', () => {
-        it('should return a boolean value', () => {
+        it('should return the larger number', () => {
             // arrange
             const getBiggest = funcs.getBiggest;
 
