@@ -185,4 +185,18 @@ describe('Project 1', () => {
             expect(actual2).toBeFalsy();
         });
     });
+
+    describe('square', () => {
+        it('should square a number', () => {
+            // arrange
+            const expected = 100;
+            const square = funcs.square;
+
+            // act
+            const actual = square(10);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
