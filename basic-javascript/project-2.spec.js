@@ -107,3 +107,38 @@ describe('check if words were added into a sentence',()=>{
         expect(sentance).toEqual("bilbo slayed the dragon")
     })
 })
+describe('check if  array contains an item',()=>{
+    it('should return true if the array contains an item',()=>{
+        const contains = funcs.contains
+        const eight = contains([4,5,6,7,8],8)
+        expect(eight).toEqual(true)
+    })
+})
+describe('check if numbers of an array were added',()=>{
+    it('should return the sum of the array',()=>{
+        const addNumbers = funcs.addNumbers
+        const sum = addNumbers([4,5,6,7,8])
+        expect(sum).toEqual(30)
+    })
+})
+describe('check if item was pushed into array',()=>{
+    it('should return array incremented by one',()=>{
+        const addItemToArray = funcs.addItemToArray
+        const nine = addItemToArray([4,5,6,7,8],9)
+        expect(nine).toEqual([4,5,6,7,8,9])
+    })
+})
+describe('check for the avarage test score',()=>{
+    it('should return the avarage test score out of an array of scores',()=>{
+        const averageTestScore = funcs.averageTestScore
+        const avg = averageTestScore([4,5,6,7,8])
+        expect(avg).toEqual(6)
+    })
+})
+describe('check for the largest number',()=>{
+    it('should return the largest number in an array',()=>{
+        const largestNumber = funcs.largestNumber
+        const large = largestNumber([4,5,6,7,8])
+        expect(large).toEqual(8)
+    })
+})
