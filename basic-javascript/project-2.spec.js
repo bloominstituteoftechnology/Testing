@@ -76,8 +76,15 @@ describe("isPrime function", () => {
 });
 
 describe("returnFirst function", () => {
-	it("checks if number is prime", () => {
+	it("returns first item in array", () => {
     const first = funcs.returnFirst([0, 1, 2]);
     expect(first).toBe(0);
+	});
+});
+
+describe("returnLast function", () => {
+	it("returns last item in array", () => {
+    const last = funcs.returnLast([0, 1, 2]);
+    expect(last).toBe(2);
 	});
 });
