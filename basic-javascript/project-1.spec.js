@@ -43,14 +43,28 @@ describe('subtractFive', () => {
 describe('areSameLength', () => {
     it('compares the length of one string to another', () => {
         // arrange
-        const expected = true;
         const areSameLength = funcs.areSameLength;
 
         // act
         const actual = areSameLength('abc', '123')
 
         // assert
-        expect(actual).toBe(expected);
+        expect(actual).toBeTruthy();
+    })
+})
+
+// areEqual 
+
+describe('areEqual', () => {
+    it('compares the numbers passed in to ensure they are equal', () => {
+        // arrange
+        const areEqual = funcs.areEqual;
+
+        // act
+        const actual = areEqual(7, 7)
+
+        // assert
+        expect(actual).toBeTruthy()
     })
 })
 
