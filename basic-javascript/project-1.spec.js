@@ -89,3 +89,14 @@ it('getRectangleArea', () => {
     expect(funcs.getRectangleArea(2, 4)).toBe(2 * 4)
 })
 
+it('getTriangleArea', () => {
+    expect(funcs.getTriangleArea(2, 4)).toBe(0.5 * 2 * 4)
+})
+
+it('getCircleArea', () => {
+    expect(funcs.getCircleArea(8)).toBe(Math.PI * 64)
+})
+
+it('getRectanglePrismVolume', () => {
+    expect(funcs.getRectanglePrismVolume())
+})
