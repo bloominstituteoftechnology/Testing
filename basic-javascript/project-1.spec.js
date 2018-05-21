@@ -187,3 +187,17 @@ describe('getRemainder', () => {
         expect(actual).toEqual(2)
     })
 })
+
+// isEven
+describe('isEven', () => {
+    it('checks if number is even', () => {
+        // arrange
+        const isEven = funcs.isEven;
+
+        // act
+        const actual = isEven(20)
+
+        // assert
+        expect(actual).toBeTruthy()
+    })
+})
