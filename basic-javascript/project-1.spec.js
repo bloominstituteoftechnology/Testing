@@ -30,6 +30,7 @@ it('Should subtract five', () => {
 
   // expect(subtraction).toBe(expected);
 
+  //single line version
   expect(funcs.subtractFive(30)).toBe(25)
 });
 
@@ -40,3 +41,7 @@ expect(funcs.areSameLength('a', 'b')).toBeTruthy()
 expect(funcs.areSameLength('a', 'bcd')).toBeFalsy()
 })
 
+it('Should be equal', () => {
+  expect(funcs.areEqual(5, 3)).toBeFalsy()
+  expect(funcs.areEqual(6, 6)).toBeTruthy()
+})
