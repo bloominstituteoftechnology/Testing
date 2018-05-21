@@ -197,3 +197,14 @@ describe("roundUp function", () => {
 		expect(roundUp).toBe(expected);
 	});
 });
+
+describe("addExclamationPoint function", () => {
+	// arrange
+	const expected = 'string!';
+	// act
+	const addExclamationPoint = funcs.addExclamationPoint('string');
+	// assert
+	it("adds exclamation point", () => {
+		expect(addExclamationPoint).toBe(expected);
+	});
+});
