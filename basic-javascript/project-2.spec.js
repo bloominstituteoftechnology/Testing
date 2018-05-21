@@ -28,3 +28,15 @@ it('isInRange', () => {
     expect(funcs.isInRange(8)).toBe(false)
 })
 
+it('isInteger', () => {
+    expect(funcs.isInteger(8)).toBe(true)
+    expect(funcs.isInteger(88.88)).toBe(false)
+    expect(funcs.isInteger('8')).toBe(false)
+})
+
+it('fizzBuzz', () => {
+    expect(funcs.fizzBuzz(3)).toBe('fizz')
+    expect(funcs.fizzBuzz(5)).toBe('buzz')
+    expect(funcs.fizzBuzz(15)).toBe('fizzBuzz')
+})
+
