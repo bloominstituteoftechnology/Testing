@@ -170,4 +170,19 @@ describe('Project 1', () => {
             expect(actual2).toBeFalsy();
         });
     });
+
+    describe('isOdd', () => {
+        it('should return a boolean value', () => {
+            // arrange
+            const isOdd = funcs.isOdd;
+
+            // act
+            const actual = isOdd(9);
+            const actual2 = isOdd(2);
+
+            // assert
+            expect(actual).toBeTruthy();
+            expect(actual2).toBeFalsy();
+        });
+    });
 })
