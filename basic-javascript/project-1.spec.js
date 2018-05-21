@@ -48,8 +48,8 @@ test('subtractFive 0 - 5 = 15', ()=> {
 // Test areSameLength
 // test if strings are the same
 test('areSameLength: the and thy', ()=> {
-    const str1Length = 'the'.length;
-    const str2Length = 'thy'.length;
+    const str1Length = 'the';
+    const str2Length = 'thy';
     const areSameLength = funcs.areSameLength(str1Length, str2Length);
 
     expect(areSameLength).toEqual(true);
@@ -65,7 +65,33 @@ test('areSameLength: the and to', ()=> {
 });
 /////////////////////////////////////////////////////////
 
+// Test areEqual
+// test 4 === 4
+test('areEqual 4 === 4', ()=> {
 
+    const result = funcs.areEqual(4,4);
+    expect(result).toEqual(true);
+});
+
+// test 4 === 4
+test('areEqual 4 === "4" ', ()=> {
+
+    const result = funcs.areEqual(4,'4');
+    expect(result).toEqual(false);
+});
+/////////////////////////////////////////////////////////
+
+// Test lessThanNinety
+// test 50
+test('lessThanNinety 50 < 90', ()=> {
+    expect(funcs.lessThanNinety(50)).toEqual(true);
+});
+
+// test 90.01
+test('lessThanNinety 50 < 90', ()=> {
+    expect(funcs.lessThanNinety(90.01)).toEqual(false);
+});
+//////////////////////////////////////////////////////////
 // Test add function
 // testing add two positive numbers
 test('add 1 + 2 to equal 3', () => {
