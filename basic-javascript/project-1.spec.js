@@ -229,3 +229,17 @@ describe('square', () => {
         expect(actual).toEqual(16)
     })
 })
+
+// cube
+describe('cube', () => {
+    it('should return the cube of the number', () => {
+        // arrange
+        const cube = funcs.cube;
+
+        // act
+        const actual = cube(3);
+
+        // assert
+        expect(actual).toEqual(27);
+    })
+})
