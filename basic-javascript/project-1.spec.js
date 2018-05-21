@@ -252,3 +252,14 @@ describe("getTriangleArea function", () => {
 		expect(getTriangleArea).toBe(expected);
 	});
 });
+
+describe("getCircleArea function", () => {
+	// arrange
+	const expected = Math.PI * 10 * 10;
+	// act
+	const getCircleArea = funcs.getCircleArea(10);
+	// assert
+	it("returns a circle's area", () => {
+		expect(getCircleArea).toBe(expected);
+	});
+});
