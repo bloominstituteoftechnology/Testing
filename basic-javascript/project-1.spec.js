@@ -1,7 +1,9 @@
 const funcs = require('../basic-javascript/project-1.js');
 
 // write your tests here multiplybyTen
-it('Testing the test', () => {});
+
+//testing tester test code
+// it('Testing the test', () => {});
 
 it('should multiply by ten', () => {
   //arrange
