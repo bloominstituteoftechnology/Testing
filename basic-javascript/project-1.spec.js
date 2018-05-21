@@ -271,4 +271,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('combineNames', () => {
+        it('combines a first and last name to form a full name', () => {
+            // arrange
+            const expected = 'Nedu Robert';
+            const combineNames = funcs.combineNames;
+
+            // act
+            const actual = combineNames('Nedu', 'Robert');
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
