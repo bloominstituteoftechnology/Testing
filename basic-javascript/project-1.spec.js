@@ -65,3 +65,11 @@ it('raiseToPower', () => {
     expect(funcs.raiseToPower(8, 8)).toBe(8 ** 8)
 })
 
+it('roundNumber', () => {
+    expect(funcs.roundNumber(7.8)).toBe(8)
+})
+
+it('roundUp', () => {
+    expect(funcs.roundUp(7.2)).toBe(8)
+})
+
