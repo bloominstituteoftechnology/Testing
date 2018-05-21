@@ -35,4 +35,21 @@ describe('Project 2', () => {
             expect(actual3).toBe('Hello!');
         });
     });
+
+    describe('isTenOrFive', () => {
+        it('should return a boolean', () => {
+            // arrange
+            const isTenOrFive = funcs.isTenOrFive;
+
+            // act
+            const actual = isTenOrFive(5);
+            const actual2 = isTenOrFive(10);
+            const actual3 = isTenOrFive(34);
+
+            // assert
+            expect(actual).toBeTruthy();
+            expect(actual2).toBeTruthy();
+            expect(actual3).toBeFalsy();
+        });
+    });
 })
