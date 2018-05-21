@@ -253,4 +253,18 @@ describe('Project 2', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('averageTestScore', () => {
+        it('should return the average of all numbers in an array', () => {
+            // arrange
+            const expected = 62;
+            const averageTestScore = funcs.averageTestScore;
+
+            // act
+            const actual = averageTestScore([45, 65, 93, 45]);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
