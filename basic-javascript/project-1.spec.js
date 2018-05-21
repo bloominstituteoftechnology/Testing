@@ -175,3 +175,14 @@ describe("raiseToPower function", () => {
 		expect(raisedToPower).toBe(expected);
 	});
 });
+
+describe("roundNumber function", () => {
+	// arrange
+	const expected = 4;
+	// act
+	const roundNumber = funcs.roundNumber(3.8);
+	// assert
+	it("check if args roundNumber correctly", () => {
+		expect(roundNumber).toBe(expected);
+	});
+});
