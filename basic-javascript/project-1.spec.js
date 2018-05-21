@@ -113,4 +113,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('divide', () => {
+        it('should divide two numbers', () => {
+            // arrange
+            const expected = 2;
+            const divide = funcs.divide;
+
+            // act
+            const actual = divide(10, 5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
