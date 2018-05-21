@@ -243,3 +243,17 @@ describe('cube', () => {
         expect(actual).toEqual(27);
     })
 })
+
+// raiseToPower
+describe('raiseToPower', () => {
+    it('should return the result of the number and exponent', () => {
+        // arrange
+        const raiseToPower = funcs.raiseToPower;
+
+        // act
+        const actual = raiseToPower(2, 2);
+
+        // assert
+        expect(actual).toEqual(4);
+    })
+})
