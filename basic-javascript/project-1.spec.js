@@ -241,3 +241,14 @@ describe("getRectangleArea function", () => {
 		expect(getRectangleArea).toBe(expected);
 	});
 });
+
+describe("getTriangleArea function", () => {
+	// arrange
+	const expected = 20;
+	// act
+	const getTriangleArea = funcs.getTriangleArea(10, 4);
+	// assert
+	it("returns a triangle's area", () => {
+		expect(getTriangleArea).toBe(expected);
+	});
+});
