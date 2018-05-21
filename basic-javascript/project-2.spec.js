@@ -84,4 +84,21 @@ describe('Project 2', () => {
             expect(actual2).toBeTruthy();
         });
     });
+
+    describe('fizzBuzz', () => {
+        it('should return a string', () => {
+            // arrange
+            const fizzBuzz = funcs.fizzBuzz;
+
+            // act
+            const actual = fizzBuzz(15);
+            const actual2 = fizzBuzz(9);
+            const actual3 = fizzBuzz(25);            
+
+            // assert
+            expect(actual).toBe('fizzbuzz');
+            expect(actual2).toBe('fizz');
+            expect(actual3).toBe('buzz');            
+        });
+    });
 })
