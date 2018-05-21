@@ -261,3 +261,18 @@ test('isOdd 2 ', () => {
 });
 /////////////////////////////////////////////////////////
 
+// Test square
+// test 5^2 = 25
+test('square 2^2 = 4', ()=> {
+    const shouldbe = Math.pow(5, 2);
+    const result = funcs.square(5);
+    expect(result).toBe(shouldbe);
+});
+
+// test -5^2
+test('square 2^2 = 4', ()=> {
+    const shouldbe = Math.pow(-5, 2);
+    const result = funcs.square(-5);
+    expect(result).toBe(shouldbe);
+});
+/////////////////////////////////////////////////////////
