@@ -74,3 +74,10 @@ describe("isPrime function", () => {
     expect(prime).toBeTruthy();
 	});
 });
+
+describe("returnFirst function", () => {
+	it("checks if number is prime", () => {
+    const first = funcs.returnFirst([0, 1, 2]);
+    expect(first).toBe(0);
+	});
+});
