@@ -88,3 +88,9 @@ describe("returnLast function", () => {
     expect(last).toBe(2);
 	});
 });
+
+describe("getArrayLength function", () => {
+	it("check length of array", () => {
+    expect([0, 1, 2]).toHaveLength(funcs.getArrayLength([1, 2, 3]));
+	});
+});
