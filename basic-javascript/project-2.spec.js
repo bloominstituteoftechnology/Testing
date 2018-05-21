@@ -42,3 +42,48 @@ it('Should return first value of an array', () => {
   expect(funcs.returnFirst(['fumo', 'sakuya', 'reimu'])).toBe('fumo')
 })
 
+it('Should return last value of an array', () => {
+  expect(funcs.returnLast(['fumo', 'sakuya', 'reimu'])).toBe('reimu')
+})
+
+it('Should return the array length', () => {
+  expect(funcs.getArrayLength(['fumo', 'sakuya', 'reimu'])).toBe(3)
+})
+
+it('Should increment by one in a array', () => {
+  const expected = [3, 6, 9]
+  expect(funcs.incrementByOne([2, 5, 8])).toEqual(expected)
+})
+
+it('Should have a new item in array', () => {
+  const expected = ['fumo', 'sakuya', 'reimu'];
+  expect(funcs.addItemToArray(['fumo', 'sakuya'], 'reimu')).toEqual(expected)
+})
+
+it('Should have the new item added to the front', () => {
+  const expected = ['reimu', 'fumo', 'sakuya'];
+  expect(funcs.addItemToFront(['fumo', 'sakuya'], 'reimu')).toEqual(expected)
+})
+
+it('Should have words be in a sentence', () => {
+  const expected = "I love fumos"
+  expect(funcs.wordsToSentence(['I', 'love', 'fumos'])).toEqual(expected)
+})
+
+it('Should check if item in a array', () => {
+  expect(funcs.contains(['fumo', 'sakuya', 'reimu'], 'fumo')).toBeTruthy()
+  expect(funcs.contains(['fumo', 'sakuya', 'reimu'], 'mokou')).toBeFalsy()
+})
+
+it('Should add all numbers in a array', () => {
+  const expected = 1000;
+  expect(funcs.addNumbers([100, 300, 100, 500])).toEqual(expected)
+})
+
+it('Should average out test scores', () => {
+  expect(funcs.averageTestScore([40, 20, 10, 0, 100])).toBe(34)
+})
+
+it('Should return largest number in array', () => {
+  expect(funcs.largestNumber([50, 80, 300, -100, 20])).toBe(300)
+})
