@@ -31,3 +31,15 @@ describe('subtractFive', () => {
         expect(ten).toBe(10);
     })
 })
+
+describe('areSameLength', () => {
+    it('should check if strings are same length', () => {
+      const sameLength = funcs.areSameLength;
+      const stringLength1 = 'joe';
+      const stringLength2 = 'bob';
+
+      const areSameLength = funcs.areSameLength(stringLength1, stringLength2);
+
+      expect(areSameLength).toEqual(true);
+    })
+}) 
