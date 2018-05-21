@@ -185,3 +185,9 @@ describe ('getCircleArea', () => {
         expect(funcs.getCircleArea(5)).toEqual(78.53981633974483);
     })
 })
+
+describe ('getRectangularPrismVolume', () => {
+    it('should return width * height * length of prism', () => {
+        expect(funcs.getRectangularPrismVolume(5, 6, 7)).toEqual(210);
+    })
+})
