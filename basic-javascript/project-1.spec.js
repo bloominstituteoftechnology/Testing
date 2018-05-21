@@ -34,10 +34,18 @@ it('subtract', () => {
 })
 
 it('divide', () => {
-    expect(funcs.divide(16, 2)).toBe(8)
+    expect(funcs.divide(16, 2)).toBe(16 / 2)
 })
 
 it('multiply', () => {
-    expect(funcs.multiply(2 * 4)).toBe(8)
+    expect(funcs.multiply(2 * 4)).toBe(2 * 4)
+})
+
+it('getRemainder', () => {
+    expect(funcs.getRemainder(4, 2)).toBe(4 % 2)
+})
+
+it('isEven', () => {
+    expect(funcs.isEven(8)).toBeTruthy()
 })
 
