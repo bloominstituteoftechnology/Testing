@@ -90,7 +90,7 @@ it('Number should be rounded', () => {
 })
 
 it('Number should be rounded up', () => {
-  expect(funcs.roundUp(4.2)).toBe(5)
+  expect(funcs.roundUp(4.2)).toBeCloseTo(5)
 })
 
 it('Should have exclaimation point', () => {
