@@ -44,5 +44,14 @@ describe("areEqual function", () => {
 	});
 });
 
-
+describe("lessThanNinety function", () => {
+	// arrange
+	const expected = true;
+	// act
+	const lessThanNinety = funcs.lessThanNinety(50);
+	// assert
+	it("check if strings are the same length", () => {
+		expect(lessThanNinety).toBe(expected);
+	});
+});
 
