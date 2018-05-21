@@ -38,15 +38,83 @@ const shouldInvokeCallback = (name) => () => {
 describe('Arrays', () => {
   testAll(shouldBeFunction)
   testAll(shouldInvokeCallback, 'flatten')
+
   describe('map', () => {
+    const nums = {
+      in: [1, 2, 3, 4, 5],
+      out: [10, 20, 30, 40, 50]
+    }
+    const strings = {
+      in: ['a', 'b', 'c', 'd'],
+      out: ['a!', 'b!', 'c!', 'd!']
+    }
+    const { multiplyByTen, addExclamationPoint } = basicFunctions
+
     it('should return an array with the callback applied to each element', () => {
-      const nums = [1, 2, 3, 4, 5]
-      const numsExpected = [10, 20, 30, 40, 50]
-      const strings = ['a', 'b', 'c', 'd']
-      const stringsExpected = ['a!', 'b!', 'c!', 'd!']
-      const { multiplyByTen, addExclamationPoint } = basicFunctions
-      expect(arrayFunctions.map(nums, multiplyByTen)).toEqual(numsExpected)
-      expect(arrayFunctions.map(strings, addExclamationPoint)).toEqual(stringsExpected)
+      expect(arrayFunctions.map(nums.in, multiplyByTen)).toEqual(nums.out)
+      expect(arrayFunctions.map(strings.in, addExclamationPoint)).toEqual(strings.out)
     })
   })
-});
+
+  describe('reduce', () => {
+    const nums = {
+      in: [1, 2, 3, 4, 5],
+      out: {
+        add: 15,
+        mult: 120,
+        power: 1
+      }
+    }
+    const { add, multiply, raiseToPower } = basicFunctions
+
+    it('should return a single value obtained by repeatedly applying the callback to a memo and the next element', () => {
+      expect(arrayFunctions.reduce(nums.in, add, 0)).toBe(nums.out.add)
+      expect(arrayFunctions.reduce(nums.in, multiply, 1)).toBe(nums.out.mult)
+      expect(arrayFunctions.reduce(nums.in, raiseToPower, 1)).toBe(nums.out.power)
+    })
+  })
+
+  describe('find', () => {
+    const nums = [1, 2, 3, 4, 5]
+    const strings = ['a', 'b', 'c', 'd']
+
+    it('should return the item if found in the array', () => {
+      expect(arrayFunctions.find(nums, (num) => num == 4)).toBe(4)
+      expect(arrayFunctions.find(strings, (char) => char =='c')).toBe('c')
+    })
+
+    it('should return undefined if the element is not found', () => {
+      expect(arrayFunctions.find(nums, (num) => num == 42)).toBeUndefined()
+      expect(arrayFunctions.find(strings, (char) => char == 'q')).toBeUndefined()
+    })
+  })
+
+  describe('filter', () => {
+    const nums = {
+      input: [1, 2, 3, 4, 5],
+      fn: (num) => num < 4,
+      expected: [1, 2, 3]
+    }
+    const strings = {
+      input: ['a', 'ab', 'abc', 'abcd'],
+      fn: (string) => string.length < 3,
+      expected: ['a', 'ab']
+    }
+
+    it('should return an array of elements for which the callback returns true', () => {
+      expect(arrayFunctions.filter(nums.input, nums.fn)).toEqual(nums.expected)
+      expect(arrayFunctions.filter(strings.input, strings.fn)).toEqual(strings.expected)
+    })
+  })
+
+  describe('flatten', () => {
+    const nested = {
+      in: [1, [2, [3, [4, [5]]]]],
+      out: [1, 2, 3, 4, 5]
+    }
+
+    it('should accept an arbitrarily nested array and return a flattened copy', () => {
+      expect(arrayFunctions.flatten(nested.in)).toEqual(nested.out)
+    })  
+  })
+})
