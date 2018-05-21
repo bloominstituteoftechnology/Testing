@@ -24,3 +24,12 @@ it('lessThanNinety', () => {
 it('greaterThanFifty', () => {
     expect(funcs.greaterThanFifty(88)).toBeTruthy()
 })
+
+it('add', () => {
+    expect(funcs.add(2, 6)).toBe(2 + 6)
+})
+
+it('subtract', () => {
+    expect(funcs.subtract(10, 2)).toBe(10 - 2)
+})
+
