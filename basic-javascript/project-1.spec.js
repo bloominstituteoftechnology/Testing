@@ -3,7 +3,7 @@ const funcs = require("./project-1");
 // write your tests here
 
 describe("default", () => {
-  it("run the tests", () => {});
+  it("Should run the tests", () => {});
 });
 
 describe("Multiply by ten", () => {
@@ -37,7 +37,7 @@ describe("Subtract by five", () => {
   });
 });
 
-describe("Are same length", () => {
+describe("Same string length", () => {
   it("Should have same string length", () => {
     const areSameLength = funcs.areSameLength;
 
@@ -51,8 +51,8 @@ describe("Are same length", () => {
   });
 });
 
-describe("Have same value", () => {
-  it("Both should have same value", () => {
+describe("Equal value", () => {
+  it("Should both should have same value", () => {
     const areEqual = funcs.areEqual;
 
     const equal1 = areEqual(1, 1);
@@ -68,7 +68,7 @@ describe("Have same value", () => {
 });
 
 describe("Less than ninety", () => {
-  it("Value is less than ninety", () => {
+  it("Should value is less than ninety", () => {
     const lessThanNinety = funcs.lessThanNinety;
 
     const lessNinety1 = lessThanNinety(89);
@@ -86,7 +86,7 @@ describe("Less than ninety", () => {
 });
 
 describe("Greater than fifty", () => {
-  it("Value is greater than fifty", () => {
+  it("Should value is greater than fifty", () => {
     const greaterThanFifty = funcs.greaterThanFifty;
 
     const greaterFifty1 = greaterThanFifty(100);
@@ -104,7 +104,7 @@ describe("Greater than fifty", () => {
 });
 
 describe("Add function", () => {
-  it("Add two number together", () => {
+  it("Should add two number together", () => {
     const add = funcs.add;
 
     const twenty = add(10, 10);
@@ -122,7 +122,7 @@ describe("Add function", () => {
 });
 
 describe("Subtract function", () => {
-  it("Subtract y from x", () => {
+  it("Should subtract y from x", () => {
     const subtract = funcs.subtract;
 
     const hundred = subtract(103, 3);
@@ -140,7 +140,7 @@ describe("Subtract function", () => {
 });
 
 describe("Divide function", () => {
-  it("Divide x by y", () => {
+  it("Should divide x by y", () => {
     const divide = funcs.divide;
 
     const one = divide(10, 10);
@@ -158,7 +158,7 @@ describe("Divide function", () => {
 });
 
 describe("Multiply function", () => {
-  it("Multiply both numbers", () => {
+  it("Should multiply both numbers", () => {
     const multiply = funcs.multiply;
 
     const hundred = multiply(10, 10);
@@ -176,7 +176,7 @@ describe("Multiply function", () => {
 });
 
 describe("Modulo function", () => {
-  it("Divide x by y then return remainer", () => {
+  it("Should divide x by y then return remainer", () => {
     const getRemainder = funcs.getRemainder;
 
     const three = getRemainder(17, 7);
@@ -269,7 +269,7 @@ describe("cubic fucntion", () => {
   });
 });
 
-describe("power fucntion", () => {
+describe("Power fucntion", () => {
   it("Should multiply number by itself based on number of power/exp", () => {
     const raiseToPower = funcs.raiseToPower;
 
@@ -289,7 +289,7 @@ describe("power fucntion", () => {
   });
 });
 
-describe("rounding fucntion", () => {
+describe("Rounding to ones place", () => {
   it("Should round number to nearest ones place", () => {
     const roundNumber = funcs.roundNumber;
 
@@ -309,7 +309,7 @@ describe("rounding fucntion", () => {
   });
 });
 
-describe("round-up fucntion", () => {
+describe("Absolute round-up fucntion", () => {
   it("Should round number up to nearest one, regardless of the value of tenth place", () => {
     const roundUp = funcs.roundUp;
 
@@ -327,20 +327,106 @@ describe("round-up fucntion", () => {
   });
 });
 
-describe("round-up fucntion", () => {
-  it("Should round number up to nearest one, regardless of the value of tenth place", () => {
-    const roundUp = funcs.roundUp;
+describe("Add exclamation", () => {
+  it("Should add exclamation at end of string", () => {
+    const addExclamationPoint = funcs.addExclamationPoint;
 
-    const three = roundUp(3.4423);
-    const eleven = roundUp(11.0651);
-    const zero = roundUp(0.0);
-    const negTwo = roundUp(-2.12);
-    const HundredFifty = roundUp(150);
+    const exclamation1 = addExclamationPoint("Hello");
+    const exclamationLong = addExclamationPoint("Today is a fantastic day");
+    const emptyString = addExclamationPoint("");
+    const undefined = addExclamationPoint();
 
-    expect(three).toBe(4);
-    expect(eleven).toBe(12);
+    expect(exclamation1).toBe("Hello!");
+    expect(exclamationLong).toBe("Today is a fantastic day!");
+    expect(emptyString).toBe("!");
+    expect(undefined).toBe("undefined!"); // How to handle this case?
+  });
+});
+
+describe("Combine name", () => {
+  it("Should combine first and last name together", () => {
+    const combineNames = funcs.combineNames;
+
+    const cobmine1 = combineNames("James", "Bond");
+    const combine2 = combineNames("123", "456");
+    const combine3 = combineNames("!!!", "???");
+    const undefined = combineNames("Tilly");
+
+    expect(cobmine1).toBe("James Bond");
+    expect(combine2).toBe("123 456");
+    expect(combine3).toBe("!!! ???");
+    expect(undefined).toBe("Tilly undefined"); // This case too
+  });
+});
+
+describe("Greeter", () => {
+  it("Should greet name with 'Hello'", () => {
+    const getGreeting = funcs.getGreeting;
+
+    const greet1 = getGreeting("Bond");
+    const greet2 = getGreeting("123");
+    const greet3 = getGreeting("!!?");
+    const undefined = getGreeting();
+
+    expect(greet1).toBe("Hello Bond!");
+    expect(greet2).toBe("Hello 123!");
+    expect(greet3).toBe("Hello !!?!");
+    expect(undefined).toBe("Hello undefined!"); // This case too
+  });
+});
+
+describe("Area of Rectangle", () => {
+  it("Should calculate area by multiplying length and width", () => {
+    const getRectangleArea = funcs.getRectangleArea;
+
+    const eight = getRectangleArea(2, 4);
+    const nine = getRectangleArea(3, 3);
+    const zero = getRectangleArea(0, 3);
+
+    expect(eight).toBe(8);
+    expect(nine).toBe(9);
     expect(zero).toBe(0);
-    expect(negTwo).toBe(-2);
-    expect(HundredFifty).toBe(150);
+  });
+});
+
+describe("Area of triangle", () => {
+  it("Should calculate area of triangle using base and height", () => {
+    const getTriangleArea = funcs.getTriangleArea;
+
+    const eight = getTriangleArea(4, 4);
+    const nine = getTriangleArea(3, 3);
+    const zero = getTriangleArea(0, 3);
+
+    expect(eight).toBe(8);
+    expect(nine).toBe(4.5);
+    expect(zero).toBe(0);
+  });
+});
+
+describe("Area of circle", () => {
+  it("Should calculate area of circle by singing circle of life (actually radius)", () => {
+    const getCircleArea = funcs.getCircleArea;
+
+    const four = getCircleArea(4);
+    const diameterOfSix = getCircleArea(6/2);
+    const zero = getCircleArea(0)
+
+    expect(four).toBe(16 * Math.PI);
+    expect(diameterOfSix).toBe(9 * Math.PI);
+    expect(zero).toBe(0);
+  });
+});
+
+describe("Area of rectangular prism", () => {
+  it("Should calculate area of rectangular prism", () => {
+    const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+
+    const eight = getRectangularPrismVolume(2, 2, 2);
+    const six = getRectangularPrismVolume(1, 2, 3);
+    const zero = getRectangularPrismVolume(0, 1, 2)
+
+    expect(eight).toBe(8);
+    expect(six).toBe(6);
+    expect(zero).toBe(0);
   });
 });
