@@ -3,7 +3,7 @@ const funcs = require('../basic-javascript/project-2');
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
 //testy testing test code
-it('Testing the test', () => { });
+// it('Testing the test', () => { });
 
 it('Should bring back the higher number', () => {
   expect(funcs.getBiggest(5, 3)).toBe(5)
