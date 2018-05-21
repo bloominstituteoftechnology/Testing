@@ -103,4 +103,27 @@ describe('Project 2', () => {
             expect(actual4).toBe(2);                        
         });
     });
+
+    describe('isPrime', () => {
+        it('should return a boolean', () => {
+            // arrange
+            const isPrime = funcs.isPrime;
+
+            // act
+            const actual = isPrime(-5);
+            const actual2 = isPrime(0);
+            const actual3 = isPrime(1);
+            const actual4 = isPrime(2);
+            const actual5 = isPrime(8);
+            const actual6 = isPrime(7);
+
+            // assert
+            expect(actual).toBeFalsy();
+            expect(actual2).toBeFalsy();
+            expect(actual3).toBeFalsy();
+            expect(actual4).toBeTruthy();
+            expect(actual5).toBeFalsy();
+            expect(actual6).toBeTruthy();
+        });
+    });
 })
