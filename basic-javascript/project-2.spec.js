@@ -56,5 +56,14 @@ describe("isInteger function", () => {
 	});
 });
 
+describe("fizzBuzz function", () => {
+	it("checks if a number is fizz, buzz, or fizzbuzz", () => {
+		const fizzBuzz = funcs.fizzBuzz(45);
+		const fizz = funcs.fizzBuzz(6);
+		const buzz = funcs.fizzBuzz(10);
 
-
+		expect(fizzBuzz).toBe("fizzbuzz");
+		expect(fizz).toBe("fizz");
+		expect(buzz).toBe("buzz");
+	});
+});
