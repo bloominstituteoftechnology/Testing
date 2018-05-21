@@ -83,3 +83,23 @@ it('Number should be cubed', () => {
   expect(funcs.cube(3)).toBe(27)
 })
 
+it('Number should be rounded', () => {
+  expect(funcs.roundNumber(6.3)).toBe(6)
+})
+
+it('Number should be rounded up', () => {
+  expect(funcs.roundUp(4.2)).toBe(5)
+})
+
+it('Should have exclaimation point', () => {
+  expect(funcs.addExclamationPoint('Fumo')).toBe('Fumo!')
+})
+
+it('Should have first and last name combined', () => {
+  expect(funcs.combineNames('Hideo', 'Kojima')).toBe('Hideo Kojima')
+})
+
+it('Should have Hello added to name', () => {
+  expect(funcs.getGreeting('Kojima')).toBe('Hello Kojima!')
+})
+
