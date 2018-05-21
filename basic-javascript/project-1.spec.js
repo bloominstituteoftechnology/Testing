@@ -55,3 +55,13 @@ describe("lessThanNinety function", () => {
 	});
 });
 
+describe("greaterThanFifty function", () => {
+	// arrange
+	const expected = true;
+	// act
+	const greaterThanFifty = funcs.greaterThanFifty(55);
+	// assert
+	it("check if strings are the same length", () => {
+		expect(greaterThanFifty).toBe(expected);
+	});
+});
