@@ -80,3 +80,12 @@ it('addExclamationPoint', () => {
 it('combineNames', () => {
     expect(funcs.combineNames('Chris', 'Loo')).toBe('Chris Loo')
 })
+
+it('getGreeting', () => {
+    expect(funcs.getGreeting('Kenzie')).toBe('Hello Kenzie!')
+})
+
+it('getRectangleArea', () => {
+    expect(funcs.getRectangleArea(2, 4)).toBe(2 * 4)
+})
+
