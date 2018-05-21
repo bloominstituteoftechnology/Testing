@@ -195,9 +195,37 @@ describe('isEven', () => {
         const isEven = funcs.isEven;
 
         // act
-        const actual = isEven(20)
+        const actual = isEven(20);
 
         // assert
         expect(actual).toBeTruthy()
+    })
+})
+
+// isOdd 
+describe('isOdd', () => {
+    it('should return false if number is even', () => {
+        // arrange
+        const isOdd = funcs.isOdd;
+
+        // act
+        const actual = isOdd(20);
+
+        // assert
+        expect(actual).toBeFalsy()
+    })
+})
+
+// square
+describe('square', () => {
+    it('should return the square of the number', () => {
+        // arrange 
+        const square = funcs.square;
+
+        // act 
+        const actual = square(4);
+
+        // assert
+        expect(actual).toEqual(16)
     })
 })
