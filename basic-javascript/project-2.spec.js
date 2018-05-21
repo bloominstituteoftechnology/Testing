@@ -125,3 +125,24 @@ describe("FizzBuzz", () => {
     expect(pi).toEqual(pi);
   });
 });
+
+describe("Return First item of array", () => {
+  const returnFirst = funcs.returnFirst;
+
+  const array = returnFirst([2, 3, 4, 15]);
+
+  it("Return first", () => {
+    expect(array).toBe(2);
+  });
+});
+
+// returnLast
+// getArrayLength
+// incrementByOne
+// addItemToArray
+// addItemToFront
+// wordsToSentence
+// contains
+// addNumbers
+// averageTestScore
+// largestNumber
