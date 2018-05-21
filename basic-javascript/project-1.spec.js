@@ -95,3 +95,9 @@ describe('divide', () => {
         expect(funcs.divide(10, 5)).toEqual(2);
     })
 })
+
+describe('multiply', () => {
+    it('should check x * y', () => {
+        expect(funcs.multiply(10, 5)).toEqual(50);
+    })
+})
