@@ -173,3 +173,9 @@ describe ('getRectangleArea', () => {
         expect(funcs.getRectangleArea(5, 4)).toEqual(20);
     })
 })
+
+describe ('getTriangleArea', () => {
+    it('should return 0.5 * base * height of triangle', () => {
+        expect(funcs.getTriangleArea(3, 8)).toEqual(12);
+    })
+})
