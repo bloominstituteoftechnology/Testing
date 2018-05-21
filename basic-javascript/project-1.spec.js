@@ -313,4 +313,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('getTriangleArea', () => {
+        it('returns the area of a triangle', () => {
+            // arrange
+            const expected = 10;
+            const getTriangleArea = funcs.getTriangleArea;
+
+            // act
+            const actual = getTriangleArea(4, 5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
