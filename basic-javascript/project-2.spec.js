@@ -154,4 +154,18 @@ describe('Project 2', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('getArrayLength', () => {
+        it('should return the length of an array', () => {
+            // arrange
+            const expected = 8;
+            const getArrayLength = funcs.getArrayLength;
+
+            // act
+            const actual = getArrayLength(['hi', 0, 4, 5, 3, 3, 8, 'bye']);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
