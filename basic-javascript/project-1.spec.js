@@ -204,3 +204,10 @@ describe('check if exclamation point was added',()=>{
         expect(exclamation).toBe('apple!')
     })
 })
+describe('check if two strings are combined',()=>{
+    it('should add two strings together making one string',()=>{
+        const combine = funcs.combineNames
+        const oneString = combine('Jacob',"Lyerla")
+        expect(oneString).toBe("Jacob Lyerla")
+    })
+})
