@@ -299,4 +299,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('getRectangleArea', () => {
+        it('returns the area of a rectangle', () => {
+            // arrange
+            const expected = 20;
+            const getRectangleArea = funcs.getRectangleArea;
+
+            // act
+            const actual = getRectangleArea(4,5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
