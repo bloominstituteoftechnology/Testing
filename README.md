@@ -7,7 +7,9 @@ Topics:
 
 ## Project Description
 
-* Welcome to the wonderful world of **automated testing**, specifically **unit testing**. Whether this is immediately clear to you or not, you have already familiarized yourselves with this process, only, the tests have been written for you beforehand. Now we start on the other side of the fence, where you have no tests, only working code. The goal of this sprint is to get you familiar with writing unit tests for JavaScript code.
+Welcome to the wonderful world of **automated testing**, specifically **unit testing**. Whether this is immediately clear to you or not, you have already familiarized yourselves with this process, only, the tests have been written for you beforehand.
+
+Now we start on the other side of the fence, where you have no tests, only working code. The goal of this sprint is to get you familiar with writing unit tests for JavaScript code.
 
 ### Initialize Project
 
