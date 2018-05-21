@@ -14,5 +14,13 @@ it('areSameLength', () => {
 })
 
 it('areEqual', () => {
-    expect(funcs.areEqual('8', '4 * 2')).toBeTruthy()
+    expect(funcs.areEqual(8, 4 * 2)).toBeTruthy()
+})
+
+it('lessThanNinety', () => {
+    expect(funcs.lessThanNinety(88)).toBeTruthy()
+})
+
+it('greaterThanFifty', () => {
+    expect(funcs.greaterThanFifty(88)).toBeTruthy()
 })
