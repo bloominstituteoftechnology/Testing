@@ -69,4 +69,19 @@ describe('Project 2', () => {
             expect(actual3).toBeFalsy();
         });
     });
+
+    describe('isInteger', () => {
+        it('should return a boolean', () => {
+            // arrange
+            const isInteger = funcs.isInteger;
+
+            // act
+            const actual = isInteger(5.678);
+            const actual2 = isInteger(30);
+
+            // assert
+            expect(actual).toBeFalsy();
+            expect(actual2).toBeTruthy();
+        });
+    });
 })
