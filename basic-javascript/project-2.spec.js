@@ -29,7 +29,7 @@ describe("greeting function", () => {
 });
 
 describe("isTenOrFive function", () => {
-	it("returns which is biggest", () => {
+	it("returns which is ten or five", () => {
 		const five = funcs.isTenOrFive(5);
 		const ten = funcs.isTenOrFive(10);
 
@@ -39,9 +39,22 @@ describe("isTenOrFive function", () => {
 });
 
 describe("isInRange function", () => {
-	it("returns which is biggest", () => {
-		const num = 40;
-		expect(num).toBeLessThan(50);
-		expect(num).toBeGreaterThan(20);
+	it("returns if a number is in range", () => {
+		// const num = 40;
+		// expect(num).toBeLessThan(50);
+		// expect(num).toBeGreaterThan(20);
+		const num = funcs.isInRange(40);
+		expect(num).toBeTruthy();
 	});
 });
+
+describe("isInteger function", () => {
+	it("returns whether or not a number is an integer", () => {
+		const int = Number.isInteger(20);
+
+		expect(int).toBeTruthy();
+	});
+});
+
+
+
