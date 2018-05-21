@@ -101,3 +101,9 @@ describe('multiply', () => {
         expect(funcs.multiply(10, 5)).toEqual(50);
     })
 })
+
+describe('getRemainder', () => {
+    it('should check x % y', () => {
+        expect(funcs.getRemainder(10, 5)).toEqual(0);
+    })
+})
