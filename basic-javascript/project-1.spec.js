@@ -227,3 +227,20 @@ test('getRemainder 25 mod 1', ()=> {
 });
 /////////////////////////////////////////////////////////
 
+// Test isEven
+// x = 2
+test('isEven 2', () => {
+   expect(funcs.isEven(2)).toEqual(true);
+});
+
+// x = 3
+test('isEven 3', () => {
+    expect(funcs.isEven(3)).toEqual(false);
+});
+
+// x = 0
+test('isEven 0', () => {
+    expect(funcs.isEven(0)).toEqual(true);
+});
+////////////////////////////////////////////////////////
+
