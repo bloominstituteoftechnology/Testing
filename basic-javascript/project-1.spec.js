@@ -70,7 +70,7 @@ it('Should check if number is even', () => {
   expect(funcs.isEven(5)).toBeFalsy()
 })
 
-it('Should check if number is odd',() => {
+it('Should check if number is odd', () => {
   expect(funcs.isOdd(6)).toBeFalsy()
   expect(funcs.isOdd(3)).toBeTruthy()
 })
@@ -102,4 +102,17 @@ it('Should have first and last name combined', () => {
 it('Should have Hello added to name', () => {
   expect(funcs.getGreeting('Kojima')).toBe('Hello Kojima!')
 })
+
+it('Should get area of rectangle', () => {
+  expect(funcs.getRectangleArea(30, 40)).toBe(1200)
+})
+
+it('Should get area of circle', () => {
+  expect(funcs.getCircleArea(5)).toBe(78.53981633974483)
+  expect(funcs.getCircleArea(0)).toBe(0)
+})
+
+it('Should get volume of rectangular prism', () => {
+  expect(funcs.getRectangularPrismVolume(5, 2, 3)).toBe(30)
+});
 
