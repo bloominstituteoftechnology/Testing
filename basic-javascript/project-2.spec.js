@@ -102,3 +102,11 @@ describe("incrementByOne function", () => {
     expect(passedArray).toEqual([1, 2, 3, 4]);
   });
 });
+
+describe("addItemToArray function", () => {
+    it("check if adds item to array", () => {
+      const array = [1, 2, 3];
+      const passedArray = funcs.addItemToArray(array, 5);
+      expect(passedArray).toEqual([1, 2, 3, 5]);
+    });
+  });
