@@ -369,3 +369,18 @@ describe('getCircleArea', () => {
         expect(actual).toEqual(1256.6370614359173)
     })
 })
+
+// getRectangularPrismVolume
+describe('getRectangularPrismVolume', () => {
+    it('returns the rectangular prism volume', () => {
+
+        // arrange
+        const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+        
+        // act 
+        const actual = getRectangularPrismVolume(4, 5, 6);
+
+        // assert
+        expect(actual).toEqual(120)
+    })
+})
