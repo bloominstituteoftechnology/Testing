@@ -59,9 +59,51 @@ describe('check if first item in array was returned',()=>{
     })
 })
 describe('check if first item in array was returned',()=>{
-    it('should return the array item and index 0',()=>{
+    it('should return the array item at first index ',()=>{
         const returnLast = funcs.returnLast
         const last = returnLast([5,4,5,6,5434,22,34,])
         expect(last).toBe(34)
+    })
+})
+describe('check if last item in array was returned',()=>{
+    it('should return the array item at the last index',()=>{
+        const getArrayLength = funcs.getArrayLength
+        const length = getArrayLength([5,4,5,6])
+        expect(length).toBe(4)
+    })
+})
+describe('check if array is incremented by one',()=>{
+    it('should return array incremented by one',()=>{
+        const incrementByOne = funcs.incrementByOne
+        const inc = incrementByOne([4,5,6,7,8])
+        expect(inc).toEqual([5,6,7,8,9])
+    })
+})
+describe('check if item was pushed into array',()=>{
+    it('should return array incremented by one',()=>{
+        const addItemToArray = funcs.addItemToArray
+        const nine = addItemToArray([4,5,6,7,8],9)
+        expect(nine).toEqual([4,5,6,7,8,9])
+    })
+})
+describe('check if item was pushed into array',()=>{
+    it('should return array incremented by one',()=>{
+        const addItemToFront = funcs.addItemToFront
+        const nine = addItemToFront([4,5,6,7,8],9)
+        expect(nine).toEqual([9,4,5,6,7,8])
+    })
+})
+describe('check if item was pushed into array',()=>{
+    it('should return array incremented by one',()=>{
+        const addItemToArray = funcs.addItemToArray
+        const nine = addItemToArray([4,5,6,7,8],9)
+        expect(nine).toEqual([4,5,6,7,8,9])
+    })
+})
+describe('check if words were added into a sentence',()=>{
+    it('should return a sentance of the words in the array ',()=>{
+        const wordsToSentence = funcs.wordsToSentence
+        const sentance = wordsToSentence(["bilbo","slayed","the","dragon"])
+        expect(sentance).toEqual("bilbo slayed the dragon")
     })
 })
