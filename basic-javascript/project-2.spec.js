@@ -84,3 +84,44 @@ describe("Number is in range", () => {
   });
 });
 
+describe("Check if interger", () => {
+  const isInteger = funcs.isInteger;
+
+  const two = isInteger(2);
+  const nine = isInteger(9);
+  const negOne = isInteger(-1);
+  const twoPointFive = isInteger(2.5);
+  const pi = isInteger(Math.PI);
+
+  it("True if interger", () => {
+    expect(two).toBe(true);
+    expect(nine).toBe(true);
+    expect(negOne).toBe(true);
+  });
+  it("False if otherwise", () => {
+    expect(twoPointFive).toBe(false);
+    expect(pi).toBe(false);
+  });
+});
+
+describe("FizzBuzz", () => {
+  const fizzBuzz = funcs.fizzBuzz;
+
+  const fifteen = fizzBuzz(15);
+  const nine = fizzBuzz(9);
+  const ten = fizzBuzz(10);
+  const pi = fizzBuzz(Math.PI);
+
+  it("Fizz", () => {
+    expect(nine).toBe("fizz");
+  });
+  it("Buzz", () => {
+    expect(ten).toBe("buzz");
+  });
+  it("Fizzbuzz", () => {
+    expect(fifteen).toBe("fizzbuzz");
+  });
+  it("No FizzBuzz (return original value)", () => {
+    expect(pi).toEqual(pi);
+  });
+});
