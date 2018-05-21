@@ -109,7 +109,19 @@ describe('getRemainder', () => {
 })
 
 describe('isEven', () => {
-    it('should check x / y = 0', () => {
-        expect(funcs.isEven(10, 5)).toEqual(true);
+    it('should check num % 2 = 0', () => {
+        expect(funcs.isEven(10)).toEqual(true);
+    })
+})
+
+describe('isOdd', () => {
+    it('should check num % 2 = 0', () => {
+        expect(funcs.isOdd(9)).toEqual(true);
+    })
+})
+
+describe('square', () => {
+    it('should check num * num', () => {
+        expect(funcs.square(10)).toEqual(100);
     })
 })
