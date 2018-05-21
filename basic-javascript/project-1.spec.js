@@ -21,3 +21,13 @@ describe('multiplyByTen', () => {
 
     })
 })
+
+describe('subtractFive', () => {
+    it('should subtract five from sum', () => {
+        const subtract = funcs.subtractFive;
+
+        const ten = subtract(15);
+
+        expect(ten).toBe(10);
+    })
+})
