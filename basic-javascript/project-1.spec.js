@@ -29,4 +29,17 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('areSameLength', () => {
+        it('should return a boolean value', () => {
+            // arrange
+            const areSameLength = funcs.areSameLength;
+
+            // act
+            const actual = areSameLength('are', 'cat');
+
+            // assert
+            expect(actual).toBeTruthy();
+        });
+    });
 })
