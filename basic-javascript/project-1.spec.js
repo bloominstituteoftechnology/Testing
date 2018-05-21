@@ -150,3 +150,50 @@ describe('multiply function', () => {
         expect(actual).toBeNaN();
     });
 });
+
+describe('get remainder function', () => {
+    it('should return x % y', () => {
+        const getRemainder = funcs.getRemainder;
+        const actual = getRemainder(4, 3);
+        expect(actual).toBe(1);
+    });
+    it('should return false if no remainder', () => {
+        const getRemainder = funcs.getRemainder;
+        const actual = getRemainder(6, 2);
+        expect(actual).toBeFalsy();
+    });
+});
+
+describe('is even function', () => {
+    it('should return true if num is even', () => {
+        const isEven = funcs.isEven;
+        const actual = isEven(2);
+        expect(actual).toBe(true);
+    });
+    it('should return false if num is not even', () => {
+        const isEven = funcs.isEven;
+        const actual = isEven(3);
+        expect(actual).toBeFalsy();
+    });
+});
+
+describe('is odd function', () => {
+    it('should return false if num is even', () => {
+        const isOdd = funcs.isOdd;
+        const actual = isOdd(2);
+        expect(actual).toBe(false);
+    });
+    it('should return true if num is odd', () => {
+        const isOdd = funcs.isOdd;
+        const actual = isOdd(3);
+        expect(actual).toBe(true);
+    });
+});
+
+describe('square function', () => {
+    it('should return num * num', () => {
+        const square = funcs.square;
+        const actual = square(2, 2);
+        expect(actual).toBe(4);
+    });
+});
