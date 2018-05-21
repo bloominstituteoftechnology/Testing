@@ -208,3 +208,14 @@ describe("addExclamationPoint function", () => {
 		expect(addExclamationPoint).toBe(expected);
 	});
 });
+
+describe("combineNames function", () => {
+	// arrange
+	const expected = 'firstName lastName';
+	// act
+	const combineNames = funcs.combineNames('firstName', 'lastName');
+	// assert
+	it("combines names", () => {
+		expect(combineNames).toBe(expected);
+	});
+});
