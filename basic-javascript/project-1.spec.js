@@ -158,3 +158,32 @@ describe('divide', () => {
         expect(actual).toEqual(5)
     })
 })
+
+// multiply
+describe('multiply', () => {
+    it('returns the product of the two numbers', () => { 
+        // arrange
+        const multiply = funcs.multiply;
+
+        // act 
+        const actual = multiply(20, 20)
+
+        // assert
+        expect(actual).toBe(400);
+    })
+})
+
+// getRemainder
+
+describe('getRemainder', () => {
+    it('returns the remainder of x divided by y', () => {
+        // arrange
+        const getRemainder = funcs.getRemainder
+
+        // act
+        const actual = getRemainder(20, 6)
+
+        // assert
+        expect(actual).toEqual(2)
+    })
+})
