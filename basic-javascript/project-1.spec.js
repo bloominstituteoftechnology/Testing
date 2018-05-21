@@ -194,3 +194,153 @@ describe("Modulo function", () => {
     expect(undefined).toBe(undefined);
   });
 });
+
+describe("Even number", () => {
+  it("Should return true if even", () => {
+    const isEven = funcs.isEven;
+
+    const three = isEven(3);
+    const twoHundred = isEven(200);
+    const zero = isEven(0);
+    const negTwo = isEven(-2);
+    const negThree = isEven(-3);
+
+    expect(three).toBe(false);
+    expect(twoHundred).toBe(true);
+    expect(zero).toBe(true);
+    expect(negTwo).toBe(true);
+    expect(negThree).toBe(false);
+  });
+});
+
+describe("Odd number", () => {
+  it("Should return true if odd", () => {
+    const isOdd = funcs.isOdd;
+
+    const three = isOdd(3);
+    const twoHundred = isOdd(200);
+    const zero = isOdd(0);
+    const negTwo = isOdd(-2);
+    const negThree = isOdd(-3);
+
+    expect(three).toBe(true);
+    expect(twoHundred).toBe(false);
+    expect(zero).toBe(false);
+    expect(negTwo).toBe(false);
+    expect(negThree).toBe(true);
+  });
+});
+
+describe("Square function", () => {
+  it("Should multiply number by itself", () => {
+    const square = funcs.square;
+
+    const threeSq = square(3);
+    const elevenSq = square(11);
+    const negFourSq = square(-4);
+    const zero = square(0);
+    const one = square(1);
+
+    expect(threeSq).toBe(9);
+    expect(elevenSq).toBe(121);
+    expect(negFourSq).toBe(16);
+    expect(zero).toBe(0);
+    expect(one).toBe(1);
+  });
+});
+
+describe("cubic fucntion", () => {
+  it("Should multiply number by itself two times", () => {
+    const cube = funcs.cube;
+
+    const threeCb = cube(3);
+    const elevenCb = cube(11);
+    const negFourCb = cube(-4);
+    const zero = cube(0);
+    const one = cube(1);
+    const negOne = cube(-1);
+
+    expect(threeCb).toBe(27);
+    expect(elevenCb).toBe(1331);
+    expect(negFourCb).toBe(-64);
+    expect(zero).toBe(0);
+    expect(one).toBe(1);
+    expect(negOne).toBe(-1);
+  });
+});
+
+describe("power fucntion", () => {
+  it("Should multiply number by itself based on number of power/exp", () => {
+    const raiseToPower = funcs.raiseToPower;
+
+    const threePwrThree = raiseToPower(3, 3);
+    const elevenPwrTwo = raiseToPower(11, 2);
+    const negTwoPwrFour = raiseToPower(-2, 4);
+    const zero = raiseToPower(0, 10);
+    const one = raiseToPower(1, 7);
+    const negOne = raiseToPower(-1, 7);
+
+    expect(threePwrThree).toBe(27);
+    expect(elevenPwrTwo).toBe(121);
+    expect(negTwoPwrFour).toBe(16);
+    expect(zero).toBe(0);
+    expect(one).toBe(1);
+    expect(negOne).toBe(-1);
+  });
+});
+
+describe("rounding fucntion", () => {
+  it("Should round number to nearest ones place", () => {
+    const roundNumber = funcs.roundNumber;
+
+    const three = roundNumber(3.4423);
+    const eleven = roundNumber(11.0651);
+    const six = roundNumber(6.11151);
+    const zero = roundNumber(0.0);
+    const negTwo = roundNumber(-2.12);
+    const HundredFifty = roundNumber(150);
+
+    expect(three).toBe(3);
+    expect(eleven).toBe(11);
+    expect(six).toBe(6);
+    expect(zero).toBe(0);
+    expect(negTwo).toBe(-2);
+    expect(HundredFifty).toBe(150);
+  });
+});
+
+describe("round-up fucntion", () => {
+  it("Should round number up to nearest one, regardless of the value of tenth place", () => {
+    const roundUp = funcs.roundUp;
+
+    const three = roundUp(3.4423);
+    const eleven = roundUp(11.0651);
+    const zero = roundUp(0.0);
+    const negTwo = roundUp(-2.12);
+    const HundredFifty = roundUp(150);
+
+    expect(three).toBe(4);
+    expect(eleven).toBe(12);
+    expect(zero).toBe(0);
+    expect(negTwo).toBe(-2);
+    expect(HundredFifty).toBe(150);
+  });
+});
+
+describe("round-up fucntion", () => {
+  it("Should round number up to nearest one, regardless of the value of tenth place", () => {
+    const roundUp = funcs.roundUp;
+
+    const three = roundUp(3.4423);
+    const eleven = roundUp(11.0651);
+    const zero = roundUp(0.0);
+    const negTwo = roundUp(-2.12);
+    const HundredFifty = roundUp(150);
+
+    expect(three).toBe(4);
+    expect(eleven).toBe(12);
+    expect(zero).toBe(0);
+    expect(negTwo).toBe(-2);
+    expect(HundredFifty).toBe(150);
+  });
+});
