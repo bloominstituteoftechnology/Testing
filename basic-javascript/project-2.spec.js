@@ -267,4 +267,18 @@ describe('Project 2', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('largestNumber', () => {
+        it('should return the largest of all numbers in an array', () => {
+            // arrange
+            const expected = 93;
+            const largestNumber = funcs.largestNumber;
+
+            // act
+            const actual = largestNumber([45, 65, 93, 45]);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
