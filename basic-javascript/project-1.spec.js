@@ -98,3 +98,14 @@ describe("divide function", () => {
 		expect(divide).toBe(expected);
 	});
 });
+
+describe("multiply function", () => {
+	// arrange
+	const expected = 100;
+	// act
+	const multiply = funcs.multiply(10, 10);
+	// assert
+	it("check if args multiply correctly", () => {
+		expect(multiply).toBe(expected);
+	});
+});
