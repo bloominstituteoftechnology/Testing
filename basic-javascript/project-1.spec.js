@@ -149,3 +149,9 @@ describe('roundUp', () => {
         expect(funcs.roundUp(9.3)).toEqual(10);
     })
 })
+
+describe('addExclamationPoint', () => {
+    it('should add exclamation point', () => {
+        expect(funcs.addExclamationPoint(10)).toEqual(10+'!');
+    })
+})
