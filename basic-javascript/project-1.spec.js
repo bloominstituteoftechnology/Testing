@@ -33,3 +33,11 @@ it('subtract', () => {
     expect(funcs.subtract(10, 2)).toBe(10 - 2)
 })
 
+it('divide', () => {
+    expect(funcs.divide(16, 2)).toBe(8)
+})
+
+it('multiply', () => {
+    expect(funcs.multiply(2 * 4)).toBe(8)
+})
+
