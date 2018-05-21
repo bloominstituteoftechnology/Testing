@@ -197,3 +197,10 @@ describe('check if number was rounded up',()=>{
 
     })
 })
+describe('check if exclamation point was added',()=>{
+    it('should add an exlamation point to string',()=>{
+        const ex = funcs.addExclamationPoint
+        const exclamation = ex('apple')
+        expect(exclamation).toBe('apple!')
+    })
+})
