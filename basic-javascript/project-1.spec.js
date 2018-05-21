@@ -68,3 +68,17 @@ describe('areEqual', () => {
     })
 })
 
+// lessThanNinety
+
+describe('lessThanNinety', () => {
+    it('number is less than 90', () => {
+        // arrange
+        const lessThanNinety = funcs.lessThanNinety;
+
+        // act
+        const actual = lessThanNinety(65);
+
+        // assert
+        expect(actual).toBeTruthy();
+    })
+})
