@@ -142,3 +142,14 @@ describe("odd function", () => {
 		expect(isOdd).toBe(expected);
 	});
 });
+
+describe("square function", () => {
+	// arrange
+	const expected = 100;
+	// act
+	const square = funcs.square(10);
+	// assert
+	it("check if args square correctly", () => {
+		expect(square).toBe(expected);
+	});
+});
