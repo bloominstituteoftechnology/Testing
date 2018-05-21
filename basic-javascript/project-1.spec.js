@@ -49,3 +49,11 @@ it('isEven', () => {
     expect(funcs.isEven(8)).toBeTruthy()
 })
 
+it('isOdd', () => {
+    expect(funcs.isOdd(9)).toBeTruthy()
+})
+
+it('square', () => {
+    expect(funcs.square(8, 8)).toBe(8 * 8)
+})
+
