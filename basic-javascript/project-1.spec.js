@@ -155,4 +155,19 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('isEven', () => {
+        it('should return a boolean value', () => {
+            // arrange
+            const isEven = funcs.isEven;
+
+            // act
+            const actual = isEven(2);
+            const actual2 = isEven(9);
+
+            // assert
+            expect(actual).toBeTruthy();
+            expect(actual2).toBeFalsy();
+        });
+    });
 })
