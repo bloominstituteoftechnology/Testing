@@ -89,3 +89,9 @@ describe('subtract', () => {
         expect(funcs.subtract(6, 5)).toEqual(1);
     })
 })
+
+describe('divide', () => {
+    it('should check x / y', () => {
+        expect(funcs.divide(10, 5)).toEqual(2);
+    })
+})
