@@ -107,3 +107,9 @@ describe('getRemainder', () => {
         expect(funcs.getRemainder(10, 5)).toEqual(0);
     })
 })
+
+describe('isEven', () => {
+    it('should check x / y = 0', () => {
+        expect(funcs.isEven(10, 5)).toEqual(true);
+    })
+})
