@@ -210,4 +210,18 @@ describe('Project 2', () => {
             expect(actual).toEqual(expected);
         });
     });
+
+    describe('wordsToSentence', () => {
+        it('should return a sentence from words', () => {
+            // arrange
+            const expected = 'are you ready';
+            const wordsToSentence = funcs.wordsToSentence;
+
+            // act
+            const actual = wordsToSentence(['are', 'you', 'ready']);
+
+            // assert
+            expect(actual).toEqual(expected);
+        });
+    });
 })
