@@ -16,3 +16,15 @@ describe('greeting', () => {
         expect(funcs.greeting('greeting')).toBe('Hello!')
     })
 })
+
+it('isTenOrFive', () => {
+    expect(funcs.isTenOrFive(10)).toBe(true)
+    expect(funcs.isTenOrFive(5)).toBe(true)
+    expect(funcs.isTenOrFive(8)).toBe(false)
+})
+
+it('isInRange', () => {
+    expect(funcs.isInRange(28)).toBe(true)
+    expect(funcs.isInRange(8)).toBe(false)
+})
+
