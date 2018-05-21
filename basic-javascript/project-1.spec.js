@@ -189,3 +189,11 @@ describe("check if number is rounded", () => {
     expect(round).toBe(44);
   });
 });
+describe('check if number was rounded up',()=>{
+    it("should round up the number passed in",()=>{
+        const  roundUp =funcs.roundUp;
+        const thirty = roundUp(29.6)
+        expect(thirty).toBe(30)
+
+    })
+})
