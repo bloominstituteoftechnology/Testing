@@ -285,4 +285,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('getGreeting', () => {
+        it('returns a greeting', () => {
+            // arrange
+            const expected = 'Hello Nedu!';
+            const getGreeting = funcs.getGreeting;
+
+            // act
+            const actual = getGreeting('Nedu');
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
