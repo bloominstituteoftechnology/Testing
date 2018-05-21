@@ -118,3 +118,15 @@ describe("addItemToFront function", () => {
     expect(passedArray).toEqual([5, 1, 2, 3]);
   });
 });
+
+describe("wordsToSentence function", () => {
+  const array = ["Hi", "how", "are", "you"];
+  const passedArray = funcs.wordsToSentence(array);
+
+  it("check if adds item to array", () => {
+    expect(passedArray).toEqual("Hi how are you");
+  });
+  it("checks if result is string", () => {
+    expect(typeof passedArray).toEqual("string");
+  });
+});
