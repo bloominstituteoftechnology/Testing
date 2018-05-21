@@ -24,7 +24,7 @@ describe("length testing", () => {
   it(" is not the same length? ", () => {
     const areSameLength = funcs.areSameLength;
     const actual = areSameLength("hilal0", "filal");
-    expect(actual).toBeFalsy;
+    expect(actual).toBeFalsy();
   });
 });
 describe("equality", () => {
