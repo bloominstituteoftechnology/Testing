@@ -73,3 +73,10 @@ it('roundUp', () => {
     expect(funcs.roundUp(7.2)).toBe(8)
 })
 
+it('addExclamationPoint', () => {
+    expect(funcs.addExclamationPoint('Loo')).toBe('Loo!')
+})
+
+it('combineNames', () => {
+    expect(funcs.combineNames('Chris', 'Loo')).toBe('Chris Loo')
+})
