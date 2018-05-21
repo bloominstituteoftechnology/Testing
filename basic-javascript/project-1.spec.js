@@ -257,4 +257,18 @@ describe('Project 1', () => {
             expect(actual2).toBe(6);
         });
     });
+
+    describe('addExclamationPoint', () => {
+        it('add an exclamation point to a string', () => {
+            // arrange
+            const expected = 'are you ready!';
+            const addExclamationPoint = funcs.addExclamationPoint;
+
+            // act
+            const actual = addExclamationPoint('are you ready');
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
