@@ -167,3 +167,9 @@ describe('getGreeting', () => {
         expect(funcs.getGreeting('John')).toBe('Hello John!');
     })
 })
+
+describe ('getRectangleArea', () => {
+    it('should return length * width of rectangle', () => {
+        expect(funcs.getRectangleArea(5, 4)).toEqual(20);
+    })
+})
