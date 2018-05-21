@@ -2,38 +2,55 @@ const objectFunctions = require('./objects');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Objects', () => {
+
   describe('keys', () => {
-    it('should be a function', () => {
+    it('should get keys', () => {
       const keys = objectFunctions.keys;
-      expect(typeof keys).toBe('function');
+
+      const actual = keys({a:1, b:2, c:3})
+      expect(actual).toEqual(['a', 'b', 'c']);
     });
   });
 
   describe('values', () => {
-    it('should be a function', () => {
+    it('should get values', () => {
       const values = objectFunctions.values;
-      expect(typeof values).toBe('function');
+
+      const actual = values({a:1, b:2, c:3})
+      expect(actual).toEqual([1, 2, 3]);
     });
   });
 
   describe('mapObject', () => {
-    it('should be a function', () => {
+    it('should stringify all values', () => {
       const mapObject = objectFunctions.mapObject;
-      expect(typeof mapObject).toBe('function');
+      function stringify(input) {
+        return input.toString()
+      }
+      
+      const actual = mapObject({a: 25, b: 20, c: 40}, stringify)
+      expect(actual).toEqual({a: "25", b: "20", c: "40"});
     });
   });
 
   describe('pairs', () => {
-    it('should be a function', () => {
+    it('shold return key value pairs', () => {
       const pairs = objectFunctions.pairs;
-      expect(typeof pairs).toBe('function');
+      const actual = pairs({a: 1, b: 2, c: 3})
+
+      expect(actual).toEqual([["a", 1], ["b", 2], ["c", 3]]);
     });
   });
 
   describe('invert', () => {
     it('should be a function', () => {
       const invert = objectFunctions.invert;
-      expect(typeof invert).toBe('function');
+      const actual = invert({
+        a: 1,
+        b: 2,
+        c: 3
+      })
+      expect(actual).toEqual({1: "a", 2: "b", 3: "c"});
     });
   });
 
