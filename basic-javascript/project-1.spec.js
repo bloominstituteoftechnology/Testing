@@ -1,3 +1,8 @@
 const funcs = require('./project-1');
 
 // write your tests here
+
+describe ('default', () => {
+    it('run the tests', () => {});
+});
+
