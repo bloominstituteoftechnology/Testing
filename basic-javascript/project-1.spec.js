@@ -109,3 +109,36 @@ describe("multiply function", () => {
 		expect(multiply).toBe(expected);
 	});
 });
+
+describe("remainder function", () => {
+	// arrange
+	const expected = 1;
+	// act
+	const getRemainder = funcs.getRemainder(10, 3);
+	// assert
+	it("check if args getRemainder correctly", () => {
+		expect(getRemainder).toBe(expected);
+	});
+});
+
+describe("even function", () => {
+	// arrange
+	const expected = true;
+	// act
+	const isEven = funcs.isEven(10);
+	// assert
+	it("check if args isEven correctly", () => {
+		expect(isEven).toBe(expected);
+	});
+});
+
+describe("odd function", () => {
+	// arrange
+	const expected = true;
+	// act
+	const isOdd = funcs.isOdd(9);
+	// assert
+	it("check if args isOdd correctly", () => {
+		expect(isOdd).toBe(expected);
+	});
+});
