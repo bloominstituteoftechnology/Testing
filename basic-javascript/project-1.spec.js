@@ -42,4 +42,17 @@ describe('Project 1', () => {
             expect(actual).toBeTruthy();
         });
     });
+
+    describe('areEqual', () => {
+        it('should return a boolean value', () => {
+            // arrange
+            const areEqual = funcs.areEqual;
+
+            // act
+            const actual = areEqual(3, 3);
+
+            // assert
+            expect(actual).toBeTruthy();
+        });
+    });
 })
