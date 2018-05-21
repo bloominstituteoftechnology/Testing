@@ -1,6 +1,7 @@
 const funcs = require("./project-2");
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
+// Some tests aren't categorized for the sake of creating tests quickly.
 
 describe("default", () => {
   it("Should run the tests", () => {});
@@ -82,3 +83,4 @@ describe("Number is in range", () => {
     expect(fifty).toBe(false);
   });
 });
+

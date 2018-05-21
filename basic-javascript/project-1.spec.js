@@ -1,6 +1,8 @@
 const funcs = require("./project-1");
 
 // write your tests here
+// Tests aren't categorized for the sake of creating them quickly.
+
 
 describe("default", () => {
   it("Should run the tests", () => {});
