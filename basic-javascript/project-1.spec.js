@@ -76,3 +76,14 @@ describe("add function", () => {
 		expect(add).toBe(expected);
 	});
 });
+
+describe("subtract function", () => {
+	// arrange
+	const expected = 3;
+	// act
+	const subtract = funcs.subtract(9, 6);
+	// assert
+	it("check if args subtract correctly", () => {
+		expect(subtract).toBe(expected);
+	});
+});
