@@ -164,3 +164,14 @@ describe("cube function", () => {
 		expect(cube).toBe(expected);
 	});
 });
+
+describe("raiseToPower function", () => {
+	// arrange
+	const expected = 1000;
+	// act
+	const raisedToPower = funcs.raiseToPower(10, 3);
+	// assert
+	it("check if args raisedToPower correctly", () => {
+		expect(raisedToPower).toBe(expected);
+	});
+});
