@@ -6,6 +6,8 @@ describe('default', () => {
     it('runs the test', () => {})
 });
 
+// multiplyByTen
+
 describe('multiplyByTen', () => {
     it('should multiply number by 10', () => {
         // arrange
@@ -20,6 +22,8 @@ describe('multiplyByTen', () => {
     })
 })
 
+// subtractFive
+
 describe('subtractFive', () => {
     it('should subtract 5 from input number', () => {
         // arrange
@@ -33,3 +37,20 @@ describe('subtractFive', () => {
         expect(actual).toBe(expected)
     })
 })
+
+// areSameLength
+
+describe('areSameLength', () => {
+    it('compares the length of one string to another', () => {
+        // arrange
+        const expected = true;
+        const areSameLength = funcs.areSameLength;
+
+        // act
+        const actual = areSameLength('abc', '123')
+
+        // assert
+        expect(actual).toBe(expected);
+    })
+})
+
