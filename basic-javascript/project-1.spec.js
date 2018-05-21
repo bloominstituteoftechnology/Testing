@@ -2,12 +2,12 @@ const funcs = require('./project-1');
 
 // write your tests here
 
+// default  
 describe('default', () => {
     it('runs the test', () => {})
 });
 
 // multiplyByTen
-
 describe('multiplyByTen', () => {
     it('should multiply number by 10', () => {
         // arrange
@@ -23,7 +23,6 @@ describe('multiplyByTen', () => {
 })
 
 // subtractFive
-
 describe('subtractFive', () => {
     it('should subtract 5 from input number', () => {
         // arrange
@@ -39,7 +38,6 @@ describe('subtractFive', () => {
 })
 
 // areSameLength
-
 describe('areSameLength', () => {
     it('compares the length of one string to another', () => {
         // arrange
@@ -52,9 +50,7 @@ describe('areSameLength', () => {
         expect(actual).toBeTruthy();
     })
 })
-
 // areEqual 
-
 describe('areEqual', () => {
     it('compares the numbers passed in to ensure they are equal', () => {
         // arrange
@@ -67,9 +63,7 @@ describe('areEqual', () => {
         expect(actual).toBeTruthy()
     })
 })
-
 // lessThanNinety
-
 describe('lessThanNinety', () => {
     it('number is less than 90', () => {
         // arrange
@@ -94,7 +88,6 @@ describe('lessThanNinety', () => {
 })
 
 // greaterThanFifty
-
 describe('greaterThanFifty', () => {
     it('number is less than 50', () => {
 
@@ -124,7 +117,6 @@ describe('greaterThanFifty', () => {
 })
 
 // add
-
 describe('add', () => {
     it('should be the sum of the two numbers', () => {
         // arrange
@@ -138,6 +130,7 @@ describe('add', () => {
     })
 })
 
+// subtract
 describe('subtract', () => {
     it('the difference between two numbers', () => {
         // arrange
@@ -148,5 +141,20 @@ describe('subtract', () => {
 
         // assert
         expect(actual).toEqual(7)
+    })
+})
+
+// divide
+describe('divide', () => {
+    it('should return the quotient of the two numbers', () => {
+
+        // arrange
+        const divide = funcs.divide;
+
+        // act
+        const actual = divide(20, 4);
+
+        // assert
+        expect(actual).toEqual(5)
     })
 })
