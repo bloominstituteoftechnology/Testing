@@ -14,3 +14,7 @@ Topics:
 * Use `yarn` to install the necessary dependancies from the package.json file.
 * To run your tests run the command `yarn test`.
 * Get started by implementing the tests inside the `basic-javascript` directory then move onto `advanced-javascript` when you're done.
+
+### Write Tests
+
+Write tests inside the files ending on `.spec.js` that check the code in the files that are imported into each spec file.
