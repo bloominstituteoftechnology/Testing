@@ -50,7 +50,7 @@ describe("lessThanNinety function", () => {
 	// act
 	const lessThanNinety = funcs.lessThanNinety(50);
 	// assert
-	it("check if strings are the same length", () => {
+	it("check if arg is less than 90", () => {
 		expect(lessThanNinety).toBe(expected);
 	});
 });
@@ -61,7 +61,18 @@ describe("greaterThanFifty function", () => {
 	// act
 	const greaterThanFifty = funcs.greaterThanFifty(55);
 	// assert
-	it("check if strings are the same length", () => {
+	it("check if arg is greater than 50", () => {
 		expect(greaterThanFifty).toBe(expected);
+	});
+});
+
+describe("add function", () => {
+	// arrange
+	const expected = 11;
+	// act
+	const add = funcs.add(3, 8);
+	// assert
+	it("check if args add up correctly", () => {
+		expect(add).toBe(expected);
 	});
 });
