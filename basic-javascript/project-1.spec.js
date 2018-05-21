@@ -87,3 +87,14 @@ describe("subtract function", () => {
 		expect(subtract).toBe(expected);
 	});
 });
+
+describe("divide function", () => {
+	// arrange
+	const expected = 2;
+	// act
+	const divide = funcs.divide(10, 5);
+	// assert
+	it("check if args divide correctly", () => {
+		expect(divide).toBe(expected);
+	});
+});
