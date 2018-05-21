@@ -213,4 +213,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('raiseToPower', () => {
+        it('should raise a number to the power of an exponent ', () => {
+            // arrange
+            const expected = 4;
+            const raiseToPower = funcs.raiseToPower;
+
+            // act
+            const actual = raiseToPower(2, 2);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
