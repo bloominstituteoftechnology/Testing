@@ -141,4 +141,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('getRemainder', () => {
+        it('should return the remainder of a division', () => {
+            // arrange
+            const expected = 4;
+            const getRemainder = funcs.getRemainder;
+
+            // act
+            const actual = getRemainder(9, 5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
