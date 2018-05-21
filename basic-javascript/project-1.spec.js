@@ -31,4 +31,10 @@ test('add 5 + (-10) to equal -5', () => {
 });
 ////////////////////////////////////////////////////////
 
+//Test subtract function
+// subtract two positive numbers
+test('subtract 2 - 1 to equal 1', () => {
+    expect(funcs.subtract(2, 1)).toBe(1);
+});
 
+////////////////////////////////////////////////////////
