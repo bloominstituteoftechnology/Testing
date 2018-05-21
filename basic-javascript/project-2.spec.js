@@ -52,4 +52,21 @@ describe('Project 2', () => {
             expect(actual3).toBeFalsy();
         });
     });
+
+    describe('isInRange', () => {
+        it('should return a boolean', () => {
+            // arrange
+            const isInRange = funcs.isInRange;
+
+            // act
+            const actual = isInRange(5);
+            const actual2 = isInRange(30);
+            const actual3 = isInRange(50);
+
+            // assert
+            expect(actual).toBeFalsy();
+            expect(actual2).toBeTruthy();
+            expect(actual3).toBeFalsy();
+        });
+    });
 })
