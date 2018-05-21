@@ -276,3 +276,19 @@ test('square 2^2 = 4', ()=> {
     expect(result).toBe(shouldbe);
 });
 /////////////////////////////////////////////////////////
+
+// Test cube
+// test 3^3 = 27
+test('cube 3^3 = 27', ()=> {
+    const shouldBe = Math.pow(3,3); // 27
+    const result = funcs.cube(3);
+    expect(result).toBe(shouldBe);
+});
+
+// test -3^3 = 27
+test('cube 3^3 = 27', ()=> {
+    const shouldBe = Math.pow(3,3); // 27
+    const result = funcs.cube(3);
+    expect(result).toBe(shouldBe);
+});
+////////////////////////////////////////////////////////
