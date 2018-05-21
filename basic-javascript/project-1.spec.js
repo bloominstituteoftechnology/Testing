@@ -70,4 +70,19 @@ describe('Project 1', () => {
             expect(actual2).toBeFalsy();            
         });
     });
+
+    describe('greaterThanFifty', () => {
+        it('should return a boolean value', () => {
+            // arrange
+            const greaterThanFifty = funcs.greaterThanFifty;
+
+            // act
+            const actual = greaterThanFifty(30);
+            const actual2 = greaterThanFifty(300);
+
+            // assert
+            expect(actual).toBeFalsy();
+            expect(actual2).toBeTruthy();
+        });
+    });
 })
