@@ -244,3 +244,20 @@ test('isEven 0', () => {
 });
 ////////////////////////////////////////////////////////
 
+// Test isOdd
+// test x = 0
+test('isOdd 0 ', () => {
+    expect(funcs.isOdd(0)).toEqual(false);
+});
+
+// test x = 1
+test('isOdd 1 ', () => {
+    expect(funcs.isOdd(1)).toEqual(true);
+});
+
+// test x = 2
+test('isOdd 2 ', () => {
+    expect(funcs.isOdd(0)).toEqual(false);
+});
+/////////////////////////////////////////////////////////
+
