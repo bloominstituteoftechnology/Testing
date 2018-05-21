@@ -127,4 +127,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('multiply', () => {
+        it('should multiply two numbers', () => {
+            // arrange
+            const expected = 50;
+            const multiply = funcs.multiply;
+
+            // act
+            const actual = multiply(10, 5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
