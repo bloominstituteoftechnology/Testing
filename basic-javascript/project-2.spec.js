@@ -28,6 +28,22 @@ describe("greeting function", () => {
         const English = 'Hello!';
         const eng = funcs.greeting('English');
         expect(eng).toBe(English);
+    });
+});
+
+describe("isTenOrFive function", () => {
+    // arrange
+
+    // act
+
+    // assert
+    it("returns which is biggest", () => {
+
+        const five = funcs.isTenOrFive(5);
+        const ten = funcs.isTenOrFive(10);
+
+        expect(five).toBe(true);
+        expect(ten).toBe(true);
 
     });
 });
