@@ -125,3 +125,9 @@ describe('square', () => {
         expect(funcs.square(10)).toEqual(100);
     })
 })
+
+describe('cube', () => {
+    it('should check num * num * num', () => {
+        expect(funcs.cube(10)).toEqual(1000);
+    })
+})
