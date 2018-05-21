@@ -86,19 +86,21 @@ describe('Project 2', () => {
     });
 
     describe('fizzBuzz', () => {
-        it('should return a string', () => {
+        it('should return a string or a number based on input', () => {
             // arrange
             const fizzBuzz = funcs.fizzBuzz;
 
             // act
             const actual = fizzBuzz(15);
             const actual2 = fizzBuzz(9);
-            const actual3 = fizzBuzz(25);            
+            const actual3 = fizzBuzz(25);
+            const actual4 = fizzBuzz(2);                                
 
             // assert
             expect(actual).toBe('fizzbuzz');
             expect(actual2).toBe('fizz');
-            expect(actual3).toBe('buzz');            
+            expect(actual3).toBe('buzz');
+            expect(actual4).toBe(2);                        
         });
     });
 })
