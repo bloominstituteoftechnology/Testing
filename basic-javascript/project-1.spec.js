@@ -97,6 +97,6 @@ it('getCircleArea', () => {
     expect(funcs.getCircleArea(8)).toBe(Math.PI * 64)
 })
 
-it('getRectanglePrismVolume', () => {
-    expect(funcs.getRectanglePrismVolume())
+it('getRectangularPrismVolume', () => {
+    expect(funcs.getRectangularPrismVolume(2, 4, 6)).toBe(2 * 4 * 6)
 })
