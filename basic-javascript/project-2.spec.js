@@ -196,4 +196,18 @@ describe('Project 2', () => {
             expect(actual).toEqual(expected);
         });
     });
+
+    describe('addItemToFront', () => {
+        it('should add item to the front of an array', () => {
+            // arrange
+            const expected = [5, 0, 1, 2, 3, 4];
+            const addItemToFront = funcs.addItemToFront;
+
+            // act
+            const actual = addItemToFront([0, 1, 2, 3, 4], 5);
+
+            // assert
+            expect(actual).toEqual(expected);
+        });
+    });
 })
