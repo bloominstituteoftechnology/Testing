@@ -15,4 +15,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('subtractFive', () => {
+        it('should subtract a number by five', () => {
+            // arrange
+            const expected = 0;
+            const subtractFive = funcs.subtractFive;
+
+            // act
+            const actual = subtractFive(5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
