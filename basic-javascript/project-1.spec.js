@@ -19,20 +19,23 @@ describe('project 1', () => {
 
   it('areSameLength', () => {
     const actual = funcs.areSameLength('hello', 'hello');
+    const expected = true;
 
-    expect(actual).toBeTruthy();
+    expect(actual).toBe(expected);
   })
 
   it('lessThanNinety', () => {
     const actual = funcs.lessThanNinety(20);
+    const expected = true;
 
-    expect(actual).toBeTruthy();
+    expect(actual).toBe(expected);
   })
 
   it('greaterThanFifty', () => {
     const actual = funcs.greaterThanFifty(90);
+    const expected = true;
 
-    expect(actual).toBeTruthy();
+    expect(actual).toBe(expected);
   })
 
   it('add', () => {
@@ -72,14 +75,16 @@ describe('project 1', () => {
 
   it('isEven', () => {
     const actual = funcs.isEven(90);
+    const expected = true;
 
-    expect(actual).toBeTruthy();
+    expect(actual).toBe(expected);
   })
 
   it('isOdd', () => {
     const actual = funcs.isOdd(53);
+    const expected = true;
 
-    expect(actual).toBeTruthy();
+    expect(actual).toBe(expected);
   })
 
   it('getRemainder', () => {
