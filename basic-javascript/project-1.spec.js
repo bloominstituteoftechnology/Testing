@@ -77,3 +77,9 @@ describe('greaterThanFifty', () => {
     expect(funcs.greaterThanFifty(60)).toEqual(true);
     })
 })
+
+describe('add', () => {
+    it('should check x + y', () => {
+        expect(funcs.add(5, 6)).toEqual(11);
+    })
+})
