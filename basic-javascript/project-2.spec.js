@@ -224,4 +224,19 @@ describe('Project 2', () => {
             expect(actual).toEqual(expected);
         });
     });
+
+    describe('contains', () => {
+        it('should return a boolean', () => {
+            // arrange
+            const contains = funcs.contains;
+
+            // act
+            const actual = contains(['are', 'you', 'ready'], 'are');
+            const actual2 = contains([1, 56, 90], 'are');
+
+            // assert
+            expect(actual).toBeTruthy();
+            expect(actual2).toBeFalsy();
+        });
+    });
 })
