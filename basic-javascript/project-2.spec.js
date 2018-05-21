@@ -126,4 +126,18 @@ describe('Project 2', () => {
             expect(actual6).toBeTruthy();
         });
     });
+
+    describe('returnFirst', () => {
+      it('should return the first element in an array', () => {
+        // arrange
+        const expected = 'hi';
+        const returnFirst = funcs.returnFirst;
+
+        // act
+        const actual = returnFirst(['hi', 0, 4, 5, 3, 3, 8]);
+
+        // assert
+        expect(actual).toBe(expected);
+      });
+    });
 })
