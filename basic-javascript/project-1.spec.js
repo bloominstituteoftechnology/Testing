@@ -9,12 +9,27 @@ describe('default', () => {
 describe('multiplyByTen', () => {
     it('should multiply number by 10', () => {
         // arrange
+        const expected = 20;
         const multiplyByTen = funcs.multiplyByTen;
 
         // act
-        const twenty = multiplyByTen(2);
+        const actual = multiplyByTen(2);
 
         // assert 
-        expect(twenty).toBe(20);
+        expect(actual).toBe(expected);
+    })
+})
+
+describe('subtractFive', () => {
+    it('should subtract 5 from input number', () => {
+        // arrange
+        const expected = 20;
+        const subtractFive = funcs.subtractFive;
+
+        // add
+        const actual = subtractFive(25);
+
+        // assert
+        expect(actual).toBe(expected)
     })
 })
