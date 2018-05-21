@@ -199,4 +199,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('cube', () => {
+        it('should cube a number', () => {
+            // arrange
+            const expected = 1000;
+            const cube = funcs.cube;
+
+            // act
+            const actual = cube(10);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
