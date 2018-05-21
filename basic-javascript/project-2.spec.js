@@ -11,3 +11,23 @@ describe("getBiggest function", () => {
         expect(getBiggest).toBe(expected);
     });
 });
+
+describe("greeting function", () => {
+    // arrange
+    // act
+    // assert
+    it("returns greeting", () => {
+        const German = 'Guten Tag!';
+        const ger = funcs.greeting('German');
+        expect(ger).toBe(German);
+
+        const Spanish = 'Hola!';
+        const span = funcs.greeting('Spanish');
+        expect(span).toBe(Spanish);
+
+        const English = 'Hello!';
+        const eng = funcs.greeting('English');
+        expect(eng).toBe(English);
+
+    });
+});
