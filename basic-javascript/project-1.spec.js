@@ -10,3 +10,14 @@ describe("multiplyByTen function", () => {
 		expect(multiplyByTen).toBe(expected);
 	});
 });
+
+describe("subtractFive function", () => {
+	// arrange
+	const expected = 10;
+	// act
+	const subtractFive = funcs.subtractFive(15);
+	// assert
+	it("subtract a number by 5", () => {
+		expect(subtractFive).toBe(expected);
+	});
+});
