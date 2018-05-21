@@ -85,4 +85,18 @@ describe('Project 1', () => {
             expect(actual2).toBeTruthy();
         });
     });
+
+    describe('add', () => {
+        it('should add two numbers', () => {
+            // arrange
+            const expected = 8;
+            const add = funcs.add;
+
+            // act
+            const actual = add(3, 5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
