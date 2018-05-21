@@ -53,9 +53,12 @@ describe('project 1', () => {
   })
 
   it('divide', () => {
-    const actual = funcs.divide(10, 5);
-    const expected = 2;
+    let actual = funcs.divide(10, 5);
+    let expected = 2;
+    expect(actual).toBe(expected);
 
+    actual = funcs.divide(10, 0);
+    expected = Infinity;
     expect(actual).toBe(expected);
   })
 
@@ -67,30 +70,42 @@ describe('project 1', () => {
   })
 
   it('getRemainder', () => {
-    const actual = funcs.getRemainder(50, 13);
-    const expected = 11;
+    let actual = funcs.getRemainder(50, 13);
+    let expected = 11;
+    expect(actual).toBe(expected);
 
+    actual = funcs.getRemainder(50, 10);
+    expected = 0;
     expect(actual).toBe(expected);
   })
 
   it('isEven', () => {
-    const actual = funcs.isEven(90);
-    const expected = true;
+    let actual = funcs.isEven(90);
+    let expected = true;
+    expect(actual).toBe(expected);
 
+    actual = funcs.isEven(91);
+    expected = false;
     expect(actual).toBe(expected);
   })
 
   it('isOdd', () => {
-    const actual = funcs.isOdd(53);
-    const expected = true;
+    let actual = funcs.isOdd(95);
+    let expected = true;
+    expect(actual).toBe(expected);
 
+    actual = funcs.isOdd(4);
+    expected = false;
     expect(actual).toBe(expected);
   })
 
   it('getRemainder', () => {
-    const actual = funcs.getRemainder(50, 13);
-    const expected = 11;
+    let actual = funcs.getRemainder(50, 13);
+    let expected = 11;
+    expect(actual).toBe(expected);
 
+    actual = funcs.getRemainder(50, 10);
+    expected = 0;
     expect(actual).toBe(expected);
   })
 
