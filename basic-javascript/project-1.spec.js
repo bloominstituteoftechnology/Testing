@@ -328,3 +328,18 @@ describe('getGreeting', () => {
         expect(actual).toBe('Hello Sam!')
     })
 })
+
+// getRectangleArea
+
+describe('getRectangleArea', () => {
+    it('return the area of a rectangle', () => {
+        // arrange
+        const getRectangleArea = funcs.getRectangleArea;
+
+        // act
+        const actual = getRectangleArea(3, 7);
+
+        // assert
+        expect(actual).toEqual(21)
+    })
+})
