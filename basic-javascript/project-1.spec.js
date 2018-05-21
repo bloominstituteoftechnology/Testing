@@ -137,3 +137,16 @@ describe('add', () => {
         expect(actual).toEqual(20);
     })
 })
+
+describe('subtract', () => {
+    it('the difference between two numbers', () => {
+        // arrange
+        const subtract = funcs.subtract;
+
+        // act 
+        const actual = subtract(10, 3);
+
+        // assert
+        expect(actual).toEqual(7)
+    })
+})
