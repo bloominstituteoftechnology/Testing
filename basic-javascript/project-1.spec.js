@@ -292,3 +292,21 @@ test('cube 3^3 = 27', ()=> {
     expect(result).toBe(shouldBe);
 });
 ////////////////////////////////////////////////////////
+
+// Test raiseToPower
+// 2^3 = 8
+test('raiseToPower 2^3 = 8', () => {
+    const shouldBe = Math.pow(2, 3);
+    const result = funcs.raiseToPower(2, 3);
+    expect(result).toBe(shouldBe);
+
+});
+
+// -2^2 = 8
+test('raiseToPower 2^3 = 8', () => {
+    const shouldBe = Math.pow(-2, 2);
+    const result = funcs.raiseToPower(-2, 2);
+    expect(result).toBe(shouldBe);
+
+});
+/////////////////////////////////////////////////////////
