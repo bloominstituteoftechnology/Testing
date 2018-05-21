@@ -99,4 +99,18 @@ describe('Project 1', () => {
             expect(actual).toBe(expected);
         });
     });
+
+    describe('subtract', () => {
+        it('should subtract two numbers', () => {
+            // arrange
+            const expected = -2;
+            const subtract = funcs.subtract;
+
+            // act
+            const actual = subtract(3, 5);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
 })
