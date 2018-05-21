@@ -45,6 +45,27 @@ test('subtractFive 0 - 5 = 15', ()=> {
 });
 /////////////////////////////////////////////////////////
 
+// Test areSameLength
+// test if strings are the same
+test('areSameLength: the and thy', ()=> {
+    const str1Length = 'the'.length;
+    const str2Length = 'thy'.length;
+    const areSameLength = funcs.areSameLength(str1Length, str2Length);
+
+    expect(areSameLength).toEqual(true);
+});
+
+// test if strings are not the same
+test('areSameLength: the and to', ()=> {
+    const str1Length = 'the';
+    const str2Length = 'to';
+    const areSameLength = funcs.areSameLength(str1Length, str2Length);
+
+    expect(areSameLength).toEqual(false)
+});
+/////////////////////////////////////////////////////////
+
+
 // Test add function
 // testing add two positive numbers
 test('add 1 + 2 to equal 3', () => {
