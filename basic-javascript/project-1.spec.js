@@ -122,3 +122,18 @@ describe('greaterThanFifty', () => {
         
     })
 })
+
+// add
+
+describe('add', () => {
+    it('should add two numbers', () => {
+        // arrange
+        const add = funcs.add;
+
+        // act
+        const actual = add(6, 14)
+
+        // assert
+        expect(actual).toEqual(20);
+    })
+})
