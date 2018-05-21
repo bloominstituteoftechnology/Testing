@@ -310,3 +310,28 @@ test('raiseToPower 2^3 = 8', () => {
 
 });
 /////////////////////////////////////////////////////////
+
+// Test roundNumber
+// test x = 255.7
+test('roundNumber', () => {
+    const shouldBe = Math.round(255.7);
+    const result = funcs.roundNumber(255.7);
+    expect(result).toBe(shouldBe);
+});
+
+// text x = 255.2
+test('roundNumber', () => {
+    const shouldBe = Math.round(255.2);
+    const result = funcs.roundNumber(255.2);
+    expect(result).toBe(shouldBe);
+});
+/////////////////////////////////////////////////////////
+
+// Test roundUp
+// x = 99.8
+test('roundUp', () => {
+    const shouldBe = Math.ceil(99.8);
+    const result = funcs.roundUp(99.8);
+    expect(result).toBe(shouldBe);
+});
+/////////////////////////////////////////////////////////
