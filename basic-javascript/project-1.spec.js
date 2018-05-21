@@ -242,4 +242,19 @@ describe('Project 1', () => {
             expect(actual2).toBe(5);            
         });
     });
+
+    describe('roundUp', () => {
+        it('should round up a number', () => {
+            // arrange
+            const roundUp = funcs.roundUp;
+
+            // act
+            const actual = roundUp(2.7);
+            const actual2 = roundUp(5.3);
+
+            // assert
+            expect(actual).toBe(3);
+            expect(actual2).toBe(6);
+        });
+    });
 })
