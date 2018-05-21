@@ -11,7 +11,13 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
     });
+    it('should return a mapped array', () => {
+      const expected = [4, 10, 12];
+      const map = arrayFunctions.map;
+      const actual = map([2, 5, 6], (x) => x * 2 );
+      expect(actual).toEqual(expected);
+    })
   });
 });
