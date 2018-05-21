@@ -257,3 +257,17 @@ describe('raiseToPower', () => {
         expect(actual).toEqual(4);
     })
 })
+
+// roundNumber
+describe('roundNumber', () => {
+    it('rounds the number', () => {
+        // arrange
+        const roundNumber = funcs.roundNumber;
+
+        // act 
+        const actual = roundNumber(16);
+
+        // assert
+        expect(actual).toEqual(20)
+    })
+})
