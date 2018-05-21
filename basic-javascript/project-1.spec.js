@@ -62,8 +62,13 @@ describe('areEqual', () => {
       // const areEqual = funcs.areEqual(x,y);
 
       // expect(areEqual).toEqual(true);
-      expect(funcs.areEqual(4,4)).toEqual(true);
+      expect(funcs.areEqual(4, 4)).toEqual(true);
     })
 }) 
 
+describe('lessThanNinety', () => {
+    it('should check if less than ninety', () => {
+    expect(funcs.lessThanNinety(80)).toEqual(true);
+})
+})
 
