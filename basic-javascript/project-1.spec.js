@@ -186,3 +186,14 @@ describe("roundNumber function", () => {
 		expect(roundNumber).toBe(expected);
 	});
 });
+
+describe("roundUp function", () => {
+	// arrange
+	const expected = 4;
+	// act
+	const roundUp = funcs.roundUp(3.3);
+	// assert
+	it("check if args roundUp correctly", () => {
+		expect(roundUp).toBe(expected);
+	});
+});
