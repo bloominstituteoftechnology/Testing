@@ -57,3 +57,11 @@ it('square', () => {
     expect(funcs.square(8, 8)).toBe(8 * 8)
 })
 
+it('cube', () => {
+    expect(funcs.cube(8, 8, 8)).toBe(8 * 8 * 8)
+})
+
+it('raiseToPower', () => {
+    expect(funcs.raiseToPower(8, 8)).toBe(8 ** 8)
+})
+
