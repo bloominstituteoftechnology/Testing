@@ -67,3 +67,10 @@ describe("fizzBuzz function", () => {
 		expect(buzz).toBe("buzz");
 	});
 });
+
+describe("isPrime function", () => {
+	it("checks if number is prime", () => {
+    const prime = funcs.isPrime(11);
+    expect(prime).toBeTruthy();
+	});
+});
