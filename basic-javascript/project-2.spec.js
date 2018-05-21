@@ -128,16 +128,30 @@ describe('Project 2', () => {
     });
 
     describe('returnFirst', () => {
-      it('should return the first element in an array', () => {
-        // arrange
-        const expected = 'hi';
-        const returnFirst = funcs.returnFirst;
+        it('should return the first element in an array', () => {
+            // arrange
+            const expected = 'hi';
+            const returnFirst = funcs.returnFirst;
 
-        // act
-        const actual = returnFirst(['hi', 0, 4, 5, 3, 3, 8]);
+            // act
+            const actual = returnFirst(['hi', 0, 4, 5, 3, 3, 8]);
 
-        // assert
-        expect(actual).toBe(expected);
-      });
+            // assert
+            expect(actual).toBe(expected);
+        });
+    });
+
+    describe('returnLast', () => {
+        it('should return the last element in an array', () => {
+            // arrange
+            const expected = 'bye';
+            const returnLast = funcs.returnLast;
+
+            // act
+            const actual = returnLast(['hi', 0, 4, 5, 3, 3, 8, 'bye']);
+
+            // assert
+            expect(actual).toBe(expected);
+        });
     });
 })
