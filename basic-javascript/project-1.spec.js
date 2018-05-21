@@ -131,3 +131,9 @@ describe('cube', () => {
         expect(funcs.cube(10)).toEqual(1000);
     })
 })
+
+describe('raiseToPower', () => {
+    it('should check num ** exponent', () => {
+        expect(funcs.raiseToPower(10, 2)).toEqual(100);
+    })
+})
