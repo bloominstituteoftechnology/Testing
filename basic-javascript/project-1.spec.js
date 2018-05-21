@@ -72,3 +72,8 @@ describe('lessThanNinety', () => {
 })
 })
 
+describe('greaterThanFifty', () => {
+    it('should check if greater than fifty', () => {
+    expect(funcs.greaterThanFifty(60)).toEqual(true);
+    })
+})
