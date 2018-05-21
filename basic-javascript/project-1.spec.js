@@ -179,3 +179,9 @@ describe ('getTriangleArea', () => {
         expect(funcs.getTriangleArea(3, 8)).toEqual(12);
     })
 })
+
+describe ('getCircleArea', () => {
+    it('should return Math.PI * radius * radius', () => {
+        expect(funcs.getCircleArea(5)).toEqual(78.53981633974483);
+    })
+})
