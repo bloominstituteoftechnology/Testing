@@ -226,18 +226,27 @@ describe('check if the area of rectangle was returned',()=>{
     })
 })
 describe('check if the area of triangle was returned',()=>{
-    it('should get the are of a triangle',()=>{
+    it('should get the area of a triangle',()=>{
         const triangle = funcs.getTriangleArea
         const tri = triangle(3,5)
         expect(tri).toBe(7.5)
     })
 })
-describe('',()=>{
-    it('',()=>{
-        const combine = funcs.combineNames
-        const oneString = combine()
-        expect(oneString).toBe()
+
+describe('check if area of circle was returned',()=>{
+    it('should get the area of a circle',()=>{
+        const circle = funcs.getCircleArea
+        let cir = circle(3)
+        cir = Math.round(cir)
+        expect(cir).toEqual(28)
     })
 })
-
+describe('check if  rectangular prism volume was returned',()=>{
+    it('thakes width height and length and returned the volumn',()=>{
+        const volume = funcs.getRectangularPrismVolume
+        let vol = volume(2,5,4)
+        vol = Math.round(vol)
+        expect(vol).toEqual(40)
+    })
+})
 
