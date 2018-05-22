@@ -1,4 +1,4 @@
-const arrayFunctions = require('../src/arrays');
+const arrayFunctions = require('./arrays');
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
