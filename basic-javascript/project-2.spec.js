@@ -129,7 +129,7 @@ describe('function: wordsToSentence', () => {
     const expected = 'arr';
     const wordsToSentence = funcs.wordsToSentence;
     const actual = Array.isArray(arr);
-    expect(actual).toBe(expect.any(Array));
+    expect(actual).toBe(true);
   });
 });
 
