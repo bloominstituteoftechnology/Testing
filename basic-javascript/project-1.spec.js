@@ -7,9 +7,15 @@ describe('project-1 tests', () => {
 		expect(twenty).toBe(20);
 	});
 	it('should subtract five', () => {
-		const six = funcs.subtractFive(11);
+		const minus5 = funcs.subtractFive;
 
-		expect(six).toBe(6);
+		const three = funcs.subtractFive(3);
+		const five = funcs.subtractFive(5);
+		const ten = funcs.subtractFive(10);
+
+		expect(three).toBe(-2);
+		expect(five).toBe(0);
+		expect(ten).toBe(5);
 	});
 	it('areSameLength', () => {
 		const sameLength = funcs.areSameLength('str1', 'str2');
