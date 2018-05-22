@@ -97,27 +97,40 @@ describe("Arrays:", () => {
     });
   });
 
-  describe.skip("filter", () => {
-    const array = ["a", "b", "c"];
-    const array1 = [1, 2, 3, 4];
+  describe("filter", () => {
+    const array = [
+      "spray",
+      "limit",
+      "elite",
+      "exuberant",
+      "destruction",
+      "present"
+    ];
+    const array1 = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4];
     const array2 = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4];
 
-    const mockCallback = jest.fn(k => k == "a");
+    const mockCallback = jest.fn(word => word.length > 6);
     const mockCallback1 = jest.fn(k => k > 2);
     const mockCallback2 = jest.fn(k => k == "a");
 
     const test = filter(array, mockCallback);
-    // const test1 = filter(array1, mockCallback1);
-    // const test2 = filter(array2, mockCallback2);
+    const test1 = filter(array1, mockCallback1);
+    const test2 = filter(array2, mockCallback2);
 
     it("should be a function", () => {
-      expect(typeof find).toBe("function");
+      expect(typeof filter).toBe("function");
+    });
+
+    it("should return an array", () => {
+      expect(Array.isArray(test)).toBe(true);
+      expect(Array.isArray(test1)).toBe(true);
+      expect(Array.isArray(test2)).toBe(true);
     });
 
     it("should find item of interest", () => {
-      expect(test).toBe("a");
-      // expect(test1).toBe();
-      // expect(test2).toBe("a");
+      expect(test).toEqual(["exuberant", "destruction", "present"]);
+      expect(test1).toEqual([3, 4, 3, 4, 3, 4]);
+      expect(test2).toEqual([]);
     });
   });
 
