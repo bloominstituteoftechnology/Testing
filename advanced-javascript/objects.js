@@ -15,16 +15,17 @@ const values = (obj) => {
 
 const mapObject = (obj, cb) => {
   Object.keys(obj).forEach((key) => (obj[key] = cb(obj[key])));
+  // 'jef', 'hilal'           'jef'   obj['jef'] = jesrsey 
   return obj;
 };
 
 const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
 
 const invert = (obj) => {
-  Object.keys(obj).forEach((key) => {
-    const newKey = obj[key];
-    obj[newKey] = key;
-    delete obj[key];
+  Object.keys(obj).forEach((key) => { // 'jef' 
+    const newKey = obj[key];   // newKey = 'jersey'
+    obj[newKey] = key; // obj['jersey'] = 'jef'
+    delete obj[key]; // obj['jef'] = 'jersery'
   });
   return obj;
 };
