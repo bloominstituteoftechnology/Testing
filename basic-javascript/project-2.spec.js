@@ -172,7 +172,7 @@ describe('returnLast', () => {
 })
 
 describe('getArrayLength', () => {
-    it('returns the last element in an array', () => {
+    it('returns the amount of elements in an array', () => {
 
         // arrange
         const getArrayLength = funcs.getArrayLength;
@@ -187,7 +187,7 @@ describe('getArrayLength', () => {
 })
 
 describe('incrementByOne', () => {
-    it('returns the last element in an array', () => {
+    it('increment the elements in an array by 1', () => {
 
         // arrange
         const incrementByOne = funcs.incrementByOne;
@@ -202,7 +202,7 @@ describe('incrementByOne', () => {
 })
 
 describe('addItemToArray', () => {
-    it('returns the last element in an array', () => {
+    it('add item to the end of an array', () => {
 
         // arrange
         const addItemToArray = funcs.addItemToArray;
@@ -218,7 +218,7 @@ describe('addItemToArray', () => {
 })
 
 describe('addItemToFront', () => {
-    it('returns the last element in an array', () => {
+    it('add an element to the front of an array', () => {
 
         // arrange
         const addItemToFront = funcs.addItemToFront;
@@ -230,6 +230,21 @@ describe('addItemToFront', () => {
 
         // assert
         expect(actual).toEqual([4,1, 2, 3]);
+    })
+})
+
+describe('wordsToSentence', () => {
+    it('combines the elements in an array to a sentence', () => {
+
+        // arrange
+        const wordsToSentence = funcs.wordsToSentence;
+        const words = ['yellow', 'tiger'];
+
+        // act
+        const actual = wordsToSentence(words);
+
+        // assert
+        expect(actual).toBe('yellow tiger');
     })
 })
 
