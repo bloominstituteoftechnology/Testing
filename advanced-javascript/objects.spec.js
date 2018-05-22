@@ -33,4 +33,19 @@ describe('objects', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('mapObject', () => {
+    it('should be an function', () => {
+      const mapObject = objectFunctions.mapObject;
+      expect(typeof mapObject).toBe('function');
+    });
+
+    it('should return a map object based on the callback', () => {
+      const expected = { a: 2, b: 8, c: 16};
+      const mapObject = objectFunctions.mapObject;
+      const actual = mapObject({ a: 1, b: 4, c: 8 }, value => value * 2);
+      expect(typeof actual).toBe('object');
+      expect(actual).toEqual(expected);
+    });
+  });
 })
