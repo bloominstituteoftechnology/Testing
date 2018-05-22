@@ -279,6 +279,23 @@ describe('addNumbers', () => {
     })
 })
 
+describe('averageTestScore', () => {
+    it('adds the numbers to produce a sum', () => {
+
+        // arrange
+        const averageTestScore = funcs.averageTestScore;
+        const expected = [42, 20, 18, 30]
+
+        // act
+        const actual = averageTestScore(expected);
+
+        // assert
+        expect(actual).toEqual(27.5);
+    })
+})
+
+
+
 
 
 
