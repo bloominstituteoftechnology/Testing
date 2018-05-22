@@ -3,24 +3,24 @@
 
 /* eslint-disable no-unused-vars, arrow-body-style, arrow-parens */
 
-const keys = (obj) => {
+const keys = (obj) => {   //PASSED
   return Object.keys(obj);
 };
 
-const values = (obj) => {
+const values = (obj) => {   //PASSED
   return Object.keys(obj).map((key) => {
     return obj[key];
   });
 };
 
-const mapObject = (obj, cb) => {
+const mapObject = (obj, cb) => {  //PASSED
   Object.keys(obj).forEach((key) => (obj[key] = cb(obj[key])));
   return obj;
 };
 
-const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
+const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);  //PASSED
 
-const invert = (obj) => {
+const invert = (obj) => { //PASSED
   Object.keys(obj).forEach((key) => {
     const newKey = obj[key];
     obj[newKey] = key;
@@ -29,7 +29,7 @@ const invert = (obj) => {
   return obj;
 };
 
-const defaults = (obj, defaultProps) => {
+const defaults = (obj, defaultProps) => { //PASSED
   Object.keys(defaultProps).forEach((key) => {
     if (Object.prototype.hasOwnProperty.call(obj, key)) return;
     obj[key] = defaultProps[key];
