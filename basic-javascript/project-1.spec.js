@@ -385,3 +385,10 @@ test('getCircleArea', () => {
     expect(area).toBe(78.54);
 });
 ////////////////////////////////////////////////////////////////
+
+// Test getRectangularPrismVolume
+test('getRectangularPrismVolume', () => {
+    const volume = funcs.getRectangularPrismVolume(3,3,3);
+    expect(volume).toBe(27);
+});
+////////////////////////////////////////////////////////////////
