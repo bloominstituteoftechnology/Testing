@@ -73,12 +73,37 @@ describe('isTenOrFive', () => {
     it('checks if number is 10 or a 5', () => {
         // arrange
         const isTenOrFive = funcs.isTenOrFive;
-        const expected = true;
 
         // act
         const actual = isTenOrFive(5)
 
         // assert 
-        expect(actual).toBe(expected)
+        expect(actual).toBeTruthy()
+    })
+})
+
+describe('isInRange', () => {
+    it('check if num is between 20 and 50', () => {
+        // arrange
+        const isInRange = funcs.isInRange;
+
+        // act
+        const actual = isInRange(30);
+        
+        // assert
+        expect(actual).toBeTruthy();
+    })
+})
+
+describe('isInteger', () => {
+    it('checks if it is number', () => {
+        // arrange
+        const isInteger = funcs.isInteger;
+
+        // act
+        const actual = isInteger(20);
+
+        // assert
+        expect(actual).toBeTruthy();
     })
 })
