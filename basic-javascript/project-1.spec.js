@@ -197,3 +197,91 @@ describe('square function', () => {
         expect(actual).toBe(4);
     });
 });
+
+describe('cube function', () => {
+    it('should return num*num*num', () => {
+        const cube = funcs.cube;
+        const actual = cube(3, 3, 3);
+        expect(actual).toBe(27);
+    });
+});
+
+describe('raise to the power function', () => {
+    it('should return num^exponent', () => {
+        const raiseToPower = funcs.raiseToPower;
+        const actual = raiseToPower(4, 2);
+        expect(actual).toBe(16);
+    });
+});
+
+describe('round number function', () => {
+    it('should round num to nearest whole number', () => {
+        const roundNumber = funcs.roundNumber;
+        const actual = roundNumber(3.4);
+        expect(actual).toBe(3);
+    });
+});
+
+describe('round up function', () => {
+    it('should round num to the next largest whole number', () => {
+        const roundUp = funcs.roundUp;
+        const actual = roundUp(4.2);
+        expect(actual).toBe(5);
+    });
+});
+
+describe('add exclamation point function', () => {
+    it('should return a string with an exclamation point on the end', () => {
+        const addExclamationPoint = funcs.addExclamationPoint;
+        const actual = addExclamationPoint('hello world');
+        expect(actual).toBe('hello world!');
+    });
+});
+
+describe('combine names function', () => {
+    it('should return first and last names added together', () => {
+        const combineNames = funcs.combineNames;
+        const actual = combineNames('Harry', 'Potter');
+        expect(actual).toBe('Harry Potter');
+    });
+});
+
+describe('get greeting function', () => {
+    it('should return greeting', () => {
+        const getGreeting = funcs.getGreeting;
+        const actual = getGreeting('Iron Man');
+        expect(actual).toBe('Hello Iron Man!');
+    });
+});
+
+describe('get rectangle area function', () => {
+    it('should return length * width', () => {
+        const getRectangleArea = funcs.getRectangleArea;
+        const actual = getRectangleArea(3, 4);
+        expect(actual).toBe(12);
+    });
+});
+
+describe('get triangle area function', () => {
+    it('should return .5 * base * height', () => {
+        const getTriangleArea = funcs.getTriangleArea;
+        const actual = getTriangleArea(3, 4);
+        expect(actual).toBe(6);
+    });
+});
+
+describe('get circle area function', () => {
+    it('should return circle area', () => {
+        const getCircleArea = funcs.getCircleArea;
+        const actual = getCircleArea(3, 3);
+        expect(actual).toBe(28.274333882308138);
+    });
+});
+
+describe('get rectangular prism volume function', () => {
+    it('should return width * height * length', () => {
+        const getRectangularPrismVolume = funcs.getRectangularPrismVolume;
+        const actual = getRectangularPrismVolume(3, 4, 6);
+        expect(actual).toBe(72);
+    })
+})
