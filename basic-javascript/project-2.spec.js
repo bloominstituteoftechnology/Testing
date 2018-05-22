@@ -147,3 +147,13 @@ describe("addNumbers function", () => {
         expect(result).toBe(expected);
     });
 });
+
+describe("averageTestScore function", () => {
+    const array = [1, 2, 3, 4, 5];
+    const sum = array.reduce((accum, current) => accum + current);
+    const expected = funcs.averageTestScore(array);
+    const average = sum / array.length;
+    it("takes the average of all test scores", () => {
+        expect(average).toBe(expected);
+    });
+});
