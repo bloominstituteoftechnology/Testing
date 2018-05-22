@@ -124,17 +124,26 @@ describe("wordsToSentence function", () => {
     const passedArray = funcs.wordsToSentence(array);
 
     it("check if wordsToSentence", () => {
-        expect(passedArray).toContain(array.join(' '));
+        expect(passedArray).toContain(array.join(" "));
     });
     it("checks if result is string", () => {
         expect(typeof passedArray).toEqual("string");
     });
 });
 
-// describe("contains function", () => {
-//     const array = ["Hi", "how", "are", "you"];
+describe("contains function", () => {
+    const array = ["Hi", "how", "are", "you"];
+    const result = funcs.contains(array, "Hi");
+    it("check if array contains item", () => {
+        expect(result).toBeTruthy();
+    });
+});
 
-//     it("check if array contains item", () => {
-//         expect(array).toBeTruthy();
-//     });
-// });
+describe("addNumbers function", () => {
+    const array = [1, 2, 3, 4, 5];
+    const result = array.reduce((accum, current) => accum + current);
+    const expected = funcs.addNumbers(array);
+    it("adds all numbers in an array", () => {
+        expect(result).toBe(expected);
+    });
+});

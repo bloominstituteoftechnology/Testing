@@ -200,9 +200,9 @@ describe("roundUp function", () => {
 
 describe("addExclamationPoint function", () => {
 	// arrange
-	const expected = 'string!';
+	const expected = "string!";
 	// act
-	const addExclamationPoint = funcs.addExclamationPoint('string');
+	const addExclamationPoint = funcs.addExclamationPoint("string");
 	// assert
 	it("adds exclamation point", () => {
 		expect(addExclamationPoint).toBe(expected);
@@ -211,9 +211,9 @@ describe("addExclamationPoint function", () => {
 
 describe("combineNames function", () => {
 	// arrange
-	const expected = 'firstName lastName';
+	const expected = "firstName lastName";
 	// act
-	const combineNames = funcs.combineNames('firstName', 'lastName');
+	const combineNames = funcs.combineNames("firstName", "lastName");
 	// assert
 	it("combines names", () => {
 		expect(combineNames).toBe(expected);
@@ -222,9 +222,9 @@ describe("combineNames function", () => {
 
 describe("getGreeting function", () => {
 	// arrange
-	const expected = 'Hello name!';
+	const expected = "Hello name!";
 	// act
-	const getGreeting = funcs.getGreeting('name');
+	const getGreeting = funcs.getGreeting("name");
 	// assert
 	it("returns a greeting", () => {
 		expect(getGreeting).toBe(expected);

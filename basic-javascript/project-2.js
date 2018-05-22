@@ -11,12 +11,12 @@ const getBiggest = (x, y) => {
 
 const greeting = language => {
   switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
+    case "German":
+      return "Guten Tag!";
+    case "Spanish":
+      return "Hola!";
     default:
-      return 'Hello!';
+      return "Hello!";
   }
 };
 
@@ -43,11 +43,11 @@ const isInteger = num => {
 
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return "fizzbuzz";
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return "buzz";
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return "fizz";
   }
   return num;
 };
@@ -97,7 +97,7 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
+  let newSentence = "";
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
