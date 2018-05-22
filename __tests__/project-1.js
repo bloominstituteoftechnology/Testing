@@ -140,8 +140,8 @@ it('multiply', () => {
     const test3 = multiply(1, -2);
     //assert
     expect(test1).toBe(1000);
-    expect(test2).toBeCloseTo(1);
-    expect(test3).toBeCloseTo(.5);
+    expect(test2).toBeCloseTo(.01);
+    expect(test3).toBe(-2);
 });
 
 //-----------------------------------------------------------------------------------
@@ -150,25 +150,202 @@ it('getRemainder', () => {
     const getRemainder = p1functions.getRemainder;
     //actual
     const test1 = getRemainder(100,10);
-    const test3 = getRemainder(80, 10);
+    const test2 = getRemainder(80, 10);
     //assert
     expect(test1).toBe(0);
-    expect(test3).toBeCloseTo(0);
+    expect(test2).toBeCloseTo(0);
 });
 
+//-----------------------------------------------------------------------------------
+it('isEven', () => {
+    //arrange
+    const isEven = p1functions.isEven;
+    //actual
+    const test1 = isEven(2);
+    const test2 = isEven(1);
 
+    //assert
+    expect(test1).toBe(true);
+    expect(test2).toBe(false);
+});
 
-//   isEven,
-//   isOdd,
-//   square,
-//   cube,
-//   raiseToPower,
-//   roundNumber,
-//   roundUp,
-//   addExclamationPoint,
-//   combineNames,
-//   getGreeting,
-//   getRectangleArea,
-//   getTriangleArea,
-//   getCircleArea,
-//   getRectangularPrismVolume
+//-----------------------------------------------------------------------------------
+it('isOdd', () => {
+    //arrange
+    const isOdd = p1functions.isOdd;
+    //actual
+    const test1 = isOdd(1);
+    const test2 = isOdd(.1);
+    const test3 = isOdd(2);
+    //assert
+    expect(test1).toBe(true);
+    expect(test2).toBe(true);
+    expect(test3).toBe(false);
+});
+
+//-----------------------------------------------------------------------------------
+it('square', () => {
+    //arrange
+    const square = p1functions.square;
+    //actual
+    const test1 = square(100);
+    const test2 = square(.1);
+    const test3 = square(-1);
+    //assert
+    expect(test1).toBe(10000);
+    expect(test2).toBeCloseTo(.01);
+    expect(test3).toBe(1);
+});
+
+//-----------------------------------------------------------------------------------
+it('cube', () => {
+    //arrange
+    const cube = p1functions.cube;
+    //actual
+    const test1 = cube(-1);
+    const test2 = cube(.2);
+    const test3 = cube(10);
+    //assert
+    expect(test1).toBe(-1);
+    expect(test2).toBeCloseTo(.008);
+    expect(test3).toBe(1000);
+});
+
+//-----------------------------------------------------------------------------------
+it('raiseToPower', () => {
+    //arrange
+    const raiseToPower = p1functions.raiseToPower;
+    //actual
+    const test1 = raiseToPower(10,2);
+    const test2 = raiseToPower(.1,2);
+    const test3 = raiseToPower(2,-.1);
+    //assert
+    expect(test1).toBe(100);
+    expect(test2).toBeCloseTo(.01);
+    expect(test3).toBeCloseTo(0.933);
+});
+
+//-----------------------------------------------------------------------------------
+it('roundNumber', () => {
+    //arrange
+    const roundNumber = p1functions.roundNumber;
+    //actual
+    const test1 = roundNumber(1.5);
+    const test2 = roundNumber(-1.5); //weird that this rounds to -1
+    const test3 = roundNumber(1.1);
+    //assert
+    expect(test1).toBe(2);
+    expect(test2).toBe(-1);
+    expect(test3).toBe(1);
+});
+
+//-----------------------------------------------------------------------------------
+it('roundUp', () => {
+    //arrange
+    const roundUp = p1functions.roundUp;
+    //actual
+    const test1 = roundUp(55.5);
+    const test2 = roundUp(1.01);
+    const test3 = roundUp(1.4);
+    //assert
+    expect(test1).toBe(56);
+    expect(test2).toBe(2);
+    expect(test3).toBe(2);
+});
+
+//-----------------------------------------------------------------------------------
+it('addExclamationPoint', () => {
+    //arrange
+    const addExclamationPoint = p1functions.addExclamationPoint;
+    //actual
+    const test1 = addExclamationPoint('wow');
+    const test2 = addExclamationPoint('meow!');
+    const test3 = addExclamationPoint('lame...');
+    //assert
+    expect(test1).toBe('wow!');
+    expect(test2).toBe('meow!!');
+    expect(test3).toBe('lame...!');
+});
+
+//-----------------------------------------------------------------------------------
+it('combineNames', () => {
+    //arrange
+    const combineNames = p1functions.combineNames;
+    //actual
+    const test1 = combineNames('Nalee', 'Riddell');
+    const test2 = combineNames('Mike','Money');
+    const test3 = combineNames('Tim', 'Timerton');
+    //assert
+    expect(test1).toBe('Nalee Riddell');
+    expect(test2).toBe('Mike Money');
+    expect(test3).toBe('Tim Timerton');
+});
+
+//-----------------------------------------------------------------------------------
+it('getGreeting', () => {
+    //arrange
+    const getGreeting = p1functions.getGreeting;
+    //actual
+    const test1 = getGreeting('Ndawg');
+    const test2 = getGreeting('TorCoolGuy');
+    const test3 = getGreeting('well');
+    //assert
+    expect(test1).toBe('Hello Ndawg!');
+    expect(test2).toBe('Hello TorCoolGuy!');
+    expect(test3).toBe('Hello well!');
+});
+
+//-----------------------------------------------------------------------------------
+it('getRectangleArea', () => {
+    //arrange
+    const getRectangleArea = p1functions.getRectangleArea;
+    //actual
+    const test1 = getRectangleArea(10,10);
+    const test2 = getRectangleArea(.1,.1);
+    const test3 = getRectangleArea(1, 20000);
+    //assert
+    expect(test1).toBe(100);
+    expect(test2).toBeCloseTo(.01);
+    expect(test3).toBe(20000);
+});
+
+//-----------------------------------------------------------------------------------
+it('getTriangleArea', () => {
+    //arrange
+    const getTriangleArea = p1functions.getTriangleArea;
+    //actual
+    const test1 = getTriangleArea(1,1);
+    const test2 = getTriangleArea(.1,1);
+    const test3 = getTriangleArea(100,25);
+    //assert
+    expect(test1).toBeCloseTo(.5);
+    expect(test2).toBeCloseTo(.05);
+    expect(test3).toBe(1250);
+});
+
+//-----------------------------------------------------------------------------------
+it('getCircleArea', () => {
+    //arrange
+    const getCircleArea = p1functions.getCircleArea;
+    //actual
+    const test1 = getCircleArea(10);
+    const test2 = getCircleArea(.1);
+    const test3 = getCircleArea(.001);
+    //assert
+    const pi = Math.PI;
+    expect(test1).toBeCloseTo(100*pi);
+    expect(test2).toBeCloseTo(.01*pi);
+    expect(test3).toBeCloseTo(.00001*pi);
+});
+
+//-----------------------------------------------------------------------------------
+it('getRectangularPrismVolume', () => {
+    //arrange
+    const getRectangularPrismVolume = p1functions.getRectangularPrismVolume;
+    //actual
+    const test1 = getRectangularPrismVolume(1,2,3);
+    const test2 = getRectangularPrismVolume(.1,.1,.1);
+    //assert
+    expect(test1).toBe(6);
+    expect(test2).toBeCloseTo(.001);
+});
