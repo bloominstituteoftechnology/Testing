@@ -101,6 +101,36 @@ test('isInteger "5" ', () => {
     expect(result).toBe(false)
 });
 /////////////////////////////////////////////////
+
+// Test fizzBuzz
+// number 15
+test('fizzBuzz 15', () => {
+    const number = 15;
+    const result = funcs.fizzBuzz(number);
+    expect(result).toBe('fizzbuzz');
+});
+
+// number 3
+test('fizzBuzz 3', () => {
+    const number = 3;
+    const result = funcs.fizzBuzz(number);
+    expect(result).toBe('fizz');
+});
+
+// number 7
+test('fizzBuzz 7', () => {
+    const number = 7;
+    const result = funcs.fizzBuzz(number);
+    expect(result).toBe(7);
+});
+
+// number 5
+test('fizzBuzz 5', () => {
+    const number = 5;
+    const result = funcs.fizzBuzz(number);
+    expect(result).toBe('buzz');
+});
+/////////////////////////////////////////////////
 // Test add item to array
 test('Add Item to Array', () => {
     const arr = [5,9,1];
