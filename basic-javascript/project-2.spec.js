@@ -217,5 +217,23 @@ describe('addItemToArray', () => {
     })
 })
 
+describe('addItemToFront', () => {
+    it('returns the last element in an array', () => {
+
+        // arrange
+        const addItemToFront = funcs.addItemToFront;
+        const expected = [1, 2, 3];
+        const item = 4;
+
+        // act
+        const actual = addItemToFront(expected, item);
+
+        // assert
+        expect(actual).toEqual([4,1, 2, 3]);
+    })
+})
+
+
+
 
 
