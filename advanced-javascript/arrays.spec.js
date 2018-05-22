@@ -65,4 +65,18 @@ describe('Arrays', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('filter', () => {
+    it('should be a function', () => {
+      const filter = arrayFunctions.filter;
+      expect(typeof filter).toBe('function');
+    });
+    it('should filter elements in an array', () => {
+      const expected = [6];
+      const filter = arrayFunctions.filter;
+      const actual = filter([2, 5, 6], num => num === 6);
+      expect(Array.isArray(actual)).toBeTruthy();
+      expect(actual).toEqual(expected);
+    });
+  });
 });
