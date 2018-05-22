@@ -35,4 +35,11 @@ describe("project-2 tests", () => {
     expect(fiftyfive).toBe(false);
     expect(thirty).toBe(true);
   });
+  it("should return true only if the argument is an integer", () => {
+    const ten = funcs.isInteger(10);
+    const letter = funcs.isInteger("a");
+
+    expect(ten).toBe(true);
+    expect(letter).toBe(false);
+  });
 });
