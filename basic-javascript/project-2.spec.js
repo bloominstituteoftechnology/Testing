@@ -62,6 +62,22 @@ test('isTenOrFive 10', () => {
     expect(result).toBe(true);
 });
 /////////////////////////////////////////////////
+
+// Test isInRange
+// number 25
+test('isInRange number is 25', () => {
+
+    const result = funcs.isInRange(25);
+    expect(result).toBe(true);
+});
+
+// number 51
+test('isInRange number is 51', () => {
+
+    const result = funcs.isInRange(51);
+    expect(result).toBe(true);
+});
+/////////////////////////////////////////////////
 // Test add item to array
 test('Add Item to Array', () => {
     const arr = [5,9,1];
