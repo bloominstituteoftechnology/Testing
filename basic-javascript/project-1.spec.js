@@ -1,4 +1,6 @@
 const funcs = require('./project-1');
+const num = 13;
+const altNum = 21;
 //notes to c&p for understanding
 // arrange
 
@@ -16,22 +18,35 @@ const funcs = require('./project-1');
 it('Runs the tests', () => {});
 
 describe('Function: multiplyByTen', () => {
+  const numbers = num;
   it('Multiplies by 10', () => {
     // arrange
-    const expected = 100;
+    const expected = 130;
+    const alt = 210;
     const multiplyByTen = funcs.multiplyByTen;
     // act
-    const actual = multiplyByTen(10, 10);
+    const actual = multiplyByTen(num);
+    const actualAlt = multiplyByTen(altNum)
     // assert
     expect(actual).toBe(expected);
   });
+  it('Checks identity', () => {
+    
+    const actual = numbers;
+    expect(numbers).toBe(actual)
+  }) 
+  it('checks that it is a string', () => {
+    expect(typeof 'num').toBe('string')
+  })
 });
 
 describe('Function: subtractFive', () => {
   it('Should subtract five from num', () => {
     const expected = 42;
+    const alt = 29;
     const subtractFive = funcs.subtractFive;
     const actual = subtractFive(47);
+    const actualAlt = subtractFive(34)
     expect(actual).toBe(expected);
   });
 });
