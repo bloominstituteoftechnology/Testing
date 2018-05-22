@@ -43,4 +43,18 @@ describe('Arrays', () => {
       expect(reduce).toBe(6);
     });
   });
+
+  describe('find', () => {
+    //Checks if function is type of function        
+    isFunction(arrayFunctions.find);
+
+    const elements = [1, 2, 3];
+    const cb = (elements) => {
+      return elements < 2;
+    };
+    const find = arrayFunctions.find(elements, cb);
+    it('Should rerturn expected outcome', () => {
+      expect(find).toBe(1);
+    });
+  });
 });
