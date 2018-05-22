@@ -22,3 +22,21 @@ describe('mapObject', () => {
     expect(objectFunctions.mapObject([1, 2], (x) => x + 1)).toEqual([2, 3])
   })
 })
+
+describe('pairs', () => {
+  it('return object pairs in array', () => {
+    expect(objectFunctions.pairs({ 1: 2, 3: 4 })).toEqual([["1", 2], ["3", 4]])
+  })
+})
+
+describe('invert', () => {
+  it('return inversion of key and values', () => {
+    expect(objectFunctions.invert({ a: 'b', c: 'd' })).toEqual({ b: 'a', d: 'c' })
+  })
+})
+
+describe('defaults', () => {
+  it('return copy of values missing from defaultProps object', () => {
+    expect(objectFunctions.defaults({ 1: 2 }, { 1: 3, 2: 4 })).toEqual({ 1: 2, 2: 4 })
+  })
+})
