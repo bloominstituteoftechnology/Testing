@@ -186,4 +186,20 @@ describe('getArrayLength', () => {
     })
 })
 
+describe('incrementByOne', () => {
+    it('returns the last element in an array', () => {
+
+        // arrange
+        const incrementByOne = funcs.incrementByOne;
+        const expected = [1, 2, 3]
+
+        // act
+        const actual = incrementByOne(expected);
+
+        // assert
+        expect(actual).toEqual([2, 3, 4]);
+    })
+})
+
+
 
