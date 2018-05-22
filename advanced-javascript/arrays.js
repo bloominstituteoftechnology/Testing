@@ -30,11 +30,11 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
+  each(elements, item => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
-};
+ };
 
 const flatten = (elements) => {
   const flattenedArr = reduce(
