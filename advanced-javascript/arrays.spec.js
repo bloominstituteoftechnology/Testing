@@ -10,8 +10,32 @@ const arrayFunctions = require('./arrays');
 describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
+      const map = arrayFunctions.map([1, 2], () => {});
       expect(typeof map).toBe('object');
+    });
+  });
+  describe('reduce', () => {
+    it('should be a function', () => {
+      const reduce = arrayFunctions.reduce([1, 2], (a, b) => a + b);
+      expect(typeof reduce).toBe('number');
+    });
+  });
+  describe('find', () => {
+    it('should be a function', () => {
+      const find = arrayFunctions.find([1, 2], x => x === 1);
+      expect(find).toBe(1);
+    });
+  });
+  describe('filter', () => {
+    it('should be a function', () => {
+      const filter = arrayFunctions.filter([1, 2], x => x > 1);
+      expect(typeof filter).toBe('object');
+    });
+  });
+  describe('flatten', () => {
+    it('should be a function', () => {
+      const flatten = arrayFunctions.flatten([1, 2]);
+      expect(typeof flatten).toBe('object');
     });
   });
 });
