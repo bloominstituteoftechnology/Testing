@@ -248,6 +248,22 @@ describe('wordsToSentence', () => {
     })
 })
 
+describe('contains', () => {
+    it('checks if the item exist in the array', () => {
+
+        // arrange
+        const contains = funcs.contains;
+        const expected = ['zebra', 'hippo', 'tiger'];
+        const item = 'hippo';
+
+        // act
+        const actual = contains(expected, item);
+
+        // assert
+        expect(actual).toBeTruthy();
+    })
+})
+
 
 
 
