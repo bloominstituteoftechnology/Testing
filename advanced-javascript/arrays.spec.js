@@ -49,4 +49,20 @@ describe('Arrays', () => {
       expect(actual).toEqual(expected);
     })
   });
+
+  describe('find', () => {
+    it('should be a function', () => {
+      const find = arrayFunctions.find;
+      expect(typeof find).toBe('function');
+    });
+    it('should find a value in an array', () => {
+      const expected = 6;
+      const find = arrayFunctions.find;
+      const actual = find([2, 5, 6], (num) => num === 6);
+      const actual2 = find([2, 5, 6], num => num === 9);
+      expect(typeof actual).toBe('number');
+      expect(typeof actual2).toBe('undefined');
+      expect(actual).toEqual(expected);
+    });
+  });
 });
