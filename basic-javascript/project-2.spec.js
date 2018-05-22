@@ -36,6 +36,32 @@ test('Other', () => {
     expect(result).toBe('Hello!');
 });
 /////////////////////////////////////////////////
+
+// Test isTenOrFive
+// number = 5
+test('isTenOrFive 5', () => {
+
+    const number = 5;
+    const result = funcs.isTenOrFive(number);
+    expect(result).toBe(true);
+});
+
+// number = -5
+test('isTenOrFive -5', () => {
+
+    const number = -5;
+    const result = funcs.isTenOrFive(number);
+    expect(result).toBe(false);
+});
+
+// number = 10
+test('isTenOrFive 10', () => {
+
+    const number = 10;
+    const result = funcs.isTenOrFive(number);
+    expect(result).toBe(true);
+});
+/////////////////////////////////////////////////
 // Test add item to array
 test('Add Item to Array', () => {
     const arr = [5,9,1];
