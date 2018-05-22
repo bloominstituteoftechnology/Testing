@@ -7,39 +7,37 @@ const obj1 = {
   key3: 3
 };
 
-describe('obj', () => {
   // keys
-  it('has keys', () => {
+describe('keys', () => {
     const objKeys = objectFunctions.keys(obj1);
     expect(objKeys).toEqual(["key1", "key2", "key3"]);
   });
 
   // values
-  it('has values', () => {
+describe('values', () => {
     const objValues = objectFunctions.values(obj1);
     expect(objValues).toEqual([1, 2, 3]);
   });
 
   // mapObject
-  it('mapObject', () => {
+describe('mapObject', () => {
     const cb1 = (n) => {
       let m = n + 5;
       return m;
-    }
+    };
     const objMapObject = objectFunctions.mapObject(obj1, cb1)
     expect(objMapObject).toEqual({ "key1": 6, "key2": 7, "key3": 8 });
   });
-});
 
 // pairs
 describe('pairs', () => {
-  const objPairs = objectFunctions.pairs(obj);
+  const objPairs = objectFunctions.pairs(obj1);
   expect(objPairs).toEqual([["key1", 1], ["key2", 2], ["key3", 3]]);
 });
 
 // invert
 describe('invert', () => {
-  const objInvert = objectFunctions.invert(obj);
+  const objInvert = objectFunctions.invert(obj1);
   expect(objInvert).toEqual({ 1: "key1", 2: "key2", 3: "key3" });
 });
 
@@ -51,6 +49,6 @@ describe('invert', () => {
     key3: "value3"
   };
 
-  const objDefaults = objectFunctions.defaults(obj4, defaultProps);
+  const objDefaults = objectFunctions.defaults(obj1, defaultProps);
   expect(objDefaults).toEqual();
 });
