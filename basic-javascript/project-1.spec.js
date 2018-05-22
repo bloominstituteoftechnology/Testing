@@ -354,3 +354,19 @@ test('combineNames Joe Green', () => {
     expect(result).toBe(fullName);
 });
 ////////////////////////////////////////////////////////////
+
+// Test getGreeting
+test('getGreeting Buster', () => {
+    const name = 'Buster';
+    const shouldBe = `Hello ${name}!`;
+    const result = funcs.getGreeting(name);
+    expect(result).toBe(shouldBe)
+});
+////////////////////////////////////////////////////////////
+
+// Test getRectangleArea
+test('getRectangleArea', ()=> {
+    const area = funcs.getRectangleArea(5, 5);
+    expect(area).toBe(25);
+});
+/////////////////////////////////////////////////////////////
