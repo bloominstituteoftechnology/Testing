@@ -29,6 +29,25 @@ describe('Arrays', () => {
     });
   });
 
-  
+  describe('find', () => {
+    it('find', () => {
+      const find = arrayFunctions.find;
+      expect(typeof find).toBe('function');
+    });
+  });
+
+  describe('filter', () => {
+    it('filter', () => {
+      const filter = arrayFunctions.filter;
+      expect(typeof filter).toBe('function');
+    });
+  });
+
+  describe('flatten', () => {
+    it('flatten', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(typeof flatten).toBe('function');
+    });
+  });
 });
 
