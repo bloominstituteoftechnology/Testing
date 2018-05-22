@@ -171,4 +171,19 @@ describe('returnLast', () => {
     })
 })
 
+describe('getArrayLength', () => {
+    it('returns the last element in an array', () => {
+
+        // arrange
+        const getArrayLength = funcs.getArrayLength;
+        const expected = ['z', 'm'];
+
+        // act
+        const actual = getArrayLength(expected);
+
+        // assert
+        expect(actual).toEqual(2);
+    })
+})
+
 
