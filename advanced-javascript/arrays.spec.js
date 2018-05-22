@@ -57,7 +57,7 @@ describe("Arrays", () => {
   describe("filter", () => {
     const filter = arrayFunctions.filter;
     const numbers = [1, 2, 3, 4, 5];
-    it("should reduce given value based on supplied callback", () => {
+    it("should filter out elements based on callback", () => {
       expect(filter(numbers, num => num < 2)).toEqual([1]);
       expect(filter(strings.in, num => num < 2)).toEqual([]);
       expect(filter(strings.in, string => string !== "hi")).toEqual([
