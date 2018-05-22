@@ -1,5 +1,7 @@
 const funcs = require('./project-1');
 
+describe('Project 1', () => {
+
 it('should multiply by 10', () => {
     expect(funcs.multiplyByTen(5)).toBe(50)
 })
@@ -110,4 +112,6 @@ it('should return the circles area', () => {
 
 it('should return the rectangular prisms volume', () => {
     expect(funcs.getRectangularPrismVolume(5, 5, 5)).toBe(125)
+})
+
 })
