@@ -13,7 +13,7 @@ it('Should return a object keys', () => {
     reimu: 'shrine maiden'
   }
   expect(objectFunctions.keys(obj)).toEqual(['fumo', 'sakuya', 'reimu'])
-})
+});
 
 it('Should return object values', () => {
   const obj = {
@@ -22,7 +22,7 @@ it('Should return object values', () => {
     reimu: 'shrine maiden'
   }
   expect(objectFunctions.values(obj)).toEqual(['soft', 'maid', 'shrine maiden'])
-})
+});
 
 it('Should map over object and return changed value based on function', () => {
   const mapObject = objectFunctions.mapObject;
@@ -33,7 +33,7 @@ it('Should map over object and return changed value based on function', () => {
   }
 
   expect(mapObject(numbers, val => val * 2)).toEqual({alpha: 2, beta: 4, charlie: 6});
-})
+});
 
 it('Should return key value pairs into arrays', () => {
   const pairs = objectFunctions.pairs;
@@ -61,7 +61,7 @@ it('Should invert key value pairings', () => {
     reimu: 'shrine maiden'
   }
   expect(invert(obj)).toEqual({"maid": "sakuya", "shrine maiden": "reimu", "soft": "fumo"})
-})
+});
 
 it('Should return default values of an object', () => {
   const defaults = objectFunctions.defaults;
@@ -71,5 +71,5 @@ it('Should return default values of an object', () => {
     reimu: 'shrine maiden'
   }
   expect(defaults(obj, {mokou: 'immortal'})).toEqual({fumo: 'soft', mokou: 'immortal', sakuya: 'maid', reimu: 'shrine maiden'})
-})
+});
 
