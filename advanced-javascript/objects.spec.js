@@ -60,6 +60,22 @@ describe('pairs',()=>{
 
   });
 });
+
+describe('invert',()=>{
+  it('should be an object', () => {
+    const invert = objectFunctions.invert
+    const iObj = invert(obj)
+    expect(typeof iObj).toBe('object')
+
+  });
+  it('should invert and change numbers to strings', () => {
+    const invert = objectFunctions.invert
+    const iObj = invert(secondObj)
+    expect(iObj).toEqual( {"120": "y", "200": "z", "55": "x"})
+
+  });
+
+});
 describe('defualts',()=>{
   it('should be an object', () => {
     const defaults = objectFunctions.defaults
@@ -70,7 +86,7 @@ describe('defualts',()=>{
   it('should return the default objects keys and values prepended to the the passed in object ', () => {
     const defaults = objectFunctions.defaults
     const dObj = defaults(secondObj, obj)
-    expect(dObj).toEqual({"a": 2, "b": 2, "c": 2, "x": 55, "y": 120, "z": 200})
+    expect(dObj).toEqual( {"120": "y", "2": "c", "200": "z", "55": "x"})
 
   });
 });
