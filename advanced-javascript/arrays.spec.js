@@ -83,6 +83,44 @@ describe('Arrays', () => {
     })
   })
 
+  describe('find', () => {
+    it('should check if function', () => {
+      // arrange
+      const find = arrayFunctions.find;
+      
+      // assert
+      expect(typeof find).toBe('function')
+    })
+    
+    it('should find if the value is inside the array', () => {
+      // arrange
+      const find = arrayFunctions.find;
+      const elements = ['i', 'a'];
+      const cb = (params) => {
+        return params === 'a'
+      }
 
+      // act
+      const actual = find(elements, cb)
+
+      // assert
+      expect(actual).toBe('a')
+    })
+
+    it('should return undefined if not found', () => {
+      // arrange
+      const find = arrayFunctions.find;
+      const elements = ['i', 'a'];
+      const cb = (params) => {
+        return params === 'x'
+      }
+
+      // act
+      const actual = find(elements, cb)
+
+      // assert
+      expect(actual).toBe(undefined)
+    })
+  })
 
 });
