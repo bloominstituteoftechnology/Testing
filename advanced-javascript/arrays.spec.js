@@ -10,8 +10,67 @@ const arrayFunctions = require('./arrays');
 describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof arrayFunctions.map).toBe('function');
+    });
+
+    it('should map an array', () => {
+      const returnValue = arrayFunctions.map([1,2], x => x * 2 );
+      expect(returnValue).toEqual([2, 4]);
+    });
+  });
+
+  describe('each', () => {
+    const mockCallback = jest.fn();
+
+    it('should work', () => {
+      arrayFunctions.each([1,2], mockCallback);
+
+      expect(mockCallback.mock.calls.length).toBe(2);
+      expect(mockCallback.mock.calls[0][0]).toBe(1);
+      expect(mockCallback.mock.calls[1][0]).toBe(2);
+    });
+  });
+
+  describe('reduce', () => {
+    const mockCallback = jest.fn();
+
+    it('should work', () => {
+      const returnValue = arrayFunctions.reduce([1,2], mockCallback);
+
+      expect(mockCallback.mock.calls.length).toBe(1);
+      expect(mockCallback.mock.calls[0][1]).toBe(2);
+      expect(mockCallback.mock.calls[0][1]).toBe(2);
+    });
+  });
+
+  describe('find', () => {
+    const mockCallback = jest.fn();
+
+    it('should work', () => {
+      const returnValue = arrayFunctions.find([1,2], mockCallback);
+
+      expect(mockCallback.mock.calls.length).toBe(2);
+      expect(mockCallback.mock.calls[0][0]).toBe(1);
+      expect(mockCallback.mock.calls[1][0]).toBe(2);
+    });
+  });
+
+  describe('filter', () => {
+    it('should work', () => {
+      const returnValue = arrayFunctions.find([5, 2,1, 7, 2], x => x > 5);
+
+      expect(returnValue).toBe(7);
+    });
+  });
+
+  describe('flatten', () => {
+    it('should work', () => {
+      const returnValue = arrayFunctions.flatten([5, 2, [1]]);
+
+      expect(returnValue).toEqual([5, 2, 1]);
     });
   });
 });
+
+
+
