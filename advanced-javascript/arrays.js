@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars, max-len */
 
-const each = (elements, cb) => {
+const each = (elements, cb) => {  //PASSED
   for (let i = 0; i < elements.length; i++) {
     cb(elements[i], i);
   }
 };
 
-const map = (elements, cb) => {
+const map = (elements, cb) => { //PASSED
   const mappedArr = [];
   each(elements, (item) => {
     mappedArr.push(cb(item));
@@ -14,29 +14,29 @@ const map = (elements, cb) => {
   return mappedArr;
 };
 
-const reduce = (elements, cb, memo = elements.shift()) => {
+const reduce = (elements, cb, memo = elements.shift()) => { //PASSED
   each(elements, (item) => {
     memo = cb(memo, item);
   });
   return memo;
 };
 
-const find = (elements, cb) => {
+const find = (elements, cb) => {  //PASSED
   for (let i = 0; i < elements.length; i++) {
     if (cb(elements[i])) return elements[i];
   }
   return undefined;
 };
 
-const filter = (elements, cb) => {
+const filter = (elements, cb) => {  //PASSED
   const filteredValues = [];
-  each((element, item) => {
+  each(elements, (element, item) => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
-};
+}; 
 
-const flatten = (elements) => {
+const flatten = (elements) => {   //PASSED
   const flattenedArr = reduce(
     elements,
     (memo, item) => {
