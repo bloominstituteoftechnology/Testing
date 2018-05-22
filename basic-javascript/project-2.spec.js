@@ -107,3 +107,23 @@ describe('isInteger', () => {
         expect(actual).toBeTruthy();
     })
 })
+
+describe('fizzBuzz', () => {
+    it('checks if num is divisble by 5 or 3 evenly', () => {
+        // arrange
+        const fizzBuzz = funcs.fizzBuzz;
+        const fb = 'fizzbuzz';
+        const b = 'buzz';
+        const f = 'fizz';
+
+        // act
+        const fizzbuzz = fizzBuzz(30);
+        const buzz = fizzBuzz(25);
+        const fizz = fizzBuzz(9);
+
+        // assert
+        expect(fizzbuzz).toBe(fb)
+        expect(buzz).toBe(b)
+        expect(fizz).toBe(f)
+    })
+})
