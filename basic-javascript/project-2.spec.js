@@ -280,7 +280,7 @@ describe('addNumbers', () => {
 })
 
 describe('averageTestScore', () => {
-    it('adds the numbers to produce a sum', () => {
+    it('averages the test scores in an array', () => {
 
         // arrange
         const averageTestScore = funcs.averageTestScore;
@@ -291,6 +291,21 @@ describe('averageTestScore', () => {
 
         // assert
         expect(actual).toEqual(27.5);
+    })
+})
+
+describe('largestNumber', () => {
+    it('finds the largest number in array', () => {
+
+        // arrange
+        const largestNumber = funcs.largestNumber;
+        const expected = [42, 20, 18, 30]
+
+        // act
+        const actual = largestNumber(expected);
+
+        // assert
+        expect(actual).toBe(42);
     })
 })
 
