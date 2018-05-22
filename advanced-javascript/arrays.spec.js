@@ -59,6 +59,29 @@ describe('Arrays', () => {
     });
   });
 
+  describe('reduce', () => {
+    it('should check if it is a function', () => {
+      // arrange
+      const reduce = arrayFunctions.reduce;
+
+      // assert
+      expect(typeof reduce).toBe('function');
+    })
+    it('should return the value after the elements have been reduced', () => {
+      // arrange
+      const reduce = arrayFunctions.reduce;
+      const expected = [1, 2, 3]
+      const cb = (total, item) => {
+        return total + item;
+      }
+
+      // act
+      const actual = reduce(expected, cb)
+      
+      // assert
+      expect(actual).toEqual(6)
+    })
+  })
 
 
 
