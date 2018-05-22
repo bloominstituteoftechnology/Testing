@@ -8,14 +8,14 @@ const each = (elements, cb) => {
 
 const map = (elements, cb) => {
   const mappedArr = [];
-  each(elements, (item) => {
+  each(elements, item => {
     mappedArr.push(cb(item));
   });
   return mappedArr;
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-  each(elements, (item) => {
+  each(elements, item => {
     memo = cb(memo, item);
   });
   return memo;
@@ -36,7 +36,7 @@ const filter = (elements, cb) => {
   return filteredValues;
 };
 
-const flatten = (elements) => {
+const flatten = elements => {
   const flattenedArr = reduce(
     elements,
     (memo, item) => {
