@@ -35,4 +35,18 @@ describe('Arrays', () => {
       expect(actual).toEqual(expected);
     })
   });
+
+  describe('reduce', () => {
+    it('should be a function', () => {
+      const reduce = arrayFunctions.reduce;
+      expect(typeof reduce).toBe('function');
+    });
+    it('should reduce an array to a single value based on the callback', () => {
+      const expected = 60;
+      const reduce = arrayFunctions.reduce;
+      const actual = reduce([2, 5, 6], (num, acc) => num * acc);
+      expect(typeof actual).toBe('number');
+      expect(actual).toEqual(expected);
+    })
+  });
 });
