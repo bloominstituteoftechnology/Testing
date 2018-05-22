@@ -59,7 +59,7 @@ describe('Arrays', () => {
       const reduced = reduce([342, 34, 1, 3], (memo, item) => {
         return memo - item;
       })
-      console.log(reduced);
+      //console.log(reduced);
       expect(reduced).toEqual(304)
     });
     
@@ -72,5 +72,57 @@ describe('Arrays', () => {
     
   });
   
+  describe('find', () => {
+    const find = arrayFunctions.find;
+    
+    it('should be a function', () => {
+      expect(typeof find).toBe('function');
+    });
+    
+    const arr = [3, 56, 23];
+    const matched = find(arr, item => item === 23);
+    //console.log(matched);
+    it('should find proper element', () => {
+      expect(matched).toEqual(23);
+    });
+  });
+  
+  describe('filter', () => {
+    const filter = arrayFunctions.filter;
+    const arr = [3, 56, 23];
+    const filtered = filter(arr, item => item > 25);
+    console.log(filtered);
+    
+    it('should be a function', () => {
+      expect(typeof filter).toBe('function');
+    });
+    
+    it('should filter elements', () => {
+      expect(filtered).toEqual([56]);
+    });
+    
+    it('output should be an array', () => {
+      expect(Array.isArray(filtered)).toBe(true);
+    });
+  });
+  
+  describe('flatten', () => {
+    const flatten = arrayFunctions.flatten;
+    const arr = [3, [56], [[23]]];
+    const flattened = flatten(arr);
+    console.log(flattened);
+    
+    it('should be a function', () => {
+      expect(typeof flatten).toBe('function');
+    });
+    
+    it('should flatten an arrays', () => {
+      expect(flattened).toEqual([ 3, 56, 23 ]);
+    });
+    
+    it('output should be an array', () => {
+      expect(Array.isArray(flattened)).toBe(true);
+    });
+  });
   
 });
