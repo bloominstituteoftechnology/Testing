@@ -65,4 +65,72 @@ describe("objects", () => {
       expect(test1).toEqual({ finish: 250, middle: 112, start: 2 });
     });
   });
+
+  describe("pairs", () => {
+    const object = { age: 23, gender: "male", name: "jack" };
+    const object1 = { start: 1, middle: 56, finish: 125 };
+
+    const test = pairs(object);
+    const test1 = pairs(object1);
+
+    it("should be an object", () => {
+      expect(typeof test).toBe("object");
+      expect(typeof test1).toBe("object");
+    });
+
+    it("should be a list in an array", () => {
+      expect(Array.isArray(test)).toBe(true);
+      expect(Array.isArray(test1)).toBe(true);
+    });
+
+    it("should return array of [key, value] pair list", () => {
+      expect(test).toEqual([["age", 23], ["gender", "male"], ["name", "jack"]]);
+      expect(test1).toEqual([["start", 1], ["middle", 56], ["finish", 125]]);
+    });
+  });
+
+  describe("invert", () => {
+    const object = { age: 23, gender: "male", name: "jack" };
+    const object1 = { start: 1, middle: 56, finish: 125 };
+
+    const test = invert(object);
+    const test1 = invert(object1);
+
+    it("should be an object", () => {
+      expect(typeof test).toBe("object");
+      expect(typeof test1).toBe("object");
+    });
+
+    it("should return swapped keys and values for each objects", () => {
+      expect(test).toEqual({ "23": "age", jack: "name", male: "gender" });
+      expect(test1).toEqual({ "1": "start", "125": "finish", "56": "middle" });
+    });
+  });
+
+  describe("defaults", () => {
+    // const object = { age: 23, gender: "male", name: "jack" };
+    const object = { a: "c" };
+    const object1 = { trial: "error", mass: "effect" };
+
+    const mockDefaultProps = { a: "bbb", d: "c" };
+    const mockDefaultProps1 = { trial: "success", weight: "high" };
+
+    // const test = defaults(object);
+    const test = defaults(object, mockDefaultProps);
+    const test1 = defaults(object1, mockDefaultProps1);
+
+    it("should be an object", () => {
+      expect(typeof test).toBe("object");
+      expect(typeof test1).toBe("object");
+    });
+
+    it("should return swapped keys and values for each objects", () => {
+      expect(test).toEqual({ a: "c", d: "c" });
+      expect(test1).toEqual({
+        mass: "effect",
+        trial: "error",
+        weight: "high"
+      });
+    });
+  });
 });
