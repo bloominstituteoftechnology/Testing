@@ -370,3 +370,18 @@ test('getRectangleArea', ()=> {
     expect(area).toBe(25);
 });
 /////////////////////////////////////////////////////////////
+
+// Test getTriangleArea
+test('getTriangleArea', () => {
+    const area =  funcs.getTriangleArea(4, 5);
+    expect(area).toBe(10);
+
+});
+
+// Test getCircleArea
+
+test('getCircleArea', () => {
+    const area = Number(funcs.getCircleArea(5).toFixed(2));
+    expect(area).toBe(78.54);
+});
+////////////////////////////////////////////////////////////////
