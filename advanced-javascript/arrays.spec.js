@@ -147,5 +147,27 @@ describe('Arrays', () => {
       expect(actual).toEqual(["hello"])
     })
   })
+  
+  describe('flatten', () => {
+    it('checks if it is a function', () => {
+      // arrange
+      const flatten = arrayFunctions.flatten;
+      
+      // assert
+      expect(typeof flatten).toBe('function')
+    })
+
+    it('should flatten the array', () => {
+      // arrange
+      const flatten = arrayFunctions.flatten;
+      const expected = [2, 4, 6, [8, 5, 7]]
+
+      // act 
+      const actual = flatten(expected);
+
+      // assert
+      expect(actual).toEqual([2, 4, 6, 8, 5, 7])
+    })
+  })
 
 });
