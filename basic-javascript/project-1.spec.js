@@ -74,3 +74,27 @@ describe('strings should be same length', () => {
     expect(actual).toBe(true);
   });
 });
+
+describe('numbers should be equal', () => {
+  it('should be true if both are equal', () => {
+    // arrange
+    const areEqual = funcs.areEqual;
+    const x = 10;
+    const y = 10;
+    // act
+    const actual = areEqual(x, y);
+    // assert
+    expect(actual).toBe(true);
+  });
+
+  it('should be false if both numbers are not equal', () => {
+    // arrange
+    const x = 10;
+    const y = 11;
+    const areEqual = funcs.areEqual;
+    // act
+    const actual = areEqual(x, y);
+    // assert
+    expect(actual).toBe(false);
+  });
+});
