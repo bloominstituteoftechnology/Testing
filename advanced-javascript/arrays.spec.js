@@ -79,4 +79,18 @@ describe('Arrays', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('flatten', () => {
+    it('should be a function', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(typeof flatten).toBe('function');
+    });
+    it('should flatten multidimemsional arrays', () => {
+      const expected = [2, 5, 6, 3, 4, 6, 7, 8, 3, 4];
+      const flatten = arrayFunctions.flatten;
+      const actual = flatten([2, 5, 6, [3, 4, [6, 7, 8, 3, 4]]]);
+      expect(Array.isArray(actual)).toBeTruthy();
+      expect(actual).toEqual(expected);
+    });
+  });
 });
