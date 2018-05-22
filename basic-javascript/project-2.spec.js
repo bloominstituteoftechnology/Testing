@@ -206,3 +206,12 @@ test('addItemToFront', () => {
     expect(arr[0]).toBe(1);
 });
 /////////////////////////////////////////////////////
+
+// wordsToSentence
+test('wordsToSentence [This, is, a, test]', () => {
+    const words = ["This", "is", "a", "test"]
+    const sentence = funcs.wordsToSentence(words);
+    expect(sentence).toBe('This is a test');
+
+});
+//////////////////////////////////////////////////////
