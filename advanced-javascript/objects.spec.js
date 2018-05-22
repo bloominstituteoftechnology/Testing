@@ -64,4 +64,19 @@ describe('objects', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('invert', () => {
+    it('should be an function', () => {
+      const invert = objectFunctions.invert;
+      expect(typeof invert).toBe('function');
+    });
+
+    it('should return an object with its keys and values inverted', () => {
+      const expected = {1: 'a', 4: 'b', 8: 'c'};
+      const invert = objectFunctions.invert;
+      const actual = invert({ a: 1, b: 4, c: 8 });
+      expect(typeof actual).toBe('object');
+      expect(actual).toEqual(expected);
+    });
+  });
 })
