@@ -2,15 +2,37 @@ const objectFunctions = require("./objects");
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe("objects", () => {
-	const obj = {
-		a: 0,
-		b: 1,
-		c: 2
-	};
-	const cb = value => {
-		return value + 10;
-	};
+  describe('keys', () => {
+    const keys = objectFunctions.keys;
+    const actual = keys({
+      a: 1,
+      b: 2,
+      c: 3
+    });
+    it('Should return object keys', () => {
+      expect(actual).toEqual(['a', 'b', 'c']);
+    });
+  });
+  describe('values', () => {
+    const values = objectFunctions.values;
+    const actual = values({
+      a: 1,
+      b: 2,
+      c: 3
+    });
+    it('Should return values of object', () => {
+      expect(actual).toEqual([1, 2, 3]);
+    })
+  });
 	describe("mapObject function", () => {
+    const obj = {
+      a: 0,
+      b: 1,
+      c: 2
+    };
+    const cb = value => {
+      return value + 10;
+    };
 		const mapped = objectFunctions.mapObject(obj, cb);
 		it("Should return an obj", () => {
 			expect(typeof mapped).toBe("object");
