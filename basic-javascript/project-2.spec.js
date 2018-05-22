@@ -201,5 +201,21 @@ describe('incrementByOne', () => {
     })
 })
 
+describe('addItemToArray', () => {
+    it('returns the last element in an array', () => {
+
+        // arrange
+        const addItemToArray = funcs.addItemToArray;
+        const expected = [1, 2, 3];
+        const item = 4;
+
+        // act
+        const actual = addItemToArray(expected, item);
+
+        // assert
+        expect(actual).toEqual([1, 2, 3, 4]);
+    })
+})
+
 
 
