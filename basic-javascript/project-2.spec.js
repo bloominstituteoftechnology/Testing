@@ -141,3 +141,18 @@ describe('isPrime', () => {
     })
 })
 
+describe('returnFirst', () => {
+    it('returns the first element in an array', () => {
+
+        // arrange
+        const returnFirst = funcs.returnFirst;
+        const expected = ['z'];
+
+        // act
+        const actual = returnFirst(expected);
+
+        // assert
+        expect(actual).toBe('z');
+    })
+})
+
