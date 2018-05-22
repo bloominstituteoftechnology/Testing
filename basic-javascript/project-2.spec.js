@@ -156,3 +156,19 @@ describe('returnFirst', () => {
     })
 })
 
+describe('returnLast', () => {
+    it('returns the last element in an array', () => {
+
+        // arrange
+        const returnLast = funcs.returnLast;
+        const expected = ['z', 'm'];
+
+        // act
+        const actual = returnLast(expected);
+
+        // assert
+        expect(actual).toBe('m');
+    })
+})
+
+
