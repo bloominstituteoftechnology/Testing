@@ -147,6 +147,48 @@ test('isPrime 4', () => {
     expect(result).toBe(false);
 });
 /////////////////////////////////////////////////
+
+// Test returnFirst
+test('returnFirst', () => {
+    const arr = [99,89,79];
+    const first = arr[0];
+    const result = funcs.returnFirst(arr);
+    expect(result).toBe(first);
+});
+//////////////////////////////////////////////////
+
+// Test returnLast
+test('returnLast', () => {
+    const arr = [99,89,79];
+    const last = arr[arr.length - 1];
+    const result = funcs.returnLast(arr);
+    expect(result).toBe(last);
+});
+//////////////////////////////////////////////////
+
+// Test getArrayLength
+test('getArrayLength', () => {
+    const arr = [99,89,79];
+    let length = arr.length;
+    let result = funcs.getArrayLength(arr);
+    expect(result).toBe(length);
+    // remove item
+    arr.pop();
+    length = arr.length;
+    result = funcs.getArrayLength(arr);
+    expect(result).toBe(length);
+});
+//////////////////////////////////////////////////
+
+// Test incrementByOne
+test('incrementByOne [2,5]', () => {
+    const arr = [2, 5];
+    const resultArray = funcs.incrementByOne(arr);
+    expect(resultArray[0]).toBe(3);
+    expect(resultArray[1]).toBe(6);
+
+});
+///////////////////////////////////////////////////
 // Test add item to array
 test('Add Item to Array', () => {
     const arr = [5,9,1];
@@ -156,3 +198,11 @@ test('Add Item to Array', () => {
 });
 //////////////////////////////////////////////
 
+// Test addItemToFront
+test('addItemToFront', () => {
+    let arr = [9, 8];
+    expect(arr[0]).toBe(9);
+    arr = funcs.addItemToFront(arr, 1);
+    expect(arr[0]).toBe(1);
+});
+/////////////////////////////////////////////////////
