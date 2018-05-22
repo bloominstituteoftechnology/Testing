@@ -9,9 +9,44 @@ const arrayFunctions = require('./arrays');
 
 describe('Arrays', () => {
   describe('map', () => {
-    it('should be a function', () => {
+    it('map', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
+    });
+  });
+
+  describe('each', () => {
+    it('each', () => {
+      const each = arrayFunctions.each;
+      expect(typeof each).toBe('function');
+    });
+  });
+
+  describe('reduce', () => {
+    it('reduce', () => {
+      const reduce = arrayFunctions.reduce;
+      expect(typeof reduce).toBe('function');
+    });
+  });
+
+  describe('find', () => {
+    it('find', () => {
+      const find = arrayFunctions.find;
+      expect(typeof find).toBe('function');
+    });
+  });
+
+  describe('filter', () => {
+    it('filter', () => {
+      const filter = arrayFunctions.filter;
+      expect(typeof filter).toBe('function');
+    });
+  });
+
+  describe('flatten', () => {
+    it('flatten', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(typeof flatten).toBe('function');
     });
   });
 });
