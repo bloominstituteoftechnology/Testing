@@ -15,23 +15,6 @@ describe('Arrays', () => {
     });
   };
 
-  describe('each', () => {
-    const elements = [1, 2, 3];
-    const cb = (el, index) => {
-      // el = `(${el + index})`
-      return el + index;
-    };
-    // const cb = (el, index) => {
-    //   return `${el}` + `${index}`
-    // };
-    const expected = arrayFunctions.each(elements, cb);
-    //Checks if function is type of function
-    isFunction(arrayFunctions.each);
-    it('Should return expected outcome', () => {
-      expect([1, 3, 4]).toBe(expected);
-    });
-  });
-
   describe('map', () => {
     const cb = (item) => item + 2;
     const mappedArray = arrayFunctions.map([1, 2, 3],
