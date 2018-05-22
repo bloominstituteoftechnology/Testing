@@ -19,12 +19,9 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should add all elements by one', () => {
       const map = arrayFunctions.map;
-
-      function addOne(input) {
-        return (input + 1);
-      }
-
+      function addOne(input) {return (input + 1);}
       const actual = map([1, 2, "string"], addOne)
+      expect(typeof map).toBe('function');
       expect(actual).toEqual([2, 3, 'string1'])
     });
   });
@@ -32,10 +29,8 @@ describe('Arrays', () => {
   describe('reduce', () => {
     it('should add array input together', () => {
       const reduce = arrayFunctions.reduce;
-
-      const actual = reduce([1,2,3], (num, acc) => {
-        return num+acc;
-      })
+      const actual = reduce([1,2,3], (num, acc) => {return num+acc;})
+      expect(typeof reduce).toBe('function');
       expect(actual).toBe(6);
     });
   });
@@ -43,8 +38,8 @@ describe('Arrays', () => {
   describe('find', () => {
     it('should find an element in an array', () => {
       const find = arrayFunctions.find;
-
-      const actual = find([1,2,3,4,5,6,7], (num) => num === 3)
+      const actual = find([1,2,3,4,5,6,7], (num) => num === 3);
+      expect(typeof find).toBe('function');
       expect(actual).toBe(3);
     });
   });
@@ -53,7 +48,8 @@ describe('Arrays', () => {
     it('should return array of only filtered items', () => {
       const filter = arrayFunctions.filter;
       const arr = [40, 50, 30, "lol"];
-      const actual = filter(arr, num => (num === 50))
+      const actual = filter(arr, num => (num === 50));
+      expect(typeof filter).toBe('function');
       expect(actual).toEqual([50]);
     });
   });
@@ -62,7 +58,7 @@ describe('Arrays', () => {
     it('Should transform arrays within arrays into a single array', () => {
       const flatten = arrayFunctions.flatten;
       const actual = flatten([3,4,["hello", 5, 6]]);
-
+      expect(typeof flatten).toBe('function');
       expect(actual).toEqual([3, 4, "hello", 5, 6])
     });
   });
