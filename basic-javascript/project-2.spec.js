@@ -264,6 +264,21 @@ describe('contains', () => {
     })
 })
 
+describe('addNumbers', () => {
+    it('adds the numbers to produce a sum', () => {
+
+        // arrange
+        const addNumbers = funcs.addNumbers;
+        const expected = [4, 5, 6];
+
+        // act
+        const actual = addNumbers(expected);
+
+        // assert
+        expect(actual).toEqual(15);
+    })
+})
+
 
 
 
