@@ -75,7 +75,30 @@ test('isInRange number is 25', () => {
 test('isInRange number is 51', () => {
 
     const result = funcs.isInRange(51);
-    expect(result).toBe(true);
+    expect(result).toBe(false);
+});
+/////////////////////////////////////////////////
+
+// Test isInteger
+// number 5
+test('isInteger 5', () => {
+
+    const result = funcs.isInteger(5);
+    expect(result).toBe(true)
+});
+
+// number 5.5
+test('isInteger 5.5', () => {
+
+    const result = funcs.isInteger(5.5);
+    expect(result).toBe(false)
+});
+
+// number '5'
+test('isInteger "5" ', () => {
+
+    const result = funcs.isInteger('5');
+    expect(result).toBe(false)
 });
 /////////////////////////////////////////////////
 // Test add item to array
