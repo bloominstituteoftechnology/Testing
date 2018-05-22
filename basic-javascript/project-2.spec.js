@@ -69,3 +69,13 @@ it('addItemToArray', () => {
     expect(funcs.addItemToArray([5, 3], 8)).toEqual(expected)
 })
 
+it('addItemToFront', () => {
+    const expect = [8, 3, 5]
+    expect(funcs.addItemToFront([3, 5], 8)).toEqual(expected)
+})
+
+it('wordsToSentence', () => {
+    const actual = ['Kenzie', 'is', 'a', 'dog']
+    const expected = 'Kenzie is a dog'
+    expect(funcs.wordsToSentence(actual)).toBe(expected)
+})
