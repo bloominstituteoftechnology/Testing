@@ -40,3 +40,13 @@ it('fizzBuzz', () => {
     expect(funcs.fizzBuzz(15)).toBe('fizzBuzz')
 })
 
+it('isPrime', () => {
+    expect(funcs.isPrime(3)).toBe(true)
+    expect(funcs.isPrime(8)).toBe(false)
+})
+
+it('returnFirst', () => {
+    expect(funcs.returnFirst([8, 1, 2])).toBe(8)
+    expect(funcs.returnFirst('blossum')).toBe('b')
+})
+
