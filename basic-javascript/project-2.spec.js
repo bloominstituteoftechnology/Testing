@@ -131,6 +131,22 @@ test('fizzBuzz 5', () => {
     expect(result).toBe('buzz');
 });
 /////////////////////////////////////////////////
+
+// Test isPrime
+// number 2
+test('isPrime 2', () => {
+    const number = 2;
+    const result = funcs.isPrime(number);
+    expect(result).toBe(true);
+});
+
+// number 4
+test('isPrime 4', () => {
+    const number = 4;
+    const result = funcs.isPrime(number);
+    expect(result).toBe(false);
+});
+/////////////////////////////////////////////////
 // Test add item to array
 test('Add Item to Array', () => {
     const arr = [5,9,1];
