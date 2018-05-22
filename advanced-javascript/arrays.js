@@ -30,8 +30,8 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each((element, item) => {
-    if (cb(item)) filteredValues.push(item);
+  each(elements, (el) => {
+    if (cb(el)) filteredValues.push(el);
   });
   return filteredValues;
 };

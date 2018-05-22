@@ -30,6 +30,23 @@ describe('isTenOrFive', () => {
 
 describe('isInRange', ()=> {
   it('should check if passed argument is within range of 20 and 50', () => {
+    const truthy = funcs.isInRange(44);
+      const falsy = funcs.isInRange(60);
+      expect(truthy).toBeTruthy();
+      expect(falsy).toBeFalsy();
+  })
+})
+
+
+describe('fizzBuzz', () => {
+  it('should check if num is divisible by 5 and 3 or only 3 or 5', () => {
+    const fizz = funcs.fizzBuzz(3);
+    const buzz = funcs.fizzBuzz(5);
+    const fizzbuzz = funcs.fizzBuzz(15);
+
+     expect(fizz).toEqual('fizz')
+     expect(buzz).toEqual('buzz');
+     expect(fizzbuzz).toEqual('fizzbuzz');
 
   })
 })
