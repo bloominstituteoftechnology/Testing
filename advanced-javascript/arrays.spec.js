@@ -52,16 +52,18 @@ describe('Arrays', () => {
   describe('filter', () => {
     it('should return array of only filtered items', () => {
       const filter = arrayFunctions.filter;
-
-      const actual = filter([40, 50, 30], num => num === 50)
+      const arr = [40, 50, 30, "lol"];
+      const actual = filter(arr, num => (num === 50))
       expect(actual).toEqual([50]);
     });
   });
 
   describe('flatten', () => {
-    it('should be a function', () => {
+    it('Should transform arrays within arrays into a single array', () => {
       const flatten = arrayFunctions.flatten;
-      expect(typeof flatten).toBe('function');
+      const actual = flatten([3,4,["hello", 5, 6]]);
+
+      expect(actual).toEqual([3, 4, "hello", 5, 6])
     });
   });
 });
