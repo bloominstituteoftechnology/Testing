@@ -50,3 +50,10 @@ it('returnFirst', () => {
     expect(funcs.returnFirst('blossum')).toBe('b')
 })
 
+it('returnLast', () => {
+    expect(funcs.returnLast([2, 1, 8])).toBe(8)
+})
+
+it('getArrayLength', () => {
+    expect(funcs.getArrayLength('cherry')).toBe(6)
+})
