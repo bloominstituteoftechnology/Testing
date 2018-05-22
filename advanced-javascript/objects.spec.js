@@ -79,4 +79,19 @@ describe('objects', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('defaults', () => {
+    it('should be an function', () => {
+      const defaults = objectFunctions.defaults;
+      expect(typeof defaults).toBe('function');
+    });
+
+    it('should return an a default object', () => {
+      const expected = { a: 1, b: 4, c: 8 };
+      const defaults = objectFunctions.defaults;
+      const actual = defaults({ a: 1, b: 4,}, {b: 4, c: 8 }, {a: 1, c: 8});
+      expect(typeof actual).toBe('object');
+      expect(actual).toEqual(expected);
+    });
+  });
 })
