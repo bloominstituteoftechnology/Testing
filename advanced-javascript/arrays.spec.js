@@ -48,14 +48,14 @@ describe('Arrays', () => {
       const cb = (params) => {
         return params * 2
       }
-      const expected = '[2,4,6]';
+      const expected = [2, 4, 6];
 
       // act
       const actual = map(random, cb)
 
       // assert
 
-      expect(JSON.stringify(actual)).toBe(expected);
+      expect((actual)).toEqual(expected);
     });
   });
 
@@ -120,6 +120,31 @@ describe('Arrays', () => {
 
       // assert
       expect(actual).toBe(undefined)
+    })
+  })
+
+  describe('filter', () => {
+    it('checks if it is function', () => {
+      // arrange
+      const filter = arrayFunctions.filter;
+
+      // assert
+      expect(typeof filter).toBe('function')
+    })
+
+    it('check if item exist in array', () => {
+      // arrange
+      const filter = arrayFunctions.filter;
+      const expected = ["hello", "hi"]
+      const cb = (params) => {
+        return params === "hello";
+      }
+
+      // act
+      const actual = filter(expected, cb)
+
+      // assert
+      expect(actual).toEqual(["hello"])
     })
   })
 
