@@ -17,4 +17,22 @@ describe("project-2 tests", () => {
     expect(spanish).toBe("Hola!");
     expect(generic).toBe("Hello!");
   });
+  it("should return true only if the argument is either 10 or 5", () => {
+    const ten = funcs.isTenOrFive(10);
+    const five = funcs.isTenOrFive(5);
+    const thirty = funcs.isTenOrFive(30);
+
+    expect(ten).toBe(true);
+    expect(five).toBe(true);
+    expect(thirty).toBe(false);
+  });
+  it("should return true only if the argument is greater than 20 and less than 50", () => {
+    const ten = funcs.isInRange(10);
+    const fiftyfive = funcs.isInRange(55);
+    const thirty = funcs.isInRange(30);
+
+    expect(ten).toBe(false);
+    expect(fiftyfive).toBe(false);
+    expect(thirty).toBe(true);
+  });
 });
