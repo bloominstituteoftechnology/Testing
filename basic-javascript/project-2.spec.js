@@ -241,3 +241,25 @@ test('addNumbers [5, 10]', () =>
 
 });
 ////////////////////////////////////////////////////////
+
+// Test averageTestScore
+test('averageTestScore', () => {
+    const arr = [10,10,5,8,10,10,9,8,25,10,10,25,10,25,10,10,10,10,25,10];
+    const aveg = funcs.averageTestScore(arr);
+    expect(aveg).toBe(12.5);
+});
+/////////////////////////////////////////////////////////
+
+// Test largestNumber
+test('largestNumber [1,100]', () => {
+    const arr = [1,100];
+    const max = funcs.largestNumber(arr);
+    expect(max).toBe(100);
+});
+
+test('largestNumber [100,1]', () => {
+    const arr = [1,100];
+    const max = funcs.largestNumber(arr);
+    expect(max).toBe(100);
+});
+/////////////////////////////////////////////////////////
