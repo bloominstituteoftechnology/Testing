@@ -90,3 +90,12 @@ it('addNumber', () => {
     expect(funcs.addNumbers([2, 4, 2])).toBe(sum)
 })
 
+it('averageTestScore', () => {
+    const average = (2 + 4 + 6 + 8) / 4
+    expect(funcs.averageTestScore([2, 4, 6, 8])).toBe(average)
+})
+
+it('largestNumber', () => {
+  const largest = 18
+  expect(funcs.largestNumber([2, 4, 6, 8, 18])).toBe(largest)
+})
