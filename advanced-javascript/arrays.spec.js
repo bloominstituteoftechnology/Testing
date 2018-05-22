@@ -8,10 +8,58 @@ const arrayFunctions = require('./arrays');
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
+  describe('each', () => {
+    it('should be a function', () => {
+      // arrange
+      const each = arrayFunctions.each;
+      const elements = [1, 2, 3];
+      const cb = (elements) => {
+        return elements * 2
+      }
+
+      // act
+      const actual = each(elements, cb)
+
+      // assert
+      expect(typeof each).toBe('function');
+    })
+  })
+
   describe('map', () => {
     it('should be a function', () => {
+      // arrange
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      const random = [1, 2, 3]
+      const cb = (params) => {
+        return params * 2
+      }
+
+      // act
+      const actual = map(random, cb)
+
+      // assert
+
+      expect(typeof map).toBe('function');
+    });
+    it('should be an array', () => {
+      // arrange
+      const map = arrayFunctions.map;
+      const random = [1, 2, 3]
+      const cb = (params) => {
+        return params * 2
+      }
+      const expected = '[2,4,6]';
+
+      // act
+      const actual = map(random, cb)
+
+      // assert
+
+      expect(JSON.stringify(actual)).toBe(expected);
     });
   });
+
+
+
+
 });

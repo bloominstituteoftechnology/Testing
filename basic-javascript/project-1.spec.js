@@ -11,11 +11,11 @@ describe('default', () => {
 describe('multiplyByTen', () => {
     it('should multiply number by 10', () => {
         // arrange
-        const expected = 20;
+        const expected = 30;
         const multiplyByTen = funcs.multiplyByTen;
 
         // act
-        const actual = multiplyByTen(2);
+        const actual = multiplyByTen(3);
 
         // assert 
         expect(actual).toBe(expected);
