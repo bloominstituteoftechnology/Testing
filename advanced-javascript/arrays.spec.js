@@ -47,5 +47,24 @@ describe('Arrays', () => {
         });
     });
 
+    describe('filter ', () => {
+
+        it('should be a function', () => {
+            const filter = arrayFunctions.filter;
+            expect(typeof filter).toBe('function');
+        });
+
+        it('should return a new array with number less than 5', () => {
+
+            const arr = [5,4,3];
+            const filter = arrayFunctions.filter;
+            const filterArr = filter(arr, (item) => item < 5);
+            expect(filterArr.length).toBe(2);
+            expect(filterArr[0]).toBe(4);
+            expect(filterArr[1]).toBe(3);
+
+        });
+    });
+
 
 });
