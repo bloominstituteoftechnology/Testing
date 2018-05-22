@@ -157,3 +157,11 @@ describe("averageTestScore function", () => {
         expect(average).toBe(expected);
     });
 });
+
+describe("largestNumber function", () => {
+    const array = [1, 2, 3, 4, 5];
+    const expected = funcs.largestNumber(array);
+    it("calculates the largest number", () => {
+        expect(Math.max(...array)).toBe(expected);
+    });
+});
