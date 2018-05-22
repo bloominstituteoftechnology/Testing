@@ -215,3 +215,29 @@ test('wordsToSentence [This, is, a, test]', () => {
 
 });
 //////////////////////////////////////////////////////
+
+// Test contains
+// number -5
+test('contains -5', () => {
+    const arr = [99,1000,50,-5];
+    const result = funcs.contains(arr, -5);
+    expect(result).toBe(true);
+});
+
+// number 5
+test('contains -5', () => {
+    const arr = [99,1000,50,-5];
+    const result = funcs.contains(arr, 5);
+    expect(result).toBe(false);
+});
+//////////////////////////////////////////////////////
+
+// Test addNumbers
+test('addNumbers [5, 10]', () =>
+{
+    const arr = [5,10];
+    const resultSum = funcs.addNumbers(arr);
+    expect(resultSum).toBe(15);
+
+});
+////////////////////////////////////////////////////////
