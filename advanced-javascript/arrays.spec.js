@@ -9,6 +9,15 @@ const arrayFunctions = require('./arrays');
 
 describe('Arrays', () => {
 
+    describe('each', () => {
+
+        it('should be a function', () => {
+            const each = arrayFunctions.each;
+            expect(typeof each).toBe('function');
+        });
+
+    });
+
     describe('map', () => {
 
         it('should be a function', () => {
@@ -17,7 +26,7 @@ describe('Arrays', () => {
         });
 
         it('should return a array that adds 1 to each item', () => {
-            const map = arrayFunctions.map([1, 2], (item)=> item + 1);
+            const map = arrayFunctions.map([1, 2], (item) => item + 1);
             expect(map[0]).toBe(2);
             expect(map[1]).toBe(3);
         });
@@ -31,7 +40,7 @@ describe('Arrays', () => {
         });
 
         it('should return item if found', () => {
-            const arr = [9,8,5];
+            const arr = [9, 8, 5];
             const find = arrayFunctions.find;
             const result = find(arr, (item) => item === 8);
             expect(result).toBe(8);
@@ -39,7 +48,7 @@ describe('Arrays', () => {
         });
 
         it('should return undefined if item not found', () => {
-            const arr = [9,8,5];
+            const arr = [9, 8, 5];
             const find = arrayFunctions.find;
             const result = find(arr, (item) => item === 1);
             expect(result).toBe(undefined);
@@ -56,7 +65,7 @@ describe('Arrays', () => {
 
         it('should return a new array with number less than 5', () => {
 
-            const arr = [5,4,3];
+            const arr = [5, 4, 3];
             const filter = arrayFunctions.filter;
             const filterArr = filter(arr, (item) => item < 5);
             expect(filterArr.length).toBe(2);
@@ -66,5 +75,19 @@ describe('Arrays', () => {
         });
     });
 
+    describe('reduce ', () => {
 
+        it('should be a function', () => {
+            const reduce = arrayFunctions.reduce;
+            expect(typeof reduce).toBe('function');
+        });
+    });
+
+    describe('flatten ', () => {
+
+        it('should be a function', () => {
+            const flatten = arrayFunctions.flatten;
+            expect(typeof flatten).toBe('function');
+        });
+    });
 });
