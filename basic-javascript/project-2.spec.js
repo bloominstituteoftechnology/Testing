@@ -57,3 +57,15 @@ it('returnLast', () => {
 it('getArrayLength', () => {
     expect(funcs.getArrayLength('cherry')).toBe(6)
 })
+
+it('incrementByOne', () => {
+    const arr = [5, 1, 5]
+    const expectedArr = [6, 2, 6]
+    expect(funcs.incrementByOne(arr)).toEqual(expectedArr)
+})
+
+it('addItemToArray', () => {
+    const expected = [5, 3, 8]
+    expect(funcs.addItemToArray([5, 3], 8)).toEqual(expected)
+})
+
