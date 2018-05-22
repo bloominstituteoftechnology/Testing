@@ -23,5 +23,29 @@ describe('Arrays', () => {
         });
     });
 
+    describe('find', () => {
+
+        it('should be a function', () => {
+            const find = arrayFunctions.find;
+            expect(typeof find).toBe('function');
+        });
+
+        it('should return item if found', () => {
+            const arr = [9,8,5];
+            const find = arrayFunctions.find;
+            const result = find(arr, (item) => item === 8);
+            expect(result).toBe(8);
+
+        });
+
+        it('should return undefined if item not found', () => {
+            const arr = [9,8,5];
+            const find = arrayFunctions.find;
+            const result = find(arr, (item) => item === 1);
+            expect(result).toBe(undefined);
+
+        });
+    });
+
 
 });
