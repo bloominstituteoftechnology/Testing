@@ -8,38 +8,53 @@ const arrayFunctions = require('./arrays');
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
-  describe('map', () => {
-    it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('function');
-    });
-  });
-
   describe('each', () => {
     it('should be a function', () => {
       const each = arrayFunctions.each;
       expect(typeof each).toBe('function');
+    })
+  })
+
+
+  describe('map', () => {
+    it('should add all elements by one', () => {
+      const map = arrayFunctions.map;
+
+      function addOne(input) {
+        return (input + 1);
+      }
+
+      const actual = map([1, 2, "string"], addOne)
+      expect(actual).toEqual([2, 3, 'string1'])
     });
   });
 
   describe('reduce', () => {
-    it('should be a function', () => {
+    it('should add array input together', () => {
       const reduce = arrayFunctions.reduce;
-      expect(typeof reduce).toBe('function');
+
+      const actual = reduce([1,2,3], (num, acc) => {
+        return num+acc;
+      })
+      expect(actual).toBe(6);
     });
   });
 
   describe('find', () => {
-    it('should be a function', () => {
+    it('should find an element in an array', () => {
       const find = arrayFunctions.find;
-      expect(typeof find).toBe('function');
+
+      const actual = find([1,2,3,4,5,6,7], (num) => num === 3)
+      expect(actual).toBe(3);
     });
   });
 
   describe('filter', () => {
-    it('should be a function', () => {
+    it('should return array of only filtered items', () => {
       const filter = arrayFunctions.filter;
-      expect(typeof filter).toBe('function');
+
+      const actual = filter([40, 50, 30], num => num === 50)
+      expect(actual).toEqual([50]);
     });
   });
 
@@ -49,5 +64,4 @@ describe('Arrays', () => {
       expect(typeof flatten).toBe('function');
     });
   });
-
 });
