@@ -48,4 +48,20 @@ describe('objects', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('pairs', () => {
+    it('should be an function', () => {
+      const pairs = objectFunctions.pairs;
+      expect(typeof pairs).toBe('function');
+    });
+
+    it('should return an array of key-value pairs', () => {
+      const expected = [['a', 1], ['b', 4], ['c', 8]];
+      const pairs = objectFunctions.pairs;
+      const actual = pairs({ a: 1, b: 4, c: 8 });
+      expect(Array.isArray(actual)).toBeTruthy();
+      expect(actual.length).toEqual(3);
+      expect(actual).toEqual(expected);
+    });
+  });
 })
