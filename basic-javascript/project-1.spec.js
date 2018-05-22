@@ -343,3 +343,14 @@ test('addExclamationPoint test = test!', () => {
     const result = funcs.addExclamationPoint(str);
     expect(result).toBe(shouldBe);
 });
+///////////////////////////////////////////////////////////
+
+// Test combineNames
+test('combineNames Joe Green', () => {
+    const firstName = 'Joe';
+    const lastName = 'Green';
+    const fullName = `${firstName} ${lastName}`;
+    const result = funcs.combineNames(firstName, lastName);
+    expect(result).toBe(fullName);
+});
+////////////////////////////////////////////////////////////
