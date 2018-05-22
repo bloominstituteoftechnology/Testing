@@ -1,6 +1,7 @@
 const funcs = require('./project-1');
 const num = 13;
 const altNum = 21;
+
 //notes to c&p for understanding
 // arrange
 
@@ -14,8 +15,8 @@ const altNum = 21;
 //   const actual = ()
 //   expect(actual).toBe(expected)
 // });
-
-it('Runs the tests', () => {});
+describe('default', () => {});
+it('Runs the tests for project-1 basicJs'), () => {};
 
 describe('Function: multiplyByTen', () => {
   const numbers = num;
@@ -26,18 +27,18 @@ describe('Function: multiplyByTen', () => {
     const multiplyByTen = funcs.multiplyByTen;
     // act
     const actual = multiplyByTen(num);
-    const actualAlt = multiplyByTen(altNum)
+    const actualAlt = multiplyByTen(altNum);
     // assert
     expect(actual).toBe(expected);
   });
+  //im not exactly sure what this is doing?
   it('Checks identity', () => {
-    
     const actual = numbers;
-    expect(numbers).toBe(actual)
-  }) 
+    expect(numbers).toBe(actual);
+  });
   it('checks that it is a string', () => {
-    expect(typeof 'num').toBe('string')
-  })
+    expect(typeof 'numbers').toBe('string');
+  });
 });
 
 describe('Function: subtractFive', () => {
@@ -46,8 +47,11 @@ describe('Function: subtractFive', () => {
     const alt = 29;
     const subtractFive = funcs.subtractFive;
     const actual = subtractFive(47);
-    const actualAlt = subtractFive(34)
+    const actualAlt = subtractFive(34);
     expect(actual).toBe(expected);
+  });
+  it('checks that it is a string', () => {
+    expect(typeof 'num').toBe('string');
   });
 });
 
@@ -57,7 +61,7 @@ describe('Function: areSameLength', () => {
     const alt = false;
     const areSameLength = funcs.areSameLength;
     const actual = areSameLength('liz', 'lol');
-    const actualAlt = areSameLength('Alex', 'Elizabeth');
+    const actualAlt = areSameLength('Alex', 'Dylan');
     expect(actual).toBe(expected);
     expect(actualAlt).toBe(alt);
   });
