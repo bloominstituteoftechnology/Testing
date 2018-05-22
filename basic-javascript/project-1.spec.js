@@ -335,3 +335,11 @@ test('roundUp', () => {
     expect(result).toBe(shouldBe);
 });
 /////////////////////////////////////////////////////////
+
+// Test addExclamationPoint
+test('addExclamationPoint test = test!', () => {
+    const str = 'test';
+    const shouldBe =  str + "!";
+    const result = funcs.addExclamationPoint(str);
+    expect(result).toBe(shouldBe);
+});
