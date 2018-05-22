@@ -57,9 +57,9 @@ describe('Arrays', () => {
 
   describe('filter', () => {
     it('should work', () => {
-      const returnValue = arrayFunctions.find([5, 2,1, 7, 2], x => x > 5);
+      const returnValue = arrayFunctions.filter([5, 2,1, 7, 2], x => x > 4);
 
-      expect(returnValue).toBe(7);
+      expect(returnValue).toEqual([5, 7]);
     });
   });
 
