@@ -34,10 +34,10 @@ it('isInteger', () => {
     expect(funcs.isInteger('8')).toBe(false)
 })
 
-it('fizzBuzz', () => {
+it('fizzbuzz', () => {
     expect(funcs.fizzBuzz(3)).toBe('fizz')
     expect(funcs.fizzBuzz(5)).toBe('buzz')
-    expect(funcs.fizzBuzz(15)).toBe('fizzBuzz')
+    expect(funcs.fizzBuzz(15)).toBe('fizzbuzz')
 })
 
 it('isPrime', () => {
@@ -70,7 +70,7 @@ it('addItemToArray', () => {
 })
 
 it('addItemToFront', () => {
-    const expect = [8, 3, 5]
+    const expected = [8, 3, 5]
     expect(funcs.addItemToFront([3, 5], 8)).toEqual(expected)
 })
 

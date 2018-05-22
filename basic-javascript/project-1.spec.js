@@ -38,7 +38,7 @@ it('divide', () => {
 })
 
 it('multiply', () => {
-    expect(funcs.multiply(2 * 4)).toBe(2 * 4)
+    expect(funcs.multiply(2, 4)).toBe(2 * 4)
 })
 
 it('getRemainder', () => {
