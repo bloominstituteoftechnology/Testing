@@ -1,6 +1,6 @@
 /* eslint-disable arrow-parens */
 
-const getBiggest = (x, y) => {
+const getBiggest = (x, y) => {  //PASSED
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -9,7 +9,7 @@ const getBiggest = (x, y) => {
   return y;
 };
 
-const greeting = language => {
+const greeting = language => {    //PASSED
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -20,28 +20,28 @@ const greeting = language => {
   }
 };
 
-const isTenOrFive = num => {
+const isTenOrFive = num => {    //PASSED
   if (num === 10 || num === 5) {
     return true;
   }
   return false;
 };
 
-const isInRange = num => {
+const isInRange = num => {    //PASSED
   if (num < 50 && num > 20) {
     return true;
   }
   return false;
 };
 
-const isInteger = num => {
+const isInteger = num => {    //PASSED
   if (Math.floor(num) === num) {
     return true;
   }
   return false;
 };
 
-const fizzBuzz = num => {
+const fizzBuzz = num => {   //PASSED
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -52,7 +52,7 @@ const fizzBuzz = num => {
   return num;
 };
 
-const isPrime = num => {
+const isPrime = num => {    //PASSED
   if (num < 0) {
     return false;
   }
@@ -67,36 +67,36 @@ const isPrime = num => {
   return true;
 };
 
-const returnFirst = arr => {
+const returnFirst = arr => {    //PASSED
   return arr[0];
 };
 
-const returnLast = arr => {
+const returnLast = arr => {   //PASSED
   return arr[arr.length - 1];
 };
 
-const getArrayLength = arr => {
+const getArrayLength = arr => {   //PASSED
   return arr.length;
 };
 
-const incrementByOne = arr => {
+const incrementByOne = arr => {   //PASSED
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
   return arr;
 };
 
-const addItemToArray = (arr, item) => {
+const addItemToArray = (arr, item) => {   //PASSED
   arr.push(item);
   return arr;
 };
 
-const addItemToFront = (arr, item) => {
+const addItemToFront = (arr, item) => {   //PASSED
   arr.unshift(item);
   return arr;
 };
 
-const wordsToSentence = words => {
+const wordsToSentence = words => {    //PASSED
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
@@ -121,7 +121,7 @@ const contains = (arr, item) => {
   return false;
 };
 
-const addNumbers = numbers => {
+const addNumbers = numbers => {   //PASSED
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOfNumbers += numbers[i];
@@ -129,7 +129,7 @@ const addNumbers = numbers => {
   return sumOfNumbers;
 };
 
-const averageTestScore = testScores => {
+const averageTestScore = testScores => {    //PASSED
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
