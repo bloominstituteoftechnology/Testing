@@ -17,4 +17,20 @@ describe('objects', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('values', () => {
+    it('should be an function', () => {
+      const values = objectFunctions.values;
+      expect(typeof values).toBe('function');
+    });
+
+    it('should return an array of the object values', () => {
+      const expected = [1, 4, 8];
+      const values = objectFunctions.values;
+      const actual = values({ a: 1, b: 4, c: 8 });
+      expect(Array.isArray(actual)).toBeTruthy();
+      expect(actual.length).toEqual(3);
+      expect(actual).toEqual(expected);
+    });
+  });
 })
