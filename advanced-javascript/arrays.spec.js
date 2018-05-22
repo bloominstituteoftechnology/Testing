@@ -31,6 +31,7 @@ describe('Arrays', () => {
       const expected = [4, 10, 12];
       const map = arrayFunctions.map;
       const actual = map([2, 5, 6], (x) => x * 2 );
+      expect(Array.isArray(actual)).toBeTruthy();
       expect(actual).toEqual(expected);
     })
   });
