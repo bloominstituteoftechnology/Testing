@@ -28,4 +28,19 @@ describe('Arrays', () => {
       expect(mappedArray).toEqual([3, 4, 5]);
     })
   });
+
+  describe('reduce', () => {
+    //Checks if function is type of function        
+    isFunction(arrayFunctions.reduce);
+
+    const elements = [1, 2, 3];
+    const memo = elements.shift();
+    const cb = (memo, item) => {
+      return memo + item;
+    };
+    const reduce = arrayFunctions.reduce(elements, cb, memo);
+    it('Should rerturn expected outcome', () => {
+      expect(reduce).toBe(6);
+    });
+  });
 });
