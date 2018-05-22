@@ -79,3 +79,14 @@ it('wordsToSentence', () => {
     const expected = 'Kenzie is a dog'
     expect(funcs.wordsToSentence(actual)).toBe(expected)
 })
+
+it('contains', () => {
+    expect(funcs.contains(['Kenzie', 'Dog', 'Hungry'], 'Kenzie')).toBeTruthy()
+    expect(funcs.contains(['Kenzie', 'Dog', 'Hungry'], 'Orange')).toBeFalsy()
+})
+
+it('addNumber', () => {
+    const sum = 8
+    expect(funcs.addNumbers([2, 4, 2])).toBe(sum)
+})
+
