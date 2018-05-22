@@ -127,3 +127,17 @@ describe('fizzBuzz', () => {
         expect(fizz).toBe(f)
     })
 })
+
+describe('isPrime', () => {
+    it('checks if num is a prime', () => {
+        // arrange
+        const isPrime = funcs.isPrime;
+
+        // act
+        const actual = isPrime(23)
+
+        // assert
+        expect(actual).toBeTruthy()
+    })
+})
+
