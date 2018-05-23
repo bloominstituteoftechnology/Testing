@@ -1,4 +1,4 @@
-const arrayFunctions = require('../src/arrays');
+const arrayFunctions = require('./arrays');
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -11,7 +11,13 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
     });
   });
+  it('should return each item in an array', () => {
+    const each = arrayFunctions.each;
+    const elements = [1,2,4]
+
+    expect(elements).toBe(1,2,4)
+  })
 });
