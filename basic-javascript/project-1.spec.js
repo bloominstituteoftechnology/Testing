@@ -11,6 +11,7 @@ it('multiply number by 10', () => {
     expect(timesTwo).toEqual(20);
     expect(timesFour).toEqual(40);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('subtract number by 5', () => {
     const minusFive = funcs.subtractFive;
@@ -21,6 +22,7 @@ it('subtract number by 5', () => {
     expect(Ten).toEqual(5);
     expect(One).toEqual(-4);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('tests is 2 values are same length?', () => {
     const sameLength = funcs.areSameLength;
@@ -31,6 +33,7 @@ it('tests is 2 values are same length?', () => {
     expect(ExOne).toEqual(true);
     expect(ExTwo).toEqual(false);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('tests if 2 values are equal?', () => {
     const equalSame = funcs.areEqual;
@@ -41,6 +44,7 @@ it('tests if 2 values are equal?', () => {
     expect(ExOne).toEqual(true);
     expect(ExTwo).toEqual(false);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('tests if values are less than 90?', () => {
     const ninetyLess = funcs.lessThanNinety;
@@ -51,6 +55,7 @@ it('tests if values are less than 90?', () => {
     expect(ExOne).toEqual(true);
     expect(ExTwo).toEqual(false);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('tests if values are greater than 50?', () => {
     const greaterThan50 = funcs.greaterThanFifty;
@@ -61,6 +66,7 @@ it('tests if values are greater than 50?', () => {
     expect(ExOne).toEqual(false);
     expect(ExTwo).toEqual(true);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('add 2 numbers; return sum', () => {
     const add = funcs.add;
@@ -71,6 +77,7 @@ it('add 2 numbers; return sum', () => {
     expect(seven).toBe(7);
     expect(ten).toBe(10);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('minus 2 numbers; return sum', () => {
     const subtract = funcs.subtract;
@@ -81,6 +88,7 @@ it('minus 2 numbers; return sum', () => {
     expect(one).toBe(1);
     expect(five).toBe(5);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('divide 2 numbers; return sum', () => {
     const divide = funcs.divide;
@@ -91,6 +99,7 @@ it('divide 2 numbers; return sum', () => {
     expect(four).toBe(4);
     expect(two).toBe(2);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('multiply 2 numbers; return sum', () => {
     const multiply = funcs.multiply;
@@ -101,6 +110,7 @@ it('multiply 2 numbers; return sum', () => {
     expect(four).toBe(4);
     expect(two).toBe(2);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('get remainder of 2 numbers', () => {
     const getRemainder = funcs.getRemainder;
@@ -111,6 +121,7 @@ it('get remainder of 2 numbers', () => {
     expect(one).toBe(1);
     expect(two).toBe(2);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('checks for even number', () => {
     const isEven = funcs.isEven;
@@ -121,6 +132,7 @@ it('checks for even number', () => {
     expect(ExOne).toEqual(true);
     expect(ExTwo).toEqual(false);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('checks for odd number', () => {
     const isOdd = funcs.isOdd;
@@ -131,6 +143,7 @@ it('checks for odd number', () => {
     expect(ExOne).toEqual(true);
     expect(ExTwo).toEqual(false);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('checks for square number', () => {
     const square = funcs.square;
@@ -141,6 +154,7 @@ it('checks for square number', () => {
     expect(nine).toBe(9);
     expect(four).toBe(4);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('checks for cubed number', () => {
     const cube = funcs.cube;
@@ -149,6 +163,7 @@ it('checks for cubed number', () => {
 
     expect(example).toBe(8);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('checks for raise to power', () => {
     const raiseToPower = funcs.raiseToPower;
@@ -157,6 +172,7 @@ it('checks for raise to power', () => {
 
     expect(example).toBe(128);
 });
+//----------------------------------------------------------------------------------------------  
 
 
 it('checks for round number', () => {
@@ -166,6 +182,7 @@ it('checks for round number', () => {
 
     expect(example).toBe(1);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('checks for rounded up number', () => {
     const roundUp = funcs.roundUp;
@@ -174,6 +191,7 @@ it('checks for rounded up number', () => {
 
     expect(example).toBe(1);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('adds exlamation point to string', () => {
     const addExclamationPoint = funcs.addExclamationPoint;
@@ -182,6 +200,7 @@ it('adds exlamation point to string', () => {
 
     expect(example).toBe('pug!');
 });
+//----------------------------------------------------------------------------------------------  
 
 it('combine names', () => {
     const combineNames = funcs.combineNames;
@@ -190,6 +209,7 @@ it('combine names', () => {
 
     expect(example).toBe('Clementine Pug');
 });
+//----------------------------------------------------------------------------------------------  
 
 it('get greeting', () => {
     const getGreeting = funcs.getGreeting;
@@ -198,6 +218,7 @@ it('get greeting', () => {
 
     expect(example).toBe('Hello Clementine!');
 });
+//----------------------------------------------------------------------------------------------  
 
 it('get Rectangle Area', () => {
     const getRectangleArea = funcs.getRectangleArea;
@@ -206,6 +227,7 @@ it('get Rectangle Area', () => {
 
     expect(example).toBe(8);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('get Triangle Area', () => {
     const getTriangleArea = funcs.getTriangleArea;
@@ -214,6 +236,7 @@ it('get Triangle Area', () => {
 
     expect(example).toBe(2);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('get Circle Area', () => {
     const getCircleArea = funcs.getCircleArea;
@@ -222,6 +245,7 @@ it('get Circle Area', () => {
 
     expect(example).toBe(Math.PI * 4);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('get Rectangular prism Volume', () => {
     const getRectangularPrismVolume = funcs.getRectangularPrismVolume;

@@ -11,6 +11,7 @@ it('get biggest number', () => {
     expect(ExOne).toEqual(25);
     expect(ExTwo).toEqual(56);
 });
+//---------------------------------------------------------------------------------------------- 
 
 it('Switch language', () => {
     const greeting = funcs.greeting;
@@ -23,6 +24,7 @@ it('Switch language', () => {
     expect(Spanish).toEqual('Hello!');
     expect(Default).toEqual('Hello!');
 });
+//----------------------------------------------------------------------------------------------  
 
 it('is ten or five', () => {
     const isTenOrFive = funcs.isTenOrFive;
@@ -35,6 +37,7 @@ it('is ten or five', () => {
     expect(ExTwo).toEqual(false);
     expect(ExThree).toEqual(true);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('is in range < 50 but > 20', () => {
     const isInRange = funcs.isInRange;
@@ -53,6 +56,7 @@ it('is in range < 50 but > 20', () => {
 //     expect(funcs.isInRange(20)).toBeFalsy();
 //     expect(funcs.isInRange(50)).toBeFalsy();
 // });
+//----------------------------------------------------------------------------------------------  
 
 it('fizzbuzz', () => {
     const fizzBuzz = funcs.fizzBuzz;
@@ -65,6 +69,7 @@ it('fizzbuzz', () => {
     expect(ExTwo).toEqual('fizz');
     expect(ExThree).toEqual('buzz');
 });
+//----------------------------------------------------------------------------------------------  
 
 it('if number is prime?', () => {
     const isPrime = funcs.isPrime;
@@ -77,6 +82,7 @@ it('if number is prime?', () => {
     expect(ExTwo).toEqual(false);
     expect(ExThree).toEqual(true);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Return first Array', () => {
     const returnFirst = funcs.returnFirst;
@@ -89,6 +95,7 @@ it('Return first Array', () => {
     expect(ExTwo).toEqual(2);
     expect(ExThree).toEqual(10);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Return last Array', () => {
     const returnLast = funcs.returnLast;
@@ -101,6 +108,7 @@ it('Return last Array', () => {
     expect(ExTwo).toEqual(6);
     expect(ExThree).toEqual(7);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Get Array Length', () => {
     const getArrayLength = funcs.getArrayLength;
@@ -109,6 +117,7 @@ it('Get Array Length', () => {
 
     expect(ExThree).toEqual(4);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Increment by one', () => {
     const incrementByOne = funcs.incrementByOne;
@@ -117,6 +126,7 @@ it('Increment by one', () => {
 
     expect(ExThree).toEqual([1]);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Add item to array', () => {
     const addItemToArray = funcs.addItemToArray;
@@ -125,6 +135,7 @@ it('Add item to array', () => {
 
     expect(ExThree).toEqual([0, 2, 25]);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Add item to front', () => {
     const addItemToFront = funcs.addItemToFront;
@@ -133,6 +144,7 @@ it('Add item to front', () => {
 
     expect(ExThree).toEqual([25, 0, 2]);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Words into sentence', () => {
     const wordsToSentence = funcs.wordsToSentence;
@@ -141,6 +153,7 @@ it('Words into sentence', () => {
 
     expect(pugs).toEqual('Comrade and Clementine');
 });
+//----------------------------------------------------------------------------------------------  
 
 it('contains', () => {
     const contains = funcs.contains;
@@ -151,6 +164,7 @@ it('contains', () => {
     expect(ExOne).toEqual(true);
     expect(ExTwo).toEqual(false);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Add numbers', () => {
     const addNumbers = funcs.addNumbers;
@@ -161,6 +175,7 @@ it('Add numbers', () => {
     expect(ExOne).toEqual(10);
     expect(ExTwo).toEqual(4);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Average test score', () => {
     const averageTestScore = funcs.averageTestScore;
@@ -169,6 +184,7 @@ it('Average test score', () => {
 
     expect(ExOne).toEqual(100);
 });
+//----------------------------------------------------------------------------------------------  
 
 it('Largest number', () => {
     const largestNumber = funcs.largestNumber;

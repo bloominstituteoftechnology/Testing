@@ -13,8 +13,10 @@ describe('Arrays', () => {
       const each = arrayFunctions.each;
 
       expect(typeof each).toBe('function');
-    })
-  })
+    });
+  });
+//----------------------------------------------------------------------------------------------  
+
 
   describe('map', () => {
     it('should be a function', () => {
@@ -23,8 +25,10 @@ describe('Arrays', () => {
 
       expect(typeof map).toBe('function');
       expect(Ex1).toEqual([4, 8, 12]);
-    })
-  })
+    });
+  });
+//----------------------------------------------------------------------------------------------  
+
 
   describe('reduce', () => {
     it('reduces array to one value', () => {
@@ -36,8 +40,10 @@ describe('Arrays', () => {
       expect(Ex1).toEqual(6);
       expect(Ex2).toEqual(1);
       expect(Ex3).toEqual(3);
-    })
-  })
+    });
+  });
+  //----------------------------------------------------------------------------------------------  
+
 
   describe('find', () => {
     it('find a value within array', () => {
@@ -49,8 +55,10 @@ describe('Arrays', () => {
       expect(Ex1).toEqual(2);
       expect(Ex2).toEqual(undefined);
       expect(Ex3).toEqual(3);
-    })
-  })
+    });
+  });
+//----------------------------------------------------------------------------------------------  
+
 
   describe('filter', () => { //not sure why my filter isn't passing the test... 
         it('filter arrays elements by cb', () => {
@@ -62,8 +70,9 @@ describe('Arrays', () => {
           expect(Ex1).toEqual([])
           expect(Ex2).toEqual([2]);
           expect(Ex3).toEqual([3, 3]);
-        })
-      })
+        });
+      });
+  //----------------------------------------------------------------------------------------------      
     
   describe('flatten', () => {
     it('multi-dimensional array to a one-dimentional array', () => {
@@ -75,6 +84,6 @@ describe('Arrays', () => {
       expect(Ex1).toEqual([2, 4, 6, 8, 10, 12]);
       expect(Ex2).toEqual([2, 4, 6]);
       expect(Ex3).toEqual([]);
-    })
-  })
+    });
+  });
 }); 
