@@ -123,8 +123,9 @@ const contains = (arr, item) => {
 
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
+  numbers = numbers.toString()
   for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
+    sumOfNumbers += Number(numbers[i]);
   }
   return sumOfNumbers;
 };
