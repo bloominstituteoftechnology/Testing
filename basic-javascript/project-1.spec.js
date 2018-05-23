@@ -57,4 +57,65 @@ it('should subtract', () => {
     expect(answer).toBe(2);
 });
 
-it('')
+it('should multiply', () => {
+    const multiply = funcs.multiply;
+    const answer = multiply(x,y)
+    expect(answer).toBe(x*y)
+})
+
+it('should find remainder', () => {
+    const getRemainder = funcs.getRemainder;
+    x = 25
+    y = 5
+    const answer = getRemainder(x,y)
+    expect(answer).toBe(x%y);
+});
+
+it('should be even', () => {
+    const isEven = funcs.isEven;
+    num = isEven(4)
+    expect(num).toBe(true)
+});
+
+it('should be odd', () => {
+    const isOdd = funcs.isOdd;
+    num = isOdd(5)
+    expect(num).toBe(true)
+});
+
+it('should square a number', () => {
+    const square = funcs.square;
+    num = 5
+    answer = num * num;
+    expect(answer).toBe(25)
+});
+
+it('should cube a number', () => {
+    const cube = funcs.cube;
+    num = 5
+    answer = num * num * num;
+    expect(answer).toBe(125)
+});
+
+it('should raise to an exponent', () => {
+    const raiseToPower = funcs.raiseToPower;
+    num = 4;
+    exponent = 2;
+    answer = (num ** exponent)
+    expect(answer).toBe(16)
+});
+
+it('should round a number', () => {
+    const roundNumber = funcs.roundNumber;
+    answer = roundNumber(8.6);
+    expect(answer).toBe(9);
+});
+
+it('should round a number up', () => {
+    const roundUp = funcs.roundUp;
+    answer = roundUp(5.2);
+    expect(answer).toBe(6);
+})
+
+
+
