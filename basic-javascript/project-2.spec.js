@@ -157,50 +157,73 @@ it('should increment each number in the array by 1', () => {
 });
 
 // addItemToArray,
-it('', () => {
+it('should push a new element to an array', () => {
   // arrange
+  const addItemToArray = funcs.addItemToArray;
   // act
+  const arr = addItemToArray([3, 4, 5], 6)
   // assert
+  expect(arr).toEqual([3, 4, 5, 6])
 });
 
 // addItemToFront,
-it('', () => {
+it('should add item to the front of an array', () => {
   // arrange
+  const addItemToFront = funcs.addItemToFront;
   // act
+  const arr = addItemToFront([4, 5, 6], 3)
   // assert
+  expect(arr).toEqual([3, 4, 5, 6]);
 });
 
 // wordsToSentence,
-it('', () => {
+it('should create a sentence string from an array', () => {
   // arrange
+  const wordsToSentence = funcs.wordsToSentence;
   // act
+  const str = wordsToSentence(['This', 'is', 'my', 'sentence.'])
   // assert
+  expect(str).toEqual('This is my sentence.');
 });
 
 // contains,
-it('', () => {
+it('should find out if an array contains an item, given (array, item)', () => {
   // arrange
+  const contains = funcs.contains;
   // act
+  const arr3 = contains([1, 2, 3, 4, 5, 6], 3);
+  const arr8 = contains([1, 2, 3, 4, 5, 6], 8);
   // assert
+  expect(arr3).toBeTruthy();
+  expect(arr8).toBeFalsy();
 });
 
 // addNumbers,
-it('', () => {
+it('sum up the numbers in an array', () => {
   // arrange
+  const addNumbers = funcs.addNumbers;
   // act
+  const arr = addNumbers([3, 4, 5, 6]);
   // assert
+  expect(arr).toBe(18);
 });
 
 // averageTestScore,
-it('', () => {
+it('should return the average of test scores in an array', () => {
   // arrange
+  const avgTestScore = funcs.averageTestScore;
   // act
+  const arr = avgTestScore([70, 80, 90, 100])
   // assert
+  expect(arr).toBe(85);
 });
 
 // largestNumber
-it('', () => {
+it('should return the largest number in an array', () => {
   // arrange
+  const largestNumber = funcs.largestNumber;
   // act
+  const arr = largestNumber([80, 90, 85, 82, 87]);
   // assert
+  expect(arr).toBe(90);
 });
