@@ -1,4 +1,4 @@
-const funcs = require('./project-1');
+const funcs = require('./project-1')
 
 // write your tests here
 it('multiplyByTen', () => {
@@ -28,20 +28,56 @@ it('add', () => {
 it('subtract', () => {
   expect(funcs.subtract(2, 1)).toBe(2 - 1)
 })
-it('divide', () => { })
-it('multiply', () => { })
-it('getRemainder', () => { })
-it('isEven', () => { })
-it('isOdd', () => { })
-it('square', () => { })
-it('cube', () => { })
-it('raiseToPower', () => { })
-it('roundNumber', () => { })
-it('roundUp', () => { })
-it('addExclamationPoint', () => { })
-it('combineNames', () => { })
-it('getGreeting', () => { })
-it('getRectangleArea', () => { })
-it('getTriangleArea', () => { })
-it('getCircleArea', () => { })
-it('getRectangularPrismVolume', () => { })
+it('divide', () => {
+  expect(funcs.divide(2, 1)).toBe(2)
+})
+it('multiply', () => {
+  expect(funcs.multiply(3, 2)).toBe(6)
+})
+it('getRemainder', () => {
+  expect(funcs.getRemainder(5, 2)).toBe(1)
+})
+it('isEven', () => {
+  expect(funcs.isEven(2)).toBe(true)
+  expect(funcs.isEven(3)).toBe(false)
+})
+it('isOdd', () => {
+  expect(funcs.isOdd(3)).toBe(true)
+  expect(funcs.isOdd(4)).toBe(false)
+})
+it('square', () => {
+  expect(funcs.square(5)).toBe(25)
+})
+it('cube', () => {
+  expect(funcs.cube(3)).toBe(27)
+})
+it('raiseToPower', () => {
+  expect(funcs.raiseToPower(4, 4)).toBe(256)
+})
+it('roundNumber', () => {
+  expect(funcs.roundNumber(4.523)).toBe(5)
+})
+it('roundUp', () => {
+  expect(funcs.roundUp(4.3)).toBe(5)
+})
+it('addExclamationPoint', () => {
+  expect(funcs.addExclamationPoint('hey...')).toBe('hey...!')
+})
+it('combineNames', () => {
+  expect(funcs.combineNames('Homer', 'Simpson')).toBe('Homer Simpson')
+})
+it('getGreeting', () => {
+  expect(funcs.getGreeting('Homer')).toBe('Hello Homer!') // Doh! 🤕
+})
+it('getRectangleArea', () => {
+  expect(funcs.getRectangleArea(2, 4)).toBe(8)
+})
+it('getTriangleArea', () => {
+  expect(funcs.getTriangleArea)
+})
+it('getCircleArea', () => {
+  expect(funcs.getCircleArea(3)).toBe(Math.PI * 3 ** 2)
+})
+it('getRectangularPrismVolume', () => {
+  expect(funcs.getRectangularPrismVolume(2, 2, 2)).toBe(2 ** 3)
+})
