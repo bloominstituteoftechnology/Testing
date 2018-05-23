@@ -16,6 +16,44 @@ const arrayFunctions = require("./arrays");
 //   });
 // });
 
-describe("objects", () => {
-  it("should be an object", () => {});
+it("should should use a callback function on each item in an array and return an array with the modified items", () => {
+  const map = arrayFunctions.map;
+  const mapCb = item => {
+    return item * 2;
+  };
+  const actual = map([1, 2, 3], mapCb);
+  expect(actual).toEqual([2, 4, 6]);
+});
+
+it("should return a reduced array that is modified by a callback function", () => {
+  const reduce = arrayFunctions.reduce;
+  const reduceCb = (memo, item) => {
+    return memo + item;
+  };
+  expect(reduce([1, 2, 3], reduceCb)).toEqual(6);
+  expect(reduce(["He", "ll", "o"], reduceCb)).toBe("Hello");
+});
+
+it("should go through an array and return the first item that can return something from a callback function, and return undefined if none can be", () => {
+  const find = arrayFunctions.find;
+  const findCb = item => {
+    if (typeof item === "number") return true;
+  };
+  expect(find(["1", 2, 3], findCb)).toBe(2);
+  expect(find(["String", "String", "String2"], findCb)).toBe(undefined);
+});
+
+it("should return an array that is filtered based on a callback function", () => {
+  const filter = arrayFunctions.filter;
+  const filterCb = item => {
+    if (item > 50) return item;
+  };
+  const actual = filter([70, 20, "hi", 51], filterCb);
+  expect(actual).toEqual([70, 51]);
+});
+
+it("should return a flattened array", () => {
+  const flatten = arrayFunctions.flatten;
+  const actual = flatten([[1, [[2]], 3], [4]]);
+  expect(actual).toEqual([1, 2, 3, 4]);
 });

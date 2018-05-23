@@ -14,3 +14,17 @@ describe("getBiggest", () => {
     expect(actual).toBe(4);
   });
 });
+
+describe("greeting", () => {
+  it("should return corresponding language greeting", () => {
+    const greeting = funcs.greeting;
+
+    const Spanish = greeting("Spanish");
+    const German = greeting("German");
+    const English = greeting("English");
+
+    expect(Spanish).toBe("Hola!");
+    expect(German).toBe("Guten Tag!");
+    expect(English).toBe("Hello!");
+  });
+});
