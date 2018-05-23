@@ -57,3 +57,16 @@ describe("invert", () => {
     expect(actual).toEqual({ cheese: "hi", "[object Object]": "pie" });
   });
 });
+
+describe("defaults", () => {
+  it("should return an object with additional properties if it does not already have them", () => {
+    const defaults = objectFunctions.defaults;
+
+    const actual = defaults(
+      { prop1: "val1", prop2: "val2" },
+      { prop2: "val3", prop3: "val3" }
+    );
+
+    expect(actual).toEqual({ prop1: "val1", prop2: "val2", prop3: "val3" });
+  });
+});
