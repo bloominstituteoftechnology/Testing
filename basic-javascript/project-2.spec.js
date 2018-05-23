@@ -54,64 +54,72 @@ describe('default', () => {
   })
       describe ('isPrime', () => {
     it('return false if number is negative, zero, one, or even, else return true', () => {
+      expect(funcs.isPrime(-1)).toBe(false);
+      expect(funcs.isPrime(0)).toBe(false);
       expect(funcs.isPrime(1)).toBe(false);
+      expect(funcs.isPrime(4)).toBe(false);
+      expect(funcs.isPrime(5)).toBe(true);
     })
   })
       describe ('returnFirst', () => {
     it('return first number in an array', () => {
+      expect(funcs.returnFirst([1,2,3])).toBe(1);
     })
   })
       describe ('returnLast', () => {
     it('return last number in an array', () => {
+      expect(funcs.returnLast([1,2,3])).toBe(3);
     })
   })
       describe ('getArrayLength', () => {
     it('return the length of an array', () => {
+      expect(funcs.getArrayLength([1,2,3,9])).toBe(4);
     })
   })
       describe ('incrementByOne', () => {
     it('return array with values incremented by one', () => {
+      expect(funcs.incrementByOne([4])).toEqual([5]);
     })
   })
       describe ('addItemtoArray', () => {
     it('return an array with item added', () => {
+      expect(funcs.addItemToArray([3,4,6,7], 5)).toEqual([3,4,6,7,5]);
     })
   })
       describe ('addItemtoFront', () => {
     it('return array with item added to front of array', () => {
+      expect(funcs.addItemToFront([3,4,6,7], 5)).toEqual([5,3,4,6,7]);
     })
   })
-      describe ('wordsToSentence', () => {
-    it('return sentence from words', () => {
+
+      describe('should concatenate words into a sentence', () => {
+        // it('It should be called with an array', () => {
+        //     expect(funcs.wordsToSentences)
+        //     .toHaveBeenCalledWith(expect.any(Array));
+    
+        // });
+        it('should be an array of strings', () => {
+            expect(funcs.wordsToSentence(['Tommy' + ' Jones'])).toBe('Tommy Jones')
+        })
     })
-  })
       describe ('contains', () => {
     it('return true if item is contained in the array, return false if not', () => {
+      expect(funcs.contains([1,2,3,4,5], 4)).toBe(true);
+      expect(funcs.contains([3,4,5,6], 7)).toBe(false);
     })
   })
       describe ('addNumbers', () => {
     it('return sum of numbers added together', () => {
+      expect(funcs.addNumbers([1,2,3,4,5])).toBe(15);
     })
   })
       describe ('averageTestScore', () => {
     it('return average of all test score sums', () => {
+      expect(funcs.averageTestScore([234,565,876,898,909])).toBe(696.4)
     })
   })
       describe ('largestNumber', () => {
     it('return the largest number in an array', () => {
+      expect(funcs.largestNumber([1,2,3,4,5,6,7,8,9,0,10])).toBe(10);
     })
   })
-// describe('should concatenate words into a sentence', () => {
-//     it('It should be called with an array', () => {
-//         expect(funcs.wordsToSentences)
-//         .toHaveBeenCalledWith(expect.any(Array));
-
-//     });
-//     it('should be an array of strings', () => {
-//         it('it should return', () => {
-//             const sentence = funcs.wordsToSentences(['hello', 'i', 'am', 'Jonathan']);
-//             expect(sentence).toBe('hello i am Jonathan');
-//         })
-//         //expect(funcs.wordsToSentences(['Tommy' + 'jones'])).toEqual('Tommy Jones')
-//     })
-// })
