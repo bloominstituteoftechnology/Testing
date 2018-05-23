@@ -17,7 +17,7 @@ describe('Arrays', () => {
             let i = 0;
 
             const cb = (array) => {
-                return array;
+                // return array;
 
                 B.push(array);
                 // expect(B).toEqual(A);
@@ -25,11 +25,13 @@ describe('Arrays', () => {
                 expect(B[i]).toEqual(array);
                 // console.log(B)   
                 i++
+                return array;
 
             }
 
             const mprod = map(A, cb);
             expect(typeof map).toBe('function');
+            expect(B).toEqual(A)
 
 
         });
