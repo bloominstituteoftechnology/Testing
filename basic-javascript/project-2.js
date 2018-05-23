@@ -41,7 +41,7 @@ const isInteger = num => {
   return false;
 };
 
-const fizzBuzz = num => {
+const fizzBuzz = (num, mock) => {
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
