@@ -41,8 +41,38 @@ it("Should return true or false if number is greater then 50", () => {
   const num = 56;
   expect(num).toBeGreaterThan(50);
 });
-it("Should add two numbers together", () => {
+
+it("Should add two numbers ", () => {
   const add = helpers.add;
   const a = 9;
-  const b = 8;
+  const b = 9;
+  const sum = add(a,b);
+  expect(sum).toEqual(18)
 });
+
+it("Should subtract two numbers", () => {
+    const subtract = helpers.subtract;
+    const a = 20;
+    const b = 5;
+    const sum = subtract(a,b);
+    expect(sum).toEqual(15)
+  });
+
+  it("Should divide two numbers", () => {
+    const divide = helpers.divide;
+    const a = 9;
+    const b = 3;
+    const sum = divide(a,b);
+    expect(sum).toEqual(3)
+  });
+
+  it("Should muliply two numbers", () => {
+    const multiply = helpers.multiply;
+    const a = 9;
+    const b = 9;
+    const sum = multiply(a,b);
+    expect(sum).toEqual(81)
+  });
+
+  
+  
