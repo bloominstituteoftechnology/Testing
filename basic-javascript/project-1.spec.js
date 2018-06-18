@@ -140,3 +140,113 @@ it('is it squared?', () => {
     expect(Test1).toEqual(64);
     expect(Test2).toEqual(100);
 })
+
+//#15
+it('cube a number', () => {
+    const cubed = helpers.cube;
+    const Test1 = cubed(3);
+    const Test2 = cubed(5);
+
+    expect(Test1).toEqual(27);
+    expect(Test2).toEqual(125);
+})
+
+//#16
+it('raise to a power', () => {
+    const raisedToPower = helpers.raiseToPower;
+    const Test1 = raisedToPower(2,4);
+    const Test2 = raisedToPower(4,5);
+
+    expect(Test1).toEqual(16);
+    expect(Test2).toEqual(1024);
+})
+
+//#17
+it('round a number', () => {
+    const rounded = helpers.roundNumber;
+    const Test1 = rounded(3.4);
+    const Test2 = rounded(18.5);
+
+    expect(Test1).toEqual(3);
+    expect(Test2).toEqual(19);
+})
+
+//#18
+it('round up a number', () => {
+    const roundedUp = helpers.roundUp;
+    const Test1 = roundedUp(3.4);
+    const Test2 = roundedUp(18.5);
+
+    expect(Test1).toEqual(4);
+    expect(Test2).toEqual(19);
+})
+
+//#19
+it('add exclamation point', () => {
+    const addedExclmation = helpers.addExclamationPoint;
+    const Test1 = addedExclmation("hello");
+    const Test2 = addedExclmation("(o)_(o)");
+
+    expect(Test1).toEqual("hello!");
+    expect(Test2).toEqual("(o)_(o)!");
+})
+
+//#20
+it('add exclamation point', () => {
+    const addedExclmation = helpers.addExclamationPoint;
+    const Test1 = addedExclmation("hello");
+    const Test2 = addedExclmation("(o)_(o)");
+
+    expect(Test1).toEqual("hello!");
+    expect(Test2).toEqual("(o)_(o)!");
+})
+
+//#21
+it('get the greeting', () => {
+    const getGreetings = helpers.getGreeting;
+    const Test1 = getGreetings("Sagar");
+    const Test2 = getGreetings("(o)_(o)");
+
+    expect(Test1).toEqual("Hello Sagar!");
+    expect(Test2).toEqual("Hello (o)_(o)!");
+})
+
+//#22
+it('get rectangular area', () => {
+    const getRectArea = helpers.getRectangleArea;
+    const Test1 = getRectArea(5,6);
+    const Test2 = getRectArea(7,9);
+
+    expect(Test1).toEqual(30);
+    expect(Test2).toEqual(63);
+})
+
+//#23
+it('get triangle area', () => {
+    const getTriArea = helpers.getTriangleArea;
+    const Test1 = getTriArea(5,6);
+    const Test2 = getTriArea(7,9);
+
+    expect(Test1).toEqual(15);
+    expect(Test2).toEqual(31.5);
+})
+
+//#24
+it('get circular area', () => {
+    const getCircArea = helpers.getCircleArea;
+    const Test1 = getCircArea(5);
+    const Test2 = getCircArea(7);
+
+    expect(Test1).toEqual(Math.PI * 25);
+    expect(Test2).toEqual(Math.PI * 49);
+})
+
+//#25
+it('get rectangular prism area', () => {
+    const getRectPrismArea = helpers.getRectangularPrismVolume;
+    const Test1 = getRectPrismArea(5, 6, 8);
+    const Test2 = getRectPrismArea(7, 9, 4);
+
+    expect(Test1).toEqual(240);
+    expect(Test2).toEqual(252);
+})
