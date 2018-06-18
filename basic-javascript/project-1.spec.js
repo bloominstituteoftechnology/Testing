@@ -167,5 +167,42 @@ describe('square', () => {
     })
 })
 
+describe('cube', () => {
+    it('should cube the given number', () => {
+        expect(helpers.cube(2)).toEqual(8);
+        expect(helpers.cube(-2)).toEqual(-8);
+        expect(helpers.cube('test')).toEqual(NaN);
+    })
+})
+
+describe('raiseToPower', () => {
+    it('should raise base number by the exponent', () => {
+        expect(helpers.raiseToPower(5, 2)).toEqual(25);
+        expect(helpers.raiseToPower(0, 0)).toEqual(1);
+        expect(helpers.raiseToPower(-5, 0)).toEqual(1);
+        expect(helpers.raiseToPower(5, 0)).toEqual(1);
+        expect(helpers.raiseToPower(16, -2)).toBeGreaterThan(0);
+        expect(helpers.raiseToPower(16, -2)).toBeLessThan(1);
+        expect(helpers.raiseToPower('test', 2)).toEqual(NaN);
+        expect(helpers.raiseToPower('test', 2)).toBeNaN();
+    })
+})
+
+describe('roundNumber', () => {
+    it('should round the given number up', () => {
+        expect(helpers.roundNumber(3.2)).toEqual(3);
+        expect(helpers.roundNumber(-3.2)).toEqual(-3);
+        expect(helpers.roundNumber(-'test')).toBeNaN();
+    })
+})
+
+describe('roundUp', () => {
+    it('should round the given number up', () => {
+        expect(helpers.roundUp(3.2)).toEqual(4);
+        expect(helpers.roundUp(-3.2)).toEqual(-3);
+        expect(helpers.roundUp(-'test')).toBeNaN();
+    })
+})
+
 
 
