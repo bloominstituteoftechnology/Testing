@@ -118,6 +118,8 @@ describe('multiply', () => {
         expect(helpers.multiply(10, -2)).toEqual(-20)
         expect(helpers.multiply('test', 5)).toBeNaN();
         expect(helpers.multiply('5', 5)).toEqual(25);
+        expect(helpers.multiply(null, 20)).toEqual(0)
+        expect(helpers.multiply(null, null)).toEqual(0)
     })
 })
 
@@ -140,6 +142,30 @@ describe('isEven', () => {
         expect(helpers.isEven(-1)).toBeFalsy();
     });
 });
+
+describe('isOdd', () => {
+    it('should return true for even numbers', () => {
+        expect(helpers.isOdd(4)).toBeFalsy();
+        expect(helpers.isOdd(0)).toBeFalsy();
+    });
+    it('should return false for odd numbers', () => {
+        expect(helpers.isOdd(3)).toBeTruthy();
+        expect(helpers.isOdd(-1)).toBeTruthy();
+    });
+    it('should return true for non numeric values ???', () => { // console.log(NaN % 2 !== 0)
+        expect(helpers.isOdd('test')).toBeTruthy();
+    })
+});
+
+
+describe('square', () => {
+    it('should square the given number', () => {
+        expect(helpers.square(5)).toEqual(25);
+        expect(helpers.square(-5)).toEqual(25);
+        expect(helpers.square('test')).toEqual(NaN);
+        expect(helpers.square('test')).toBeNaN();
+    })
+})
 
 
 
