@@ -5,28 +5,76 @@ describe('project-1', () => {
     describe('multiplyByTen', () => {
         it('')
     });
-    describe('subtractFive', () => {});
-    describe('areSameLength', () => {});
-    describe('areEqual', () => {});
-    describe('lessThanNinety', () => {});
-    describe('greaterThanFifty', () => {});
-    describe('add', () => {});
-    describe('subtract', () => {});
-    describe('divide', () => {});
-    describe('multiply', () => {});
-    describe('getRemainder', () => {});
-    describe('isEven', () => {});
-    describe('isOdd', () => {});
-    describe('square', () => {});
-    describe('cube', () => {});
-    describe('raiseToPower', () => {});
-    describe('roundNumber', () => {});
-    describe('roundUp', () => {});
-    describe('addExclamationPoint', () => {});
-    describe('combineNames', () => {});
-    describe('getGreeting', () => {});
-    describe('getRectangleArea', () => {});
-    describe('getTriangleArea', () => {});
-    describe('getCircleArea', () => {});
-    describe('getRectangularPrismVolume', () => {});
+    describe('subtractFive', () => {
+        it('')
+    });
+    describe('areSameLength', () => {
+        it('')
+    });
+    describe('areEqual', () => {
+        it('')
+    });
+    describe('lessThanNinety', () => {
+        it('')
+    });
+    describe('greaterThanFifty', () => {
+        it('')
+    });
+    describe('add', () => {
+        it('')
+    });
+    describe('subtract', () => {
+        it('')
+    });
+    describe('divide', () => {
+        it('')
+    });
+    describe('multiply', () => {
+        it('')
+    });
+    describe('getRemainder', () => {
+        it('')
+    });
+    describe('isEven', () => {
+        it('')
+    });
+    describe('isOdd', () => {
+        it('')
+    });
+    describe('square', () => {
+        it('')
+    });
+    describe('cube', () => {
+        it('')
+    });
+    describe('raiseToPower', () => {
+        it('')
+    });
+    describe('roundNumber', () => {
+        it('')
+    });
+    describe('roundUp', () => {
+        it('')
+    });
+    describe('addExclamationPoint', () => {
+        it('')
+    });
+    describe('combineNames', () => {
+        it('')
+    });
+    describe('getGreeting', () => {
+        it('')
+    });
+    describe('getRectangleArea', () => {
+        it('')
+    });
+    describe('getTriangleArea', () => {
+        it('')
+    });
+    describe('getCircleArea', () => {
+        it('')
+    });
+    describe('getRectangularPrismVolume', () => {
+        it('')
+    });
 })
