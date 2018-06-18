@@ -130,5 +130,16 @@ describe('getRemainder', () => {
     })
 })
 
+describe('isEven', () => {
+    it('should return true for even numbers', () => {
+        expect(helpers.isEven(4)).toBeTruthy();
+        expect(helpers.isEven(0)).toBeTruthy();
+    });
+    it('should return false for odd numbers', () => {
+        expect(helpers.isEven(3)).toBeFalsy();
+        expect(helpers.isEven(-1)).toBeFalsy();
+    });
+});
+
 
 
