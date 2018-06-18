@@ -29,10 +29,10 @@ describe('subtractFive', () => {
 describe('areSameLength', () => {
     it('Should return strings that are the same length', () => {
 
-        const expected = 'si','no';
+        const expected = (str1='si', str2='no');
         const actual = areSameLength(str1, str2);
 
-        expect(actual).toEqual(expected);
+        expect(actual).toBe(true);
     })
 
 });
@@ -50,8 +50,7 @@ function subtract(a, b) {
 
 function areSameLength(strA, strB) {
     return strA.length === strB.length;
-    //     return true;
-    // } return false;
+    
 }
 // start testing!
 
