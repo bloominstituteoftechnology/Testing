@@ -204,5 +204,49 @@ describe('roundUp', () => {
     })
 })
 
+describe('addExclamationPoint', () => {
+    it('should add an exclamation point to the end of the string', () => {
+        expect(helpers.addExclamationPoint('Iqra')).toEqual('Iqra!')
+        expect(helpers.addExclamationPoint(5)).toEqual('5!')
+        expect(helpers.addExclamationPoint(true)).toEqual('true!')
+        expect(helpers.addExclamationPoint(undefined)).toEqual('undefined!')
+        expect(helpers.addExclamationPoint(null)).toEqual('null!')
+    })
+})
 
+describe('combineNames', () => {
+    it('should combine two strings of names into a single string with space in between', () => {
+        expect(helpers.combineNames('iqra', 'javed')).toEqual('iqra javed');
+        expect(helpers.combineNames('5', '5')).toEqual('5 5');
+        expect(helpers.combineNames(undefined, undefined)).toEqual('undefined undefined')
+        expect(helpers.combineNames(5, 5)).toEqual('5 5');
+    })
+})
 
+describe('getGreeting', () => {
+    it('should combine the string Hello and the given name + ! into a single string', () => {
+        expect(helpers.getGreeting('Iqra')).toEqual('Hello Iqra!');
+        expect(helpers.getGreeting('5')).toEqual('Hello 5!');
+        expect(helpers.getGreeting(undefined)).toEqual('Hello undefined!');
+        expect(helpers.getGreeting('!')).toEqual('Hello !!');
+    })
+})
+
+describe('getRectangleArea', () => {
+    it('should multiply the two given numbers to give back the rectangle area', () => {
+        expect(helpers.getRectangleArea(5, 4)).toEqual(20);
+        expect(helpers.getRectangleArea(-1, 4)).toEqual(-4);
+        expect(helpers.getRectangleArea(NaN, 4)).toBeNaN();
+        expect(helpers.getRectangleArea(0, 0)).toBeFalsy();
+        expect(helpers.getRectangleArea('test', 'test')).toBeNaN();
+    })
+})
+
+describe('getTriangleArea', () => {
+    it('should multiply the given numbers by 0.5 to give back area of triangle', () => {
+        expect(helpers.getTriangleArea(10, 2)).toEqual(10);
+        expect(helpers.getTriangleArea(0, 2)).toEqual(0);
+        expect(helpers.getTriangleArea('test', 2)).toBeNaN();
+        expect(helpers.getTriangleArea(-10, 2)).toEqual(-10);
+    })
+})
