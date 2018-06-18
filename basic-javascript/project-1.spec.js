@@ -88,12 +88,28 @@ describe('greaterThanFifty', () => {
 describe('add', () => {
     it('can add two numbers', () => {
         expect(helpers.add(50, 5)).toEqual(55);
-        // expect(helpers.add('50', 5)).toBeNaN();
+        // expect(helpers.add('test', 5)).toBeNaN();
         // const max = Math.max;
         // expect(helpers.add(max, 2)).toBeNaN(); // same as class code on multiply, figure out why doesnt work 
     })
 })
 
+
+describe('subtract', () => {
+    it('can subtract two numbers', () => {
+        expect(helpers.subtract(10, 5)).toEqual(5);
+        expect(helpers.subtract('test', 5)).toBeNaN();
+    })
+})
+
+describe('divide', () => {
+    it('can divide two number', () => {
+        expect(helpers.divide(10, 2)).toEqual(5);
+        expect(helpers.divide('test', 5)).toBeNaN();
+        expect(helpers.divide(-10, -1)).toEqual(10)
+        expect(helpers.divide(-10, 1)).toEqual(-10)
+    })
+})
 
 
 
