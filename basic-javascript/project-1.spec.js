@@ -1,7 +1,9 @@
 const helpers = require('./project-1');
 
 // start testing!
-describe('project-1', () => { // describe.only will run only the tests in that particular suite
+// describe.only will run only the tests in that particular suite 
+// .skip also exists
+describe('project-1', () => { 
     describe('multiplyByTen', () => {
         it('returns NaN when given a non numeric value', () => {
             expect(helpers.multiplyByTen(undefined)).toBeNaN();
@@ -9,33 +11,20 @@ describe('project-1', () => { // describe.only will run only the tests in that p
             expect(helpers.multiplyByTen(false)).toEqual(0);
             expect(helpers.multiplyByTen(true)).toEqual(10); 
         })
-        it('should return the given number multiplied by 10', () => {});
+        it('should return the given number multiplied by 10', () => {
+            expect(helpers.multiplyByTen(5)).toEqual(50);
+            expect(helpers.multiplyByTen(-5)).toEqual(-50);
+        });
     });
-});
-
-// write down test ideas below
-// should return the right amount given a numeric value
-// another idea
-
-describe('isEven', () => {
-    it('isEven should return true for even numbers', () => {
-        expect(helpers.isEven(4)).toBeTruthy();
-        expect(helpers.isEven(0)).toBeTruthy();
-    });
-
-    it('isEven should return false for odd numbers', () => {
-        expect(helpers.isEven(3)).toBeFalsy();
-        expect(helpers.isEven(-1)).toBeFalsy();
-    });
-
 });
 
 describe('subtractFive', () => {
-    it('returns NaN when given a non numeric value', () => {
+    it('returns NaN when given a non numeric value & negatives with booleans', () => {
         expect(helpers.subtractFive(undefined)).toBeNaN();
         expect(helpers.subtractFive('two')).toBeNaN();
         expect(helpers.subtractFive(false)).toBe(-5);
         expect(helpers.subtractFive(true)).toEqual(-4); 
+        expect(helpers.subtractFive(null)).toEqual(-5); 
     })
 
     it('should return the given number subtracted by 5', () => {
@@ -46,22 +35,19 @@ describe('subtractFive', () => {
 });
 
 describe('areSameLength', () => {
-    // it('should return true if lengths are the same', () => {
-    //     expect(helpers.areSameLength().toBeUndefined());
-    // })
-
     it ('should return true if lengths are the same or false if not', () => {
         expect(helpers.areSameLength('test', 'test')).toBeTruthy();
-        expect(helpers.areSameLength('tests', 'test')).toBeFalsy();
     })
 
-    // come back and figure out what if one str is missing 
+    it ('should return false if lengths are not the same', () => {
+        expect(helpers.areSameLength('tests', 'test')).toBeFalsy();
+    })
 })
 
 describe('areEqual', () => {
     it('should return true if arguments pass strict equality', () => {
         expect(helpers.areEqual(5, 5)).toBe(true);
-        expect(helpers.areEqual(5, '5')).toEqual(false); // even though toEqual doesnt check for deep equality, the function does 
+        expect(helpers.areEqual(5, '5')).toEqual(false); 
         expect(helpers.areEqual('test', 5)).toBe(false);
         expect(helpers.areEqual(true, true)).toBe(true);
         expect(helpers.areEqual(true, false)).toBe(false);
@@ -88,12 +74,10 @@ describe('greaterThanFifty', () => {
 describe('add', () => {
     it('can add two numbers', () => {
         expect(helpers.add(50, 5)).toEqual(55);
-        // expect(helpers.add('test', 5)).toBeNaN();
-        // const max = Math.max;
-        // expect(helpers.add(max, 2)).toBeNaN(); // same as class code on multiply, figure out why doesnt work 
+        expect(helpers.add('test', 5)).toEqual('test5');
+        expect(helpers.add('test', 'test')).toEqual('testtest');
     })
 })
-
 
 describe('subtract', () => {
     it('can subtract two numbers', () => {
@@ -133,14 +117,17 @@ describe('getRemainder', () => {
 })
 
 describe('isEven', () => {
-    it('should return true for even numbers', () => {
+    it('isEven should return true for even numbers', () => {
         expect(helpers.isEven(4)).toBeTruthy();
         expect(helpers.isEven(0)).toBeTruthy();
+        expect(helpers.isEven(false)).toBeTruthy(); // false === 0
     });
-    it('should return false for odd numbers', () => {
+
+    it('isEven should return false for odd numbers', () => {
         expect(helpers.isEven(3)).toBeFalsy();
         expect(helpers.isEven(-1)).toBeFalsy();
-    });
+        expect(helpers.isEven(true)).toBeFalsy(); // true === 1
+    });  
 });
 
 describe('isOdd', () => {
@@ -152,7 +139,7 @@ describe('isOdd', () => {
         expect(helpers.isOdd(3)).toBeTruthy();
         expect(helpers.isOdd(-1)).toBeTruthy();
     });
-    it('should return true for non numeric values ???', () => { // console.log(NaN % 2 !== 0)
+    it('should return true for non numeric values', () => { // console.log(NaN % 2 !== 0)
         expect(helpers.isOdd('test')).toBeTruthy();
     })
 });
@@ -220,6 +207,7 @@ describe('combineNames', () => {
         expect(helpers.combineNames('5', '5')).toEqual('5 5');
         expect(helpers.combineNames(undefined, undefined)).toEqual('undefined undefined')
         expect(helpers.combineNames(5, 5)).toEqual('5 5');
+        expect(helpers.combineNames(true, false)).toBe('true false');
     })
 })
 
