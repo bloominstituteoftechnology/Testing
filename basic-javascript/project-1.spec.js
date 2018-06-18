@@ -1,6 +1,5 @@
 const helpers = require('./project-1');
 
-// start testing!
 describe('project-1', () => {
     describe('multiplyByTen', () => {
         it('can multiply by ten', () => {
@@ -97,46 +96,48 @@ describe('project-1', () => {
     describe('roundNumber', () => {
         it('should round a number with a decimal', () => {
             expect(helpers.roundNumber(4.67)).toBe(5);
+            expect(helpers.roundNumber(4.32)).toBe(4);
         });
     });
-    // describe('roundUp', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('addExclamationPoint', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('combineNames', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('getGreeting', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('getRectangleArea', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('getTriangleArea', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('getCircleArea', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-    // describe('getRectangularPrismVolume', () => {
-    //     it('', () => {
-
-    //     });
-    // });
-})
+    describe('roundUp', () => {
+        it('should round a number up', () => {
+            expect(helpers.roundUp(4.67)).toBe(5);
+        });
+    });
+    describe('addExclamationPoint', () => {
+        it('should add an exclamation point to a string', () => {
+            expect(helpers.addExclamationPoint('hello world')).toBe('hello world!')
+        });
+    });
+    describe('combineNames', () => {
+        it('should combine two inputs into a stingle string', () => {
+            expect(helpers.combineNames('andrew', 'kolumbic')).toBe('andrew kolumbic');
+        });
+    });
+    describe('getGreeting', () => {
+        it('should return a greeting with a dynamic name', () => {
+            expect(helpers.getGreeting('andrew')).toBe('Hello andrew!');
+            expect(helpers.getGreeting('AgHTgLe')).toBe('Hello AgHTgLe!');
+        });
+    });
+    describe('getRectangleArea', () => {
+        it('should return the area of a rectangle', () => {
+            expect(helpers.getRectangleArea(4, 6)).toEqual(24);
+        });
+    });
+    describe('getTriangleArea', () => {
+        it('should return the area of a triangle', () => {
+            expect(helpers.getTriangleArea(4, 5)).toEqual(10);
+        });
+    });
+    describe('getCircleArea', () => {
+        it('should get the area of a circle', () => {
+            expect(helpers.getCircleArea(1)).toEqual(3.141592653589793);
+        });
+    });
+    describe('getRectangularPrismVolume', () => {
+        it('should return the prism volume of a rectangle', () => {
+            expect(helpers.getRectangularPrismVolume(1,2,3)).toEqual(6);
+        });
+    });
+});
