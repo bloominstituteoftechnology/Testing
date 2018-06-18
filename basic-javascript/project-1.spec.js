@@ -103,7 +103,7 @@ describe('subtract', () => {
 })
 
 describe('divide', () => {
-    it('can divide two number', () => {
+    it('can divide two numbers', () => {
         expect(helpers.divide(10, 2)).toEqual(5);
         expect(helpers.divide('test', 5)).toBeNaN();
         expect(helpers.divide(-10, -1)).toEqual(10)
@@ -112,7 +112,23 @@ describe('divide', () => {
 })
 
 
+describe('multiply', () => {
+    it('can multiply two numbers', () => {
+        expect(helpers.multiply(10, 2)).toEqual(20)
+        expect(helpers.multiply(10, -2)).toEqual(-20)
+        expect(helpers.multiply('test', 5)).toBeNaN();
+        expect(helpers.multiply('5', 5)).toEqual(25);
+    })
+})
 
+describe('getRemainder', () => {
+    it('can get remainder after dividing two numbers', () => {
+        expect(helpers.getRemainder(5, 5)).toEqual(0);
+        expect(helpers.getRemainder(10, 3)).toEqual(1);
+        expect(helpers.getRemainder('test', 3)).toBeNaN();
+        expect(helpers.getRemainder('3', 3)).toEqual(0);
+    })
+})
 
 
 
