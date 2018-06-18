@@ -7,7 +7,7 @@ describe('project-1', () => {
         expect(helpers.multiplyByTen(undefined)).toBeNaN();
         expect(helpers.multiplyByTen('two')).toBeNaN();
       });
-  
+ 
       it('should return the given number multiplied by 10', () => {
           expect(helpers.multiplyByTen(4)).toBe(40);
           expect(helpers.multiplyByTen(0)).toBe(0);
@@ -123,8 +123,11 @@ describe('project-1', () => {
     });
 
     describe('getRemainder', () => {
-        it('should be NaN when divided by 0', () => {
-            expect(helpers.divide(10, 0)).toBeNaN();
+        it('should be NaN when divide 0 by 0', () => {
+            expect(helpers.divide(0, 0)).toBeNaN();
+        });
+        it('should be infinity when divided by 0', () => {
+            expect(helpers.divide(10, 0)).toBe(Infinity);
         });
         it('should return the remainder', () => {
             expect(helpers.getRemainder(5, 2)).toBe(1);
@@ -132,101 +135,130 @@ describe('project-1', () => {
         });
     });
   
-    // describe('isEven', () => {
-    //     it('should return true for even numbers', () => {
-    //         expect(helpers.isEven(4)).toBeTruthy();
-    //         expect(helpers.isEven(0)).toBeTruthy();
-    //     });
-    //     it('should return false for odd numbers', () => {
-    //         expect(helpers.isEven(3)).toBeFalsy();
-    //         expect(helpers.isEven(-1)).toBeFalsy();
-    //     });
-    // });
+    describe('isEven', () => {
+        it('should return true for even numbers', () => {
+            expect(helpers.isEven(4)).toBeTruthy();
+            expect(helpers.isEven(0)).toBeTruthy();
+        });
+        it('should return false for odd numbers', () => {
+            expect(helpers.isEven(3)).toBeFalsy();
+            expect(helpers.isEven(-1)).toBeFalsy();
+        });
+    });
 
-    // describe('isOdd', () => {
-    //     it('', () => {
-    //         expect(helpers.isOdd()).toBe();
-    //     });
-    // });
+    describe('isOdd', () => {
+        it('should return true for odd numbers', () => {
+            expect(helpers.isOdd(3)).toBeTruthy();
+            expect(helpers.isOdd(-1)).toBeTruthy();
+        });
+        it('should return false for even numbers', () => {
+            expect(helpers.isOdd(4)).toBeFalsy();
+            expect(helpers.isOdd(0)).toBeFalsy();
+        });
+    });
 
-    // describe('square', () => {
-    //     it('', () => {
-    //         expect(helpers.square()).toBe();
-    //     });
-    // });
+    describe('square', () => {
+        it('should return the squred number', () => {
+            expect(helpers.square(2)).toBe(4);
+            expect(helpers.square(3)).toBe(9);
+            expect(helpers.square(-5)).toBe(25);
+            expect(helpers.square(0)).toBe(0);
+        });
+    });
 
-    // describe('cube', () => {
-    //     it('', () => {
-    //         expect(helpers.cube()).toBe();
-    //     });
-    // });
+    describe('cube', () => {
+        it('should return the cubed number', () => {
+            expect(helpers.cube(2)).toBe(8);
+            expect(helpers.cube(3)).toBe(27);
+            expect(helpers.cube(-5)).toBe(-125);
+            expect(helpers.cube(0)).toBe(0);
+        });
+    });
 
-    // describe('raiseToPower', () => {
-    //     it('', () => {
-    //         expect(helpers.raiseToPower()).toBe();
-    //     });
-    // });
+    describe('raiseToPower', () => {
+        it('should return the powered by exponent number', () => {
+            expect(helpers.raiseToPower(1, 3)).toBe(1);
+            expect(helpers.raiseToPower(1, 0)).toBe(1);
+            expect(helpers.raiseToPower(-3, 3)).toBe(-27);
+            expect(helpers.raiseToPower(10, -3)).toBe(0.001);
+        });
+    });
 
-    // describe('roundNumber', () => {
-    //     it('', () => {
-    //         expect(helpers.roundNumber()).toBe();
-    //     });
-    // });
+    describe('roundNumber', () => {
+       it('should return rounded number', () => {
+            expect(helpers.roundNumber(0)).toBe(0);
+            expect(helpers.roundNumber(-1.5)).toBe(-1);
+            expect(helpers.roundNumber(1.5)).toBe(2);
+            expect(helpers.roundNumber(3)).toBe(3);
+        });
+    });
 
-    // describe('roundUp', () => {
-    //     it('', () => {
-    //         expect(helpers.roundUp()).toBe();
-    //     });
-    // });
+    describe('roundUp', () => {
+        it('should return roundedup number', () => {
+            expect(helpers.roundUp(0)).toBe(0);
+            expect(helpers.roundUp(-1.1)).toBe(-1);
+            expect(helpers.roundUp(1.1)).toBe(2);
+            expect(helpers.roundUp(3)).toBe(3);
+        });
+    });
 
-    // describe('addExclamationPoint', () => {
-    //     it('', () => {
-    //         expect(helpers.addExclamationPoint()).toBe();
-    //     });
-    // });
+    describe('addExclamationPoint', () => {
+        it('should add an exclamation at the end of a string', () => {
+            expect(helpers.addExclamationPoint('Space')).toBe('Space!');
+        });
+    });
 
-    // describe('combineNames', () => {
-    //     it('', () => {
-    //         expect(helpers.combineNames()).toBe();
-    //     });
-    // });
+    describe('combineNames', () => {
+        it('should return combined string of names', () => {
+            expect(helpers.combineNames('Nerys', 'Kira')).toBe('Nerys Kira');
+            expect(helpers.combineNames('Worf', 'Son of Mogh')).toBe('Worf Son of Mogh');
+            expect(helpers.combineNames('Wesley', 'Crusher')).toBe('Wesley Crusher');
+        });
+    });
 
-    // describe('getGreeting', () => {
-    //     it('', () => {
-    //         expect(helpers.getGreeting()).toBe();
-    //     });
-    // });
+    describe('getGreeting', () => {
 
-    // describe('getRectangleArea', () => {
-    //     it('', () => {
-    //         expect(helpers.getRectangleArea()).toBe();
-    //     });
-    // });
+        it('should return string', () => {
+            expect(typeof helpers.getGreeting('World')).toEqual('string');
+        });
 
-    // describe('getTriangleArea', () => {
-    //     it('', () => {
-    //         expect(helpers.getTriangleArea()).toBe();
-    //     });
-    // });
+        it('should return name with greetings message', () => {
+            expect(helpers.getGreeting('World')).toBe('Hello World!');
+        });
+    });
 
-    // describe('getCircleArea', () => {
-    //     it('', () => {
-    //         expect(helpers.getCircleArea()).toBe();
-    //     });
-    // });
+    describe('getRectangleArea', () => {
+        it('should return the area of a rectangle', () => {
+            expect(helpers.getRectangleArea(0, 5)).toBe(0);
+            expect(helpers.getRectangleArea(0, 0)).toBe(0);
+            expect(helpers.getRectangleArea(3, 4)).toBe(12);
+            expect(helpers.getRectangleArea(5, 5)).toBe(25);
+        });
+    });
 
-    // describe('getRectangularPrismVolume', () => {
-    //     it('', () => {
-    //         expect(helpers.getRectangularPrismVolume()).toBe();
-    //     });
-    // });
+    describe('getTriangleArea', () => {
+        it('should return the area of a triangle', () => {
+            expect(helpers.getTriangleArea(0, 4)).toBe(0);
+            expect(helpers.getTriangleArea(4, 0)).toBe(0);
+            expect(helpers.getTriangleArea(2, 4)).toBe(4);
+            expect(helpers.getTriangleArea(4, 4)).toBe(8);
+        });
+    });
 
+    describe('getCircleArea', () => {
+        it('should return the area of a circle', () => {
+            expect(helpers.getCircleArea(0)).toBe(0);
+            expect(helpers.getCircleArea(10)).toBe(100*Math.PI);
+        });
+    });
 
-    // describe('ex', () => {
-    //     it('', () => {
-    //         expect(helpers.ex()).toBe();
-    //     });
-    // });
+    describe('getRectangularPrismVolume', () => {
+        it('should return the volume of a prism', () => {
+            expect(helpers.getRectangularPrismVolume(0, 1, 2)).toBe(0);
+            expect(helpers.getRectangularPrismVolume(1, 1, 1)).toBe(1);
+            expect(helpers.getRectangularPrismVolume(1, 2, 3)).toBe(6);
+        });
+    });
 
 });
 
