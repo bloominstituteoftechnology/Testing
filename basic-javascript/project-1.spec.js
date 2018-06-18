@@ -31,16 +31,12 @@ describe('isEven', () => {
   
   describe('multiply', () => {
     it.only('should multiply numbers', () => {
-        const expected = 12;
-        const actual = (3,4);
-        expect(helpers.multiply(actual)).toEqual(expected);
+       expect(helpers.multiply(4,4)).toEqual(16)
     });
   });
 
   describe('getRemainder', () => {
     it.only('should return the remainder', () => {
-        const expected = 2;
-        const actual = (10,8);
-        expect(actual).toEqual(expected);
+       expect(helpers.getRemainder(10,8)).toEqual(2)
     });
   });
