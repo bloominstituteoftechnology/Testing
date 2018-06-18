@@ -250,3 +250,22 @@ describe('getTriangleArea', () => {
         expect(helpers.getTriangleArea(-10, 2)).toEqual(-10);
     })
 })
+
+describe('getCircleArea', () => {
+    it('should square the given radius and multiply it by the value of pi', () => {
+        expect(helpers.getCircleArea(5)).toEqual(78.53981633974483)
+        expect(helpers.getCircleArea(-5)).toEqual(78.53981633974483)
+        expect(helpers.getCircleArea('test')).toEqual(NaN);
+        expect(helpers.getCircleArea(null)).toEqual(0);
+    })
+})
+
+describe('getRectangularPrismVolume', () => {
+    it('should multiply the three given numbers', () => {
+        expect(helpers.getRectangularPrismVolume(4, 4, 4)).toEqual(64);
+        expect(helpers.getRectangularPrismVolume(undefined, 4, 4)).toBeNaN();
+        expect(helpers.getRectangularPrismVolume(null, 4, 4)).toEqual(0);
+        expect(helpers.getRectangularPrismVolume(-4, 4, 4)).toEqual(-64);
+        expect(helpers.getRectangularPrismVolume('test', 4, 4)).toBeNaN();
+    })
+})
