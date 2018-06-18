@@ -33,12 +33,37 @@ describe("multiplyByTen", () => {
 describe("subtractFive", () => {
   testWrongTypes(helpers.subtractFive, "number", undefined);
 
-  it("returns 10n when given a number n", () => {
+  it("returns n - 5 when given a number n", () => {
     expect(helpers.subtractFive(0)).toBe(-5);
-    expect(Number(parseFloat(helpers.subtractFive(10.12)).toPrecision(3))).toBe(
-      5.12
-    );
+    expect(Number(helpers.subtractFive(10.12).toFixed(2))).toBe(5.12);
     expect(helpers.subtractFive(2)).toBe(-3);
     expect(helpers.subtractFive(-3)).toBe(-8);
+  });
+});
+
+describe("areSameLength", () => {
+  testWrongTypes(helpers.areSameLength, "string", undefined);
+
+  it("Checks if two strings are the same length", () => {
+    expect(helpers.areSameLength("sdfsdf", "sdfsdf")).toBe(true);
+    expect(helpers.areSameLength("dostuff", "dothings")).toBe(false);
+    expect(helpers.areSameLength("iamacoolstring", "iamalamestring")).toBe(
+      true
+    );
+    expect(helpers.areSameLength("aaaa", "aaa")).toBe(false);
+  });
+});
+
+describe("areEqual", () => {
+  it("Checks if two anythings are the same", () => {
+    expect(helpers.areEqual("sdfsdf", "sdfsdf")).toBe(true);
+    expect(helpers.areEqual(5, "5")).toBe(false);
+    expect(helpers.areEqual("iamacoolstring", "iamalamestring")).toBe(false);
+    expect(helpers.areEqual(6, 6)).toBe(true);
+    expect(helpers.areEqual(7, undefined)).toBe(false);
+    expect(helpers.areEqual(NaN, null)).toBe(false);
+    expect(helpers.areEqual(false, 0)).toBe(false);
+    expect(helpers.areEqual(true, { key: "value" })).toBe(false);
+    expect(helpers.areEqual(false, "false")).toBe(false);
   });
 });
