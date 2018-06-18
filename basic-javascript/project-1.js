@@ -1,11 +1,13 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (typeof num !== "number") return undefined;
   return num * 10;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (typeof num !== "number") return undefined;
+  return parseFloat(num) - 5;
 };
 
 const areSameLength = (str1, str2) => {
@@ -85,7 +87,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
