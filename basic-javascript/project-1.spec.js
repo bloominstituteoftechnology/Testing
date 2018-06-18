@@ -194,7 +194,64 @@ describe.only('project-1', () => {
 
   describe('addExclamationPoint', () => {
     it('added exclamation point', () => {
-      
+      const expected = 'welcome!';
+      const actual = helpers.addExclamationPoint('welcome');
+
+      expect(actual).toEqual(expected);
+    })
+  });
+
+  describe('combineNames', () => {
+    it('names combined', () => {
+      const expected = 'fif ty';
+      const actual = helpers.combineNames('fif', 'ty');
+
+      expect(actual).toEqual(expected);
+    })
+  });
+
+  describe('getGreeting', () => {
+    it('added name to greeting', () => {
+      const expected = 'Hello fifty!';
+      const actual = helpers.getGreeting('fifty');
+
+      expect(actual).toEqual(expected);
+    })
+  });
+
+  describe('getRectangleArea', () => {
+    it('area of rectangle received', () => {
+      const expected = 50;
+      const actual = helpers.getRectangleArea(10, 5);
+
+      expect(actual).toEqual(expected);
+    })
+  });
+
+  describe('getTriangleArea', () => {
+    it('area of triangle received', () => {
+      const expected = 50;
+      const actual = helpers.getTriangleArea(10, 10);
+
+      expect(actual).toEqual(expected);
+    })
+  });
+
+  describe('getCircleArea', () => {
+    it('area of circle received', () => {
+      const expected = 10 ** 2 * Math.PI;
+      const actual = helpers.getCircleArea(10);
+
+      expect(actual).toEqual(expected);
+    })
+  });
+
+  describe('getRectanglePrismVolume', () => {
+    it('rectangle prism volume received', () => {
+      const expected = 50;
+      const actual = helpers.getRectangularPrismVolume(5, 5, 2);
+
+      expect(actual).toEqual(expected);
     })
   })
 });
