@@ -64,7 +64,6 @@ describe('project-1', () => {
     it('returns NaN when given a non Num Value', () => {
       expect(helpers.subtract(undefined,2)).toBeNaN();
       expect(helpers.subtract('test',4)).toBeNaN();
-      
     });
     it('should subtract ', () => {
       expect(helpers.subtract(10,10)).toEqual(0);
@@ -95,6 +94,125 @@ describe('project-1', () => {
       expect(helpers.multiply(700,10)).toBe(7000);
     })
   })
+
+  describe('getRemainder', () => {
+    it('returns remainder when given 2 values', () => {
+      expect(helpers.getRemainder(3,2)).toEqual(1);
+    });
+    it('returns remainder when devided by 0', () => {
+      expect(helpers.getRemainder(3,0)).toBeNaN();
+    });
+    it('returns remainder when given a string', () => {
+      expect(helpers.getRemainder(3,"p")).toBeNaN();
+    });
+  })
+
+  describe('isEven', () => {
+    it('returns remainder when given 2 values', () => {
+      expect(helpers.isEven(4)).toEqual(true);
+    });
+    it('returns remainder when devided by 0', () => {
+      expect(helpers.isEven(0)).toEqual(true);
+    });
+    it('returns remainder when given a string', () => {
+      expect(helpers.getRemainder("p")).toBeNaN();
+    });
+  })
+
+  describe('isOdd', () => {
+    it('returns remainder when given 2 values', () => {
+      expect(helpers.isOdd(4)).toEqual(false);
+      expect(helpers.isOdd(21)).toEqual(true);
+    });
+    it('returns remainder when devided by 0', () => {
+      expect(helpers.isOdd(0)).toEqual(false);
+    });
+    it('returns remainder when given a string', () => {
+      expect(helpers.isOdd("p")).toEqual(true);
+    });
+  })
+
+  describe('square', () => {
+    it('returns squar', () => {
+      expect(helpers.square(4)).toEqual(16);
+      expect(helpers.square(21)).toEqual(441);
+    });
+  })
+
+  describe('cube', () => {
+    it('returns cube', () => {
+      expect(helpers.cube(4)).toEqual(64);
+      expect(helpers.cube(3)).toEqual(27);
+    });
+  })
+
+  describe('raiseToPower', () => {
+    it('returns raisetopower', () => {
+      expect(helpers.raiseToPower(4,3)).toEqual(64);
+      expect(helpers.raiseToPower(3,4)).toEqual(81);
+    });
+  })
+
+  describe('roundNumber', () => {
+    it('returns roundNumber', () => {
+      expect(helpers.roundNumber(4.34)).toEqual(4);
+      expect(helpers.roundNumber(4.54)).toEqual(5);
+    });
+  })
+
+  describe('roundUp', () => {
+    it('returns roundUp', () => {
+      expect(helpers.roundUp(4.34)).toEqual(5);
+      expect(helpers.roundUp(4.54)).toEqual(5);
+    });
+  })
+
+  describe('addExclamationPoint', () => {
+    it('returns addExclamationPoint', () => {
+      expect(helpers.addExclamationPoint("pow")).toEqual("pow!");
+      expect(helpers.addExclamationPoint("3")).toEqual("3!");
+    });
+  })
+
+  describe('combineNames', () => {
+    it('returns combineNames', () => {
+      expect(helpers.combineNames("pow", "paw")).toEqual("pow paw");
+    });
+  })
+
+  describe('getGreeting', () => {
+    it('returns getGreeting', () => {
+      expect(helpers.getGreeting("pow")).toEqual("Hello pow!");
+    });
+  })
+
+  describe('getRectangleArea', () => {
+    it('returns getRectangleArea', () => {
+      expect(helpers.getRectangleArea(3,4)).toEqual(12);
+    });
+  })
+
+  describe('getTriangleArea', () => {
+    it('returns getTriangleArea', () => {
+      expect(helpers.getTriangleArea(3,4)).toEqual(6);
+    });
+  })
+
+  describe('getCircleArea', () => {
+    it('returns getCircleArea', () => {
+      expect(helpers.getCircleArea(3)).toEqual(28.274333882308138);
+    });
+  })
+
+  describe('getRectangularPrismVolume', () => {
+    it('returns getRectangularPrismVolume', () => {
+      expect(helpers.getRectangularPrismVolume(3,4,2)).toEqual(24);
+    });
+  })
+
+  
+
+
 
 })
 
