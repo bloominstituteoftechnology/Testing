@@ -208,3 +208,141 @@ describe("cube", () => {
     );
   });
 });
+
+describe("raiseToPower", () => {
+  testWrongTypes(helpers.raiseToPower, "number", undefined);
+
+  it("Raise a number to a power", () => {
+    expect(helpers.raiseToPower(7, 3)).toBe(343);
+    expect(helpers.raiseToPower(-2, 2)).toBe(4);
+    expect(helpers.raiseToPower(2, 16)).toBe(65536);
+    expect(helpers.raiseToPower(2, -2)).toBe(0.25);
+    expect(helpers.raiseToPower(Number.NEGATIVE_INFINITY, 6)).toBe(
+      Number.POSITIVE_INFINITY
+    );
+  });
+});
+
+describe("roundNumber", () => {
+  testWrongTypes(helpers.roundNumber, "number", undefined);
+
+  it("Rounds a number", () => {
+    expect(helpers.roundNumber(7.2)).toBe(7);
+    expect(helpers.roundNumber(-2.1)).toBe(-2);
+    expect(helpers.roundNumber(3.5)).toBe(4);
+    expect(helpers.roundNumber(0.7)).toBe(1);
+    expect(helpers.roundNumber(6)).toBe(6);
+    expect(helpers.roundNumber(Number.NEGATIVE_INFINITY)).toBe(
+      Number.NEGATIVE_INFINITY
+    );
+  });
+});
+
+describe("roundUp", () => {
+  testWrongTypes(helpers.roundUp, "number", undefined);
+
+  it("Rounds a number up", () => {
+    expect(helpers.roundUp(7.2)).toBe(8);
+    expect(helpers.roundUp(-2.9)).toBe(-2);
+    expect(helpers.roundUp(3.5)).toBe(4);
+    expect(helpers.roundUp(0.7)).toBe(1);
+    expect(helpers.roundUp(6)).toBe(6);
+    expect(helpers.roundUp(Number.NEGATIVE_INFINITY)).toBe(
+      Number.NEGATIVE_INFINITY
+    );
+  });
+});
+
+describe("addExclamationPoint", () => {
+  testWrongTypes(helpers.addExclamationPoint, "string", undefined);
+
+  it("Adds an exclamation point to the end of a string", () => {
+    expect(helpers.addExclamationPoint("")).toBe("!");
+    expect(helpers.addExclamationPoint("!")).toBe("!!");
+    expect(
+      helpers.addExclamationPoint("Make a little birdhouse in your soul")
+    ).toBe("Make a little birdhouse in your soul!");
+  });
+});
+
+describe("combineNames", () => {
+  testWrongTypes(helpers.combineNames, "string", undefined);
+
+  it("Combines first and last names", () => {
+    expect(helpers.combineNames("", "")).toBe(" ");
+    expect(helpers.combineNames("Zaphod", "Beeblebrox")).toBe(
+      "Zaphod Beeblebrox"
+    );
+    expect(helpers.combineNames("Zaphod's just this guy,", "you know?")).toBe(
+      "Zaphod's just this guy, you know?"
+    );
+  });
+});
+
+describe("getGreeting", () => {
+  testWrongTypes(helpers.getGreeting, "string", undefined);
+
+  it("Greets the given name", () => {
+    expect(helpers.getGreeting("")).toBe("Hello !");
+    expect(helpers.getGreeting("Zaphod")).toBe("Hello Zaphod!");
+  });
+});
+
+describe("getRectangleArea", () => {
+  testWrongTypes(helpers.getRectangleArea, "number", undefined);
+
+  it("Multiplies two numbers (for rectangle area)", () => {
+    expect(helpers.getRectangleArea(0, 5)).toBe(0);
+    expect(helpers.getRectangleArea(-10, 7)).toBe(undefined);
+    expect(helpers.getRectangleArea(30, 12)).toBe(360);
+    expect(helpers.getRectangleArea(-81, -9)).toBe(undefined);
+    expect(Number(helpers.getRectangleArea(45.62, 1.1).toFixed(2))).toBe(50.18);
+    expect(helpers.getRectangleArea(Number.NEGATIVE_INFINITY, -1)).toBe(
+      undefined
+    );
+  });
+});
+
+describe("getTriangleArea", () => {
+  testWrongTypes(helpers.getTriangleArea, "number", undefined);
+
+  it("Multiplies two numbers (for triangle area)", () => {
+    expect(helpers.getTriangleArea(0, 5)).toBe(0);
+    expect(helpers.getTriangleArea(-10, 7)).toBe(undefined);
+    expect(helpers.getTriangleArea(30, 12)).toBe(180);
+    expect(helpers.getTriangleArea(-81, -9)).toBe(undefined);
+    expect(Number(helpers.getTriangleArea(45.62, 1.1).toFixed(2))).toBe(25.09);
+    expect(helpers.getTriangleArea(Number.NEGATIVE_INFINITY, -1)).toBe(
+      undefined
+    );
+  });
+});
+
+describe("getCircleArea", () => {
+  testWrongTypes(helpers.getCircleArea, "number", undefined);
+
+  it("Finds area of circle", () => {
+    expect(helpers.getCircleArea(7)).toBe(153.93804002589985);
+    expect(helpers.getCircleArea(-2)).toBe(undefined);
+    expect(helpers.getCircleArea(3.5)).toBe(38.48451000647496);
+    expect(helpers.getCircleArea(0)).toBe(0);
+    expect(helpers.getCircleArea(Number.NEGATIVE_INFINITY)).toBe(undefined);
+  });
+});
+
+describe("getRectangularPrismVolume", () => {
+  testWrongTypes(helpers.getRectangularPrismVolume, "number", undefined);
+
+  it("Multiplies two numbers (for rectangle area)", () => {
+    expect(helpers.getRectangularPrismVolume(0, 5, 6)).toBe(0);
+    expect(helpers.getRectangularPrismVolume(-10, 7, 2)).toBe(undefined);
+    expect(helpers.getRectangularPrismVolume(30, 12, 1)).toBe(360);
+    expect(helpers.getRectangularPrismVolume(81, 9, 3)).toBe(2187);
+    expect(
+      Number(helpers.getRectangularPrismVolume(45.62, 1.1, 3).toFixed(2))
+    ).toBe(150.55);
+    expect(
+      helpers.getRectangularPrismVolume(Number.POSITIVE_INFINITY, 1, 1)
+    ).toBe(Number.POSITIVE_INFINITY);
+  });
+});

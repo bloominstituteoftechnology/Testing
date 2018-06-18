@@ -113,22 +113,25 @@ const combineNames = (firstName, lastName) => {
 };
 
 const getGreeting = name => {
-  if (typeof star !== "string") return undefined;
+  if (typeof name !== "string") return undefined;
   return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
   if (typeof length !== "number" || typeof width !== "number") return undefined;
+  if (length < 0 || width < 0) return undefined;
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
   if (typeof base !== "number" || typeof height !== "number") return undefined;
+  if (base < 0 || height < 0) return undefined;
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
   if (typeof radius !== "number") return undefined;
+  if (radius < 0) return undefined;
   return Math.PI * radius * radius;
 };
 
@@ -139,6 +142,7 @@ const getRectangularPrismVolume = (length, width, height) => {
     typeof height !== "number"
   )
     return undefined;
+  if (length < 0 || width < 0 || height < 0) return undefined;
   return width * height * length;
 };
 
