@@ -25,6 +25,21 @@ describe('subtractFive', () => {
 
 });
 
+
+describe('areSameLength', () => {
+    it('Should return strings that are the same length', () => {
+
+        const expected = 'si','no';
+        const actual = areSameLength(str1, str2);
+
+        expect(actual).toEqual(expected);
+    })
+
+});
+
+
+
+//FUNCS
 function multiply(a, b) {
     return a * b;
 }
@@ -32,30 +47,13 @@ function multiply(a, b) {
 function subtract(a, b) {
     return a - b;
 }
+
+function areSameLength(strA, strB) {
+    return strA.length === strB.length;
+    //     return true;
+    // } return false;
+}
 // start testing!
 
 
 
-
-// const {
-//     getBiggest,
-//     greeting,
-//     isTenOrFive,
-//     isInRange,
-//     isInteger,
-//     fizzBuzz,
-//     isPrime,
-//     returnFirst,
-//     returnLast,
-//     getArrayLength,
-//     incrementByOne,
-//     addItemToArray,
-//     addItemToFront,
-//     wordsToSentence,
-//     contains,
-//     addNumbers,
-//     averageTestScore,
-//     largestNumber
-// } = func;
-
-// module.exports = func;
