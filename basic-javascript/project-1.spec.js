@@ -63,4 +63,55 @@ describe('project-1', () => {
             expect(helpers.areEqual(true, false)).toBeFalsy();
         })
     })
+    describe('lessThanNinety', () => {
+        it('returns true when a number is less than 90', () => {
+            expect(helpers.lessThanNinety(12)).toBeTruthy();
+            expect(helpers.lessThanNinety(37)).toBeTruthy();
+            expect(helpers.lessThanNinety(-58)).toBeTruthy();
+            expect(helpers.lessThanNinety(0)).toBeTruthy();
+            expect(helpers.lessThanNinety(89)).toBeTruthy();
+            expect(helpers.lessThanNinety(89.999)).toBeTruthy();
+        })
+        it('returns false when a string', () => {
+            expect(helpers.lessThanNinety('numbers')).toBeFalsy();
+            expect(helpers.lessThanNinety('')).toBeTruthy();
+        })
+        it('returns false when number is 90 or bigger', () => {
+            expect(helpers.lessThanNinety(90)).toBeFalsy();
+            expect(helpers.lessThanNinety(90.1)).toBeFalsy();
+            expect(helpers.lessThanNinety(99)).toBeFalsy();
+            expect(helpers.lessThanNinety(9000)).toBeFalsy();
+        })
+    })
+    describe('greaterThanFifty', () => {
+        it('returns true when number is greater than 50, false if not', () => {
+            expect(helpers.greaterThanFifty(89)).toBeTruthy();
+            expect(helpers.greaterThanFifty(50.1)).toBeTruthy();
+            expect(helpers.greaterThanFifty(50.000001)).toBeTruthy();
+            expect(helpers.greaterThanFifty(49.999)).toBeFalsy();
+            expect(helpers.greaterThanFifty(49)).toBeFalsy();
+            expect(helpers.greaterThanFifty(-50)).toBeFalsy();
+        })  
+        it('returns false when a string', () => {
+            expect(helpers.lessThanNinety('numbers')).toBeFalsy();
+            expect(helpers.lessThanNinety('')).toBeTruthy();
+        })
+    })
+    describe('add', () => {
+        it('adds two numbers together', () => {
+            expect(helpers.add(1,2)).toBe(3);
+            expect(helpers.add(11,2)).toBe(13);
+            expect(helpers.add(15+4, 7)).toBe(26);
+            expect(helpers.add(-1,2)).toBe(1);
+        })
+        it('combines two strings', () => {
+            expect(helpers.add('one', 'two')).toBe('onetwo');
+            expect(helpers.add('', '')).toBe('');
+        })
+        it('treats flase as 0 and true as 1', () => {
+            expect(helpers.add(true, true)).toBe(2);
+            expect(helpers.add(true, false)).toBe(1);
+            expect(helpers.add(false, false)).toBe(0);
+        })
+    })
 })
