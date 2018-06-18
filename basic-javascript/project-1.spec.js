@@ -1,3 +1,3 @@
-const funcs = require('./project-1');
+const helpers = require('./project-1');
 
-// write your tests here
+// start testing!
