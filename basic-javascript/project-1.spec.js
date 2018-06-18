@@ -37,6 +37,17 @@ describe('areSameLength', () => {
 
 });
 
+describe('areEqual', () => { 
+    it('it should return two numbers that are equal', () => { 
+        const expected = (x = 5, y = 5);
+        const actual = equal(x, y);
+
+        expect(actual).toBe(true);
+
+    })
+
+})
+
 
 
 //FUNCS
@@ -51,6 +62,10 @@ function subtract(a, b) {
 function areSameLength(strA, strB) {
     return strA.length === strB.length;
     
+}
+
+function equal(x, y) {
+    return x === y;
 }
 // start testing!
 
