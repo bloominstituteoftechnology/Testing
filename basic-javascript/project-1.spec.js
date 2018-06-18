@@ -10,10 +10,10 @@ const testWrongTypes = (functionTested, expectedType, failReturn) => {
     NaN,
     17
   ];
-  it(`Returns ${failReturn} if given the wrong data type`, () => {
+  it(`Returns ${failReturn} if not given a ${expectedType}`, () => {
     dataTypes.forEach(type => {
       if (typeof type !== expectedType)
-        expect(functionTested(type)).toBe(failReturn);
+        expect(functionTested(type, type, type)).toBe(failReturn);
     });
   });
 };
@@ -65,5 +65,34 @@ describe("areEqual", () => {
     expect(helpers.areEqual(false, 0)).toBe(false);
     expect(helpers.areEqual(true, { key: "value" })).toBe(false);
     expect(helpers.areEqual(false, "false")).toBe(false);
+    expect(helpers.areEqual(false, false)).toBe(true);
+  });
+});
+
+describe("lessThanNinety", () => {
+  testWrongTypes(helpers.lessThanNinety, "number", undefined);
+
+  it("Checks if a number is less than 90", () => {
+    expect(helpers.lessThanNinety(0)).toBe(true);
+    expect(helpers.lessThanNinety(91)).toBe(false);
+    expect(helpers.lessThanNinety(90)).toBe(false);
+    expect(helpers.lessThanNinety(-81)).toBe(true);
+    expect(helpers.lessThanNinety(45)).toBe(true);
+    expect(helpers.lessThanNinety(Number.NEGATIVE_INFINITY)).toBe(true);
+    expect(helpers.lessThanNinety(Number.POSITIVE_INFINITY)).toBe(false);
+  });
+});
+
+describe("greaterThanFifty", () => {
+  testWrongTypes(helpers.greaterThanFifty, "number", undefined);
+
+  it("Checks if a number is greater than 50", () => {
+    expect(helpers.greaterThanFifty(0)).toBe(false);
+    expect(helpers.greaterThanFifty(91)).toBe(true);
+    expect(helpers.greaterThanFifty(50)).toBe(false);
+    expect(helpers.greaterThanFifty(-81)).toBe(false);
+    expect(helpers.greaterThanFifty(45)).toBe(false);
+    expect(helpers.greaterThanFifty(Number.NEGATIVE_INFINITY)).toBe(false);
+    expect(helpers.greaterThanFifty(Number.POSITIVE_INFINITY)).toBe(true);
   });
 });
