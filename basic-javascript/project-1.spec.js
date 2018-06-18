@@ -33,9 +33,34 @@ describe('project-1', () => {
             expect(helpers.areSameLength('a lot of words', 'a lot fo words')).toBeTruthy();
             expect(helpers.areSameLength('', '')).toBeTruthy();
             expect(helpers.areSameLength('', 'wagstaff')).toBeFalsy();
-            expect(helpers.areSameLength('d', 'alien engine; o93rj')).toBeFalsy();
+            expect(helpers.areSameLength('Bob', 'Joey Pesto')).toBeFalsy();
             expect(helpers.areSameLength('   ', '   ')).toBeTruthy();  
             expect(helpers.areSameLength('   ', ' ')).toBeFalsy();
+        })
+    })
+    describe('areEqual', () => {
+        it('returns false when comparing numbers to strings', () => {
+            expect(helpers.areEqual(10, '10')).toBeFalsy();
+            expect(helpers.areEqual(10, 'ten')).toBeFalsy();
+            expect(helpers.areEqual('linda', 56)).toBeFalsy();
+        })
+        it('returns true when strings are identical, false if not', () => {
+            expect(helpers.areEqual('', '')).toBeTruthy();
+            expect(helpers.areEqual('WUB-A-LUB-A-DUB-DUB', 'WUB-A-LUB-A-DUB-DUB')).toBeTruthy();
+            expect(helpers.areEqual('heLlo', 'hello')).toBeFalsy();
+        })
+        it('returns true when numbers/evaluations are the same', () => {
+            expect(helpers.areEqual(4, 2+2)).toBeTruthy();
+            expect(helpers.areEqual(6, 3*2)).toBeTruthy();
+            expect(helpers.areEqual(16, 32/2)).toBeTruthy();
+            expect(helpers.areEqual(4, 4)).toBeTruthy();
+            expect(helpers.areEqual(4, 2+2)).toBeTruthy();
+            expect(helpers.areEqual(0, 12)).toBeFalsy();
+        })
+        it('returns true when truthiness is same', () => {
+            expect(helpers.areEqual(false, false)).toBeTruthy();
+            expect(helpers.areEqual(true, true)).toBeTruthy();
+            expect(helpers.areEqual(true, false)).toBeFalsy();
         })
     })
 })
