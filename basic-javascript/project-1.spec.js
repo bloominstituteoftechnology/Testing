@@ -67,7 +67,61 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('subtractFive', () => {});
+  describe('subtractFive', () => {
+    it('Returns number minus 5 when given a numeric value', () => {
+      const expected = 5;
+      const actual = helpers.subtractFive(10);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns number minus 5 when given a number as a string', () => {
+      const expected = 10;
+      const actual = helpers.subtractFive('15');
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns NaN when given a non-numeric string', () => {
+      const expected = NaN;
+      const actual = helpers.subtractFive('Hello');
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns NaN when called without an argument', () => {
+      const expected = NaN;
+      const actual = helpers.subtractFive();
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns -4 when given true', () => {
+      const expected = -4;
+      const actual = helpers.subtractFive(true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns -5 when given false', () => {
+      const expected = -5;
+      const actual = helpers.subtractFive(false);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns NaN when given an array of values', () => {
+      const expected = NaN;
+      const actual = helpers.subtractFive([10, 15, 20]);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns NaN when given undefined', () => {
+      const expected = NaN;
+      const actual = helpers.subtractFive(undefined);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns -5 when given null', () => {
+      const expected = -5;
+      const actual = helpers.subtractFive(null);
+      expect(actual).toBe(expected);
+    });
+  });
 
   // describe('areSameLength', () => {});
 
