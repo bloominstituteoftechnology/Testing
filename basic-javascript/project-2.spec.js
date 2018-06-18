@@ -92,5 +92,41 @@ describe('project-2', () => {
     })
 
 
+    describe('wordsToSentence', () => {
+        it('returns wordsToSentence', () => {
+            expect(funcs.wordsToSentence(["doggo", "cat"])).toEqual("doggo cat")
+        })
+    })
+
+    describe('contains', () => {
+        it('returns contains', () => {
+            expect(funcs.contains([5,6,7], 6)).toEqual(true)
+            expect(funcs.contains([5,6,7], 8)).toEqual(false)
+        })
+    })
+
+
+    describe('addNumbers', () => {
+        it('returns addNumbers', () => {
+            expect(funcs.addNumbers([4,5])).toEqual(9)
+            expect(funcs.addNumbers([6,4])).toEqual(10)
+        })
+    })
+
+    describe('averageTestScore', () => {
+        it('returns averageTestScore', () => {
+            expect(funcs.averageTestScore([4,5])).toEqual(4.5)
+            expect(funcs.averageTestScore([6,4])).toEqual(5)
+        })
+    })
+
+    describe('largestNumber', () => {
+        it('returns largestNumber', () => {
+            expect(funcs.largestNumber([4,5])).toEqual(5)
+            expect(funcs.largestNumber([6,4])).toEqual(6)
+        })
+    })
+
+
 })
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
