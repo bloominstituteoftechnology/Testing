@@ -38,7 +38,7 @@ describe.only('project-2', () => { //remember to remove the .only when done
             expect(funcs.isInteger(10)).toBe(true);
         })
     });
-    describe('fizzBuzz', () => {
+    describe('fizzBuzz', () => { // make this more robust (if you have time), specifically add more it's
         it('should return the correct corresponding word', () => {
             expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
             expect(funcs.fizzBuzz(5)).toBe('buzz');
@@ -59,52 +59,56 @@ describe.only('project-2', () => { //remember to remove the .only when done
             expect(funcs.returnFirst([3, 2, 6, 4, 8])).toEqual(3);
         })
     });
-    // describe('returnLast', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('getArrayLength', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('incrementByOne', () => {
-    //     it('')
-    // });
-    // describe('addItemToArray', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('addItemToFront', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('wordsToSentence', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('contains', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('addNumbers', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('averageTestScores', () => {
-    //     it('', () => {
-
-    //     })
-    // });
-    // describe('largestNumber', () => {
-    //     it('', () => {
-
-    //     })
-    // });
+    describe('returnLast', () => {
+        it('should return the last index of an array', () => {
+            expect(funcs.returnLast([1, 2, 3, 4, 5])).toEqual(5);
+            expect(funcs.returnLast([3, 2, 6, 4, 8])).toEqual(8);
+        })
+    });
+    describe('getArrayLength', () => {
+        it('should return the length of an array', () => {
+            expect(funcs.getArrayLength([1, 2, 3, 4, 5])).toEqual(5);
+        })
+    });
+    describe('incrementByOne', () => {
+        it('should return an array that has every value in it incremented by one', () => {
+            expect(funcs.incrementByOne([1, 2, 3, 4, 5 ])).toEqual([2,3,4,5,6])
+        })
+    });
+    describe('addItemToArray', () => {
+        it('should add an item to the end of an array', () => {
+            expect(funcs.addItemToArray([1, 4, 234, 23, 54, 46], 99)).toEqual([1, 4, 234, 23, 54, 46, 99]);
+        })
+    });
+    describe('addItemToFront', () => {
+        it('should add an item to the front of an array', () => {
+            expect(funcs.addItemToFront([1, 4, 234, 23, 54, 46], 99)).toEqual([99, 1, 4, 234, 23, 54, 46]);
+        })
+    });
+    describe('wordsToSentence', () => {
+        it('should enter an array of words? that joins a sentence string?', () => {
+            expect(funcs.wordsToSentence(['hello', 'world'])).toBe('hello world');
+        })
+    });
+    describe('contains', () => {
+        it('is true if the array contains the item', () => {
+            expect(funcs.contains([1, 2, 3, 4, 5], 5)).toBe(true);
+            expect(funcs.contains([1, 2, 3, 4, 5], 9)).toBe(false);
+        })
+    });
+    describe('addNumbers', () => {
+        it('should return the sum of an array of numbers', () => {
+            expect(funcs.addNumbers([1, 2, 3, 4, 5])).toEqual(15);
+        })
+    });
+    describe('averageTestScores', () => {
+        it('should return the average of an array of test scores', () => {
+            expect(funcs.averageTestScore([67, 98, 74, 88, 83])).toEqual(82);
+        })
+    });
+    describe('largestNumber', () => {
+        it('should return the largest number in an array of numbers', () => {
+            expect(funcs.largestNumber([1, 2, 3, 4, 5])).toEqual(5);
+        })
+    });
 });
