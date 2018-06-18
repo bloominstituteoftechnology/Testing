@@ -2,8 +2,8 @@
 
 Topics:
 
-* Unit Testing
-* [`Jest`](https://facebook.github.io/jest/)
+- Unit Testing
+- [`Jest`](https://facebook.github.io/jest/)
 
 ## Project Description
 
@@ -13,9 +13,9 @@ Now we start on the other side of the fence, where you have no tests, only worki
 
 ### Initialize Project
 
-* Use `yarn` to install the necessary dependancies from the package.json file.
-* To run your tests run the command `yarn test`.
-* Get started by implementing the tests inside the `basic-javascript` directory then move onto `advanced-javascript` when you're done.
+- Use `yarn` to install the necessary dependencies from the `package.json` file.
+- To run your tests run the command `yarn test`.
+- Get started by implementing the tests inside the `basic-javascript` directory then move onto `advanced-javascript` when you're done.
 
 ### Write Tests
 
