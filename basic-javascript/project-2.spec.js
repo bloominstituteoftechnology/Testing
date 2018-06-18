@@ -4,12 +4,13 @@ const funcs = require('./project-2');
 
 describe('project-2', () => {
     describe('getBiggest', () => {
-        it('returns NaN when given a non numeric value', () => {
-            expect(funcs.getBiggest(2, 4)).toBe(4);
-            expect(funcs.getBiggest(4, 4)).toBe(4);
+        it('returns string when given a non string numeric value', () => {
+            expect(funcs.getBiggest('2', '4')).toBe("4");
         });
 
-        it('should return the bigger number', () => {});
+        it('should return the bigger number', () => {
+            expect(funcs.getBiggest(6, 18)).toBe(18);
+        });
     });
 
     describe("greeting", () =>{
@@ -20,94 +21,87 @@ describe('project-2', () => {
         })
     })
 
-    describe("", () =>{
+    describe("isTenOrFive", () =>{
+        it("return true if the number is 10 or 5", () => {
+            expect(funcs.isTenOrFive(10)).toBeTruthy()
+            expect(funcs.isTenOrFive(5)).toBeTruthy()      
+        })
+    })
+    describe("isInRange", () =>{
+        it("return true if number is between 20 and 50", () => {
+            expect(funcs.isInRange(34)).toBeTruthy() 
+            expect(funcs.isInRange(18)).toBeFalsy()      
+        })
+    })
+    describe("isInteger", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("fizzBuzz", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("isPrime", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("returnFirst", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("returnLast", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("getArrayLength", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("incrementByOne", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("addItemToArray", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("addItemToFront", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("wordsToSentence", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("contains", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("addNumbers", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("averageTestScore", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
+    describe("largestNumber", () =>{
         it("", () => {
             expect()    
         })
     })
-    describe("", () =>{
-        it("", () => {
-            expect()    
-        })
-    })
-    describe("", () =>{
-        it("", () => {
-            expect()    
-        })
-    })
-    describe("", () =>{
-        it("", () => {
-            expect()    
-        })
-    })
-    describe("", () =>{
-        it("", () => {
-            expect()    
-        })
-    })
+
 });
