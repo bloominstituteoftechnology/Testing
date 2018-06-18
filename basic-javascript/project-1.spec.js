@@ -169,8 +169,55 @@ describe('project-1', () => {
         });
     });
     describe('addExlamationPoint', () => {
-        
-    })
+        it('returns string with exclamation point', () => {
+            expect(helpers.addExclamationPoint("hi")).toBe("hi!")
+        })
+        it('returns NaN if given NaN', () => {
+            expect(helpers.addExclamationPoint(undefined)).toBe("undefined!");
+        });
+    });
+    describe('combineNames', () => {
+        it('returns first and last name as one string', () => {
+            expect(helpers.combineNames("sam", "park")).toBe("sam park");
+        });
+    });
+    describe('getGreeting', () => {
+        it('returns given name concated with Hello and an ! at the end', () => {
+            expect(helpers.getGreeting("sam")).toBe('Hello sam!')
+        });
+    });
+    describe('getRectangleArea', () => {
+        it('returns the area of a rectangle correctly', () => {
+            expect(helpers.getRectangleArea(3, 4)).toBe(12);
+        })
+        it('returns NaN if given NaN', () => {
+            expect(helpers.getRectangleArea(undefined)).toBeNaN();
+        });
+    });
+    describe("getTriangleArea", () => {
+        it('returns area of triangle correctly', () => {
+            expect(helpers.getTriangleArea(2, 3)).toBe(3);
+        })
+        it('returns NaN if given NaN', () => {
+            expect(helpers.getTriangleArea(undefined)).toBeNaN();
+        });
+    });
+    describe('getCircleArea', () => {
+        it('returns the area of circle correctly', () => {
+            expect(helpers.getCircleArea(2)).toBeCloseTo(12.566)
+        })
+        it('returns NaN if given NaN', () => {
+            expect(helpers.getCircleArea(undefined)).toBeNaN();
+        });
+    });
+    describe('getRectangularPrismVolume', () => {
+        it('returns volume of a Rectangular Prism correctly', () => {
+            expect(helpers.getRectangularPrismVolume(2,3,4)).toBe(24);
+        })
+        it('returns NaN if given NaN', () => {
+            expect(helpers.getRectangularPrismVolume(undefined)).toBeNaN();
+        });
+    });    
 });
 
 
