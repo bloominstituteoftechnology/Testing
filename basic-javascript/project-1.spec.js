@@ -106,3 +106,42 @@ describe('getRectanglePrismVolume', () => {
         expect(helpers.getRectangularPrismVolume(4,3,5)).toEqual(60);
     });
 });
+
+describe('multiplyByTen', () => {
+    it.only('should multiply numbers by 10', () => {
+        expect(helpers.multiplyByTen(5)).toEqual(50);
+    });
+});
+
+describe('subtractFive', () => {
+    it.only('should subtract by 5', () => {
+        expect(helpers.subtractFive(10)).toEqual(5);
+    });
+});
+
+describe('areSameLength', () => {
+    it.only('should return true is the strings are the same length', () => {
+        expect(helpers.areSameLength('car', 'van')).toBeTruthy();
+        expect(helpers.areSameLength('band', 'can')).toBeFalsy();
+    });
+});
+
+describe('areEqual', () => {
+    it.only('should return true if the same', () => {
+        expect(helpers.areEqual(4, 4)).toBeTruthy();
+    });
+});
+
+describe('lessThanNinety', () => {
+    it.only('should return true if bigger than 90', () => {
+        expect(helpers.lessThanNinety(4)).toBeTruthy();
+        expect(helpers.lessThanNinety(100)).toBeFalsy();
+    });
+});
+
+describe('greaterThanFifty', () => {
+    it.only('should return true if bigger than 50', () => {
+        expect(helpers.greaterThanFifty(5)).toBeFalsy();
+        expect(helpers.greaterThanFifty(55)).toBeTruthy();
+    });
+});
