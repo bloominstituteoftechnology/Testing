@@ -108,10 +108,124 @@ describe('project-1', () => {
             expect(helpers.add('one', 'two')).toBe('onetwo');
             expect(helpers.add('', '')).toBe('');
         })
-        it('treats flase as 0 and true as 1', () => {
+        it('treats false as 0 and true as 1', () => {
             expect(helpers.add(true, true)).toBe(2);
             expect(helpers.add(true, false)).toBe(1);
             expect(helpers.add(false, false)).toBe(0);
+        })
+    })
+    describe('subtract', () => {
+        it('subtracts two numbers', () => {
+            expect(helpers.subtract(5, 3)).toBe(2);
+            expect(helpers.subtract(3, 5)).toBe(-2);
+            expect(helpers.subtract(100, 15)).toBe(85);
+        })
+        it('returns NaN when passed a string', () => {
+            expect(helpers.subtract('string', 15)).toBeNaN();
+            expect(helpers.subtract(156, 'words')).toBeNaN();
+            expect(helpers.subtract('string', 'wordsss')).toBeNaN();
+        })
+    })
+    describe('divide', () => {
+        it('divides two numbers', () => {
+            expect(helpers.divide(4, 2)).toBe(2);
+            expect(helpers.divide(64, 16)).toBe(4);
+            expect(helpers.divide(-4, 2)).toBe(-2);
+        })
+    })
+    describe('multiply', () => {
+        it('multiplies two numbers', () => {
+            expect(helpers.multiply(4, 2)).toBe(8);
+            expect(helpers.multiply(15, 4)).toBe(60);
+            expect(helpers.multiply(-4, 2)).toBe(-8);
+            expect(helpers.multiply(-4, -2)).toBe(8);
+        })
+    })
+    describe('getRemainder', () => {
+        it('returns the remainder of a quotient', () => {
+            expect(helpers.getRemainder(10, 3)).toBe(1);
+            expect(helpers.getRemainder(15, 3)).toBe(0);
+            expect(helpers.getRemainder(24, 7)).toBe(3);
+        })
+    })
+    describe('isEven', () => {
+        it('returns true if number is even, false if not', () => {
+            expect(helpers.isEven(4)).toBeTruthy();
+            expect(helpers.isEven(26)).toBeTruthy();
+            expect(helpers.isEven(48)).toBeTruthy();
+            expect(helpers.isEven(3)).toBeFalsy();
+            expect(helpers.isEven(29)).toBeFalsy();
+        })
+    })
+    describe('isOdd', () => {
+        it('returns true if number is odd', () => {
+            expect(helpers.isOdd(29)).toBeTruthy();
+        })
+        it('returns false if number is even', () => {
+            expect(helpers.isOdd(4)).toBeFalsy();
+        })
+    })
+    describe('square', () => {
+        it('squares a number', () => {
+            expect(helpers.square(2)).toBe(4);
+            expect(helpers.square(6)).toBe(36);
+        })
+    })
+    describe('cube', () => {
+        it('returns a number cubed', () => {
+            expect(helpers.cube(3)).toBe(27);
+        })
+    })
+    describe('raiseToPower', () => {
+        it('returns the first number raised to the power of the second', () => {
+            expect(helpers.raiseToPower(2, 4)).toBe(16);
+            expect(helpers.raiseToPower(2, -1)).toBe(0.5);
+        })
+    })
+    describe('roundNumber', () => {
+        it('rounds to nearest whole number', () => {
+            expect(helpers.roundNumber(5.4)).toBe(5);
+            expect(helpers.roundNumber(5.5)).toBe(6);
+        })
+    })
+    describe('roundUp', () => {
+        it('rounds a number up to nearest integer', () => {
+            expect(helpers.roundUp(9.0001)).toBe(10);
+        })
+    })
+    describe('add exclamation point', () => {
+        it('adds an exclamation point to the end of a string', () => {
+            expect(helpers.addExclamationPoint('words')).toBe('words!');
+        })
+    })
+    describe('combineNames', () => {
+        it('combines a first and last name with space between', () => {
+            expect(helpers.combineNames('Alex', 'Dykas')).toBe('Alex Dykas')
+        })
+    })
+    describe('getGreeting', () => {
+        it('says hello to name given', () => {
+            expect(helpers.getGreeting('Alex')).toBe('Hello Alex!');
+        })
+    })
+    describe('getRectangleArea', () => {
+        it('multiplies the length and width', () => {
+            expect(helpers.getRectangleArea(4, 3)).toBe(12);
+        })
+    })
+    describe('getTriangleArea', () => {
+        it('returns the are of a triangle', () => {
+            expect(helpers.getTriangleArea(3, 4)).toBe(6);
+        })
+    })
+    describe('getCircleArea', () => {
+        it('returns the area of a circle', () => {
+            expect(helpers.getCircleArea(4)).toBe(50.265482457436691815402294132472);
+        })
+    })
+    describe('getRectangularPrismVolume', () => {
+        it('returns the volume of a rectangular prism', () => {
+            expect(helpers.getRectangularPrismVolume(3, 3, 3)).toBe(27);
         })
     })
 })
