@@ -28,4 +28,14 @@ describe('project-1', () => {
             expect(helpers.subtractFive(26)).toBe(21);
         })
     })
+    describe('areSameLength', () => {
+        it('return true when strings are same length, false if not', () => {
+            expect(helpers.areSameLength('a lot of words', 'a lot fo words')).toBeTruthy();
+            expect(helpers.areSameLength('', '')).toBeTruthy();
+            expect(helpers.areSameLength('', 'wagstaff')).toBeFalsy();
+            expect(helpers.areSameLength('d', 'alien engine; o93rj')).toBeFalsy();
+            expect(helpers.areSameLength('   ', '   ')).toBeTruthy();  
+            expect(helpers.areSameLength('   ', ' ')).toBeFalsy();
+        })
+    })
 })
