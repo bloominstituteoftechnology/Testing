@@ -2,7 +2,7 @@ const helpers = require('./project-1');
 
 // start testing!
 
-describe.skip('project-1', () => {
+describe('project-1', () => {
     describe('multplyByTen', () => {
         it('returns NaN when given a non-numeric value', () => {
             expect(helpers.multiplyByTen(undefined)).toBeNaN();
@@ -24,7 +24,14 @@ describe('subtractFive', () => {
 
 describe('areSameLength', () => {
     it('returns true when string1.length equals string2.length', () => {
-        
+        expect(helpers.areSameLength('test', 'test')).toBeTruthy();
+        expect(helpers.areSameLength('tests', 'test')).toBeFalsy();
+    });
+});
+
+describe('areEqual', () => {
+    it('should return true if numbers are equal', () => {
+        expect(helpers.areEqual(4, 4)).toBe(true);
     })
 })
 
