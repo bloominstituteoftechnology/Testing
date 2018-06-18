@@ -263,17 +263,12 @@ describe('addItemToArray', () => {
     let testFunction = funcs.addItemToArray
     // Testing for array output
     it('returns an array', () => {
-        // arrange
         let expected = "object"
-        // act
         let actual = typeof testFunction([])
-        // assert
         expect(actual).toBe(expected)
     })
     it('returns an array #2', () => {
-        // act
         let actual = testFunction([], 13)
-        // assert
         expect(actual).toHaveLength(1)
     })
     it('returns array w/ item added', () => {
@@ -307,8 +302,8 @@ describe('addItemToFront', () => {
     })
 })
 
-describe('addItemToFront', () => {
-    let testFunction = funcs.addItemToFront
+describe('wordsToSentence', () => {
+    let testFunction = funcs.wordsToSentence
     // Testing for array output
     it('returns a string', () => {
         // arrange
@@ -318,9 +313,96 @@ describe('addItemToFront', () => {
         // assert
         expect(actual).toBe(expected)
     })
-    it('returns array w/ item in front', () => {
-        let actual = testFunction([10, 11, 12], 13)
-        let expected = [13, 10, 11, 12]
-        expect(actual).toEqual(expected)
+    it('returns String that concats all passed words', () => {
+        let actual = testFunction(["Nando", "is", 'cool'])
+        let expected = 'Nando is cool'
+        expect(actual).toBe(expected)
+    })
+})
+
+describe('contains', () => {
+    let testFunction = funcs.contains
+    // Testing for array output
+    it('returns a boolean', () => {
+        // arrange
+        let expected = "boolean"
+        // act
+        let actual = typeof testFunction(['bla'], 'bla')
+        // assert
+        expect(actual).toBe(expected)
+    })
+    it('returns true if arg1 includes arg 2 ', () => {
+        let actual = testFunction(["Nando", "is", 'cool'], 'Nando')
+        let expected = true
+        expect(actual).toBe(expected)
+    })
+})
+
+describe('addNumbers', () => {
+    let testFunction = funcs.addNumbers
+    // Testing for array output
+    it('returns a number', () => {
+        // arrange
+        let expected = "number"
+        // act
+        let actual = typeof testFunction([10, 50])
+        // assert
+        expect(actual).toBe(expected)
+    })
+    it('returns 60 given [10,50]', () => {
+        let actual = testFunction([10, 50])
+        let expected = 60
+        expect(actual).toBe(expected)
+    })
+    it('returns -40 given [10,-50]', () => {
+        let actual = testFunction([10, -50])
+        let expected = -40
+        expect(actual).toBe(expected)
+    })
+})
+
+describe('averageTestScore', () => {
+    let testFunction = funcs.averageTestScore
+    // Testing for array output
+    it('returns a number', () => {
+        // arrange
+        let expected = "number"
+        // act
+        let actual = typeof testFunction([10, 50])
+        // assert
+        expect(actual).toBe(expected)
+    })
+    it('returns 10 given [10,10]', () => {
+        let actual = testFunction([10, 10])
+        let expected = 10
+        expect(actual).toBe(expected)
+    })
+    it('returns 55 given [10,100]', () => {
+        let actual = testFunction([10, 100])
+        let expected = 55
+        expect(actual).toBe(expected)
+    })
+})
+
+describe('largestNumber', () => {
+    let testFunction = funcs.largestNumber
+    // Testing for array output
+    it('returns a number', () => {
+        // arrange
+        let expected = "number"
+        // act
+        let actual = typeof testFunction([10, 50])
+        // assert
+        expect(actual).toBe(expected)
+    })
+    it('returns 20 given [20,10]', () => {
+        let actual = testFunction([20, 10])
+        let expected = 20
+        expect(actual).toBe(expected)
+    })
+    it('returns 55 given [10,55]', () => {
+        let actual = testFunction([10, 55])
+        let expected = 55
+        expect(actual).toBe(expected)
     })
 })
