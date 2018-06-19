@@ -25,6 +25,11 @@ describe('Arrays', () => {
       const each = arrayFunctions.each;
       expect(typeof each).toBe('function');
     });
+    it('iterates over array elem and corresponding index', () => {
+      const each = arrayFunctions.each;
+      const printFunc = (value, index) => console.log(value + ': ' + index);
+      expect(each([52, 73], printFunc).toBe('52: 0'));
+    })
   });
 
   describe('reduce', () => {
@@ -61,19 +66,6 @@ describe('Arrays', () => {
     it('should return empty array if conditions are not satisfied', () => {  
       const filter = arrayFunctions.filter;
       expect(filter([1, 2, 3], num => num > 3)).toBeDefined();
-    }); 
-  });
-
-  describe('flatten', () => {
-    it('should be a function', () => {
-      const flatten = arrayFunctions.each;
-      expect(typeof flatten).toBe('function');
-    }); 
-    it('should find elements that satisfy conditions set in callback function', () => {
-      const find = arrayFunctions.find;
-      expect(find([1, 2, 3], num => num > 2)).toBeDefined();
-      expect(find([1, 2, 3], num => num > 2)).toBe(3);
-      expect(find([1, 2, 3], num => num > 3)).toBeUndefined();
     }); 
   });
 
