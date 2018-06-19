@@ -14,60 +14,87 @@ describe('Arrays', () => {
     it('should be a function', () => {
       expect(typeof each).toBe('function');
     });
-      it('should iterate over elements', () => {
-        expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
-        const arr = [6, 7, 8, 9];
-        const actual = each(arr, addElements);
-        expect(actual).toBeUndefined();
-      });
+    it('should iterate over elements', () => {
+      expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
+      const arr = [6, 7, 8, 9];
+      const actual = each(arr, addElements);
+      expect(actual).toBeUndefined();
+    });
   });
 
+  describe('map', () => {
+    const map = arrayFunctions.map;
+    it('should be a function', () => {
+      expect(typeof map).toBe('function');
+    });
+    it('should iterate over elements', () => {
+      const arr = [6, 7, 8, 9];
+      const actual = map(arr, addOne);
+      const expected = [7, 8, 9, 10];
+      expect(actual).toEqual(expected);
+    });
+  });
 
-  // describe('map', () => {
-  //   it('should be a function', () => {
-  //     const map = arrayFunctions.map;
-  //     expect(typeof map).toBe('function');
-  //   });
-  // });
-
-
-  // describe('reduce', () => {
-  //   it('should be a function', () => {
-  //     const reduce = arrayFunctions.reduce;
-  //     expect(typeof reduce).toBe('function');
-  //   });
-  // });
+  describe('reduce', () => {
+    const reduce = arrayFunctions.reduce;
+    it('should be a function', () => {
+      expect(typeof reduce).toBe('function');
+    });
+    it('should iterate over elements', () => {
+      expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
+      const arr = [6, 7, 8, 9];
+      const actual = each(arr, addElements);
+      expect(actual).toBeUndefined();
+    });
+  });
 
   // describe('find', () => {
+  //   const find = arrayFunctions.find;
   //   it('should be a function', () => {
-  //     const find = arrayFunctions.find;
   //     expect(typeof find).toBe('function');
+  //   });
+  //   it('should iterate over elements', () => {
+  //     expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
+  //     const arr = [6, 7, 8, 9];
+  //     const actual = each(arr, addElements);
+  //     expect(actual).toBeUndefined();
   //   });
   // });
 
-
   // describe('filter', () => {
+  //   const filter = arrayFunctions.filter;
   //   it('should be a function', () => {
-  //     const filter = arrayFunctions.filter;
   //     expect(typeof filter).toBe('function');
+  //   });
+  //   it('should iterate over elements', () => {
+  //     expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
+  //     const arr = [6, 7, 8, 9];
+  //     const actual = each(arr, addElements);
+  //     expect(actual).toBeUndefined();
   //   });
   // });
 
   // describe('flatten', () => {
+  //   const flatten = arrayFunctions.flatten;
   //   it('should be a function', () => {
-  //     const flatten = arrayFunctions.flatten;
   //     expect(typeof flatten).toBe('function');
   //   });
+  //   it('should iterate over elements', () => {
+  //     expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
+  //     const arr = [6, 7, 8, 9];
+  //     const actual = each(arr, addElements);
+  //     expect(actual).toBeUndefined();
+  //   });
   // });
+
 });
-
-
-// function createArray() {
-//   return [1, 2, 3, 4];
-// }
-
+  
 function addElements(x, y) {
   return x + y;
+}
+
+function addOne(x) {
+  return x + 1;
 }
 
 
