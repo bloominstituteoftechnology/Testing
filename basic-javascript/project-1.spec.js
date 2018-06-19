@@ -164,7 +164,7 @@ describe('divide', () => {
     expect(actual).toEqual(-Infinity);
   });
 });
-describe.only('multiply', () => {
+describe('multiply', () => {
   test.each([[9], [3]])('A number by zero = 0', x => {
     const actual = helpers.multiply(x, 0);
     expect(actual).toEqual(0);
@@ -182,7 +182,16 @@ describe.only('multiply', () => {
     expect(actual).toBeGreaterThan(0);
   });
 });
-describe('getRemainder', () => {});
+describe.only('getRemainder', () => {
+  test.each([[3], [5]])('If x = y, must return 0', x => {
+    const actual = helpers.getRemainder(x, x);
+    expect(actual).toEqual(0);
+  });
+  test.each([[2341], [55431]])('If y = 1, must return 0', x => {
+    const actual = helpers.getRemainder(x, 1);
+    expect(actual).toEqual(0);
+  });
+});
 describe('isEven', () => {});
 describe('isOdd', () => {});
 describe('square', () => {});
