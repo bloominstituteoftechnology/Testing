@@ -39,3 +39,16 @@ describe('isTenorFive', () => {
     })
 });
 
+describe('isInRange', () => {
+    it('Should return a number less than 50 and more than 20', () => {
+        expect(funcs.isInRange(38)).toBe(true);
+        expect(funcs.isInRange(49.5)).toBe(true);
+        expect(funcs.isInRange(21)).toBe(true);
+    })
+    it('Should return false if not within parameters', () => {
+        expect(funcs.isInRange(5)).toBe(false);
+        expect(funcs.isInRange(100)).toBe(false);
+        expect(funcs.isInRange(19)).toBe(false);
+    })
+});
+
