@@ -36,8 +36,23 @@ describe('objects', () => {
     });
   });
 
-  
+  describe("invert", () => {
+    it("should swap the keys and values in given object", () => {
+      const invert = objectFunctions.invert;
+      const obj = { a: 1, b: 2, c: 3 };
+      expect(invert(obj)).toEqual({ "1": "a", "2": "b", "3": "c" });
+      expect(() => invert()).toThrow(TypeError);
+    });
+  });
 
+  describe("defaults", () => {
+    it("should add new pairs to the object", () => {
+      const defaults = objectFunctions.defaults;
+      const obj = { a: 1, b: 2, c: 3 };
+      expect(defaults(obj, { d: 4 })).toEqual({ a: 1, b: 2, c: 3, d: 4 });
+      expect(() => defaults(obj)).toThrow(TypeError);
+    });
+  });
 
 
 });

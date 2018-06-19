@@ -65,9 +65,13 @@ describe('Arrays', () => {
   });
 
   describe("flatten", () => {
+    it('should be a function', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(typeof flatten).toBe('function');
+    });
     const flatten = arrayFunctions.flatten;
     const arr = [7, 2, [9, 4, [1]]];
-    it("flatten an array", () => {
+    it("should flatten the array", () => {
       expect(flatten(arr)).toEqual([7, 2, 9, 4, 1]);
     });
   });
