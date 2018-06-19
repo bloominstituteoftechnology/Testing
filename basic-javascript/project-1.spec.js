@@ -117,7 +117,7 @@ describe('add', () => {
     expect(actual % 0).not.toEqual(0);
   });
 });
-describe.only('subtract', () => {
+describe('subtract', () => {
   test.each([[1, 5], [30, 31]])('If first x < y, must return a negative number', (a, b) => {
     const actual = helpers.subtract(a, b);
     expect(actual).toBeLessThan(0);
@@ -141,7 +141,29 @@ describe.only('subtract', () => {
     expect(actual).toBeLessThan(0);
   });
 });
-describe('divide', () => {});
+describe.only('divide', () => {
+  test.each([[10, 2], [5, 3]])('If x > y, must return a positive number', (x, y) => {
+    const actual = helpers.divide(x, y);
+    expect(actual).toBeGreaterThan(0);
+  });
+  test.each([[1, 10], [1, 9000]])('If x < y, 0 < result < 1', (x, y) => {
+    const actual = helpers.divide(x, y);
+    expect(actual).toBeGreaterThan(0);
+    expect(actual).toBeLessThan(1);
+  });
+  test.each([[3, 3], [2, 2]])('If x = y, must return 1', (x, y) => {
+    const actual = helpers.divide(x, y);
+    expect(actual).toEqual(1);
+  });
+  test.each([[3], [8]])('If x > 0 and y = 0, must return Infinity', x => {
+    const actual = helpers.divide(x, 0);
+    expect(actual).toEqual(Infinity);
+  });
+  test.each([[-3], [-8]])('If x < 0 and y = 0, must return Infinity', x => {
+    const actual = helpers.divide(x, 0);
+    expect(actual).toEqual(-Infinity);
+  });
+});
 describe('multiply', () => {});
 describe('getRemainder', () => {});
 describe('isEven', () => {});
