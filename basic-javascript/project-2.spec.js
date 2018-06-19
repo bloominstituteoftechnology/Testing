@@ -20,9 +20,13 @@ const setType = (type, val) => {
   }
 };
 
+// See below for the raunchiest, hottest code ever in:
+/* ~Compexity Gone Wild~ */
+// Rated X. 18+ Only
 const testBase = cb => {
 
   return (str, arr = []) => {
+    // Tear the string bloody apart
     const strToArr = str.split(' ');
     const [ matcher, typeOfExpected, ...rest] = strToArr;
     const indexOfGiven = rest.indexOf('given');
@@ -30,7 +34,7 @@ const testBase = cb => {
     const [given, typeOfArgs, ...args] = rest.slice(indexOfGiven);
     const typedExpected = setType(typeOfExpected, expected);
     const typedArgs = args.map(arg => setType(typeOfArgs, arg));
-    
+    // Return the `it` function 
     return it(`returns ${typeOfExpected} ${typedExpected} given ${typeOfArgs} ${typedArgs}`, () => {
       let actual;
       if (typeOfArgs === 'array') {
