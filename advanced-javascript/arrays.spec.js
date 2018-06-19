@@ -47,7 +47,8 @@ describe('Arrays', () => {
       const arr2 = reduce([1,2,3], (num,acc) => acc * num);
       const arr3 = reduce([1,2,3], (num,acc) => acc);
       const arr4 = reduce([true,false], (num,acc) => acc + num);
-      
+
+      expect(typeof reduce).toBe('function');
       expect(arr).toEqual(6);
       expect(arr2).toEqual(6);
       expect(arr3).toEqual(3);
@@ -63,6 +64,7 @@ describe('Arrays', () => {
       const arr3 = find([true,false], bool => bool === true);
       const arr4 = find(['tabby','calico'], str => str === 'torbie');
 
+      expect(typeof find).toBe('function');
       expect(arr).toEqual(2);
       expect(arr2).toEqual(undefined);
       expect(arr3).toEqual(true);
@@ -78,6 +80,7 @@ describe('Arrays', () => {
       const arr3 = filter(['green','blue','yellow'], color => color === 'blue');
       const arr4 = filter([true, true], bool => bool === false);
 
+      expect(typeof filter).toBe('function');
       expect(arr).toEqual([2]);
       expect(arr2).toEqual([]);
       expect(arr3).toEqual(['blue']);
@@ -91,6 +94,7 @@ describe('Arrays', () => {
       const arr2 = flatten([1,2,3]);
       const arr3 = flatten(['a',['b','c','d'],['e']]);
      
+      expect(typeof flatten).toBe('function');
       expect(arr).toEqual([1,2,3,4,5,6]);
       expect(arr2).toEqual([1,2,3]);
       expect(arr3).toEqual(['a','b','c','d','e']);
