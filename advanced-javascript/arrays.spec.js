@@ -75,12 +75,12 @@ describe('Arrays', () => {
     });
   });
 
-  describe.only('flatten', () => {
+  describe('flatten', () => {
     const flatten = arrayFunctions.flatten;
     it('should be a function', () => {
       expect(typeof flatten).toBe('function');
     });
-    it('should iterate over items and return undefined', () => {
+    it('should iterate over items and flatten all arrays', () => {
       const elements = [1, 2, 3, 4, [1, 'a'],['b', 6]];
       const actual = flatten(elements);
       const expected = [1, 2, 3, 4, 1, 'a', 'b', 6];
