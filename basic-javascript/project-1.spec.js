@@ -1,48 +1,41 @@
 const helpers = require('./project-1');
 
-describe('multiplication helpers', () => {
-    describe('multiplyByTen', () => {
-        it('should multiply a number by ten', () => {
-            const expected = 350;
-            
-            const actual = multiply(35, 10);
-        
 
-            expect(actual).toEqual(expected);
-        
-        });
+describe('multiplyByTen', () => {
+    it('should return the given number multiplied by 10', () => {
+        expect(helpers.multiplyByTen(undefined)).toBeNaN();
+        expect(helpers.multiplyByTen('three')).toBeNaN();
     });
-});    
+});
+
 
 describe('subtractFive', () => {
     it('should subtract a number by five', () => { 
-        const expected = 95;
-        const actual = subtract(100, 5);
-
-        expect(actual).toEqual(expected);
-
+        // expect(helpers.subtractFive(undefined)).toBeNan();
+        expect(helpers.subtractFive(10)).toBe(5);
+        expect(helpers.subtractFive(20)).toBe(15);
+        expect(helpers.subtractFive(45)).toBe(40);
     })
-
+    
 });
 
 
 describe('areSameLength', () => {
     it('Should return strings that are the same length', () => {
 
-        const expected = (str1='si', str2='no');
-        const actual = areSameLength(str1, str2);
-
-        expect(actual).toBe(true);
+        expect(helpers.areSameLength('seven','seven')).toBe(true);
+        expect(helpers.areSameLength('two', 'two')).toBe(true);
+        expect(helpers.areSameLength('six', 'six')).toBe(true);
+        expect(helpers.areSameLength('three', 'three')).toBe(true);
     })
 
 });
 
 describe('areEqual', () => { 
     it('it should return two numbers that are equal', () => { 
-        const expected = (x = 5, y = 5);
-        const actual = equal(x, y);
-
-        expect(actual).toBe(true);
+        expect(helpers.areEqual(4, 4)).toBe(true);
+        expect(helpers.areEqual(7, 7)).toBe(true);
+        expect(helpers.areEqual(3, 3)).toBe(true);
 
     })
 
@@ -50,23 +43,7 @@ describe('areEqual', () => {
 
 
 
-//FUNCS
-function multiply(a, b) {
-    return a * b;
-}
 
-function subtract(a, b) {
-    return a - b;
-}
-
-function areSameLength(strA, strB) {
-    return strA.length === strB.length;
-    
-}
-
-function equal(x, y) {
-    return x === y;
-}
 // start testing!
 
 
