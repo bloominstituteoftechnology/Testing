@@ -175,6 +175,15 @@ describe('roundNumber', () => {
     })
 });
 
+describe('roundUp', () => {
+    it('Should returns the smallest integer greater than or equal to a given number', () => {
+        expect(helpers.roundUp(3.07)).toEqual(4);
+        expect(helpers.roundUp(7.21)).toEqual(8);
+        expect(helpers.roundUp(6.44)).toEqual(7);
+    })
+});
+
+
 
 // start testing!
 
