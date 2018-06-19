@@ -110,7 +110,39 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('areSameLength', () => {});
+  describe.only('areSameLength', () => {
+    it('Returns true when given two strings of equal length', () => {
+      const actual = helpers.areSameLength('hello', 'world');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given two strings of different lengths', () => {
+      const actual = helpers.areSameLength('hey', 'danny');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when passing no arguments', () => {
+      const actual = helpers.areSameLength();
+      expect(actual).toBeFalsy();
+    });
+
+    describe('Returns false for any value type other than strings:', () => {
+      it('Numbers', () => {
+        const actual = helpers.areSameLength(3, 1);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Undefined', () => {
+        const actual = helpers.areSameLength(undefined, undefined);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Null', () => {
+        const actual = helpers.areSameLength(null, null);
+        expect(actual).toBeFalsy();
+      });
+    });
+  });
 
   // describe('areEqual', () => {});
 
