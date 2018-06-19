@@ -8,7 +8,7 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
-  return isNaN(num) ? false : num - 5;
+  return isNumeric(num) ? num - 5 : false;
 };
 
 const areSameLength = (str1, str2) => {
