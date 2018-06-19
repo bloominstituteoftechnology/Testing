@@ -81,4 +81,34 @@ describe('project-1', () => {
         })
     })
 
+    describe('returnLast', () => {
+        it('should return last item in the array', () => {
+            expect(funcs.returnLast([0,1,2,3])).toBe(3)
+            expect(funcs.returnLast(['a','b','c','d'])).toBe('d')
+            expect(funcs.returnLast([5,'b',1,'d'])).toBe('d')
+            expect(funcs.returnLast([undefined,'b','c','d'])).toBe('d')
+            expect(funcs.returnLast(['b','c','d', [1, 2]])).toEqual([1, 2]) // can not use .toBe (strict equality) with arrays
+        })
+    })
+
+    describe('getArrayLength', () => {
+        it('should return the length of the given array', () => {
+            expect(funcs.getArrayLength([0,1,2,3])).toBe(4)
+            expect(funcs.getArrayLength(['a','b','c','d'])).toBe(4)
+            expect(funcs.getArrayLength([5,'b',1,'d'])).toBe(4)
+            expect(funcs.getArrayLength([undefined,'b','c','d'])).toBe(4)
+            expect(funcs.getArrayLength(['b','c','d', [1, 2]])).toBe(4) 
+        })
+    })
+
+    describe('incrementByOne', () => {
+        it('should return all elements in the array incremented by 1', () => {
+            expect(funcs.incrementByOne([0,1,2,3])).toEqual([1, 2, 3, 4])
+            expect(funcs.incrementByOne(['a','b','c','d'])).toEqual(['a1','b1','c1','d1'])
+            expect(funcs.incrementByOne([5,'b',1,'d'])).toEqual([6,'b1',2,'d1'])
+            expect(funcs.incrementByOne([undefined,'b','c','d'])).toEqual([NaN,'b1','c1','d1']) 
+            expect(funcs.incrementByOne(['b','c','d', [1, 2]])).toEqual(['b1','c1','d1', "1,21"]) 
+        })
+    })
+
 });
