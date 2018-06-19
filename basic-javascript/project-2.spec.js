@@ -52,3 +52,16 @@ describe('isInRange', () => {
     })
 });
 
+describe('isInteger', () => { 
+    it('Should return true if the number is 7', () => {
+        expect(funcs.isInteger(7)).toBe(true);
+    })
+    it('Should return false if number is 0.1', () => {
+        expect(funcs.isInteger(0.1)).toBe(false);
+    })
+    it('Should return true for 0', () => { 
+        expect(funcs.isInteger(0)).toBe(true); 
+    })
+
+
+})
