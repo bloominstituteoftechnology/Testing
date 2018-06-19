@@ -68,23 +68,23 @@ const isOdd = num => {
 };
 
 const square = num => {
-  return num * num;
+  return isNumeric(num) ? num * num : false;
 };
 
 const cube = num => {
-  return num * num * num;
+  return isNumeric(num) ? num * num * num : false;
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  return isNumeric(num) && isNumeric(exponent) ? num ** exponent : false;
 };
 
 const roundNumber = num => {
-  return Math.round(num);
+  return isNumeric(num) ? Math.round(num) : false;
 };
 
 const roundUp = num => {
-  return Math.ceil(num);
+  return isNumeric(num) ? Math.ceil(num) : false;
 };
 
 const addExclamationPoint = str => {
@@ -100,19 +100,19 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  return isNumeric(length) && isNumeric(width) ? length * width : false;
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  return isNumeric(base) && isNumeric(height) ? 0.5 * base * height : false;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  return isNumeric(radius) ? Math.PI * radius * radius : false;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  return isNumeric(length) && isNumeric(width) && isNumeric(height) ? width * height * length : false;
 };
 
 module.exports = {
