@@ -34,23 +34,23 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  return isNumeric(x) && isNumeric(y) ? x + y : false;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  return isNumeric(x) && isNumeric(y) ? x - y : false;
 };
 
 const divide = (x, y) => {
-  return x / y;
+  return isNumeric(x) && isNumeric(y) ? x / y : false;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  return isNumeric(x) && isNumeric(y) ? x * y : false;
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  return isNumeric(x) && isNumeric(y) ? x % y : false;
 };
 
 const isEven = num => {
