@@ -157,6 +157,25 @@ describe('cube', () => {
     })
 });
 
+describe('raiseToPower', () => { 
+    it('Should return the number raised to the power of given exponent', () => {
+        expect(helpers.raiseToPower(3,3)).toEqual(27);
+        expect(helpers.raiseToPower(2, 3)).toEqual(8);
+        expect(helpers.raiseToPower(3, 4)).toEqual(81);
+        expect(helpers.raiseToPower(5, 7)).toEqual(78125);
+    })
+});
+
+describe('roundNumber', () => {
+    it('Should returns the value of a number rounded to the nearest integer', () => {
+        expect(helpers.roundNumber(3.07)).toEqual(3);
+        expect(helpers.roundNumber(5.96)).toEqual(6);
+        expect(helpers.roundNumber(4.44)).toEqual(4);
+        expect(helpers.roundNumber(9.71)).toEqual(10);
+    })
+});
+
+
 // start testing!
 
 
