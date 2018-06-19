@@ -133,16 +133,100 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
-    describe('incrementByOne', () => {
-        it('returns NaN when there is a non numerical value', () => {
-            // expect(funcs.incrementByOne(undefined)).toBe(undefined);
-            // expect(funcs.incrementByOne(5)).toBe(true);
-            // expect(funcs.incrementByOne()).toBe(false);
-            expect(funcs.incrementByOne({})).toBe(undefined);
-            expect(funcs.incrementByOne([1, 3, 5])).toBe(3);
-        })
-        it('should return the given number multiplied by 10', () => {
-        })
-    })
-})
+// describe.only('project-1', () => {
+//     describe('incrementByOne', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.incrementByOne(undefined)).toBe(undefined);
+//             // expect(funcs.incrementByOne(5)).toBe(true);
+//             // expect(funcs.incrementByOne()).toBe(false);
+//             expect(funcs.incrementByOne({})).toBe(undefined);
+//             expect(funcs.incrementByOne([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
+
+// describe.only('project-1', () => {
+//     describe('addItemToArray', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.addItemToArray(undefined)).toBe(undefined);
+//             // expect(funcs.addItemToArray(5)).toBe(true);
+//             // expect(funcs.addItemToArray()).toBe(false);
+//             expect(funcs.addItemToArray({})).toBe(undefined);
+//             expect(funcs.addItemToArray([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
+
+// describe.only('project-1', () => {
+//     describe('addItemToFront', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.addItemToFront(undefined)).toBe(undefined);
+//             // expect(funcs.addItemToFront(5)).toBe(true);
+//             // expect(funcs.addItemToFront()).toBe(false);
+//             expect(funcs.addItemToFront({})).toBe(undefined);
+//             expect(funcs.addItemToFront([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
+
+// describe.only('project-1', () => {
+//     describe('contains', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.contains(undefined)).toBe(undefined);
+//             // expect(funcs.contains(5)).toBe(true);
+//             // expect(funcs.contains()).toBe(false);
+//             expect(funcs.contains({})).toBe(undefined);
+//             expect(funcs.contains([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
+
+// describe.only('project-1', () => {
+//     describe('addNumbers', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.addNumbers(undefined)).toBe(undefined);
+//             // expect(funcs.addNumbers(5)).toBe(true);
+//             // expect(funcs.addNumbers()).toBe(false);
+//             expect(funcs.addNumbers({})).toBe(undefined);
+//             expect(funcs.addNumbers([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
+
+// describe.only('project-1', () => {
+//     describe('averageTestScore', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.averageTestScore(undefined)).toBe(undefined);
+//             // expect(funcs.averageTestScore(5)).toBe(true);
+//             // expect(funcs.averageTestScore()).toBe(false);
+//             expect(funcs.averageTestScore({})).toBe(undefined);
+//             expect(funcs.averageTestScore([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
+
+// describe.only('project-1', () => {
+//     describe('largestNumber', () => {
+//         it('returns NaN when there is a non numerical value', () => {
+//             // expect(funcs.largestNumber(undefined)).toBe(undefined);
+//             // expect(funcs.largestNumber(5)).toBe(true);
+//             // expect(funcs.largestNumber()).toBe(false);
+//             expect(funcs.largestNumber({})).toBe(undefined);
+//             expect(funcs.largestNumber([1, 3, 5])).toBe(3);
+//         })
+//         it('should return the given number multiplied by 10', () => {
+//         })
+//     })
+// })
