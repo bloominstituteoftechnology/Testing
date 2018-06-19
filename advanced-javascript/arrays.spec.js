@@ -50,8 +50,24 @@ describe('Arrays', () => {
 
   describe('filter', () => {
     it('should be a function', () => {
-      const filter = arrayFunctions.each;
+      const filter = arrayFunctions.filter;
       expect(typeof filter).toBe('function');
+    }); 
+    it('should filter array elements that satisfy conditions set in callback function', () => {
+      const filter = arrayFunctions.filter;
+      expect(filter([1, 2, 3], num => num > 2)).toBeDefined();
+      expect(filter([1, 2, 3], num => num > 2)).toEqual([3]);
+    });
+    it('should return empty array if conditions are not satisfied', () => {  
+      const filter = arrayFunctions.filter;
+      expect(filter([1, 2, 3], num => num > 3)).toBeDefined();
+    }); 
+  });
+
+  describe('flatten', () => {
+    it('should be a function', () => {
+      const flatten = arrayFunctions.each;
+      expect(typeof flatten).toBe('function');
     }); 
     it('should find elements that satisfy conditions set in callback function', () => {
       const find = arrayFunctions.find;

@@ -28,7 +28,7 @@ const find = (elements, cb) => {
   return undefined;
 };
 
-const filter = (elements, cb) => {
+const filter = (element, cb) => {
   const filteredValues = [];
   each(element, item => {
     if (cb(item)) filteredValues.push(item);
