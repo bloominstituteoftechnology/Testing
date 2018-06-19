@@ -21,17 +21,17 @@ const reduce = (elements, cb, memo = elements.shift()) => {
   return memo;
 };
 
-const find = (elements, cb) => {
+const find = (elements, cb, term) => {
   for (let i = 0; i < elements.length; i++) {
-    if (cb(elements[i])) return elements[i];
+    if (cb(term, elements[i])) return elements[i];
   }
   return undefined;
 };
 
-const filter = (elements, cb) => {
+const filter = (elements, cb, term) => {
   const filteredValues = [];
-  each(element, item => {
-    if (cb(item)) filteredValues.push(item);
+  each(elements, item => {
+    if (cb(term, item)) filteredValues.push(item);
   });
   return filteredValues;
 };
