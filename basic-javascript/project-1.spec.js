@@ -199,15 +199,13 @@ describe('combineNames', () => {
 
 });
 
-//need to figure this one out.
+
 describe('getGreeting', () => {
    
-    it('Should return name along with greeting message', () => {
-    
-
-
+    it('Should return \'Hello {name}!\' ', () => {
+        expect(helpers.getGreeting('Marco')).toBe('Hello Marco!');
+        expect(helpers.getGreeting('Claire')).toBe('Hello Claire!');
     })
-
 });
 
 describe('getRectangleArea', () => {
