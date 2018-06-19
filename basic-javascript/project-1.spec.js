@@ -99,7 +99,7 @@ describe('greaterThanFifty', () => {
     expect(actual).toBe(false);
   });
 });
-describe.only('add', () => {
+describe('add', () => {
   test('Two positive numbers must retur a value > 0', () => {
     const actual = helpers.add(2, 5);
     expect(actual).toBeGreaterThan(0);
@@ -117,7 +117,30 @@ describe.only('add', () => {
     expect(actual % 0).not.toEqual(0);
   });
 });
-describe('subtract', () => {});
+describe.only('subtract', () => {
+  test.each([[1, 5], [30, 31]])('If first x < y, must return a negative number', (a, b) => {
+    const actual = helpers.subtract(a, b);
+    expect(actual).toBeLessThan(0);
+  });
+  test.each([[12], [0], [89]])('Substracting zero to a value must return the value', a => {
+    const actual = helpers.subtract(a, 0);
+    expect(actual).toEqual(a);
+  });
+  test.each([[10, 1], [2, 1]])('Given tow positive numbers x > y  , the result must be: x > result >= y', (x, y) => {
+    const actual = helpers.subtract(x, y);
+    expect(actual).toBeGreaterThanOrEqual(y);
+    expect(actual).toBeLessThan(x);
+  });
+  test.each([[2, -10], [-1, -2]])('If y is a negative number and x > y, result > x', (x, y) => {
+    const actual = helpers.subtract(x, y);
+    expect(actual).toBeGreaterThan(x);
+  });
+  // given tow negative numbers if x < y =>
+  test.each([[-5, -4], [-10, -1]])('Given tow negative numbers if x < y, result must be a negative number', (x, y) => {
+    const actual = helpers.subtract(x, y);
+    expect(actual).toBeLessThan(0);
+  });
+});
 describe('divide', () => {});
 describe('multiply', () => {});
 describe('getRemainder', () => {});
