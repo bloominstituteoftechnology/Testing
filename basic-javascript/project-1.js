@@ -1,11 +1,14 @@
 /* eslint-disable arrow-parens */
+const isNumeric = num => {
+  return !(isNaN(num) || num === null);
+};
 
 const multiplyByTen = num => {
-  return isNaN(num) ? false : num * 10;
+  return isNumeric(num) ? num * 10 : false;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  return isNaN(num) ? false : num - 5;
 };
 
 const areSameLength = (str1, str2) => {

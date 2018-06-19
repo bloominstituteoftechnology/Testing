@@ -24,12 +24,6 @@ describe('Project 1', () => {
       expect(actual).toBe(expected);
     });
 
-    it('Returns 0 when given null', () => {
-      const expected = 0;
-      const actual = helpers.multiplyByTen(null);
-      expect(actual).toBe(expected);
-    });
-
     it('Returns 10 when given true', () => {
       const expected = 10;
       const actual = helpers.multiplyByTen(true);
@@ -52,6 +46,12 @@ describe('Project 1', () => {
       it('An array of values', () => {
         const expected = false;
         const actual = helpers.multiplyByTen([3, 2]);
+        expect(actual).toBe(expected);
+      });
+
+      it('null', () => {
+        const expected = false;
+        const actual = helpers.multiplyByTen(undefined);
         expect(actual).toBe(expected);
       });
 
