@@ -112,3 +112,60 @@ describe('project-2', () => {
         })
     })
 })
+
+describe('project-2', () => {
+    describe('returnFirst', () => {
+        const expected = [1];
+        it('if the argument is a number', () => {
+            expect(funcs.returnFirst(1)).toBeUndefined();
+        })
+        it('matches even if receieved contains additional elements', () => {
+            expect(funcs.returnFirst([1,2,3,4])).toEqual(1);
+        })
+    })
+})
+
+describe('project-2', () => {
+    describe('returnLast', () => {
+        it('if the argument is a number', () => {
+            expect(funcs.returnLast(1)).toBeUndefined();
+        })
+        it('matches even if receieved contains additional elements', () => {
+            expect(funcs.returnLast([1, 2, 3, 4])).toEqual(4);
+        })
+    })
+})
+
+describe('project-2', () => {
+    describe('getArrayLength', () => {
+        it('if the argument is a string, return the length of the string array per element', () => {
+            expect(funcs.getArrayLength('str')).toEqual(3);
+        })
+        it('if the argument is a number', () => {
+            expect(funcs.getArrayLength(4)).toBeUndefined();
+        });
+        it('if the argument is an array, return the arrays length', () => {})
+    })
+})
+
+
+describe('project-2', () => {
+    describe('incrementByOne', () => {
+        it('if the arg is a string, return the string', () => {
+            expect(funcs.incrementByOne('str')).toEqual('str');
+        })
+        it('if the arg is true, return true', () => {
+            expect(funcs.incrementByOne(true)).toBeTruthy();
+        })
+        it('if the arg is false, return false', () => {
+            expect(funcs.incrementByOne(false)).toBeFalsy();
+        })
+        it('if th arg is true, return true', () => {
+            expect(funcs.incrementByOne(true)).toBeTruthy();
+        })
+        it('if the array consists of strings, return NaN', () => {
+            expect(funcs.incrementByOne(['a'])).toEqual(expect.anything([NaN]));
+        })
+        it('returns a array with an increased element', () => {})
+        })
+})
