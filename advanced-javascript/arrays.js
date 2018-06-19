@@ -21,9 +21,9 @@ const reduce = (elements, cb, memo = elements.shift()) => {
   return memo;
 };
 
-const find = (elements, cb) => {
+const find = (elements, cb, term) => {
   for (let i = 0; i < elements.length; i++) {
-    if (cb(elements[i])) return elements[i];
+    if (cb(term, elements[i])) return elements[i];
   }
   return undefined;
 };

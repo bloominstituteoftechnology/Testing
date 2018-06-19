@@ -58,10 +58,10 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  if (num % 2 !== 0) {
+    return true;
   }
-  return true;
+  return false;
 };
 
 const square = num => {
