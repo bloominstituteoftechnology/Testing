@@ -141,7 +141,7 @@ describe('subtract', () => {
     expect(actual).toBeLessThan(0);
   });
 });
-describe.only('divide', () => {
+describe('divide', () => {
   test.each([[10, 2], [5, 3]])('If x > y, must return a positive number', (x, y) => {
     const actual = helpers.divide(x, y);
     expect(actual).toBeGreaterThan(0);
@@ -164,7 +164,24 @@ describe.only('divide', () => {
     expect(actual).toEqual(-Infinity);
   });
 });
-describe('multiply', () => {});
+describe.only('multiply', () => {
+  test.each([[9], [3]])('A number by zero = 0', x => {
+    const actual = helpers.multiply(x, 0);
+    expect(actual).toEqual(0);
+  });
+  test.each([[123], [9876]])('A x by 1 = x', x => {
+    const actual = helpers.multiply(x, 1);
+    expect(actual).toEqual(x);
+  });
+  test.each([[2, -2], [3, -9]])('A positive number by a negative number = negative number', (x, y) => {
+    const actual = helpers.multiply(x, y);
+    expect(actual).toBeLessThan(0);
+  });
+  test.each([[-1, -9], [-987, -234]])('Two negative numbers must return a posivite number', (x, y) => {
+    const actual = helpers.multiply(x, y);
+    expect(actual).toBeGreaterThan(0);
+  });
+});
 describe('getRemainder', () => {});
 describe('isEven', () => {});
 describe('isOdd', () => {});
