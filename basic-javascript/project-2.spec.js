@@ -52,16 +52,35 @@ describe('isInRange', () => {
     })
 });
 
-describe('isInteger', () => { 
+describe('isInteger', () => {
     it('Should return true if the number is 7', () => {
         expect(funcs.isInteger(7)).toBe(true);
     })
     it('Should return false if number is 0.1', () => {
         expect(funcs.isInteger(0.1)).toBe(false);
     })
-    it('Should return true for 0', () => { 
-        expect(funcs.isInteger(0)).toBe(true); 
+    it('Should return true for 0', () => {
+        expect(funcs.isInteger(0)).toBe(true);
     })
+});
 
-
-})
+describe('fizzBuzz', () => {
+    it('Should return fizzBuzz if number is divisible by 5 and 3', () => {
+        expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
+    })
+    it('Should return buzz if number divisible by 5', () => {
+        expect(funcs.fizzBuzz(20)).toBe('buzz');
+    })
+    it('Should return fizz if number is divisible by 3', () => {
+        expect(funcs.fizzBuzz(9)).toBe('fizz');
+    })
+    it('Should return a number if not divisible by 3 or 5', () => {
+        expect(funcs.fizzBuzz(7)).toBe(7);
+    })
+    it('Should return a number if not divisible by 3 or 5', () => {
+        expect(funcs.fizzBuzz(8)).toBe(8);
+    })
+    it('Should return a number if not divisible by 3 or 5', () => {
+        expect(funcs.fizzBuzz(11)).toBe(11);
+    })
+});
