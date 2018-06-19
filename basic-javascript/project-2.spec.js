@@ -6,9 +6,11 @@ it('get bigger number', () => {
     const getBigger = funcs.getBiggest;
     const Test1 = getBigger(5, 15);
     const Test2 = getBigger(8, 18);
+    const Test3 = getBigger(5.5, 5.6);
 
     expect(Test1).toEqual(15);
     expect(Test2).toEqual(18);
+    expect(Test3).toEqual(5.6);
 })
 
 //#2
@@ -18,10 +20,12 @@ it('get right greeting', () => {
     const German = getGreeting('Guten Tag!');
     const Spanish = getGreeting('Hola!');
     const Default = getGreeting();
+    const Random = getGreeting('gjhdfgsdd');
 
     expect(German).toEqual('Hello!');
     expect(Spanish).toEqual('Hello!');
     expect(Default).toEqual('Hello!');
+    expect(Random).toEqual('Hello!');
 })
 
 //#3
