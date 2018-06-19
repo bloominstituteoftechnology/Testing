@@ -168,6 +168,7 @@ describe('project 2', () => {
     const arr2 = incrementByOne(['what','is','this']);
     const arr3 = incrementByOne('what','is','this');
     const arr4 = incrementByOne(true, false);
+    //try incrementByOne(7);
     
     expect(arr).toEqual([1,2]);
     expect(arr2).toEqualNaN;
