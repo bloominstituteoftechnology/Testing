@@ -7,6 +7,8 @@ const keys = (obj) => {
   return Object.keys(obj);
 };
 
+
+
 const values = (obj) => {
   return Object.keys(obj).map((key) => {
     return obj[key];
@@ -14,11 +16,14 @@ const values = (obj) => {
 };
 
 const mapObject = (obj, cb) => {
+  // ['name', "age"]
   Object.keys(obj).forEach((key) => (obj[key] = cb(obj[key])));
   return obj;
 };
 
+
 const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
+
 
 const invert = (obj) => {
   Object.keys(obj).forEach((key) => {
@@ -36,6 +41,19 @@ const defaults = (obj, defaultProps) => {
   });
   return obj;
 };
+
+let person = {
+  name: "Ja",
+  age: 23
+}
+
+let personFault = {
+  name: "test",
+  age: 5,
+  lastName: "Navey"
+};
+
+console.log(defaults(person, personFault));
 
 /* eslint-enable no-unused-vars */
 
