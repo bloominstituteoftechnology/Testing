@@ -41,25 +41,27 @@ describe('Arrays', () => {
       expect(typeof reduce).toBe('function');
     });
     it('should iterate over elements', () => {
-      expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
-      const arr = [6, 7, 8, 9];
-      const actual = each(arr, addElements);
-      expect(actual).toBeUndefined();
+      const elements = [1, 2, 3, 4];
+      const actual = reduce(elements, addElements);
+      const expected = 10;
+      expect(actual).toEqual(expected);
     });
   });
 
-  // describe('find', () => {
-  //   const find = arrayFunctions.find;
-  //   it('should be a function', () => {
-  //     expect(typeof find).toBe('function');
-  //   });
-  //   it('should iterate over elements', () => {
-  //     expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
-  //     const arr = [6, 7, 8, 9];
-  //     const actual = each(arr, addElements);
-  //     expect(actual).toBeUndefined();
-  //   });
-  // });
+  // had to alter main arr.js file 
+  describe('find', () => {
+    const find = arrayFunctions.find;
+    it('should be a function', () => {
+      expect(typeof find).toBe('function');
+    });
+    it('should iterate over elements', () => {
+      const elements = [1, 2, 3, 4];
+      const searchInput = 4;
+      const actual = find(elements, compareElements, searchInput);
+      const expected = 4;
+      expect(actual).toEqual(expected);
+    });
+  });
 
   // describe('filter', () => {
   //   const filter = arrayFunctions.filter;
@@ -67,7 +69,6 @@ describe('Arrays', () => {
   //     expect(typeof filter).toBe('function');
   //   });
   //   it('should iterate over elements', () => {
-  //     expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
   //     const arr = [6, 7, 8, 9];
   //     const actual = each(arr, addElements);
   //     expect(actual).toBeUndefined();
@@ -95,6 +96,10 @@ function addElements(x, y) {
 
 function addOne(x) {
   return x + 1;
+}
+
+function compareElements(x, y) {
+  return x === y;
 }
 
 
