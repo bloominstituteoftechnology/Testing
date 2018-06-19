@@ -96,3 +96,50 @@ describe('addItemToArray', () => {
         expect(funcs.incrementByOne([3])).toEqual([4]);
     });
 });
+
+describe('addItemToFront', () => {
+    it('adds item to front if array', () => {
+        expect(funcs.addItemToFront([1, 2, 3], 0)).toEqual([0, 1, 2, 3]);
+        expect(funcs.addItemToFront([-1, 0, 98], 'hi')).toEqual(['hi', -1, 0, 98]);
+        expect(funcs.addItemToFront([3], 'bye')).toEqual(['bye', 3]);
+    });
+});
+
+describe('wordsToSentence', () => {
+    it('converts array of words to sentence', () => {
+        expect(funcs.wordsToSentence(['hello', 'whats', 'up'])).toEqual('hello whats up');
+        expect(funcs.wordsToSentence(['goodbye', 'now'])).toEqual('goodbye now');
+    });
+});
+
+describe('contains', () => {
+    it('return true if item is in array', () => {
+        expect(funcs.contains(['hello', 'whats', 'up'], 'hello')).toBeTruthy();
+        expect(funcs.contains(['goodbye', 'now'], 'now')).toBeTruthy();
+        expect(funcs.contains(['goodbye', 'now'], 'ow')).toBeFalsy();
+    });
+});
+
+describe('addNumbers', () => {
+    it('returns sum of numbers', () => {
+        expect(funcs.addNumbers([8, 2, 5])).toBe(15);
+        expect(funcs.addNumbers([1, 2, 7])).toBe(10);
+        expect(funcs.addNumbers([0, -10, -3])).toBe(-13);
+    });
+});
+
+describe('averageTestScore', () => {
+    it('return true if item is in array', () => {
+        expect(funcs.averageTestScore([100, 90, 95])).toBe(95);
+        expect(funcs.averageTestScore([105, 100, 95])).toBe(100);
+        expect(funcs.averageTestScore([-5, 0, 5])).toBe(0);
+    });
+});
+
+describe('largestNumber', () => {
+    it('return largest number', () => {
+        expect(funcs.largestNumber([1, 2, 3])).toBe(3);
+        expect(funcs.largestNumber([-1, 0, 1])).toBe(1);
+        expect(funcs.largestNumber([-72, 56, 108])).toBe(108);
+    });
+});

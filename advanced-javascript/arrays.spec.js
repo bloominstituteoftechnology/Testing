@@ -11,7 +11,39 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
+    });
+    it('should call cb on each element of array', () => {
+      const map = arrayFunctions.map;
+      const addOne = (x) => x + 1;
+      expect(map([1, 2], addOne)).toEqual([2, 3]);
     });
   });
+
+  describe('each', () => {
+    it('should be a function', () => {
+      const each = arrayFunctions.each;
+      expect(typeof each).toBe('function');
+    });
+  });
+
+  describe('reduce', () => {
+    it('should be a function', () => {
+      const reduce = arrayFunctions.each;
+      expect(typeof reduce).toBe('function');
+    }); 
+  });
+
+  describe('find', () => {
+    it('should be a function', () => {
+      const find = arrayFunctions.each;
+      expect(typeof find).toBe('function');
+    }); 
+    it('should do what its supposed to', () => {
+      const find = arrayFunctions.each;
+      const addOne = (int) => int + 1
+      expect(find([1, 2, 3], )).toBe('function');
+    }); 
+  });
+
 });
