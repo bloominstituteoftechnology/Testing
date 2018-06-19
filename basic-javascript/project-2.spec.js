@@ -1,7 +1,7 @@
 const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('getBiggest', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.getBiggest(undefined, undefined)).toBe(undefined);
@@ -14,7 +14,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('greeting', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.greeting(undefined)).toBe('Hello!');
@@ -26,7 +26,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('isTenOrFive', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.isTenOrFive(undefined)).toBe(false);
@@ -39,7 +39,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('isInRange', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.isInRange(undefined)).toBe(false);
@@ -52,7 +52,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('isInteger', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.isInteger(undefined)).toBe(false);
@@ -64,7 +64,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('fizzBuzz', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.fizzBuzz(undefined)).toBe(undefined);
@@ -77,7 +77,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('isPrime', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.isPrime(undefined)).toBe(true);
@@ -91,7 +91,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('returnFirst', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.returnFirst(undefined)).toBe(undefined);
@@ -105,7 +105,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('returnLast', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.returnLast(undefined)).toBe(undefined);
@@ -119,7 +119,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('getArrayLength', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.getArrayLength(undefined)).toBe(undefined);
@@ -133,7 +133,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('incrementByOne', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.incrementByOne(undefined)).toBe(undefined);
@@ -147,7 +147,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('addItemToArray', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.addItemToArray(undefined)).toBe(undefined);
@@ -161,7 +161,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('addItemToFront', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.addItemToFront(undefined)).toBe(undefined);
@@ -175,7 +175,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('wordsToSentence', () => {
         it('returns NaN when there is a non numerical value', () => {
             expect(funcs.wordsToSentence(false)).toBe('');
@@ -188,7 +188,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('contains', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.contains(undefined)).toBe(undefined);
@@ -202,7 +202,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('addNumbers', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.addNumbers(undefined)).toBe(undefined);
@@ -216,7 +216,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('averageTestScore', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.averageTestScore(undefined)).toBe(undefined);
@@ -230,7 +230,7 @@ describe.only('project-1', () => {
     })
 })
 
-describe.only('project-1', () => {
+describe('project-1', () => {
     describe('largestNumber', () => {
         it('returns NaN when there is a non numerical value', () => {
             // expect(funcs.largestNumber(undefined)).toBe(undefined);
