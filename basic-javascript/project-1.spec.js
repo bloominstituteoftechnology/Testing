@@ -1,9 +1,5 @@
 const helpers = require('./project-1');
 
-// Arrange, Act, Assert
-
-// Numbers, Strings, Array, Boolean, Object, NaN
-
 describe('Project 1', () => {
   describe('multiplyByTen', () => {
     it('Returns number multiplied by 10 when given a numeric value', () => {
