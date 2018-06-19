@@ -66,28 +66,32 @@ describe("project-2", () => {
     });
   });
   describe("returnFirst", () => {
-    it("", () => {
-      expect();
+    it("Should get the first item in an array", () => {
+      expect(funcs.returnFirst([18, 9, 21])).toBe(18);
     });
   });
   describe("returnLast", () => {
-    it("", () => {
-      expect();
+    it("Should get the last item in an array", () => {
+      expect(funcs.returnLast([1, 322, 17])).toBe(17);
     });
   });
   describe("getArrayLength", () => {
-    it("", () => {
-      expect();
+    it("Should get arrays length", () => {
+      expect(funcs.getArrayLength([1, 2, 3, 4, 5, 6])).toBe(6);
     });
   });
   describe("incrementByOne", () => {
-    it("", () => {
-      expect();
-    });
+    // const arr = [17, 20, 38];
+    // it("Should increment all nums in an array", () => {
+    //   expect(funcs.incrementByOne(arr).toEqual([18, 21, 39]));
+    // });
   });
   describe("addItemToArray", () => {
-    it("", () => {
-      expect();
+    it("should add item into end of an array", () => {
+      expect(funcs.addItemToArray([2, 2, 2], 7)).toEqual([2, 2, 2, 7]);
+    });
+    it("should throw an error if the first arg is not an array", () => {
+      expect(() => funcs.addItemToArray({ a: 1, b: 2 }, 7)).toThrow(TypeError);
     });
   });
   describe("addItemToFront", () => {
