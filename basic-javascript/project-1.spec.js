@@ -123,74 +123,179 @@ describe('Project 1', () => {
   // describe('greaterThanFifty', () => {});
 
   describe('add', () => {
-    it('Returns sum when given two numbers', () => {
-      const expected = 33;
-      const actual = helpers.add(23, 10);
+    it('Return the sum of the arguments when given two numbers', () => {
+      const expected = 8;
+      const actual = helpers.add(4, 4);
       expect(actual).toBe(expected);
     });
 
-    it('Returns concatenated string when given a string as either or both arguments', () => {
-      const expected = '2310';
-      const actual = helpers.add('23', '10');
+    it('Return the concatenation of the arguments when given two numeric strings', () => {
+      const expected = '52';
+      const actual = helpers.add('5', '2');
       expect(actual).toBe(expected);
     });
 
-    it('Returns NaN when called without arguments', () => {
-      const expected = NaN;
-      const actual = helpers.add();
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns concatenation of argument and undefined when given one string', () => {
-      const expected = '5undefined';
-      const actual = helpers.add('5');
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns NaN when given one numerical value', () => {
-      const expected = NaN;
-      const actual = helpers.add(2);
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns 2 when given true as both arguments', () => {
-      const expected = 2;
-      const actual = helpers.add(true, true);
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns 0 when given false as both arguments', () => {
-      const expected = 0;
-      const actual = helpers.add(false, false);
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns 1 when given true and false', () => {
+    it('Converts true and false to 1 and 0 and calculates the sum', () => {
       const expected = 1;
       const actual = helpers.add(true, false);
       expect(actual).toBe(expected);
     });
 
-    it('Returns NaN when given undefined', () => {
-      const expected = NaN;
-      const actual = helpers.add(undefined, undefined);
-      expect(actual).toBe(expected);
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.add();
+      expect(actual).toBeFalsy();
     });
 
-    it('Returns 0 when given null', () => {
-      const expected = 0;
-      const actual = helpers.add(null, null);
-      expect(actual).toBe(expected);
+    it('Returns false when given undefined', () => {
+      const actual = helpers.add(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.add(null);
+      expect(actual).toBeFalsy();
     });
   });
 
-  // describe('subtract', () => {});
+  describe('subtract', () => {
+    it('Return the difference of the arguments when given two numbers', () => {
+      const expected = 4;
+      const actual = helpers.subtract(10, 6);
+      expect(actual).toBe(expected);
+    });
 
-  // describe('divide', () => {});
+    it('Return the difference of the arguments when given two numeric strings', () => {
+      const expected = 3;
+      const actual = helpers.subtract('5', '2');
+      expect(actual).toBe(expected);
+    });
 
-  // describe('multiply', () => {});
+    it('Converts true and false to 1 and 0 and calculates the difference', () => {
+      const expected = 1;
+      const actual = helpers.subtract(true, false);
+      expect(actual).toBe(expected);
+    });
 
-  // describe('getRemainder', () => {});
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.subtract();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.subtract(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.subtract(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('divide', () => {
+    it('Return the quotient of the arguments when given two numbers', () => {
+      const expected = 6;
+      const actual = helpers.divide(36, 6);
+      expect(actual).toBe(expected);
+    });
+
+    it('Return the quotient of the arguments when given two numeric strings', () => {
+      const expected = 5;
+      const actual = helpers.divide('50', '10');
+      expect(actual).toBe(expected);
+    });
+
+    it('Converts true and false to 1 and 0 and calculates the quotient', () => {
+      const expected = 1;
+      const actual = helpers.divide(true, true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.divide();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.divide(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.divide(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('multiply', () => {
+    it('Return the product of the arguments when given two numbers', () => {
+      const expected = 50;
+      const actual = helpers.multiply(10, 5);
+      expect(actual).toBe(expected);
+    });
+
+    it('Return the product of the arguments when given two numeric strings', () => {
+      const expected = 16;
+      const actual = helpers.multiply('2', '8');
+      expect(actual).toBe(expected);
+    });
+
+    it('Converts true and false to 1 and 0 and calculates the product', () => {
+      const expected = 0;
+      const actual = helpers.multiply(false, true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.multiply();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.multiply(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.multiply(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('getRemainder', () => {
+    it('Return the remainder of the arguments when given two numbers', () => {
+      const expected = 0;
+      const actual = helpers.getRemainder(10, 5);
+      expect(actual).toBe(expected);
+    });
+
+    it('Return the remainder of the arguments when given two numeric strings', () => {
+      const expected = 1;
+      const actual = helpers.getRemainder('11', '2');
+      expect(actual).toBe(expected);
+    });
+
+    it('Converts true and false to 1 and 0 and calculates the remainder', () => {
+      const expected = 0;
+      const actual = helpers.getRemainder(true, true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.getRemainder();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.getRemainder(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.getRemainder(null);
+      expect(actual).toBeFalsy();
+    });
+  });
 
   // describe('isEven', () => {});
 
