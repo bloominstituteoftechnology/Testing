@@ -16,7 +16,7 @@ describe('project-1', () => {
             expect(helpers.multiplyByTen(-5)).toEqual(-50);
         });
     });
-});
+// });
 
 describe('subtractFive', () => {
     it('returns NaN when given a non numeric value & negatives with booleans', () => {
@@ -257,3 +257,5 @@ describe('getRectangularPrismVolume', () => {
         expect(helpers.getRectangularPrismVolume('test', 4, 4)).toBeNaN();
     })
 })
+
+});
