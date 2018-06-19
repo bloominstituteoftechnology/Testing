@@ -183,6 +183,67 @@ describe('roundUp', () => {
     })
 });
 
+describe('addExclamationPoint', () => {
+    it('Should return exclamation point at the end of a String', () => {
+        expect(helpers.addExclamationPoint('Space')).toBe('Space!'); 
+
+    })
+});
+
+describe('combineNames', () => {
+    it('Should return a combination of the string names combined', () => {
+        expect(helpers.combineNames('Acuna', 'Matata')).toBe('Acuna Matata');
+        expect(helpers.combineNames('Johnny', 'Be Good')).toBe('Johnny Be Good');
+        expect(helpers.combineNames('Jane', 'Fonda')).toBe('Jane Fonda');
+    })
+
+});
+
+//need to figure this one out.
+describe('getGreeting', () => {
+   
+    it('Should return name along with greeting message', () => {
+    
+
+
+    })
+
+});
+
+describe('getRectangleArea', () => {
+    it('Should return area of a rectangle', () => {
+        expect(helpers.getRectangleArea(5, 6)).toBe(30);
+        expect(helpers.getRectangleArea(7, 6)).toBe(42);
+        expect(helpers.getRectangleArea(2, 4)).toBe(8);
+
+    })
+});
+
+describe('getTriangleArea', () => {
+    it('Should return the area of a triangle', () => {
+        expect(helpers.getTriangleArea(5, 6)).toBe(15);
+        expect(helpers.getTriangleArea(4, 3)).toBe(6);
+        expect(helpers.getTriangleArea(12, 5)).toBe(30);
+    })
+});
+
+describe('getCircleArea', () => {
+    it('Should return the area of a circle', () => {
+        expect(helpers.getCircleArea(5, 5)).toEqual(78.53981633974483);
+        expect(helpers.getCircleArea(6, 6)).toEqual(113.09733552923255);
+        expect(helpers.getCircleArea(7, 7)).toEqual(153.93804002589985);
+    })
+});
+
+describe('getRectangularPrismVolume', () => {
+    it('Should return the volume of a Rectangular Prism', () => { 
+        expect(helpers.getRectangularPrismVolume(7, 8, 9)).toEqual(504);
+        expect(helpers.getRectangularPrismVolume(10, 11, 12)).toEqual(1320);
+        expect(helpers.getRectangularPrismVolume(13,15,18)).toEqual(3510);
+
+    })
+
+});
 
 
 // start testing!
