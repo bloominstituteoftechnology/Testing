@@ -3,7 +3,8 @@
 const getBiggest = (x, y) => {
   if (x > y) {
     return x;
-  } else if (x === y) {
+  }
+  else if (x === y) {
     return y;
   }
   return y;
@@ -35,7 +36,7 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
-  if (Math.floor(num) === num) {
+  if (Math.floor(num) === num && Math.ceil(num) === num) {
     return true;
   }
   return false;
@@ -44,9 +45,11 @@ const isInteger = num => {
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
-  } else if (num % 5 === 0) {
+  }
+  else if (num % 5 === 0) {
     return 'buzz';
-  } else if (num % 3 === 0) {
+  }
+  else if (num % 3 === 0) {
     return 'fizz';
   }
   return num;
@@ -101,7 +104,8 @@ const wordsToSentence = words => {
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
-    } else {
+    }
+    else {
       newSentence += ` ${words[i]}`;
     }
   }
