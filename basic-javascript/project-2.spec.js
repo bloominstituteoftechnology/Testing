@@ -137,6 +137,14 @@ describe('incrementByOne', () => {
         expect(funcs.incrementByOne([4, 5, 6])).toEqual([5, 6, 7]);
         expect(funcs.incrementByOne([14, 31, 67])).toEqual([15, 32, 68]);
     })
-
-
 });
+
+describe('addItemToArray', () => {
+    it('Should return array with item added at the end', () => {
+        expect(funcs.addItemToArray([14, 31, 67], 7)).toEqual([14, 31, 67, 7]);
+        expect(funcs.addItemToArray([1, 3, 122, 32, 12], 10)).toEqual([1, 3, 122, 32, 12, 10]);
+
+    })
+});
+
+
