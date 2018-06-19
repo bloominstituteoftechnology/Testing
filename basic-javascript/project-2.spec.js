@@ -126,8 +126,17 @@ describe('getArrayLength', () => {
         expect(funcs.getArrayLength([5, 3, 43, 11, 31])).toBe(5);
         expect(funcs.getArrayLength([5, 3])).toBe(2);
         expect(funcs.getArrayLength([5, 3, 43, 11, 31, 66, 77, 352])).toBe(8);
-        expect(funcs.getArrayLength([5, 3, 43, 111])).toBe(4);
-        expect(funcs.getArrayLength(['fe','fi','fo','fum'])).toBe(4);
+        expect(funcs.getArrayLength([5, 3, 43, 111, 12, 15, 17])).toBe(7);
+        expect(funcs.getArrayLength(['fe', 'fi', 'fo', 'fum'])).toBe(4);
+    })
+});
+
+describe('incrementByOne', () => {
+    it('Should return the array with the values going up by one', () => { 
+        expect(funcs.incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
+        expect(funcs.incrementByOne([4, 5, 6])).toEqual([5, 6, 7]);
+        expect(funcs.incrementByOne([14, 31, 67])).toEqual([15, 32, 68]);
     })
 
-})
+
+});
