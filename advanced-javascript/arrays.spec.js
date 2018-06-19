@@ -63,30 +63,32 @@ describe('Arrays', () => {
     });
   });
 
-  // describe('filter', () => {
-  //   const filter = arrayFunctions.filter;
-  //   it('should be a function', () => {
-  //     expect(typeof filter).toBe('function');
-  //   });
-  //   it('should iterate over elements', () => {
-  //     const arr = [6, 7, 8, 9];
-  //     const actual = each(arr, addElements);
-  //     expect(actual).toBeUndefined();
-  //   });
-  // });
+  describe('filter', () => {
+    const filter = arrayFunctions.filter;
+    it('should be a function', () => {
+      expect(typeof filter).toBe('function');
+    });
+    it('should iterate over elements', () => {
+      const arr = [1, 2, 3, 4, 4];
+      const term = 4;
+      const actual = filter(arr, compareElements, term);
+      const expected = [4, 4];
+      expect(actual).toEqual(expected);
+    });
+  });
 
-  // describe('flatten', () => {
-  //   const flatten = arrayFunctions.flatten;
-  //   it('should be a function', () => {
-  //     expect(typeof flatten).toBe('function');
-  //   });
-  //   it('should iterate over elements', () => {
-  //     expect(arrayFunctions.each([6, 7, 8, 9], item => item)).toEqual(undefined)
-  //     const arr = [6, 7, 8, 9];
-  //     const actual = each(arr, addElements);
-  //     expect(actual).toBeUndefined();
-  //   });
-  // });
+  describe('flatten', () => {
+    const flatten = arrayFunctions.flatten;
+    it('should be a function', () => {
+      expect(typeof flatten).toBe('function');
+    });
+    it('should iterate over elements', () => {
+      const elements = [1,2,3,4, [1, 'x'], 'y', 8 ];
+      const actual = flatten(elements);
+      const expected = [1, 2, 3, 4, 1, 'x', 'y', 8];
+      expect(actual).toEqual(expected);
+    });
+  });
 
 });
   
@@ -101,9 +103,3 @@ function addOne(x) {
 function compareElements(x, y) {
   return x === y;
 }
-
-
-
-// const actual = each(elements, cb);
-// const expected = ;
-// expect(actual).toEqual(expected);

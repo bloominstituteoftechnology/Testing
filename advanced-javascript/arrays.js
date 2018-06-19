@@ -28,10 +28,10 @@ const find = (elements, cb, term) => {
   return undefined;
 };
 
-const filter = (elements, cb) => {
+const filter = (elements, cb, term) => {
   const filteredValues = [];
-  each(element, item => {
-    if (cb(item)) filteredValues.push(item);
+  each(elements, item => {
+    if (cb(item, term)) filteredValues.push(item);
   });
   return filteredValues;
 };
