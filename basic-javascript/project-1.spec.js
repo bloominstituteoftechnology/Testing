@@ -19,9 +19,8 @@ describe('Project 1', () => {
     });
 
     it('Returns false when called without an argument', () => {
-      const expected = false;
       const actual = helpers.multiplyByTen();
-      expect(actual).toBe(expected);
+      expect(actual).toBeFalsy();
     });
 
     it('Returns 10 when given true', () => {
@@ -38,32 +37,28 @@ describe('Project 1', () => {
 
     describe('Returns false when given a non-numeric value:', () => {
       it('A string', () => {
-        const expected = false;
         const actual = helpers.multiplyByTen('Hello');
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
 
       it('An array of values', () => {
-        const expected = false;
         const actual = helpers.multiplyByTen([3, 2]);
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
 
       it('null', () => {
-        const expected = false;
         const actual = helpers.multiplyByTen(null);
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
 
       it('undefined', () => {
-        const expected = false;
         const actual = helpers.multiplyByTen(undefined);
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
     });
   });
 
-  describe.only('subtractFive', () => {
+  describe('subtractFive', () => {
     it('Returns number minus 5 when given a numeric value', () => {
       const expected = 0;
       const actual = helpers.subtractFive(5);
@@ -77,9 +72,8 @@ describe('Project 1', () => {
     });
 
     it('Returns false when called without an argument', () => {
-      const expected = false;
       const actual = helpers.subtractFive();
-      expect(actual).toBe(expected);
+      expect(actual).toBeFalsy();
     });
 
     it('Returns -4 when given true', () => {
@@ -96,27 +90,26 @@ describe('Project 1', () => {
 
     describe('Returns false when given a non-numeric value:', () => {
       it('A string', () => {
-        const expected = false;
         const actual = helpers.subtractFive('Hello');
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
 
       it('An array of values', () => {
         const expected = false;
         const actual = helpers.subtractFive([3, 2]);
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
 
       it('null', () => {
         const expected = false;
         const actual = helpers.subtractFive(null);
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
 
       it('undefined', () => {
         const expected = false;
         const actual = helpers.subtractFive(undefined);
-        expect(actual).toBe(expected);
+        expect(actual).toBeFalsy();
       });
     });
   });
