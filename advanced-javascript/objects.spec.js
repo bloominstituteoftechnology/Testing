@@ -48,5 +48,26 @@ describe('objects', () => {
     })
   });
 
-  
+  describe('pairs', () => {
+    const obj = {
+      'a': 1,
+      'b': 2,
+      'c': 3,
+      'd': 4,
+      'e': 5
+    }
+    const pairs = objectFunctions.pairs;
+    const actual = pairs(obj);
+    const expected = [['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]];
+    it('should return subarrays of the key value pairs', () => {
+      expect(actual).toEqual(expected);
+    })
+    it('should return an array', () => {
+      expect(actual instanceof Array).toBeTruthy();
+    })
+    it('should return a length of 5', () => {
+      expect(actual).toHaveLength(5);
+    })
+  });
+
 });
