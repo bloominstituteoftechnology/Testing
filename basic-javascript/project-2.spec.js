@@ -1,8 +1,5 @@
 const funcs = require('./project-2');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
-
-
 describe('project-1', () => {
 
     describe('getBiggest', () => {
@@ -167,11 +164,5 @@ describe('project-1', () => {
             expect(funcs.largestNumber([undefined, undefined, undefined])).toBe(0)
         })
     })
-
-
-
-
-
-
 
 });
