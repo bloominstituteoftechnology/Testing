@@ -35,14 +35,29 @@ describe('Arrays', () => {
   });
 
   describe('find', () => {
+    const find = arrayFunctions.find;
     it('should be a function', () => {
-      const find = arrayFunctions.each;
       expect(typeof find).toBe('function');
     }); 
-    it('should do what its supposed to', () => {
-      const find = arrayFunctions.each;
-      const addOne = (int) => int + 1
-      expect(find([1, 2, 3], )).toBe('function');
+    it('should find first element that satisfy conditions set in callback function', () => {
+      expect(find([1, 2, 3], num => num > 2)).toBeDefined();
+      expect(find([1, 2, 3, 4], num => num > 2)).toBe(3);
+    }); 
+    it('should return undefined if no elements satisfy condition set in cb function', () => {
+      expect(find([1, 2, 3], num => num > 3)).toBeUndefined();
+    });
+  });
+
+  describe('filter', () => {
+    it('should be a function', () => {
+      const filter = arrayFunctions.each;
+      expect(typeof filter).toBe('function');
+    }); 
+    it('should find elements that satisfy conditions set in callback function', () => {
+      const find = arrayFunctions.find;
+      expect(find([1, 2, 3], num => num > 2)).toBeDefined();
+      expect(find([1, 2, 3], num => num > 2)).toBe(3);
+      expect(find([1, 2, 3], num => num > 3)).toBeUndefined();
     }); 
   });
 
