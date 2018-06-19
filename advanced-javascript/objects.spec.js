@@ -3,9 +3,14 @@ const objectFunctions = require('./objects');
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('objects', () => {
   
+  let obj;
+
+  beforeEach(function() {
+    obj = {a:1, b:2, c:3};
+  });
+
   describe('keys', () => {    
     const keys = objectFunctions.keys;
-    const obj = {a:1, b:2, c:3};
     it('should be an object', () => {
       expect(typeof keys(obj)).toBe("object");
     });
@@ -17,7 +22,6 @@ describe('objects', () => {
 
   describe('values', () => {    
     const values = objectFunctions.values;
-    const obj = {a:1, b:2, c:3};
     it('should be an object', () => {
       expect(typeof values(obj)).toBe("object");
     });
@@ -29,21 +33,18 @@ describe('objects', () => {
 
   describe('mapObject', () => {    
     const mapObject = objectFunctions.mapObject;
-    let obj = {a:1, b:2, c:3};
     const cb = ((element) => element + 1)
     it('should be an object', () => {
       expect(typeof mapObject(obj, cb)).toBe("object");
     });
 
     it('returns the object with callback applied', () => {
-      obj = {a:1, b:2, c:3};
       expect(mapObject(obj, cb)).toEqual({"a": 2, "b": 3, "c": 4});
     });
   });
 
   describe('pairs', () => {    
     const pairs = objectFunctions.pairs;
-    const obj = {a:1, b:2, c:3};
     it('should be an object', () => {
       expect(typeof pairs(obj)).toBe("object");
     });
@@ -55,13 +56,11 @@ describe('objects', () => {
 
   describe('invert', () => {    
     const invert = objectFunctions.invert;
-    let obj = {a:1, b:2, c:3};
     it('should be an object', () => {
       expect(typeof invert(obj)).toBe("object");
     });
 
     it('returns the object invert', () => {
-      obj = {a:1, b:2, c:3}
       expect(invert(obj)).toEqual({"1": "a", "2": "b", "3": "c"});
     });
   });

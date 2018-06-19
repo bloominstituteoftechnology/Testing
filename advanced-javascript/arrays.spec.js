@@ -9,6 +9,8 @@ const arrayFunctions = require('./arrays');
 
 describe.skip('Arrays', () => {
 
+  let testArr = [1,2,3];
+
   describe('map', function() {
     it('should be a function', function() {
       const map = arrayFunctions.map;
@@ -17,7 +19,7 @@ describe.skip('Arrays', () => {
 
     it('returns correct values', function() {
       const map = arrayFunctions.map;
-      expect(map([1,2,3], (item) => item + 1)).toEqual([2,3,4])
+      expect(map(testArr, (item) => item + 1)).toEqual([2,3,4])
       expect(map([5,7,6], (item) => item - 10)).toEqual([-5,-3,-4])
     });
   });
@@ -30,7 +32,7 @@ describe.skip('Arrays', () => {
 
     it('returns the sum of the array', function() {
       const reduce = arrayFunctions.reduce;
-      expect(reduce([1,2,3], (memo, item) => memo + item)).toEqual(6)
+      expect(reduce(testArr, (memo, item) => memo + item)).toEqual(6)
     });
   });
 
