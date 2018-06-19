@@ -34,4 +34,20 @@ describe('objects', () => {
       expect(pairs({ name: 'Alex', age: '24', hair: 'brown' })).toEqual([['name', 'Alex'], ['age', '24'], ['hair', 'brown']]);
     })
   })
+  describe('invert', () => {
+    it('inverts the key and values of obj', () => {
+      const invert = objectFunctions.invert;
+      expect(typeof invert).toBe('function');
+      expect(invert({ a: 1, b: 2, c: 3 })).toEqual({ 1: 'a', 2: 'b', 3: 'c' });
+      expect(invert({ name: 'Alex', age: '24', hair: 'brown' })).toEqual({ Alex: 'name', 24: 'age', brown: 'hair'})
+    })
+  })
+  describe('defaults', () => {
+    it('combines objects', () => {
+      const defaults = objectFunctions.defaults;
+      expect(typeof defaults).toBe('function');
+      expect(defaults({ a: 18, b: 36}, {c: 58 })).toEqual({ a: 18, b: 36, c: 58 })
+      expect(defaults({ marco: 'polo', joseph: 'cook' }, { ferdinand: "magellan" })).toEqual({ marco: 'polo', joseph: 'cook', ferdinand: "magellan" })
+    })
+  })
 });
