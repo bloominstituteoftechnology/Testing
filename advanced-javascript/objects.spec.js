@@ -29,5 +29,16 @@ describe('objects', () => {
     })
   })
 
-  
+  describe('invert', () => {
+    it('should return an object where the key of the given object is now the value and vice versa', () => {
+      expect(objectFunctions.invert({a: 1, b: 2, c: 3})).toEqual({1: 'a', 2: 'b', 3: 'c'})
+    })
+  })
+
+  describe('defaults', () => {
+    it('should add key/value pairs from the defaults to the original if it doesnt already exist', () => {
+      expect(objectFunctions.defaults({b: 2, c: 3}, {a: 10, b: 2, c: 3})).toEqual({a: 10, b: 2, c: 3})
+      expect(objectFunctions.defaults({a: 1, b: 2, c: 3}, {a: 10, b: 2, c: 3})).toEqual({a: 1, b: 2, c: 3})
+    })
+  })
 });
