@@ -13,4 +13,35 @@ describe('project-1', () => {
             expect(funcs.getBiggest(undefined, -5)).toBe(-5);
         })
     })
+
+    describe('greeting', () => {
+        it('should return a greeting that corresponds to given language', () => {
+            expect(funcs.greeting('German')).toBe('Guten Tag!')
+            expect(funcs.greeting('Spanish')).toBe('Hola!')
+            expect(funcs.greeting(undefined)).toBe('Hello!')
+        })
+    })
+
+    describe('isTenOrFive', () => {
+        it('should return true if given number is 10 or 5', () => {
+            expect(funcs.isTenOrFive(5)).toBeTruthy();
+            expect(funcs.isTenOrFive(10)).toBeTruthy();
+            expect(funcs.isTenOrFive('5')).toBe(undefined)
+        })
+        it('should return undefined if for non-numeric inputs', () => {
+            expect(funcs.isTenOrFive('5')).toBe(undefined)
+        })
+    })
+
+    describe('isInRange', () => {
+        it('should return true if given number is within the range of 20-50', () => {
+            expect(funcs.isInRange(55)).toBeFalsy()
+            expect(funcs.isInRange(50)).toBeFalsy()
+            expect(funcs.isInRange(49)).toBeTruthy()
+        })
+        it('should return undefined if for non-numeric inputs', () => {
+            expect(funcs.isInRange('test')).toBe(undefined)
+        })
+    })
+
 });

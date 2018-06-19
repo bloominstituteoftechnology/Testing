@@ -21,6 +21,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if (typeof(num) !== 'number') { // added this to function to test for non-numeric inputs
+    return undefined
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +31,10 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (typeof(num) !== 'number') { // added this to function to test for non-numeric inputs
+    return undefined
+  }
+
   if (num < 50 && num > 20) {
     return true;
   }
