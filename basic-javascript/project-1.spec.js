@@ -297,9 +297,87 @@ describe('Project 1', () => {
 
   // describe('isOdd', () => {});
 
-  // describe('square', () => {});
+  describe('square', () => {
+    it('Return the square when given a number', () => {
+      const expected = 9;
+      const actual = helpers.square(3);
+      expect(actual).toBe(expected);
+    });
 
-  // describe('cube', () => {});
+    it('Return the square when given a numeric string', () => {
+      const expected = 100;
+      const actual = helpers.square('10');
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 0 when given false', () => {
+      const expected = 0;
+      const actual = helpers.square(false);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 1 when given true', () => {
+      const expected = 1;
+      const actual = helpers.square(true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.square();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.square(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.square(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('cube', () => {
+    it('Return the cube when given a number', () => {
+      const expected = 64;
+      const actual = helpers.cube(4);
+      expect(actual).toBe(expected);
+    });
+
+    it('Return the cube when given a numeric string', () => {
+      const expected = 27;
+      const actual = helpers.cube('3');
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 0 when given false', () => {
+      const expected = 0;
+      const actual = helpers.cube(false);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 1 when given true', () => {
+      const expected = 1;
+      const actual = helpers.cube(true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.cube();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.cube(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.cube(null);
+      expect(actual).toBeFalsy();
+    });
+  });
 
   // describe('raiseToPower', () => {});
 
