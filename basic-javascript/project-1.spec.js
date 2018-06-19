@@ -4,7 +4,11 @@ const helpers = require('./project-1');
 describe('multiplyByTen', () => {
     it('should return the given number multiplied by 10', () => {
         expect(helpers.multiplyByTen(undefined)).toBeNaN();
-        expect(helpers.multiplyByTen('three')).toBeNaN();
+        expect(helpers.multiplyByTen('two')).toBeNaN();
+        expect(helpers.multiplyByTen(5)).toBe(50);
+        expect(helpers.multiplyByTen(7)).toBe(70);
+        expect(helpers.multiplyByTen(8)).toBe(80);
+        
     });
 });
 
@@ -108,6 +112,48 @@ describe('getRemainder', () => {
         expect(helpers.getRemainder(144, 12)).toEqual(0);
         expect(helpers.getRemainder(33, 12)).toEqual(9);
 
+    })
+});
+
+describe('isEven', () => {
+    it('Should return true for even numbers', () => {
+        expect(helpers.isEven(10)).toBeTruthy();
+        expect(helpers.isEven(68)).toBeTruthy();
+        expect(helpers.isEven(24)).toBeTruthy();
+        expect(helpers.isEven(10)).toBeTruthy();
+        expect(helpers.isEven(7)).toBeFalsy();
+        expect(helpers.isEven(51)).toBeFalsy();
+        expect(helpers.isEven(17)).toBeFalsy();
+    })
+});
+
+describe('isOdd', () => {
+    it('Should return false for odd numbers', () => { 
+        expect(helpers.isOdd(7)).toBeTruthy();
+        
+        expect(helpers.isOdd(1)).toBeTruthy();
+        expect(helpers.isOdd(23)).toBeTruthy();
+        expect(helpers.isOdd(19)).toBeTruthy();
+        expect(helpers.isOdd(22)).toBeFalsy();
+        expect(helpers.isOdd(24)).toBeFalsy();
+    })
+});
+
+describe('square', () => {
+    it('Should return the square of a number', () => { 
+        expect(helpers.square(3)).toEqual(9);
+        expect(helpers.square(4)).toEqual(16);
+        expect(helpers.square(5)).toEqual(25);
+        expect(helpers.square(6)).toEqual(36);
+
+    })
+});
+
+describe('cube', () => {
+    it('Should return the cube of a number', () => {
+        expect(helpers.cube(3)).toEqual(27);
+        expect(helpers.cube(2)).toEqual(8);
+        expect(helpers.cube(4)).toEqual(64);
     })
 });
 
