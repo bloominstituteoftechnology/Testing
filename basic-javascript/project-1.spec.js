@@ -241,8 +241,8 @@ describe('getTriangleArea', () => {
 
 describe('getCircleArea', () => {
     it('should square the given radius and multiply it by the value of pi', () => {
-        expect(helpers.getCircleArea(5)).toEqual(78.53981633974483)
-        expect(helpers.getCircleArea(-5)).toEqual(78.53981633974483)
+        expect(helpers.getCircleArea(5)).toBeCloseTo(78.54)
+        expect(helpers.getCircleArea(-5)).toBeCloseTo(78.54)
         expect(helpers.getCircleArea('test')).toEqual(NaN);
         expect(helpers.getCircleArea(null)).toEqual(0);
     })
