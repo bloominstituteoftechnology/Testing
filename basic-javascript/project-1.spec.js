@@ -89,7 +89,7 @@ describe('lessThanNinety', () => {
     expect(actual).toBe(true);
   });
 });
-describe.only('greaterThanFifty', () => {
+describe('greaterThanFifty', () => {
   test.each([[51], [Infinity]])('values > 50, must return true', value => {
     const actual = helpers.greaterThanFifty(value);
     expect(actual).toBe(true);
@@ -99,117 +99,39 @@ describe.only('greaterThanFifty', () => {
     expect(actual).toBe(false);
   });
 });
-describe('add', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
+describe.only('add', () => {
+  test('Two positive numbers must retur a value > 0', () => {
+    const actual = helpers.add(2, 5);
+    expect(actual).toBeGreaterThan(0);
+  });
+  test.each([[1, 10], [12345, 9876]])('test.each() => Two positive numbers must retur a value > 0', (a, b) => {
+    const actual = helpers.add(a, b);
+    expect(actual).toBeGreaterThan(0);
+  });
+  test.each([[1, 3], [5, 7]])('Adding two odd numbers must return a even number', (a, b) => {
+    const actual = helpers.add(a, b);
+    expect(actual % 2).toEqual(0);
+  });
+  test.each([[1, 4], [90, 1]])('Adding an even an a odd number must return an odd number', (a, b) => {
+    const actual = helpers.add(a, b);
+    expect(actual % 0).not.toEqual(0);
   });
 });
-describe('subtract', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('divide', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('multiply', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('getRemainder', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('isEven', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('isOdd', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('square', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('cube', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('raiseToPower', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('roundNumber', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('roundUp', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('addExclamationPoint', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('combineNames', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('getGreeting', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('getRectangleArea', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('getTriangleArea', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('getCircleArea', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
-describe('getRectangularPrismVolum', () => {
-  test('', () => {
-    const actual = helper;
-    expect(actual).matcher();
-  });
-});
+describe('subtract', () => {});
+describe('divide', () => {});
+describe('multiply', () => {});
+describe('getRemainder', () => {});
+describe('isEven', () => {});
+describe('isOdd', () => {});
+describe('square', () => {});
+describe('cube', () => {});
+describe('raiseToPower', () => {});
+describe('roundNumber', () => {});
+describe('roundUp', () => {});
+describe('addExclamationPoint', () => {});
+describe('combineNames', () => {});
+describe('getGreeting', () => {});
+describe('getRectangleArea', () => {});
+describe('getTriangleArea', () => {});
+describe('getCircleArea', () => {});
+describe('getRectangularPrismVolum', () => {});
