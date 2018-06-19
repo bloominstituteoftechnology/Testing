@@ -6,9 +6,15 @@ it('multiply by 10', () => {
     const numTimesTen = helpers.multiplyByTen;
     const timesTwo = numTimesTen(2);
     const timesFive = numTimesTen(5);
+    const timesZero = numTimesTen(0);
+    const timesNaN = numTimesTen(undefined);
+    const timesStr = numTimesTen('str');
 
     expect(timesTwo).toEqual(20);
     expect(timesFive).toEqual(50);
+    expect(timesZero).toEqual(0);
+    expect(timesNaN).toBeNaN();
+    expect(timesStr).toBeNaN();
 });
 
 //#2
@@ -16,9 +22,13 @@ it('subtract five', () => {
     const minusFive = helpers.subtractFive;
     const Nine = minusFive(9);
     const Ten = minusFive(10);
+    const Undef = minusFive(undefined);
+    const NegNum = minusFive(-5);
 
     expect(Nine).toEqual(4);
     expect(Ten).toEqual(5);
+    expect(Undef).toBeNaN();
+    expect(NegNum).toEqual(-10);
 });
 
 //#3
@@ -36,9 +46,11 @@ it('are they equal?', () => {
     const areEquals = helpers.areEqual;
     const Test1 = areEquals('mango', 'mango');
     const Test2 = areEquals('mango', 'mang0');
-
+    const Test3 = areEquals('45', 45);
+    
     expect(Test1).toEqual(true);
     expect(Test2).toEqual(false);
+    expect(Test3).toBe(false);
 })
 
 //#5
@@ -46,7 +58,7 @@ it('less than 90', () => {
     const lessNinety = helpers.lessThanNinety;
     const Test1 = lessNinety('89');
     const Test2 = lessNinety('91');
-
+    
     expect(Test1).toEqual(true);
     expect(Test2).toEqual(false);
 })
@@ -174,7 +186,7 @@ it('round a number', () => {
 //#18
 it('round up a number', () => {
     const roundedUp = helpers.roundUp;
-    const Test1 = roundedUp(3.4);
+    const Test1 = roundedUp(3.04);
     const Test2 = roundedUp(18.5);
 
     expect(Test1).toEqual(4);
