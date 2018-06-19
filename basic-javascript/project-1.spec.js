@@ -33,7 +33,7 @@ describe('project-1', () => {
             // arrange
             const expected = 1; 
             // act 
-            const acutal = helpers.subtractFive(6);
+            const actual = helpers.subtractFive(6);
             // assert
             expect(actual).toEqual(expected);
         })
@@ -41,8 +41,8 @@ describe('project-1', () => {
 
     describe('areSameLength(str1, str2)', () => {
         it('returns true if the two string arguments given are the same length', () => {
-            expect(helpers.areSameLength('cat', 'elephant').toBe(false));
-            expect(helpers.areSameLength('javascript', 'bumfuzzled')).toBe(true);
+            expect(helpers.areSameLength('Vamos', 'Argentina')).toBeFalsy(); 
+            expect(helpers.areSameLength('cat', 'dog')).toBeTruthy();
         });
     });
 
@@ -206,15 +206,16 @@ describe('project-1', () => {
     
       describe('getCircleArea(radius)', () => {
         it('should return the correct area', () => {
-          expect(helpers.getCircleArea(4)).toBe(50);
-          expect(helpers.getCircleArea(0)).toBe(0);
+          let radius = 6; 
+          let area = radius * radius * Math.PI;
+          expect(helpers.getCircleArea(radius)).toEqual(area);
         });
       });
     
       describe('getRectangularPrismVolume(length, width, height)', () => {
         it('should return the correct volume', () => {
-          expect(helpers.getRectangularPrismVolume(0, 5, 10)).toBe(0);
-          expect(helpers.getRectangularPrismVolume(4, 4, 4)).toBe(64);
+          expect(helpers.getRectangularPrismVolume(0, 10, 20)).toEqual(0);
+          expect(helpers.getRectangularPrismVolume(4, 4, 4)).toEqual(64);
         });
       });
 });

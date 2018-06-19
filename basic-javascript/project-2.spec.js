@@ -22,11 +22,9 @@ describe('project-2', () => {
         it(`should  return 'Hola!' for Spanish`, () => {
             expect(funcs.greeting('Spanish')).toBe('Hola!');
         });
-        it(`should return 'Ni Hao!' for Chinese`, () => {
-            expect(funcs.greeting('Chinese')).toBe('Ni Hao!');
-        });
-        it(`should return 'Hello' if no argument is passed in or if a language other than Spanish, English, German, or Chinese is passed in`, () => {
+        it(`should return 'Hello' if no argument is passed in or if a language other than Spanish or German is passed in`, () => {
             expect(funcs.greeting('Mong')).toBe('Hello!');
+            expect(funcs.greeting()).toBe('Hello!');
         });
     });
 
