@@ -1,6 +1,6 @@
 const funcs = require('./project-2');
 
-describe.only('project-2', () => { //remember to remove the .only when done
+describe('project-2', () => { 
     describe('getBiggest', () => {
         it('should return the larger of two numbers', () => {
            expect(funcs.getBiggest(1, 9)).toBe(9); 
@@ -13,8 +13,11 @@ describe.only('project-2', () => { //remember to remove the .only when done
         it('should return the proper greeting',() => {
             expect(funcs.greeting('German')).toBe('Guten Tag!');
             expect(funcs.greeting('Spanish')).toBe('Hola!');
+        })
+        it('should return hello if undefined or anything besides Spanish or German', () => {
             expect(funcs.greeting('English')).toBe('Hello!');
-            expect(funcs.greeting('sdfgdfg')).toBe('Hello!');                 
+            expect(funcs.greeting('sdfgdfg')).toBe('Hello!');
+            expect(funcs.greeting()).toBe('Hello!');                 
         })
     });
     describe('isTenOrFive', () => {
@@ -38,12 +41,18 @@ describe.only('project-2', () => { //remember to remove the .only when done
             expect(funcs.isInteger(10)).toBe(true);
         })
     });
-    describe('fizzBuzz', () => { // make this more robust (if you have time), specifically add more it's
-        it('should return the correct corresponding word', () => {
-            expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
-            expect(funcs.fizzBuzz(5)).toBe('buzz');
-            expect(funcs.fizzBuzz(3)).toBe('fizz');
+    describe('fizzBuzz', () => { 
+        it('should return num if not divisible by 3 or 5', () => {
             expect(funcs.fizzBuzz(1)).toBe(1);
+        })
+        it('should return fizz if divisible by 3', () => {
+            expect(funcs.fizzBuzz(3)).toBe('fizz');
+        })
+        it('should return buzz if divisible by 5', () => {
+            expect(funcs.fizzBuzz(5)).toBe('buzz');
+        })
+        it('should return fizzbuzz if divisible by 3 and 5', () => {
+            expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
         })
     });
     describe('isPrime', () => {
@@ -58,16 +67,29 @@ describe.only('project-2', () => { //remember to remove the .only when done
             expect(funcs.returnFirst([1, 2, 3, 4, 5])).toEqual(1);
             expect(funcs.returnFirst([3, 2, 6, 4, 8])).toEqual(3);
         })
+        it('should return undefined if an object is given', () => {
+            expect(funcs.returnFirst({})).toBe(undefined);
+        })
+        it('returns the first character in a string', () => {
+            expect(funcs.returnFirst('sdfsdf')).toBe('s');
+        })
     });
     describe('returnLast', () => {
         it('should return the last index of an array', () => {
             expect(funcs.returnLast([1, 2, 3, 4, 5])).toEqual(5);
             expect(funcs.returnLast([3, 2, 6, 4, 8])).toEqual(8);
         })
+        it('should return undefined if an object is given', () => {
+            expect(funcs.returnLast({})).toBe();
+        })
+        it('returns the last character in a string', () => {
+            expect(funcs.returnLast('sdfsdf')).toBe('f');
+        })
     });
     describe('getArrayLength', () => {
         it('should return the length of an array', () => {
-            expect(funcs.getArrayLength([1, 2, 3, 4, 5])).toEqual(5);
+            expect(
+                funcs.getArrayLength([1, 2, 3, 4, 5])).toEqual(5);
         })
     });
     describe('incrementByOne', () => {
@@ -86,7 +108,7 @@ describe.only('project-2', () => { //remember to remove the .only when done
         })
     });
     describe('wordsToSentence', () => {
-        it('should enter an array of words? that joins a sentence string?', () => {
+        it('should accept an array of word strings that joins into a sentence string', () => {
             expect(funcs.wordsToSentence(['hello', 'world'])).toBe('hello world');
         })
     });
