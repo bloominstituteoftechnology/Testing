@@ -168,12 +168,13 @@ describe('project 2', () => {
     const arr2 = incrementByOne(['what','is','this']);
     const arr3 = incrementByOne('what','is','this');
     const arr4 = incrementByOne(true, false);
-    //try incrementByOne(7);
+    const arr5 = incrementByOne(7);
     
     expect(arr).toEqual([1,2]);
     expect(arr2).toEqualNaN;
-    expect(arr3).toEqual('what'); //these functions are doing weird things with strings
-    expect(arr4).toEqual(true); //and the boolean in this one - what is going on?
+    expect(arr3).toEqual('what'); //I think it is just returning the first object of nonarrays
+    expect(arr4).toEqual(true);
+    expect(arr5).toEqual(7);
   });
 
  //because arr.push totally breaks if you give it non-array input, I edited the project-2.js file
@@ -210,10 +211,14 @@ describe('project 2', () => {
     const arr = wordsToSentence(['these','are','some','words']);
     const arr2 = wordsToSentence([0,1,2,3]);
     const arr3 = wordsToSentence([true,true,true]);
+    const arr4 = wordsToSentence('these are some words');
+    const arr5 = wordsToSentence(734);
 
     expect(arr).toBe('these are some words');
     expect(arr2).toBe('0 1 2 3');
     expect(arr3).toBe('true true true');
+    expect(arr4).toBe('t h e s e   a r e   s o m e   w o r d s');
+    expect(arr5).toBeNaN;
   });
  
 
@@ -221,10 +226,12 @@ describe('project 2', () => {
     const arr = contains(['x','y','z'],'y');
     const arr2 = contains([1,8,28,13,9],6);
     const arr3 = contains([true,true],false);
+    const arr4 = contains(73);
 
     expect(arr).toEqual(true);
     expect(arr2).toEqual(false);
     expect(arr3).toEqual(false);
+    expect(arr4).toEqual(false);
   });
 
   it('should reduce array into sum', () => {

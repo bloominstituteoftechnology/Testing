@@ -65,9 +65,13 @@ describe('Arrays', () => {
     it('filters array values based on callback', () => {
       const arr = filter([1,2,3], num => num === 2);
       const arr2 = filter([], num => num === 4);
+      const arr3 = filter(['green','blue','yellow'], color => color === 'blue');
+      const arr4 = filter([true, true], bool => bool === false);
 
       expect(arr).toEqual([2]);
       expect(arr2).toEqual([]);
+      expect(arr3).toEqual(['blue']);
+      expect(arr4).toEqual([]);
     });
   });
 
@@ -75,9 +79,11 @@ describe('Arrays', () => {
     it('should flatten nested arrays into a single array', () => {
       const arr = flatten([1,2,3,[4,5],6]);
       const arr2 = flatten([1,2,3]);
+      const arr3 = flatten(['a',['b','c','d'],['e']]);
 
       expect(arr).toEqual([1,2,3,4,5,6]);
       expect(arr2).toEqual([1,2,3]);
+      expect(arr3).toEqual(['a','b','c','d','e']);
     });
   });
   

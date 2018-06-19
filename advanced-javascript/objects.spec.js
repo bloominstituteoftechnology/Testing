@@ -13,9 +13,11 @@ describe('Objects', () => {
     it('should return array of object keys', () => {
       const obj = keys({ a:1, b:2, c:3});
       const obj2 = keys({ cat1:'moxie', cat2:'starbuck' });
+      const obj3 = keys({ color:'blue', size:'small' });
 
       expect(obj).toEqual(['a','b','c']);
       expect(obj2).toEqual(['cat1','cat2']);
+      expect(obj3).toEqual(['color','size']);
     });
   });
 
@@ -23,9 +25,11 @@ describe('Objects', () => {
     it('should return array of object values', () => {
       const obj = values({ a:1, b:2, c:3});
       const obj2 = values({ cat1:'moxie', cat2:'starbuck' });
+      const obj3 = values({ color:'blue', size: 'small' });
 
       expect(obj).toEqual([1,2,3]);
       expect(obj2).toEqual(['moxie','starbuck']);
+      expect(obj3).toEqual(['blue', 'small']);
     });
   });
 
@@ -62,7 +66,10 @@ describe('Objects', () => {
   describe('defaults', () => {
     it('should set default values', () => {
       const obj = defaults({ a:1, c:3 }, { b:2 });
+      const obj2 = defaults({ wallet: true}, {keys: false, phone: true });
+      
       expect(obj).toEqual({ a:1, b:2, c:3 });
+      expect(obj2).toEqual({ wallet: true, keys: false, phone: true });
     });
   });
   
