@@ -76,10 +76,62 @@ describe('project-2', () => {
         })
         it('if number is prime return true', () => {
             expect(funcs.isPrime(5)).toBeTruthy();
-        })
-        it('if NaN is passed in return NaN', () => {
-            
-        })
+        });
+    });
+    describe("returnFirst", () => {
+        it("returns the 0th index in the given array", () => {
+            const arr = [1,2,3,4,5,6]
+            expect(funcs.returnFirst(arr)).toEqual(1)
+        });
     });
 
-})
+    describe("getArrayLength", () => {
+        it('returns the length of the array', () => {
+            const arr = [1,2,3,4,5,6]
+            expect(funcs.getArrayLength([1,2,3,4])).toEqual(4)
+        });
+    });
+    describe('incrementByOne', () => {
+        it('returns each item in array incremented by one', () => {
+            expect(funcs.incrementByOne([2,3,4])).toEqual([3,4,5])
+        });
+    });
+    describe('addItemToArray', () => {
+        it('adds item to the array', () => {
+            expect(funcs.addItemToArray([2,3,4], 5)).toEqual([2,3,4,5]);
+        });
+    });
+    describe('addItemToFront', () => {
+        it(' adds new item to beginning of the array', () => {
+            expect(funcs.addItemToFront([2,3,4],5)).toEqual([5,2,3,4]);
+        });
+    });
+    describe("wordsToSentence", () => {
+        it('returns new sentence', () => {
+            expect(funcs.wordsToSentence("Hello")).toBe("H e l l o");
+        });
+    });
+    describe("contains", () => {
+        it('returns true if the array contains passed in Item', () => {
+            expect(funcs.contains([1,2,3], 3)).toBeTruthy();
+        });
+        it('returns false if the array does not contain passed in Item', () => {
+            expect(funcs.contains([1,2,3], 4)).toBeFalsy();
+        });
+    });
+    describe('addNumbers', () => {
+        it('returns the sum of all the numbers in given array', () => {
+            expect(funcs.addNumbers([1,2,3])).toBe(6);
+        });
+    });
+    describe('averageTestScore', () => {
+        it('returns average test score', () => {
+            expect(funcs.averageTestScore([90,70,50])).toBe(70);
+        });
+    });
+    describe('largestNumber', () => {
+        it('returns the largest number', () => {
+            expect(funcs.largestNumber([3,4,5])).toBe(5);
+        });
+    });
+});
