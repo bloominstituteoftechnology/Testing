@@ -3,11 +3,7 @@ const funcs = require('./project-2');
 
 describe('getBiggest', () => {
     it('should return X if its larger than Y', () => {
-        // expect(funcs.getBiggest(undefined)).toBeNaN(true);
-        // expect(funcs.getBiggest('two')).toBeNaN();
-        
         expect(funcs.getBiggest(7, 5)).toEqual(7);
-       
     })
     it('Should return y if its larger than X', () => { 
         expect(funcs.getBiggest(85, 1000)).toBe(1000);
@@ -17,8 +13,16 @@ describe('getBiggest', () => {
     })
 });
 
-describe('greeting', () => { 
+describe('greeting', () => {
+    it('Should return \'Guten Tag!\' for German', () => {
+        expect(funcs.greeting('German')).toBe('Guten Tag!');
+    });
+    it('Should return \'Hola!\' for Spanish', () => {
+        expect(funcs.greeting('Spanish')).toBe('Hola!');
+    });
+    it('Should return \'Hello!\' if neither Spanish,German is entered',() => {
+        // expect(funcs.greeting('Japanese')).toBe('Hello!');
+        expect(funcs.greeting()).toBe('Hello!');
+    })
+});
 
-
-
-})
