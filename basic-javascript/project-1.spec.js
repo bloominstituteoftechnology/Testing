@@ -14,7 +14,7 @@ describe('subtractFive', () => {
         // expect(helpers.subtractFive(undefined)).toBeNan();
         expect(helpers.subtractFive(10)).toBe(5);
         expect(helpers.subtractFive(20)).toBe(15);
-        expect(helpers.subtractFive(45)).toBe(40);
+        expect(helpers.subtractFive(45)).toEqual(40);
     })
     
 });
@@ -79,6 +79,34 @@ describe('subtract', () => {
         expect(helpers.subtract(7, 3)).toBe(4);
         expect(helpers.subtract(14, 7)).toBe(7);
         expect(helpers.subtract(45, 4)).toBe(41);
+
+    })
+});
+
+describe('divide', () => {
+    it('Should divide two numbers and return result', () => {
+        expect(helpers.divide(20, 5)).toEqual(4);
+        expect(helpers.divide(100, 5)).toEqual(20);
+        expect(helpers.divide(55, 5)).toEqual(11);
+    })
+});
+
+describe('multiply', () => {
+    it('Should multiply two numbers and return result', () => {
+        expect(helpers.multiply(3, 2)).toEqual(6);
+        expect(helpers.multiply(6, 3)).toEqual(18);
+        expect(helpers.multiply(12, 4)).toEqual(48);
+
+    })
+});
+
+describe('getRemainder', () => {
+    it('Should return the remainder between two numbers', () => {
+        expect(helpers.getRemainder(14, 3)).toEqual(2);
+        expect(helpers.getRemainder(14, 2)).toEqual(0);
+        expect(helpers.getRemainder(19, 6)).toEqual(1);
+        expect(helpers.getRemainder(144, 12)).toEqual(0);
+        expect(helpers.getRemainder(33, 12)).toEqual(9);
 
     })
 });
