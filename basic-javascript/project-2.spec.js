@@ -84,3 +84,22 @@ describe('fizzBuzz', () => {
         expect(funcs.fizzBuzz(11)).toBe(11);
     })
 });
+
+describe('isPrime', () => {
+    it('Should return false if the number is less than 0', () => { 
+        expect(funcs.isPrime(-1)).toBe(false);
+    })
+    it('Should return false if number is not Prime', () => {
+        expect(funcs.isPrime(50)).toBe(false);
+        expect(funcs.isPrime(49)).toBe(false);
+        expect(funcs.isPrime(10)).toBe(false);
+        expect(funcs.isPrime(200)).toBe(false);
+        expect(funcs.isPrime(0)).toBe(false);
+    })
+    it('Should return true if number is Prime', () => {
+        expect(funcs.isPrime(5)).toBe(true);
+        expect(funcs.isPrime(3)).toBe(true);
+        expect(funcs.isPrime(11)).toBe(true);
+        expect(funcs.isPrime(17)).toBe(true);
+    })
+})
