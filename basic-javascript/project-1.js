@@ -12,7 +12,9 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  return typeof str1 === string && typeof str2 === string
+    ? str1.length === str2.length
+    : false;
 };
 
 const areEqual = (x, y) => {
@@ -88,15 +90,17 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return typeof str === string ? (str += '!') : false;
 };
 
 const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+  return typeof firstName === string && typeof lastName === string
+    ? `${firstName} ${lastName}`
+    : false;
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+  return typeof name === string ? `Hello ${name}!` : false;
 };
 
 const getRectangleArea = (length, width) => {
