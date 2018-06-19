@@ -31,16 +31,25 @@ describe('areSameLength', () => {
 
 });
 
-describe('areEqual', () => { 
-    it('it should return two numbers that are equal', () => { 
+describe('areEqual', () => {
+    it('Should return two numbers that are equal', () => {
         expect(helpers.areEqual(4, 4)).toBe(true);
         expect(helpers.areEqual(7, 7)).toBe(true);
         expect(helpers.areEqual(3, 3)).toBe(true);
 
     })
+});
 
-})
-
+describe('lessThanNinety', () => {
+    it('Should return a number less than 90 as true, or if more then false', () => {
+        expect(helpers.lessThanNinety(89)).toBe(true);
+        expect(helpers.lessThanNinety(61)).toBe(true);
+        expect(helpers.lessThanNinety(100)).toBe(false);
+        expect(helpers.lessThanNinety(91)).toBe(false);
+        expect(helpers.lessThanNinety(92)).toBe(false);
+        expect(helpers.lessThanNinety(14)).toBe(true)
+    })
+});
 
 
 
