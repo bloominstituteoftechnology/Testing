@@ -26,3 +26,16 @@ describe('greeting', () => {
     })
 });
 
+describe('isTenorFive', () => {
+    it('Should return true if number is 10 or 5', () => {
+        expect(funcs.isTenOrFive(10)).toBe(true);
+        expect(funcs.isTenOrFive(5)).toBe(true);
+    })
+    it('Should return false if number is not 10 or 5', () => {
+        expect(funcs.isTenOrFive(15)).toBe(false);
+        expect(funcs.isTenOrFive(4)).toBe(false);
+        expect(funcs.isTenOrFive(34)).toBe(false);
+        expect(funcs.isTenOrFive(2)).toBe(false);
+    })
+});
+
