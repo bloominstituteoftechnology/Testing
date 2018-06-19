@@ -111,4 +111,67 @@ describe('project-1', () => {
         })
     })
 
+    describe('addItemToArray', () => {
+        it('should add given item to the end of the given array', () => {
+            expect(funcs.addItemToArray([0,1,2,3], 4)).toEqual([0, 1, 2, 3, 4])
+            expect(funcs.addItemToArray([0,1,2,3], 'test')).toEqual([0, 1, 2, 3, 'test'])
+            expect(funcs.addItemToArray([0,1,2,3], undefined)).toEqual([0, 1, 2, 3, undefined])  
+        })
+    })
+
+    describe('addItemToFront', () => {
+        it('should add given item to the front of the given array', () => {
+            expect(funcs.addItemToFront([0,1,2,3], 4)).toEqual([4, 0, 1, 2, 3])
+            expect(funcs.addItemToFront([0,1,2,3], 'test')).toEqual(['test', 0, 1, 2, 3])
+            expect(funcs.addItemToFront([0,1,2,3], undefined)).toEqual([undefined, 0, 1, 2, 3])  
+        })
+    })
+
+    describe('wordsToSentence', () => {
+        it('should return a sentence containing the given word with space between each character or containing each word separated by spaces if given an array or words', () => {
+            expect(funcs.wordsToSentence('test')).toBe('t e s t')
+            expect(funcs.wordsToSentence(['hi', 'hello', 'there'])).toBe('hi hello there')
+            expect(funcs.wordsToSentence([undefined, 'hello', 'there'])).toBe('undefined hello there')  
+        })
+    })
+
+    describe('contains', () => {
+        it('should return true if given item exists at least once in the given array', () => {
+            expect(funcs.contains(['a', 'b', 'c'], 'b')).toBeTruthy()
+            expect(funcs.contains(['a', 'b', 'c', undefined], undefined)).toBeTruthy()
+            expect(funcs.contains(['a', 'b', 'c'], 'z')).toBeFalsy()
+        })
+    })
+
+    describe('addNumbers', () => {
+        it('should return the sum of all numbers in the given array', () => {
+            expect(funcs.addNumbers([1, 2, 3])).toEqual(6)
+            expect(funcs.addNumbers([10, 10, 10])).toBe(30)
+            expect(funcs.addNumbers([undefined, 10, 10])).toBe(NaN)
+        })
+    })
+
+    describe('averageTestScore', () => {
+        it('should return the average of all test scores in the given array', () => {
+            expect(funcs.averageTestScore([80, 80, 80])).toEqual(80)
+            expect(funcs.averageTestScore([90, 100, 70, 60])).toBe(80)
+            expect(funcs.averageTestScore([undefined, 10, 10])).toBe(NaN)
+        })
+    })
+
+    describe('largestNumber', () => {
+        it('should return the largest number in the given array or 0 if no numbers are defined', () => {
+            expect(funcs.largestNumber([80, 80, 80])).toEqual(80)
+            expect(funcs.largestNumber([90, 100, 70, 60])).toBe(100)
+            expect(funcs.largestNumber([undefined, 10, 50])).toBe(50)
+            expect(funcs.largestNumber([undefined, undefined, undefined])).toBe(0)
+        })
+    })
+
+
+
+
+
+
+
 });
