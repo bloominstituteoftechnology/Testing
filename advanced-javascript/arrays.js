@@ -3,6 +3,7 @@
 const each = (elements, cb) => {
   for (let i = 0; i < elements.length; i++) {
     cb(elements[i], i);
+    
   }
 };
 
@@ -30,7 +31,7 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each(element, item => {
+  each(elements, item => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
