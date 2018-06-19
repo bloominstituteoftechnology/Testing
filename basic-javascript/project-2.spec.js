@@ -2,7 +2,7 @@ const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
-describe('project-2', () => {
+describe.skip('project-2', () => {
     describe('getBiggest', () => {
         it('returns the biggest number', () => {
             expect(funcs.getBiggest(1, 2)).toBe(2);
@@ -149,7 +149,7 @@ describe('project-2', () => {
         });
     });
 
-    describe.only('largestNumber', () => {
+    describe('largestNumber', () => {
         it('returns the largest number from the set', () => {
             expect(funcs.largestNumber([1, 2, 4, 4])).toBe(4);
             expect(funcs.largestNumber([1, 2, 20, 4])).toBe(20);
