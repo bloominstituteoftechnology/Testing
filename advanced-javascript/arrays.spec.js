@@ -11,7 +11,17 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
     });
+
+    it('it should return a new array, leaving the old one intact', () => {
+      const map = arrayFunctions.map;
+      const arr = [1, 2, 3, 6, 7]
+      const cb = (el) => {
+        return el ** 2;
+      }
+      const squared = map(arr, cb);
+      expect(squared).toEqual([1, 4, 9, 36, 49])
+    })
   });
 });
