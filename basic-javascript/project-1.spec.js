@@ -417,7 +417,35 @@ describe('Project 1', () => {
 
   // describe('roundUp', () => {});
 
-  // describe('addExclamationPoint', () => {});
+  describe('addExclamationPoint', () => {
+    it('Returns string with exclamation point on end when given a string', () => {
+      const expected = /Hey you!$/;
+      const actual = helpers.addExclamationPoint('Hey you');
+      expect(actual).toMatch(expected);
+    });
+
+    it('Returns false when passing no argument', () => {
+      const actual = helpers.addExclamationPoint();
+      expect(actual).toBeFalsy();
+    });
+
+    describe('Returns false for any value type other than strings:', () => {
+      it('Numbers', () => {
+        const actual = helpers.addExclamationPoint(3, 1);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Undefined', () => {
+        const actual = helpers.addExclamationPoint(undefined, undefined);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Null', () => {
+        const actual = helpers.addExclamationPoint(null, null);
+        expect(actual).toBeFalsy();
+      });
+    });
+  });
 
   describe('combineNames', () => {
     it('Returns concatenation when given two strings', () => {
