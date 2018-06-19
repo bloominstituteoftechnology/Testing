@@ -111,3 +111,23 @@ describe('returnFirst', () => {
         expect(funcs.returnFirst([17, 110, 2000, 100, 1110])).toBe(17);
     })
 });
+
+describe('returnLast', () => {
+    it('Should return the last item in the array', () => {
+        expect(funcs.returnLast([5, 3, 43, 11, 31])).toBe(31);
+        expect(funcs.returnLast([7, 11, 200, 10, 111])).toBe(111);
+        expect(funcs.returnLast([17, 110, 2000, 100, 1110])).toBe(1110);
+
+    })
+});
+
+describe('getArrayLength', () => {
+    it('Should return the lenght of the array', () => {
+        expect(funcs.getArrayLength([5, 3, 43, 11, 31])).toBe(5);
+        expect(funcs.getArrayLength([5, 3])).toBe(2);
+        expect(funcs.getArrayLength([5, 3, 43, 11, 31, 66, 77, 352])).toBe(8);
+        expect(funcs.getArrayLength([5, 3, 43, 111])).toBe(4);
+        expect(funcs.getArrayLength(['fe','fi','fo','fum'])).toBe(4);
+    })
+
+})
