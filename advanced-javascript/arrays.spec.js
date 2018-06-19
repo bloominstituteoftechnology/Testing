@@ -62,5 +62,16 @@ describe('Arrays', () => {
       expect(filter(array, (num => num % 5 === 0))).toEqual([5, 15, 30, 35]);
     })
   });
-  
+
+  describe('flatten', () => {
+    it('should be a function', () => {
+      const flatten = arrayFunctions.flatten;
+      expect(typeof flatten).toBe('function');
+    })
+    it('should flatten array', () => {
+      const array = [1, 2, 3, [4, 5, [6]]];
+      const flatten = arrayFunctions.flatten;
+      expect(flatten(array)).toEqual([1, 2, 3, 4, 5, 6]);
+    })
+  })
 });
