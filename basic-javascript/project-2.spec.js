@@ -118,4 +118,31 @@ describe('project-2', () => {
         });
     });
 
+    describe('contains', () => {
+        it('counts the amount of items in a given array', () => {
+            expect(funcs.contains([6, 7, 8, 9], 8)).toBeTruthy();
+            expect(funcs.contains([6, 7, 8, 9], 10)).toBeFalsy();
+        });
+    });
+
+    describe('addNumbers', () => {
+        it('continually adds numbers to the given sum', () => {
+            expect(funcs.addNumbers([1, 2, 3, 4])).toBe(10);
+            expect(funcs.addNumbers([1, 1, 1, 1])).toBe(4);
+        });
+    });
+
+    describe('averageTestScore', () => {
+        it('averages the given test scores', () => {
+            expect(funcs.averageTestScore([50, 50, 49, 51, 50])).toEqual(50);
+            expect(funcs.averageTestScore([100, 50])).toEqual(75);
+        });
+    });
+
+    describe('largestNumber', () => {
+        it('returns the largest integer in a given array', () => {
+            expect(funcs.largestNumber([10, 50, 100, 101])).toBe(101);
+        });
+    });
+
 });
