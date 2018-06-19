@@ -40,6 +40,18 @@ describe('Arrays', () => {
     });
   });
 
+  describe('find', () => {
+    it('should be a function', () => {
+      const find = arrayFunctions.find;
+      expect(typeof find).toBe('function');
+    });
+    it('should return the odd numbers in the array', () => {
+      const find = arrayFunctions.find;
+      const arr = [6, 7, 2];
+      expect(find(arr, num => num % 2 === 0)).toEqual([6])
+    });
+  });
+
   describe('filter', () => {
     it('should be a function', () => {
       const filter = arrayFunctions.filter;
@@ -47,8 +59,8 @@ describe('Arrays', () => {
     });
     it('should return the odd numbers in the array', () => {
       const filter = arrayFunctions.filter;
-      const arr = [6,7,2]
-      expect(filter(arr, (num => num < 4)).toEqual([2])
+      const arr = [6,7,2];
+      expect(filter(arr, num => num % 2 === 1)).toEqual([7])
     });
   });
 
