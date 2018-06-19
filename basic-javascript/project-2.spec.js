@@ -86,7 +86,7 @@ describe('fizzBuzz', () => {
 });
 
 describe('isPrime', () => {
-    it('Should return false if the number is less than 0', () => { 
+    it('Should return false if the number is less than 0', () => {
         expect(funcs.isPrime(-1)).toBe(false);
     })
     it('Should return false if number is not Prime', () => {
@@ -102,4 +102,12 @@ describe('isPrime', () => {
         expect(funcs.isPrime(11)).toBe(true);
         expect(funcs.isPrime(17)).toBe(true);
     })
-})
+});
+
+describe('returnFirst', () => {
+    it('Should return the first item in the array', () => {
+        expect(funcs.returnFirst([5, 3, 43, 11, 31])).toBe(5);
+        expect(funcs.returnFirst([7, 11, 200, 10, 111])).toBe(7);
+        expect(funcs.returnFirst([17, 110, 2000, 100, 1110])).toBe(17);
+    })
+});
