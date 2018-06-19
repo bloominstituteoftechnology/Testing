@@ -20,15 +20,30 @@ const testBase = cb => {
         return val;
     }
   };
-  return (str, arr = []) => {
+  return (str, arr = [], matcher = "toBe") => {
     const strToArr = str.split(' ');
     const [ returns, typeOfExpected, expected, given, typeOfArgs, ...args ] = strToArr;
     const typedExpected = setType(typeOfExpected, expected);
-    const typedArgs = typeOfArgs === "array" ? arr : args.map(arg => setType(typeOfArgs, arg));
+    const typedArgs = 
+      typeOfArgs === "array" || typeOfArgs === "arguments" ? 
+        arr 
+        : 
+        args.map(arg => setType(typeOfArgs, arg));
     
     return it(`returns ${typeof typedExpected} ${typedExpected} given ${typeof typedArgs[0]} ${typedArgs}`, () => {
       const actual = cb(...typedArgs);
-      expect(actual).toBe(typedExpected);
+      const expectation = expect(actual);
+      switch (matcher) {
+        case "toBe":
+          expectation.toBe(typedExpected);
+          break;
+        case "toBeCloseTo":
+          expectation.toBeCloseTo(typedExpected);
+          break;
+        case "toBeFalsy":
+          expectation.toBeFalsy();
+          break;
+      }
     });
   };
 };
@@ -729,6 +744,15 @@ describe('getRectangleArea', () => {
     testIt(`returns num 36 given num 6 6`);
     testIt(`returns num 10 given num 2 5`);
   });
+
+  describe(`Approriately handles negative inputs`, () => {
+    it('Returns falsy given num 6 -6', () => {
+      // act
+      const actual = getRectangleArea(6,-6);
+      // assert
+      expect(actual).toBeFalsy();
+    });
+  });
 });
 
 describe('getTriangleArea', () => {
@@ -737,12 +761,60 @@ describe('getTriangleArea', () => {
 
   testType('number',[5,5],getTriangleArea);
 
-  describe(`Returns the area of a rectangle given positive integers`, () => {
+  describe(`Returns the area of a triangle given positive integers`, () => {
     testIt(`returns num 18 given num 6 6`);
     testIt(`returns num 5 given num 2 5`);
   });
 
-  // describe(`Approriately handles negative inputs`, () => {
-  //   it('returns')
-  // });
+  describe(`Approriately handles negative inputs`, () => {
+    it('Returns falsy given num 6 -6', () => {
+      // act
+      const actual = getTriangleArea(6,-6);
+      // assert
+      expect(actual).toBeFalsy();
+    });
+  });
+});
+
+describe('getCircleArea', () => {
+  const { getCircleArea } = helpers;
+  const testIt = testBase(getCircleArea);
+
+  testType('number',[5],getCircleArea);
+
+  describe(`Returns the area of a triangle given positive integers`, () => {
+    testIt(`returns num 12.57 given num 2`,[],"toBeCloseTo");
+    testIt(`returns num 452.39 given num 12`,[],"toBeCloseTo");
+  });
+
+  describe(`Approriately handles negative inputs`, () => {
+    it('Returns falsy given a num -6', () => {
+      // act
+      const actual = getCircleArea(-6);
+      // assert
+      expect(actual).toBeFalsy();
+    });
+    testIt(`returns falsy given num -6'`,[],"toBeFalsy");
+  });
+});
+
+describe('getRectangularPrismVolume', () => {
+  const { getRectangularPrismVolume } = helpers;
+  const testIt = testBase(getRectangularPrismVolume);
+
+  testType('number',[5,5,5],getRectangularPrismVolume);
+
+  describe(`Returns the area of a rectangle`, () => {
+    testIt(`returns num 216 given num 6 6 6`);
+    testIt(`returns num 6 given num 1 2 3`);
+  });
+
+  describe(`Approriately handles negative inputs`, () => {
+    it('Returns bool false given num 6 -6 -12', () => {
+      // act
+      const actual = getRectangularPrismVolume(6,-6,-12);
+      // assert
+      expect(actual).toBeFalsy();
+    });
+  });
 });
