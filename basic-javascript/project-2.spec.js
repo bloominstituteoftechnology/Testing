@@ -44,4 +44,41 @@ describe('project-1', () => {
         })
     })
 
+    describe('isInteger', () => {
+        it('should return true if given number is an integer', () => {
+            expect(funcs.isInteger(3.5)).toBeFalsy()
+            expect(funcs.isInteger(3)).toBeTruthy()
+
+        })
+    })
+
+    describe('fizzBuzz', () => {
+        it('should return fizzbuzz if num is divisible by 5 & 3, buzz if divisible by 5, fizz if divisible by 3', () => {
+            expect(funcs.fizzBuzz(5)).toBe('buzz')
+            expect(funcs.fizzBuzz(3)).toBe('fizz')
+            expect(funcs.fizzBuzz(15)).toBe('fizzbuzz')
+            expect(funcs.fizzBuzz(22)).toBe(22)
+        })
+    })
+
+    describe('isPrime', () => {
+        it('should return false for numbers <= 0 or numbers === 1 and all other non-prime numbers and true for primes', () => {
+            expect(funcs.isPrime(0)).toBeFalsy()
+            expect(funcs.isPrime(-5)).toBeFalsy()
+            expect(funcs.isPrime(1)).toBeFalsy()
+            expect(funcs.isPrime(21)).toBeFalsy()
+            expect(funcs.isPrime(5)).toBeTruthy()
+        })
+    })
+
+    describe('returnFirst', () => {
+        it('should return first item in the array', () => {
+            expect(funcs.returnFirst([0,1,2,3])).toBe(0)
+            expect(funcs.returnFirst(['a','b','c','d'])).toBe('a')
+            expect(funcs.returnFirst([5,'b',1,'d'])).toBe(5)
+            expect(funcs.returnFirst([undefined,'b','c','d'])).toBe(undefined)
+            expect(funcs.returnFirst([[1, 2],'b','c','d'])).toEqual([1, 2]) // can not use .toBe (strict equality) with arrays
+        })
+    })
+
 });
