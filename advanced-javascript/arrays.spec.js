@@ -61,7 +61,7 @@ describe('Arrays', () => {
       const arr = find([1,2,3], num => num === 2);
       const arr2 = find([1,2,3], num => num === 0);
       const arr3 = find([true,false], bool => bool === true);
-      const arr4 = find(['smart','ass'], str => str === 'butt');
+      const arr4 = find(['tabby','calico'], str => str === 'torbie');
 
       expect(arr).toEqual(2);
       expect(arr2).toEqual(undefined);
