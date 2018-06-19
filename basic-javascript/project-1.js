@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  return isNaN(num) ? false : num * 10;
 };
 
 const subtractFive = num => {

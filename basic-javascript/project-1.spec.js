@@ -18,21 +18,15 @@ describe('Project 1', () => {
       expect(actual).toBe(expected);
     });
 
-    it('Returns 0 when given an empty string', () => {
-      const expected = 0;
-      const actual = helpers.multiplyByTen('');
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns NaN when given a non-numeric string', () => {
-      const expected = NaN;
-      const actual = helpers.multiplyByTen('Hello');
-      expect(actual).toBe(expected);
-    });
-
-    it('Returns NaN when called without an argument', () => {
-      const expected = NaN;
+    it('Returns false when called without an argument', () => {
+      const expected = false;
       const actual = helpers.multiplyByTen();
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 0 when given null', () => {
+      const expected = 0;
+      const actual = helpers.multiplyByTen(null);
       expect(actual).toBe(expected);
     });
 
@@ -48,22 +42,24 @@ describe('Project 1', () => {
       expect(actual).toBe(expected);
     });
 
-    it('Returns NaN when given an array of values', () => {
-      const expected = NaN;
-      const actual = helpers.multiplyByTen([3, 2]);
-      expect(actual).toBe(expected);
-    });
+    describe('Returns false when given a non-numeric value:', () => {
+      it('A string', () => {
+        const expected = false;
+        const actual = helpers.multiplyByTen('Hello');
+        expect(actual).toBe(expected);
+      });
 
-    it('Returns NaN when given undefined', () => {
-      const expected = NaN;
-      const actual = helpers.multiplyByTen(undefined);
-      expect(actual).toBe(expected);
-    });
+      it('An array of values', () => {
+        const expected = false;
+        const actual = helpers.multiplyByTen([3, 2]);
+        expect(actual).toBe(expected);
+      });
 
-    it('Returns 0 when given null', () => {
-      const expected = 0;
-      const actual = helpers.multiplyByTen(null);
-      expect(actual).toBe(expected);
+      it('undefined', () => {
+        const expected = false;
+        const actual = helpers.multiplyByTen(undefined);
+        expect(actual).toBe(expected);
+      });
     });
   });
 
