@@ -215,3 +215,102 @@ describe('incrementByOne', () => {
         expect(funcs.incrementByOne(null)).toBe(false)
     })
 })
+
+describe('addItemToArray', () => {
+    it('should add an item to an array', () => {
+        expect(funcs.addItemToArray([1,2,3], 4)).toEqual([1,2,3,4])
+        expect(funcs.addItemToArray([{key: 'value'}], 7)).toEqual([{key: 'value'}, 7])
+        expect(funcs.addItemToArray(['Hello there'], 'world')).toEqual(['Hello there', 'world'])
+        expect(funcs.addItemToArray([['a', 'b'],['c', 'd']],['e'])).toEqual([['a', 'b'], ['c','d'],['e']])
+    })
+    it('should turn the value given for the array as an array with the item added if it was not an array', () => {
+        expect(funcs.addItemToArray({key: 'value'}, 12)).toEqual('invalid input')
+        expect(funcs.addItemToArray(2, 7)).toBe('invalid input')
+        expect(funcs.addItemToArray('string', 'thing')).toBe('invalid input')
+        expect(funcs.addItemToArray(null)).toBe('invalid input')
+        expect(funcs.addItemToArray(false)).toBe('invalid input')
+    })
+})
+
+describe('wordsToSentence', () => {
+    it('should take an array of strings and return an concatenated string', () => {
+        expect(funcs.wordsToSentence(['Kind of', 'worried about', 'doing a', 'brownbag lecture'])).toBe('Kind of worried about doing a brownbag lecture')
+        expect(funcs.wordsToSentence(['7', '5', '4'])).toBe('7 5 4') 
+    })
+    it('should take an array and return "invalid input" if the elements of the array are not strings', () => {
+        expect(funcs.wordsToSentence([{key: 'value'}, {secondKey: 'differentValue'}])).toEqual('invalid input')
+        expect(funcs.wordsToSentence([1, 2, 3])).toBe('invalid input')
+        expect(funcs.wordsToSentence([['2'], ['5']])).toBe('invalid input')
+    })
+    it('should take any non-array and return it', () => {
+        expect(funcs.wordsToSentence('Hey there')).toBe('Hey there')
+        expect(funcs.wordsToSentence({key: 'value'})).toEqual({key: 'value'})
+        expect(funcs.wordsToSentence(null)).toBe(null)
+        expect(funcs.wordsToSentence(false)).toBe(false)
+        expect(funcs.wordsToSentence(3)).toBe(3)
+    })
+})
+
+describe('contains', () => {
+    it('should return true if the array contains the item', () => {
+        expect(funcs.contains(['two', 'three', 'four', 'five'], 'five')).toBe(true)
+        expect(funcs.contains([[0], [2], [3]], 7)).toBe(false)
+        expect(funcs.contains([2, 2, '2'], '2')).toBe(true)
+    })
+    it('should return false if an item in the array is an object', () => {
+        expect(funcs.contains([1, {key: 'value'}, {secondKey: 'secondValue}'}], {key: 'value'})).toEqual(false)
+    })
+    it('should return false if the array does not contain the item', () => {
+        expect(funcs.contains([1, 2, 5], 12)).toBe(false)
+        expect(funcs.contains([1, 2, 3], '1')).toBeTruthy()
+    })
+    it('should return false if there is not an array', () => {
+        expect(funcs.contains(1,2)).toBe(false)
+        expect(funcs.contains({key: 'value'}, 2)).toBe(false)
+        expect(funcs.contains(null, null)).toBe(false)
+        expect(funcs.contains(true, true)).toBe(false)
+    })
+})
+
+describe('addNumbers', () => {
+    it('should return the sum of the numbers in the array', () => {
+        expect(funcs.addNumbers([1,2,3])).toBe(6)
+        expect(funcs.addNumbers([-2, 12])).toBe(10)
+        expect(funcs.addNumbers([.5, 10])).toBe(10.5)
+        expect(funcs.addNumbers([0, -2])).toBe(-2)
+    })
+    it('should return "invalid input" if the input is not an array', () => {
+        expect(funcs.addNumbers(1)).toBe('invalid input')
+        expect(funcs.addNumbers({key: 'value'})).toBe('invalid input')
+        expect(funcs.addNumbers('17')).toBe('invalid input')
+        expect(funcs.addNumbers(null)).toBe('invalid input')
+        expect(funcs.addNumbers(2 , 3, 5)).toBe('invalid input')
+    })
+})
+
+describe('averageTestScore', () => {
+    it('should return the average of the numbers in the array', () => {
+        expect(funcs.averageTestScore([10,2,5,12])).toBe(7.25)
+        expect(funcs.averageTestScore([2.5, 5, 2.5])).toBe(3.3333333333333335)
+    })
+    it('should return false if the input is not an array', () => {
+        expect(funcs.averageTestScore({key: 'value'})).toBe(false)
+        expect(funcs.averageTestScore('one', 'five', '2')).toBe(false)
+        expect(funcs.averageTestScore(2)).toBe(false)
+    })
+})
+
+describe('largestNumber', () => {
+    it('should look through an array of numbers and return the largest number', () => {
+        expect(funcs.largestNumber([2,3,4])).toBe(4)
+        expect(funcs.largestNumber([0,-2,-12])).toBe(0)
+        expect(funcs.largestNumber([.2, -.5, .9])).toBe(.9)
+    })
+    it('should return "invalid input" if the input is not an array or if the array is not an array of numbers', () => {
+        expect(funcs.largestNumber('27')).toBe('invalid input')
+        expect(funcs.largestNumber(null)).toBe('invalid input')
+        expect(funcs.largestNumber({key: 'value'})).toBe('invalid input')
+        expect(funcs.largestNumber(true)).toBe('invalid input')
+        expect(funcs.largestNumber([])).toBeFalsy()
+    })
+})

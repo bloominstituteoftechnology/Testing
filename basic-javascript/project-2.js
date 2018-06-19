@@ -122,7 +122,7 @@ if (!(Array.isArray(arr))) {
 
 const addItemToArray = (arr, item) => {
 if (!(Array.isArray(arr))) {
-    return false
+    return 'invalid input'
   }
   arr.push(item);
   return arr;
@@ -137,19 +137,26 @@ if (!(Array.isArray(arr))) {
 };
 
 const wordsToSentence = words => {
-if (typeof words !== 'string') {
-    return false
+if (!Array.isArray(words)) {
+    return words
   }
+// added type checking to ensure input is array
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
+    if (typeof words[i] !== 'string') {
+      return 'invalid input'
+// added type checking for elements of the array
+    } else {
     if (i === 0) {
       newSentence += `${words[i]}`;
     } else {
       newSentence += ` ${words[i]}`;
     }
   }
-  return newSentence;
-};
+} 
+return newSentence;
+} 
+
 
 const contains = (arr, item) => {
   if (!(Array.isArray(arr))) {
@@ -157,7 +164,7 @@ const contains = (arr, item) => {
   }
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
+    if (arr[i] == item) {
       itemCounter++;
     }
   }
@@ -169,7 +176,7 @@ const contains = (arr, item) => {
 
 const addNumbers = numbers => {
 if (!(Array.isArray(numbers))) {
-  return false
+  return 'invalid input'
 }
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
@@ -185,6 +192,7 @@ if (!(Array.isArray(testScores))) {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (typeof test)
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -193,10 +201,13 @@ if (!(Array.isArray(testScores))) {
 
 const largestNumber = numbers => {
 if (!(Array.isArray(numbers))) {
-  return false
+  return 'invalid input'
 }
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (!typeof numbers[i] === 'number') {
+      return 'invalid input'
+    }
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }

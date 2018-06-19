@@ -370,7 +370,7 @@ describe('getTriangleArea', () => {
         expect(helpers.getTriangleArea([1,2,5], 2)).toBe(NaN)
         expect(helpers.getTriangleArea('2', '46')).toBe(NaN)        
     })
-})
+}) 
 
 describe('getCircleArea', () => {
     it('should return pi(r^2)', () => {
