@@ -17,17 +17,27 @@ const {
 describe('Arrays', () => {
   describe('each', () => {
     it('should invoke cb for each array item',() => {
+      const array=[];
+      const arr = each([1,2,3], num => array.push(num +1));
+      const arr2 = each([1,2,3], num => num + 1);
+
       expect(typeof each).toBe('function');
+      expect(array).toEqual([2,3,4]);
+      expect(arr2).toEqual(undefined);
     });
   });
   
   describe('map', () => {
     it('should be a function', () => {
-//      const map = arrayFunctions.map;
-//      expect(typeof map).toBe('object');
-      const arr = map([1,2,3], num => num*2);
       expect(typeof map).toBe('function');
+      const arr = map([1,2,3], num => num*2);
+      const arr2 = map(['blue', 'green', 'yellow'], colors => colors.length);
+      const arr3 = map([73.3589,1.5], num => Math.floor(num));
+      
       expect(arr).toEqual([2,4,6]);
+      expect(arr2).toEqual([4,5,6]);
+      expect(arr3).toEqual([73,1]);
+     		       
     });
   });
 
@@ -80,7 +90,7 @@ describe('Arrays', () => {
       const arr = flatten([1,2,3,[4,5],6]);
       const arr2 = flatten([1,2,3]);
       const arr3 = flatten(['a',['b','c','d'],['e']]);
-
+     
       expect(arr).toEqual([1,2,3,4,5,6]);
       expect(arr2).toEqual([1,2,3]);
       expect(arr3).toEqual(['a','b','c','d','e']);
