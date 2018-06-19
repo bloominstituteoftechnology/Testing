@@ -15,4 +15,19 @@ describe('objects', () => {
       expect(objectFunctions.values({ 1: 'a', 2: {x: 'y'}, 3: 'c' })).toEqual(['a', {x: 'y'}, 'c'])
     })
   })
+
+  describe('mapObject', () => {
+    it('should return a new object with each value doubled of the initial object', () => {
+      expect(objectFunctions.mapObject({a: 1, b: 2, c: 3}, value => value * 2)).toEqual({a: 2, b: 4, c: 6})
+      expect(objectFunctions.mapObject({undefined: undefined}, value => value * 2)).toEqual({'undefined': NaN})
+    })
+  })
+
+  describe('pairs', () => {
+    it('should return each key value pair as an array', () => {
+      expect(objectFunctions.pairs({a: 'b', c: 'd', e: 'f'})).toEqual([['a', 'b'], ['c', 'd'], ['e', 'f']])
+    })
+  })
+
+  
 });
