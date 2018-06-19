@@ -19,9 +19,9 @@ const {
 describe('Arrays', () => {
   describe('each', () => {
     it('returns an array', () => {
-    //   const arr = [1, 2, 3];
-    //   const cb = (val, ind) => console.log(val);
-    //   expect(each(arr, (val, ind) => console.log(val))).toEqual([1, 2, 3]);
+      const arr = [1, 2, 3];
+      const cb = (val, ind) => val;
+      expect(each(arr, cb)).toEqual(undefined);
     });
   });
 
