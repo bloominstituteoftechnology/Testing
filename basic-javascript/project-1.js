@@ -12,7 +12,7 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  return typeof str1 === string && typeof str2 === string
+  return typeof str1 === 'string' && typeof str2 === 'string'
     ? str1.length === str2.length
     : false;
 };
@@ -90,17 +90,17 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return typeof str === string ? (str += '!') : false;
+  return typeof str === 'string' ? (str += '!') : false;
 };
 
 const combineNames = (firstName, lastName) => {
-  return typeof firstName === string && typeof lastName === string
+  return typeof firstName === 'string' && typeof lastName === 'string'
     ? `${firstName} ${lastName}`
     : false;
 };
 
 const getGreeting = name => {
-  return typeof name === string ? `Hello ${name}!` : false;
+  return typeof name === 'string' ? `Hello ${name}!` : false;
 };
 
 const getRectangleArea = (length, width) => {
@@ -116,7 +116,9 @@ const getCircleArea = radius => {
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return isNumeric(length) && isNumeric(width) && isNumeric(height) ? width * height * length : false;
+  return isNumeric(length) && isNumeric(width) && isNumeric(height)
+    ? width * height * length
+    : false;
 };
 
 module.exports = {
