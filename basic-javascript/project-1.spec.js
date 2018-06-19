@@ -110,7 +110,7 @@ describe('Project 1', () => {
     });
   });
 
-  describe.only('areSameLength', () => {
+  describe('areSameLength', () => {
     it('Returns true when given two strings of equal length', () => {
       const actual = helpers.areSameLength('hello', 'world');
       expect(actual).toBeTruthy();
@@ -419,9 +419,65 @@ describe('Project 1', () => {
 
   // describe('addExclamationPoint', () => {});
 
-  // describe('combineNames', () => {});
+  describe('combineNames', () => {
+    it('Returns concatenation when given two strings', () => {
+      const expected = /Danny Vail/;
+      const actual = helpers.combineNames('Danny', 'Vail');
+      expect(actual).toMatch(expected);
+    });
 
-  // describe('getGreeting', () => {});
+    it('Returns false when passing no arguments', () => {
+      const actual = helpers.combineNames();
+      expect(actual).toBeFalsy();
+    });
+
+    describe('Returns false for any value type other than strings:', () => {
+      it('Numbers', () => {
+        const actual = helpers.combineNames(3, 1);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Undefined', () => {
+        const actual = helpers.combineNames(undefined, undefined);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Null', () => {
+        const actual = helpers.combineNames(null, null);
+        expect(actual).toBeFalsy();
+      });
+    });
+  });
+
+  describe('getGreeting', () => {
+    it('Returns greeting when given a string', () => {
+      const expected = /Hello Danny/;
+      const actual = helpers.getGreeting('Danny');
+      expect(actual).toMatch(expected);
+    });
+
+    it('Returns false when passing no argument', () => {
+      const actual = helpers.getGreeting();
+      expect(actual).toBeFalsy();
+    });
+
+    describe('Returns false for any value type other than strings:', () => {
+      it('Numbers', () => {
+        const actual = helpers.getGreeting(3, 1);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Undefined', () => {
+        const actual = helpers.getGreeting(undefined, undefined);
+        expect(actual).toBeFalsy();
+      });
+
+      it('Null', () => {
+        const actual = helpers.getGreeting(null, null);
+        expect(actual).toBeFalsy();
+      });
+    });
+  });
 
   // describe('getRectangleArea', () => {});
 
