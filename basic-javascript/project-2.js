@@ -86,14 +86,24 @@ const incrementByOne = arr => {
   return arr;
 };
 
+//arr.push breaks if it does not receive an array, so I am filtering out non-array inputs so that they return undefined instead of breaking the whole function.
 const addItemToArray = (arr, item) => {
+  if (Array.isArray(arr) === false) {
+    return 'undefined';
+  } else {
   arr.push(item);
-  return arr;
+    return arr;
+  }
 };
 
+//the same problem exists for arr.unshift as above
 const addItemToFront = (arr, item) => {
+  if (Array.isArray(arr) === false) {
+    return 'undefined';
+  } else {
   arr.unshift(item);
-  return arr;
+    return arr;
+  }
 };
 
 const wordsToSentence = words => {
