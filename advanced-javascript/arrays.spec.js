@@ -20,8 +20,9 @@ describe('Arrays', () => {
   describe('each', () => {
     it('returns an array', () => {
       const arr = [1, 2, 3];
-      const cb = (val, ind) => val;
-      expect(each(arr, cb)).toEqual(undefined);
+      const cb = (val, ind) => arr[ind] = val * 2;
+      each(arr, cb);
+      expect(arr).toEqual([2, 4, 6]);
     });
   });
 
