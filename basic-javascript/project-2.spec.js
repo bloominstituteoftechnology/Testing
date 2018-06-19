@@ -113,4 +113,47 @@ describe("project-2", () => {
       ).toEqual(["Chris", "Billy", "Stacy", "Bob", "Drew"]);
     });
   });
+
+  describe("wordsToSentence", () => {
+    it("should return a string with spaces in between characters when given a string", () => {
+      expect(funcs.wordsToSentence("George")).toBe("G e o r g e");
+    });
+
+    it("should return a sentence from the words in an array", () => {
+      expect(funcs.wordsToSentence(["George", "is", "that", "guy"])).toBe(
+        "George is that guy"
+      );
+    });
+  });
+
+  describe("contains", () => {
+    it("should return true if the given array contains a given item", () => {
+      expect(
+        funcs.contains(["Billy", "Stacy", "Bob", "Drew", "Chris"], "Bob")
+      ).toBeTruthy();
+    });
+    it("should return false if the given array does NOT contain a given item", () => {
+      expect(
+        funcs.contains(["Billy", "Stacy", "Bob", "Drew", "Chris"], "Julie")
+      ).toBeFalsy();
+    });
+  });
+
+  describe("addNumbers", () => {
+    it("should return the sum of numbers in a given array", () => {
+      expect(funcs.addNumbers([12, 25, 34, 1, 56])).toBe(128);
+    });
+  });
+
+  describe("averageTestScore", () => {
+    it("should return the average test score(number) from a given array", () => {
+      expect(funcs.averageTestScore([12, 25, 34, 1, 56])).toBeCloseTo(25.6);
+    });
+  });
+
+  describe("largestNumber", () => {
+    it("should return the largest number from a given array", () => {
+      expect(funcs.largestNumber([12, 25, 34, 1, 56])).toBeCloseTo(56);
+    });
+  });
 });
