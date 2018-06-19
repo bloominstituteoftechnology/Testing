@@ -95,5 +95,33 @@ describe('objects', () => {
     })
   });
 
-  
+  describe('defaults', () => {
+    const obj = {
+      'a': 1,
+      'b': 2,
+      'c': 3
+    }
+    const defaultProps = {
+      'a': 3,
+      'b': 4,
+      'c': 5,
+      'd': 6,
+      'e': 7
+    }
+    const defaults = objectFunctions.defaults;
+    const actual = defaults(obj, defaultProps);
+    const expected = {
+      'a': 1,
+      'b': 2,
+      'c': 3,
+      'd': 6,
+      'e': 7
+    }
+    it('should return an object without duplicate keys', () => {
+      expect(actual).toEqual(expected);
+    })
+    it('should return an object', () => {
+      expect(typeof actual).toBe('object');
+    })
+  })
 });
