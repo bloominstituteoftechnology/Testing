@@ -49,6 +49,25 @@ describe('areEqual', () => {
   });
 });
 
+describe('lessThanNinety', () => {
+  it('should return true if num is less than 90', () => {
+    expect(helpers.lessThanNinety(89)).toBeTruthy();
+    expect(helpers.lessThanNinety("89")).toBeTruthy();
+    expect(helpers.lessThanNinety(4)).toBeTruthy();
+  });
+  it('should return false if x is different to y', () => {
+    expect(helpers.lessThanNinety(90)).toBeFalsy();
+    expect(helpers.lessThanNinety("Hi","")).toBeFalsy();
+    expect(helpers.lessThanNinety("12345","67590")).toBeFalsy();
+    expect(helpers.lessThanNinety('94')).toBeFalsy();
+  });
+});
+
+
+
+
+
+
 describe('isEven', () => {
   it('should return true for even numbers', () => {
     expect(helpers.isEven(4)).toBeTruthy();
