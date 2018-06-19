@@ -2,7 +2,7 @@ const funcs = require("./project-2");
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
-describe("project-2", () => {
+describe.skip("project-2", () => {
   describe("getBiggest", () => {
     it("returns the bigger of the two variables", () => {
       expect(funcs.getBiggest(3, 4)).toBe(4);
