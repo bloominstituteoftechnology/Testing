@@ -22,15 +22,15 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
+  if (isNumeric(num)) {
+    return num < 90;
   }
   return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
+  if (isNumeric(num)) {
+    return num > 50;
   }
   return false;
 };
