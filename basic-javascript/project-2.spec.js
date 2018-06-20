@@ -143,8 +143,54 @@ describe('addItemToArray', () => {
     it('Should return array with item added at the end', () => {
         expect(funcs.addItemToArray([14, 31, 67], 7)).toEqual([14, 31, 67, 7]);
         expect(funcs.addItemToArray([1, 3, 122, 32, 12], 10)).toEqual([1, 3, 122, 32, 12, 10]);
-
+        expect(funcs.addItemToArray([1, 3, 122, 32, 12], 'YES')).toEqual([1, 3, 122, 32, 12, 'YES']);
     })
 });
 
+describe('addItemToFront', () => {
+    it('Should return array with item added at the front of array', () => {
+        expect(funcs.addItemToFront([14, 31, 67], 7)).toEqual([7, 14, 31, 67]);
+        expect(funcs.addItemToFront([1, 3, 122, 32, 12], 10)).toEqual([10, 1, 3, 122, 32, 12]);
+        expect(funcs.addItemToFront([1, 3, 122, 32, 12], 'YES')).toEqual(['YES',1, 3, 122, 32, 12]);
+    })
+});
 
+describe('wordsToSentence', () => {
+    it('Should return all words in an array seperated by spaces', () => {
+        expect(funcs.wordsToSentence(['Jane', 'Fonda', 'Fanatic'])).toBe('Jane Fonda Fanatic');
+        expect(funcs.wordsToSentence(['For', 'The', 'Horde'])).toBe('For The Horde');
+        expect(funcs.wordsToSentence(['I', 'Love', 'Lucy'])).toBe('I Love Lucy');
+    })
+});
+
+describe('contains', () => {
+    it('Should return true if the array has the item', () => {
+        expect(funcs.contains([2, 4, 13, 13, 7], 13)).toBe(true);  
+        expect(funcs.contains([1, 14, 313, 513, 17], 17)).toBe(true); 
+        expect(funcs.contains([2, 4, 13, 13, 7], 3)).toBe(false); 
+    })
+});
+
+describe('addNumbers', () => {
+    it('Should return the sum of all the numbers in the array', () => {
+        expect(funcs.addNumbers([2, 4, 13, 13, 7])).toBe(39);
+        expect(funcs.addNumbers([1, 14,])).toBe(15);
+        expect(funcs.addNumbers([100,200,300,500,700])).toBe(1800);
+    })
+});
+
+describe('averageTestScore', () => {
+    it('Should return the average score', () => {
+        expect(funcs.averageTestScore([10,15,15,30,12])).toBe(16.4);
+        expect(funcs.averageTestScore([17, 14, 11, 45, 11])).toBe(19.6);
+        // expect(funcs.averageTestScore([41,48,40,44,57,35])).toBe(44.1666667);
+    })
+});
+
+describe('largestNumber', () => {
+    it('Should return the largest number contained', () => {
+        expect(funcs.largestNumber([10, 15, 15, 30, 12])).toBe(30);
+        expect(funcs.largestNumber([17, 14, 11, 45, 11])).toBe(45);
+        // expect(funcs.largestNumber([41, 48, 40, -44, 57, 3500000])).toBe(350000);
+    })
+});
