@@ -196,9 +196,89 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('lessThanNinety', () => {});
+  describe('lessThanNinety', () => {
+    it('Returns true when given a number less than 90', () => {
+      const actual = helpers.lessThanNinety(88);
+      expect(actual).toBeTruthy();
+    });
 
-  // describe('greaterThanFifty', () => {});
+    it('Returns true when given a numerical string less than 90', () => {
+      const actual = helpers.lessThanNinety('88');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given a number greater than 90', () => {
+      const actual = helpers.lessThanNinety(101);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given a numerical string greater than 90', () => {
+      const actual = helpers.lessThanNinety('101');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given no arguments', () => {
+      const actual = helpers.lessThanNinety();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns true when given a boolean', () => {
+      const actual = helpers.lessThanNinety(true);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.lessThanNinety(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.lessThanNinety(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('greaterThanFifty', () => {
+    it('Returns true when given a number greater than 50', () => {
+      const actual = helpers.greaterThanFifty(88);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns true when given a numerical string greater than 50', () => {
+      const actual = helpers.greaterThanFifty('88');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given a number less than 50', () => {
+      const actual = helpers.greaterThanFifty(0);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given a numerical string less than 50', () => {
+      const actual = helpers.greaterThanFifty('0');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given no arguments', () => {
+      const actual = helpers.greaterThanFifty();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given a boolean', () => {
+      const actual = helpers.greaterThanFifty(true);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.greaterThanFifty(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.greaterThanFifty(null);
+      expect(actual).toBeFalsy();
+    });
+  });
 
   describe('add', () => {
     it('Return the sum of the arguments when given two numbers', () => {
