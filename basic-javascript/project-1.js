@@ -56,17 +56,19 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
+  if (isNumeric(num)) {
+    return num % 2 === 0;
   }
+
   return false;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  if (isNumeric(num)) {
+    return num % 2 === 1;
   }
-  return true;
+
+  return false;
 };
 
 const square = num => {

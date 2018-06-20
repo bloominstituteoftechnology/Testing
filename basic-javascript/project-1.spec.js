@@ -325,9 +325,109 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('isEven', () => {});
+  describe('isEven', () => {
+    it('Returns true when given an even number', () => {
+      const actual = helpers.isEven(2);
+      expect(actual).toBeTruthy();
+    });
 
-  // describe('isOdd', () => {});
+    it('Returns true when given an even number as a string', () => {
+      const actual = helpers.isEven('2');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given an odd number', () => {
+      const actual = helpers.isEven(3);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given an odd number as a string', () => {
+      const actual = helpers.isEven('3');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns true when given false', () => {
+      const actual = helpers.isEven(false);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given true', () => {
+      const actual = helpers.isEven(true);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given no arguments', () => {
+      const actual = helpers.isEven();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given a string', () => {
+      const actual = helpers.isEven('hey');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.isEven(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.isEven(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('isOdd', () => {
+    it('Returns true when given an odd number', () => {
+      const actual = helpers.isOdd(11);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns true when given an odd number as a string', () => {
+      const actual = helpers.isOdd('11');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given an even number', () => {
+      const actual = helpers.isOdd(16);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given an even number as a string', () => {
+      const actual = helpers.isOdd('16');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given false', () => {
+      const actual = helpers.isOdd(false);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns true when given true', () => {
+      const actual = helpers.isOdd(true);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given no arguments', () => {
+      const actual = helpers.isOdd();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given a string', () => {
+      const actual = helpers.isOdd('hey');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.isOdd(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.isOdd(null);
+      expect(actual).toBeFalsy();
+    });
+  });
 
   describe('square', () => {
     it('Return the square when given a number', () => {
@@ -618,7 +718,7 @@ describe('Project 1', () => {
     });
   });
 
-  describe.only('getRectangularPrismVolume', () => {
+  describe('getRectangularPrismVolume', () => {
     it('Returns the volume when given a length, width, and height', () => {
       const expected = 6;
       const actual = helpers.getRectangularPrismVolume(1, 2, 3);
@@ -631,7 +731,7 @@ describe('Project 1', () => {
       expect(actual).toBe(expected);
     });
 
-    it("Converts true and false to 1 and 0 and calculates the volume", () => {
+    it('Converts true and false to 1 and 0 and calculates the volume', () => {
       const expected = 1;
       const actual = helpers.getRectangularPrismVolume(true, true, true);
       expect(actual).toBe(expected);
