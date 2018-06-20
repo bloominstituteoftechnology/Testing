@@ -66,7 +66,7 @@ describe('Arrays', () => {
     })
     it('should return an array', () => {
       const arr = [1, 2, 3, 4, 5, 6];
-      const filteredArr = arrayFunctions.filter(arr, item => typeof item === Number);
+      const filteredArr = arrayFunctions.filter(arr, item => typeof item === 'number');
       expect(filteredArr).toEqual([1, 2, 3, 4, 5, 6]);
       expect(typeof filteredArr).toBe('object')
       const array = [3, 5, 6, 11, 15, 21, 24, 30, 33, 35, 38]
