@@ -16,7 +16,7 @@ describe('project-2', () => {
 });
 
 describe('project-2', () => {
-    it.only('isTenOrFive',() => {
+    it.only('isTenOrFive', () => {
         expect(funcs.isTenOrFive(33)).toBeFalsy();
         expect(funcs.isTenOrFive(10)).toBeTruthy();
     });
@@ -50,19 +50,19 @@ describe('project-2', () => {
 
 describe('project-2', () => {
     it.only('returnFirst', () => {
-        expect(funcs.returnFirst([1,2,3,4])).toBe(1)
+        expect(funcs.returnFirst([1, 2, 3, 4])).toBe(1)
     });
 });
 
 describe('project-2', () => {
     it.only('returnLast', () => {
-        expect(funcs.returnLast([1,2,3,4])).toBe(4)
+        expect(funcs.returnLast([1, 2, 3, 4])).toBe(4)
     });
 });
 
 describe('project-2', () => {
     it.only('getArrayLength', () => {
-        expect(funcs.getArrayLength([1,2,3,4])).toBe(4)
+        expect(funcs.getArrayLength([1, 2, 3, 4])).toBe(4)
     });
 });
 
@@ -72,11 +72,11 @@ describe('project-2', () => {
     });
 });
 
-describe('project-2', () => {
-    it.only('addItemToArray', () => {
-        expect(funcs.addItemToArray([1,2,3,4], 5)).to([1,2,3,4,5])
-    });
-});
+// describe('project-2', () => {
+//     it.only('addItemToArray', () => {
+//         const expected = []
+//     });
+// });
 
 // describe('project-2', () => {
 //     it.only('addItemToFront', () => {
@@ -110,7 +110,7 @@ describe('project-2', () => {
 
 // describe('project-2', () => {
 //     it.only('largestNumber', () => {
-//         expect()
+//         expect(funcs.largestNumber)
 //     });
 // }); 
 
@@ -135,4 +135,4 @@ const {
     addNumbers,
     averageTestScore,
     largestNumber
-  } = funcs;
+} = funcs;
