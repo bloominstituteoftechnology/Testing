@@ -50,25 +50,55 @@ describe('Arrays', () => {
       });
   });
 
-  describe('find(array, cb', () => {
-      const find = arrayFunctions.find; 
-      expect(typeof find).toBe('function'); 
+  // describe('find(array, cb)', () => {
+      
+  //     it('should be a function', () => {
+  //       const find = arrayFunctions.find; 
+  //       expect(typeof find).toBe('function'); 
+  //     })
+  
+  //     it('looks for a particular element in the array and returns that element in an array', () => {
+  //       const find = arrayFunctions.find; 
+  //       expect(find(['govi', 'xang', 'ellen'], (element => element === 'govi')).toEqual('govi');
+  //     });
+  //   });
+
+
+     describe('find', function() {
+    it('should be a function', function() {
+      const find = arrayFunctions.find;
+      expect(typeof find).toBe('function');
     });
 
+    it('returns the element if found', function() {
+      const find = arrayFunctions.find;
+      expect(find(['govi', 'ellen', 'xang'], element => element === 'xang')).toEqual('xang');
+    });
+  });
 
+
+    describe('flatten', function () {
+      it('should be a function', function() {
+        const flatten = arrayFunctions.flatten;
+        expect(typeof flatten).toBe('function');
+      });
+
+      it('returns all the elements flattend', function () {
+        const flatten = arrayFunctions.flatten;
+        expect(flatten([33, 44, 55, [11]])).toEqual([33, 44, 55, 11]);
+      })
+    });
+
+    describe('reduce', function () {
+      const reduce = arrayFunctions.reduce;
+      expect(typeof reduce).toBe('function');
+    });
+
+    it('returns the sum of nums in the array', function () {
+      const reduce = arrayFunctions.reduce;
+      expect(reduce([3,3,3], (memo, num) => {
+        return memo + num;
+      })).toBe(9);
+    });
 
   });
-// const filter = (elements, cb) => {
-//   const filteredValues = [];
-//   each(element, item => {
-//     if (cb(item)) filteredValues.push(item);
-//   });
-//   return filteredValues;
-// };
-
-// const find = (elements, cb) => {
-//   for (let i = 0; i < elements.length; i++) {
-//     if (cb(elements[i])) return elements[i];
-//   }
-//   return undefined;
-// };
