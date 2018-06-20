@@ -507,11 +507,149 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('getRectangleArea', () => {});
+  describe('getRectangleArea', () => {
+    it('Return the area when given length and height', () => {
+      const expected = 64;
+      const actual = helpers.getRectangleArea(8, 8);
+      expect(actual).toBe(expected);
+    });
 
-  // describe('getTriangleArea', () => {});
+    it('Return the area when given length and height as strings', () => {
+      const expected = 6;
+      const actual = helpers.getRectangleArea('3', '2');
+      expect(actual).toBe(expected);
+    });
 
-  // describe('getCircleArea', () => {});
+    it('Converts true and false to 1 and 0 and calculates the area', () => {
+      const expected = 1;
+      const actual = helpers.getRectangleArea(true, true);
+      expect(actual).toBe(expected);
+    });
 
-  // describe('getRectangularPrismVolume', () => {});
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.getRectangleArea();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.getRectangleArea(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.getRectangleArea(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('getTriangleArea', () => {
+    it("Return the triangle's area when given base and height", () => {
+      const expected = 6;
+      const actual = helpers.getTriangleArea(3, 4);
+      expect(actual).toBe(expected);
+    });
+
+    it("Return the triangle's area when given base and height as strings", () => {
+      const expected = 24;
+      const actual = helpers.getTriangleArea('6', '8');
+      expect(actual).toBe(expected);
+    });
+
+    it("Converts true and false to 1 and 0 and calculates the triangle's area", () => {
+      const expected = 0.5;
+      const actual = helpers.getTriangleArea(true, true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.getTriangleArea();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.getTriangleArea(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.getTriangleArea(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('getCircleArea', () => {
+    it("Return the circle's area when given the radius", () => {
+      const expected = 28.27;
+      const actual = helpers.getCircleArea(3);
+      expect(actual).toBeCloseTo(expected);
+    });
+
+    it("Return the circle's area when given the radius", () => {
+      const expected = 452.39;
+      const actual = helpers.getCircleArea('12');
+      expect(actual).toBeCloseTo(expected);
+    });
+
+    it('Returns 3.14 when given true', () => {
+      const expected = 3.14;
+      const actual = helpers.getCircleArea(true);
+      expect(actual).toBeCloseTo(expected);
+    });
+
+    it('Returns 0 when given false', () => {
+      const expected = 0;
+      const actual = helpers.getCircleArea(false);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.getCircleArea();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.getCircleArea(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.getCircleArea(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe.only('getRectangularPrismVolume', () => {
+    it('Returns the volume when given a length, width, and height', () => {
+      const expected = 6;
+      const actual = helpers.getRectangularPrismVolume(1, 2, 3);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns the volume when given a length, width, and height as strings', () => {
+      const expected = 480;
+      const actual = helpers.getRectangularPrismVolume('6', '8', '10');
+      expect(actual).toBe(expected);
+    });
+
+    it("Converts true and false to 1 and 0 and calculates the volume", () => {
+      const expected = 1;
+      const actual = helpers.getRectangularPrismVolume(true, true, true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.getRectangularPrismVolume();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.getRectangularPrismVolume(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.getRectangularPrismVolume(null);
+      expect(actual).toBeFalsy();
+    });
+  });
 });
