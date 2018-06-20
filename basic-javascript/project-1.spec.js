@@ -641,11 +641,122 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('raiseToPower', () => {});
+  describe('raiseToPower', () => {
+    it('Return the value raised to the power of when given a number and an exponent', () => {
+      const expected = 16;
+      const actual = helpers.raiseToPower(4, 2);
+      expect(actual).toBe(expected);
+    });
 
-  // describe('roundNumber', () => {});
+    it('Return the value raised to the power of when given a numerical string and exponent', () => {
+      const expected = 16;
+      const actual = helpers.raiseToPower('4', '2');
+      expect(actual).toBe(expected);
+    });
 
-  // describe('roundUp', () => {});
+    it('Converts false/true to 0/1 and calculates first arg to the power of the second arg', () => {
+      const expected = 1;
+      const actual = helpers.raiseToPower(true, true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.raiseToPower();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.raiseToPower(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.raiseToPower(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('roundNumber', () => {
+    it('Return the rounded value when given a number', () => {
+      const expected = 5;
+      const actual = helpers.roundNumber(5.4);
+      expect(actual).toBe(expected);
+    });
+
+    it('Return the rounded value when given a numerical string', () => {
+      const expected = 5;
+      const actual = helpers.roundNumber('5.4');
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 0 when given false', () => {
+      const expected = 0;
+      const actual = helpers.roundNumber(false);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 1 when given true', () => {
+      const expected = 1;
+      const actual = helpers.roundNumber(true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.roundNumber();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.roundNumber(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.roundNumber(null);
+      expect(actual).toBeFalsy();
+    });
+  });
+
+  describe('roundUp', () => {
+    it('Return the rounded up value when given a number', () => {
+      const expected = 10;
+      const actual = helpers.roundUp(9.8);
+      expect(actual).toBe(expected);
+    });
+
+    it('Return the rounded up value when given a numerical string', () => {
+      const expected = 10;
+      const actual = helpers.roundUp('9.8');
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 0 when given false', () => {
+      const expected = 0;
+      const actual = helpers.roundUp(false);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns 1 when given true', () => {
+      const expected = 1;
+      const actual = helpers.roundUp(true);
+      expect(actual).toBe(expected);
+    });
+
+    it('Returns false when called without an argument', () => {
+      const actual = helpers.roundUp();
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given undefined', () => {
+      const actual = helpers.roundUp(undefined);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given null', () => {
+      const actual = helpers.roundUp(null);
+      expect(actual).toBeFalsy();
+    });
+  });
 
   describe('addExclamationPoint', () => {
     it('Returns string with exclamation point on end when given a string', () => {
