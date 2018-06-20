@@ -144,7 +144,57 @@ describe('Project 1', () => {
     });
   });
 
-  // describe('areEqual', () => {});
+  describe('areEqual', () => {
+    it('Returns true when given two identical numbers', () => {
+      const actual = helpers.areEqual(33, 33);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given two different numbers', () => {
+      const actual = helpers.areEqual(12, 16);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns true when given two identical decimals', () => {
+      const actual = helpers.areEqual(2.2, 2.2);
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given two different decimals', () => {
+      const actual = helpers.areEqual(1.6, 2.56);
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns true when given two identical strings', () => {
+      const actual = helpers.areEqual('cs10', 'cs10');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given two different strings', () => {
+      const actual = helpers.areEqual('Lambda', 'School');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns true when given two identical booleans', () => {
+      const actual = helpers.areEqual('true', 'true');
+      expect(actual).toBeTruthy();
+    });
+
+    it('Returns false when given two different booleans', () => {
+      const actual = helpers.areEqual('true', 'false');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given two arrays', () => {
+      const actual = helpers.areEqual('true', 'false');
+      expect(actual).toBeFalsy();
+    });
+
+    it('Returns false when given two objects', () => {
+      const actual = helpers.areEqual('true', 'false');
+      expect(actual).toBeFalsy();
+    });
+  });
 
   // describe('lessThanNinety', () => {});
 
