@@ -30,7 +30,7 @@ const find = (elements, cb) => {
 
 const filter = (elements, cb) => {
   const filteredValues = [];
-  each(element, item => {
+  each(elements, item => {
     if (cb(item)) filteredValues.push(item);
   });
   return filteredValues;
@@ -42,8 +42,7 @@ const flatten = elements => {
     (memo, item) => {
       if (Array.isArray(item)) return memo.concat(flatten(item));
       return memo.concat(item);
-    },
-    []
+    }, []
   );
   return flattenedArr;
 };

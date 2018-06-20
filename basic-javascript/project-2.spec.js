@@ -101,7 +101,7 @@ describe('project-2', () => {
 describe('project-2', () => {
     describe('incrementByOne', () => {
         it('should return the given array whose contained numbers are increased by 1', () => {
-            expect(funcs.incrementByOne([1, 2, 3])).toBe([2, 3, 4]);
+            expect(funcs.incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
         });
     });
 });
