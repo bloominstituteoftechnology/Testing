@@ -120,10 +120,14 @@ describe('project-1', () => {
         it('arg1 should be devisible by arg2', () => {
             const expected = NaN;
             const actual = helpers.divide(80, undefined);
+
+            expect(actual).toEqual(expected);
         })
         it('arg1 should be devisible by arg2', () => {
-            const expected = 10;
+            const expected = 8;
             const actual = helpers.divide(80, 10);
+
+            expect(actual).toEqual(expected);
         })
     })
 
@@ -131,10 +135,59 @@ describe('project-1', () => {
         it('arg1 and arg2 should be multiplied together', () => {
             const expected = NaN;
             const actual = helpers.multiply(7, 'pillow');
+
+            expect(actual).toEqual(expected);
         })
         it('arg1 and arg2 should be multiplied together', () => {
             const expected = 21;
             const actual = helpers.multiply(7, 3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('getRemainder', () => {
+        it('gives a remainder of arg1 devided by arg2', () => {
+            const expected = NaN;
+            const actual = helpers.getRemainder(10, 'string');
+
+            expect(actual).toEqual(expected);
+        })
+        it('gives a remainder of arg1 devided by arg2', () => {
+            const expected = 1;
+            const actual = helpers.getRemainder(10, 3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('isEven', () => {
+        it('arg1 modulo arg2 should result in an even remainder', () => {
+            const expected = NaN;
+            const actual = helpers.isEven(24, 'string');
+
+            expect(actual).toEqual(expected);
+        })
+        it('arg1 modulo arg2 should result in an even number', () => {
+            const expected = 0;
+            const actual = helpers.isEven(24, 2);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('isOdd', () => {
+        it('arg1 modulo arg2 should result in an odd ramainder', () => {
+            const expected = NaN;
+            const actual = helpers.isOdd(11, 'string');
+
+            expect(actual).toEqual(expected);
+        })
+        it('arg1 modulo arg2 should result in an odd ramainder', () => {
+            const expected = 1;
+            const actual = helpers.isOdd(11, 2);
+
+            expect(actual).toEqual(expected);
         })
     })
 
