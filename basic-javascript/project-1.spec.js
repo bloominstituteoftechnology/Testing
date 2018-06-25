@@ -2,8 +2,12 @@ const helpers = require('./project-1');
 
 describe("project-1", () => {
     describe("multiplyByTen", () =>{
+
+        it("should return a number", () =>{
+            expect(typeof helpers.multiplyByTen(5)).toBe("number");
+        })
         it("should return the given number multiplied by ten", () =>{
-            expect(helpers.multiplyByTen(5)).toBe(Number(50));
+            expect(helpers.multiplyByTen(5)).toBe(50);
         })
         it("should return NaN if undefined", ()=>{
             expect(helpers.multiplyByTen(undefined)).toBe(NaN);
@@ -12,11 +16,15 @@ describe("project-1", () => {
             expect(helpers.multiplyByTen(false)).toBe(0)
         })
         it("should return 0 if 0 is muliplied by 10", () =>{
-            expect(helpers.multiplyByTen(0)).toBe(Number(0));
+            expect(helpers.multiplyByTen(0)).toBe(0);
         })
     });
 
     describe("subtractFive", () => {
+        
+        it("should return a number", () =>{
+            expect(typeof helpers.subtractFive(5)).toBe("number");
+        })
         it("should return the given number minus five", () => {
             expect(helpers.subtractFive(56)).toBe(Number(51));
         })
@@ -33,6 +41,10 @@ describe("project-1", () => {
     });
 
     describe("areSameLength", () => {
+        
+        it("should return a boolean", () =>{
+            expect(typeof helpers.areSameLength("String1", "String2")).toBe("boolean");
+        })
         it("should return true if lengths are equal", () => {
             expect(helpers.areSameLength("string1", "string2")).toBeTruthy();
         })
@@ -46,6 +58,9 @@ describe("project-1", () => {
     });
 
     describe("areEqual", () => {
+        it("should return a boolean", () =>{
+            expect(typeof helpers.areEqual(8,8)).toBe("boolean");
+        })
         it("should return true if numbers are equal", () => {
             expect(helpers.areEqual(8,8)).toBeTruthy();
         })
@@ -63,6 +78,9 @@ describe("project-1", () => {
         })
     });
     describe("lessThanNinety", () => {
+        it("should return a boolean", () =>{
+            expect(typeof helpers.lessThanNinety(8)).toBe("boolean");
+        })
         it("should return true if less than ninety", () => {
             expect(helpers.lessThanNinety(50)).toBeTruthy();
         })
@@ -75,6 +93,9 @@ describe("project-1", () => {
     });
 
     describe("greaterThanFifty", () => {
+        it("should return a boolean", () =>{
+            expect(typeof helpers.greaterThanFifty(8)).toBe("boolean");
+        })
         it("should return true if greater than fifty", () => {
             expect(helpers.greaterThanFifty(51)).toBeTruthy();
         })
@@ -88,36 +109,55 @@ describe("project-1", () => {
 
     describe("add", () => {
         it("should add two numbers", () => {
-            expect(helpers.add(1000, 1952)).toBe(Number(2952));
+            expect(helpers.add(1000, 1952)).toBe(2952);
         })
+        it("should be numbers", () => {
+            expect(typeof helpers.add(1000, 1952)).toBe("number");
+        })
+
 
     });
 
     describe("subtract", () => {
         it("should subtract two numbers", () => {
-            expect(helpers.subtract(1000, 1952)).toBe(Number(-952));
+            expect(helpers.subtract(1000, 1952)).toBe(-952);
+        })
+        it("should return a number", () =>{
+            expect(typeof helpers.subtract(8)).toBe("number");
         })
     });
 
     describe("divide", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.divide(8,2)).toBe("number");
+        })
         it("should divide two numbers", () => {
             expect(helpers.divide("50", "20")).toBe(2.5);
         }) //ask about type coercion when it comes to division
     });
 
     describe("multiply", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.multiply(8,"2")).toBe("number");
+        })
         it("should multiply two numbers", () => {
             expect(helpers.multiply("-5", "6")).toBe(-30);
         }) //ask about type coercion when it comes to multiplication
     });
 
     describe("getRemainder", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.getRemainder(8,2)).toBe("number");
+        })
         it("should get the remainder", () => {
             expect(helpers.getRemainder(10, 3)).toBe(1);
         })
     });
 
     describe("is number even", () => {
+        it("should return a boolean", () =>{
+            expect(typeof helpers.isEven(8)).toBe("boolean");
+        })
         it("should be true if even", () => {
             expect(helpers.isEven(144)).toBeTruthy();
         })
@@ -127,6 +167,9 @@ describe("project-1", () => {
     });
 
     describe("is number odd", () => {
+        it("should return a boolean", () =>{
+            expect(typeof helpers.isOdd(9)).toBe("boolean");
+        })
         it("should be true if odd", () => {
             expect(helpers.isOdd(123)).toBeTruthy();
         })
@@ -136,6 +179,9 @@ describe("project-1", () => {
     });
 
     describe("multiply number by itself", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.square(8)).toBe("number");
+        })
         it("should square the number", () => {
             expect(helpers.square(7)).toBe(49);
         })
@@ -146,6 +192,9 @@ describe("project-1", () => {
     });
     
     describe("cube the number", () =>{
+        it("should return a number", () =>{
+            expect(typeof helpers.cube(8)).toBe("number");
+        })
         it("should cube the number", () => {
             expect(helpers.cube(222)).toBe(10941048);
         })
@@ -155,6 +204,9 @@ describe("project-1", () => {
     });
 
     describe("raise to exponent", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.raiseToPower(8)).toBe("number");
+        })
         it("should raise to exponent", () =>{
             expect(helpers.raiseToPower(3,3)).toBe(27);
         })
@@ -165,6 +217,9 @@ describe("project-1", () => {
     });
 
     describe("round number", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.roundNumber(8)).toBe("number");
+        })
         it("should round the number up", () => {
             expect(helpers.roundNumber(15.789)).toBe(16);
         })
@@ -180,6 +235,9 @@ describe("project-1", () => {
     });
     
     describe("round up a given number", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.roundUp(8)).toBe("number");
+        })
         it("should round any given number up", () => {
             expect(helpers.roundUp(12)).toBe(12);
         })
@@ -195,6 +253,9 @@ describe("project-1", () => {
     });
 
     describe("add exclaimation point to string", () => {
+        it("should return a string", () =>{
+            expect(typeof helpers.addExclamationPoint("string")).toBe("string");
+        })
         it("should return \"undefined!\" if undefined", () => {
             expect(helpers.addExclamationPoint(undefined)).toBe("undefined!");
         })
@@ -210,6 +271,9 @@ describe("project-1", () => {
     });
 
     describe("combine variables", () => {
+        it("should return a string", () =>{
+            expect(typeof helpers.combineNames("string", "ofPearls")).toBe("string");
+        })
         it("should concatenate variables", () => {
             expect(helpers.combineNames("Moises", "Dobarganes")).toBe("Moises Dobarganes");
         })
@@ -220,6 +284,9 @@ describe("project-1", () => {
     });
 
     describe("concatenate greeting with variable", () => {
+        it("should return a string", () =>{
+            expect(typeof helpers.getGreeting("string")).toBe("string");
+        })
         it("should concatenate greeting with name", () => {
             expect(helpers.getGreeting("Christina")).toBe("Hello Christina!");
         })
@@ -229,6 +296,9 @@ describe("project-1", () => {
     });
 
     describe("rectangle area", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.getRectangleArea(8, 5)).toBe("number");
+        })
         it("should return NaN if one or both variables is undefined", () =>{
             expect(helpers.getRectangleArea(undefined, undefined)).toBe(NaN);
         })
@@ -243,6 +313,9 @@ describe("project-1", () => {
 
     })
     describe("triangle area", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.getTriangleArea(8, 5)).toBe("number");
+        })
         it("should return NaN if one or both variables is undefined", () =>{
             expect(helpers.getTriangleArea(undefined, undefined)).toBe(NaN);
         })
@@ -257,6 +330,9 @@ describe("project-1", () => {
 
     })
     describe("area of circle", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.getCircleArea(5)).toBe("number");
+        })
         it("should return NaN if radius is undefined", () =>{
             expect(helpers.getCircleArea(undefined)).toBe(NaN);
         })
@@ -272,6 +348,9 @@ describe("project-1", () => {
     });
 
     describe("volume of rect prism", () => {
+        it("should return a number", () =>{
+            expect(typeof helpers.getRectangularPrismVolume(8, 8, 5)).toBe("number");
+        })
         it("should return volume (all sides same)", () => {
             expect(helpers.getRectangularPrismVolume(5, 5, 5)).toBe(125);
         })
