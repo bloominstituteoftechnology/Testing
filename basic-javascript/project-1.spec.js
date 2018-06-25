@@ -2,6 +2,7 @@ const helpers = require('./project-1');
 
 // start testing!
 describe('project-1', () => {
+    describe('multiplyByTen', () => {
     it('returns NaN when given a non number', () => {
         expect(helpers.multiplyByTen(undefined)).toBeNaN();
         expect(helpers.multiplyByTen('three')).toBeNaN();
@@ -326,4 +327,5 @@ describe('getRectangularPrismVolume', () => {
     it('returns NaN provided a non-Number', () => {
         expect(helpers.getRectangularPrismVolume('string1', 'string2', 'string3')).toBeNaN();
     });
+});
 });
