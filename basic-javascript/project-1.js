@@ -1,9 +1,9 @@
 /* eslint-disable arrow-parens */
-
+//
 const multiplyByTen = num => {
   return num * 10;
 };
-
+//
 const subtractFive = num => {
   return num - 5;
 };
