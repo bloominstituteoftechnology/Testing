@@ -7,11 +7,23 @@ const arrayFunctions = require('./arrays');
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
-describe('Arrays', () => {
-  describe('map', () => {
-    it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
-    });
-  });
-});
+// describe('Arrays()', () => {
+//   describe('map', () => {
+//     it('should be a function', () => {
+//       const map = arrayFunctions.map;
+//       expect(typeof map).toBe('object');
+//     });
+//   });
+// });
+describe( 'Each(arr, cb)', function ()
+{
+  it( 'should pass all array items one by one to cb', function ()
+  {
+    var nums = [];
+    arrayFunctions.Each( [ 1, 2, 3, 4, 5 ], function ( num )
+    {
+      nums.push( num );
+    } );
+    expect( nums ).toEqual( [ 1, 2, 3, 4, 5 ] );
+  } );
+} );

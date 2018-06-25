@@ -21,7 +21,7 @@ describe( 'areSameLength(str1, str2)', function ()
     } );
 } );
 //lessthan ninety
-describe('lessThanNinety(num)', function() {
+describe('lessThanNinety(nu)', function() {
   it('should return true if the argument is less than ninety', function() {
     expect(helpers.lessThanNinety(15)).toBe(true);
     expect(helpers.lessThanNinety(90)).toBe(false);

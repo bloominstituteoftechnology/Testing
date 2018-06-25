@@ -3,22 +3,22 @@
 
 /* eslint-disable no-unused-vars, arrow-body-style, arrow-parens */
 
-const keys = (obj) => {
+_.keys = ( { obj }) => {
   return Object.keys(obj);
 };
 
-const values = (obj) => {
+ _.values = (obj) => {
   return Object.keys(obj).map((key) => {
     return obj[key];
   });
 };
 
-const mapObject = (obj, cb) => {
+_.mapObject = (obj, cb,[context]) => {
   Object.keys(obj).forEach((key) => (obj[key] = cb(obj[key])));
   return obj;
 };
 
-const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
+_.pair (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
 
 const invert = (obj) => {
   Object.keys(obj).forEach((key) => {
