@@ -162,34 +162,50 @@ describe('project-1', () => {
     })
 
     describe('isEven', () => {
-        it('arg1 modulo arg2 should result in an even remainder', () => {
-            const expected = NaN;
-            const actual = helpers.isEven(24, 'string');
+        it('remainder of arg1 devided by 2 should be equal to 0', () => {
+            const expected = false;
+            const actual = helpers.isEven(3);
 
             expect(actual).toEqual(expected);
-        })
-        it('arg1 modulo arg2 should result in an even number', () => {
-            const expected = 0;
-            const actual = helpers.isEven(24, 2);
+        });
+        it('remainder of arg1 devided by 2 should be equal to 0', () => {
+            const expected = true;
+            const actual = helpers.isEven(2);
 
             expect(actual).toEqual(expected);
-        })
-    })
-
+        });
+    });
+    //check logic
     describe('isOdd', () => {
-        it('arg1 modulo arg2 should result in an odd ramainder', () => {
-            const expected = NaN;
-            const actual = helpers.isOdd(11, 'string');
+        it('remainder of arg1 devided by 2 should be equal to 0', () => {
+            const expected = true;
+            const actual = helpers.isOdd(11);
 
             expect(actual).toEqual(expected);
         })
-        it('arg1 modulo arg2 should result in an odd ramainder', () => {
-            const expected = 1;
-            const actual = helpers.isOdd(11, 2);
+        it('remainder of arg1 devided by 2 should be equal to 0', () => {
+            const expected = false;
+            const actual = helpers.isOdd(12);
 
             expect(actual).toEqual(expected);
         })
     })
+
+    describe('square', () => {
+        it('arg must be squared', () => {
+            const expected = NaN;
+        const actual = helpers.square('string');
+
+        expect(actual).toEqual(expected);
+        })
+        it('arg must be squared', () => {
+            const expected = 16;
+        const actual = helpers.square(4);
+
+        expect(actual).toEqual(expected);
+        })
+    })
+
 
 });
 
