@@ -143,4 +143,61 @@ describe('project-2', () => {
         })
     });
 
+    describe('getArrayLength', () => {
+        it('should return the length of the array', () => {
+            const expected = 5;
+            const actual = funcs.getArrayLength([1,2,3,4,5]);
+
+            expect(actual).toEqual(expected);
+        });
+        it('arg must be an array', () => {
+            const expected = undefined;
+            const actual = funcs.getArrayLength(0);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('incrementByOne', () => {
+        it('increment the array by 1', () => {
+            const expected = 2;
+            const actual = funcs.incrementByOne(2);
+
+            expect(actual).toEqual(expected);
+        });
+        it('arg must be a number', () => {
+            const expected = NaN;
+            const actual = funcs.incrementByOne(NaN);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('addItemToArray', () => {
+        it('should add item to the end of the array', () => {
+            const array = [1, 3, 5]
+            const expected = [1, 3, 5, 7];
+            const actual = funcs.addItemToArray(array, 7);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('addItemToFront', () => {
+        it('should unshift an item to the front of the arr', () => {
+            const array = [1, 3, 5];
+            const expected = [0, 1, 3, 5];
+            const actual = funcs.addItemToFront(array, 0);
+
+            expect(actual).toEqual(expected);
+        });
+        it('should unshift an item to the front of the arr', () => {
+            const array = [1, 3, 5];
+            const expected = [undefined, 1, 3, 5];
+            const actual = funcs.addItemToFront(array, undefined);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
 });
