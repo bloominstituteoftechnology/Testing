@@ -233,6 +233,7 @@ describe('addExclamationPoint', () => {
 describe('combineNames', () => {
     it('returns the concatenated name', () => {
         expect(helpers.combineNames('Harry', 'Potter')).toBe('Harry Potter');
+        expect(helpers.combineNames('Harry', 'Potter')).not.toBe('HarryPotter');
     })
 })
 
