@@ -17,7 +17,18 @@ describe('project-1', () => {
     });
 
     describe('subtractFive', () => {
-        //arrange
+        it('arg1 should be subtracted arg2', () => {
+            //arrange
+        const expected = NaN;
+
+        //act
+        const actual = helpers.subtractFive('string');
+
+        //assert
+        expect(actual).toEqual(expected);
+        })
+        it('arg1 should be subtracted arg2', () => {
+            //arrange
         const expected = 45;
 
         //act
@@ -25,6 +36,7 @@ describe('project-1', () => {
 
         //assert
         expect(actual).toEqual(expected);
+        })
     });
     //not passing, why?
     describe('areSameLength', () => {
@@ -38,7 +50,6 @@ describe('project-1', () => {
             const expected = true;
             const actual = helpers.areSameLength('band', 'hand')
         })
-
     });
 
     describe ('areEqual', () => {
@@ -134,7 +145,7 @@ describe('project-1', () => {
     describe('multiply', () => {
         it('arg1 and arg2 should be multiplied together', () => {
             const expected = NaN;
-            const actual = helpers.multiply(7, 'pillow');
+            const actual = helpers.multiply(7, 'string');
 
             expect(actual).toEqual(expected);
         })
@@ -146,7 +157,7 @@ describe('project-1', () => {
         })
     })
 
-    describe('getRemainder', () => {
+    describe('getRemainder', () => { 
         it('gives a remainder of arg1 devided by arg2', () => {
             const expected = NaN;
             const actual = helpers.getRemainder(10, 'string');
@@ -193,19 +204,45 @@ describe('project-1', () => {
 
     describe('square', () => {
         it('arg must be squared', () => {
-            const expected = NaN;
+        const expected = NaN;
         const actual = helpers.square('string');
 
         expect(actual).toEqual(expected);
         })
         it('arg must be squared', () => {
-            const expected = 16;
+        const expected = 16;
         const actual = helpers.square(4);
 
         expect(actual).toEqual(expected);
         })
     })
 
+    describe('cube', () => {
+        let expected = 125;
+        it('should be a function', () => {
+            expect(typeof helpers.cube).toEqual('function');
+        });
+        let actual = helpers.cube(5);
+        it('should return a number', () => {
+            expect(typeof actual).toEqual('number');
+        });
+    });
+
+    describe('raiseToPower', () => {
+        let expected = 125;
+        it('should be a function', () => {
+            expect(typeof helpers.raiseToPower).toEqual('function');
+        });
+        let actual = helpers.raiseToPower(5, 3);
+        it('arg1 should be the number and arg2 should be the exponent', () => {
+            expect(typeof helpers.raiseToPower).toEqual
+        })
+    })
+
 
 });
+
+//Moises ideas!
+// const typeOf = expect(typeof actual).toEqual;
+// const shouldEqual = expect(action).toEqual(expected);
 
