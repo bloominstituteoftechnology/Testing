@@ -214,13 +214,13 @@ describe("project-1", () => {
 
   describe('roundUp', () => {
     it('should return a number', () => {
-      expect(helpers.roundNumber(8)).toBeNumber()
+      expect(helpers.roundUp(8)).toBeNumber()
     })
     it('should return 4 given 3.1', () => {
-      expect(helpers.roundNumber(3.5)).toBe(4);
+      expect(helpers.roundUp(3.1)).toBe(4);
     })
     it('should return NaN if no arguments provided', () => {
-      expect(helpers.raiseToPower()).toBeNaN()
+      expect(helpers.roundUp()).toBeNaN()
     })
   })
 
