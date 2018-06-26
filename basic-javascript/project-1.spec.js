@@ -238,7 +238,92 @@ describe('project-1', () => {
             expect(typeof helpers.raiseToPower).toEqual
         })
     })
+    //come back to correct
+    describe.skip('roundNumber', () => {
+        let expected = 4;
+        it('should be a function', () => {
+            expect(typeof helpers.roundNumber).toEaual('fumction');
+        });
+        let actual = helpers.roundNumber(3.5);
+        it('arg should be a rounded number', () => {
+            expect(typeof helpers.roundNumber).toEqual('number');
+        });
+    });
 
+    describe('addExclamationPoint', () => {
+        // it('should add an exclamation', () => {
+        //     const expected = 2;
+        //     const actual = helpers.addExclamationPoint(2);
+
+        //     expect(actual).toEqual(expected);
+        // });
+        it('should add an exclamation', () => {
+            const expected = 'hi!';
+            const actual = helpers.addExclamationPoint('hi');
+
+            expect(actual).toEqual(expected);
+        });
+    })
+
+    describe.skip('combineNames', () => {
+        it('arg1 and or arg2 can not be undefined', () => {
+            const expected = 'Peter Piper';
+            const actual = helpers.combineNames('Peter', 'Piper');
+
+            expect(actual).toEqual(expected);
+        });
+        // it('arg1 and arg1 should be combined', () => {
+        //     const expected = peter piper;
+        //     const actual = helpers.combineNames(peter, piper);
+
+        //     expect(actual).toEqual(expected);
+        // });
+    });
+
+    describe('getGreeting', () => {
+        it(' arg can not be undefined', () => {
+            const expected = 'Hello name!';
+            const actual = helpers.getGreeting('name');
+
+            expect(actual).toEqual(expected);
+        })
+    });
+
+    describe('getRectangleArea', () => {
+        it('arg1 muliplied by arg2 should output rectangle area', () => {
+            const expected = 12;
+            const actual = helpers.getRectangleArea(6, 2);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getTriangleArea', () => {
+        it('triangle area is arg1 and arg2 miltiplied by 0.5', () => {
+            const expected = 6;
+            const actual = helpers.getTriangleArea(6, 2);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getCircleArea', () => {
+        it('should return a circle area', () => {
+            const expected = 12.566370614359172;
+            const actual = helpers.getCircleArea(2, 2);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getRectangularPrismVolume', () => {
+        it('input 3 elements for all arguments', () => {
+            const expected = NaN;
+            const actual = helpers.getRectangularPrismVolume(12, 8, );
+
+            expect(actual).toEqual(expected);
+        });
+    });
 
 });
 
