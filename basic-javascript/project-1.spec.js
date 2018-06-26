@@ -224,11 +224,66 @@ describe("project-1", () => {
     })
   })
 
+  describe('addExclamationPoint', () => {
+    it('should return a string', () => {
+      expect(helpers.addExclamationPoint()).toBeString();
+    })
+    it('should return an ! at the end', () => {
+      expect(helpers.addExclamationPoint()).toContain('!');
+    })
+  })
 
+  describe('combineNames', () => {
+    it('should return a string', () => {
+      expect(helpers.combineNames('first', 'last')).toBeString();
+    })
+    it('should return a white space', () => {
+      expect(helpers.combineNames('first', 'last')).toContain(' ');
+    })
+  })
 
+  describe('getGreeting', () => {
+    it('should return a string', () => {
+      expect(helpers.getGreeting('first', 'last')).toBeString();
+    })
+    it('should return a white space', () => {
+      expect(helpers.getGreeting('first', 'last')).toContain(' ');
+    })
+  })
 
+  describe('getRectangleArea', () => {
+    it('should be a number', () => {
+      expect(helpers.getRectangleArea(5, 3)).toBeNumber();
+    })
+    it('should return a product', () => {
+      expect(helpers.getRectangleArea(5, 5)).toBe(25);
+    })
+  })
 
+  describe('getTriangleArea', () => {
+    it('should be a number', () => {
+      expect(helpers.getTriangleArea(6, 4)).toBeNumber();
+    })
+    it('should return 8 given 4', () => {
+      expect(helpers.getTriangleArea(4, 4)).toBe(8);
+    })
+  })
 
+  describe('getCircleArea', () => {
+    const expected = 78.539;  
+    const actual = helpers.getCircleArea(5);
+    it('should return floating point appoximation', () => {
+      expect(actual).toBeCloseTo(expected, 2);
+    })
+  })
+
+  describe('getRectangularPrismVolume', () => {
+    const expected = 105;
+    const actual = helpers.getRectangularPrismVolume(7, 3, 5);
+    it('should return 105 given 7, 3, 5', () => {
+      expect(actual).toBe(expected);
+    })
+  })
 
 })
 
