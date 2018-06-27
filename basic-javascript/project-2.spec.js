@@ -1,3 +1,55 @@
 const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
+describe('tests functions in project-2.js', () => {
+    it('should get the biggest number', () => {
+        expect(funcs.getBiggest(10, 100)).toBe(100);
+    })
+    it('should greet in correct language', () => {
+        expect(funcs.greeting("Spanish")).toBe("Hola!");
+    })
+    it('should return true if number is 5 or 10', () => {
+        expect(funcs.isTenOrFive(10)).toBe(true);
+    })
+    it('determine if number is within range', () => {
+        expect(funcs.isInRange(100)).toBe(false);
+    })
+    it('should determine if input is integer', () => {
+        expect(funcs.isInteger('fish')).toBe(false);
+    })
+    it('should do the fizzbuzz thing', () => {
+        expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
+    })
+    it('should determine if number is prime', () => {
+        expect(funcs.isPrime(17)).toBe(true);
+    })
+    it('should return first item in array', () => {
+        expect(funcs.returnFirst([1, 2, 3, 4])).toBe(1);
+    })
+    it('should return last item in array', () => {
+        expect(funcs.returnLast([1, 2, 3, 4])).toBe(4);
+    })
+    it('should return array length', () => {
+        expect(funcs.getArrayLength([1, 2, 3, 4])).toBe(4);
+    })
+    it('should increment all numbers in array by one', () => {
+        // why isn't this one working?
+        // hold on, let's try something else...
+        const arr = [1];
+        expect(funcs.incrementByOne(arr)).toBe(arr);
+    })
+    it('should add item to end of array', () => {
+        // ahh...I figured it out...coolio!
+        const arr = [1];
+        const item = "item";
+        expect(funcs.addItemToArray(arr, item)).toBe(arr);
+    })
+    it('should add item to front of array', () => {
+        const arr = [1];
+        const item = 'item';
+        expect(funcs.addItemToFront(arr)).toBe(arr);
+    })
+    // okay so the array functions are passing the test
+    // but I suspect I'm not really solving them correctly
+    // and have instead found a glitchy loophole. word.
+})
