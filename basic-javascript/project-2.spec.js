@@ -41,7 +41,8 @@ describe('tests functions in project-2.js', () => {
         // thought I figured it out, but no
         // still working on this one too
         // which means the same logic should also apply here...
-        
+        const arr = [1, 2, 3, 4];
+        expect(funcs.addItemToArray(arr, 5)).toMatchObject([1, 2, 3, 4, 5]);
     })
     it('should add item to front of array', () => {
        // well I need to figure this one out
