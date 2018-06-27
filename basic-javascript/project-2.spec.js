@@ -38,7 +38,7 @@ describe('tests functions in project-2.js', () => {
         expect(funcs.incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
     })
     it('should add item to end of array', () => {
-        // ahh...I figured it out...coolio!
+        // thought I figured it out, but no
         const arr = [1, 2];
         expect(funcs.addItemToArray(arr, 3)).toEqual([1, 2, 3]);
     })
