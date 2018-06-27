@@ -48,5 +48,10 @@ describe('tests functions in project-2.js', () => {
     // working, even after I switched to using toEqual
     it('should convert an array to a string', () => {
         expect(funcs.wordsToSentence(['it', 'is'])).toEqual('it is');
-    })  
+    })
+    it('should determine if array contains item', () => {
+        const arr = [1];
+        const item = 1;
+        expect(funcs.contains(arr, item)).toEqual(true);
+    })
 })
