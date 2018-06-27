@@ -54,4 +54,8 @@ describe('tests functions in project-2.js', () => {
         const item = 1;
         expect(funcs.contains(arr, item)).toEqual(true);
     })
+    it('should return sum of numbers in array', () => {
+        const arr = [1, 2, 3, 4];
+        expect(funcs.addNumbers(arr)).toEqual(10);
+    })
 })
