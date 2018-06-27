@@ -39,16 +39,12 @@ describe('tests functions in project-2.js', () => {
     })
     it('should add item to end of array', () => {
         // ahh...I figured it out...coolio!
-        const arr = [1];
-        const item = "item";
-        expect(funcs.addItemToArray(arr, item)).toEqual([1, 'item']);
+        const arr = [1, 2];
+        expect(funcs.addItemToArray(arr, 3)).toEqual([1, 2, 3]);
     })
     it('should add item to front of array', () => {
-        const arr = [1];
-        const item = 'item';
-        expect(funcs.addItemToFront(arr)).toBe(arr);
+       expect(funcs.addItemToFront([1, 2], 3)).toEqual([3, 1, 2]);
     })
-    // okay so the array functions are passing the test
-    // but I suspect I'm not really solving them correctly
-    // and have instead found a glitchy loophole. word.
+    // I can't understand why the two array methods above are not
+    // working, even after I switched to using toEqual
 })
