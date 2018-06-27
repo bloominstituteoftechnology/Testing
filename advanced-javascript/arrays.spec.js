@@ -52,6 +52,52 @@ describe('Arrays', () => {
       //console.log(jestFn.mock.calls.length);
     })
   })
+
+  describe('reduce', () => {
+    const arr = [1, 2, 3, 4];
+    it('it should return 3 given the number of calls', () => {
+      const jestFn = jest.fn();
+      const calls = arrayFunctions.reduce(arr, jestFn);
+      expect(jestFn.mock.calls.length).toBe(3);
+    })
+  })
+
+  describe('find', () => {
+    it('should return 3 given cb that checks for 3', () => {
+      const arr = [1, 2, 3, 4];
+      const cb = el => el == 3;
+      const expected = 3;
+      const actual = arrayFunctions.find(arr, cb);
+      expect(actual).toBe(expected);
+    })
+    it("should return 'd' given that cb checks for 'd' and its index", () => {
+      const arr = ['a', 'b', 'c', 'd', 'd'];
+      const cb = el => el === 'd' && arr.indexOf(el) == 3;
+      const expected = 'd';
+      const actual = arrayFunctions.find(arr, cb);
+      expect(actual).toBe(expected);
+    })
+  })
+
+  describe('filter', () => {
+    it('should return [1,1] given [1,3,45,43,6,1,4] and cb', () => {
+      const arr = [1,3,45,43,6,1,4];
+      const cb = el => el == 1;
+      const expected = [1, 1];
+      const actual = arrayFunctions.filter(arr, cb);
+      //console.log(actual)
+      expect(actual).toEqual(expected);
+    })
+    it('should return 7 given arr and cb. cb increments count each time cb is called', () => {
+      const arr = [1,3,45,43,6,1,4];
+      const expected = arr.length;
+      let count = 0;
+      const cb = () => ++count;
+      const actual = arrayFunctions.filter(arr, cb).length;
+      expect(actual).toBe(count && expected);
+    })
+  })
+  
   
 });
 

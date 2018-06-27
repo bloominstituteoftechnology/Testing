@@ -3,7 +3,7 @@ require('jest-extended');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
-describe('project-2', () => {
+describe.skip('project-2', () => {
 
   describe('getBiggest', () => {
     const expected = 10;
@@ -79,7 +79,7 @@ describe('project-2', () => {
   describe('isPrime', () => {
     it('should return true given 26', () => {
       let expected = 26;
-      let actual = funcs.isPrime(26);
+      let actual = funcs.isPrime(expected);
       expect(actual).toBeFalse();
     })
   })
