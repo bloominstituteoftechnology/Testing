@@ -1,9 +1,6 @@
 const helpers = require('./project-1');
 
 // start testing!
-const helpers = require('./project-1');
-
-// start testing!
 describe('tests the functions in project-1.js', () => {
     it('should multiply by ten', () => {
         expect(helpers.multiplyByTen(10)).toBe(100);
