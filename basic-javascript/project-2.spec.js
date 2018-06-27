@@ -47,4 +47,5 @@ describe('tests functions in project-2.js', () => {
     })
     // I can't understand why the two array methods above are not
     // working, even after I switched to using toEqual
+    
 })
