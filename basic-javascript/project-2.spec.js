@@ -36,6 +36,8 @@ describe('tests functions in project-2.js', () => {
         // why isn't this one working?
         // hold on, let's try something else...
         // well shoot what the heck?!?
+        const arr = [1, 2, 3, 4];
+        expect(funcs.incrementByOne(arr)).toMatchObject([2, 3, 4, 5]);
     })
     it('should add item to end of array', () => {
         // thought I figured it out, but no
