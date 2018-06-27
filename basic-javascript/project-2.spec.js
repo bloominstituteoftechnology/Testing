@@ -35,14 +35,13 @@ describe('tests functions in project-2.js', () => {
     it('should increment all numbers in array by one', () => {
         // why isn't this one working?
         // hold on, let's try something else...
-        const arr = [1];
-        expect(funcs.incrementByOne(arr)).toBe(arr);
+        expect(funcs.incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
     })
     it('should add item to end of array', () => {
         // ahh...I figured it out...coolio!
         const arr = [1];
         const item = "item";
-        expect(funcs.addItemToArray(arr, item)).toBe(arr);
+        expect(funcs.addItemToArray(arr, item)).toEqual([1, 'item']);
     })
     it('should add item to front of array', () => {
         const arr = [1];
