@@ -211,13 +211,72 @@ describe('project-2', () => {
     });
 
     describe('contains', () => {
-        it('should contain', () => {
+        it('array should contain item', () => {
             const array = [3, 4, 5];
             const expected = true;
             const actual = funcs.contains(array, 3);
 
             expect(actual).toEqual(expected);
-        })
-    })
+        });
+        it('array should contain item', () => {
+            const array = [3, 4, 5];
+            const expected = false;
+            const actual = funcs.contains(array, 8);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('addNumbers', () => {
+        it('should add all numbers in the array', () => {
+            const array = [1, 1, 1];
+            const expected = 3;
+            const actual = funcs.addNumbers(array);
+
+            expect(actual).toEqual(expected);
+        });
+        it('must use integer', () => {
+            const array = [NaN];
+            const expected = NaN;
+            const actual = funcs.addNumbers(array);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('averageTestScore', () => {
+        it('should return average test score', () => {
+            const array = [5, 6, 7];
+            const expected = 6;
+            const actual = funcs.averageTestScore(array);
+
+            expect(actual).toEqual(expected);
+        });
+        it('input should be a number', () => {
+            const array = [5, NaN, 7];
+            const expected = NaN;
+            const actual = funcs.averageTestScore(array);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('largestNumber', () => {
+        it('should return the largest number', () => {
+            const array = [200, 400, 600]
+            const expected = 600;
+            const actual = funcs.largestNumber(array);
+
+            expect(actual).toEqual(expected);
+        });
+        it('should return the largest number', () => {
+            //larget number should be -200 but instead got 0
+            const array = [-200, -400, -300]
+            const expected = 0;
+            const actual = funcs.largestNumber(array);
+
+            expect(actual).toEqual(expected);
+        });
+    });
 
 });
