@@ -34,6 +34,7 @@ describe('tests functions in project-2.js', () => {
     })
     it('should increment all numbers in array by one', () => {
         // so apparently this one is working...
+        // okay now I'm not so sure any of these are working...
         const arr = [1, 2, 3, 4];
         expect(funcs.incrementByOne(arr)).toEqual([2, 3, 4, 5]);
     })
