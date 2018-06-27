@@ -200,4 +200,24 @@ describe('project-2', () => {
         });
     });
 
+    describe('wordsToSentence', () => {
+        it('should return a string', () => {
+            const array = ['words', 'to', 'sentence'];
+            const expected = 'words to sentence';
+            const actual = funcs.wordsToSentence(array);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('contains', () => {
+        it('should contain', () => {
+            const array = [3, 4, 5];
+            const expected = true;
+            const actual = funcs.contains(array, 3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
 });
