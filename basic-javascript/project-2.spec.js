@@ -40,6 +40,8 @@ describe('tests functions in project-2.js', () => {
     it('should add item to end of array', () => {
         // thought I figured it out, but no
         // still working on this one too
+        // which means the same logic should also apply here...
+        
     })
     it('should add item to front of array', () => {
        // well I need to figure this one out
