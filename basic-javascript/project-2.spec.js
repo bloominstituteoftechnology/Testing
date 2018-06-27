@@ -58,4 +58,8 @@ describe('tests functions in project-2.js', () => {
         const arr = [1, 2, 3, 4];
         expect(funcs.addNumbers(arr)).toEqual(10);
     })
+    it('should return average test scores', () => {
+        const testScores = [88, 99, 30, 100, 100, 30, 100, 100];
+        expect(funcs.averageTestScore(testScores)).toEqual(80.875);
+    })
 })
