@@ -35,14 +35,14 @@ describe('tests functions in project-2.js', () => {
     it('should increment all numbers in array by one', () => {
         // so apparently this one is working...
         const arr = [1, 2, 3, 4];
-        expect(funcs.incrementByOne(arr)).toMatchObject([2, 3, 4, 5]);
+        expect(funcs.incrementByOne(arr)).toEqual([2, 3, 4, 5]);
     })
     it('should add item to end of array', () => {
         // thought I figured it out, but no
         // still working on this one too
         // which means the same logic should also apply here...
         const arr = [1, 2, 3, 4];
-        expect(funcs.addItemToArray(arr, 5)).toMatchObject([1, 2, 3, 4, 5]);
+        expect(funcs.addItemToArray(arr, 5)).toEqual([1, 2, 3, 4, 5]);
     })
     it('should add item to front of array', () => {
        // well I need to figure this one out
