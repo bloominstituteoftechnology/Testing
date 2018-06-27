@@ -33,9 +33,7 @@ describe('tests functions in project-2.js', () => {
         expect(funcs.getArrayLength([1, 2, 3, 4])).toBe(4);
     })
     it('should increment all numbers in array by one', () => {
-        // why isn't this one working?
-        // hold on, let's try something else...
-        // well shoot what the heck?!?
+        // so apparently this one is working...
         const arr = [1, 2, 3, 4];
         expect(funcs.incrementByOne(arr)).toMatchObject([2, 3, 4, 5]);
     })
