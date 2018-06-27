@@ -62,4 +62,8 @@ describe('tests functions in project-2.js', () => {
         const testScores = [88, 99, 30, 100, 100, 30, 100, 100];
         expect(funcs.averageTestScore(testScores)).toEqual(80.875);
     })
+    it('should return largest number in array', () => {
+        const array = [1, 2, 3, 4];
+        expect(funcs.largestNumber(array)).toEqual(4);
+    })
 })
