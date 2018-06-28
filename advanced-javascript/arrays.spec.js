@@ -1,5 +1,8 @@
 const arrayFunctions = require('./arrays');
 const mockCB = jest.fn();
+beforeEach(() => {
+    const arr = [1, 2, 3, 4];
+})
 
 describe('Arrays', () => {
     describe('each', () => {
@@ -8,7 +11,7 @@ describe('Arrays', () => {
           expect(typeof instanceOfEach).toBe('function');
       });
       it('should invoke callback on each item in array', () => {
-          arrayFunctions.each([1, 2, 3, 4], mockCB);
+          arrayFunctions.each(arr, mockCB);
           expect(mockCB.mock.calls.length).toBe(4);
       })
     })
