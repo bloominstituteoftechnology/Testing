@@ -1,12 +1,13 @@
 const arrayFunctions = require('./arrays');
-
-// we've gone ahead and gotten a start here for you,
-// except, for some reason, none of our current assertions are working.
-// first step is to make sure all these assertions work.
-// then make sure you have at least 2-3 more assertions for every function.
-// hint 1. - you need to pass data to the functions and get expected output.
-// hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
+const mockCB = jest.fn();
 
 describe('Arrays', () => {
-  
+    it('each', () => {
+        const callBack = (elem, indx) => {
+            elem += indx;  
+        }
+        const arr = [1, 2, 3, 4];
+        arrayFunctions.each(arr, callBack);
+        expect(arr).toEqual([1, 3, 5, 7]);
+    })
 });
