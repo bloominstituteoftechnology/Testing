@@ -1,18 +1,33 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (typeof num !== 'number') {
+    return undefined;
+  }
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (typeof num !== 'number') {
+    return undefined;
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    return false;
+  }
+  if (typeof str1 === undefined || typeof str2 === undefined) {
+    return false;
+  }
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+  if (typeof str1 === undefined || typeof str2 === undefined) {
+    return false;
+  }
   return x === y;
 };
 
