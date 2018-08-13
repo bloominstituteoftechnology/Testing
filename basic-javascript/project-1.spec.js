@@ -12,7 +12,6 @@ describe('it multiplies by ten', () => {
     it('returns 0 or less when passed 0 or less', () => {
         expect(helpers.multiplyByTen(0)).toBeLessThanOrEqual(0)
     })
-
 })
 
 describe('subtract five', () => {
