@@ -25,3 +25,9 @@ it('should return true if number passed is 10 or 5, otherwise return false', () 
     expect(funcs.isTenOrFive(10)).toEqual(true);
     expect(funcs.isTenOrFive(55)).toEqual(false);
 })
+
+it('should return true if number passed is less than 50 but greater than 20, otherwise return false', () => {
+    expect(funcs.isInRange(50)).toEqual(false);
+    expect(funcs.isInRange(20)).toEqual(false);
+    expect(funcs.isInRange(49)).toEqual(true);
+})
