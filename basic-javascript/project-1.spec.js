@@ -71,3 +71,90 @@ describe("getRemainder", () => {
     expect(helpers.getRemainder(5, 2)).toBe(1);
   });
 });
+
+describe("isEven", () => {
+  it("should return true if number is even, else should return false if number is odd", () => {
+    expect(helpers.isEven(6)).toBe(true);
+    expect(helpers.isEven(5)).toBe(false);
+  });
+});
+
+describe("isOdd", () => {
+  it("should return false if number is odd, else should return true if number is even", () => {
+    expect(helpers.isOdd(5)).toBe(true);
+    expect(helpers.isOdd(10)).toBe(false);
+  });
+});
+
+describe("square", () => {
+  it("should return the square a variable", () => {
+    expect(helpers.square(5)).toBe(25);
+  });
+});
+
+describe("cube", () => {
+  it("should return the cube of a variable", () => {
+    expect(helpers.cube(3)).toBe(27);
+  });
+});
+
+describe("raiseToPower", () => {
+  it("should raise the first input num, by the second input exponent and return result", () => {
+    expect(helpers.raiseToPower(2, 4)).toBe(16);
+  });
+});
+
+describe("roundNumber", () => {
+  it("should return the rounded number in a float or double", () => {
+    expect(helpers.roundNumber(4.5)).toBe(5);
+    expect(helpers.roundNumber(4.1)).toBe(4);
+  });
+});
+
+describe("roundUp", () => {
+  it("should always round up and return the number", () => {
+    expect(helpers.roundUp(5.2)).toBe(6);
+  });
+});
+
+describe("addExclamationPoint", () => {
+  it("should add an exclamation point to the end of a string and return it", () => {
+    expect(helpers.addExclamationPoint("hi guy")).toBe("hi guy!");
+  });
+});
+
+describe("combineNames", () => {
+  it("should combine first and last name input and return together", () => {
+    expect(helpers.combineNames("Michael", "Jordan")).toBe("Michael Jordan");
+  });
+});
+
+describe("getGreeting", () => {
+  it("should return Hello at the beginning of the name input and a ! at the end", () => {
+    expect(helpers.getGreeting("Tiger")).toBe("Hello Tiger!");
+  });
+});
+
+describe("getRectangleArea", () => {
+  it("should return the area of a rectangle with the provided length and width inputs", () => {
+    expect(helpers.getRectangleArea(4, 5)).toBe(20);
+  });
+});
+
+describe("getTriangleArea", () => {
+  it("should return the area of a triangle with the provided base and height inputs", () => {
+    expect(helpers.getTriangleArea(4, 5)).toBe(10);
+  });
+});
+
+describe("getCircleArea", () => {
+  it("should return the area of a circle given the radius input", () => {
+    expect(helpers.getCircleArea(3)).toBe(28.274333882308138);
+  });
+});
+
+describe("getRectangularPrismVolume", () => {
+  it("should return the volume of a prism with the provided length, width, height", () => {
+    expect(helpers.getRectangularPrismVolume(3, 4, 5)).toBe(60);
+  });
+});
