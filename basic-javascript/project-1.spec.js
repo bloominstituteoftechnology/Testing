@@ -91,6 +91,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('subtract', () => {
+        it('should return the correct difference of two given numbers', () => {
+            expect(helpers.subtract(51, -2)).toBe(53);
+            expect(helpers.subtract(true, true)).toBe(0)
+        })
+        it('should return NaN if a value is undefined', () => {
+            expect(helpers.subtract(undefined, undefined)).toBeNaN();
+            expect(helpers.subtract(undefined, 2)).toBeNaN();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
