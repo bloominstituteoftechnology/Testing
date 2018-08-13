@@ -27,7 +27,9 @@ describe('project-1', () => {
             const expected = 13;
             const actual = helpers.subtractFive(18);
             expect(actual).toEqual(expected);
-            expect(helpers.subtractFive(18)).toBe(13)
+            expect(helpers.subtractFive(-5)).toBe(-10)
+            expect(helpers.subtractFive(0)).toBe(-5)
+            expect(helpers.subtractFive(NaN)).toBe(NaN)
         })
     })
 
