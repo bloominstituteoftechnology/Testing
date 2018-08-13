@@ -73,3 +73,9 @@ it('should return the length of the array passed in', () => {
     expect(funcs.getArrayLength([1])).toEqual(1)
     expect(funcs.getArrayLength([2, 54, 4, 'Hey', 23])).toEqual(5)
 })
+
+it('should increment every item in the array passed in by 1', () => {
+    expect(funcs.incrementByOne([5, 4, 3])).toEqual([6, 5, 4]);
+    expect(funcs.incrementByOne([10001, 34, 3])).toEqual([10002, 35, 4]);
+    expect(funcs.incrementByOne([1, 1, 1])).toEqual([2, 2, 2]);
+})
