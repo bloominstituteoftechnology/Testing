@@ -46,4 +46,17 @@ describe(`${funcs.isInRange.name}`, () => {
         expect(isInRange(50)).toBeFalsy();
     })
 });
+
+describe(`${funcs.isInteger.name}`, () => {
+    const isInteger = funcs.isInteger;
+
+    it('should return true for numbers that are true integers', () => {
+        expect(isInteger(4)).toBeTruthy();
+        expect(isInteger(42424)).toBeTruthy();
+        expect(isInteger(-4151)).toBeTruthy();
+    });
+    it('should return false for numbers that are decimals', () => {
+        expect(isInteger(4.3)).toBeFalsy();
+    })
+})
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
