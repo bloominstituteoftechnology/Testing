@@ -90,4 +90,13 @@ describe(`${helpers.add.name}`, () => {
         expect(add(-55,22)).toBe(-33);
     });
 });
+describe(`${helpers.subtract.name}`, () => {
+    const subtract = helpers.subtract;
+    it("Should subtract numbers together to equal their target value", () => {
+        expect(subtract(5,2)).toBe(3);
+        expect(subtract(3,1)).toBe(2);
+        expect(subtract(100,22)).toBe(78);
+        expect(subtract(-55,22)).toBe(-77);
+    });
+});
 // start testing!
