@@ -65,3 +65,9 @@ it('should return the remainder of the two numbers passed', () => {
     expect(helpers.getRemainder(10, 9)).toEqual(1);
     expect(helpers.getRemainder(103, 100)).toEqual(3);
 })
+
+it('should return true if the two values provided are even, otherwise false', () => {
+    expect(helpers.isEven(5)).toEqual(false);
+    expect(helpers.isEven(6)).toEqual(true);
+    expect(helpers.isEven(-100)).toEqual(true);
+})
