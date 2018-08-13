@@ -80,6 +80,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('add', () => {
+        it('should return correct sum of two given numbers', () => {
+            expect(helpers.add(51, -2)).toBe(49);
+            expect(helpers.add(true, true)).toBe(2)
+        })
+        it('should return NaN if a value is undefined', () => {
+            expect(helpers.add(undefined, undefined)).toBeNaN();
+            expect(helpers.add(undefined, 2)).toBeNaN();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
