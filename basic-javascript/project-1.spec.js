@@ -100,3 +100,67 @@ test('remainder of two numbers', () => {
 test('remainder of two numbers', () => {
   expect(helpers.getRemainder(6,5)).toBe(1);
 })
+
+test('a number is even', () => {
+  expect(helpers.isEven(4)).toBe(true);
+})
+
+test('a number is even', () => {
+  expect(helpers.isEven(5)).toBe(false);
+})
+
+test('a number is odd', () => {
+  expect(helpers.isOdd(4)).toBe(false);
+})
+
+test('a number is squared', () => {
+  expect(helpers.square(9)).toBe(81);
+})
+
+test('a number is cubed', () => {
+  expect(helpers.cube(3)).toBe(27);
+})
+
+test('a number is raised to power', () => {
+  expect(helpers.raiseToPower(3,2)).toBe(9);
+})
+
+test('a number is rounded', () => {
+  expect(helpers.roundNumber(3.5)).toBe(4);
+})
+
+test('a number is rounded', () => {
+  expect(helpers.roundNumber(3.4)).toBe(3);
+})
+
+test('a number is rounded up', () => {
+  expect(helpers.roundUp(3.000000001)).toBe(4);
+})
+
+test('string has exclamation point', () => {
+  expect(helpers.addExclamationPoint('Hi Tom')).toBe('Hi Tom!')
+})
+
+test('two strings are combined', () => {
+  expect(helpers.combineNames('John', 'Doe')).toBe('John Doe')
+})
+
+test('input name is greeted', () => {
+  expect(helpers.getGreeting('Alec')).toBe('Hello Alec!')
+})
+
+test('area of a rectangle given length and width', () => {
+  expect(helpers.getRectangleArea(3,4)).toBe(12);
+})
+
+test('area of a triangle given base and height', () => {
+  expect(helpers.getTriangleArea(3,4)).toBe(6);
+})
+
+test('area of a circle given radius', () => {
+  expect(helpers.getCircleArea(12)).toBe(Math.PI * 144);
+})
+
+test('volume of rectangular prism given length, width and height', () => {
+  expect(helpers.getRectangularPrismVolume(3,4,5)).toBe(60)
+})
