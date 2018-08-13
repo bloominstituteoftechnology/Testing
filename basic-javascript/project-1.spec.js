@@ -124,6 +124,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('getRemainder', () => {
+        it('should return the correct remainder of two given numbers', () => {
+            expect(helpers.getRemainder(25, 5)).toBe(0);
+            expect(helpers.getRemainder(9, 4)).toBe(1)
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.getRemainder(true, undefined)).toBeNaN();
+            expect(helpers.getRemainder('undefined', 2)).toBeNaN();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
