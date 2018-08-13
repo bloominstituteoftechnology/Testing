@@ -103,3 +103,9 @@ it('should return true if value provided is in the array provided, otherwise ret
     expect(funcs.contains([1, 2, 3, 'Hey'], 'Hey')).toEqual(true);
     expect(funcs.contains([3, 3, 3, 5], 6)).toEqual(false);
 })
+
+it('should return the sum of all the numbers in the array passed in', () => {
+    expect(funcs.addNumbers([5, 5])).toEqual(10);
+    expect(funcs.addNumbers([5, 5, 10, 25])).toEqual(45);
+    expect(funcs.addNumbers([25, 2])).toEqual(27);
+})
