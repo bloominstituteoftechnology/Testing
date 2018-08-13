@@ -1,16 +1,28 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
+if(x===undefined || x===null || y===null || y===undefined) return false;
+
+else if(typeof x!=='number' || typeof y!=='number') return false;  
+
+else{	
+if (x > y) {
     return x;
   } else if (x === y) {
     return y;
   }
   return y;
+}
 };
 
 const greeting = language => {
-  switch (language) {
+if(language===undefined || language===null) return false;
+
+else if(typeof language!=='string') return false;
+        
+else{
+		
+switch (language) {
     case 'German':
       return 'Guten Tag!';
     case 'Spanish':
@@ -18,27 +30,46 @@ const greeting = language => {
     default:
       return 'Hello!';
   }
+}	
 };
 
 const isTenOrFive = num => {
+if(num===undefined || num===null) return false;
+
+else if(typeof num!=='number') return false;
+
+else{	
   if (num === 10 || num === 5) {
     return true;
   }
   return false;
+}
 };
 
 const isInRange = num => {
-  if (num < 50 && num > 20) {
+if(num===undefined || num===null) return false;
+
+else if(typeof num!=='number') return false;
+
+else{	
+if (num < 50 && num > 20) {
     return true;
   }
   return false;
+}
 };
 
 const isInteger = num => {
-  if (Math.floor(num) === num) {
+if(num===undefined || num===null || num===0) return false;
+
+else if(typeof num!=='number') return false;
+
+else{	
+if (Math.floor(num) === num) {
     return true;
   }
   return false;
+}
 };
 
 const fizzBuzz = num => {
