@@ -67,3 +67,9 @@ it('should return the last value of the array passed in', () => {
     expect(funcs.returnLast([2])).toEqual(2);
     expect(funcs.returnLast(['Hey', 213213, 2342343, 36562])).toEqual(36562);
 })
+
+it('should return the length of the array passed in', () => {
+    expect(funcs.getArrayLength([2, 3, 3, 4])).toEqual(4)
+    expect(funcs.getArrayLength([1])).toEqual(1)
+    expect(funcs.getArrayLength([2, 54, 4, 'Hey', 23])).toEqual(5)
+})
