@@ -172,4 +172,21 @@ describe(`${helpers.isOdd.name}`, () => {
         expect(isOdd(-5)).toBeTruthy();
     })
 });
+
+describe(`${helpers.square}`, () => {
+    const square = helpers.square;
+
+    it('Should square the argument passed', () => {
+        expect(square(2)).toBe(4);
+        expect(square(4)).toBe(16);
+        expect(square(6)).toBe(36);
+        expect(square(11)).toBe(121);
+    });
+    it('Should square a negative argument', () => {
+        expect(square(-2)).toBe(4);
+        expect(square(-4)).toBe(16);
+        expect(square(-6)).toBe(36);
+        expect(square(-11)).toBe(121);
+    });
+});
 // start testing!
