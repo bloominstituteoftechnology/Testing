@@ -6,11 +6,9 @@ describe('it multiplies by ten', () => {
     it('returns ten times 1 is ten', () => {
         expect(helpers.multiplyByTen(1)).toEqual(10)
     })
-
     it('returns Falsy when passed undefined', () => {
         expect(helpers.multiplyByTen(undefined)).toBeFalsy()
     })
-
     it('returns 0 or less when passed 0 or less', () => {
         expect(helpers.multiplyByTen(0)).toBeLessThanOrEqual(0)
     })
@@ -108,7 +106,7 @@ describe('add', () => {
         expect(add(-100,100)).toEqual(0)
     })
     it('returns concatenated strings', () => {
-        expect(add('Hello', ' there')).toEqual('Hello there')
+        expect(add('Hello', ' there')).toMatch('Hello there')
         expect(add('abcd',' ')).toEqual('abcd ')
     })
     it('caps out at 1.7976931348623157e+308', () => {
@@ -127,8 +125,102 @@ describe('subtract', () => {
         expect(subtract('Hello', ' there')).toBeFalsy()
         expect(subtract('abcd','a')).toBeFalsy()
     })
-    // it('caps out at 1.7976931348623157e+308', () => {
-    //     expect(subtract(Number.MAX_VALUE, 1000)).toEqual(1.7976931348623157e+308)
-    // })
+    it('bottoms out at -1.7976931348623157e+308', () => {
+        expect(subtract(1000, Number.MAX_VALUE)).toEqual(-1.7976931348623157e+308)
+    })
 })
 
+describe('divide', () => {
+    divide = helpers.divide
+    it('returns correct number when dividing', () => {
+        expect(divide(5,1)).toEqual(5)
+        expect(divide(100,10)).toEqual(10)
+        expect(divide(1000,5)).toEqual(200)
+    })
+    it('accounts for floating point decimals', () => {
+        expect(divide(10.5, 5)).toBeGreaterThanOrEqual(2)
+        expect(divide(2.5,2)).toEqual(1.25)
+    })
+    it('errors when dividing by 0', () => {
+        expect(divide(10, 0)).toEqual(Infinity)
+    })
+})
+
+describe('multiply', () => {
+    multiply = helpers.multiply
+    it('returns correct number when multiplying', () => {
+        expect(multiply(5,1)).toEqual(5)
+        expect(multiply(100,10)).toEqual(1000)
+        expect(multiply(1000,0)).toEqual(0)
+    })
+    it('accounts for floating point decimals', () => {
+        expect(multiply(10.5, 2)).toBeGreaterThanOrEqual(21)
+        expect(multiply(2.5,2)).toEqual(5)
+    })
+    it('returns Falsy with strings', () => {
+        expect(multiply('hello', 'there')).toBeFalsy()
+    })
+})
+
+describe('getRemainder', () => {
+    getRemainder = helpers.getRemainder
+    it('returns correct remainder', () => {
+        expect(getRemainder(55,1)).toEqual(0)
+        expect(getRemainder(102,10)).toEqual(2)
+        expect(getRemainder(37,6)).toEqual(1)
+    })
+    it('returns Falsy with strings', () => {
+        expect(getRemainder('hello', 'there')).toBeFalsy()
+    })
+})
+
+describe('isEven', () => {
+    isEven = helpers.isEven
+    it('returns true for evens', () => {
+        expect(isEven(4)).toBeTruthy()
+    })
+    it('returns true for 0', () => {
+        expect(isEven(0)).toBeTruthy()
+    })
+    it('returns falsy on floating point nums', () => {
+        expect(isEven(10.2)).toBeFalsy()
+    })
+    it('returns Falsy with strings', () => {
+        expect(isEven('hello')).toBeFalsy()
+    })
+})
+
+describe('isEven', () => {
+    isEven = helpers.isEven
+    it('returns true for evens', () => {
+        expect(isEven(4)).toBeTruthy()
+    })
+    it('returns true for 0', () => {
+        expect(isEven(0)).toBeTruthy()
+    })
+    it('returns false for odds', () => {
+        expect(isEven(1)).toBeFalsy()
+    })
+    it('Returns false on floating point nums', () => {
+        expect(isEven(4.4)).toBeFalsy()
+    })
+    it('returns Falsy with strings', () => {
+        expect(isEven('hello')).toBeFalsy()
+    })
+})
+
+describe('isOdd', () => {
+    isOdd = helpers.isOdd
+    it('returns true for evens', () => {
+        expect(isEven(4)).toBeTruthy()
+    })
+    it('returns true for 0', () => {
+        expect(isEven(0)).toBeTruthy()
+    })
+    it('accounts for floating point decimals', () => {
+        expect(isEven(10.2)).toBeTruthy()
+    })
+    it('returns Falsy with strings', () => {
+        expect(isEven('hello')).toBeFalsy()
+    })
+})
