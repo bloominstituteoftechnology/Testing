@@ -91,3 +91,9 @@ it('should add an item to the front of the array passed in with the value passed
     expect(funcs.addItemToFront([100, 25, 33], 5)).toEqual([5, 100, 25, 33]);
     expect(funcs.addItemToFront([2000000], 1)).toEqual([1, 2000000]);
 })
+
+it('should return each letter with a space inbetween them with the string passed in', () => {
+    expect(funcs.wordsToSentence('Sentence')).toEqual('S e n t e n c e')
+    expect(funcs.wordsToSentence('Holy')).toEqual('H o l y')
+    expect(funcs.wordsToSentence('RandomWord')).toEqual('R a n d o m W o r d')
+})
