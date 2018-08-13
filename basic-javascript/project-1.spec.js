@@ -127,4 +127,15 @@ describe(`${helpers.multiply.name}`, () => {
         expect(multiply(-2, 4)).toBe(-8);
     });
 });
+
+describe(`${helpers.getRemainder.name}`, () => {
+    const getRemainder = helpers.getRemainder;
+    it("Should getRemainder numbers together to equal their target value", () => {
+        expect(getRemainder(5,2)).toBe(1);
+        expect(getRemainder(3,1)).toBe(0);
+        expect(getRemainder(100,22)).toBe(12);
+        expect(getRemainder(-2, -4)).toBe(-2);
+        expect(getRemainder(-2, 4)).toBe(-2);
+    });
+});
 // start testing!
