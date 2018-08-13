@@ -268,4 +268,12 @@ describe(`${helpers.getGreeting.name}`, () => {
         }
     })
 })
+
+describe(`${helpers.getRectangleArea.name}`, () => {
+    const getRectangleArea = helpers.getRectangleArea;
+    it('should return the area of the rectangle', () => {
+        expect(getRectangleArea(4,3)).toBe(12);
+    })
+});
+
 // start testing!
