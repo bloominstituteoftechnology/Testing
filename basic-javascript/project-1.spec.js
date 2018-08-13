@@ -53,3 +53,9 @@ it('should divide the two numbers passed and return the value', () => {
     expect(helpers.divide(10, 5)).toEqual(2);
     expect(helpers.divide(20, 5)).toEqual(4);
 })
+
+it('should multiply the two numbers passed and return the value', () => {
+    expect(helpers.multiply(5, 5)).toEqual(25);
+    expect(helpers.multiply(10, 5)).toEqual(50);
+    expect(helpers.multiply(20, -5)).toEqual(-100);
+})
