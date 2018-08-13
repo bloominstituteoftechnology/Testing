@@ -105,9 +105,62 @@ it('should return the number cubed', () => {
   expect(helpers.cube(-256)).toEqual(-16777216);
 })
 
+it('should raise the first number to the power of the second number', () => {
+  expect(helpers.raiseToPower(2, 5)).toEqual(32);
+  expect(helpers.raiseToPower(3, 5)).toEqual(243);
+})
 
+it('should return the result of the number being rounded to the nearest integer', () => {
+  expect(helpers.roundNumber(3.49)).toEqual(3);
+  expect(helpers.roundNumber(3.5)).toEqual(4);
+})
 
+it('shoulder round the number to the next integer', () => {
+  expect(helpers.roundUp(3.1)).toEqual(4);
+  expect(helpers.roundUp(0.1)).toEqual(1);
+})
 
-// it('should ', () => {
-//   expect(helpers.().toEqual());
-// })
+it('should return the string with the exclamation point at the end', () => {
+  const input = 'Hello, world';
+  const result = 'Hello, world!';
+
+  expect(helpers.addExclamationPoint(input)).toEqual(result);
+})
+
+it('should return a string that contains the names together (first + last; e.g.- Joe Dirt)', () => {
+  const first = 'Joe';
+  const last = 'Dirt';
+  const firstAndLast = 'Joe Dirt';
+
+  expect(helpers.combineNames(first, last)).toEqual(firstAndLast);
+})
+
+it('should return a greeting that says "Hello name!"', () => {
+  const name1 = "Alfred";
+  const name2 = "Kirby";
+  const name3 = "Dolan";
+
+  expect(helpers.getGreeting(name1)).toEqual(`Hello ${name1}!`);
+  expect(helpers.getGreeting(name2)).toEqual(`Hello ${name2}!`);
+  expect(helpers.getGreeting(name3)).toEqual(`Hello ${name3}!`);
+})
+
+it('should return the area of a rectangle using the two parameters as length and width measurements', () => {
+  expect(helpers.getRectangleArea(2,4)).toEqual(8);
+})
+
+it('should return the area of a triangle using the two parameters as base and height measurements ', () => {
+  expect(helpers.getTriangleArea(2, 8)).toEqual(8);
+})
+
+it('should return the area of a circle using the argument as the radius', () => {
+  const pi =  3.141592653589793;
+
+  expect(helpers.getCircleArea(3)).toEqual(9*pi);
+  expect(helpers.getCircleArea(4)).toEqual(16*pi);
+  expect(helpers.getCircleArea(5)).toEqual(25*pi);
+})
+
+it('should return the volume of a rectangular prism using the arguments for the dimensions', () => {
+  expect(helpers.getRectangularPrismVolume(2,4,6)).toEqual(48);
+})
