@@ -58,6 +58,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('lessThanNinety', () => {
+        it('should return true if the given number is less than 90', () => {
+            expect(helpers.lessThanNinety(1)).toBeTruthy();
+            expect(helpers.lessThanNinety(0)).toBeTruthy()
+        })
+        it('should return false the given number is NaN or more than 90', () => {
+            expect(helpers.lessThanNinety('4oo')).toBeFalsy();
+            expect(helpers.lessThanNinety(90)).toBeFalsy();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
