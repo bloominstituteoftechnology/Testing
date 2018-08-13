@@ -206,5 +206,125 @@ describe('project 1 testing', () => {
 
   })
 
+  it('should be raised to the power', () => {
+    const raiseToPower = helpers.raiseToPower;
+
+    const eight = raiseToPower(2, 3);
+    const oneTwentyFive = raiseToPower(5, 3);
+    const threeFourtyThree = raiseToPower(7, 3);
+
+    expect(eight).toBe(8);
+    expect(oneTwentyFive).toBe(125);
+    expect(threeFourtyThree).toBe(343);
+
+  })
+
+  it('should return the number rounded to the nearest whole number', () => {
+    const roundNumber = helpers.roundNumber;
+
+    const eight = roundNumber(7.8);
+    const sixteen = roundNumber(16.3);
+    const four = roundNumber(4.4999999);
+
+    expect(eight).toBe(8);
+    expect(sixteen).toBe(16);
+    expect(four).toBe(4);
+  })
+
+  it('should return the number rounded up', () => {
+    const roundUp = helpers.roundUp;
+
+    const eight = roundUp(7.8);
+    const sixteen = roundUp(15.3);
+    const four = roundUp(3.4999999);
+
+    expect(eight).toBe(8);
+    expect(sixteen).toBe(16);
+    expect(four).toBe(4);
+  })
+
+  it('should return the string with an ! added on', () => {
+    const addExclamationPoint = helpers.addExclamationPoint;
+
+    const eight = addExclamationPoint(8);
+    const sixteen = addExclamationPoint('16');
+    const city = addExclamationPoint('new york');
+
+    expect(eight).toBe('8!');
+    expect(sixteen).toBe('16!');
+    expect(city).toBe('new york!');
+  })
+
+  it('should return a string with the 2 given names combined', () => {
+    const combineNames = helpers.combineNames;
+
+    const justin = combineNames('Justin', 'Mathew');
+    const jack = combineNames('jack', 'dawson');
+    const jekm = combineNames('je', 'km');
+
+    expect(justin).toBe('Justin Mathew');
+    expect(jack).toBe('jack dawson');
+    expect(jekm).toBe('je km');
+  })
+
+  it('should return a greeting with the given name', () => {
+    const getGreeting = helpers.getGreeting;
+
+    const justin = getGreeting('Justin');
+    const jack = getGreeting('jack');
+    const jekm = getGreeting('jekm');
+
+    expect(justin).toBe('Hello Justin!');
+    expect(jack).toBe('Hello jack!');
+    expect(jekm).toBe('Hello jekm!');
+  })
+
+  it('should return area of the rectangle given', () => {
+    const getRectangleArea = helpers.getRectangleArea;
+
+    const twelve = getRectangleArea(4, 3);
+    const nine = getRectangleArea(3, 3);
+    const fifteen = getRectangleArea(3, 5);
+
+    expect(twelve).toBe(12);
+    expect(nine).toBe(9);
+    expect(fifteen).toBe(15);
+  })
+
+  it('should return area of the triangle given', () => {
+    const getTriangleArea = helpers.getTriangleArea;
+
+    const six = getTriangleArea(4, 3);
+    const nine = getTriangleArea(3, 6);
+    const fifteen = getTriangleArea(3, 10);
+
+    expect(six).toBe(6);
+    expect(nine).toBe(9);
+    expect(fifteen).toBe(15);
+  })
+
+  it('should return area of the circle given', () => {
+    const getCircleArea = helpers.getCircleArea;
+
+    const threeSquaredPi = getCircleArea(3);
+    const sixSquaredPi = getCircleArea(6);
+    const tenSquaredPi = getCircleArea(10);
+
+    expect(threeSquaredPi).toBe(9 * Math.PI);
+    expect(sixSquaredPi).toBe(36 * Math.PI);
+    expect(tenSquaredPi).toBe(100 * Math.PI);
+  })
+
+  it('should return volume of the prism given', () => {
+    const getRectangularPrismVolume = helpers.getRectangularPrismVolume;
+
+    const twentySeven = getRectangularPrismVolume(3, 3, 3);
+    const thirtySix = getRectangularPrismVolume(6, 3, 2);
+    const hundred = getRectangularPrismVolume(10, 5, 2);
+
+    expect(twentySeven).toBe(27);
+    expect(thirtySix).toBe(36);
+    expect(hundred).toBe(100);
+  })
 
 })
