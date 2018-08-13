@@ -52,4 +52,19 @@ describe(`${helpers.areEqual.name} - Both values equal to one another.`, () => {
         expect(areEqual("drag",3)).toBe(false);
     })
 })
+
+describe(`${helpers.lessThanNinety.name}`, () => {
+    const lessThanNinety = helpers.lessThanNinety;
+
+    it("should return true if the number is less than ninety", () => {
+        expect(lessThanNinety(55)).toBe(true);
+        expect(lessThanNinety(77)).toBe(true);
+        expect(lessThanNinety(89)).toBe(true);
+    });
+    it("should return false if the number is greater or equal to ninety", () => {
+        expect(lessThanNinety(91)).toBe(false);
+        expect(lessThanNinety(999)).toBe(false);
+        expect(lessThanNinety(90)).toBe(false);
+    });
+});
 // start testing!
