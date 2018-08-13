@@ -27,4 +27,15 @@ describe("Subtract the number passed by 5", () => {
         expect(subtractFive(3)).toBe(-2);
     });
 });
+
+describe("The two strings have the same length", () => {
+    const areSameLength = helpers.areSameLength;
+
+    it("Both strings should have the same length", () => {
+        expect(areSameLength("dragon","margin")).toBe(true);
+    })
+    it("Both strings should have different lengths", () => {
+        expect(areSameLength("test","margin")).toBe(false);
+    })
+})
 // start testing!
