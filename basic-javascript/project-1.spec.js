@@ -35,3 +35,9 @@ it('should return true if value provided is greater than 50, otherwise false', (
     expect(helpers.greaterThanFifty(51)).toEqual(true);
     expect(helpers.greaterThanFifty(90)).toEqual(true);
 })
+
+it('should add the two numbers passed and return the value', () => {
+    expect(helpers.add(5, 5)).toEqual(10);
+    expect(helpers.add(10, 5)).toEqual(15);
+    expect(helpers.add(-5, 5)).toEqual(0);
+})
