@@ -7,6 +7,7 @@ const each = (elements, cb) => {
 }
 
 const map = (elements, cb) => {
+<<<<<<< HEAD:advanced-javascript/src/arrays.js
   const mappedArr = []
   each(elements, item => {
     mappedArr.push(cb(item))
@@ -20,6 +21,21 @@ const reduce = (elements, cb, memo = elements.shift()) => {
   })
   return memo
 }
+=======
+  const mappedArr = [];
+  each(elements, item => {
+    mappedArr.push(cb(item));
+  });
+  return mappedArr;
+};
+
+const reduce = (elements, cb, memo = elements.shift()) => {
+  each(elements, item => {
+    memo = cb(memo, item);
+  });
+  return memo;
+};
+>>>>>>> upstream/master:advanced-javascript/arrays.js
 
 const find = (elements, cb) => {
   for (let i = 0; i < elements.length; i++) {
@@ -29,12 +45,21 @@ const find = (elements, cb) => {
 }
 
 const filter = (elements, cb) => {
+<<<<<<< HEAD:advanced-javascript/src/arrays.js
   const filteredValues = []
   each((elements, item) => {
     if (cb(item)) filteredValues.push(item)
   })
   return filteredValues
 }
+=======
+  const filteredValues = [];
+  each(elements, item => {
+    if (cb(item)) filteredValues.push(item);
+  });
+  return filteredValues;
+};
+>>>>>>> upstream/master:advanced-javascript/arrays.js
 
 const flatten = elements => {
   const flattenedArr = reduce(
@@ -56,5 +81,10 @@ module.exports = {
   reduce,
   find,
   filter,
+<<<<<<< HEAD:advanced-javascript/src/arrays.js
   flatten
 }
+=======
+  flatten,
+};
+>>>>>>> upstream/master:advanced-javascript/arrays.js
