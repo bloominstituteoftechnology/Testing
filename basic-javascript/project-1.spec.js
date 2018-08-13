@@ -1,6 +1,6 @@
 const helpers = require("./project-1");
 
-describe("Multiply the number passed with 10", () => {
+describe("multiplyByTen - Multiply the number passed with 10", () => {
   const multiplyByTen = helpers.multiplyByTen;
   it("Should multiply two numbers together", () => {
     expect(multiplyByTen(20)).toBe(200);
@@ -16,7 +16,7 @@ describe("Multiply the number passed with 10", () => {
   });
 });
 
-describe("Subtract the number passed by 5", () => {
+describe("subtractFive - Subtract the number passed by 5", () => {
     const subtractFive = helpers.subtractFive;
 
     it("Should subtract the passed argument by 5", () => {
@@ -28,7 +28,7 @@ describe("Subtract the number passed by 5", () => {
     });
 });
 
-describe("The two strings have the same length", () => {
+describe("areSameLength - The two strings have the same length", () => {
     const areSameLength = helpers.areSameLength;
 
     it("Both strings should have the same length", () => {
@@ -39,7 +39,7 @@ describe("The two strings have the same length", () => {
     })
 })
 
-describe("Both values equal to one another.", () => {
+describe(`${helpers.areEqual.name} - Both values equal to one another.`, () => {
     const areEqual = helpers.areEqual;
 
     it("Both arguments of the same value should equal to true", () => {
