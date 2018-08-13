@@ -81,4 +81,13 @@ describe(`${helpers.greaterThanFifty.name}`, () => {
         expect(greaterThanFifty(-55)).toBe(false);
     });
 })
+describe(`${helpers.add.name}`, () => {
+    const add = helpers.add;
+    it("Should add numbers together to equal their target value", () => {
+        expect(add(5,2)).toBe(7);
+        expect(add(3,1)).toBe(4);
+        expect(add(100,22)).toBe(122);
+        expect(add(-55,22)).toBe(-33);
+    });
+});
 // start testing!
