@@ -271,4 +271,40 @@ describe('raiseToPower', () => {
     })
 })
 
+it('rounds a number effectively', () => {
+    expect(helpers.roundNumber(10.5)).toEqual(11)
+})
 
+it('rounds up a floating point number', () => {
+    expect(helpers.roundUp(10.1)).toEqual(11)
+})
+
+it('adds an exclamation point', () => {
+    expect(helpers.addExclamationPoint('Yo')).toMatch('Yo!')
+    expect(helpers.addExclamationPoint(5)).toMatch('5!')
+})
+
+it('combines names', () => {
+    expect(helpers.combineNames('Mac', '\'N Cheese')).toMatch('Mac \'N Cheese')
+    expect(helpers.combineNames('John', 'Lennon')).toMatch('John Lennon')
+})
+
+it('outputs a greeting', () => {
+    expect(helpers.getGreeting('Alex')).toMatch('Hello Alex!')
+})
+
+it('computes a rectanglular area', () => {
+    expect(helpers.getRectangleArea(2,5)).toEqual(10)
+})
+
+it('computes a triangular area', () => {
+    expect(helpers.getTriangleArea(5,10)).toEqual(25)
+})
+
+it('Gets a circles area', () => {
+    expect(helpers.getCircleArea(2)).toBeCloseTo(12.56637)
+})
+
+it('gets the volume of a rectangular prism', () => {
+    expect(helpers.getRectangularPrismVolume(2,4,4)).toEqual(32)
+})
