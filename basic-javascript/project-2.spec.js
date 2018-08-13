@@ -109,3 +109,9 @@ it('should return the sum of all the numbers in the array passed in', () => {
     expect(funcs.addNumbers([5, 5, 10, 25])).toEqual(45);
     expect(funcs.addNumbers([25, 2])).toEqual(27);
 })
+
+it('should return the average test score of all the numbers in the array passed in', () => {
+    expect(funcs.averageTestScore([5, 10, 25, 10])).toEqual(12.5);
+    expect(funcs.averageTestScore([25.5, 2, 1, 0])).toEqual(7.125);
+    expect(funcs.averageTestScore([20, 0, 0, 0])).toEqual(5);
+})
