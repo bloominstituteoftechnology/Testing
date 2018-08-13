@@ -19,3 +19,9 @@ describe('Return Greeting depending on value passed in', () => {
         expect(funcs.greeting('Random Language!')).toEqual('Hello!');
     })
 });
+
+it('should return true if number passed is 10 or 5, otherwise return false', () => {
+    expect(funcs.isTenOrFive(5)).toEqual(true);
+    expect(funcs.isTenOrFive(10)).toEqual(true);
+    expect(funcs.isTenOrFive(55)).toEqual(false);
+})
