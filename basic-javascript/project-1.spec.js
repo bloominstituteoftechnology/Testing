@@ -69,6 +69,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('greaterThanFifty', () => {
+        it('should return true if the given number is greater than 50', () => {
+            expect(helpers.greaterThanFifty(51)).toBeTruthy();
+            expect(helpers.greaterThanFifty(100)).toBeTruthy()
+        })
+        it('should return false the given number is NaN or less than 50', () => {
+            expect(helpers.greaterThanFifty('4oo')).toBeFalsy();
+            expect(helpers.greaterThanFifty(0)).toBeFalsy();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
