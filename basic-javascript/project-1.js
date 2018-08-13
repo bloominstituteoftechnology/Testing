@@ -1,11 +1,19 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if (typeof num !== 'number') {
+    return 'Not a Number';
+  } else {
+    return num * 10;
+  }
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (typeof num !== 'number') {
+    return 'Not a Number';
+  } else {
+    return num - 5;
+  }
 };
 
 const areSameLength = (str1, str2) => {
@@ -17,10 +25,14 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
+  if (typeof num !== 'number') {
+    return 'Not a Number';
+  } else {
+    if (num < 90) {
+      return true;
+    }
+    return false;
   }
-  return false;
 };
 
 const greaterThanFifty = num => {
