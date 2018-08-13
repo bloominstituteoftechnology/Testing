@@ -1,7 +1,7 @@
 const helpers = require("./project-1");
 
 // start testing!
-describe("multiplyByTen", () => {
+describe("basic javascript operations", () => {
   it("multiplies numbers by ten", () => {
     // arrange / setup
 
