@@ -56,7 +56,7 @@ describe("areEqual function", () => {
     expect(helpers.areEqual(5, 5)).toEqual(true);
     expect(helpers.areEqual(7, 10)).toEqual(false);
   });
-  it("should return null if one of the value length is zero", () => {
+  it("should return null if one of the values is undefined", () => {
     expect(helpers.areEqual(undefined, 2)).toEqual(null);
   });
   //test for strings
@@ -67,7 +67,7 @@ describe("lessThanNinety function", () => {
     expect(helpers.lessThanNinety(40)).toEqual(true);
     expect(helpers.lessThanNinety(95)).toEqual(false);
   });
-  it("should return null if one of the value length is zero", () => {
+  it("should return null if the values undefined", () => {
     expect(helpers.lessThanNinety(undefined)).toEqual(null);
   });
   //test for strings
@@ -136,7 +136,7 @@ describe("getRemainder function", () => {
     expect(helpers.getRemainder(15, 4)).toEqual(3);
     expect(helpers.getRemainder(2, 1)).toEqual(0);
   });
-  it("should return null if one of the value length is zero", () => {
+  it("should return null if one of the values is undefined", () => {
     expect(helpers.getRemainder(undefined, 3)).toEqual(false);
   });
 });
@@ -190,7 +190,7 @@ describe("raiseToPower function", () => {
     expect(helpers.raiseToPower(2,3)).toEqual(8);
     expect(helpers.raiseToPower(3,2)).toEqual(9);
   });
-  it("should return null if one of the value length is zero", () => {
+  it("should return false if num is undefined", () => {
     expect(helpers.raiseToPower(undefined)).toEqual(false);
   });
 });
@@ -200,7 +200,7 @@ describe("roundNumber function", () => {
       expect(helpers.roundNumber(2.8)).toEqual(3);
       expect(helpers.roundNumber(0)).toEqual(0);
     });
-    it("should return null if one of the value length is zero", () => {
+    it("should return false if num is undefined", () => {
       expect(helpers.roundNumber(undefined)).toEqual(false);
     });
   });
@@ -210,89 +210,72 @@ describe("roundNumber function", () => {
       expect(helpers.roundUp(2.1)).toEqual(3);
       expect(helpers.roundUp(3.5)).toEqual(4);
     });
-    it("should return null if one of the value length is zero", () => {
+    it("should return false if num is undefined", () => {
       expect(helpers.roundUp(undefined)).toEqual(false);
     });
   });
 
   describe("addExclamationPoint function", () => {
-    it("should raise a number to a power", () => {
+    it("should add an exclaimation point to a string", () => {
       expect(helpers.addExclamationPoint("hello")).toEqual("hello!");
     });
-    it("should return null if one of the value length is zero", () => {
+    it("should return null if string is undefined", () => {
       expect(helpers.addExclamationPoint(undefined)).toEqual(null);
     });
   });
 
   describe("combineNames function", () => {
-    it("should raise a number to a power", () => {
+    it("should combine two strings", () => {
       expect(helpers.combineNames("tom", "jones")).toEqual("tom jones");
     });
-    it("should return null if one of the value length is zero", () => {
-      expect(helpers.combineNames(undefined)).toEqual(false);
+    it("should return null if one of the strings is undefined", () => {
+      expect(helpers.combineNames(undefined)).toEqual(null);
     });
   });
 
   describe("getGreeting function", () => {
-    it("should raise a number to a power", () => {
-      expect(helpers.getGreeting("Tom")).toEqual("Hello Tom");
+    it("should add an exclaimation point to the end of a string", () => {
+      expect(helpers.getGreeting("Tom")).toEqual("Hello Tom!");
     });
-    it("should return null if one of the value length is zero", () => {
+    it("should return null if string is undefined", () => {
       expect(helpers.getGreeting(undefined)).toEqual(null);
     });
   });
 
 
   describe("getRectangleArea function", () => {
-    it("should raise a number to a power", () => {
-      expect(helpers.getRectangleArea(2,3)).toEqual(8);
-      expect(helpers.getRectangleArea(3,2)).toEqual(9);
+    it("should get the area of a rectangle", () => {
+      expect(helpers.getRectangleArea(2,3)).toEqual(6);
     });
-    it("should return null if one of the value length is zero", () => {
-      expect(helpers.getRectangleArea(undefined)).toEqual(false);
+    it("should return null if one of the values is undefined", () => {
+      expect(helpers.getRectangleArea(undefined)).toEqual(null);
     });
   });
 
 
   describe("getTriangleArea function", () => {
-    it("should raise a number to a power", () => {
-      expect(helpers.getTriangleArea(2,3)).toEqual(8);
-      expect(helpers.getTriangleArea(3,2)).toEqual(9);
+    it("shouldget the area of a triangle", () => {
+      expect(helpers.getTriangleArea(2,2)).toEqual(2);
     });
-    it("should return null if one of the value length is zero", () => {
-      expect(helpers.getTriangleArea(undefined)).toEqual(false);
-    });
-  });
-
-
-  describe("raiseToPower function", () => {
-    it("should raise a number to a power", () => {
-      expect(helpers.raiseToPower(2,3)).toEqual(8);
-      expect(helpers.raiseToPower(3,2)).toEqual(9);
-    });
-    it("should return null if one of the value length is zero", () => {
-      expect(helpers.raiseToPower(undefined)).toEqual(false);
+    it("should return null if one of the values is undefined", () => {
+      expect(helpers.getTriangleArea(undefined)).toEqual(null);
     });
   });
-
 
   describe("getCircleArea function", () => {
-    it("should raise a number to a power", () => {
-      expect(helpers.getCircleArea(2,3)).toEqual(8);
-      expect(helpers.getCircleArea(3,2)).toEqual(9);
+    it("should get the area of a circle", () => {
+      expect(helpers.getCircleArea(6)).toEqual(113.09733552923255);
     });
-    it("should return null if one of the value length is zero", () => {
-      expect(helpers.getCircleArea(undefined)).toEqual(false);
+    it("should return null if one of the values is undefined", () => {
+      expect(helpers.getCircleArea(undefined)).toEqual(null);
     });
   });
 
   describe("getRectangularPrismVolume a number to a power", () => {
-      expect(helpers.getRectangularPrismVolume(2,3)).toEqual(8);
-      expect(helpers.getRectangularPrismVolume(3,2)).toEqual(9);
+    it("should get the area of a circle", () => {
+      expect(helpers.getRectangularPrismVolume(2,3,4)).toEqual(24);
     });
-    it("should return null if one of the value length is zero", () => {
-      expect(helpers.getRectangularPrismVolume(undefined)).toEqual(false);
+    it("should return null if one of the values is undefined", () => {
+      expect(helpers.getRectangularPrismVolume(undefined)).toEqual(null);
     });
-  });
-
-
+});
