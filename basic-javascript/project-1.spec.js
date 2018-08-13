@@ -126,4 +126,10 @@ it('should return hello plus the value passed in and an exclamation mark at the 
     expect(helpers.getGreeting('Dan')).toEqual('Hello Dan!');
 })
 
+it('should multiply the two numbers passed and return the value to give us the area of a rectangle', () => {
+    expect(helpers.getRectangleArea(5, 4)).toEqual(20);
+    expect(helpers.getRectangleArea(100, 4)).toEqual(400);
+    expect(helpers.getRectangleArea(22, 4)).toEqual(88);
+})
+
 
