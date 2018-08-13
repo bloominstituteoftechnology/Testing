@@ -66,7 +66,7 @@ describe('Basic JS Helpers', () => {
   })
 
   describe('The function add(x,y)', () => {
-    it('should test the sum of x and y is correct', () => {
+    it('should test if the sum of x and y is correct', () => {
       expect(helpers.add(4,5)).toEqual(9);
       expect(helpers.add(-5,5)).toEqual(0);
       expect(helpers.add(-5,"5")).toEqual('both inputs must be a number');
@@ -76,7 +76,7 @@ describe('Basic JS Helpers', () => {
   })
 
   describe('The function subtract(x,y)', () => {
-    it('should test the calculate the difference of x and y is correct', () => {
+    it('should test if the difference of x and y is correct', () => {
       expect(helpers.subtract(4,5)).toEqual(-1);
       expect(helpers.subtract(-5,5)).toEqual(-10);
       expect(helpers.subtract(-5,"5")).toEqual('both inputs must be a number');
@@ -86,7 +86,7 @@ describe('Basic JS Helpers', () => {
   })
 
   describe('The function divide(x,y)', () => {
-    it('should test the calculate the difference of x and y is correct', () => {
+    it('should test if the quotient of x and y is correct', () => {
       expect(helpers.divide(1,2)).toEqual(0.5);
       expect(helpers.divide(1,3)).toEqual(0.3333333333333333);
       expect(helpers.divide(0,5)).toEqual(0);
@@ -94,6 +94,17 @@ describe('Basic JS Helpers', () => {
       expect(helpers.divide(-5,"5")).toEqual('both inputs must be a number');
       expect(helpers.divide('5')).toEqual('two numbers are required as inputs');
       expect(helpers.divide()).toEqual('two numbers are required as inputs');
+    })
+  })
+
+  describe('The function multiply(x,y)', () => {
+    it('should test if the product of x and y is correct', () => {
+      expect(helpers.multiply(1,2)).toEqual(2);
+      expect(helpers.multiply(-5,3)).toEqual(-15);
+      expect(helpers.multiply(0,5)).toEqual(0);
+      expect(helpers.multiply(-5,"5")).toEqual('both inputs must be a number');
+      expect(helpers.multiply('5')).toEqual('two numbers are required as inputs');
+      expect(helpers.multiply()).toEqual('two numbers are required as inputs');
     })
   })
 

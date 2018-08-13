@@ -60,7 +60,9 @@ const divide = (x, y) => {
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x * y;
 };
 
 const getRemainder = (x, y) => {
