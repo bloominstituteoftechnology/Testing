@@ -47,3 +47,9 @@ it('should subtract the two numbers passed and return the value', () => {
     expect(helpers.subtract(10, 5)).toEqual(5);
     expect(helpers.subtract(-5, 5)).toEqual(-10);
 })
+
+it('should divide the two numbers passed and return the value', () => {
+    expect(helpers.divide(5, 5)).toEqual(1);
+    expect(helpers.divide(10, 5)).toEqual(2);
+    expect(helpers.divide(20, 5)).toEqual(4);
+})
