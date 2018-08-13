@@ -2,7 +2,7 @@ const helpers = require('./project-1');
 
 // start testing!
 describe('project-1', () => {
-    describe.only('multiplyByTen', () => {
+    describe('multiplyByTen', () => {
         if ('returns NaN when given a non numeric value', () => {
             expect(helpers.multiplyByTen(undefined)).toBeNaN();
             expect(helpers.multiplyByTen('two')).toBeNaN();
@@ -17,19 +17,28 @@ describe('project-1', () => {
                 //assert
                 expect(actual).toEqual(expected);
                 expect(helpers.multiplyByTen(2)).toBe(20)
+                expect(helpers.multiplyByTen(-2)).toBe(-20)
+                expect(helpers.multiplyByTen(0)).toBe(0)
             });
     })
-})
 
-describe('isEven', () => {
-    it('should return true for even numbers', () => {
-        expect(helpers.isEven(4)).toBeTruthy();
-        expect(helpers.isEven(3)).toBeFalse();
-        expect(helpers.isEven(0)).toBeTruthy();
-        expect(helpers.isEven(-1)).toBeFalsy();
+    describe('substactFive', () => {
+        it('should substract five from a given number', () => {
+            const expected = 13;
+            const actual = helpers.subtractFive(18);
+            expect(actual).toEqual(expected);
+            expect(helpers.subtractFive(18)).toBe(13)
+        })
     })
-    it('should return false for odd numbers', () => {
-        expect(helpers.isEven(3)).toBeFalse();
-        expect(helpers.isEven(-1)).toBeFalsy();
+
+    describe('isEven', () => {
+        it('should return true for even numbers', () => {
+            expect(helpers.isEven(4)).toBeTruthy();
+            expect(helpers.isEven(0)).toBeTruthy();
+        })
+        it('should return false for odd numbers', () => {
+            expect(helpers.isEven(3)).toBeFalsy();
+            expect(helpers.isEven(-1)).toBeFalsy();
+        })
     })
 })
