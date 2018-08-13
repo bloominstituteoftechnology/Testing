@@ -155,4 +155,21 @@ describe(`${helpers.isEven.name}`, () => {
         expect(isEven(-5)).toBeFalsy();
     })
 });
+describe(`${helpers.isOdd.name}`, () => {
+    const isOdd = helpers.isOdd;
+    it("Should return false for the number argument", () => {
+        expect(isOdd(2)).toBeFalsy();
+        expect(isOdd(4)).toBeFalsy()
+        expect(isOdd(122)).toBeFalsy();
+        expect(isOdd(252)).toBeFalsy()
+        expect(isOdd(4)).toBeFalsy();
+    });
+    it ("Should return true for the number argument", () => {
+        expect(isOdd(3)).toBeTruthy();
+        expect(isOdd(5)).toBeTruthy()
+        expect(isOdd(121)).toBeTruthy();
+        expect(isOdd(251)).toBeTruthy()
+        expect(isOdd(-5)).toBeTruthy();
+    })
+});
 // start testing!
