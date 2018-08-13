@@ -174,4 +174,14 @@ describe('project-1', () => {
             expect(helpers.cube(undefined)).toBeNaN();
         })
     })
+    describe('raiseToPower', () => {
+        it('should return the correct raised To Power(exponenet) number(num)', () => {
+            expect(helpers.raiseToPower(3, 3)).toBe(27);
+            expect(helpers.raiseToPower(-1, 2)).toBe(1);
+        })
+        it('should return Nan when a value is undefined or non-numeric', () => {
+            expect(helpers.raiseToPower(undefined)).toBeNaN();
+            expect(helpers.raiseToPower('undefined')).toBeNaN();
+        })
+    })
 })
