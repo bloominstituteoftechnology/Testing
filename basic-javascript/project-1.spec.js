@@ -165,4 +165,13 @@ describe('project-1', () => {
             expect(helpers.square(undefined)).toBeNaN();
         })
     })
+    describe('cube', () => {
+        it('should return the correct cube number', () => {
+            expect(helpers.cube(3)).toBe(27);
+            expect(helpers.cube(-1)).toBe(-1);
+        })
+        it('should return Nan when a value is undefined', () => {
+            expect(helpers.cube(undefined)).toBeNaN();
+        })
+    })
 })
