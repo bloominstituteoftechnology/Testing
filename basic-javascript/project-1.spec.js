@@ -114,4 +114,10 @@ it('should return an exclamation point after the value passed', () => {
     expect(helpers.addExclamationPoint('H')).toEqual('H!');
 })
 
+it('should concatenate the 2 values passed with a spcee between them and return the new value', () => {
+    expect(helpers.combineNames('John', 'Doe')).toEqual('John Doe');
+    expect(helpers.combineNames('Dan', 'Abraham')).toEqual('Dan Abraham');
+    expect(helpers.combineNames('Brandon', 'Aguirre')).toEqual('Brandon Aguirre');
+})
+
 
