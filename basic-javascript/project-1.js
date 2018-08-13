@@ -6,11 +6,20 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
-  return num - 5;
+  	if(num===undefined || num===null) return false;
+	else return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  	if(str1===undefined || str2===undefined || str1 ===null || str2===null){
+	return false;
+	}	
+	
+	else if(typeof str1!== 'string' || typeof str2!== 'string') return false;
+
+	else {
+	return str1.length === str2.length;
+	}	
 };
 
 const areEqual = (x, y) => {
