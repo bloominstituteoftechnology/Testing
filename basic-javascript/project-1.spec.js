@@ -146,4 +146,14 @@ describe('project-1', () => {
             expect(helpers.isEven(-1)).toBeFalsy();
         })
     })
+    describe('isOdd', () => {
+        it('should return true for odd numbers', () => {
+            expect(helpers.isOdd(3)).toBeTruthy();
+            expect(helpers.isOdd(-1)).toBeTruthy();
+        })
+        it('should return false for even numbers', () => {
+            expect(helpers.isOdd(4)).toBeFalsy();
+            expect(helpers.isOdd(0)).toBeFalsy();
+        })
+    })
 })
