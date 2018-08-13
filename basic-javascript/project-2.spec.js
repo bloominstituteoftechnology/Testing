@@ -59,4 +59,19 @@ describe(`${funcs.isInteger.name}`, () => {
         expect(isInteger(4.3)).toBeFalsy();
     })
 })
+describe(`${funcs.fizzBuzz.name}`, () => {
+    const fizzBuzz = funcs.fizzBuzz;
+    it('should return fizzbuzz', () => {
+        expect(fizzBuzz(15)).toMatch('fizzbuzz');
+    })
+    it('should return fizz', () => {
+        expect(fizzBuzz(3)).toMatch('fizz');        
+    })
+    it('should return buzz', () => {
+        expect(fizzBuzz(5)).toMatch('buzz');
+    })
+    it('should return number', () => {
+        expect(fizzBuzz(7)).toBe(7);        
+    })
+});
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
