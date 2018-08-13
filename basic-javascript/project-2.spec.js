@@ -49,3 +49,9 @@ describe('Return fizz / buzz / fizzbuzz depending on value passed in', () => {
         expect(funcs.fizzBuzz(15)).toEqual('fizzbuzz');
     })
 })
+
+it('should return true if number passed is prime, otherwise return false', () => {
+    expect(funcs.isPrime(2)).toEqual(true);
+    expect(funcs.isPrime(18)).toEqual(false);
+    expect(funcs.isPrime(101)).toEqual(true);
+})
