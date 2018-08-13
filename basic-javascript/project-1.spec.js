@@ -35,28 +35,46 @@ describe('Project 1 Assessment', () => {
     })
 
     describe('Are Equal', () => {
-        it('should return true if 2 values are equal', () => {
+        it('should return true if 2 values are equal.', () => {
             expect(helpers.areEqual('abc', 'abc')).toBe(true);
             expect(helpers.areEqual(5, 5)).toBe(true);
         })
 
-        it('should return false if 2 values are not equal', () => {
+        it('should return false if 2 values are not equal.', () => {
             expect(helpers.areEqual('abc', 'abcd')).toBe(false);
             expect(helpers.areEqual(4, 5)).toBe(false);
         })
     })
 
     describe('Less Than 90', () => {
-        it('should return true if number is less 90', () => {
+        it('should return true if number is less than 90.', () => {
             expect(helpers.lessThanNinety(10)).toBe(true);
             expect(helpers.lessThanNinety(20)).toBe(true);
         })
 
-        it('should return false if number is greater than 90', () => {
+        it('should return false if number is greater than 90.', () => {
             expect(helpers.lessThanNinety(91)).toBe(false);
             expect(helpers.lessThanNinety(100)).toBe(false);
         })
     })
 
+    describe('Greater Than 50', () => {
+        it('should return false if number is less than 50.', () => {
+            expect(helpers.greaterThanFifty(10)).toBe(false);
+            expect(helpers.greaterThanFifty(20)).toBe(false);
+        })
 
+        it('should return true if number is greater than 50.', () => {
+            expect(helpers.greaterThanFifty(91)).toBe(true);
+            expect(helpers.greaterThanFifty(100)).toBe(true);
+        })
+    })
+
+    describe('Add', () => {
+        it('should return the sum of 2 number.', () => {
+            expect(helpers.add(1,2)).toBe(3);
+            expect(helpers.add(-1,2)).toBe(1);
+            expect(helpers.add(-1,-1)).toBe(-2);
+        })
+    })
 })
