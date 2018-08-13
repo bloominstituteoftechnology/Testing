@@ -5,6 +5,8 @@ const getBiggest = (x, y) => {
     return x;
   } else if (x === y) {
     return y;
+  } else if (!x || !y) {
+    return false
   }
   return y;
 };
