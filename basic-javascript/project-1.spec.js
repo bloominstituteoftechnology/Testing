@@ -216,4 +216,13 @@ describe(`${helpers.raiseToPower.name}`, () => {
         expect(raiseToPower(5,4)).toBe(625);
     });
 });
+
+describe(`${helpers.roundNumber.name}`, () => {
+    const roundNumber = helpers.roundNumber;
+    it('should round the number to the nearest whole number', () => {
+        expect(roundNumber(5.5)).toBe(6);
+        expect(roundNumber(5.4)).toBe(5);
+    }) 
+    
+});
 // start testing!
