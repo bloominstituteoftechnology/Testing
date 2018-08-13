@@ -1,26 +1,34 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (typeof(num) !== 'number') return 'the input must be a number'; 
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (typeof(num) !== 'number') return 'the input must be a number'; 
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (!str1 || !str2) return 'two strings are required as inputs';
+  else if (typeof(str1) !== 'string' || typeof(str2) !== 'string') return 'both inputs must be a string'; 
+  else return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (!x || !y) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x === y;
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  if (!num) return 'a number is required as input';
+  else if (typeof(num) !== 'number') return 'the input must be a number'; 
+  else if (num < 90) {
     return true;
   }
-  return false;
+  else return false;
 };
 
 const greaterThanFifty = num => {
