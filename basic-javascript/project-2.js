@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (x===undefined || y===undefined) {
+    return null
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -10,6 +13,9 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
+  if (language === undefined) {
+    return null
+  }
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -21,6 +27,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if (num === undefined) {
+    return null
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +37,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (num === undefined) {
+    return null
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -35,6 +47,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (num === undefined) {
+    return null
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,6 +57,9 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (num === undefined) {
+    return null
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -53,6 +71,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (num === undefined) {
+    return null
+  }
   if (num < 0) {
     return false;
   }
@@ -68,10 +89,16 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr.length === 0) {
+    return null
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length === 0) {
+    return null
+  }
   return arr[arr.length - 1];
 };
 
@@ -80,6 +107,9 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  if (arr.length === 0) {
+    return null
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -87,6 +117,9 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
+  if (item === undefined) {
+    return null
+  }
   arr.push(item);
   return arr;
 };
