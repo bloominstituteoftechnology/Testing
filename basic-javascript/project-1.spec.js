@@ -113,6 +113,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('multiply', () => {
+        it('should return the correct product of two given numbers', () => {
+            expect(helpers.multiply(-2, -2)).toBe(4);
+            expect(helpers.multiply(-1, 9)).toBe(-9)
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.multiply(true, undefined)).toBeNaN();
+            expect(helpers.multiply('undefined', 2)).toBeNaN();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
