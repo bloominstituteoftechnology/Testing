@@ -79,3 +79,9 @@ it('should increment every item in the array passed in by 1', () => {
     expect(funcs.incrementByOne([10001, 34, 3])).toEqual([10002, 35, 4]);
     expect(funcs.incrementByOne([1, 1, 1])).toEqual([2, 2, 2]);
 })
+
+it('should add an item to the array passed in with the value passed in', () => {
+    expect(funcs.addItemToArray([4, 3, 2], 'Hey')).toEqual([4, 3, 2, 'Hey']);
+    expect(funcs.addItemToArray([1, 1, 1], 1)).toEqual([1, 1, 1, 1]);
+    expect(funcs.addItemToArray([10, 100, 200], 'Test')).toEqual([10, 100, 200, 'Test']);
+})
