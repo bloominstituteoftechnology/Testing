@@ -39,6 +39,7 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
+  if (y === 0) { return false }
   return x / y;
 };
 
@@ -47,6 +48,7 @@ const multiply = (x, y) => {
 };
 
 const getRemainder = (x, y) => {
+  if (y === 0) { return false }
   return x % y;
 };
 
