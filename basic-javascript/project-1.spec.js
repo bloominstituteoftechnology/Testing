@@ -108,4 +108,10 @@ it('should round the number upwards and return the value', () => {
     expect(helpers.roundUp(504.9)).toEqual(505);
 })
 
+it('should return an exclamation point after the value passed', () => {
+    expect(helpers.addExclamationPoint('Hello, Bob')).toEqual('Hello, Bob!');
+    expect(helpers.addExclamationPoint('Hello')).toEqual('Hello!');
+    expect(helpers.addExclamationPoint('H')).toEqual('H!');
+})
+
 
