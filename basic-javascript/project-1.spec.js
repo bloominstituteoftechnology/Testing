@@ -16,6 +16,9 @@ describe('subtractFive', () => {
     it('it should subtract number passed by five', () => {
         expect(helpers.subtractFive(25)).toEqual(20);
         })
+    it('should return false if passed undefined', () => {
+        expect(helpers.subtractFive(undefined)).toEqual(false);
+        })
     })
 
 
@@ -23,7 +26,16 @@ describe('areSameLength', () => {
     it('it should return true if two passed strings length is the same', () => {
         expect(helpers.areSameLength('bye', 'you')).toEqual(true);
         })
+    it('it should return null if either string passed is undefined', () => {
+        expect(helpers.areSameLength(undefined, 'hello')).toEqual(null);
+        })
+        // it('it should throw error if empty string', () => {
+        //     expect(helpers.areSameLength("","")).toThrow('Provide a string');
+        // })
     })
+    
+
+
 
 
 describe('areEqual', () => {
@@ -31,12 +43,17 @@ describe('areEqual', () => {
         expect(helpers.areEqual(4,5)).toEqual(false);
         expect(helpers.areEqual(4,4)).toEqual(true);
         })
+    it('it should return null if number is undefined', () => {
+        expect(helpers.areEqual(15, undefined)).toEqual(null);
+        })
     })
 
 describe('lessThanNinety', () => {
     it('it should pass true if number is less than 90, otherwise false', () => {
         expect(helpers.lessThanNinety(89)).toEqual(true);
-
+        })
+    it('it should return null if number is undefined', () => {
+        expect(helpers.lessThanNinety(undefined)).toEqual(null);
         })
     })
 
@@ -44,30 +61,45 @@ describe('greaterThanFifty', () => {
     it('it should return true if number passed is greater than fifty', () => {
         expect(helpers.greaterThanFifty(60)).toEqual(true);
         })
+    it('it should return null if number passed is undefined', () => {
+        expect(helpers.greaterThanFifty(undefined)).toEqual(null);
+    })
     })
 
 describe('add', () => {
     it('it should return sum or two numbers passed', () => {
         expect(helpers.add(2, 2)).toEqual(4);
         })
+    it('it should return false if numbers are undefined', () => {
+        expect(helpers.add(undefined, 5)).toEqual(false);
+    })
     })
 
 describe('subtract', () => {
     it('it should subtract numbers passed returning the value', () => {
         expect(helpers.subtract(10, 9)).toEqual(1);
         })
+    it('it should return false if number is undefined', () => {
+        expect(helpers.subtract(undefined, 4)).toEqual(false);
+    })
     })
 
 describe('divide', () => {
     it('it should return value of dividing y into x', () => {
         expect(helpers.divide(10,5)).toEqual(2);
         })
+    it('it should return false if number is undefined', () => {
+        expect(helpers.divide(undefined, 5)).toEqual(false);
+    })
     })
 
 describe('multiply', () => {
     it('it should multiply two numbers passed', () => {
         expect(helpers.multiply(5, 5)).toEqual(25);
         })
+    it('it should return false if numbers are undefined', () => {
+        expect(helpers.multiply(4, undefined)).toEqual(false);
+    })
     })
 
 describe('getRemainder', () => {
