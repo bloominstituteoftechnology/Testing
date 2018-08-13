@@ -11,5 +11,7 @@
   "devDependencies": {
     "jest": "^23.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jest-extended": "^0.8.1"
+  }
 }
