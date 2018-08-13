@@ -205,22 +205,70 @@ describe('isEven', () => {
         expect(isEven(4.4)).toBeFalsy()
     })
     it('returns Falsy with strings', () => {
-        expect(isEven('hello')).toBeFalsy()
+        expect(isEven('even')).toBeFalsy()
     })
 })
 
 describe('isOdd', () => {
     isOdd = helpers.isOdd
-    it('returns true for evens', () => {
-        expect(isEven(4)).toBeTruthy()
+    it('returns true for odds', () => {
+        expect(isOdd(3)).toBeTruthy()
     })
-    it('returns true for 0', () => {
-        expect(isEven(0)).toBeTruthy()
+    it('returns false for 0', () => {
+        expect(isOdd(0)).toBeFalsy()
     })
-    it('accounts for floating point decimals', () => {
-        expect(isEven(10.2)).toBeTruthy()
+    it('returns falsy on evens', () => {
+        expect(isOdd(10)).toBeFalsy()
     })
     it('returns Falsy with strings', () => {
-        expect(isEven('hello')).toBeFalsy()
+        expect(isOdd('hello')).toBeFalsy()
     })
 })
+
+describe('square', () => {
+    square = helpers.square
+    it('returns correct value', () => {
+        expect(square(5)).toEqual(25)
+    })
+    it('returns 0 for 0', () => {
+        expect(square(0)).toEqual(0)
+    })
+    it('negates a square root (within 5 decimal places)', () => {
+        expect(square(Math.sqrt(5))).toBeCloseTo(5,5)
+    })
+    it('returns Falsy with strings', () => {
+        expect(square('hello')).toBeFalsy()
+    })
+})
+
+describe('cube', () => {
+    cube = helpers.cube
+    it('returns correct value', () => {
+        expect(cube(5)).toEqual(125)
+    })
+    it('returns 0 for 0', () => {
+        expect(cube(0)).toEqual(0)
+    })
+    it('caps out at 1.7976931348623157e+308', () => {
+        expect(cube(Number.MAX_VALUE)).toEqual(Infinity)
+    })
+})
+
+describe('raiseToPower', () => {
+    raiseToPower = helpers.raiseToPower
+    it('returns correct value', () => {
+        expect(raiseToPower(5, 2)).toEqual(25)
+        expect(raiseToPower(2, 10)).toEqual(1024)
+        expect(raiseToPower(-1, 5)).toEqual(-1)
+    })
+    it('returns 1 when raised to 0', () => {
+        expect(raiseToPower(-15, 0)).toEqual(1)
+    })
+    it('returns that number when raised to 1', () => {
+        expect(raiseToPower(-15, 1)).toEqual(-15)
+        expect(raiseToPower(6, 1)).toEqual(6)
+        expect(raiseToPower(54321, 1)).toEqual(54321)
+    })
+})
+
+
