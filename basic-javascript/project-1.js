@@ -1,14 +1,18 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (isNaN(num)) return false;
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (isNaN(num)) return false;
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  str1 = `${str1}`;
+  str2 = `${str2}`;
   return str1.length === str2.length;
 };
 
@@ -17,6 +21,7 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
+  if (isNaN(num)) return false;
   if (num < 90) {
     return true;
   }
@@ -24,6 +29,7 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (isNaN(num)) return false;
   if (num > 50) {
     return true;
   }
@@ -31,26 +37,32 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (isNaN(x) || isNaN(y)) return false;
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (isNaN(x) || isNaN(y)) return false;
   return x - y;
 };
 
 const divide = (x, y) => {
+  if (isNaN(x) || isNaN(y)) return false;
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if (isNaN(x) || isNaN(y)) return false;
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if (isNaN(x) || isNaN(y)) return false;
   return x % y;
 };
 
 const isEven = num => {
+  if (isNaN(num)) return false;
   if (num % 2 === 0) {
     return true;
   }
@@ -58,6 +70,7 @@ const isEven = num => {
 };
 
 const isOdd = num => {
+  if (isNaN(num)) return false;
   if (num % 2 === 0) {
     return false;
   }
@@ -65,26 +78,32 @@ const isOdd = num => {
 };
 
 const square = num => {
+  if (isNaN(num)) return false;
   return num * num;
 };
 
 const cube = num => {
+  if (isNaN(num)) return false;
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if (isNaN(num) || isNaN(exponent)) return false;
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if (isNaN(num)) return false;
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if (isNaN(num)) return false;
   return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
+  str = `${str}`;
   return (str += '!');
 };
 
@@ -97,18 +116,25 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if (isNaN(length) || isNaN(width)) return false;
+  if (length < 0 || width < 0) return false;
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (isNaN(base) || isNaN(height)) return false;
+  if (base < 0 || height < 0) return false;
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  if (isNaN(radius) || radius < 0) return false;
+  return Number((Math.PI * radius * radius).toFixed(2));
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if (isNaN(length) || isNaN(width) || isNaN(height)) return false;
+  if (length < 0 || width < 0 || height < 0) return false;
   return width * height * length;
 };
 
