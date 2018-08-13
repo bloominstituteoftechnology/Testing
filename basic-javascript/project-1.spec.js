@@ -102,6 +102,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('divide', () => {
+        it('should return the correct quotient of two given numbers', () => {
+            expect(helpers.divide(52, -2)).toBe(-26);
+            expect(helpers.divide(45, 9)).toBe(5)
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.divide(undefined, undefined)).toBeNaN();
+            expect(helpers.divide('undefined', 2)).toBeNaN();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
