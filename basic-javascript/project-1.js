@@ -53,6 +53,9 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else if (y === 0) return 'divisor can not be zero'
   return x / y;
 };
 

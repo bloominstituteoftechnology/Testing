@@ -85,5 +85,17 @@ describe('Basic JS Helpers', () => {
     })
   })
 
+  describe('The function divide(x,y)', () => {
+    it('should test the calculate the difference of x and y is correct', () => {
+      expect(helpers.divide(1,2)).toEqual(0.5);
+      expect(helpers.divide(1,3)).toEqual(0.3333333333333333);
+      expect(helpers.divide(0,5)).toEqual(0);
+      expect(helpers.divide(5,0)).toEqual('divisor can not be zero');
+      expect(helpers.divide(-5,"5")).toEqual('both inputs must be a number');
+      expect(helpers.divide('5')).toEqual('two numbers are required as inputs');
+      expect(helpers.divide()).toEqual('two numbers are required as inputs');
+    })
+  })
+
 
 })
