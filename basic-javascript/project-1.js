@@ -104,7 +104,6 @@ const combineNames = (firstName, lastName) => {
 
   return `${firstName} ${lastName}`;
 };
-console.log(combineNames('John  ', 'Smith'));
 const getGreeting = name => {
   return `Hello ${name}!`;
 };
