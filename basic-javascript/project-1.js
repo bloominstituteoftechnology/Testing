@@ -32,6 +32,9 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
+  if (typeof num !== 'number') {
+    return undefined;
+  }
   if (num < 90) {
     return true;
   }
@@ -39,6 +42,9 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (typeof num !== 'number') {
+    return undefined;
+  }
   if (num > 50) {
     return true;
   }
