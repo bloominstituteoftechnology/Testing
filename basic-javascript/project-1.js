@@ -32,14 +32,18 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
+  if (!num) return 'a number is required as input';
+  else if (typeof(num) !== 'number') return 'the input must be a number'; 
+  else if (num > 50) {
     return true;
   }
-  return false;
+  else return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (!x || !y) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x + y;
 };
 
 const subtract = (x, y) => {

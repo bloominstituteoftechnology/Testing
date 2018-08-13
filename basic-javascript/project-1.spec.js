@@ -50,6 +50,7 @@ describe('Basic JS Helpers', () => {
     it('should test if input is less than 90', () => {
       expect(helpers.lessThanNinety(89)).toEqual(true);
       expect(helpers.lessThanNinety(-89)).toEqual(true);
+      expect(helpers.lessThanNinety(91)).toEqual(false);
       expect(helpers.lessThanNinety('5')).toEqual('the input must be a number');
       expect(helpers.lessThanNinety()).toEqual('a number is required as input');
     })
@@ -61,6 +62,16 @@ describe('Basic JS Helpers', () => {
       expect(helpers.greaterThanFifty(-89)).toEqual(false);
       expect(helpers.greaterThanFifty('5')).toEqual('the input must be a number');
       expect(helpers.greaterThanFifty()).toEqual('a number is required as input');
+    })
+  })
+
+  describe('The function add(x,y)', () => {
+    it('should test the sum of x and y is correct', () => {
+      expect(helpers.add(4,5)).toEqual(9);
+      expect(helpers.add(-5,5)).toEqual(0);
+      expect(helpers.add(-5,"5")).toEqual('both inputs must be a number');
+      expect(helpers.add('5')).toEqual('two numbers are required as inputs');
+      expect(helpers.add()).toEqual('two numbers are required as inputs');
     })
   })
 
