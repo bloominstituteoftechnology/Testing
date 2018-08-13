@@ -94,3 +94,41 @@ it('should return false if the passed value is undefined, null, or not a number'
 });
 
 });
+
+
+describe('divisble by five or three test', () => {
+it('should return appropriate string if the passed number is divisble by five, three or both', () => {
+    expect(funcs.fizzBuzz(15)).toEqual('fizzbuzz');
+    expect(funcs.fizzBuzz(5)).toEqual('buzz');
+    expect(funcs.fizzBuzz(9)).toEqual('fizz');
+    expect(funcs.fizzBuzz(-24)).toEqual('fizz');
+    expect(funcs.fizzBuzz(0)).toEqual('fizzbuzz');
+});
+
+it('should return false if the passed value is undefined, null, or not a number', () =>{
+        expect(funcs.fizzBuzz(undefined)).toBeFalsy();
+        expect(funcs.fizzBuzz(null)).toEqual(false);
+        expect(funcs.fizzBuzz('ytref')).toEqual(false);
+});
+
+});
+
+
+describe('isPrime', () => {
+it('should return true if the passed number is prime', () => {
+    expect(funcs.isPrime(15)).toEqual(false);
+    expect(funcs.isPrime(7)).toEqual(true);
+    expect(funcs.isPrime(0)).toEqual(false);
+    expect(funcs.isPrime(1)).toEqual(false);
+    expect(funcs.isPrime(-986)).toEqual(false);
+    expect(funcs.isPrime(277,232,917)).toEqual(true);	
+});
+
+it('should return false if the passed value is undefined, null, or not a number', () =>{
+        expect(funcs.isPrime(undefined)).toBeFalsy();
+        expect(funcs.isPrime(null)).toEqual(false);
+        expect(funcs.isPrime('ytref')).toEqual(false);
+});
+
+});
+

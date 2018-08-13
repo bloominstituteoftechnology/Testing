@@ -73,7 +73,12 @@ if (Math.floor(num) === num) {
 };
 
 const fizzBuzz = num => {
-  if (num % 5 === 0 && num % 3 === 0) {
+if(num===undefined || num===null) return false;
+
+else if(typeof num!=='number') return false;
+
+else{	
+if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
     return 'buzz';
@@ -81,10 +86,16 @@ const fizzBuzz = num => {
     return 'fizz';
   }
   return num;
+}
 };
 
 const isPrime = num => {
-  if (num < 0) {
+if(num===undefined || num===null) return false;
+
+else if(typeof num!=='number') return false;
+
+else {
+if (num < 0) {
     return false;
   }
   if (num === 1 || num === 0) {
@@ -96,6 +107,7 @@ const isPrime = num => {
     }
   }
   return true;
+}
 };
 
 const returnFirst = arr => {
