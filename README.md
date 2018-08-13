@@ -18,6 +18,8 @@ Now we start on the other side of the fence, where you have no tests, only worki
 - open the `basic-javascript` folder and use `project-1.spec.js` to write tests for the functions inside `project-1.js`.
 - use `project-2.spec.js` to write tests for the functions inside `project-2.js`.
 
+As you write your tests, bugs in the code may be revealed, feel free to correct and _refactor_ the source code to sitisfy your tests.
+
 ## Stretch Goal
 
 Open the `advanced-javascript` folder and write tests for the `arrays.js` and `object.js` files inside the corresponding `*.spec.js` files.
