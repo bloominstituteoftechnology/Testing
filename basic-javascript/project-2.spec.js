@@ -12,4 +12,12 @@ describe(`${funcs.getBiggest.name}`, () => {
     })
 })
 
+describe(`${funcs.greeting.name}`, () => {
+    const greeting = funcs.greeting;
+    it('should return the proper greeting depending on the input', () => {
+        expect(greeting('German')).toBe('Guten Tag!');
+        expect(greeting('Spanish')).toBe('Hola!');
+        expect(greeting('Unknown')).toBe('Hello!');
+    })
+})
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
