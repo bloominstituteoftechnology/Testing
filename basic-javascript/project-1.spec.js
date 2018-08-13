@@ -40,55 +40,95 @@ describe('areEqual', () => {
     });
 })
 
-
-
-test('areEqual test 1', () => {
-    
-})
-
-test('areEqual test 2', () => {
-    
-})
-
-
-test('lessThanNinety test 1', () => {
-    expect(helpers.lessThanNinety(-5)).toBe(true);
-})
-
-test('lessThanNinety test 2', () => {
-    expect(helpers.lessThanNinety(0)).toBe(true);
+describe('lessThanNinety', () => {
+    it('Should return true if number passed is less than 90', () => {
+        expect(helpers.lessThanNinety(-5)).toBe(true);
+        expect(helpers.lessThanNinety(0)).toBe(true);
+    });
 })
 
 //#6-10
 
-test('greaterThanFifty test 1', () => {
-    expect(helpers.greaterThanFifty(100)).toBe(true);
+describe('greaterThanFifty', () => {
+    it('Should return true if number passed is greater than 50', () => {
+        expect(helpers.greaterThanFifty(100)).toBe(true);
+        expect(helpers.greaterThanFifty(-60)).toBe(false);
+    });
 })
 
-test('greaterThanFifty test 2', () => {
-    expect(helpers.greaterThanFifty(-60)).toBe(false);
+
+describe('greaterThanFifty', () => {
+    it('Should return true if number passed is greater than 50', () => {
+        expect(helpers.greaterThanFifty(100)).toBe(true);
+        expect(helpers.greaterThanFifty(-60)).toBe(false);
+    });
 })
 
-test('add test 1', () => {
-    expect(helpers.add(2,3)).toBe(5);
+describe('add', () =>{
+    it('Should return the sum of two numbers passed', () => {
+        expect(helpers.add(2,3)).toBe(5);
+        expect(helpers.add(-1,3)).toBe(2);
+        expect(helpers.add(23.2,45.5)).toBe(68.7);
+    });
+
+    it('Should return false when one of the values is undefined',() => {
+        expect(helpers.add(undefined,2)).toEqual(false);
+    });
 })
 
-test('add test 2', () => {
-    expect(helpers.add(-1,3)).toBe(2);
+describe('subtract', () =>{
+    it('Should return the differnece of two numbers passed', () => {
+        expect(helpers.subtract(0,0)).toBe(0);
+        expect(helpers.subtract(-4, -3)).toBe(-1);
+        expect(helpers.subtract(20,15)).toBe(5);
+    });
+
+    it('Should return false when one of the values is undefined',() => {
+        expect(helpers.subtract(undefined,2)).toEqual(false);
+    });
 })
 
-test('add test 3', () => {
-    expect(helpers.add(23.2,45.5)).toBe(68.7);
+describe('divide', () => {
+    it('Should return the quotient of the two numbers passed',() =>{
+        expect(helpers.divide(10,5)).toBe(2);
+        expect(helpers.divide(-50,5)).toBe(-10);
+    });
 })
 
-test('subtract test 1', () => {
-    expect(helpers.subtract(20,15)).toBe(5);
+//#11-15
+describe('multiply', () => {
+    it('Should return the product of the two numbers passed',() =>{
+        expect(helpers.multiply(10,5)).toBe(50);
+        expect(helpers.multiply(-50,5)).toBe(-250);
+    });
 })
 
-test('subtract test 2', () => {
-    expect(helpers.subtract(-4, -3)).toBe(-1);
+describe('getRemainder', () => {
+    it('Should return the remainder of the two numbers divided',() =>{
+        expect(helpers.getRemainder(12,5)).toBe(2);
+        expect(helpers.getRemainder(-50,3)).toBe(-2);
+    });
 })
 
-test('subtract test 3', () => {
-    expect(helpers.subtract(0,0)).toBe(0);  
+describe('isEven', () => {
+    it('Should return true if the number is even', ()=> {
+        expect(helpers.isEven(20)).toEqual(true);
+        expect(helpers.isEven(15)).toEqual(false);
+    })
 })
+
+describe('isOdd', () => {
+    it('Should return true if the number is odd', ()=> {
+        expect(helpers.isOdd(20)).toEqual(false);
+        expect(helpers.isOdd(15)).toEqual(true);
+    })
+})
+
+describe('square', () => {
+    it('Should return the square of the number passed', () =>{
+        expect(helpers.square(4)).toBe(16);
+        expect(helpers.square(-3)).toBe(9);
+    })
+})
+
+//#16-20
