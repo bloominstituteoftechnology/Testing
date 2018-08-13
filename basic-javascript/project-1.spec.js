@@ -116,4 +116,15 @@ describe(`${helpers.divide.name}`, () => {
         expect(divide(0,0)).toBeNaN();
     });
 });
+
+describe(`${helpers.multiply.name}`, () => {
+    const multiply = helpers.multiply;
+    it("Should multiply numbers together to equal their target value", () => {
+        expect(multiply(5,2)).toBe(10);
+        expect(multiply(3,1)).toBe(3);
+        expect(multiply(100,22)).toBe(2200);
+        expect(multiply(-2, -4)).toBe(8);
+        expect(multiply(-2, 4)).toBe(-8);
+    });
+});
 // start testing!
