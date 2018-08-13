@@ -75,5 +75,15 @@ describe('Basic JS Helpers', () => {
     })
   })
 
+  describe('The function subtract(x,y)', () => {
+    it('should test the calculate the difference of x and y is correct', () => {
+      expect(helpers.subtract(4,5)).toEqual(-1);
+      expect(helpers.subtract(-5,5)).toEqual(-10);
+      expect(helpers.subtract(-5,"5")).toEqual('both inputs must be a number');
+      expect(helpers.subtract('5')).toEqual('two numbers are required as inputs');
+      expect(helpers.subtract()).toEqual('two numbers are required as inputs');
+    })
+  })
+
 
 })

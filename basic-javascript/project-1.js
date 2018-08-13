@@ -47,7 +47,9 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if (!x || !y) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x - y;
 };
 
 const divide = (x, y) => {
