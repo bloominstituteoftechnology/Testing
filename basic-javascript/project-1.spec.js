@@ -184,4 +184,89 @@ describe('project-1', () => {
             expect(helpers.raiseToPower('undefined')).toBeNaN();
         })
     })
+    describe('roundNumber', () => {
+        it('should return number rounded to the nearest integer', () => {
+            expect(helpers.roundNumber(3.3)).toBe(3);
+            expect(helpers.roundNumber(-1.8)).toBe(-2);
+        })
+        it('should return Nan when a value is undefined or non-numeric', () => {
+            expect(helpers.roundNumber(undefined)).toBeNaN();
+            expect(helpers.roundNumber('undefined')).toBeNaN();
+        })
+    })
+    describe('roundUp', () => {
+        it('should return number rounded up to the nearest integer', () => {
+            expect(helpers.roundUp(3.3)).toBe(4);
+            expect(helpers.roundUp(-1.8)).toBe(-1);
+        })
+        it('should return Nan when a value is undefined or non-numeric', () => {
+            expect(helpers.roundUp(undefined)).toBeNaN();
+            expect(helpers.roundUp('undefined')).toBeNaN();
+        })
+    })
+    describe('addExclamationPoint', () => {
+        it('should add an exclamation point to a given string', () => {
+            expect(helpers.addExclamationPoint('abc')).toBe('abc!');
+            expect(helpers.addExclamationPoint(-1.8)).toBe('-1.8!');
+            expect(helpers.addExclamationPoint('hi')).toBe('hi!');
+        })
+    })
+    describe('combineNames', () => {
+        it('should combine two strings', () => {
+            expect(helpers.combineNames('abc', 'fig')).toBe('abc fig');
+            expect(helpers.combineNames(-1.8, 6)).toBe('-1.8 6');
+            expect(helpers.combineNames("-1.8", 6)).toBe('-1.8 6');
+        })
+    })
+    describe('getGreeting', () => {
+        it('should take a name and combine it with a given string', () => {
+            expect(helpers.getGreeting('abc')).toBe('Hello abc!');
+            expect(helpers.getGreeting(6)).toBe('Hello 6!');
+            expect(helpers.getGreeting(true)).toBe('Hello true!');
+        })
+    })
+    describe('getRectangleArea', () => {
+        it('should return an area of a rectangle with given length and width', () => {
+            expect(helpers.getRectangleArea(5, 4)).toBe(20);
+            expect(helpers.getRectangleArea(6, 1)).toBe(6);
+            expect(helpers.getRectangleArea(0.2, 2)).toBe(0.4);
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.getRectangleArea([2, 7], 2)).toBeNaN();
+            expect(helpers.getRectangleArea(null, undefined)).toBeNaN();
+        })
+    })
+    describe('getTriangleArea', () => {
+        it('should return an area of a triangle with given base and height', () => {
+            expect(helpers.getTriangleArea(5, 4)).toBe(10);
+            expect(helpers.getTriangleArea(6, 1)).toBe(3);
+            expect(helpers.getTriangleArea(0.2, 2)).toBe(0.2);
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.getTriangleArea([2, 7], 2)).toBeNaN();
+            expect(helpers.getTriangleArea(null, undefined)).toBeNaN();
+        })
+    })
+    describe('getCircleArea', () => {
+        it('should return an area of a circle with a given radius', () => {
+            expect(helpers.getCircleArea(5)).toBe(78.53981633974483);
+            expect(helpers.getCircleArea(2.2)).toBe(15.205308443374602);
+            expect(helpers.getCircleArea(1)).toBe(3.141592653589793);
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.getCircleArea([2, 7])).toBeNaN();
+            expect(helpers.getCircleArea('dv')).toBeNaN();
+        })
+    })
+    describe('getRectangularPrismVolume', () => {
+        it('should return volume of a prism with a given width, height, length', () => {
+            expect(helpers.getRectangularPrismVolume(5, 5, 4)).toBe(100);
+            expect(helpers.getRectangularPrismVolume(2.2, 1, 2)).toBe(4.4);
+            expect(helpers.getRectangularPrismVolume(-3, 4, 2)).toBe(-24);
+        })
+        it('should return NaN if a value is non-numeric', () => {
+            expect(helpers.getRectangularPrismVolume([2, 7], '3', 1)).toBeNaN();
+            expect(helpers.getRectangularPrismVolume('dv', 5, 1)).toBeNaN();
+        })
+    })
 })
