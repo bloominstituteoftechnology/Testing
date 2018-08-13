@@ -276,4 +276,10 @@ describe(`${helpers.getRectangleArea.name}`, () => {
     })
 });
 
+describe(`${helpers.getTriangleArea.name}`, () => {
+    const getTriangleArea = helpers.getTriangleArea;
+    it('should return the triangle area', () => {
+        expect(getTriangleArea(3,2)).toBe(3);
+    });
+});
 // start testing!
