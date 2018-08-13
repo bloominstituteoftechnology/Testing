@@ -55,4 +55,63 @@ describe("Arrays", () => {
       ).toEqual(2);
     });
   });
+
+  describe("find", () => {
+    it("should be a function", () => {
+      const find = arrayFunctions.find;
+      expect(typeof find).toBe("function");
+    });
+
+    it("should return the first element of an array that is bigger than 10", () => {
+      expect(
+        arrayFunctions.find([2, 5, 12], function(element) {
+          return element > 10;
+        })
+      ).toEqual(12);
+    });
+
+    it("should return undefined if it doesnt find the number in the array", () => {
+      expect(arrayFunctions.find([2, 3, 5], element => element > 10)).toEqual(undefined);
+    });
+  });
+
+  describe("filter", () => {
+    it("should be a function", () => {
+      const filter = arrayFunctions.filter;
+      expect(typeof filter).toBe("function");
+    });
+
+    it("should return only even numbers from an array", () => {
+      expect(
+        arrayFunctions.filter([1, 3, 4, 6, 2, 7], function(element) {
+          return element % 2 === 0;
+        })
+      ).toEqual([4, 6, 2]);
+    });
+
+    it("should return only numbers from an array", () => {
+      expect(
+        arrayFunctions.filter([3, "hello", 4, "hi"], function(element) {
+          if (typeof element === "number") {
+            return element;
+          }
+        })
+      ).toEqual([3, 4]);
+    });
+
+    it("should return only numbers greater than 10", () => {
+      expect(arrayFunctions.filter([3, 11, 14, 5], element => element > 10)).toEqual([11, 14]);
+    });
+  });
+
+  describe("flatten", () => {
+    it("should be a function", () => {
+      const flatten = arrayFunctions.flatten;
+      expect(typeof flatten).toBe("function");
+    });
+
+    it("should concatenate nested arrays", () => {
+      expect(arrayFunctions.flatten([3, 4, [4, 5]])).toEqual([3, 4, 4, 5]);
+    });
+  });
 });
