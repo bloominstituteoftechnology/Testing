@@ -40,7 +40,7 @@ describe('Project 1 Assessment', () => {
             expect(helpers.areEqual(5, 5)).toBe(true);
         })
 
-        it('should return true if 2 values are equal', () => {
+        it('should return false if 2 values are not equal', () => {
             expect(helpers.areEqual('abc', 'abcd')).toBe(false);
             expect(helpers.areEqual(4, 5)).toBe(false);
         })
