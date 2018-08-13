@@ -7,6 +7,9 @@ describe("getBiggest", () => {
     expect(funcs.getBiggest(5, 5)).toBe(5);
     expect(funcs.getBiggest(2, 5)).toBe(5);
   });
+  it("should return false if x or y is undefined", () => {
+    expect(funcs.getBiggest(2, undefined)).toBe(false);
+  });
 });
 
 describe("greeting", () => {
@@ -23,6 +26,9 @@ describe("isTenOrFive", () => {
     expect(funcs.isTenOrFive(10)).toBe(true);
     expect(funcs.isTenOrFive(3)).toBe(false);
   });
+  it("should return false if num is undefined", () => {
+    expect(funcs.isTenOrFive(undefined)).toBe(false);
+  });
 });
 
 describe("isInRange", () => {
@@ -30,12 +36,18 @@ describe("isInRange", () => {
     expect(funcs.isInRange(25)).toBe(true);
     expect(funcs.isInRange(100)).toBe(false);
   });
+  it("should return false if num is undefined", () => {
+    expect(funcs.isInRange(undefined)).toBe(false);
+  });
 });
 
 describe("isInteger", () => {
   it("should return true if num is integer else return false", () => {
     expect(funcs.isInteger(3)).toBe(true);
     expect(funcs.isInteger(2.2)).toBe(false);
+  });
+  it("should return false if num is undefined", () => {
+    expect(funcs.isInteger(undefined)).toBe(false);
   });
 });
 
@@ -45,6 +57,9 @@ describe("fizzBuzz", () => {
     expect(funcs.fizzBuzz(5)).toBe("buzz");
     expect(funcs.fizzBuzz(3)).toBe("fizz");
   });
+  it("should return false if num is undefined", () => {
+    expect(funcs.fizzBuzz(undefined)).toBe(false);
+  });
 });
 
 describe("isPrime", () => {
@@ -53,12 +68,18 @@ describe("isPrime", () => {
     expect(funcs.isPrime(-1)).toBe(false);
     expect(funcs.isPrime(12)).toBe(false);
   });
+  it("should return false if num is undefined", () => {
+    expect(funcs.isPrime(undefined)).toBe(false);
+  });
 });
 
 describe("returnFirst", () => {
   it("should return first index of array", () => {
     expect(funcs.returnFirst([1, 2, 3])).toBe(1);
     expect(funcs.returnFirst([2, 3, 4])).toBe(2);
+  });
+  it("should return false if arr is empty", () => {
+    expect(funcs.returnFirst(undefined)).toBe(false);
   });
 });
 
@@ -67,17 +88,26 @@ describe("returnLast", () => {
     expect(funcs.returnLast([1, 2, 3])).toBe(3);
     expect(funcs.returnLast([3, 4, 5])).toBe(5);
   });
+  it("should return false if arr is empty", () => {
+    expect(funcs.returnLast(undefined)).toBe(false);
+  });
 });
 
 describe("getArrayLength", () => {
   it("should return the length of the array", () => {
     expect(funcs.getArrayLength([2, 3, 4, 5, 6])).toBe(5);
   });
+  it("should return null if arr is empty", () => {
+    expect(funcs.getArrayLength(undefined)).toBe(false);
+  });
 });
 
 describe("incrementByOne", () => {
   it("should return each index in the array incremented by one", () => {
     expect(funcs.incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
+  });
+  it("should return false if arr is empty", () => {
+    expect(funcs.incrementByOne(undefined)).toBe(false);
   });
 });
 

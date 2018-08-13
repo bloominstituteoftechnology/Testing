@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -11,16 +14,19 @@ const getBiggest = (x, y) => {
 
 const greeting = language => {
   switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
+    case "German":
+      return "Guten Tag!";
+    case "Spanish":
+      return "Hola!";
     default:
-      return 'Hello!';
+      return "Hello!";
   }
 };
 
 const isTenOrFive = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +34,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -35,6 +44,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,17 +54,23 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return "fizzbuzz";
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return "buzz";
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return "fizz";
   }
   return num;
 };
 
 const isPrime = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num < 0) {
     return false;
   }
@@ -68,18 +86,30 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr === undefined) {
+    return false;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr === undefined) {
+    return false;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if (arr === undefined) {
+    return false;
+  }
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if (arr === undefined) {
+    return false;
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -97,7 +127,7 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
+  let newSentence = "";
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
