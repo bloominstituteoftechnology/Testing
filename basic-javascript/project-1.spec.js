@@ -29,7 +29,22 @@ describe('project-1', () => {
             expect(actual).toEqual(expected);
             expect(helpers.subtractFive(-5)).toBe(-10)
             expect(helpers.subtractFive(0)).toBe(-5)
-            expect(helpers.subtractFive(NaN)).toBe(NaN)
+        })
+        it('should return NaN when given NaN value', () => {
+            expect(helpers.subtractFive(NaN)).toBe(NaN);
+            expect(helpers.subtractFive('wer')).toBeNaN();
+
+        })
+    })
+    describe('areSameLength', () => {
+        it('should return true if the   lengths of the strings are the same', () => {
+            expect(helpers.areSameLength(['sdfj', 'dfs', 'sdfag', 'sfoee'], 'four')).toBeTruthy();
+            expect(helpers.areSameLength('four', [4, 6, 3432, 656])).toBeTruthy()
+        })
+        it('should return false when given non-string values', () => {
+            expect(helpers.areSameLength(NaN, '')).toBe(false);
+            expect(helpers.areSameLength('wer', 4)).toBe(false);
+
         })
     })
 
