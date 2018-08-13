@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if(!Number.isInteger(num) || typeof num !== 'number') {
+      return false;
+  }
   return num * 10;
 };
 
