@@ -11,3 +11,9 @@ it('should subtract the number passed by five', () => {
     expect(helpers.subtractFive(100)).toEqual(95);
     expect(helpers.subtractFive(30)).toEqual(25);
 })
+
+it('should return true if the two values provided are the same length', () => {
+    expect(helpers.areSameLength('hello', 'test5')).toEqual(true);
+    expect(helpers.areSameLength('hell', 'test5')).toEqual(false);
+    expect(helpers.areSameLength(5, 'test5ssssss')).toEqual(false);
+})
