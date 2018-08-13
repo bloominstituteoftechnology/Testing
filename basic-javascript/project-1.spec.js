@@ -96,4 +96,10 @@ it('should return the result of the number raised by the nth power', () => {
     expect(helpers.raiseToPower(1, 10)).toEqual(1);
 })
 
+it('should round the number passed and return the value', () => {
+    expect(helpers.roundNumber(2.5)).toEqual(3);
+    expect(helpers.roundNumber(4.4)).toEqual(4);
+    expect(helpers.roundNumber(1000.4)).toEqual(1000);
+})
+
 
