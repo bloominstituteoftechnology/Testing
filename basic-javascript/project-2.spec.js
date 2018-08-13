@@ -118,5 +118,12 @@ describe(`${funcs.incrementByOne.name}`, () => {
         expect(incrementByOne(arr)).toEqual([6,5,3,2]);
     });
 });
+describe(`${funcs.addItemToArray.name}`, () => {
+    const addItemToArray = funcs.addItemToArray;
+    const arr = [5,4,2,1];
+    it('should push a value to the end of the array', () => {
+        expect(addItemToArray([...arr],6)).toEqual([...arr, 6]);
+    });
+});
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
