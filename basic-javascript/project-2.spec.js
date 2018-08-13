@@ -37,3 +37,15 @@ it('should return true if number passed is an integer, otherwise return false', 
     expect(funcs.isInteger('Hey')).toEqual(false);
     expect(funcs.isInteger(6)).toEqual(true);
 })
+
+describe('Return fizz / buzz / fizzbuzz depending on value passed in', () => {
+    it('should return fizz', () => {
+        expect(funcs.fizzBuzz(3)).toEqual('fizz');
+    })
+    it('should return buzz', () => {
+        expect(funcs.fizzBuzz(5)).toEqual('buzz');
+    })
+    it('should return fizzbuzz', () => {
+        expect(funcs.fizzBuzz(15)).toEqual('fizzbuzz');
+    })
+})
