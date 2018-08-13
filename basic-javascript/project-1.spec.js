@@ -247,4 +247,14 @@ describe(`${helpers.addExclamationPoint.name}`, () => {
         }
     }) 
 });
+
+describe(`${helpers.combineNames.name}`, () => {
+    const combineNames = helpers.combineNames;
+    const regex = /\w+ \w+/;
+    it("should display the first and last name", () => {
+        expect(combineNames('John', 'Smith')).toMatch(regex);
+        expect(combineNames('Dragon', 'Tim')).toMatch(regex);
+        expect(combineNames('Tommy', 'Smith')).toMatch(regex);
+    });
+});
 // start testing!

@@ -95,9 +95,16 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
+  if(firstName.match(/(\w+\s+|\s+\w+)/)) {
+    firstName = firstName.trim();
+  }
+  if(lastName.match(/(\w+\s+|\s+\w+)/)) {
+    lastName = lastName.trim();
+  }
+
   return `${firstName} ${lastName}`;
 };
-
+console.log(combineNames('John  ', 'Smith'));
 const getGreeting = name => {
   return `Hello ${name}!`;
 };
