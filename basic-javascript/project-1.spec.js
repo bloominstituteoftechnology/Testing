@@ -46,5 +46,17 @@ describe('Project 1 Assessment', () => {
         })
     })
 
+    describe('Less Than 90', () => {
+        it('should return true if number is less 90', () => {
+            expect(helpers.lessThanNinety(10)).toBe(true);
+            expect(helpers.lessThanNinety(20)).toBe(true);
+        })
+
+        it('should return false if number is greater than 90', () => {
+            expect(helpers.lessThanNinety(91)).toBe(false);
+            expect(helpers.lessThanNinety(100)).toBe(false);
+        })
+    })
+
 
 })
