@@ -78,8 +78,16 @@ it('should return true if the value provided is odd, otherwise false', () => {
     expect(helpers.isOdd(-100)).toEqual(false);
 })
 
-it('should square the number passed and return the value', () => {
+it('should return the squared value of the number passed', () => {
     expect(helpers.square(5)).toEqual(25);
     expect(helpers.square(10)).toEqual(100);
     expect(helpers.square(24)).toEqual(576);
 })
+
+it('should return the cubed value of the number passed', () => {
+    expect(helpers.cube(5)).toEqual(125);
+    expect(helpers.cube(10)).toEqual(1000);
+    expect(helpers.cube(24)).toEqual(13824);
+})
+
+
