@@ -59,3 +59,9 @@ it('should multiply the two numbers passed and return the value', () => {
     expect(helpers.multiply(10, 5)).toEqual(50);
     expect(helpers.multiply(20, -5)).toEqual(-100);
 })
+
+it('should return the remainder of the two numbers passed', () => {
+    expect(helpers.getRemainder(5, 4)).toEqual(1);
+    expect(helpers.getRemainder(10, 9)).toEqual(1);
+    expect(helpers.getRemainder(103, 100)).toEqual(3);
+})
