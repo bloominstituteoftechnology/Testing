@@ -1,12 +1,12 @@
 const helpers = require('./project-1');
 
-it('should multiply the number passed by ten', () => {
+it('should multiply the number passed by 10', () => {
     expect(helpers.multiplyByTen(4)).toEqual(40);
     expect(helpers.multiplyByTen(6)).toEqual(60);
     expect(helpers.multiplyByTen(10)).toEqual(100);
 });
 
-it('should subtract the number passed by five', () => {
+it('should subtract the number passed by 5', () => {
     expect(helpers.subtractFive(5)).toEqual(0);
     expect(helpers.subtractFive(100)).toEqual(95);
     expect(helpers.subtractFive(30)).toEqual(25);
@@ -28,4 +28,10 @@ it('should return true if value provided is less than 90, otherwise false', () =
     expect(helpers.lessThanNinety(50)).toEqual(true);
     expect(helpers.lessThanNinety(90)).toEqual(false);
     expect(helpers.lessThanNinety(-20)).toEqual(true);
+})
+
+it('should return true if value provided is greater than 50, otherwise false', () => {
+    expect(helpers.greaterThanFifty(50)).toEqual(false);
+    expect(helpers.greaterThanFifty(51)).toEqual(true);
+    expect(helpers.greaterThanFifty(90)).toEqual(true);
 })
