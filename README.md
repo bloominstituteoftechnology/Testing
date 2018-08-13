@@ -11,12 +11,13 @@ Welcome to the wonderful world of **automated testing**, specifically **unit tes
 
 Now we start on the other side of the fence, where you have no tests, only working code. The goal of this sprint is to get you familiar with writing unit tests for JavaScript code.
 
-### Initialize Project
+### Assignment
 
 - Use `yarn` to install the necessary dependencies from the `package.json` file.
-- To run your tests run the command `yarn test`.
-- Get started by implementing the tests inside the `basic-javascript` directory then move onto `advanced-javascript` when you're done.
+- type `yarn test` to start the test runner.
+- open the `basic-javascript` folder and use `project-1.spec.js` to write tests for the functions inside `project-1.js`.
+- open the `basic-javascript` folder and use `project-2.spec.js` to write tests for the functions inside `project-2.js`.
 
-### Write Tests
+## Stretch Goal
 
-Write tests inside the files ending on `.spec.js` that check the code in the files that are imported into each spec file.
+Open the `advanced-javascript` folder and write tests for the `arrays.js` and `object.js` files inside the corresponding `*.spec.js` files.
