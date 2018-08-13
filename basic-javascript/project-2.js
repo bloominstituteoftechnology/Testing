@@ -2,152 +2,152 @@
 
 const getBiggest = (x, y) => {
   if (x > y) {
-    return x;
+    return x
   } else if (x === y) {
-    return y;
+    return y
   }
-  return y;
-};
+  return y
+}
 
-const greeting = language => {
+const greeting = (language) => {
   switch (language) {
     case 'German':
-      return 'Guten Tag!';
+      return 'Guten Tag!'
     case 'Spanish':
-      return 'Hola!';
+      return 'Hola!'
     default:
-      return 'Hello!';
+      return 'Hello!'
   }
-};
+}
 
-const isTenOrFive = num => {
+const isTenOrFive = (num) => {
   if (num === 10 || num === 5) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}
 
-const isInRange = num => {
+const isInRange = (num) => {
   if (num < 50 && num > 20) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}
 
-const isInteger = num => {
+const isInteger = (num) => {
   if (Math.floor(num) === num) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}
 
-const fizzBuzz = num => {
+const fizzBuzz = (num) => {
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return 'fizzbuzz'
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return 'buzz'
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return 'fizz'
   }
-  return num;
-};
+  return num
+}
 
-const isPrime = num => {
+const isPrime = (num) => {
   if (num < 0) {
-    return false;
+    return false
   }
   if (num === 1 || num === 0) {
-    return false;
+    return false
   }
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return false;
+      return false
     }
   }
-  return true;
-};
+  return true
+}
 
-const returnFirst = arr => {
-  return arr[0];
-};
+const returnFirst = (arr) => {
+  return arr[0]
+}
 
-const returnLast = arr => {
-  return arr[arr.length - 1];
-};
+const returnLast = (arr) => {
+  return arr[arr.length - 1]
+}
 
-const getArrayLength = arr => {
-  return arr.length;
-};
+const getArrayLength = (arr) => {
+  return arr.length
+}
 
-const incrementByOne = arr => {
+const incrementByOne = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
+    arr[i]++
   }
-  return arr;
-};
+  return arr
+}
 
 const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
-};
+  arr.push(item)
+  return arr
+}
 
 const addItemToFront = (arr, item) => {
-  arr.unshift(item);
-  return arr;
-};
+  arr.unshift(item)
+  return arr
+}
 
-const wordsToSentence = words => {
-  let newSentence = '';
+const wordsToSentence = (words) => {
+  let newSentence = ''
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
-      newSentence += `${words[i]}`;
+      newSentence += `${words[i]}`
     } else {
-      newSentence += ` ${words[i]}`;
+      newSentence += ` ${words[i]}`
     }
   }
-  return newSentence;
-};
+  return newSentence
+}
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
+  let itemCounter = 0
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
-      itemCounter++;
+      itemCounter++
     }
   }
   if (itemCounter > 0) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}
 
-const addNumbers = numbers => {
-  let sumOfNumbers = 0;
+const addNumbers = (numbers) => {
+  let sumOfNumbers = 0
   for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
+    sumOfNumbers += numbers[i]
   }
-  return sumOfNumbers;
-};
+  return sumOfNumbers
+}
 
-const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
+const averageTestScore = (testScores) => {
+  let totalSumScores = 0
+  let numberOfScore = 0
   for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
+    totalSumScores += testScores[i]
+    numberOfScore++
   }
-  return totalSumScores / numberOfScore;
-};
+  return totalSumScores / numberOfScore
+}
 
-const largestNumber = numbers => {
-  let biggestInteger = 0;
+const largestNumber = (numbers) => {
+  let biggestInteger = 0
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {
-      biggestInteger = numbers[i];
+      biggestInteger = numbers[i]
     }
   }
-  return biggestInteger;
-};
+  return biggestInteger
+}
 
 module.exports = {
   getBiggest,
@@ -168,4 +168,4 @@ module.exports = {
   addNumbers,
   averageTestScore,
   largestNumber
-};
+}
