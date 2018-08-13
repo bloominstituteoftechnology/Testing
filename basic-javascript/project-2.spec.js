@@ -111,5 +111,12 @@ describe(`${funcs.getArrayLength.name}`, () => {
         expect(getArrayLength(arr)).toBe(4);
     });
 });
+describe(`${funcs.incrementByOne.name}`, () => {
+    const incrementByOne = funcs.incrementByOne;
+    const arr = [5,4,2,1];
+    it('should increment each item in the array by 1', () => {
+        expect(incrementByOne(arr)).toEqual([6,5,3,2]);
+    });
+});
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
