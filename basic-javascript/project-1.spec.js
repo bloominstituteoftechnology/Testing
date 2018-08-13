@@ -289,4 +289,11 @@ describe(`${helpers.getCircleArea.name}`, () => {
         expect(getCircleArea(5)).toBeCloseTo(78.539);
     });
 });
+describe(`${helpers.getRectangularPrismVolume.name}`, () => {
+    const getRectangularPrismVolume = helpers.getRectangularPrismVolume;
+    it('should return the rectangular prism volume', () => {
+        expect(getRectangularPrismVolume(4,3,6)).toBe(72);
+        expect(getRectangularPrismVolume(2,2,2)).toBe(8);
+    });
+});
 // start testing!
