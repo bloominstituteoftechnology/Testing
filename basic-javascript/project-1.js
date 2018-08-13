@@ -23,37 +23,63 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  
+	return x === y;
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+if(num===undefined || num===null) return false;  
+
+else{	
+if (num < 90) {
     return true;
   }
   return false;
+}
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
+if(num===undefined || num===null) return false;
+
+else{	
+	
+if (num > 50) {
     return true;
   }
   return false;
+}
 };
 
 const add = (x, y) => {
-  return x + y;
+ if(x===undefined || x===null || y===null || y===undefined) return false;
+
+ else if(typeof x!=='number' || typeof y!=='number') return false;
+
+ else return x + y;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+ if(x===undefined || x===null || y===null || y===undefined) return false;
+
+ else if(typeof x!=='number' || typeof y!=='number') return false;
+
+ else return x - y;
 };
 
 const divide = (x, y) => {
-  return x / y;
+if(x===undefined || x===null || y===null || y===undefined || y===0) return false;
+
+else if(typeof x!=='number' || typeof y!=='number') return false; 
+	
+else return x / y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+if(x===undefined || x===null || y===null || y===undefined) return false;
+
+else if(typeof x!=='number' || typeof y!=='number') return false; 
+        
+else return x * y;
 };
 
 const getRemainder = (x, y) => {
