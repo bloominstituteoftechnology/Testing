@@ -38,4 +38,18 @@ describe("The two strings have the same length", () => {
         expect(areSameLength("test","margin")).toBe(false);
     })
 })
+
+describe("Both values equal to one another.", () => {
+    const areEqual = helpers.areEqual;
+
+    it("Both arguments of the same value should equal to true", () => {
+        expect(areEqual(5,5)).toBe(true);
+        expect(areEqual(2489,2489)).toBe(true);
+        expect(areEqual(6,6)).toBe(true);
+    })
+    it("Arguments of different values should equal to false", () => {
+        expect(areEqual(5,3)).toBe(false);
+        expect(areEqual("drag",3)).toBe(false);
+    })
+})
 // start testing!
