@@ -282,4 +282,11 @@ describe(`${helpers.getTriangleArea.name}`, () => {
         expect(getTriangleArea(3,2)).toBe(3);
     });
 });
+describe(`${helpers.getCircleArea.name}`, () => {
+    const getCircleArea = helpers.getCircleArea;
+    it('should return the circle area', () => {
+        expect(getCircleArea(3)).toBeCloseTo(28.274);
+        expect(getCircleArea(5)).toBeCloseTo(78.539);
+    });
+});
 // start testing!
