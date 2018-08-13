@@ -77,3 +77,9 @@ it('should return true if the value provided is odd, otherwise false', () => {
     expect(helpers.isOdd(6)).toEqual(false);
     expect(helpers.isOdd(-100)).toEqual(false);
 })
+
+it('should square the number passed and return the value', () => {
+    expect(helpers.square(5)).toEqual(25);
+    expect(helpers.square(10)).toEqual(100);
+    expect(helpers.square(24)).toEqual(576);
+})
