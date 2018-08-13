@@ -156,4 +156,13 @@ describe('project-1', () => {
             expect(helpers.isOdd(0)).toBeFalsy();
         })
     })
+    describe('square', () => {
+        it('should return the correct square number', () => {
+            expect(helpers.square(3)).toBe(9);
+            expect(helpers.square(-1)).toBe(1);
+        })
+        it('should return Nan when a value is undefined', () => {
+            expect(helpers.square(undefined)).toBeNaN();
+        })
+    })
 })
