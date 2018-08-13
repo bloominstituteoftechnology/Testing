@@ -85,3 +85,9 @@ it('should add an item to the array passed in with the value passed in', () => {
     expect(funcs.addItemToArray([1, 1, 1], 1)).toEqual([1, 1, 1, 1]);
     expect(funcs.addItemToArray([10, 100, 200], 'Test')).toEqual([10, 100, 200, 'Test']);
 })
+
+it('should add an item to the front of the array passed in with the value passed in', () => {
+    expect(funcs.addItemToFront([4, 3], 'Hi')).toEqual(['Hi', 4, 3]);
+    expect(funcs.addItemToFront([100, 25, 33], 5)).toEqual([5, 100, 25, 33]);
+    expect(funcs.addItemToFront([2000000], 1)).toEqual([1, 2000000]);
+})
