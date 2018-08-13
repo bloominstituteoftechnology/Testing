@@ -90,4 +90,10 @@ it('should return the cubed value of the number passed', () => {
     expect(helpers.cube(24)).toEqual(13824);
 })
 
+it('should return the result of the number raised by the nth power', () => {
+    expect(helpers.raiseToPower(5, 2)).toEqual(25);
+    expect(helpers.raiseToPower(5, 4)).toEqual(625);
+    expect(helpers.raiseToPower(1, 10)).toEqual(1);
+})
+
 
