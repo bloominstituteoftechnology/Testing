@@ -257,4 +257,15 @@ describe(`${helpers.combineNames.name}`, () => {
         expect(combineNames('Tommy', 'Smith')).toMatch(regex);
     });
 });
+
+
+describe(`${helpers.getGreeting.name}`, () => {
+    const getGreeting = helpers.getGreeting;
+    const names = ['Johnny', 'Bill', 'Darwin'];
+    it('should have Hello at the beginning of the greeting', () => {
+        for(let i = 0; i < names.length; i++) {
+        expect(getGreeting(names[i])).toMatch('Hello ' + names[i]);
+        }
+    })
+})
 // start testing!
