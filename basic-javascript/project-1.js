@@ -1,22 +1,37 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (num === undefined) {
+    return false
+  }
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (num === undefined) {
+    return false
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2) {
+    return null
+  }
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+  if (!x || !y) {
+    return null
+  }
   return x === y;
 };
 
 const lessThanNinety = num => {
+  if (!num) {
+    return null
+  }
   if (num < 90) {
     return true;
   }
@@ -24,6 +39,9 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (num === undefined) {
+    return null
+  }
   if (num > 50) {
     return true;
   }
@@ -31,22 +49,37 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+}
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+}
   return x - y;
 };
 
 const divide = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+}
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+}
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+}
   return x % y;
 };
 
