@@ -102,4 +102,10 @@ it('should round the number passed and return the value', () => {
     expect(helpers.roundNumber(1000.4)).toEqual(1000);
 })
 
+it('should round the number upwards and return the value', () => {
+    expect(helpers.roundUp(2.2)).toEqual(3);
+    expect(helpers.roundUp(1000.1)).toEqual(1001);
+    expect(helpers.roundUp(504.9)).toEqual(505);
+})
+
 
