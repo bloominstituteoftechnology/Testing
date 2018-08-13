@@ -67,4 +67,18 @@ describe(`${helpers.lessThanNinety.name}`, () => {
         expect(lessThanNinety(90)).toBe(false);
     });
 });
+
+describe(`${helpers.greaterThanFifty.name}`, () => {
+    const greaterThanFifty = helpers.greaterThanFifty;
+    it("Should return true if the argument passed is greater than 50", () => {
+        expect(greaterThanFifty(51)).toBe(true);
+        expect(greaterThanFifty(5204)).toBe(true);
+        expect(greaterThanFifty(444)).toBe(true);
+    });
+    it("Should return false if the argument passed is less than or equal to 50", () => {
+        expect(greaterThanFifty(50)).toBe(false);
+        expect(greaterThanFifty(2)).toBe(false);
+        expect(greaterThanFifty(-55)).toBe(false);
+    });
+})
 // start testing!
