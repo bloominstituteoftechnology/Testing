@@ -104,5 +104,12 @@ describe(`${funcs.returnLast.name}`, () => {
     });
 });
 
+describe(`${funcs.getArrayLength.name}`, () => {
+    const getArrayLength = funcs.getArrayLength;
+    const arr = [5,4,2,1];
+    it('should return the length of the array', () => {
+        expect(getArrayLength(arr)).toBe(4);
+    });
+});
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
