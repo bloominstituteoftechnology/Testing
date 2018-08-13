@@ -17,3 +17,9 @@ it('should return true if the two values provided are the same length', () => {
     expect(helpers.areSameLength('hell', 'test5')).toEqual(false);
     expect(helpers.areSameLength(5, 'test5ssssss')).toEqual(false);
 })
+
+it('should return true if the two values provided are equal', () => {
+    expect(helpers.areEqual(5, 5)).toEqual(true);
+    expect(helpers.areEqual('hello', 'hello')).toEqual(true);
+    expect(helpers.areEqual(5, 6)).toEqual(false);
+})
