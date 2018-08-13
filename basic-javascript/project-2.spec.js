@@ -88,4 +88,11 @@ describe(`${funcs.isPrime.name}`, () => {
         expect(isPrime(6)).toBeFalsy();
     });
 })
+describe(`${funcs.returnFirst.name}`, () => {
+    const returnFirst = funcs.returnFirst;
+    const arr = [5,4,2,1];
+    it('should return the first item in the array', () => {
+        expect(returnFirst(arr)).toBe(5);
+    });
+});
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
