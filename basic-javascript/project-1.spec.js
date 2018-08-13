@@ -138,4 +138,21 @@ describe(`${helpers.getRemainder.name}`, () => {
         expect(getRemainder(-2, 4)).toBe(-2);
     });
 });
+describe(`${helpers.isEven.name}`, () => {
+    const isEven = helpers.isEven;
+    it("Should return true for the number argument", () => {
+        expect(isEven(2)).toBeTruthy();
+        expect(isEven(4)).toBeTruthy()
+        expect(isEven(122)).toBeTruthy();
+        expect(isEven(252)).toBeTruthy()
+        expect(isEven(4)).toBeTruthy();
+    });
+    it ("Should return false for the number argument", () => {
+        expect(isEven(3)).toBeFalsy();
+        expect(isEven(5)).toBeFalsy()
+        expect(isEven(121)).toBeFalsy();
+        expect(isEven(251)).toBeFalsy()
+        expect(isEven(-5)).toBeFalsy();
+    })
+});
 // start testing!
