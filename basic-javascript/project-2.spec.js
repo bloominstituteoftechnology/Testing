@@ -31,4 +31,19 @@ describe(`${funcs.isTenOrFive.name}`, () => {
         expect(isTenOrFive(11)).toBeFalsy();
     })
 });
+
+describe(`${funcs.isInRange.name}`, () => {
+    const isInRange = funcs.isInRange;
+
+    it ('should return true if the argument is less than 50 and greater than 20', () => {
+        expect(isInRange(40)).toBeTruthy();
+        expect(isInRange(25)).toBeTruthy();
+        expect(isInRange(49)).toBeTruthy();
+    })
+    it ('should return false if the argument is not between 50 and 20', () => {
+        expect(isInRange(19)).toBeFalsy();
+        expect(isInRange(20)).toBeFalsy();
+        expect(isInRange(50)).toBeFalsy();
+    })
+});
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
