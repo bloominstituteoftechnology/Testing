@@ -115,3 +115,9 @@ it('should return the average test score of all the numbers in the array passed 
     expect(funcs.averageTestScore([25.5, 2, 1, 0])).toEqual(7.125);
     expect(funcs.averageTestScore([20, 0, 0, 0])).toEqual(5);
 })
+
+it('should return the largest number of all the numbers in the array passed in', () => {
+    expect(funcs.largestNumber([5, 20, 1000])).toEqual(1000);
+    expect(funcs.largestNumber([500012, 34234234, 234234234.45])).toEqual(234234234.45);
+    expect(funcs.largestNumber([234234, 2342, 1, 1])).toEqual(234234);
+})
