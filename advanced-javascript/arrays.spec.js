@@ -1,4 +1,4 @@
-const arrayFunctions = require('./arrays');
+const arrayFunctions = require('./arrays')
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -10,8 +10,8 @@ const arrayFunctions = require('./arrays');
 describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
-    });
-  });
-});
+      const map = arrayFunctions.map
+      expect(typeof map).toBe('object')
+    })
+  })
+})
