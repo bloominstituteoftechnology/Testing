@@ -232,4 +232,19 @@ describe(`${helpers.roundUp.name}`, () => {
         expect(roundUp(5.4)).toBe(6);
     }) 
 });
+
+describe(`${helpers.addExclamationPoint.name}`, () => {
+    const addExclamationPoint = helpers.addExclamationPoint;
+    const tests = ['This is a te3!st', 'Another test', 'exclamation point'];
+
+    const exclamationTests = tests.map(item => {
+       return addExclamationPoint(item);
+    });
+
+    it('should have an exclamation at the end of the string', () => {
+        for(let i = 0; i < exclamationTests.length; i++) {
+        expect(exclamationTests[i]).toMatch(tests[i]+"!")
+        }
+    }) 
+});
 // start testing!
