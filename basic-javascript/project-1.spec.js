@@ -132,4 +132,10 @@ it('should multiply the two numbers passed and return the value to give us the a
     expect(helpers.getRectangleArea(22, 4)).toEqual(88);
 })
 
+it('should multiply 0.5 times the two numbers passed and return the value to give us the area of a triangle', () => {
+    expect(helpers.getTriangleArea(5, 5)).toEqual(12.5);
+    expect(helpers.getTriangleArea(10, 5)).toEqual(25);
+    expect(helpers.getTriangleArea(5, 20)).toEqual(50);
+})
+
 
