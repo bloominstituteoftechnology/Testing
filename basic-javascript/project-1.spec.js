@@ -205,4 +205,15 @@ describe(`${helpers.cube}`, () => {
         expect(cube(-11)).toBe(-1331);
     });
 });
+
+describe(`${helpers.raiseToPower.name}`, () => {
+    const raiseToPower = helpers.raiseToPower;
+    it('should return a 1 if the exponent argument is 0', () => {
+        expect(raiseToPower(20,0)).toBe(1);
+    }) 
+    it('should use the exponent argument and use the base to calculate', () => {
+        expect(raiseToPower(3,2)).toBe(9);
+        expect(raiseToPower(5,4)).toBe(625);
+    });
+});
 // start testing!
