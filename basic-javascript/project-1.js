@@ -1,10 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (num === undefined) return false
   return num * 10
 }
 
 const subtractFive = num => {
+  if (typeof num !== 'number') return false
   return num - 5
 }
 
