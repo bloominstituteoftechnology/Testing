@@ -138,4 +138,10 @@ it('should multiply 0.5 times the two numbers passed and return the value to giv
     expect(helpers.getTriangleArea(5, 20)).toEqual(50);
 })
 
+it('should multiply pi times the number passed and return the value to give us the area of a circle', () => {
+    expect(helpers.getCircleArea(5)).toEqual(78.53981633974483);
+    expect(helpers.getCircleArea(10)).toEqual(314.1592653589793);
+    expect(helpers.getCircleArea(100)).toEqual(31415.926535897932);
+})
+
 
