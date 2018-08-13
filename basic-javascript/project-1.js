@@ -9,11 +9,11 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  return str1.length === str2.length;//skipped
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  return x === y;//skipped
 };
 
 const lessThanNinety = num => {
