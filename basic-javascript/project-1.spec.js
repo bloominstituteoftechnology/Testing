@@ -47,6 +47,17 @@ describe('project-1', () => {
 
         })
     })
+    describe('areEqual', () => {
+        it('should return true if two values are strictly equivalent', () => {
+            expect(helpers.areEqual('four', 'four')).toBeTruthy();
+            expect(helpers.areEqual(false, false)).toBeTruthy()
+        })
+        it('should return false if two values are not strictly equivalent', () => {
+            expect(helpers.areEqual(4, '4')).toBeFalsy();
+            expect(helpers.areEqual(true, false)).toBeFalsy();
+
+        })
+    })
 
     describe('isEven', () => {
         it('should return true for even numbers', () => {
