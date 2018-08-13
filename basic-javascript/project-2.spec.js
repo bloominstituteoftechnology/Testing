@@ -115,11 +115,23 @@ describe("addItemToArray", () => {
   it("should add the item to the end of the array", () => {
     expect(funcs.addItemToArray([2, 3, 4], 5)).toEqual([2, 3, 4, 5]);
   });
+  it("should return false if arr is empty", () => {
+    expect(funcs.addItemToArray(undefined, 5)).toBe(false);
+  });
+  it("should return null if there is no item", () => {
+    expect(funcs.addItemToArray([2, 3, 4])).toBe(null);
+  });
 });
 
 describe("addItemToFront", () => {
   it("should add item to the front of the array", () => {
     expect(funcs.addItemToFront([2, 3, 4], 1)).toEqual([1, 2, 3, 4]);
+  });
+  it("should return false if arr is empty", () => {
+    expect(funcs.addItemToFront(undefined, 5)).toBe(false);
+  });
+  it("should return null if there is no item", () => {
+    expect(funcs.addItemToFront([2, 3, 4])).toBe(null);
   });
 });
 
@@ -129,6 +141,9 @@ describe("wordsToSentence", () => {
       "Hello how are you"
     );
   });
+  it("should return null if there are no words", () => {
+    expect(funcs.wordsToSentence(undefined)).toBe(null);
+  });
 });
 
 describe("contains", () => {
@@ -136,11 +151,20 @@ describe("contains", () => {
     expect(funcs.contains(["something"], "something")).toEqual(true);
     expect(funcs.contains(["something"], "not something")).toEqual(false);
   });
+  it("should return false if arr is empty", () => {
+    expect(funcs.contains(undefined, 5)).toBe(false);
+  });
+  it("should return null if there is no item", () => {
+    expect(funcs.contains([2, 3, 4])).toBe(null);
+  });
 });
 
 describe("addNumbers", () => {
   it("should return the sum of numbers in an array", () => {
     expect(funcs.addNumbers([1, 2, 3])).toEqual(6);
+  });
+  it("should return false if numbers are undefined", () => {
+    expect(funcs.addNumbers(undefined)).toEqual(false);
   });
 });
 
@@ -148,10 +172,16 @@ describe("averageTestScore", () => {
   it("should return the average test scores in an array", () => {
     expect(funcs.averageTestScore([100, 80, 90])).toEqual(90);
   });
+  it("should return false if testScores are undefined", () => {
+    expect(funcs.averageTestScore(undefined)).toEqual(false);
+  });
 });
 
 describe("largestNumber", () => {
   it("should return the largest number in an array", () => {
     expect(funcs.largestNumber([2, 4, 100])).toEqual(100);
+  });
+  it("should return false if numbers is undefined", () => {
+    expect(funcs.largestNumber(undefined)).toEqual(false);
   });
 });
