@@ -74,4 +74,18 @@ describe(`${funcs.fizzBuzz.name}`, () => {
         expect(fizzBuzz(7)).toBe(7);        
     })
 });
+
+describe(`${funcs.isPrime.name}`, () => {
+    const isPrime = funcs.isPrime;
+    
+    it('should return true for a number that is prime', () => {
+        expect(isPrime(5)).toBeTruthy();
+    });
+    it('should return false for negative numbers', () => {
+        expect(isPrime(-4)).toBeFalsy();
+    })
+    it('should return false for a non-prime number', () => {
+        expect(isPrime(6)).toBeFalsy();
+    });
+})
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
