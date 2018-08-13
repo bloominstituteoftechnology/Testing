@@ -56,14 +56,6 @@ describe('greaterThanFifty', () => {
     });
 })
 
-
-describe('greaterThanFifty', () => {
-    it('Should return true if number passed is greater than 50', () => {
-        expect(helpers.greaterThanFifty(100)).toBe(true);
-        expect(helpers.greaterThanFifty(-60)).toBe(false);
-    });
-})
-
 describe('add', () =>{
     it('Should return the sum of two numbers passed', () => {
         expect(helpers.add(2,3)).toBe(5);
@@ -95,13 +87,15 @@ describe('divide', () => {
     });
 })
 
-//#11-15
 describe('multiply', () => {
     it('Should return the product of the two numbers passed',() =>{
         expect(helpers.multiply(10,5)).toBe(50);
         expect(helpers.multiply(-50,5)).toBe(-250);
     });
 })
+
+
+//#11-15
 
 describe('getRemainder', () => {
     it('Should return the remainder of the two numbers divided',() =>{
@@ -131,4 +125,46 @@ describe('square', () => {
     })
 })
 
+describe('cube', () => {
+    it('Should return the cube of the number passed', () =>{
+        expect(helpers.cube(4)).toBe(64);
+        expect(helpers.cube(-3)).toBe(-27);
+    })
+})
+
 //#16-20
+
+describe('raiseToPower', () => {
+    it('Should return the number passed raised to the power of the exponent passed', () => {
+        expect(helpers.raiseToPower(2,5)).toBe(32);
+        expect(helpers.raiseToPower(1,0)).toBe(1);
+    })
+})
+
+describe('roundNumber', () => {
+    it('Should return the number given rounded to the nearest whole number', () => {
+        expect(helpers.roundNumber(63.5)).toBe(64);
+        expect(helpers.roundNumber(-4.3)).toBe(-4);
+    })
+})
+
+describe('roundUp', () => {
+    it('Should return the number given rounded up to the nearest whole number', () => {
+        expect(helpers.roundUp(63.2)).toBe(64);
+        expect(helpers.roundUp(-4.3)).toBe(-4);
+    })
+})
+
+describe('addExclamationPoint', () => {
+    it('Should return the string given but with an exclamation at the end', () => {
+        expect(helpers.addExclamationPoint('hello')).toBe('hello!');
+        expect(helpers.addExclamationPoint('')).toBe('!');
+    })
+})
+
+describe('combineNames', () => {
+    it('Should return the two names passed combined to a single string', () => {
+        expect(helpers.combineNames('Kevin','Tena')).toBe('Kevin Tena');
+        expect(helpers.combineNames('Juju ', "Smith-Schuster")).toBe('Juju  Smith-Schuster');
+    })
+})
