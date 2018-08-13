@@ -223,6 +223,13 @@ describe(`${helpers.roundNumber.name}`, () => {
         expect(roundNumber(5.5)).toBe(6);
         expect(roundNumber(5.4)).toBe(5);
     }) 
-    
+});
+
+describe(`${helpers.roundUp.name}`, () => {
+    const roundUp = helpers.roundUp;
+    it('should round the number up to the biggest whole number', () => {
+        expect(roundUp(5.5)).toBe(6);
+        expect(roundUp(5.4)).toBe(6);
+    }) 
 });
 // start testing!
