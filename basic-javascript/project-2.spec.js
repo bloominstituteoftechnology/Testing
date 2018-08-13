@@ -55,3 +55,9 @@ it('should return true if number passed is prime, otherwise return false', () =>
     expect(funcs.isPrime(18)).toEqual(false);
     expect(funcs.isPrime(101)).toEqual(true);
 })
+
+it('should return the first value of the array passed in', () => {
+    expect(funcs.returnFirst([5, 2, 3, 2])).toEqual(5);
+    expect(funcs.returnFirst([2])).toEqual(2);
+    expect(funcs.returnFirst(['Hey', 213213, 2342343, 36562])).toEqual('Hey');
+})
