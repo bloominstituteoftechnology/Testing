@@ -144,4 +144,10 @@ it('should multiply pi times the number passed and return the value to give us t
     expect(helpers.getCircleArea(100)).toEqual(31415.926535897932);
 })
 
+it('should multiply the 3 numbers passed and return the value to give us the rectangular prism volume', () => {
+    expect(helpers.getRectangularPrismVolume(5, 5, 5)).toEqual(125);
+    expect(helpers.getRectangularPrismVolume(10, 10, 15)).toEqual(1500);
+    expect(helpers.getRectangularPrismVolume(2, 2, 5)).toEqual(20);
+})
+
 
