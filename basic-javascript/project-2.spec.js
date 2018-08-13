@@ -20,4 +20,15 @@ describe(`${funcs.greeting.name}`, () => {
         expect(greeting('Unknown')).toBe('Hello!');
     })
 })
+describe(`${funcs.isTenOrFive.name}`, () => {
+    const isTenOrFive = funcs.isTenOrFive;
+    it ('the argument should be a 5 or a 10 for it to return true', () => {
+        expect(isTenOrFive(5)).toBeTruthy();
+        expect(isTenOrFive(10)).toBeTruthy();
+    })
+    it ('any other number should return false that is not 5 or 10', () => {
+        expect(isTenOrFive(4)).toBeFalsy();
+        expect(isTenOrFive(11)).toBeFalsy();
+    })
+});
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
