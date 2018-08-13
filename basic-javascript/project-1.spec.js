@@ -99,4 +99,21 @@ describe(`${helpers.subtract.name}`, () => {
         expect(subtract(-55,22)).toBe(-77);
     });
 });
+
+describe(`${helpers.divide.name}`, () => {
+    const divide = helpers.divide;
+    it("Should divide numbers together to equal their target value", () => {
+        expect(divide(5,2)).toBe(2.5);
+        expect(divide(3,1)).toBe(3);
+        expect(divide(100,20)).toBe(5);
+        expect(divide(-50,2)).toBe(-25);
+    });
+    it("Should check if the value is Infinity", () => {
+        expect(divide(50,0)).toBe(Infinity);
+        expect(divide(20,0)).toBe(Infinity);
+    })
+    it("Should check if both arguments are 0", () => {
+        expect(divide(0,0)).toBeNaN();
+    });
+});
 // start testing!
