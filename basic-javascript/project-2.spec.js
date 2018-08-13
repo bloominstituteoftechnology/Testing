@@ -61,3 +61,9 @@ it('should return the first value of the array passed in', () => {
     expect(funcs.returnFirst([2])).toEqual(2);
     expect(funcs.returnFirst(['Hey', 213213, 2342343, 36562])).toEqual('Hey');
 })
+
+it('should return the last value of the array passed in', () => {
+    expect(funcs.returnLast([5, 2, 3, 2])).toEqual(2);
+    expect(funcs.returnLast([2])).toEqual(2);
+    expect(funcs.returnLast(['Hey', 213213, 2342343, 36562])).toEqual(36562);
+})
