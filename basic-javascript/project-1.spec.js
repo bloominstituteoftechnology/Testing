@@ -71,10 +71,34 @@ describe('Project 1 Assessment', () => {
     })
 
     describe('Add', () => {
-        it('should return the sum of 2 number.', () => {
+        it('should return the sum of 2 numbers.', () => {
             expect(helpers.add(1,2)).toBe(3);
             expect(helpers.add(-1,2)).toBe(1);
             expect(helpers.add(-1,-1)).toBe(-2);
         })
     })
+
+    describe('Subtract', () => {
+        it('should return the different of 2 numbers.', () => {
+            expect(helpers.subtract(1,2)).toBe(-1);
+            expect(helpers.subtract(-1,2)).toBe(-3);
+            expect(helpers.subtract(-1,-1)).toBe(0);
+        })
+    })
+
+    // describe('Add', () => {
+    //     it('should return the sum of 2 number.', () => {
+    //         expect(helpers.add(1,2)).toBe(3);
+    //         expect(helpers.add(-1,2)).toBe(1);
+    //         expect(helpers.add(-1,-1)).toBe(-2);
+    //     })
+    // })
+
+    // describe('Add', () => {
+    //     it('should return the sum of 2 number.', () => {
+    //         expect(helpers.add(1,2)).toBe(3);
+    //         expect(helpers.add(-1,2)).toBe(1);
+    //         expect(helpers.add(-1,-1)).toBe(-2);
+    //     })
+    // })
 })
