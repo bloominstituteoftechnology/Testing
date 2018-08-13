@@ -15,6 +15,10 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
+  // if (str1 == "" || str2 == "") {
+  //   return error("yuck, No String, Please enter a string")
+  // }
+  
   if (!str1 || !str2) {
     return null
   }
@@ -84,6 +88,9 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
+  if (num === undefined) {
+    return null;
+}
   if (num % 2 === 0) {
     return true;
   }
@@ -91,6 +98,9 @@ const isEven = num => {
 };
 
 const isOdd = num => {
+  if (num === undefined) {
+    return null;
+}
   if (num % 2 === 0) {
     return false;
   }
@@ -98,34 +108,58 @@ const isOdd = num => {
 };
 
 const square = num => {
+  if (num === undefined) {
+    return false;
+}
   return num * num;
 };
 
 const cube = num => {
+  if (num === undefined) {
+    return false;
+}
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if (num === undefined || exponent === undefined) {
+    return false;
+}
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if (num === undefined) {
+    return false;
+}
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if (num === undefined) {
+    return false;
+}
   return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
+  if (str === undefined) {
+    return null;
+}
   return (str += '!');
 };
 
 const combineNames = (firstName, lastName) => {
+  if (firstName === undefined || lastName === undefined) {
+    return null;
+}
   return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
+  if (str === undefined) {
+    return null;
+}
   return `Hello ${name}!`;
 };
 

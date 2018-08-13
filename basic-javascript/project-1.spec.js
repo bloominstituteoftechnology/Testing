@@ -44,10 +44,12 @@ describe("areSameLength function", () => {
   });
   it("should return null if one of the value length is zero", () => {
     expect(helpers.areSameLength(undefined, "String")).toEqual(null);
-    expect(helpers.areSameLength("", " 2")).toEqual(null);
+  });
+
   });
   //test for numbers
-});
+  //test for empty strings
+// });
 
 describe("areEqual function", () => {
   it("should return true if the numbers are equal", () => {
@@ -129,53 +131,168 @@ describe("multiply function", () => {
 });
 
 
-// describe("lessThanNinety function", () => {
-//   it("should return true if less than 90", () => {
-//     expect(helpers.lessThanNinety()).toEqual(true);
-//     expect(helpers.lessThanNinety()).toEqual(false);
-//   });
-//   it("should return null if one of the value length is zero", () => {
-//     expect(helpers.lessThanNinety()).toEqual(null);
-//   });
-// });
+describe("getRemainder function", () => {
+  it("get the remainder of two numbers", () => {
+    expect(helpers.getRemainder(15, 4)).toEqual(3);
+    expect(helpers.getRemainder(2, 1)).toEqual(0);
+  });
+  it("should return null if one of the value length is zero", () => {
+    expect(helpers.getRemainder(undefined, 3)).toEqual(false);
+  });
+});
 
-// describe("lessThanNinety function", () => {
-//   it("should return true if less than 90", () => {
-//     expect(helpers.lessThanNinety()).toEqual(true);
-//     expect(helpers.lessThanNinety()).toEqual(false);
-//   });
-//   it("should return null if one of the value length is zero", () => {
-//     expect(helpers.lessThanNinety()).toEqual(null);
-//   });
-// });
+describe("isEven function", () => {
+  it("check if number is even", () => {
+    expect(helpers.isEven(2)).toEqual(true);
+    expect(helpers.isEven(3)).toEqual(false);
+  });
+  it("should return null if the value is undefined", () => {
+    expect(helpers.isEven(undefined)).toEqual(null);
+  });
 
-// describe("lessThanNinety function", () => {
-//   it("should return true if less than 90", () => {
-//     expect(helpers.lessThanNinety()).toEqual(true);
-//     expect(helpers.lessThanNinety()).toEqual(false);
-//   });
-//   it("should return null if one of the value length is zero", () => {
-//     expect(helpers.lessThanNinety()).toEqual(null);
-//   });
-// });
+});
 
-// describe("lessThanNinety function", () => {
-//   it("should return true if less than 90", () => {
-//     expect(helpers.lessThanNinety()).toEqual(true);
-//     expect(helpers.lessThanNinety()).toEqual(false);
-//   });
-//   it("should return null if one of the value length is zero", () => {
-//     expect(helpers.lessThanNinety()).toEqual(null);
-//   });
-// });
+describe("isOdd function", () => {
+    it("check if number is even", () => {
+      expect(helpers.isOdd(3)).toEqual(true);
+      expect(helpers.isOdd(2)).toEqual(false);
+    });
+    it("should return null if the value is undefined", () => {
+      expect(helpers.isOdd(undefined)).toEqual(null);
+    });
+  
+  });
+
+  describe("square function", () => {
+    it("should square a number", () => {
+      expect(helpers.square(3)).toEqual(9);
+      expect(helpers.square(2)).toEqual(4);
+    });
+    it("should return null if the value is undefined", () => {
+      expect(helpers.square(undefined)).toEqual(false);
+    });
+  
+  });
+
+describe("cube function", () => {
+  it("should cube a number", () => {
+    expect(helpers.cube(3)).toEqual(27);
+    expect(helpers.cube(2)).toEqual(8);
+  });
+  it("should return false if num is undefined", () => {
+    expect(helpers.cube(undefined)).toEqual(false);
+  });
+});
 
 
-// describe("lessThanNinety function", () => {
-//   it("should return true if less than 90", () => {
-//     expect(helpers.lessThanNinety()).toEqual(true);
-//     expect(helpers.lessThanNinety()).toEqual(false);
-//   });
-//   it("should return null if one of the value length is zero", () => {
-//     expect(helpers.lessThanNinety()).toEqual(null);
-//   });
-// });
+describe("raiseToPower function", () => {
+  it("should raise a number to a power", () => {
+    expect(helpers.raiseToPower(2,3)).toEqual(8);
+    expect(helpers.raiseToPower(3,2)).toEqual(9);
+  });
+  it("should return null if one of the value length is zero", () => {
+    expect(helpers.raiseToPower(undefined)).toEqual(false);
+  });
+});
+
+describe("roundNumber function", () => {
+    it("should round a number to the nearest integer", () => {
+      expect(helpers.roundNumber(2.8)).toEqual(3);
+      expect(helpers.roundNumber(0)).toEqual(0);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.roundNumber(undefined)).toEqual(false);
+    });
+  });
+
+  describe("roundUp function", () => {
+    it("should round up a number to the nearest integer", () => {
+      expect(helpers.roundUp(2.1)).toEqual(3);
+      expect(helpers.roundUp(3.5)).toEqual(4);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.roundUp(undefined)).toEqual(false);
+    });
+  });
+
+  describe("addExclamationPoint function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.addExclamationPoint("hello")).toEqual("hello!");
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.addExclamationPoint(undefined)).toEqual(null);
+    });
+  });
+
+  describe("combineNames function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.combineNames("tom", "jones")).toEqual("tom jones");
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.combineNames(undefined)).toEqual(false);
+    });
+  });
+
+  describe("getGreeting function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.getGreeting("Tom")).toEqual("Hello Tom");
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.getGreeting(undefined)).toEqual(null);
+    });
+  });
+
+
+  describe("getRectangleArea function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.getRectangleArea(2,3)).toEqual(8);
+      expect(helpers.getRectangleArea(3,2)).toEqual(9);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.getRectangleArea(undefined)).toEqual(false);
+    });
+  });
+
+
+  describe("getTriangleArea function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.getTriangleArea(2,3)).toEqual(8);
+      expect(helpers.getTriangleArea(3,2)).toEqual(9);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.getTriangleArea(undefined)).toEqual(false);
+    });
+  });
+
+
+  describe("raiseToPower function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.raiseToPower(2,3)).toEqual(8);
+      expect(helpers.raiseToPower(3,2)).toEqual(9);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.raiseToPower(undefined)).toEqual(false);
+    });
+  });
+
+
+  describe("getCircleArea function", () => {
+    it("should raise a number to a power", () => {
+      expect(helpers.getCircleArea(2,3)).toEqual(8);
+      expect(helpers.getCircleArea(3,2)).toEqual(9);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.getCircleArea(undefined)).toEqual(false);
+    });
+  });
+
+  describe("getRectangularPrismVolume a number to a power", () => {
+      expect(helpers.getRectangularPrismVolume(2,3)).toEqual(8);
+      expect(helpers.getRectangularPrismVolume(3,2)).toEqual(9);
+    });
+    it("should return null if one of the value length is zero", () => {
+      expect(helpers.getRectangularPrismVolume(undefined)).toEqual(false);
+    });
+  });
+
+
