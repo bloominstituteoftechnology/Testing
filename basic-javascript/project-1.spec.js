@@ -15,4 +15,16 @@ describe("Multiply the number passed with 10", () => {
     expect(multiplyByTen("10")).toBe(false);
   });
 });
+
+describe("Subtract the number passed by 5", () => {
+    const subtractFive = helpers.subtractFive;
+
+    it("Should subtract the passed argument by 5", () => {
+        expect(subtractFive(6)).toBe(1);
+    });
+
+    it("Should have a negative number if the value you are using for subtraction is bigger than the argument", () => {
+        expect(subtractFive(3)).toBe(-2);
+    });
+});
 // start testing!
