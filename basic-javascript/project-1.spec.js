@@ -120,4 +120,10 @@ it('should concatenate the 2 values passed with a spcee between them and return 
     expect(helpers.combineNames('Brandon', 'Aguirre')).toEqual('Brandon Aguirre');
 })
 
+it('should return hello plus the value passed in and an exclamation mark at the end', () => {
+    expect(helpers.getGreeting('Brandon')).toEqual('Hello Brandon!');
+    expect(helpers.getGreeting('John')).toEqual('Hello John!');
+    expect(helpers.getGreeting('Dan')).toEqual('Hello Dan!');
+})
+
 
