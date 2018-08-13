@@ -97,3 +97,9 @@ it('should return each letter with a space inbetween them with the string passed
     expect(funcs.wordsToSentence('Holy')).toEqual('H o l y')
     expect(funcs.wordsToSentence('RandomWord')).toEqual('R a n d o m W o r d')
 })
+
+it('should return true if value provided is in the array provided, otherwise return false', () => {
+    expect(funcs.contains([3, 3, 3, 5], 5)).toEqual(true);
+    expect(funcs.contains([1, 2, 3, 'Hey'], 'Hey')).toEqual(true);
+    expect(funcs.contains([3, 3, 3, 5], 6)).toEqual(false);
+})
