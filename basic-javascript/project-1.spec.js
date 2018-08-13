@@ -189,4 +189,20 @@ describe(`${helpers.square}`, () => {
         expect(square(-11)).toBe(121);
     });
 });
+describe(`${helpers.cube}`, () => {
+    const cube = helpers.cube;
+
+    it('Should cube the argument passed', () => {
+        expect(cube(2)).toBe(8);
+        expect(cube(4)).toBe(64);
+        expect(cube(6)).toBe(216);
+        expect(cube(11)).toBe(1331);
+    });
+    it('Should cube a negative argument', () => {
+        expect(cube(-2)).toBe(-8);
+        expect(cube(-4)).toBe(-64);
+        expect(cube(-6)).toBe(-216);
+        expect(cube(-11)).toBe(-1331);
+    });
+});
 // start testing!
