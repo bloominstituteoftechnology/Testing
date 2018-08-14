@@ -108,5 +108,15 @@ describe('Basic JS Helpers', () => {
     })
   })
 
+  describe('The function getRemainder(x,y)', () => {
+    it('should test if the product of x and y is correct', () => {
+      expect(helpers.getRemainder(1,2)).toEqual(1);
+      expect(helpers.getRemainder(2,0)).toEqual('divisor can not be zero');
+      expect(helpers.getRemainder(0,5)).toEqual(0);
+      expect(helpers.getRemainder(-5,"5")).toEqual('both inputs must be a number');
+      expect(helpers.getRemainder('5')).toEqual('two numbers are required as inputs');
+      expect(helpers.getRemainder()).toEqual('two numbers are required as inputs');
+    })
+  })
 
 })

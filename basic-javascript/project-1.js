@@ -17,7 +17,7 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
-  if (!x || !y) return 'two numbers are required as inputs';
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
   else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
   else return x === y;
 };
@@ -41,13 +41,13 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  if (!x || !y) return 'two numbers are required as inputs';
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
   else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
   else return x + y;
 };
 
 const subtract = (x, y) => {
-  if (!x || !y) return 'two numbers are required as inputs';
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
   else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
   else return x - y;
 };
@@ -66,6 +66,9 @@ const multiply = (x, y) => {
 };
 
 const getRemainder = (x, y) => {
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else if (y === 0) return 'divisor can not be zero'
   return x % y;
 };
 
