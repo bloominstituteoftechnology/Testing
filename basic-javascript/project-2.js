@@ -14,7 +14,7 @@ const greeting = language => {
     case 'German':
       return 'Guten Tag!';
     case 'Spanish':
-      return 'Hola!';
+      return '¡Hola!';
     default:
       return 'Hello!';
   }
