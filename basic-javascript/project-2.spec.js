@@ -106,7 +106,59 @@ describe('returns the first item in an array', () => {
     it('returns nothing on empty array', () => {
         expect(funcs.returnFirst([])).toBeUndefined()
     })
-    it('Returns falsy on string input', () => {
-        expect(funcs.returnFirst('hello')).toBeFalsy()
+    it('Returns first item of string input', () => {
+        expect(funcs.returnFirst('hello there!')).toMatch('h')
     })
 })
+
+describe('returns the last item in an array', () => {
+    it('returns last item', () => {
+        expect(funcs.returnLast([1,2,3,4,5])).toEqual(5)
+    })
+    it('returns nothing on empty array', () => {
+        expect(funcs.returnLast([])).toBeUndefined()
+    })
+    it('Returns last character on string input', () => {
+        expect(funcs.returnLast('hello')).toMatch('o')
+    })
+})
+
+describe('Gets array length', () => {
+    it('returns array length', () => {
+        expect(funcs.getArrayLength([1,2,3,4,5])).toEqual(5)
+        expect(funcs.getArrayLength([...Array(100).keys()])).toEqual(100)
+    })
+    it('returns 0 on empty array', () => {
+        expect(funcs.getArrayLength([])).toEqual(0)
+    })
+    it('Counts characters in string', () => {
+        expect(funcs.getArrayLength('hello!?')).toEqual(7)
+    })
+})
+
+describe('Increments by one', () => {
+    it('Adds one to all elements in an array', () => {
+        expect(funcs.incrementByOne([1,2,3,4,5])).toEqual([2,3,4,5,6])
+    })
+    it('returns 0 on empty array', () => {
+        expect(funcs.incrementByOne([])).toEqual([])
+    })
+    it('Counts characters in string', () => {
+        expect(funcs.incrementByOne('hello!?')).toMatch('hello!?')
+    })
+})
+
+describe('Adds an Item to an array', () => {
+    it('Adds input item to the array', () => {
+        expect(funcs.addItemToArray([1,2,3,4,5], 'NewItem')).toEqual([1,2,3,4,5,'NewItem'])
+    })
+    it('Adds array to an empty array', () => {
+        expect(funcs.addItemToArray([], [1,2,3])).toEqual([[1,2,3]])
+    })
+    it('Adds an array to an existing array', () => {
+        expect(funcs.addItemToArray([1,2],[3,4,5,6,7])).toEqual([1,2,[3,4,5,6,7]])
+    })
+})
+
+
+
