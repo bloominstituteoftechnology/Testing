@@ -112,6 +112,33 @@ const getRectangularPrismVolume = (length, width, height) => {
   return width * height * length;
 };
 
+// ! ================ custom, Code Challenge
+const myGetProduct = arr => {
+	return arr
+    .map(el => arr
+      .filter(elem => elem !== el))
+      .map(array => array
+        .reduce((a, b) => a * b));
+}
+
+const getProduct = (arr) => {
+  const ans = [];
+  let soFar = 1;
+  
+  for (let i = 0; i < arr.length; i++) {
+    ans[i] = soFar;
+    soFar *= arr[i];
+  }
+  
+  soFar = 1;
+  
+  for (let i = arr.length -1; i >=0; i--) {
+    ans[i] *= soFar;
+    soFar *= arr[i];
+  }
+  return ans;
+}
+
 module.exports = {
   multiplyByTen,
   subtractFive,
@@ -137,5 +164,7 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
+  myGetProduct,
+  getProduct
 };

@@ -149,6 +149,7 @@ const largestNumber = numbers => {
   return biggestInteger;
 };
 
+
 module.exports = {
   getBiggest,
   greeting,
@@ -167,5 +168,5 @@ module.exports = {
   contains,
   addNumbers,
   averageTestScore,
-  largestNumber
+  largestNumber,
 };
