@@ -136,6 +136,9 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
+  if(words === undefined) {
+    return false;
+  }
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
@@ -148,6 +151,9 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
+  if(arr === undefined || item === undefined) {
+    return false;
+  }
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
@@ -161,6 +167,9 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
+  if(numbers === undefined) {
+    return false;
+  }
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOfNumbers += numbers[i];
@@ -169,6 +178,9 @@ const addNumbers = numbers => {
 };
 
 const averageTestScore = testScores => {
+  if(testScores === undefined) {
+    return false;
+  }
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
@@ -179,6 +191,9 @@ const averageTestScore = testScores => {
 };
 
 const largestNumber = numbers => {
+  if(numbers === undefined) {
+    return false;
+  }
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {

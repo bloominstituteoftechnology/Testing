@@ -121,7 +121,7 @@ describe('return the array with each item incremented by 1', () => {
 describe('return the array with the item added to the end of it', () => {
   test('Should return the given array with the given item added to the end of it', () => {
     expect(helpers.addItemToArray([3, 2, 1, 5], 4)).toEqual([3, 2, 1, 5, 4]);
-    expect(helpers.addItemToArray(['a', 'b'], 'c')).toEqual(['a', 'b', 'c'])
+    expect(helpers.addItemToArray(['a', 'b'], 'c')).toEqual(['a', 'b', 'c']);
   })
   test('Should return false if the array is undefined', () => {
     expect(helpers.addItemToArray(undefined)).toBe(false);
@@ -131,9 +131,59 @@ describe('return the array with the item added to the end of it', () => {
 describe('return the array with the item added to the front of it', () => {
   test('Should return the given array with the given item added to the front of it', () => {
     expect(helpers.addItemToFront([3, 2, 1, 5], 4)).toEqual([4, 3, 2, 1, 5]);
-    expect(helpers.addItemToFront(['a', 'b'], 'c')).toEqual(['c', 'a', 'b'])
+    expect(helpers.addItemToFront(['a', 'b'], 'c')).toEqual(['c', 'a', 'b']);
   })
   test('Should return false if the array is undefined', () => {
     expect(helpers.addItemToFront(undefined)).toBe(false);
+  })
+})
+
+describe('return the words as a sentence', () => {
+  test('Should return the given array with the given item added to the front of it', () => {
+    expect(helpers.wordsToSentence(['Cupcake', 'is', 'a', 'cat'])).toBe('Cupcake is a cat');
+    expect(helpers.wordsToSentence(['Phoebe', 'is', 'a', 'dog'])).toBe('Phoebe is a dog');
+  })
+  test('Should return false if the words array is undefined', () => {
+    expect(helpers.wordsToSentence(undefined)).toBe(false);
+  })
+})
+
+describe('return the array with the item added to the front of it', () => {
+  test('Should return the given array with the given item added to the front of it', () => {
+    expect(helpers.contains([3, 2, 1, 5], 3)).toBe(true);
+    expect(helpers.contains(['a', 'b'], 'c')).toBe(false);
+  })
+  test('Should return false if the array or item is undefined', () => {
+    expect(helpers.contains(undefined)).toBe(false);
+  })
+})
+
+describe('return the sum of the numbers', () => {
+  test('Should return the sum of all the numbers in the given array', () => {
+    expect(helpers.addNumbers([3, 2, 1, 5])).toBe(11);
+    expect(helpers.addNumbers([4, 1, -5])).toBe(0);
+  })
+  test('Should return false if the array is undefined', () => {
+    expect(helpers.addNumbers(undefined)).toBe(false);
+  })
+})
+
+describe('return the average test score', () => {
+  test('Should return the average of all the test scores in the given array', () => {
+    expect(helpers.averageTestScore([98, 100, 65, 85])).toBe(87);
+    expect(helpers.averageTestScore([65, 100, 34])).toBe(66.33333333333333);
+  })
+  test('Should return false if the array or item is undefined', () => {
+    expect(helpers.averageTestScore(undefined)).toBe(false);
+  })
+})
+
+describe('return the largest number', () => {
+  test('Should return the largest number in the given array', () => {
+    expect(helpers.largestNumber([98, 100, 65, 85])).toBe(100);
+    expect(helpers.largestNumber([65, -31, 340])).toBe(340);
+  })
+  test('Should return false if the array or item is undefined', () => {
+    expect(helpers.largestNumber(undefined)).toBe(false);
   })
 })
