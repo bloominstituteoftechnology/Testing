@@ -71,10 +71,9 @@ const greaterThanFifty = num => {
 
 const add = (x, y) => {
   if (
-    typeof x === 'number' &&
-    !isNaN(x) &&
-    typeof y === 'number' &&
-    !isNaN(y)
+    /* prettier-ignore */
+    typeof x === 'number' && !isNaN(x) &&
+    typeof y === 'number' && !isNaN(y)
   ) {
     let sum = x + y;
     if (sum > Number.MAX_SAFE_INTEGER) {
@@ -86,11 +85,34 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if (
+    /* prettier-ignore */
+    typeof x === 'number' && !isNaN(x) &&
+    typeof y === 'number' && !isNaN(y)
+  ) {
+    let difference = x - y;
+    if (difference < Number.MIN_SAFE_INTEGER) {
+      throw new Error('Difference is too small to calculate');
+    } else return difference;
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const divide = (x, y) => {
-  return x / y;
+  if (y === 0) throw new Error("Divisor can't be zero");
+  if (
+    /* prettier-ignore */
+    typeof x === 'number' && !isNaN(x) &&
+    typeof y === 'number' && !isNaN(y)
+  ) {
+    let quotient = x / y;
+    if (quotient < Number.MIN_SAFE_INTEGER) {
+      throw new Error('Quotient is too small to calculate');
+    } else return quotient;
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const multiply = (x, y) => {

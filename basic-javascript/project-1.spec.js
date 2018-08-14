@@ -179,4 +179,60 @@ describe('math helpers', () => {
       expect(sum).toThrow();
     });
   });
+
+  describe('subtract two numbers', () => {
+    it('should subtract two numbers', () => {
+      expect(helpers.subtract(6, 2)).toEqual(4);
+      expect(helpers.subtract(-3, -2)).toEqual(-1);
+      expect(helpers.subtract(-3, 10)).toEqual(-13);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const difference = () => helpers.subtract();
+      expect(difference).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const difference = () => helpers.subtract(NaN);
+      expect(difference).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const difference1 = () => helpers.subtract('a');
+      expect(difference1).toThrow();
+      const difference2 = () => helpers.subtract([1, 2, 3]);
+      expect(difference2).toThrow();
+    });
+
+    it('should throw an error when the difference is less than the min safe number', () => {
+      const min = Number.MIN_SAFE_INTEGER;
+      const difference = () => helpers.subtract(min, 1);
+      expect(difference).toThrow();
+    });
+  });
+
+  describe('divide two numbers', () => {
+    it('should divide two numbers', () => {
+      expect(helpers.divide(6, 2)).toEqual(3);
+      expect(helpers.divide(-3, -2)).toEqual(1.5);
+      expect(helpers.divide(-3, 10)).toEqual(-0.3);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const quotient = () => helpers.divide();
+      expect(quotient).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const quotient = () => helpers.divide(NaN);
+      expect(quotient).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const quotient1 = () => helpers.divide('a');
+      expect(quotient1).toThrow();
+      const quotient2 = () => helpers.divide([1, 2, 3]);
+      expect(quotient2).toThrow();
+    });
+  });
 });
