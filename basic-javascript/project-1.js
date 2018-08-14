@@ -1,19 +1,58 @@
 /* eslint-disable arrow-parens */
 
-const multiplyByTen = num => {
-  return num * 10;
+const multiplyByTen = (...num) => {
+  if (num.length > 1) {
+    throw new Error(
+      `This function works with one argument. You passed in ${num.length}.`,
+    );
+  }
+  // NaN is type number
+  if (typeof num[0] === 'number' && !isNaN(num[0])) {
+    if (num[0] > Number.MAX_SAFE_INTEGER / 10)
+      throw new Error('Number too big to calculate');
+    if (num[0] < Number.MIN_SAFE_INTEGER / 10)
+      throw new Error('Number too small to calculate');
+    return num[0] * 10;
+  } else {
+    throw new Error('Must have a number to calculate');
+  }
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (typeof num === 'number' && !isNaN(num)) {
+    if (num < Number.MIN_SAFE_INTEGER + 5)
+      throw new Error('Number too small to calculate');
+    return num - 5;
+  }
+  throw new Error('Must have a number to calculate');
 };
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string')
+    throw new Error('Must have two strings!');
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (
+    typeof x === 'number' &&
+    !isNaN(x) &&
+    typeof y === 'number' &&
+    !isNaN(y)
+  ) {
+    if (
+      x < Number.MAX_SAFE_INTEGER &&
+      x > Number.MIN_SAFE_INTEGER &&
+      y < Number.MAX_SAFE_INTEGER &&
+      y > Number.MIN_SAFE_INTEGER
+    ) {
+      return x === y;
+    } else {
+      throw new Error('values are out of range for comparison');
+    }
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const lessThanNinety = num => {
@@ -137,5 +176,5 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
 };
