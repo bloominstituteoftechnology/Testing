@@ -6,7 +6,7 @@ const multiplyByTen = num => {
 }
 
 const subtractFive = num => {
-  if (typeof num !== 'number') return false
+  if (typeof num !== 'number' || isNaN(num)) return false
   return num - 5
 }
 
@@ -41,6 +41,7 @@ const subtract = (x, y) => {
 }
 
 const divide = (x, y) => {
+  if (y === 0) throw new Error('second argument can not be 0')
   return x / y
 }
 
@@ -49,6 +50,7 @@ const multiply = (x, y) => {
 }
 
 const getRemainder = (x, y) => {
+  if (y === 0) throw new Error('second argument can not be 0')
   return x % y
 }
 
