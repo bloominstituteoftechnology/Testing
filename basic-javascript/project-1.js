@@ -183,7 +183,18 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  if (
+    /* prettier-ignore */
+    typeof num === 'number' && !isNaN(num) &&
+    typeof exponent === 'number' && !isNaN(exponent)
+  ) {
+    let powered = Math.pow(num, exponent);
+    if (powered > Number.MAX_SAFE_INTEGER)
+      throw new Error('Number too big to exponentiate accurately');
+    else return powered;
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const roundNumber = num => {

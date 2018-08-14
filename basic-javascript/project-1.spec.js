@@ -412,4 +412,36 @@ describe('math helpers', () => {
       expect(cube2).toThrow();
     });
   });
+
+  describe('raise a number to a power', () => {
+    it('should check to see if the number is raised to the power', () => {
+      expect(helpers.raiseToPower(0, 0)).toEqual(1);
+      expect(helpers.raiseToPower(-2, 3)).toEqual(-8);
+      expect(helpers.raiseToPower(4, 0.5)).toEqual(2);
+      expect(helpers.raiseToPower(5, 5)).toEqual(3125);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const raiseToPower = () => helpers.raiseToPower();
+      expect(raiseToPower).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const raiseToPower = () => helpers.raiseToPower(NaN, NaN);
+      expect(raiseToPower).toThrow();
+    });
+
+    it('should throw an error when the value passed is too big', () => {
+      const num = Number.MAX_SAFE_INTEGER + 1;
+      const raiseToPower = () => helpers.raiseToPower(num, 2);
+      expect(raiseToPower).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const raiseToPower1 = () => helpers.raiseToPower('a', 2);
+      expect(raiseToPower1).toThrow();
+      const raiseToPower2 = () => helpers.raiseToPower([1, 2, 3], 3);
+      expect(raiseToPower2).toThrow();
+    });
+  });
 });
