@@ -279,28 +279,27 @@ describe("project-1", () => {
     })
   })
 
-  describe('myGetProduct', () => {
-    //const expected = 105;
-    //const actual = helpers.myGetProduct();
-    it("random_testing", function() {
-      // Failure message: 
-      // This test has no failure messages
-      for (let i = 0; i < 25; i++) {
-        const arr = [];
-        for (let j = 0; j < 8; j++) {
-          arr.push(Math.floor((Math.random() * 51) - 15));
-        }
-        expect(helpers.myGetProduct(arr)).toEqual(helpers.getProduct(arr));
-      }
-    })
-    it("not_random_testing", function() {
-      // Failure message: 
-      // This test has no failure messages
-      const arr = [1,2,3,4];
-      expect(helpers.myGetProduct(arr)).toEqual(helpers.getProduct(arr));
-    })
-
-  })
+  // describe('myGetProduct', () => {
+  //   //const expected = 105;
+  //   //const actual = helpers.myGetProduct();
+  //   it("random_testing", function() {
+  //     // Failure message: 
+  //     // This test has no failure messages
+  //     for (let i = 0; i < 25; i++) {
+  //       const arr = [];
+  //       for (let j = 0; j < 8; j++) {
+  //         arr.push(Math.floor((Math.random() * 51) - 15));
+  //       }
+  //       expect(helpers.myGetProduct(arr)).toEqual(helpers.getProduct(arr));
+  //     }
+  //   })
+  //   it("not_random_testing", function() {
+  //     // Failure message: 
+  //     // This test has no failure messages
+  //     const arr = [1,2,3,4];
+  //     expect(helpers.myGetProduct(arr)).toEqual(helpers.getProduct(arr));
+  //   })
+  // })
 
 })
 
