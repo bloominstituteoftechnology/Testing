@@ -99,3 +99,14 @@ describe('Checks if a number is prime', () => {
     })
 })
 
+describe('returns the first item in an array', () => {
+    it('returns first item', () => {
+        expect(funcs.returnFirst([1,2,3,4,5])).toEqual(1)
+    })
+    it('returns nothing on empty array', () => {
+        expect(funcs.returnFirst([])).toBeUndefined()
+    })
+    it('Returns falsy on string input', () => {
+        expect(funcs.returnFirst('hello')).toBeFalsy()
+    })
+})
