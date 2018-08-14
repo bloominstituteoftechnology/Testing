@@ -125,5 +125,19 @@ describe(`${funcs.addItemToArray.name}`, () => {
         expect(addItemToArray([...arr],6)).toEqual([...arr, 6]);
     });
 });
+describe(`${funcs.addItemToFront.name}`, () => {
+    const addItemToFront = funcs.addItemToFront;
+    const arr = [5,4,2,1];
+    it('should put a value to the front of the array', () => {
+        expect(addItemToFront([...arr],6)).toEqual([6, ...arr]);
+    });
+});
+describe(`${funcs.wordsToSentence}`, () => {
+    const wordsToSentence = funcs.wordsToSentence;
 
+    it('constructs the sentence from a arr full of words', () => {
+        expect(wordsToSentence(['The', 'dog', 'went', 'to','the','park'])).toMatch('The dog went to the park')
+        expect(wordsToSentence(['this', 'is', 'a', 'sentence'])).toMatch('this is a sentence');
+    })
+})
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
