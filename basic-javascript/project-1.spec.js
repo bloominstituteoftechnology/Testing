@@ -234,5 +234,118 @@ describe('math helpers', () => {
       const quotient2 = () => helpers.divide([1, 2, 3]);
       expect(quotient2).toThrow();
     });
+
+    it('should throw an error when the divisor is 0', () => {
+      const quotient = () => helpers.divide(2, 0);
+      expect(quotient).toThrow();
+    });
+  });
+
+  describe('multiply two numbers', () => {
+    it('should multiply two numbers', () => {
+      expect(helpers.multiply(6, 2)).toEqual(12);
+      expect(helpers.multiply(-3, -2)).toEqual(6);
+      expect(helpers.multiply(-3, 10)).toEqual(-30);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const product = () => helpers.multiply();
+      expect(product).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const product = () => helpers.multiply(NaN);
+      expect(product).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const product1 = () => helpers.multiply('a');
+      expect(product1).toThrow();
+      const product2 = () => helpers.multiply([1, 2, 3]);
+      expect(product2).toThrow();
+    });
+
+    it('should throw an error when the product is greater than the max safe number', () => {
+      const max = Number.MAX_SAFE_INTEGER;
+      const prodcut = () => helpers.multiply(max, 2);
+      expect(prodcut).toThrow();
+    });
+  });
+
+  describe('get remainder when divide two numbers', () => {
+    it('should divide two numbers and get remainder', () => {
+      expect(helpers.getRemainder(6, 2)).toEqual(0);
+      expect(helpers.getRemainder(-3, -2)).toEqual(-1);
+      expect(helpers.getRemainder(-3, 10)).toEqual(-3);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const product = () => helpers.getRemainder();
+      expect(product).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const product = () => helpers.getRemainder(NaN);
+      expect(product).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const product1 = () => helpers.getRemainder('a');
+      expect(product1).toThrow();
+      const product2 = () => helpers.getRemainder([1, 2, 3]);
+      expect(product2).toThrow();
+    });
+  });
+
+  describe('check to see if a number is even', () => {
+    it('should check to see if the number is even', () => {
+      expect(helpers.isEven(0)).toEqual(true);
+      expect(helpers.isEven(-2)).toEqual(true);
+      expect(helpers.isEven(4)).toEqual(true);
+      expect(helpers.isEven(5)).toEqual(false);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const even = () => helpers.isEven();
+      expect(even).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const even = () => helpers.isEven(NaN);
+      expect(even).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const even1 = () => helpers.isEven('a');
+      expect(even1).toThrow();
+      const even2 = () => helpers.isEven([1, 2, 3]);
+      expect(even2).toThrow();
+    });
+  });
+
+  describe('check to see if a number is odd', () => {
+    it('should check to see if the number is odd', () => {
+      expect(helpers.isOdd(0)).toEqual(false);
+      expect(helpers.isOdd(-2)).toEqual(false);
+      expect(helpers.isOdd(4)).toEqual(false);
+      expect(helpers.isOdd(5)).toEqual(true);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const odd = () => helpers.isOdd();
+      expect(odd).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const odd = () => helpers.isOdd(NaN);
+      expect(odd).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const odd1 = () => helpers.isOdd('a');
+      expect(odd1).toThrow();
+      const odd2 = () => helpers.isOdd([1, 2, 3]);
+      expect(odd2).toThrow();
+    });
   });
 });

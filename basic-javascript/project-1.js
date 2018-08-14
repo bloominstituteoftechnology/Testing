@@ -116,25 +116,48 @@ const divide = (x, y) => {
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if (
+    /* prettier-ignore */
+    typeof x === 'number' && !isNaN(x) &&
+    typeof y === 'number' && !isNaN(y)
+  ) {
+    let product = x * y;
+    if (product > Number.MAX_SAFE_INTEGER) {
+      throw new Error('Product is too small to calculate');
+    } else return product;
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  if (y === 0) throw new Error("Divisor can't be zero");
+  if (
+    /* prettier-ignore */
+    typeof x === 'number' && !isNaN(x) &&
+    typeof y === 'number' && !isNaN(y)
+  ) {
+    let remainder = x % y;
+    return remainder;
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
+  if (typeof num === 'number' && !isNaN(num)) {
+    return num % 2 === 0;
+  } else {
+    throw new Error('Must have a number!');
   }
-  return false;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  if (typeof num === 'number' && !isNaN(num)) {
+    return num % 2 === 1;
+  } else {
+    throw new Error('Must have a number!');
   }
-  return true;
 };
 
 const square = num => {
