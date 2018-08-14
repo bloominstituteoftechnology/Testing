@@ -167,5 +167,11 @@ describe(`${funcs.averageTestScore.name}`, () => {
     })
 })
 
-
+describe(`${funcs.largestNumber.name}`, () => {
+    const largestNumber = funcs.largestNumber;
+    it('should find the largest integer and return that as the result', () => {
+        expect(largestNumber([4,8,1])).toBe(8);
+        expect(largestNumber([4,8,15])).toBe(15);
+    });
+})
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
