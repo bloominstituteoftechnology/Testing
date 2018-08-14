@@ -158,4 +158,14 @@ describe(`${funcs.addNumbers.name}`, () => {
         expect(addNumbers([5,2,4,11,2])).toBe(24);
     })
 })
+
+describe(`${funcs.averageTestScore.name}`, () => {
+    const averageTestScore = funcs.averageTestScore;
+    it('should sum up all the numbers in the array and average it out', () => {
+        expect(averageTestScore([5,2,4])).toBeCloseTo(3.666);
+        expect(averageTestScore([5,9,3])).toBeCloseTo(5.666);
+    })
+})
+
+
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
