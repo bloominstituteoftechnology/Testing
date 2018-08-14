@@ -22,13 +22,13 @@ it('numbers are equal', () => {
 })
 
 it('number is less than 90', () => {
-    expect(helpers.lessThanNinety(20)).toEqual(true);
-    expect(helpers.lessThanNinety(102)).toEqual(false);
+    expect(helpers.lessThanNinety(20)).toBeTruthy();
+    expect(helpers.lessThanNinety(102)).toBeFalsy();
 })
 
 it('number is greater than 50', () => {
-    expect(helpers.greaterThanFifty(20)).toEqual(false);
-    expect(helpers.greaterThanFifty(1023)).toEqual(true);
+    expect(helpers.greaterThanFifty(20)).toBeFalsy();
+    expect(helpers.greaterThanFifty(1023)).toBeTruthy();
 })
 
 it('adds two numbers', () => {
@@ -56,13 +56,13 @@ it('gets remainder', () => {
 })
 
 it('number is even', () => {
-    expect(helpers.isEven(24)).toEqual(true);
-    expect(helpers.isEven(11)).toEqual(false);
+    expect(helpers.isEven(24)).toBeTruthy();
+    expect(helpers.isEven(11)).toBeFalsy();
 })
 
 it('number is odd', () => {
-    expect(helpers.isOdd(7)).toEqual(true);
-    expect(helpers.isOdd(8)).toEqual(false);
+    expect(helpers.isOdd(7)).toBeTruthy();
+    expect(helpers.isOdd(8)).toBeFalsy();
 })
 
 it('square of a number', () => {
