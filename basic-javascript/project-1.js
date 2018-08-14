@@ -87,7 +87,7 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
+  if ((typeof num !== 'number') || (num % 2 === 0) ) {
     return false;
   }
   return true;
@@ -126,6 +126,8 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if ((typeof length !== 'number' || typeof width !== 'number') || (length < 0  || width < 0)) {
+    return undefined;}
   return length * width;
 };
 

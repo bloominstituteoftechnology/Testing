@@ -115,7 +115,7 @@ describe('Divide', () => {
     expect(helpers.divide('one', 1)).toBeFalsy();
   });
   it(`knows that 100 divided by 0 is indeterminate`, () => {
-    expect(helpers.divide(100, 0)).toBe(Infinity);
+    expect(helpers.divide(100, 0)).toBe(undefined);
   });
 });
  // multiply
@@ -150,11 +150,22 @@ describe('Is even', () => {
   it('knows that 3 is not even', () => {
     expect(helpers.isEven(3)).toBeFalsy();
   });
-  it(`knows that 'potato' is not even`, () => {
-    expect(helpers.isEven('potato')).toBeFalsy();
+  it(`knows that 'banana' is not even`, () => {
+    expect(helpers.isEven('banana')).toBeFalsy();
   });
 });
  // isOdd
+// describe('Is odd', () => {
+//   it('knows that 3 is odd', () => {
+//     expect(helpers.isOdd(3)).toBeTruthy();
+//   });
+//   it('knows that 4 is not odd', () => {
+//     expect(helpers.isOdd(4)).toBeFalsy();
+//   });
+//   it(`knows that 'banana' is not odd`, () => {
+//     expect(helpers.isOdd('banana')).toBeUndefined();
+//   });
+// });
 describe('Is odd', () => {
   it('knows that 3 is odd', () => {
     expect(helpers.isOdd(3)).toBeTruthy();
@@ -162,11 +173,11 @@ describe('Is odd', () => {
   it('knows that 4 is not odd', () => {
     expect(helpers.isOdd(4)).toBeFalsy();
   });
-  it(`knows that 'potato' is not odd`, () => {
-    expect(helpers.isOdd('potato')).toBeFalsy();
+  it(`knows that 'banana' is not even`, () => {
+    expect(helpers.isOdd('banana')).toBeFalsy();
   });
 });
- // square
+//  // square
 describe('Square', () => {
   it('knows that 3 squared is 9', () => {
     expect(helpers.square(3)).toBe(9);
@@ -178,6 +189,7 @@ describe('Square', () => {
     expect(helpers.square('potato')).toBeFalsy();
   });
 });
+
  // cube
 describe('Cube', () => {
   it('knows that 3 cubed is 27', () => {
@@ -279,14 +291,17 @@ describe('Get triangle area', () => {
   it('knows that the area of a triangle with a base of 3 and a height of 3 is 4.5', () => {
     expect(helpers.getTriangleArea(3, 3)).toBe(4.5);
   });
-  it('knows that the area of a triangle with a base of -10 and a height of 4 does not exist', () => {
-    expect(helpers.getTriangleArea(-10, 4)).toBeFalsy()
-  });
   it(`knows that the area of a triangle with a base of 'potato' and a height of 3 does not exist`, () => {
     expect(helpers.getTriangleArea('potato', 3)).toBeFalsy();
   });
 });
 //  // getCircleArea
+it('should return the area of a circle using the argument as the radius', () => {
+  const pi =  3.141592653589793;
+   expect(helpers.getCircleArea(3)).toEqual(9*pi);
+  expect(helpers.getCircleArea(4)).toEqual(16*pi);
+  expect(helpers.getCircleArea(5)).toEqual(25*pi);
+})
 // describe('Get triangle area', () => {
 //   it('knows that the area of a circle with a radius of 3 is 28.27', () => {
 //     expect(helpers.getCircleArea(3)).toBe(28.27);
@@ -298,7 +313,12 @@ describe('Get triangle area', () => {
 //     expect(helpers.getCircleArea('potato')).toBeFalsy();
 //   });
 // });
+
+
 //  // getRectangularPrismVolume
+it('should return the volume of a rectangular prism using the arguments for the dimensions', () => {
+  expect(helpers.getRectangularPrismVolume(2,4,6)).toEqual(48);
+})
 // describe('Get rectangular prism volumn', () => {
 //   it('knows that the volume of a rectangular prism with a length of 1, width of 2 and height of 3 is 6', () => {
 //     expect(helpers.getRectangularPrismVolume(1,2,3)).toBe(6);

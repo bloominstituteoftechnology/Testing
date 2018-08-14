@@ -1,7 +1,11 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
+
+  if (typeof x !== 'number' || typeof y !== 'number')
+    {return undefined;
+    }
+    else if (x > y) {
     return x;
   } else if (x === y) {
     return y;
@@ -142,7 +146,10 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
+    if (typeof numbers[i] !== 'number') {
+    return undefined;
+  }
+    else if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
   }

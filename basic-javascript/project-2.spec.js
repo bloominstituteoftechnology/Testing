@@ -9,9 +9,9 @@ describe('return larger value', () => {
     expect(funcs.getBiggest(2, 1)).toEqual(2);
   });
    it('should return false when one of the arguments is undefined', () => {
-    expect(funcs.getBiggest(undefined, false)).toEqual(false);
+    expect(funcs.getBiggest(undefined, false)).toBeUndefined();
   });
    it('should return false if one or both arguments are not numbers', () => {
-    expect(funcs.getBiggest(6, 'abc')).toEqual(false);
+    expect(funcs.getBiggest(6, 'abc')).toBeUndefined();
   });
 });
