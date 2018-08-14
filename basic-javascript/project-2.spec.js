@@ -132,7 +132,7 @@ describe(`${funcs.addItemToFront.name}`, () => {
         expect(addItemToFront([...arr],6)).toEqual([6, ...arr]);
     });
 });
-describe(`${funcs.wordsToSentence}`, () => {
+describe(`${funcs.wordsToSentence.name}`, () => {
     const wordsToSentence = funcs.wordsToSentence;
 
     it('constructs the sentence from a arr full of words', () => {
