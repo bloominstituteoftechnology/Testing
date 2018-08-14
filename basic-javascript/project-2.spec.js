@@ -151,4 +151,11 @@ describe(`${funcs.contains.name}`, () => {
         expect(contains([2,4,1],3)).toBeFalsy();
     })
 });
+describe(`${funcs.addNumbers.name}`, () => {
+    const addNumbers = funcs.addNumbers;
+    it('should sum up all the numbers in the array', () => {
+        expect(addNumbers([5,2,4])).toBe(11);
+        expect(addNumbers([5,2,4,11,2])).toBe(24);
+    })
+})
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
