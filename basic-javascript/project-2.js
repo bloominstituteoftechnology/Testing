@@ -14,6 +14,9 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
+  if (typeof language !== 'string')
+    {return false;
+    }
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -39,6 +42,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (num === 0)  {
+    return false;
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -46,6 +52,9 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (typeof num !== 'number')  {
+    return false;
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -57,6 +66,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (typeof num !== 'number')  {
+    return false;
+  }
   if (num < 0) {
     return false;
   }

@@ -154,18 +154,7 @@ describe('Is even', () => {
     expect(helpers.isEven('banana')).toBeFalsy();
   });
 });
- // isOdd
-// describe('Is odd', () => {
-//   it('knows that 3 is odd', () => {
-//     expect(helpers.isOdd(3)).toBeTruthy();
-//   });
-//   it('knows that 4 is not odd', () => {
-//     expect(helpers.isOdd(4)).toBeFalsy();
-//   });
-//   it(`knows that 'banana' is not odd`, () => {
-//     expect(helpers.isOdd('banana')).toBeUndefined();
-//   });
-// });
+
 describe('Is odd', () => {
   it('knows that 3 is odd', () => {
     expect(helpers.isOdd(3)).toBeTruthy();
