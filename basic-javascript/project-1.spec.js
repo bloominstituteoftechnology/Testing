@@ -119,4 +119,14 @@ describe('Basic JS Helpers', () => {
     })
   })
 
+  describe('The function isEven(num)', () => {
+    it('should test if num is even', () => {
+      expect(helpers.isEven(2)).toEqual(true);
+      expect(helpers.isEven(3)).toEqual(false);
+      expect(helpers.isEven(0)).toEqual(true);
+      expect(helpers.isEven("5")).toEqual('the input must be a number');
+      expect(helpers.isEven()).toEqual('a number is required as input');
+    })
+  })
+
 })

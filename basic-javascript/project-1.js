@@ -23,7 +23,7 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (!num) return 'a number is required as input';
+  if (!num && num !==0) return 'a number is required as input';
   else if (typeof(num) !== 'number') return 'the input must be a number'; 
   else if (num < 90) {
     return true;
@@ -32,7 +32,7 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
-  if (!num) return 'a number is required as input';
+  if (!num  && num !==0) return 'a number is required as input';
   else if (typeof(num) !== 'number') return 'the input must be a number'; 
   else if (num > 50) {
     return true;
@@ -73,10 +73,13 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
+  if (!num  && num !==0) return 'a number is required as input';
+  else if (typeof(num) !== 'number') return 'the input must be a number'; 
+
+  else if (num % 2 === 0) {
     return true;
   }
-  return false;
+  else return false;
 };
 
 const isOdd = num => {
