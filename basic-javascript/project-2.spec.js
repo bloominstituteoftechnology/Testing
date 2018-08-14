@@ -140,4 +140,15 @@ describe(`${funcs.wordsToSentence.name}`, () => {
         expect(wordsToSentence(['this', 'is', 'a', 'sentence'])).toMatch('this is a sentence');
     })
 })
+
+describe(`${funcs.contains.name}`, () => {
+    const contains = funcs.contains;
+    it('The array contains 1 or more elements that matches its specifications', () => {
+        expect(contains([5,4,6], 4)).toBeTruthy();
+        expect(contains([5,4,6,7,2,1], 1)).toBeTruthy();
+    })
+    it('The array contains no elements that meets specifications', () => {
+        expect(contains([2,4,1],3)).toBeFalsy();
+    })
+});
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
