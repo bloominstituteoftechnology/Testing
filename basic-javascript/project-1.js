@@ -56,21 +56,33 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  if (typeof num === 'number' && !isNaN(num) && num < 90) {
     return true;
   }
   return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
+  if (typeof num === 'number' && !isNaN(num) && num > 50) {
     return true;
   }
   return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (
+    typeof x === 'number' &&
+    !isNaN(x) &&
+    typeof y === 'number' &&
+    !isNaN(y)
+  ) {
+    let sum = x + y;
+    if (sum > Number.MAX_SAFE_INTEGER) {
+      throw new Error('Sum is too large to calculate');
+    } else return sum;
+  } else {
+    throw new Error('Must have two numbers!');
+  }
 };
 
 const subtract = (x, y) => {

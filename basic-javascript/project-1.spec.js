@@ -98,4 +98,85 @@ describe('math helpers', () => {
       expect(helpers.areSameLength('hi there', 'hi there')).toBe(true);
     });
   });
+
+  describe('a number is less than 90', () => {
+    it('should return false if the number is greater or equal to 90', () => {
+      expect(helpers.lessThanNinety(90)).toBe(false);
+      expect(helpers.lessThanNinety(120)).toBe(false);
+    });
+    it('should return false a non-number is entered', () => {
+      expect(helpers.lessThanNinety('a')).toBe(false);
+      expect(helpers.lessThanNinety(NaN)).toBe(false);
+      expect(helpers.lessThanNinety([])).toBe(false);
+    });
+    it('should return true if the less than 90', () => {
+      expect(helpers.lessThanNinety(0)).toBe(true);
+      expect(helpers.lessThanNinety(-3)).toBe(true);
+      expect(helpers.lessThanNinety(89)).toBe(true);
+    });
+  });
+
+  describe('a number is less than 90', () => {
+    it('should return false if the number is greater or equal to 90', () => {
+      expect(helpers.lessThanNinety(90)).toBe(false);
+      expect(helpers.lessThanNinety(120)).toBe(false);
+    });
+    it('should return false a non-number is entered', () => {
+      expect(helpers.lessThanNinety('a')).toBe(false);
+      expect(helpers.lessThanNinety(NaN)).toBe(false);
+      expect(helpers.lessThanNinety([])).toBe(false);
+    });
+    it('should return true if the less than 90', () => {
+      expect(helpers.lessThanNinety(0)).toBe(true);
+      expect(helpers.lessThanNinety(-3)).toBe(true);
+      expect(helpers.lessThanNinety(89)).toBe(true);
+    });
+  });
+
+  describe('a number is grater than 50', () => {
+    it('should return false if the number is greater or equal to 50', () => {
+      expect(helpers.greaterThanFifty(50)).toBe(false);
+      expect(helpers.greaterThanFifty(-200)).toBe(false);
+    });
+    it('should return false a non-number is entered', () => {
+      expect(helpers.greaterThanFifty('a')).toBe(false);
+      expect(helpers.greaterThanFifty(NaN)).toBe(false);
+      expect(helpers.greaterThanFifty({})).toBe(false);
+    });
+    it('should return true if the less than 50', () => {
+      expect(helpers.greaterThanFifty(51)).toBe(true);
+      expect(helpers.greaterThanFifty(200)).toBe(true);
+    });
+  });
+
+  describe('add two numbers', () => {
+    it('should add two numbers', () => {
+      expect(helpers.add(6, 2)).toEqual(8);
+      expect(helpers.add(-3, -2)).toEqual(-5);
+      expect(helpers.add(-3, 10)).toEqual(7);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const sum = () => helpers.add();
+      expect(sum).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const sum = () => helpers.add(NaN);
+      expect(sum).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const sum1 = () => helpers.add('a');
+      expect(sum1).toThrow();
+      const sum2 = () => helpers.add([1, 2, 3]);
+      expect(sum2).toThrow();
+    });
+
+    it('should throw an error when the sum is greater than the max safe number', () => {
+      const max = Number.MAX_SAFE_INTEGER;
+      const sum = () => helpers.add(max, 1);
+      expect(sum).toThrow();
+    });
+  });
 });
