@@ -11,5 +11,7 @@
   "devDependencies": {
     "jest": "^23.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
 }
