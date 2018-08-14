@@ -348,4 +348,68 @@ describe('math helpers', () => {
       expect(odd2).toThrow();
     });
   });
+
+  describe('square a number', () => {
+    it('should check to see if the number is squared', () => {
+      expect(helpers.square(0)).toEqual(0);
+      expect(helpers.square(-2)).toEqual(4);
+      expect(helpers.square(4)).toEqual(16);
+      expect(helpers.square(5)).toEqual(25);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const square = () => helpers.square();
+      expect(square).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const square = () => helpers.square(NaN);
+      expect(square).toThrow();
+    });
+
+    it('should throw an error when the value passed is too big', () => {
+      const num = Math.sqrt(Number.MAX_SAFE_INTEGER);
+      const square = () => helpers.square(num + 1);
+      expect(square).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const square1 = () => helpers.square('a');
+      expect(square1).toThrow();
+      const square2 = () => helpers.square([1, 2, 3]);
+      expect(square2).toThrow();
+    });
+  });
+
+  describe('cube a number', () => {
+    it('should check to see if the number is cubed', () => {
+      expect(helpers.cube(0)).toEqual(0);
+      expect(helpers.cube(-2)).toEqual(-8);
+      expect(helpers.cube(4)).toEqual(64);
+      expect(helpers.cube(5)).toEqual(125);
+    });
+
+    it('should throw an error when the value passed is undefined', () => {
+      const cube = () => helpers.cube();
+      expect(cube).toThrow();
+    });
+
+    it('should throw an error when the value passed is NaN', () => {
+      const cube = () => helpers.cube(NaN);
+      expect(cube).toThrow();
+    });
+
+    it('should throw an error when the value passed is too big', () => {
+      const num = Math.cbrt(Number.MAX_SAFE_INTEGER);
+      const cube = () => helpers.cube(num + 111);
+      expect(cube).toThrow();
+    });
+
+    it('should throw an error when the value passed is anything but a number', () => {
+      const cube1 = () => helpers.cube('a');
+      expect(cube1).toThrow();
+      const cube2 = () => helpers.cube([1, 2, 3]);
+      expect(cube2).toThrow();
+    });
+  });
 });

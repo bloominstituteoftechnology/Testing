@@ -161,11 +161,25 @@ const isOdd = num => {
 };
 
 const square = num => {
-  return num * num;
+  if (typeof num === 'number' && !isNaN(num)) {
+    let squared = num * num;
+    if (squared > Number.MAX_SAFE_INTEGER)
+      throw new Error('Number too big to square accurately');
+    return squared;
+  } else {
+    throw new Error('Must have a number!');
+  }
 };
 
 const cube = num => {
-  return num * num * num;
+  if (typeof num === 'number' && !isNaN(num)) {
+    let cubed = num * num * num;
+    if (cubed > Number.MAX_SAFE_INTEGER)
+      throw new Error('Number too big to cube accurately');
+    return cubed;
+  } else {
+    throw new Error('Must have a number!');
+  }
 };
 
 const raiseToPower = (num, exponent) => {
