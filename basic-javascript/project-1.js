@@ -1,7 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if (typeof num !== "number") {
+    num = parseInt(num, 10);
+    return num * 10;
+  } else {
+    return num * 10;
+  }
 };
 
 const subtractFive = num => {
@@ -85,7 +90,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
@@ -137,5 +142,5 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
 };
