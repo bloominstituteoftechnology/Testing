@@ -1,11 +1,15 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  let v1 = isNumber(num); 
+  v1 = v1[0];
+  return v1 * 10;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  let v1 = isNumber(num);
+  v1 = v1[0]; 
+  return v1 - 5;
 };
 
 const areSameLength = (str1, str2) => {
@@ -17,25 +21,35 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  let v1 = isNumber(num); 
+  v1 = v1[0]
+  if (v1 < 90) {
     return true;
   }
   return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
+  let v1 = isNumber(num); 
+  v1 = v1[0]
+  if (v1 > 50) {
     return true;
   }
   return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+  const v = isNumber(x,y); 
+  let v1 = v[0];
+  let v2 = v[1]; 
+  return v1 + v2;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  const v = isNumber(x,y); 
+  let v1 = v[0];
+  let v2 = v[1];
+  return v1 - v2;
 };
 
 const divide = (x, y) => {
@@ -111,6 +125,25 @@ const getCircleArea = radius => {
 const getRectangularPrismVolume = (length, width, height) => {
   return width * height * length;
 };
+
+//Because some of the number checkers have various argument lengths
+//the plan is to desirn functions to check infinite amount or arguments. 
+
+function isNumber(...args){
+  for(let i = 0; i<args.length; i++){
+    if(typeof args[i] === 'string'){
+      //Perform a check if it can be converted to Number.
+      test = Number(args[i])
+      if(test){
+        args[i] = test
+        return args; 
+      } else {
+        args[i] = 0; 
+        return args; 
+      }
+    }
+  }
+}
 
 module.exports = {
   multiplyByTen,
