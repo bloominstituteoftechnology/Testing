@@ -68,7 +68,7 @@ to Infinity.
 Example  5/0 => Infinity; 
 The question is whether or not we want to return the 
 positive number or 0.  I would recommend to return 
-the positive number becase 5 divided 0 times is 5. 
+the positive number because 5 divided 0 times is 5. 
 Also  0 / 0 will result in NaN 
 Strings divdided by numbers will result in NaN
 Example "jonathan" / 3 

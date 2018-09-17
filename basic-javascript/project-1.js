@@ -53,7 +53,25 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
-  return x / y;
+  const result1 = isNumber(x,y); 
+  let v1; 
+  let v2; 
+  if(result1){
+    console.log(result1)
+    v1 = result1[0];
+    v2 = result1[1]; 
+  } else {
+    return 0; 
+  }
+  const result2 = anyZeros(v1,v2);
+  if (result2){
+    v1 = result2[0];
+    v2 = result2[1]; 
+  } else {
+    return 0; 
+  }
+  //if result2 is a thing
+  return v1 / v2; 
 };
 
 const multiply = (x, y) => {
@@ -141,9 +159,21 @@ function isNumber(...args){
         args[i] = 0; 
         return args; 
       }
+    } else {
+      return args; 
     }
   }
 }
+
+function anyZeros (...args) {
+  for(let i = 0; i < args.length; i++){
+    if(args[i] === 0){
+      return 0; 
+    }
+  }
+  return args; 
+ }
+
 
 module.exports = {
   multiplyByTen,
