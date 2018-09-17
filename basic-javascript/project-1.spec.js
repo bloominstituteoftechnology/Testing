@@ -40,3 +40,43 @@ it('should return true if less than 90', () => {
 it('should return false if more than 90', () => {
   expect(helpers.lessThanNinety(180)).toBe(false);
 });
+
+it('should return true if greater than 50', () => {
+  expect(helpers.greaterThanFifty(7000)).toBe(true);
+});
+
+it('should return false if less than 50', () => {
+  expect(helpers.greaterThanFifty(12)).toBe(false);
+});
+
+it('should add two numbers', () => {
+  expect(helpers.add(9, -3)).toBe(6);
+});
+
+it('(add) should return false if a value is not a number and cannot be converted', () => {
+  expect(helpers.add('test', 5)).toBe(false);
+});
+
+it('should subtract second number from first', () => {
+  expect(helpers.subtract(100, 25)).toBe(75);
+});
+
+it('should return other number if one value is not provided', () => {
+  expect(helpers.subtract(null, 55)).toBe(55);
+});
+
+it('should return first value divided by second value', () => {
+  expect(helpers.divide(1250, 50)).toBe(25);
+});
+
+it('should round down if not a whole number', () => {
+  expect(helpers.divide(1250, 27)).toBe(46);
+});
+
+it('should multiply two numbers together', () => {
+  expect(helpers.multiply(8, 93)).toBe(744);
+});
+
+it('(mult) should return false if one value is not provided', () => {
+  expect(helpers.multiply(undefined, 5)).toBe(false);
+});

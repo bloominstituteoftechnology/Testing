@@ -21,7 +21,7 @@ const lessThanNinety = num => {
     return true;
   }
   return false;
-};
+};//5
 
 const greaterThanFifty = num => {
   if (num > 50) {
@@ -44,7 +44,7 @@ const divide = (x, y) => {
 
 const multiply = (x, y) => {
   return x * y;
-};
+};//10
 
 const getRemainder = (x, y) => {
   return x % y;
@@ -70,7 +70,7 @@ const square = num => {
 
 const cube = num => {
   return num * num * num;
-};
+};//15
 
 const raiseToPower = (num, exponent) => {
   return num ** exponent;
@@ -90,7 +90,7 @@ const addExclamationPoint = str => {
 
 const combineNames = (firstName, lastName) => {
   return `${firstName} ${lastName}`;
-};
+};//20
 
 const getGreeting = name => {
   return `Hello ${name}!`;
@@ -110,7 +110,7 @@ const getCircleArea = radius => {
 
 const getRectangularPrismVolume = (length, width, height) => {
   return width * height * length;
-};
+};//25
 
 module.exports = {
   multiplyByTen,
