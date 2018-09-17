@@ -101,7 +101,7 @@ const addExclamationPoint = str => {
   return (str += '!');
 };
 
-const combineNames = (firstName, lastName) => {
+const combineNames = (firstName = '', lastName = '') => {
   return `${firstName} ${lastName}`;
 };
 

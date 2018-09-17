@@ -157,4 +157,13 @@ describe('string functions', () => {
     expect(helpers.addExclamationPoint('hello')).toBe('hello!');
     expect(helpers.addExclamationPoint('')).toBe('!');
   });
+
+  test('combineNames combines two strings', () => {
+    expect(helpers.combineNames('hello', 'world')).toBe('hello world');
+    expect(helpers.combineNames('hello')).toBe('hello ');
+  });
+
+  test('getGreeting prepends hello to strings', () => {
+    expect(helpers.getGreeting('world')).toBe('Hello world!');
+  });
 });
