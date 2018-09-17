@@ -24,6 +24,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if(num === undefined){
+    return false; 
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -31,6 +34,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if(num === undefined){
+    return false; 
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -38,6 +44,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if(num === undefined){
+    return false; 
+  }
   if (Math.floor(num) === num) {
     return true;
   }
