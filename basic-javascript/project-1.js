@@ -1,7 +1,11 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (num === undefined){
+    return false;
+  }else{
   return num * 10;
+  }
 };
 
 const subtractFive = num => {
