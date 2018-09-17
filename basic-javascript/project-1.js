@@ -10,16 +10,34 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (isNaN(num)) {
+    return "missing number";
+  } else {
+    return num - 5;
+  }
 };
-
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (str1 && str2) {
+    return str1.length === str2.length;
+  } else {
+    return "missing one of the arguments";
+  }
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (typeof x === "object" || typeof y === "object") {
+    for (let i = 0; i < y.length; i++) {
+      if (x[i] !== y[i]) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  } else {
+    return x === y;
+  }
 };
+// finished up to here
 
 const lessThanNinety = num => {
   if (num < 90) {

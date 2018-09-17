@@ -5,10 +5,48 @@ const helpers = require("./project-1");
 it("should multiply num by 10", () => {
   expect(helpers.multiplyByTen(5)).toBe(50);
   expect(helpers.multiplyByTen(20)).toBe(200);
+  expect(helpers.multiplyByTen(20.55)).toBe(205.5);
 });
 
-it("should convert to number if typof not number and multiply", () => {
+it("should convert to number if typeof not number and multiply", () => {
   expect(helpers.multiplyByTen("5")).toBe(50);
   expect(helpers.multiplyByTen("20")).toBe(200);
 });
 // end multiplyByTen tests
+
+// start subtractFive tests
+it("should subtract 5 from num", () => {
+  expect(helpers.subtractFive(5555)).toBe(5550);
+  expect(helpers.subtractFive(20.333)).toBeCloseTo(15.333, 5);
+});
+
+it("should return 'missing number' if undefined", () => {
+  expect(helpers.subtractFive()).toBe("missing number");
+});
+// end subtractFive tests
+
+// start areSameLength tests
+it("should return true if strings are same length", () => {
+  expect(helpers.areSameLength("Gill", "Gill")).toBe(true);
+  expect(helpers.areSameLength("Gilly", "Gill")).toBe(false);
+  expect(helpers.areSameLength("Gill ", "Gill")).toBe(false);
+});
+
+it("missing one param", () => {
+  expect(helpers.areSameLength("Gill")).toBe("missing one of the arguments");
+});
+// end areSameLength tests
+
+// start areEqual tests
+it("should return true if args are equal", () => {
+  expect(helpers.areEqual("Gill", "Gill")).toBe(true);
+  expect(helpers.areEqual(5, 5)).toBe(true);
+  expect(helpers.areEqual(["Gill", "Bill"], ["Gill", "Bill"])).toBe(true);
+});
+
+it("should return false if args are !equal", () => {
+  expect(helpers.areEqual("Gilla", "Gill")).toBe(false);
+  expect(helpers.areEqual(5.1, 5)).toBe(false);
+  expect(helpers.areEqual(["Gilla", "Bill"], ["Gill", "Bill"])).toBe(false);
+});
+// end areEqual tests
