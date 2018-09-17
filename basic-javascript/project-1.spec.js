@@ -19,19 +19,16 @@ it('Should return true if 2 strings are the same length', () => {
 });
 
 it('Should check if 2 values are strictly equal', () => {
-    const exObject = {
-        valueOne: "hello",
-        valueTwo: "world"
-    }
-
-    const exObjectTwo = {
-        valueOne: "hello",
-        valueTwo: "world"
-    }
-
     expect(helpers.areEqual("2", "2")).toBe(true);
     expect(helpers.areEqual("2", 2)).toBe(false);
     expect(helpers.areEqual(2, 2)).toBe(true);
     expect(helpers.areEqual(2, 3)).toBe(false);
-    expect(helpers.areEqual(exObject, exObjectTwo)).toBe(true);
+});
+
+it('Should check if a number is less than 90', () => {
+    expect(helpers.lessThanNinety(89)).toBe(true);
+    expect(helpers.lessThanNinety(90)).toBe(false);
+    expect(helpers.lessThanNinety(0)).toBe(true);
+    expect(helpers.lessThanNinety(-1)).toBe(true);
+    expect(helpers.lessThanNinety("89")).toBe("Invalid argument: Not a number!");
 });

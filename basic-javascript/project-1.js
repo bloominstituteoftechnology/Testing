@@ -17,7 +17,10 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  if (typeof num != 'number') {
+    return "Invalid argument: Not a number!";
+  }
+  else if (num < 90) {
     return true;
   }
   return false;
