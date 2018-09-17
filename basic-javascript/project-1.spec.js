@@ -82,11 +82,11 @@ it('(mult) should return false if one value is not provided', () => {
 });
 
 it('should return the remainder if division is not even', () => {
-  expect(helpers.getRemainer(9, 3)).toBe(1);
+  expect(helpers.getRemainder(10, 3)).toBe(1);
 });
 
 it('(remain) should return false if either value is not a number', () => {
-  expect(helpers.getRemainer(21, 'test')).toBe(false);
+  expect(helpers.getRemainder(21, 'test')).toBe(false);
 });
 
 it('should return false if value is not even', () => {
@@ -115,4 +115,44 @@ it('should cube a value passed', () => {
 
 it('(cube) should return false if value is not a number', () => {
   expect(helpers.cube(undefined)).toBe(false);
+});
+
+it('should raise first number to power of second number', () => {
+  expect(helpers.raiseToPower(2, 5)).toBe(32);
+});
+
+it('(raisePwr) should return false if a value is not a number', () => {
+  expect(helpers.raiseToPower(undefined, 3)).toBe(false);
+});
+
+it('should round a number to nearest whole number', () => {
+  expect(helpers.roundNumber(17.893)).toBe(18);
+});
+
+it('should return 0 if number is negative', () => {
+  expect(helpers.roundNumber(-5.234)).toBe(0);
+});
+
+it('should round a number up to the nearest whole number', () => {
+  expect(helpers.roundUp(13.213)).toBe(14);
+});
+
+it('should return 0 if number is negative', () => {
+  expect(helpers.roundUp(-52.21)).toBe(0);
+});
+
+it('should add ! to a string', () => {
+  expect(helpers.addExclamationPoint('test')).toBe('test!');
+});
+
+it('should convert number to string and add exclamation', () => {
+  expect(helpers.addExclamationPoint(5)).toBe('5!');
+});
+
+it('should combine two strings into one', () => {
+  expect(helpers.combineNames('John', 'Doe')).toBe('John Doe');
+});
+
+it('should return other value if one is undefined', () => {
+  expect(helpers.combineNames('John', undefined)).toBe('John');
 });
