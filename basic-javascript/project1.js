@@ -1,16 +1,25 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if(num === undefined) {
+    return false;
+  }
   return num * 10;
 };
 
 const subtractFive = num => {
+  if(num === undefined){
+    return false;
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if( !str1 || !str2 ){
+    return false; 
+  }else{
   return str1.length === str2.length;
-};
+}};
 
 const areEqual = (x, y) => {
   return x === y;
