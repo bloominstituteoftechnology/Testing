@@ -30,7 +30,7 @@ const areSameLength = (str1, str2) => {
 
 const areEqual = (x, y) => {
   if ( x === !Number || y === !Number){
-    return 'must input numerical values'
+    return false;
   }else if (!x || !y) {
     return 'both values must be defined'
   }else{
@@ -39,9 +39,11 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  if (num === !Number){
+    return 'value must be a number';
+  }else if (num < 90) {
     return true;
-  }
+  } 
   return false;
 };
 

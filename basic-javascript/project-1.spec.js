@@ -49,15 +49,13 @@ it('check if strings have equal length', () => {
 
     const result1 = lengthCheck('abc', 'def'); //true
     const result2 = lengthCheck(123, 456); //true
-    // const result3 = lengthCheck(undefined, 'hello'); //false
-    const result4 = lengthCheck('missing one'); //undefined
-    const result5 = lengthCheck(); //undefined
+    const result3 = lengthCheck('missing one'); //undefined
+    const result4 = lengthCheck(); //undefined
 
     expect(result1).toBe(true);
     expect(result2).toBe(true);
-    // expect(result3).toBe(false);
+    expect(result3).toBe('must input two strings');
     expect(result4).toBe('must input two strings');
-    expect(result5).toBe('must input two strings');
 
 });
 
@@ -74,8 +72,39 @@ it('check if values are equal', () => {
     expect(result2).toBe(false);
     expect(result3).toBe('both values must be defined');
     expect(result4).toBe(false);
-
 });
+
+//testing lessThanNinety
+//testing areEqual
+it('check if value is less than 90', () => {
+    const ninety = helpers.lessThanNinety;
+
+    const result1 = ninety(-4); //true
+    const result2 = ninety(500); 
+    //const result3 = ninety('four'); 
+
+    expect(result1).toBe(true);
+    expect(result2).toBe(false);
+    //expect(result3).toBe('value must be a number');
+});
+
+//testing lessThanNinety
+//testing areEqual
+it('check if value is greater than 50', () => {
+    const fifty = helpers.greaterThanFifty;
+
+    const result1 = fifty(-4); //false
+    const result2 = fifty(500); //true
+    //const result3 = ninety('fifty one'); 
+
+    expect(result1).toBe(false);
+    expect(result2).toBe(true);
+    //expect(result3).toBe('value must be a number');
+});
+
+
+
+
 
 
 
