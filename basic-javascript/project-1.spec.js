@@ -123,3 +123,52 @@ it('should check that given num, if floating point, is rounded up', () => {
 it('it should check that ! is addded to given string', () => {
     expect(helpers.addExclamationPoint('cat')).toBe('cat!');
 });
+
+//combineNames
+
+it('it should check that firstName and lastName return as "firstName LastName"', () => {
+    expect(helpers.combineNames('Brian', 'Boitano')).toBe('Brian Boitano');
+});
+
+//getGreeting
+
+it('it should check that greeting, "Hello name!" is returned', () => {
+    expect(helpers.getGreeting('Boitano')).toBe('Hello Boitano!');
+});
+
+//getRectangleArea
+
+it('it should check that the area of a rectangle is returned', () => {
+    expect(helpers.getRectangleArea(6, 4)).toBe(24);
+    expect(helpers.getRectangleArea(-6, 4)).toBe(undefined);
+    expect(helpers.getRectangleArea(6, -4)).toBe(undefined);  
+});
+
+//getTriangleArea
+
+it('it should check that the area of a triangle is returned', () => {
+    expect(helpers.getTriangleArea(6, 4)).toBe(12);
+    expect(helpers.getTriangleArea(-6, 4)).toBe(undefined);
+    expect(helpers.getTriangleArea(6, -4)).toBe(undefined);  
+});
+
+//getCircleArea
+
+it('it should check that the area of a circle is returned', () => {
+    expect(helpers.getCircleArea(2)).toBeCloseTo(12.57);
+    expect(helpers.getCircleArea(-2)).toBe(undefined);  
+});
+
+//getRectangularPrismVolume
+
+it('it should check that the volume of a Rectangular Prism is returned', () => {
+    expect(helpers.getRectangularPrismVolume(2, 2, 2)).toBe(8);
+    expect(helpers.getRectangularPrismVolume(-2, 2, 2)).toBe(undefined);  
+    expect(helpers.getRectangularPrismVolume(2, -2, 2)).toBe(undefined);  
+    expect(helpers.getRectangularPrismVolume(2, 2, -2)).toBe(undefined);  
+});
+
+
+
+
+
