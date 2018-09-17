@@ -80,3 +80,39 @@ it('should multiply two numbers together', () => {
 it('(mult) should return false if one value is not provided', () => {
   expect(helpers.multiply(undefined, 5)).toBe(false);
 });
+
+it('should return the remainder if division is not even', () => {
+  expect(helpers.getRemainer(9, 3)).toBe(1);
+});
+
+it('(remain) should return false if either value is not a number', () => {
+  expect(helpers.getRemainer(21, 'test')).toBe(false);
+});
+
+it('should return false if value is not even', () => {
+  expect(helpers.isEven(9)).toBe(false);
+});
+
+it('(even?) should return false if value is not a number', () => {
+  expect(helpers.isEven('test')).toBe(false);
+});
+
+it('(odd?) should return true if value is odd', () => {
+  expect(helpers.isOdd(9)).toBe(true);
+});
+
+it('should square a value passed', () => {
+  expect(helpers.square(5)).toBe(25);
+});
+
+it('(square) should return false if value is not a number', () => {
+  expect(helpers.square('test')).toBe(false);
+});
+
+it('should cube a value passed', () => {
+  expect(helpers.cube(9)).toBe(729);
+});
+
+it('(cube) should return false if value is not a number', () => {
+  expect(helpers.cube(undefined)).toBe(false);
+});
