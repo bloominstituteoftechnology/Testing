@@ -17,7 +17,17 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (Array.isArray(x) === true && Array.isArray(y) === true ) {
+    if (x.length === y.length){
+      return checkArray(x,y)
+    } else {
+      return x === y; 
+    }  
+  } else if (typeof x === 'object' && typeof y === 'object' && !(x === null && y !== null)) {
+    return isObject(x, y); 
+  }else {
+    return x === y; 
+  }
 };
 
 const lessThanNinety = num => {
@@ -194,15 +204,22 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  const result1 = isString(str);
+  let v1 = result1[0]; 
+  return (v1 += "!")
 };
 
 const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+  const result1 = isString(firstName, lastName);
+  let v1 = result1[0];
+  let v2 = result1[1];  
+  return `${v1} ${v2}`
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+  const result1 = isString(name);
+  let v1 = result1[0];  
+  return `Hello ${v1}!`
 };
 
 const getRectangleArea = (length, width) => {
@@ -260,6 +277,28 @@ function anyZeros (...args) {
   }
   return args; 
  }
+
+ function checkArray (ar1, ar2){
+  for (let i = 0; i<ar1.length; i++){
+    if(ar1[i] !== ar2[i]){
+      return false; 
+    }
+  }
+  return true; 
+}
+
+function isObject (obj1, obj2) {
+  console.log("object")
+  if (Object.keys(obj1).length === Object.keys(obj2).length) {
+    for (let key in obj1) {
+      if (typeof obj1[key] === "object") {
+        if (!isObject(obj1[key], obj2[key])) return false;
+      }
+      else if (obj1[key] !== obj2[key]) return false;
+    }
+  } else return false;
+  return true;   
+}
 
 
 module.exports = {
