@@ -47,3 +47,51 @@ it('should return string fizzbuzz if value is divisble by 5 or 3', () => {
 it('should return value if not a number divisible by 5 or 3', () => {
   expect(funcs.fizzBuzz('yes')).toBe('yes');
 });
+
+it('should return true if value is a prime number', () => {
+  expect(funcs.isPrime(467)).toBe(true);
+});
+
+it('should return false if value is not a prime', () => {
+  expect(funcs.isPrime(18)).toBe(false);
+});
+
+it('should return the first value in an array', () => {
+  expect(funcs.returnFirst([1, 5, 8, 8])).toBe(1);
+});
+
+it('should return false if value is not an array', () => {
+  expect(funcs.returnFirst('test')).toBe(false);
+});
+
+it('should return the last value in an array', () => {
+  expect(funcs.returnLast([1, 5, 8, 8])).toBe(8);
+});
+
+it('should return false if value is not an array', () => {
+  expect(funcs.returnLast('test')).toBe(false);
+});
+
+it('should return the length of an array', () => {
+  expect(funcs.getArrayLength([1, 5, 8, 8])).toBe(4);
+});
+
+it('should return false if value is not an array', () => {
+  expect(funcs.getArrayLength('test')).toBe(false);
+});
+
+it('should increment all values in array by 1', () => {
+  expect(funcs.incrementByOne([1, 5, 8, 8])).isEqual([2, 6, 9, 9]);
+});
+
+it('should return the array if any values are not a number', () => {
+  expect(funcs.incrementByOne([1, 5, 'any', 8])).toBe([1, 5, 'any', 8]);
+});
+
+it('should add item to the array returning array', () => {
+  expect(funcs.addItemToArray(['yes', 'no', 3], 8)).toEqual(['yes', 'no', 3, 8]);
+});
+
+it('should return array if value to add is undefined or null', () => {
+  expect(funcs.addItemToArray(['yes', 'no', 3])).toEqual(['yes', 'no', 3]);
+});
