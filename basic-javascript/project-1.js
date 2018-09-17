@@ -1,6 +1,6 @@
 /* eslint-disable arrow-parens */
 
-// made as helpers
+// helpers
 
 const areNums = (...vals) => {
   return vals.every(val => {

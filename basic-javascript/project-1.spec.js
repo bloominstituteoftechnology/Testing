@@ -246,4 +246,53 @@ describe('addExclamationPoint', () => {
   it('should add a exclamation point to the given string', () => {
     expect(helpers.addExclamationPoint('Hello, world')).toBe('Hello, world!');
   });
+
+  it('should return null if not a string', () => {
+    expect(helpers.addExclamationPoint(12)).toBe(null);
+  });
+});
+
+describe('combineNames', () => {
+  it('should combine a first and last name', () => {
+    expect(helpers.combineNames('John', 'O\'Rourke')).toBe('John O\'Rourke');
+  });
+
+  it('should return null if not a string', () => {
+    expect(helpers.combineNames(12, 'Smith')).toBe(null);
+  });
+});
+
+describe('getGreeting', () => {
+  it('should return a greeting with the given name', () => {
+    expect(helpers.getGreeting('John')).toBe('Hello John!');
+  });
+
+  it('should return null if not a string', () => {
+    expect(helpers.getGreeting(12)).toBe(null);
+  });
+});
+
+describe('getRectangleArea', () => {
+  it('should return the area of the given rectangle', () => {
+    expect(helpers.getRectangleArea(5, 2)).toBe(10);
+    expect(helpers.getRectangleArea(10, 2.5)).toBe(25);
+  });
+});
+
+describe('getTriangleArea', () => {
+  it('should return the area of the given triangle', () => {
+    expect(helpers.getTriangleArea(2, 2)).toBe(2);
+  });
+});
+
+describe('getCircleArea', () => {
+  it('should return the area of the given circle', () => {
+    expect(Math.round(helpers.getCircleArea(2))).toBe(13);
+  });
+});
+
+describe('getRectangularPrismVolume', () => {
+  it('should return the volume of the given rectangular prism', () => {
+    expect(helpers.getRectangularPrismVolume(2, 2, 2)).toBe(8);
+  });
 });
