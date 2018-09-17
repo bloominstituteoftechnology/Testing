@@ -102,6 +102,32 @@ it('check if value is greater than 50', () => {
     //expect(result3).toBe('value must be a number');
 });
 
+//testing add
+it('should add two numbers', () => {
+    const add = helpers.add;
+
+    const result1 = add(4, 4); //8
+    const result2 = add(3, 4); //
+    //const result3 = add('three','four'); //values must both be numbers;
+
+    expect(result1).toBe(8);
+    expect(result2).toBe(7);
+    //expect(result3).toBe('values must both be numbers');
+});
+
+//testing subtract
+
+//testing divide
+
+it('should return a quotient', () => {
+    const divide = helpers.divide;
+
+    const result1 = divide(10,0); // infinity
+
+    expect(result1).toEqual(infinity);
+})
+
+
 
 
 

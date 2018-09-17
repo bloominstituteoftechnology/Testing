@@ -55,7 +55,12 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (x === !Number || y === !Number){
+    return 'values must both be numbers';
+  }
+  const a = x || 0;
+  const b = y || 0;
+  return a + b;
 };
 
 const subtract = (x, y) => {
@@ -63,6 +68,7 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
+
   return x / y;
 };
 
