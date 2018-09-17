@@ -1,11 +1,20 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = (num = 0) => {
-  if (Number.isNaN(Number(num))) throw new Error('argument must be a number');
+  if (
+    Number.isNaN(Number(num)) ||
+    (typeof num !== 'string' && typeof num !== 'number')
+  )
+    throw new Error('argument must be a number');
   return num * 10;
 };
 
-const subtractFive = num => {
+const subtractFive = (num = 0) => {
+  if (
+    Number.isNaN(Number(num)) ||
+    (typeof num !== 'string' && typeof num !== 'number')
+  )
+    throw new Error('argument must be a number');
   return num - 5;
 };
 
