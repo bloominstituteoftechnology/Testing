@@ -53,8 +53,15 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
-  if (num < 0) {
+  if(typeof num != "number"){
     return false;
+  }
+  if (num < 0) {
+    for (let i = -2; i > num; i--) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
   }
   if (num === 1 || num === 0) {
     return false;
