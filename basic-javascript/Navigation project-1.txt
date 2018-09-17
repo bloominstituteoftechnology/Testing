@@ -128,4 +128,7 @@ function isNumber
 function isString 
 
 function doesn't include zero
+function deepTest object/array checker 
+
+
 
