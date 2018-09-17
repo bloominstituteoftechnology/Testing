@@ -43,7 +43,6 @@ it("should check if two parameters are the same", () => {
 // --------------------LESS THAN 90 TESTS -------------------------------
 
 it('should return true if less than 90', () => {
-    expect(helpers.lessThanNinety('89')).toBeTruthy();
     expect(helpers.lessThanNinety(91)).toBeFalsy();
     expect(helpers.lessThanNinety(89)).toBeTruthy();
     expect(helpers.lessThanNinety(90)).toBeFalsy();
@@ -62,15 +61,10 @@ it('should return true if value is greater than fifty', () => {
 
 it('should add both values and return the sum', () => {
     expect(helpers.add(75,25)).toBe(100);
-  
-});
-
-it('should add both values and return the sum', () => {
     expect(helpers.add(-75,-25)).toBe(-100);
     expect(helpers.add(75,-25)).toBe(50);
-    expect(helpers.add(-75,25)).toBe(-50);
-
 });
+
 
 // ----------------------SUBTRACT TESTS -------------------------------
 
@@ -108,7 +102,104 @@ it('should multiply both parameters and return product or param 1 and 2', () => 
 it('should return remainder of param 2 divided by param 1', () => {
     expect(helpers.getRemainder(5, 3)).toBe(2); 
     expect(helpers.getRemainder(4, 2)).toBe(0); 
-    expect(helpers.getRemainder(-9, 2)).toBe(1); 
 }); 
 
-//
+// -------------------IS EVEN TEST ---------------------------------
+
+it('should return whether value is even', () => {
+    expect(helpers.isEven(4)).toBeTruthy(); 
+    expect(helpers.isEven(3)).toBeFalsy(); 
+    expect(helpers.isEven(2.5)).toBeFalsy(); 
+})
+
+//-------------------IS ODD TEST----------------------------------
+
+it('should return whether value is odd', () => {
+    expect(helpers.isOdd(4)).toBeFalsy();
+    expect(helpers.isOdd(3)).toBeTruthy();  
+}); 
+
+//-----------------SQUARE TEST--------------------------------
+
+it('should return squared value', () => {
+    expect(helpers.square(4)).toBe(16); 
+    expect(helpers.square(5)).toBe(25); 
+}); 
+
+//----------------CUBE TEST----------------------------------------
+
+it('should return cubed value', () => {
+    expect(helpers.cube(2)).toBe(8); 
+    expect(helpers.cube(3)).toBe(27); 
+}); 
+
+//----------------RAISE TO POWER TEST-----------------------------
+
+it('should return the result of the first param to the power of the second param', () => {
+    expect(helpers.raiseToPower(10,2)).toBe(100); 
+    expect(helpers.raiseToPower(1,5)).toBe(1); 
+}); 
+
+// --------------ROUND NUMBER TEST ---------------------------------
+
+it('should return a rounded param value', () => {
+    expect(helpers.roundNumber(10.6)).toBe(11); 
+    expect(helpers.roundNumber(22.2)).toBe(22); 
+})
+
+//-----------------ROUND UP TEST ---------------------------------------
+
+it('should return the value rounded up to the nearest whole number', () => {
+    expect(helpers.roundUp(3.2)).toBe(4); 
+    expect(helpers.roundUp(4.0)).toBe(4); 
+})
+
+// -----------------ADD EXCLAMATION POINT TEST ----------------------
+
+it('should return a string with an exclamation concatenated to the end', () => {
+    expect(helpers.addExclamationPoint('hello')).toBe('hello!');
+    expect(helpers.addExclamationPoint('This is cool')).toBe("This is cool!"); 
+}); 
+
+//-----------------COMBINE NAMES TEST ----------------------------
+
+it('should return a string that combines the first and last name parameters',  () => {
+    expect(helpers.combineNames('Katia', 'Gilligan')).toBe('Katia Gilligan'); 
+    expect(helpers.combineNames('Joshua', 'Henderson')).toBe('Joshua Henderson'); 
+})
+
+// ------------------ GET GREETING TEST-----------------
+
+it('should return Hello with the name of the parameter as a string', () => {
+    expect(helpers.getGreeting('Sam')).toBe('Hello Sam!'); 
+    expect(helpers.getGreeting('Ed')).toBe('Hello Ed!')
+}); 
+
+// ---------------- GET RECTANGLE AREA TEST ----------------
+
+it('should return the product of the two parameters', () => {
+    expect(helpers.getRectangleArea(1,4)).toBe(4); 
+    expect(helpers.getRectangleArea(4,4)).toBe(16); 
+})
+
+// ---------------- GET TRIANGLE AREA ----------------------
+
+it('should return product of two parameters divided by two', () => {
+    expect(helpers.getTriangleArea(3,2)).toBe(3); 
+    expect(helpers.getTriangleArea(5,6)).toBe(15); 
+}); 
+
+// --------------- GET CIRCLE AREA --------------------------
+
+it('should return the parameter squared and multiplied by pi', () => {
+    expect(helpers.getCircleArea(4)).toBe(16 * Math.PI); 
+    expect(helpers.getCircleArea(10)).toBe(100 * Math.PI); 
+}); 
+
+// --------------- GET RECTANGULAR PRISM VOLUME ----------------
+
+it('should return the product of all three parameters', () => {
+    expect(helpers.getRectangularPrismVolume(3,3,6)).toBe(54); 
+    expect(helpers.getRectangularPrismVolume(2,1,2)).toBe(4); 
+}); 
+
