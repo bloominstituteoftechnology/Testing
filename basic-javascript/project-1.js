@@ -19,6 +19,8 @@ const subtractFive = (num = 0) => {
 };
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string')
+    throw new Error('arguments must be string');
   return str1.length === str2.length;
 };
 

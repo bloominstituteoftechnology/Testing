@@ -40,3 +40,17 @@ describe('subtractFive', () => {
     expect(() => helpers.subtractFive(null)).toThrow();
   });
 });
+
+describe('areSameLength', () => {
+  test('compares two strings', () => {
+    expect(helpers.areSameLength('hello', 'hello')).toBe(true);
+    expect(helpers.areSameLength('hello', 'hellow')).toBe(false);
+    expect(helpers.areSameLength('', '')).toBe(true);
+  });
+
+  test('throws errors if arguments are not strings', () => {
+    expect(() => helpers.areSameLength()).toThrow();
+    expect(() => helpers.areSameLength([], [])).toThrow();
+    expect(() => helpers.areSameLength({}, {})).toThrow();
+  });
+});
