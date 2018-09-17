@@ -108,14 +108,23 @@ it('should add two numbers', () => {
 
     const result1 = add(4, 4); //8
     const result2 = add(3, 4); //
-    //const result3 = add('three','four'); //values must both be numbers;
+    const result3 = add('three','four'); //values must both be numbers;
 
     expect(result1).toBe(8);
     expect(result2).toBe(7);
-    //expect(result3).toBe('values must both be numbers');
+    expect(result3).toBe('values must both be numbers');
 });
 
 //testing subtract
+
+it('should subtract two numbers', () => {
+    const subtract = helpers.subtract;
+
+    const result1 = subtract('five', 'two');
+
+    expect(result1).toBe('values must both be numbers');
+})
+
 
 //testing divide
 
@@ -124,7 +133,7 @@ it('should return a quotient', () => {
 
     const result1 = divide(10,0); // infinity
 
-    expect(result1).toEqual(infinity);
+    expect(result1).toBe('cannot divide by 0');
 })
 
 
