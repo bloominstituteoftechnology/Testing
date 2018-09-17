@@ -9,11 +9,23 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
+  if (typeof num === !Number){
+    number = Number(num);
+    return number-5;
+  } else if (num === undefined){
+    return false;
+  }else{
   return num - 5;
+  }
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (!str1 || !str2) {
+    const message = 'must input two strings'
+    return message;
+  } else if (str1.length === str2.length);{
+    return true;
+  } 
 };
 
 const areEqual = (x, y) => {
@@ -114,6 +126,7 @@ const getCircleArea = radius => {
 
 const getRectangularPrismVolume = (length, width, height) => {
   return width * height * length;
+
 };
 
 module.exports = {
