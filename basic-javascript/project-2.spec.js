@@ -38,3 +38,33 @@ test('should return fixx if divisible by three, return buzz if divisible by 5, a
   expect(funcs.fizzBuzz(15)).toBe('fizzbuzz')
   expect(funcs.fizzBuzz(16)).toBe(16)
 })
+
+test('should return true if number is prime', () => {
+  expect(funcs.isPrime(8)).toBe(false)
+  expect(funcs.isPrime(7)).toBe(true)
+  expect(funcs.isPrime(-7)).toBe(false)
+  expect(funcs.isPrime(0)).toBe(false)
+  expect(funcs.isPrime(1)).toBe(false)
+})
+
+test('should return the first item in an Array', () => {
+  expect(funcs.returnFirst([1,2,3,4,5])).toBe(1)
+  expect(funcs.returnFirst(['hi','bye','word',4,5])).toBe('hi')
+})
+
+test('should return the the last item in the array', () => {
+    expect(funcs.returnLast([1,2,3,4,5])).toBe(5);
+    expect(funcs.returnLast(['hi','bye','word','be','the'])).toBe('the');
+    expect(funcs.returnLast(['hi','bye','word','be',{'key': 'value'}])).toEqual({'key': 'value'});
+    //needs to be toEqual
+    expect(funcs.returnLast(['hi','bye','word','be',true])).toBe(true)
+})
+
+test('should get the array length', () => {
+    expect(funcs.getArrayLength([1,2,3,4,5])).toBe(5);
+    expect(funcs.getArrayLength(['hi','bye','word','be','the','cat'])).toBe(6);
+    expect(funcs.getArrayLength(['hi','bye','word','be',{'key': 'value'}])).toEqual(5);
+    //needs to be toEqual
+    expect(funcs.getArrayLength(['hi','bye','word',true])).toBe(4);
+})
+
