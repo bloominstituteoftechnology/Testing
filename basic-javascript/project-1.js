@@ -54,8 +54,8 @@ const greaterThanFifty = num => {
 
 const add = (x, y) => {
   if (typeof x === "string" || typeof y === "string") {
-    x = parseInt(x, 10);
-    y = parseInt(y, 10);
+    x = parseFloat(x);
+    y = parseFloat(y);
     if (isNaN(x) || isNaN(y)) {
       return "Provide a number";
     } else {
@@ -68,7 +68,17 @@ const add = (x, y) => {
 // finished up to here
 
 const subtract = (x, y) => {
-  return x - y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x - y;
+    }
+  } else {
+    return x - y;
+  }
 };
 
 const divide = (x, y) => {

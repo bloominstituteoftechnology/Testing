@@ -86,4 +86,27 @@ it("should return the sum of x and y", () => {
   expect(helpers.add(10, -1)).toBe(9);
   expect(helpers.add(10, -1.55)).toBe(8.45);
 });
+
+it("should convert x or y if either is a string number", () => {
+  expect(helpers.add("5", 4)).toBe(9);
+  expect(helpers.add("-1", "5")).toBe(4);
+  expect(helpers.add("10", -1)).toBe(9);
+  expect(helpers.add(10, "-1.55")).toBe(8.45);
+});
 // end add tests
+
+// start subtract tests
+it("should return the difference of x and y", () => {
+  expect(helpers.subtract(50, 4)).toBe(46);
+  expect(helpers.subtract(-1, 5)).toBe(-6);
+  expect(helpers.subtract(10, -1)).toBe(11);
+  expect(helpers.subtract(10, -1.55)).toBe(11.55);
+});
+
+it("should convert x or y if either is a string number", () => {
+  expect(helpers.subtract("50", 4)).toBe(46);
+  expect(helpers.subtract(-1, "5")).toBe(-6);
+  expect(helpers.subtract("10", "-1")).toBe(11);
+  expect(helpers.subtract("10", -1.55)).toBe(11.55);
+});
+// end subtract tests
