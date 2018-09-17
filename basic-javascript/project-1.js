@@ -1,141 +1,217 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	return num * 10;
 };
 
 const subtractFive = num => {
-  return num - 5;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+	return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+	return x === y;
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
-  }
-  return false;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	if (num < 90) {
+		return true;
+	}
+	return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
-  }
-  return false;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	if (num > 50) {
+		return true;
+	}
+	return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+	if (typeof x !== "number" || typeof y !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return x + y;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+	if (typeof x !== "number" || typeof y !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return x - y;
 };
 
 const divide = (x, y) => {
-  return x / y;
+	if (typeof x !== "number" || typeof y !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return x / y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+	if (typeof x !== "number" || typeof y !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return x * y;
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+	if (typeof x !== "number" || typeof y !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return x % y;
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	if (num % 2 === 0) {
+		return true;
+	}
+	return false;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
-  }
-  return true;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	if (num % 2 === 0) {
+		return false;
+	}
+	return true;
 };
 
 const square = num => {
-  return num * num;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	return num * num;
 };
 
 const cube = num => {
-  return num * num * num;
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+	if (typeof num !== "number" || typeof exponent !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+
+	return num ** exponent;
 };
 
 const roundNumber = num => {
-  return Math.round(num);
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+
+	return Math.round(num);
 };
 
 const roundUp = num => {
-  return Math.ceil(num);
+	if (typeof num !== "number") {
+		return "Passed argument isn't a number";
+	}
+	return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+	if (typeof str !== "string") {
+		return "Passed argument isn't a string";
+	}
+	return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+	if (typeof firstName !== "string" || typeof lastName !== "string") {
+		return "Passed arguments aren't strings";
+	}
+	return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+	if (typeof name !== "string") {
+		return "Passed argument isn't a string";
+	}
+
+	return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+	if (typeof length !== "number" || typeof width !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return length * width;
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+	if (typeof base !== "number" || typeof height !== "number") {
+		return "Passed arguments aren't numbers";
+	}
+	return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+	if (typeof radius !== "number") {
+		return "Passed argument isn't a number";
+	}
+	return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+	if (
+		typeof length !== "number" ||
+		typeof width !== "number" ||
+		typeof height !== "number"
+	) {
+		return "Passed arguments aren't numbers";
+	}
+	return width * height * length;
 };
 
 module.exports = {
-  multiplyByTen,
-  subtractFive,
-  areSameLength,
-  areEqual,
-  lessThanNinety,
-  greaterThanFifty,
-  add,
-  subtract,
-  divide,
-  multiply,
-  getRemainder,
-  isEven,
-  isOdd,
-  square,
-  cube,
-  raiseToPower,
-  roundNumber,
-  roundUp,
-  addExclamationPoint,
-  combineNames,
-  getGreeting,
-  getRectangleArea,
-  getTriangleArea,
-  getCircleArea,
-  getRectangularPrismVolume
+	multiplyByTen,
+	subtractFive,
+	areSameLength,
+	areEqual,
+	lessThanNinety,
+	greaterThanFifty,
+	add,
+	subtract,
+	divide,
+	multiply,
+	getRemainder,
+	isEven,
+	isOdd,
+	square,
+	cube,
+	raiseToPower,
+	roundNumber,
+	roundUp,
+	addExclamationPoint,
+	combineNames,
+	getGreeting,
+	getRectangleArea,
+	getTriangleArea,
+	getCircleArea,
+	getRectangularPrismVolume,
 };
