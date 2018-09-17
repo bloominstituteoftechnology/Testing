@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if(x === undefined || y === undefined) {
+    return false;
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
