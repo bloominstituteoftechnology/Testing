@@ -1,6 +1,7 @@
 /* eslint-disable arrow-parens */
 
-const multiplyByTen = num => {
+const multiplyByTen = (num = 0) => {
+  if (Number.isNaN(Number(num))) throw new Error('argument must be a number');
   return num * 10;
 };
 
@@ -137,5 +138,5 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
 };
