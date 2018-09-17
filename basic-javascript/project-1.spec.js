@@ -20,7 +20,7 @@ it('should run project1 tests', () => {
 
   expect(helpers.areEqual(1, '1')).toBe(true);
   expect(helpers.areEqual(true, 'true')).toBe(true);
-  expect(helpers.areEqual(undefined, NaN)).toBe(false);
+  expect(helpers.areEqual((2*'one'), (0/2))).toBe(false);
 
   expect(helpers.lessThanNinety('50')).toBe(true);
   expect(helpers.lessThanNinety(87)).toBe(true);
