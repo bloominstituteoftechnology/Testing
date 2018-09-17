@@ -156,3 +156,43 @@ it('should combine two strings into one', () => {
 it('should return other value if one is undefined', () => {
   expect(helpers.combineNames('John', undefined)).toBe('John');
 });
+
+it('should return a string starting with Hello ', () => {
+  expect(helpers.getGreeting('John')).toBe('Hello John');
+});
+
+it('should return false if value is not a string', () => {
+  expect(helpers.getGreeting(null)).toBe(false);
+});
+
+it('should return the area of a rectangle', () => {
+  expect(helpers.getRectangleArea(5, 8)).toBe(40);
+});
+
+it('(recArea) should return false if a value is not provided', () => {
+  expect(helpers.getRectangleArea('test', 4)).toBe(false);
+});
+
+it('should return the area of a triangle', () => {
+  expect(helpers.getTriangleArea(5, 8)).toBe(20);
+});
+
+it('(triArea) should return false if a value is not provided', () => {
+  expect(helpers.getTriangleArea('test', 4)).toBe(false);
+});
+
+it('should return the area of a circle rounded to two decimal places', () => {
+  expect(helpers.getCircleArea(5)).toBe(78.54);
+});
+
+it('(circArea) should return false if a value is not provided', () => {
+  expect(helpers.getRectangleArea(null)).toBe(false);
+});
+
+it('should return the volume of a rectangular prism', () => {
+  expect(helpers.getRectangularPrismVolume(2, 8, 4)).toBe(64);
+});
+
+it('(recPrism) should return false if a value is not provided', () => {
+  expect(helpers.getRectangularPrismVolume(9, undefined, 3)).toBe(false);
+});
