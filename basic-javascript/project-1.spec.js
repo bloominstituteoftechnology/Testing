@@ -59,6 +59,24 @@ it('check if strings have equal length', () => {
     expect(result4).toBe('must input two strings');
     expect(result5).toBe('must input two strings');
 
-})
+});
+
+//testing areEqual
+it('check if values are equal', () => {
+    const eCheck = helpers.areEqual;
+
+    const result1 = eCheck(4, 4); //true
+    const result2 = eCheck(3, 4); //false
+    const result3 = eCheck(3,); //message
+    const result4 = eCheck('three','four'); false;
+
+    expect(result1).toBe(true);
+    expect(result2).toBe(false);
+    expect(result3).toBe('both values must be defined');
+    expect(result4).toBe(false);
+
+});
+
+
 
 
