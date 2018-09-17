@@ -75,7 +75,11 @@ const divide = (x, y) => {
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  const result1 = isNumber(x,y);
+  let v1 = result1[0];
+  let v2 = result1[1]; 
+  
+  return v1 * v2;
 };
 
 const getRemainder = (x, y) => {
@@ -154,15 +158,12 @@ function isNumber(...args){
       test = Number(args[i])
       if(test){
         args[i] = test
-        return args; 
       } else {
         args[i] = 0; 
-        return args; 
       }
-    } else {
-      return args; 
     }
   }
+  return args; 
 }
 
 function anyZeros (...args) {
