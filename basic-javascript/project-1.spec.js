@@ -50,3 +50,31 @@ it("should return false if args are !equal", () => {
   expect(helpers.areEqual(["Gilla", "Bill"], ["Gill", "Bill"])).toBe(false);
 });
 // end areEqual tests
+
+// start lessThanNinety tests
+it("should return true if num is less than 90", () => {
+  expect(helpers.lessThanNinety(5)).toBe(true);
+  expect(helpers.lessThanNinety(-1)).toBe(true);
+  expect(helpers.lessThanNinety(89)).toBe(true);
+});
+
+it("should return false if num is less than 90", () => {
+  expect(helpers.lessThanNinety(999)).toBe(false);
+  expect(helpers.lessThanNinety(100)).toBe(false);
+  expect(helpers.lessThanNinety(90)).toBe(false);
+});
+// end lessThanNinety tests
+
+// start greaterThanFifty tests
+it("should return false if num is less than 50", () => {
+  expect(helpers.greaterThanFifty(5)).toBe(false);
+  expect(helpers.greaterThanFifty(-1)).toBe(false);
+  expect(helpers.greaterThanFifty(49)).toBe(false);
+});
+
+it("should return true if num is less than 50", () => {
+  expect(helpers.greaterThanFifty(999)).toBe(true);
+  expect(helpers.greaterThanFifty(100)).toBe(true);
+  expect(helpers.greaterThanFifty(51)).toBe(true);
+});
+// end greaterThanFifty tests
