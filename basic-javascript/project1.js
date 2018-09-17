@@ -22,12 +22,17 @@ const areSameLength = (str1, str2) => {
 }};
 
 const areEqual = (x, y) => {
+  if(x === undefined || y === undefined){
+    return false; 
+  }
   return x === y;
 };
 
 const lessThanNinety = num => {
   if (num < 90) {
     return true;
+  }else if(!num){
+    return false; 
   }
   return false;
 };
@@ -35,33 +40,52 @@ const lessThanNinety = num => {
 const greaterThanFifty = num => {
   if (num > 50) {
     return true;
+  }else if(!num){
+    return false; 
   }
   return false;
 };
 
 const add = (x, y) => {
+  if(x === undefined || y === undefined){
+    return false; 
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if(x === undefined || y === undefined){
+    return false; 
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
+  if(x === undefined || y === undefined){
+    return false; 
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if(x === undefined || y === undefined){
+    return false; 
+  }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if(x === undefined || y === undefined){
+    return false; 
+  }
   return x % y;
 };
 
 const isEven = num => {
   if (num % 2 === 0) {
     return true;
+  }else if (num === undefined){
+    return false;
   }
   return false;
 };
@@ -69,11 +93,16 @@ const isEven = num => {
 const isOdd = num => {
   if (num % 2 === 0) {
     return false;
+  }else if (num === undefined){
+    return false;
   }
   return true;
 };
 
 const square = num => {
+  if(num === undefined){
+    return false;
+  }
   return num * num;
 };
 
