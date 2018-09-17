@@ -6,10 +6,10 @@
   "scripts": {
     "test": "jest --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Lambda School",
+  "license": "MIT",
   "devDependencies": {
-    "jest": "^23.5.0"
+    "jest": "^23.6.0"
   },
   "dependencies": {}
 }
