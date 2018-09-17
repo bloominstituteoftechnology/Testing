@@ -51,6 +51,7 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
+  if (y === 0) throw new Error('Division by zero');
   return x / y;
 };
 
