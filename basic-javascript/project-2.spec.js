@@ -4,8 +4,8 @@ it('should return number that is largest', () => {
   expect(funcs.getBiggest(7, 3)).toBe(7);
 });
 
-it('(biggest) should return false if a value is not provided', () => {
-  expect(funcs.getBiggest(1, undefined)).toBe(false);
+it('should return other value if one is not provided or 0 if neither', () => {
+  expect(funcs.getBiggest(1, undefined)).toBe(1);
 });
 
 it('should return hello in language passed in', () => {
@@ -81,11 +81,11 @@ it('should return false if value is not an array', () => {
 });
 
 it('should increment all values in array by 1', () => {
-  expect(funcs.incrementByOne([1, 5, 8, 8])).isEqual([2, 6, 9, 9]);
+  expect(funcs.incrementByOne([1, 5, 8, 8])).toEqual([2, 6, 9, 9]);
 });
 
-it('should return the array if any values are not a number', () => {
-  expect(funcs.incrementByOne([1, 5, 'any', 8])).toBe([1, 5, 'any', 8]);
+it('should return false any values are not a number', () => {
+  expect(funcs.incrementByOne([1, 5, 'any', 8])).toBe(false);
 });
 
 it('should add item to the array returning array', () => {

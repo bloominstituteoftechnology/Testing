@@ -1,6 +1,6 @@
 /* eslint-disable arrow-parens */
 
-const getBiggest = (x, y) => {
+const getBiggest = (x = 0, y = 0) => {
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -50,7 +50,7 @@ const fizzBuzz = num => {
     return 'fizz';
   }
   return num;
-};
+};//6
 
 const isPrime = num => {
   if (num < 0) {
@@ -68,30 +68,36 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if(!Array.isArray(arr)) return false
   return arr[0];
 };
 
 const returnLast = arr => {
+  if(!Array.isArray(arr)) return false
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if(!Array.isArray(arr)) return false
   return arr.length;
 };
 
 const incrementByOne = arr => {
   for (let i = 0; i < arr.length; i++) {
+    if(isNaN(arr[i])) return false
     arr[i]++;
   }
   return arr;
 };
 
 const addItemToArray = (arr, item) => {
+  if(!item) return arr
   arr.push(item);
   return arr;
-};
+};//12
 
 const addItemToFront = (arr, item) => {
+  if(!item) return arr
   arr.unshift(item);
   return arr;
 };
@@ -124,6 +130,7 @@ const contains = (arr, item) => {
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if(isNaN(numbers[i])) return false
     sumOfNumbers += numbers[i];
   }
   return sumOfNumbers;
@@ -133,6 +140,7 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if(isNaN(testScores[i])) return false
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -147,7 +155,7 @@ const largestNumber = numbers => {
     }
   }
   return biggestInteger;
-};
+};//18
 
 module.exports = {
   getBiggest,
