@@ -57,7 +57,6 @@ const divide = (x, y) => {
   let v1; 
   let v2; 
   if(result1){
-    console.log(result1)
     v1 = result1[0];
     v2 = result1[1]; 
   } else {
@@ -83,41 +82,115 @@ const multiply = (x, y) => {
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  const result1 = isNumber(x,y); 
+  let v1; 
+  let v2; 
+  if(result1){
+    v1 = result1[0];
+    v2 = result1[1]; 
+  } else {
+    return 0; 
+  }
+  const result2 = anyZeros(v1,v2);
+  if (result2){
+    v1 = result2[0];
+    v2 = result2[1]; 
+  } else {
+    return 0; 
+  }
+  //if result2 is a thing
+  return v1 % v2;
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
+  const result1 = isNumber(num);
+  if(!result1){
+    return true; // because zero is even;  
   }
-  return false;
+  const result2 = anyZeros(result1[0]);
+  if(!result2){
+    return true; //because zero is even 
+  }
+  let v1 = result2; 
+  if(v1 % 2 === 0){
+    return true 
+  } else {
+    return false ; 
+  }
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  const result1 = isNumber(num);
+  if(!result1){
+    return true; // because zero is even;  
   }
-  return true;
+  const result2 = anyZeros(result1[0]);
+  if(!result2){
+    return true; //because zero is even 
+  }
+  let v1 = result2; 
+  if(v1 % 2 === 0){
+    return false
+  } else {
+    return true; 
+  }
 };
 
 const square = num => {
-  return num * num;
+  const result1 = isNumber(num);
+  let v1; 
+  if(!result1){
+    return 0; 
+  } else {
+    v1 = result1[0]; 
+  }
+  return v1 * v1;
 };
 
 const cube = num => {
-  return num * num * num;
+  const result1 = isNumber(num);
+  let v1; 
+  if(!result1){
+    return 0; 
+  } else {
+    v1 = result1[0]; 
+  }
+  return v1 * v1 * v1;
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  const result1 = isNumber(num,exponent); 
+  let v1; 
+  let v2; 
+  if(result1){
+    v1 = result1[0];
+    v2 = result1[1]; 
+  } else {
+    return 0; 
+  } 
+  return v1 ** v2;
 };
 
 const roundNumber = num => {
-  return Math.round(num);
+  const result1 = isNumber(num); 
+  let v1; 
+  if(!result1){
+    return 0; 
+  } else {
+    v1 = result1[0]; 
+  }
+  return Math.round(v1);
 };
 
 const roundUp = num => {
-  return Math.ceil(num);
+  const result1 = isNumber(num); 
+  let v1; 
+  if(!result1){
+    return 0; 
+  } else {
+    v1 = result1[0]; 
+  }
+  return Math.ceil(v1);
 };
 
 const addExclamationPoint = str => {
@@ -133,19 +206,30 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  let v1 = result1[0];
+  let v2 = result1[1];
+  return v1 * v2;
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  const result1 = isNumber(base, height);
+  let v1 = result1[0];
+  let v2 = result1[1];
+  return 0.5 * v1 * v2;
 };
 
 const getCircleArea = radius => {
+  const result1 = isNumber(radius);
+  let v1 = result1[0];
   return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  const result1 = isNumber(length, width, height);
+  let v1 = result1[0];
+  let v2 = result1[1];
+  let v3 = result1[2]; 
+  return v1 * v2 * v3
 };
 
 //Because some of the number checkers have various argument lengths
@@ -158,9 +242,11 @@ function isNumber(...args){
       test = Number(args[i])
       if(test){
         args[i] = test
-      } else {
+      }else {
         args[i] = 0; 
       }
+    } else if (args[i] === undefined){
+      args[i] = 0; 
     }
   }
   return args; 
