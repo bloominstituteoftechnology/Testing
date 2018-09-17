@@ -65,7 +65,6 @@ const add = (x, y) => {
     return x + y;
   }
 };
-// finished up to here
 
 const subtract = (x, y) => {
   if (typeof x === "string" || typeof y === "string") {
@@ -82,8 +81,19 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
-  return x / y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x / y;
+    }
+  } else {
+    return x / y;
+  }
 };
+// finished up to here
 
 const multiply = (x, y) => {
   return x * y;

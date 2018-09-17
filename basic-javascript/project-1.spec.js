@@ -110,3 +110,35 @@ it("should convert x or y if either is a string number", () => {
   expect(helpers.subtract("10", -1.55)).toBe(11.55);
 });
 // end subtract tests
+
+// start divide tests
+it("should return the quotient of x divided y", () => {
+  expect(helpers.divide(40, 4)).toBeCloseTo(10, 5);
+  expect(helpers.divide(5, 5)).toBeCloseTo(1, 3);
+  expect(helpers.divide(10, -1)).toBeCloseTo(-10, 3);
+  expect(helpers.divide(-10, -1.55)).toBeCloseTo(6.451, 2);
+});
+
+it("should convert x or y if either is a string number and return quotient", () => {
+  expect(helpers.divide("40", 4)).toBeCloseTo(10, 5);
+  expect(helpers.divide(5, "5")).toBeCloseTo(1, 3);
+  expect(helpers.divide("10", "-1")).toBeCloseTo(-10, 3);
+  expect(helpers.divide("-10", -1.55)).toBeCloseTo(6.451, 2);
+});
+// end divide tests
+
+// start multiply tests
+it("should return the product of x multiplied y", () => {
+  expect(helpers.multiply(4, 4)).toBeCloseTo(16, 5);
+  expect(helpers.multiply(5, -5)).toBeCloseTo(-25, 3);
+  expect(helpers.multiply(10, -1)).toBeCloseTo(-10, 3);
+  expect(helpers.multiply(-10, -1.55)).toBeCloseTo(15.5, 2);
+});
+
+it("should convert x or y if either is a string number and return product", () => {
+  expect(helpers.multiply("4", 4)).toBeCloseTo(16, 5);
+  expect(helpers.multiply(5, "-5")).toBeCloseTo(-25, 3);
+  expect(helpers.multiply("10", "-1")).toBeCloseTo(-10, 3);
+  expect(helpers.multiply("-10", -1.55)).toBeCloseTo(15.5, 2);
+});
+// end multiply tests
