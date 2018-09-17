@@ -142,3 +142,19 @@ it("should convert x or y if either is a string number and return product", () =
   expect(helpers.multiply("-10", -1.55)).toBeCloseTo(15.5, 2);
 });
 // end multiply tests
+
+// start getRemainder tests
+it("should return remainder of x and y", () => {
+  expect(helpers.getRemainder(4, 4)).toBe(0);
+  expect(helpers.getRemainder(10, -5)).toBe(0);
+  expect(helpers.getRemainder(10, -3)).toBe(1);
+  expect(helpers.getRemainder(-10, -1.55)).toBeCloseTo(-0.699, 2);
+});
+
+it("should convert x or y if either is a string number and return product", () => {
+  expect(helpers.getRemainder(4, 4)).toBe(0);
+  expect(helpers.getRemainder("10", -5)).toBe(0);
+  expect(helpers.getRemainder(10, "-3")).toBe(1);
+  expect(helpers.getRemainder("-10", "-1.55")).toBeCloseTo(-0.699, 2);
+});
+// end getRemainder tests
