@@ -9,6 +9,8 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
+  str1 = str1.toString();
+  str2 = str2.toString();
   return str1.length === str2.length;
 };
 
