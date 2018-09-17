@@ -107,46 +107,79 @@ const square = num => {
 };
 
 const cube = num => {
+  if(num === undefined){
+    return false;
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if(num === undefined || exponent === undefined){
+    return false
+  }
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if(num === undefined){
+    return false; 
+  }
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if(num === undefined){
+    return false; 
+  }
   return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
+  if(str === undefined){
+    return false;
+  }
   return (str += '!');
 };
 
 const combineNames = (firstName, lastName) => {
+  if(firstName === undefined || lastName === undefined){
+    return false;
+  }
   return `${firstName} ${lastName}`;
 };
 
-const getGreeting = name => {
+const getGreeting = (name) => {
+  if(name === undefined){
+    return false; 
+  }
   return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
+  if(length === undefined || width === undefined){
+    return false; 
+  }
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if(base === undefined || height === undefined){
+    return false; 
+  }
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
+  if(radius === undefined){
+    return false;
+  }
   return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if(length === undefined || height === undefined || width === undefined){
+    return false; 
+  }
   return width * height * length;
 };
 

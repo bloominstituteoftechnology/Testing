@@ -113,3 +113,85 @@ describe('square', () => {
     })
 })
 
+describe('cube', () => {
+    test("should cube the number", () => {
+        expect(helpers.cube(3)).toEqual(27); 
+        expect(helpers.cube(10)).toEqual(1000); 
+        expect(helpers.cube(undefined)).toEqual(false); 
+    })
+})
+
+describe('raise to power', () => {
+    test("should give number and exponent and multiply itself that many times", () => {
+        expect(helpers.raiseToPower(2, 4)).toEqual(16); 
+        expect(helpers.raiseToPower(3, 5)).toEqual(243); 
+        expect(helpers.raiseToPower(undefined, 4)).toEqual(false); 
+    })
+})
+
+describe('round number', () => {
+    test("should round a number up or down", () => {
+        expect(helpers.roundNumber(3.5)).toEqual(4);
+        expect(helpers.roundNumber(4.3)).toEqual(4); 
+        expect(helpers.roundNumber(undefined)).toEqual(false); 
+    })
+})
+
+describe('round up', () => {
+    test("should round a number up", () => {
+        expect(helpers.roundUp(3.5)).toEqual(4);
+        expect(helpers.roundUp(4.3)).toEqual(5); 
+        expect(helpers.roundUp(undefined)).toEqual(false); 
+    })
+})
+
+describe("add exclamation point", () => {
+    test("should return a exclamation point to the end of a string", () =>{
+        expect(helpers.addExclamationPoint("Hi")).toEqual("Hi!"); 
+        expect(helpers.addExclamationPoint(undefined)).toEqual(false); 
+    })
+})
+
+describe("combine names", () => {
+    test("should combine the names", () => {
+        expect(helpers.combineNames("keith", "kennedy")).toEqual("keith kennedy"); 
+        expect(helpers.combineNames(undefined, "smith")).toEqual(false); 
+    }) 
+})
+
+describe("got greeting", () => {
+    test("should say hello and then name", () =>{
+        expect(helpers.getGreeting("keith")).toEqual("Hello keith!"); 
+        expect(helpers.getGreeting(undefined)).toEqual(false); 
+    })
+})
+
+describe("get rectangle area", () => {
+    test("should multiply the length and width to get area", () => {
+        expect(helpers.getRectangleArea(2, 5)).toEqual(10); 
+        expect(helpers.getRectangleArea(undefined, 6)).toEqual(false); 
+    })
+})
+
+describe("get triangle area", () => {
+    test("should multiply the base and height to get area", () => {
+        expect(helpers.getTriangleArea(2, 5)).toEqual(5); 
+        expect(helpers.getTriangleArea(undefined, 6)).toEqual(false); 
+    })
+})
+
+describe("get circle radius", () => {
+    test("should get the area of a circle", () => {
+        expect(helpers.getCircleArea(10)).toEqual(314.1592653589793); 
+        expect(helpers.getCircleArea(undefined)).toEqual(false); 
+    })
+})
+
+describe("get the rectangluar prism volume", () => {
+    test("should return the volume of the rectangular prism", () => {
+        expect(helpers.getRectangularPrismVolume(2, 4, 10)).toEqual(80); 
+        expect(helpers.getRectangularPrismVolume(undefined, 10, 3)).toEqual(false); 
+    })
+})
+
+
