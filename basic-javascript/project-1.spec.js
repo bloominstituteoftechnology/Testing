@@ -186,3 +186,27 @@ it('should return a full name when passed a first and a last name', () => {
     expect(helpers.combineNames('mike', 'kerbleski')).toBe('mike kerbleski');
     expect(helpers.combineNames('connor', 'mcgreggor')).toBe('connor mcgreggor');
 });
+
+//----------------------- getGreeting TESTS-----------------------------
+
+test('should display name with hello preceeding it, and a exclamation point following ', () => {
+    expect(helpers.getGreeting('mike')).toBe('Hello mike!');
+});
+
+test('should return the rectable area when given the length and widht ', () => {
+  expect(helpers.getRectangleArea(7, 8)).toBe(56);
+});
+
+test('should return the area of a triangle given the base and heignt', () => {
+  expect(helpers.getTriangleArea(5, 5)).toBe(12.5)
+})
+
+test('should return the area of a circle given the radius', () => {
+  expect(helpers.getCircleArea(5)).toBeGreaterThan(78.5)
+})
+
+test('should return the volume of a prism given the length, height, and width', () => {
+  expect(helpers.getRectangularPrismVolume(9,5,4)).toBe(180)
+})
+
+
