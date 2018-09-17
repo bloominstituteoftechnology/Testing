@@ -35,7 +35,9 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  let _x = (x || 0);
+  let _y = (y || 0)
+  return _x + _y;
 };
 
 const subtract = (x, y) => {
