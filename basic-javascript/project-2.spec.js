@@ -95,3 +95,43 @@ it('should add item to the array returning array', () => {
 it('should return array if value to add is undefined or null', () => {
   expect(funcs.addItemToArray(['yes', 'no', 3])).toEqual(['yes', 'no', 3]);
 });
+
+it('should return array with value added to front', () => {
+  expect(funcs.addItemToFront([8, 6, 3], 4)).toEqual([4, 8, 6, 3]);
+});
+
+it('should return array if value to add is undefined or null', () => {
+  expect(funcs.addItemToFront([6, 6, 3])).toEqual([6, 6, 3]);
+});
+
+it('should return a sentence from array of words', () => {
+  expect(funcs.wordsToSentence(['A', 'sentence', 'is', 'made'])).toBe('A sentence is made');
+});
+
+it('should contain value in array', () => {
+  expect(funcs.contains(['yes', 'no', 'maybe so'], 'no')).toBe(true);
+});
+
+it('should sum numbers in array', () => {
+  expect(funcs.addNumbers([1, 5, 8, 2])).toBe(16);
+});
+
+it('should return false if array contains item that is not a number', () => {
+  expect(funcs.addNumbers([1, 3, 'test'])).toBe(false);
+});
+
+it('should return the average of array of numbers', () => {
+  expect(funcs.averageTestScore([8, 9, 2, 3])).toBe(5.5);
+});
+
+it('should return false if array contains item that is not a number', () => {
+  expect(funcs.averageTestScore([7, 3, 'test', 5])).toBe(false);
+});
+
+it('should return largest number in an array', () => {
+  expect(funcs.largestNumber([3, 1, 6, 15])).toBe(15);
+});
+
+it('should ignore non numbers in array', () => {
+  expect(funcs.largestNumber([3, 8, 4, 'test', undefined, 15])).toBe(15);
+});
