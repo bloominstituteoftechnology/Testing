@@ -1,0 +1,131 @@
+MultiplyByTen
+1. Strings will result to Nan if it cannot be 
+changed to a number. 
+//Example "23" * 10 = 230 
+^However the type will stil be NaN 
+// typeof "23" * 10  = NaN
+//"23a" * 10 = NaN 
+2. null * 10 = 0 
+however typeof null * 10 = NaN
+3. undefined * 10 = NaN
+4. typeof undefined * 10 = NaN
+
+Because of these issues the function has to be written:
+  1: Check if parmaters are numbers.
+  2: Convert paramaters to numbers if not already. 
+  3: Make sure result is a number; 
+
+subtractFive 
+The same problems for MultipleyByTen can occur.
+The same plan should be followed. 
+
+areSameLength 
+1. if a number is checked for a length the result
+will be undefined. 
+Example num = 10; 
+num.length; => undefined 
+
+Because of this issue the function has to be written:
+  1. Check if parmater is a string. 
+  2. Covert the paramater to a string. 
+
+areEqual 
+1. null === null ,  undefined === undefined 
+are true  as long as we have three equal signs. 
+No major problems on performing this check unless we receive, 
+an array or object. 
+Example [1,2,3] === [1,2,3] => false; 
+apple = {a: 3}
+pear = {a: 3}
+apple === pear
+For this a deeper check has to take place. 
+
+Because of this issue the function has to be written:
+  1. Check if parmater is an object. 
+  2. If it is an object a deeper check has to be performed. 
+
+lessThanNinety 
+Strings will result to false unless the number can be 
+converted into a number. 
+Example "Jonathan" < 90 => false 
+"34" < 90 => true 
+"34a" < 90 => false 
+
+Because of these issues the function has to be written:
+ 1. Same plan can be followed as MultiplyByTen and 
+ subtractFive. 
+
+greaterThanFifty can have the same checks as lessThanNinety
+MultipleyByTen and subtractFive
+
+add subtract can also have the same as greaterThanFifty can have the same checks as lessThanNinety
+MultipleyByTen and subtractFive
+
+divide 
+This function will produce the following issue; 
+Whenever the second parmater is zero it will evaluate
+to Infinity. 
+Example  5/0 => Infinity; 
+The question is whether or not we want to return the 
+positive number or 0.  I would recommend to return 
+the positive number becase 5 divided 0 times is 5. 
+Also  0 / 0 will result in NaN 
+Strings divdided by numbers will result in NaN
+Example "jonathan" / 3 
+"33" / 3 returns  11 however 
+typeof "33"/ 3 returns NaN 
+
+Because of these issues the function has to be written:
+  1.if either of the parmaters is 0 return 0. 
+  2. Follow the plan for greaterThanFifty can have the same checks as lessThanNinety
+MultipleyByTen and subtractFive, add and subtract 
+
+getRemainder 
+ follows the same rules as divide
+
+isEven 
+Because it is similar to getRamainder the same rules
+can be followed. 
+
+isOdd is the same
+
+same as isEven 
+
+same first functions 
+
+cube 
+same as first functions difference here is we need
+ to accept three parmaters 
+
+raiseToPower 
+same as previous funcitons 
+
+same as first functions 
+
+roundUP 
+same as first functions 
+
+addExclamationPoint 
+
+so this can be designed with the
+ same plan as areSameLength 
+
+combineNames, getGreeting will have the same plan 
+as addExclamationPoint 
+
+getRectangleArea , getTriangleArea, 
+getCircleArea 
+GetRectangularPrismVolume 
+will have the requirements for makeing sure 
+=== number and not 
+featuring zero as a parmater. 
+
+for the purpose of this   2 to 3 functions can be
+ written 
+to perform the neccessary checks
+
+function isNumber 
+function isString 
+
+function doesn't include zero
+
