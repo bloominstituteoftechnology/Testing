@@ -110,10 +110,12 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if (length * width < 0) return 0;
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (base * height < 0) return 0;
   return 0.5 * base * height;
 };
 

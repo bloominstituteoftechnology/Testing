@@ -167,3 +167,24 @@ describe('string functions', () => {
     expect(helpers.getGreeting('world')).toBe('Hello world!');
   });
 });
+
+describe('geometry functions', () => {
+  test('getRectangleArea returns area of a rectangle given length and width', () => {
+    expect(helpers.getRectangleArea(4, 5)).toBe(20);
+    expect(helpers.getRectangleArea(-4, 5)).toBe(0);
+  });
+
+  test('getTriangleArea returns area of a triangle', () => {
+    expect(helpers.getTriangleArea(3, 5)).toBe(7.5);
+    expect(helpers.getTriangleArea(3, -5)).toBe(0);
+  });
+
+  test('getCircleArea returns the area of a circle', () => {
+    expect(helpers.getCircleArea(7)).toBeGreaterThan(153);
+    expect(helpers.getCircleArea(7)).toBeLessThan(155);
+  });
+
+  test('getRectangularPrismVolume returns that', () => {
+    expect(helpers.getRectangularPrismVolume(3, 3, 3)).toBe(27);
+  });
+});
