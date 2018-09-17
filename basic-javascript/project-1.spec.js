@@ -157,8 +157,8 @@ it('should return other value if one is undefined', () => {
   expect(helpers.combineNames('John', undefined)).toBe('John');
 });
 
-it('should return a string starting with Hello ', () => {
-  expect(helpers.getGreeting('John')).toBe('Hello John');
+it('should return a string starting with Hello and ending with !', () => {
+  expect(helpers.getGreeting('John')).toBe('Hello John!');
 });
 
 it('should return false if value is not a string', () => {
@@ -186,7 +186,7 @@ it('should return the area of a circle rounded to two decimal places', () => {
 });
 
 it('(circArea) should return false if a value is not provided', () => {
-  expect(helpers.getRectangleArea(null)).toBe(false);
+  expect(helpers.getCircleArea(null)).toBe(false);
 });
 
 it('should return the volume of a rectangular prism', () => {
