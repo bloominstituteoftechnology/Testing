@@ -17,15 +17,19 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
+  if(Number(num)){
+    if (num < 90) {
+      return true;
+    }
   }
   return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
+  if (Number(num)) {
+    if (num > 50) {
+      return true;
+    }
   }
   return false;
 };
