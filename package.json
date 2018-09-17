@@ -4,12 +4,21 @@
   "description": "Practice exercises to learn the syntax for testing javascript code.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch --verbose"
   },
   "author": "Lambda School",
   "license": "MIT",
   "devDependencies": {
     "jest": "^23.6.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kennedykid1995/Testing.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Kennedykid1995/Testing/issues"
+  },
+  "homepage": "https://github.com/Kennedykid1995/Testing#readme"
 }
