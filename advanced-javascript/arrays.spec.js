@@ -13,6 +13,11 @@ describe('Arrays', () => {
     it('should be a function', () => {
       expect(typeof each).toBe('function');
     });
+    it('should return undefined', () => {
+      expect(typeof each([1, 2, 3], (item) => {
+        return (item + 1);
+      })).toBe('undefined');
+    });
   });
 
   describe('map', () => {
