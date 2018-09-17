@@ -109,3 +109,52 @@ describe('binary operators', () => {
     expect(helpers.getRemainder(-11, 5)).toBe(-1);
   });
 });
+
+describe('math functions', () => {
+  test('isEven returns true for even numbers', () => {
+    expect(helpers.isEven(2)).toBe(true);
+    expect(helpers.isEven(1)).toBe(false);
+    expect(helpers.isEven(-4)).toBe(true);
+  });
+
+  test('isOdd returns true for Odd numbers', () => {
+    expect(helpers.isOdd(1)).toBe(true);
+    expect(helpers.isOdd(6)).toBe(false);
+    expect(helpers.isOdd(-3)).toBe(true);
+  });
+
+  test('square returns the square of the passed number', () => {
+    expect(helpers.square(-2)).toBe(4);
+    expect(helpers.square(45)).toBe(2025);
+    expect(helpers.square(-9)).toBe(81);
+  });
+
+  test('cube returns the cube of the passed number', () => {
+    expect(helpers.cube(-2)).toBe(-8);
+    expect(helpers.cube(45)).toBe(91125);
+    expect(helpers.cube(-9)).toBe(-729);
+  });
+
+  test('raiseToPower returns the first number raised to the power of second number', () => {
+    expect(helpers.raiseToPower(2, 5)).toBe(32);
+    expect(helpers.raiseToPower(2, -3)).toBe(0.125);
+  });
+
+  test('roundNumber rounds the number to nearest decimal', () => {
+    expect(helpers.roundNumber(4.5)).toBe(5);
+    expect(helpers.roundNumber(-3.4)).toBe(-3);
+    expect(helpers.roundNumber(4)).toBe(4);
+  });
+
+  test('roundUp returns an next nearest integer', () => {
+    expect(helpers.roundUp(4.1)).toBe(5);
+    expect(helpers.roundUp(-3.8)).toBe(-3);
+  });
+});
+
+describe('string functions', () => {
+  test('addExclamationPoint adds ! at the end of string', () => {
+    expect(helpers.addExclamationPoint('hello')).toBe('hello!');
+    expect(helpers.addExclamationPoint('')).toBe('!');
+  });
+});
