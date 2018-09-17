@@ -78,3 +78,12 @@ it("should return true if num is less than 50", () => {
   expect(helpers.greaterThanFifty(51)).toBe(true);
 });
 // end greaterThanFifty tests
+
+// start add tests
+it("should return the sum of x and y", () => {
+  expect(helpers.add(5, 4)).toBe(9);
+  expect(helpers.add(-1, 5)).toBe(4);
+  expect(helpers.add(10, -1)).toBe(9);
+  expect(helpers.add(10, -1.55)).toBe(8.45);
+});
+// end add tests

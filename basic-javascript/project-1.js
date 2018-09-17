@@ -37,7 +37,6 @@ const areEqual = (x, y) => {
     return x === y;
   }
 };
-// finished up to here
 
 const lessThanNinety = num => {
   if (num < 90) {
@@ -54,8 +53,19 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseInt(x, 10);
+    y = parseInt(y, 10);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x + y;
+    }
+  } else {
+    return x + y;
+  }
 };
+// finished up to here
 
 const subtract = (x, y) => {
   return x - y;
