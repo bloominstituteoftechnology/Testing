@@ -85,3 +85,43 @@ it('should return the result of rounding a number', () => {
     expect(helpers.roundNumber(2.222)).toBe(2);
     expect(helpers.roundNumber(33.5)).toBe(34);
 });
+
+it('should return the result of rounding a number up', () => {
+    expect(helpers.roundUp(2.222)).toBe(3);
+    expect(helpers.roundUp(33.5)).toBe(34);
+});
+
+it('should return a string with an exclamation mark added', () => {
+    expect(helpers.addExclamationPoint('string')).toBe('string!');
+    expect(helpers.addExclamationPoint('5')).toBe('5!');
+});
+
+it('should return a single string with first and last names combined', () => {
+    expect(helpers.combineNames('charlie', 'winslow')).toBe('charlie winslow');
+    expect(helpers.combineNames('tiger', 'woods')).toBe('tiger woods');
+});
+
+it('should return a string starting with hello followed by a name and ending with an exclamation mark', () => {
+    expect(helpers.getGreeting('Castiel')).toBe('Hello Castiel!');
+    expect(helpers.getGreeting('Mark')).toBe('Hello Mark!');
+});
+
+it('should return the area of rectangle', () => {
+    expect(helpers.getRectangleArea(5, 6)).toBe(30);
+    expect(helpers.getRectangleArea(33.5, 2)).toBe(67);
+});
+
+it('should return the area of a triangle', () => {
+    expect(helpers.getTriangleArea(2, 8)).toBe(8);
+    expect(helpers.getTriangleArea(4, 8)).toBe(16);
+});
+
+it('should return area of a circle ', () => {
+    expect(helpers.getCircleArea(2)).toBeCloseTo(12.57);
+    expect(helpers.getCircleArea(4)).toBeCloseTo(50.27);
+});
+
+it('should return volume of a rectangular prism', () => {
+    expect(helpers.getRectangularPrismVolume(2, 3, 4)).toBe(24);
+    expect(helpers.getRectangularPrismVolume(3, 4, 5)).toBe(60);
+});
