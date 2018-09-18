@@ -13,21 +13,24 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  const result = isString(str1, str2); 
+  let v1 = result[0];
+  let v2 = result[1]; 
+  return v1.length === v2.length;
 };
 
 const areEqual = (x, y) => {
-  if (Array.isArray(x) === true && Array.isArray(y) === true ) {
-    if (x.length === y.length){
-      return checkArray(x,y)
+  if (Array.isArray(x) === true && Array.isArray(y) === true) {
+    if (x.length === y.length) {
+        return checkArray(x, y)
     } else {
-      return x === y; 
-    }  
-  } else if (typeof x === 'object' && typeof y === 'object' && !(x === null && y !== null)) {
-    return isObject(x, y); 
-  }else {
-    return x === y; 
-  }
+        return x === y;
+    }
+} else if (typeof x === 'object' && typeof y === 'object' && !(x === null && y !== null)) {
+    return isObject(x, y);
+} else {
+    return x === y;
+}
 };
 
 const lessThanNinety = num => {
@@ -279,26 +282,52 @@ function anyZeros (...args) {
  }
 
  function checkArray (ar1, ar2){
-  for (let i = 0; i<ar1.length; i++){
-    if(ar1[i] !== ar2[i]){
-      return false; 
+  for (let i = 0; i < ar1.length; i++) {
+    if (Array.isArray(ar1[i]) && Array.isArray(ar2[i])) {
+      if (ar1[i].length === ar2[i].length) {
+        const anotherCheck = checkArray(ar1[i], ar2[i])
+        if (!anotherCheck) {
+          return false;
+        }
+      // if length is not the same no need to check. 
+      } else {
+        return false;
+       }
+    //first if 
+    } else if (typeof ar1[i] === 'object' && typeof ar2[i] === 'object' && !(ar1[i] === null && ar2[i] === null)) {
+        const checkAgain = isObject(ar1[i], ar2[i]);
+        if (!checkAgain) {
+            return false;
+        }
+    } else if (ar1[i] !== ar2[i]) {
+        return false;
     }
-  }
-  return true; 
+} // end of for loop. 
+return true;
 }
 
 function isObject (obj1, obj2) {
-  console.log("object")
+  if (Array.isArray(obj1 && Array.isArray(obj2))) {
+    if (obj1.length === obj2.length) {
+      const anotherCheck = checkArray(obj1, obj2)
+      if (!anotherCheck) {
+        return false;
+      }
+    } else {
+       //length doesn't match don't do nothing
+       return false;
+      }
+  }
   if (Object.keys(obj1).length === Object.keys(obj2).length) {
     for (let key in obj1) {
       if (typeof obj1[key] === "object") {
-        if (!isObject(obj1[key], obj2[key])) return false;
-      }
-      else if (obj1[key] !== obj2[key]) return false;
+            if (!isObject(obj1[key], obj2[key])) return false;
+        } else if (obj1[key] !== obj2[key]) return false;
     }
   } else return false;
   return true;   
 }
+
 
 
 module.exports = {
