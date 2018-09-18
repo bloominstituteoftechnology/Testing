@@ -16,15 +16,22 @@ describe('actions', () => {
     })
 
     describe('fail', () => {
+        const item = {
+            level: 0,
+            failCount: 0,
+            durability: 100,
+        }
+        const actual = enhancer.fail(item);
         it('should return fail +1 if level is < 16', () => {
-            const item = {
-                level: 0,
-                failCount: 0
-            }
 
-            const actual = enhancer.fail(item);
+
+            
 
             expect(actual.failCount).toBe(1);
+            expect(enhancer.fail(actual).failCount).toBe(2);
+        });
+        it('should return durability -10 if fail counter increases', () => {
+            expect(actual.durability).toBe(80);
         })
     })
 })
