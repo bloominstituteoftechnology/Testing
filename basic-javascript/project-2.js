@@ -247,7 +247,16 @@ function isArray(arr) {
     return false;
   }
 }
-
+function isString(...args) {
+  for (let i = 0; i < args.length; i++) {
+      if (args[i]) {
+          args[i] = args[i].toString();
+      } else {
+          args[i] = "";
+      }
+  }
+  return args;
+}
 function isNumber(...args) {
   for (let i = 0; i < args.length; i++) {
     if (typeof args[i] === "string") {

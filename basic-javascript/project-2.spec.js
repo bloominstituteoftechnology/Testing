@@ -121,4 +121,49 @@ describe("project-2", () => {
       expect(funcs.addItemToFront([], "yes")).toEqual(["yes"]);
     })
   })
+  describe("wordsToSentence", () => {
+    it("takes an array and makes it a sentence, false if no array", () => {
+      expect(funcs.wordsToSentence(null)).toBeFalsy();
+      expect(funcs.wordsToSentence(["something", "nothing"])).toBe("something nothing");
+      expect(funcs.wordsToSentence(["nothing", "checking", "it"])).toBe("nothing checking it");
+      expect(funcs.wordsToSentence("something something")).toBeFalsy();
+      expect(funcs.wordsToSentence(["Yes", "!"])).toBe("Yes !");
+    })
+  })
+  describe("contains", () => {
+    it("checks an array for the item if no item return array if no array return false else return count", () =>{
+      expect(funcs.contains([1,2,3], 3)).toBe(true);
+      expect(funcs.contains([2,2,2,2,5,6,7])).toBe(false);
+      expect(funcs.contains([2,2,2,2,5,6,7],2)).toBe(true);
+      expect(funcs.contains("nothing", "nothing")).toBe(false);
+      expect(funcs.contains([3])).toBe(false); 
+    })
+  })
+  describe("addNumbers", () => {
+    it("should take numbers in array and add them up, if item is a string it treats it as a zero", () => {
+      expect(funcs.addNumbers([1,2,3])).toBe(6);
+      expect(funcs.addNumbers([7,7,7])).toEqual(21); 
+      expect(funcs.addNumbers([45, 50])).toEqual(95);
+      expect(funcs.addNumbers()).toEqual(false);
+      expect(funcs.addNumbers([])).toEqual(0);
+    })
+  })
+  describe("averageTestScore", () => {
+    it("should take array and return average return false if not an array", () => {
+      expect(funcs.averageTestScore()).toBeFalsy();
+      expect(funcs.averageTestScore([70,70,70])).toBe(70);
+      expect(funcs.averageTestScore([70,100,100,100])).toEqual(92.5);
+      expect(funcs.averageTestScore("nothing")).toBeFalsy();
+      expect(funcs.averageTestScore([50,60,52])).toEqual(54);
+    })
+  })
+  describe("largestNumber", () => {
+    it("should take array and return biggest number false if not an array", () => {
+      expect(funcs.largestNumber()).toBeFalsy();
+      expect(funcs.largestNumber([56,34,32,12])).toBe(56);
+      expect(funcs.largestNumber([3,6,5.6])).toBe(6);
+      expect(funcs.largestNumber([0])).toEqual(0);
+      expect(funcs.largestNumber([56, 99,100, "8900"])).toEqual(8900);
+    })
+  })
 });
