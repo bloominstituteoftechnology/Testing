@@ -1,5 +1,22 @@
 /* eslint-disable arrow-parens */
 
+// -- What Ifs -- 
+// Argument(s) = undefined
+// Argument(s) = null
+// Argument(s) = string
+// Argument(s) = number
+// Argument(s) = negative number
+// Argument(s) = floats
+// Argument(s) = number/sum larger than Number.MAX_VALUE
+// Argument(s) = NaN
+// Argument(s) = Array
+// Argument(s) = Object
+// Argument(s) = Function
+// Look out for coercion and concatenation
+// Look out for truthy and falsy values
+
+
+
 // -- arithmatic operations --
 // str nums are coerced to nums when multiplying, dividing, subtracting
 // concatenation only happens with addition
@@ -54,9 +71,9 @@ const subtractFive = num => {
 const areSameLength = (str1, str2) => {
   let v1;
   if (
-    !Array.isArray(str1) ||
-    !Array.isArray(str2) ||
+    !Array.isArray(str1) &&
     typeof str1 !== 'string' ||
+    !Array.isArray(str2) &&
     typeof str2 !== 'string'
   ) { 
     return 'Please provide a pair of strings or arrays to compare';
