@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10 || 0;
+  return parseInt(num, 10) * 10 || 0 ;
 };
 
 const subtractFive = num => {

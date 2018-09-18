@@ -22,5 +22,6 @@ it("should return zero if not given a number", () => {
   expect(helpers.multiplyByTen(undefined)).toBe(0);
   expect(helpers.multiplyByTen(null)).toBe(0);
   expect(helpers.multiplyByTen(NaN)).toBe(0);
+  expect(helpers.multiplyByTen("cat")).toBe(0);
   expect(helpers.multiplyByTen("10")).toBe(0);
 });
