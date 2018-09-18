@@ -29,7 +29,7 @@ function enhancer(item) {
     // set initial item_durability
     itemClone["item_durability"] = 100;
   }
-  // check for level 20 item level
+  // check for item_level
   if (Object.keys(itemClone).includes("item_level")) {
     itemClone.item_level = itemClone.item_level;
   } else {
@@ -46,6 +46,16 @@ function enhancer(item) {
       // do nothing
     } else {
       itemClone.item_durability += 10;
+    }
+    return { ...itemClone };
+  };
+
+  // enhance function
+  itemClone["itemEnhance"] = function(itemClone) {
+    if (itemClone.item_level === 20) {
+      itemClone.item_level = 20;
+    } else {
+      itemClone.item_level = itemClone.item_level + 1;
     }
     return { ...itemClone };
   };
