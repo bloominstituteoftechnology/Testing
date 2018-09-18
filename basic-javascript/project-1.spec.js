@@ -14,7 +14,12 @@ it("should multiply a number by 10", () => {
 it("should take a number and subtract 5 from it", () => {
   const expected = 10;
   const actual = helpers.subtractFive(15);
-  
+  expect(actual).toBe(expected); 
+  expect(helpers.subtractFive("something")).toBe(-5);
+  expect(helpers.subtractFive("345")).toBe(340);
+  expect(helpers.subtractFive(23)).toBe(18);
+  expect(helpers.subtractFive(-90)).toBe(-95);
+
 });
 
 // start testing!
