@@ -124,7 +124,8 @@ const isOdd = num => {
   if (num % 2 === 0) {
     return false;
   }
-  return true;
+  // changed below to false from true
+  return false;
 };
 
 const square = num => {

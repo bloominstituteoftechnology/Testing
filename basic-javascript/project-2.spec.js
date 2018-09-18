@@ -17,4 +17,4 @@ it("return correct greeting", () => {
   expect(funcs.greeting("Spanish")).toEqual("Hola!");
   expect(funcs.greeting("Klingon")).toEqual("Hello!");
 });
-// end greeting start
+// end greeting starts
