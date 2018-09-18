@@ -111,26 +111,56 @@ const isOdd = num => {
 };
 
 const square = num => {
+  num = parseFloat(num, 10);
+  if (isNaN(num)) {
+    return false;
+  }
   return num * num;
 };
 
 const cube = num => {
+  num = parseFloat(num, 10);
+  if (isNaN(num)) {
+    return false;
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  num = parseFloat(num, 10);
+  if (isNaN(num)) {
+    return false;
+  }
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  num = parseFloat(num, 10);
+  if (isNaN(num)) {
+    return false;
+  }
   return Math.round(num);
 };
 
 const roundUp = num => {
+  num = parseFloat(num, 10);
+  if (isNaN(num)) {
+    return false;
+  }
   return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
+  if (
+    typeof str !== "number" &&
+    typeof str !== "string" &&
+    Array.isArray(str) === false
+  ) {
+    return false;
+  }
+  if (typeof str === "number" || Array.isArray(str) === true) {
+    str = str.toString();
+  }
   return (str += "!");
 };
 

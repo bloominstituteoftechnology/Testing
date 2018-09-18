@@ -155,7 +155,7 @@ it("should convert strings to numbers if possible", () => {
 
 //getRemainder
 
-it("return the remainder of one number divided by another", () => {
+it("should return the remainder of one number divided by another", () => {
   expect(helpers.getRemainder(5, 2)).toBe(1);
 });
 
@@ -175,14 +175,14 @@ it("should convert strings to numbers if possible", () => {
 });
 
 it("should return false if passed an argument other than a string or number", () => {
-    expect(helpers.isEven([])).toBe(false);
-    expect(helpers.isEven({})).toBe(false);
-    expect(helpers.isEven(NaN)).toBe(false);
-  });
+  expect(helpers.isEven([])).toBe(false);
+  expect(helpers.isEven({})).toBe(false);
+  expect(helpers.isEven(NaN)).toBe(false);
+});
 
 //isOdd
 
-it("return true if the argument is an odd number", () => {
+it("should return true if the argument is an odd number", () => {
   expect(helpers.isOdd(1)).toBe(true);
 });
 
@@ -191,17 +191,83 @@ it("should convert strings to numbers if possible", () => {
 });
 
 it("should return false if passed an argument other than a string or number", () => {
-    expect(helpers.isOdd([])).toBe(false);
-    expect(helpers.isOdd({})).toBe(false);
-    expect(helpers.isOdd(NaN)).toBe(false);
-  });
+  expect(helpers.isOdd([])).toBe(false);
+  expect(helpers.isOdd({})).toBe(false);
+  expect(helpers.isOdd(NaN)).toBe(false);
+});
 
 //square
 
-it("return true if the argument is an odd number", () => {
-    expect(helpers.isOdd(1)).toBe(true);
-  });
-  
-  it("should convert strings to numbers if possible", () => {
-    expect(helpers.isOdd("2")).toBe(false);
-  });
+it("should return the square of a number", () => {
+  expect(helpers.square(2)).toBe(4);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.square("2c")).toBe(4);
+});
+
+it("should return false if passed an argument other than a string or number", () => {
+  expect(helpers.square([])).toBe(false);
+  expect(helpers.square({})).toBe(false);
+  expect(helpers.square(NaN)).toBe(false);
+});
+
+//cube
+
+it("should return the cube of a number", () => {
+  expect(helpers.cube(2)).toBe(8);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.cube("2c")).toBe(8);
+});
+
+it("should return false if passed an argument other than a string or number", () => {
+  expect(helpers.cube([])).toBe(false);
+  expect(helpers.cube({})).toBe(false);
+  expect(helpers.cube(NaN)).toBe(false);
+});
+
+//raiseToPower
+
+it("should return the square of a number", () => {
+  expect(helpers.raiseToPower(2, 3)).toBe(8);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.raiseToPower("2c", 3)).toBe(8);
+});
+
+it("should return false if passed an argument other than a string or number", () => {
+  expect(helpers.raiseToPower([], 2)).toBe(false);
+  expect(helpers.raiseToPower({}, 2)).toBe(false);
+  expect(helpers.raiseToPower(NaN, 2)).toBe(false);
+});
+
+//roundNumber
+
+it("should return a number rounded to the nearest integer", () => {
+  expect(helpers.roundNumber(2.7)).toBe(3);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.roundNumber("2.555c")).toBe(3);
+});
+
+it("should return false if passed an argument other than a string or number", () => {
+  expect(helpers.roundNumber([])).toBe(false);
+  expect(helpers.roundNumber({})).toBe(false);
+  expect(helpers.roundNumber(NaN)).toBe(false);
+});
+
+//addExclamationPoint
+
+it("return a string with an an exclamation point added to the end", () => {
+  expect(helpers.addExclamationPoint("Here's Johnny")).toBe("Here's Johnny!");
+});
+
+it("should convert its argument to a string if passed a number or array", () => {
+  expect(helpers.addExclamationPoint(222)).toBe("222!");
+  expect(helpers.addExclamationPoint(["dog"])).toBe("dog!");
+});
+
