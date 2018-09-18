@@ -177,19 +177,17 @@ const addItemToFront = (arr, item) => {
 };
 
 
-
+//
 const wordsToSentence = words => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
-    } else {
-      newSentence += ` ${words[i]}`;
-    }
+    newSentence += ` ${words[i]}`;
   }
   return newSentence;
 };
 
+
+//
 const contains = (arr, item) => {
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
