@@ -90,10 +90,13 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  if (!arr) {return 'sorry, entries can\'t be blank'}
+  else{
   for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
+      arr[i]++;
+    }
+    return arr;
   }
-  return arr;
 };
 
 const addItemToArray = (arr, item) => {
