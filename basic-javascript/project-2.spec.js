@@ -4,6 +4,10 @@ describe('getBiggest', () => {
   it('should return the biggest number', () => {
     expect(funcs.getBiggest(20, 12)).toBe(20);
   });
+
+  it('should return NaN if NaN', () => {
+    expect(funcs.getBiggest(20, 'who')).toBe(NaN);
+  });
 });
 
 describe('greeting', () => {
@@ -66,6 +70,12 @@ describe('fizzBuzz', () => {
   it('should return the number if not divisble by 5 or 3', () => {
     expect(funcs.fizzBuzz(31)).toBe(31);
   });
+
+  it('should return input if NaN', () => {
+    expect(funcs.fizzBuzz('hello')).toBe('hello');
+    expect(funcs.fizzBuzz('a')).toBe('a');
+    expect(funcs.fizzBuzz([ 9, 12, 3 ])).toEqual([ 9, 12, 3 ]);
+  });
 });
 
 describe('isPrime', () => {
@@ -117,11 +127,19 @@ describe('incrementByOne', () => {
   it('should increment every element of the array by one', () => {
     expect(funcs.incrementByOne([ 20, 12 ])).toEqual([ 21, 13 ]);
   });
+
+  it('should return an empty array if given one', () => {
+    expect(funcs.incrementByOne([])).toEqual([]);
+  });
+
+  it('should return an input if given non-array', () => {
+    expect(funcs.incrementByOne({ test: 2 })).toEqual({ test: 2 });
+  });
 });
 
 describe('addItemToArray', () => {
   it('should add the given item to the given arr', () => {
-    expect(funcs.addItemToArray([ 20, 12 ], [ 2 ] )).toEqual([ 20, 12, [ 2 ] ]);
+    expect(funcs.addItemToArray([ 20, 12 ], [ 2 ])).toEqual([ 20, 12, [ 2 ] ]);
   });
 
   it('should not add anything if no item is given', () => {
@@ -141,7 +159,8 @@ describe('addItemToFront', () => {
 
 describe('wordsToSentence', () => {
   it('should return the words joined into a string', () => {
-    expect(funcs.wordsToSentence([ 'Hello', 'my', 'good', 'friends', ])).toBe('Hello my good friends.');
+    expect(funcs.wordsToSentence([ 'Hello', 'my', 'good', 'friends' ]))
+      .toBe('Hello my good friends.');
   });
 });
 
