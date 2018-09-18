@@ -38,11 +38,20 @@ describe("enhancer function", () => {
       const item = {
         item_durability: 0,
       };
-
       // act
       const actual = enhancer.enhancer().itemRepair(item).item_durability;
       // assert
       expect(actual).toBe(10);
+    });
+    it("if durability level 100, don't repair", () => {
+      // arrange
+      const item = {
+        item_durability: 100,
+      };
+      // act
+      const actual = enhancer.enhancer().itemRepair(item).item_durability;
+      // assert
+      expect(actual).toBe(100);
     });
   });
 });

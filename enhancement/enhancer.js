@@ -37,8 +37,11 @@ function enhancer(item) {
 
   // repair function
   itemClone["itemRepair"] = function(itemClone) {
-    // itemClone["item_durability"] += 10;
-    itemClone.item_durability += 10;
+    if (itemClone.item_durability === 100) {
+      // do nothing
+    } else {
+      itemClone.item_durability += 10;
+    }
     return { ...itemClone };
   };
 
