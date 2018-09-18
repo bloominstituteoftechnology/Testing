@@ -14,22 +14,42 @@ it("should multiply a number by 10", () => {
 it("should take a number and subtract 5 from it", () => {
   const expected = 10;
   const actual = helpers.subtractFive(15);
-  expect(actual).toBe(expected); 
+  expect(actual).toBe(expected);
   expect(helpers.subtractFive("something")).toBe(-5);
   expect(helpers.subtractFive("345")).toBe(340);
   expect(helpers.subtractFive(23)).toBe(18);
   expect(helpers.subtractFive(-90)).toBe(-95);
-
 });
 
 // start testing!
 it("should take two strings and compare their length", () => {
-  const expected = false; 
+  const expected = false;
   const actual = helpers.areSameLength("jonathan", "jason");
   expect(actual).toBe(expected);
-  expect(actual).toBeFalsy(); 
+  expect(actual).toBeFalsy();
   expect(helpers.areSameLength("23", "ab")).toBe(true);
   expect(helpers.areSameLength("ab", 23)).toBeTruthy();
-  expect(helpers.areSameLength("razzle dazzle", "something something")).toBeDefined();
-
-})
+  expect(
+    helpers.areSameLength("razzle dazzle", "something something")
+  ).toBeDefined();
+});
+it("Should compare any two items and check if they are equal", () => {
+  const expected = false;
+  const actual = helpers.areEqual([123, 234, 45], [7, 8, 0]);
+  expect(actual).toBeFalsy();
+  expect(actual).toBe(false);
+  expect(
+    helpers.areEqual(
+      [[1, 2, 3], [3456, 45], { a: [4, 5, 6, 7, 9, { 5: 23 }] }],
+      [[1, 2, 3], [3456, 45], { a: [4, 5, 6, 7, 9, { 5: 23 }] }]
+    )
+  ).toBeTruthy();
+  expect(
+    helpers.areEqual(
+      [[1, 2, 3], [3459, 45], { a: [4, 5, 6, 7, 9, { 5: 23 }] }],
+      [[1, 2, 3], [3456, 45], { a: [4, 5, 6, 7, 9, { 5: 23 }] }]
+    )
+  ).toBeFalsy();
+  expect(helpers.areEqual("yes", "yes")).toBe(true);
+  expect(helpers.areEqual(1, "1")).toBeFalsy();
+});
