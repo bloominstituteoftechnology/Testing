@@ -130,13 +130,22 @@ const addNumbers = numbers => {
 };
 
 const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
-  for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
+  let totalSumScores = 0; 
+  let numberOfScores = 0;
+  const arr = isArray(testScores)
+  if (arr){
+    for (let i = 0; i < testScores.length; i++){
+      let score = isNumber(testScores[i]);
+      totalSumScores += score[0]; 
+      numberOfScores++; 
+    }
+  } else {
+    return false; 
   }
-  return totalSumScores / numberOfScore;
+  if(totalSumScores){
+    return totalSumScores / numberOfScores
+  } else 
+  return false;
 };
 
 const largestNumber = numbers => {
