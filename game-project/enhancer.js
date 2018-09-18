@@ -1,6 +1,7 @@
 module.exports = {
     enhance,
-    fail
+    fail,
+    repair,
 }
 
 function enhance(item){
@@ -10,11 +11,23 @@ function enhance(item){
 function fail(item){
     if (item.level < 16) {
         return {...item, failCount: ++item.failCount};
-    };
+    } else if (item.level == 16) {
+        return {...item, failCount: item.failCount = item.failCount + 2};
+    } else if (item.level === 17) {
+        return {...item, failCount: item.failCount = item.failCount + 3};
+    } else if (item.level === 18) {
+        return {...item, failCount: item.failCount = item.failCount + 4};
+    } else if (item.level === 19) {
+        return {...item, failCount: item.failCount = item.failCount + 5};
+    } 
     // {...item, failCount: (
     //     if (item.level < 16) {
     //         return ++item.failCount;
     // })}
+}
+
+function repair(item){
+    return {...item, durability: item.durability + 10}
 }
 
 // -ITEM
