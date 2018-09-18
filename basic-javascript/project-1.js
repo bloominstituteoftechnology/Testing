@@ -84,18 +84,19 @@ const divide = (x, y) => {
 };
 
 const multiply = (x, y) => {
-  if ((!x && x !==0) || (!y && y!==0)) return 'must have two numbers';
-  else if (typeof(x) !=='number'|| typeof(y) !== 'number') 
-    return 'both values must be numbers';
-  return x * y;
-  
+  if ((!x && x !==0) || (!y && y!==0)) 
+  {return 'must have two numbers';
+}else if (typeof(x) !=='number'|| typeof(y) !== 'number') 
+  return 'both values must be numbers';
+  return x * y; 
 };
 
 const getRemainder = (x, y) => {
-  if ((!x && x !==0) || (!y && y!==0)) return 'must have two numbers'
-  else if (typeof(x) !=='number'|| typeof(y) !== 'number') 
+  if ((!x && x !==0) || (!y && y!==0)) {
+    return 'must have two numbers'
+  }else if (typeof(x) !=='number'|| typeof(y) !== 'number') {
     return 'both values must be numbers';
-  else if (y === 0) return 'cannot divide by 0';
+  }else if (y === 0){ return 'cannot divide by 0'};
   return x % y;
 };
 

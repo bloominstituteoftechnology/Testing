@@ -1,7 +1,15 @@
 /* eslint-disable arrow-parens */
 
+//frequent operations
+// if ( x === !Number || y === !Number){return 'both values must be numbers'};
+// if (!x || !y) {return 'both values must be defined'};
+
 const getBiggest = (x, y) => {
-  if (x > y) {
+  if ( typeof(x) !== 'number' || typeof(y) !== 'number'){
+    return 'both values must be numbers'
+} else if (!x || !y) {
+    return 'both values must be defined'
+}else if (x > y) {
     return x;
   } else if (x === y) {
     return y;
