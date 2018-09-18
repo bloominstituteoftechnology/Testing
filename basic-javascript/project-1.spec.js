@@ -1,7 +1,21 @@
 const funcs = require("./project-1");
+
+//TRAIN OF THOUGHT
 //Arrange: set up the world
 //Act: execute the tested code
 //Assert: check the results are correct
+
+//THINGS TO LOOK FOR
+//what if one of the values is undefined
+// undefined + value = ?
+//what if one of the values is null
+// null + value = ?
+//what if on eof the values is negative
+//what if both values are undefined
+// undefined + undefined = ?
+// what if float passes and round the result to 1 decimal
+// what if the sum is larger than Number.MAX_VALUE
+// what if one the values is a string
 
 // start testing!
 
@@ -252,3 +266,26 @@ it("", () => {
 
   expect(actual).toBe(24);
 });
+
+
+//THIS WILL TEST A STRING AND CONVERT IT
+// function add(a = 0,b = 0){
+//   let v1 = a
+//   let v2 = b  
+
+//   if(typeof a === 'string'){
+//     if(!Number(a)){
+//       return false
+//     } else {
+//       v1 = Number(a); 
+//     }
+//   }
+//   if(typeof b === 'string'){
+//     if(!Number(b)){
+//       return false; 
+//     } else {
+//       v2 = Number(b); 
+//     }
+//   }
+//   return v1 + v2; 
+// }
