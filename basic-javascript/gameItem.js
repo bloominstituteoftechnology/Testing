@@ -1,14 +1,18 @@
-
 function Item() {
-    this.levelcount = 0
-    this.level = this.levelcount,
-    this.fail_count = 0
-    this.durability = 100
-};
+  this.levelcount = 0;
+  this.level = this.levelcount;
+  this.fail_count = 0;
+  this.durability = 100;
+}
 
-const enhanceItem = item => {
+function random() {
+ return Math.random();
+}
+
+
+const enhanceItem = (item, randomnumber) => {
   if (item.levelcount < 20) {
-    if (Math.random() > 0.3) {
+    if (randomnumber > .3) {
       item.levelcount += 1;
       item.fail_count = 0;
       if (item.levelcount < 16) {
@@ -69,12 +73,16 @@ const enhanceItem = item => {
       item.durability
     }`;
   }
-}
-
+};
 
 let masterSword = new Item();
 
 module.exports = {
-    enhanceItem,
-    Item
-}
+  enhanceItem,
+  Item
+};
+
+console.log(enhanceItem(masterSword, 5));
+console.log(enhanceItem(masterSword, 5));
+console.log(enhanceItem(masterSword, 5));
+console.log(enhanceItem(masterSword, 5));
