@@ -80,6 +80,8 @@ the item doesn't matter
 wordsToSentence  
   expects an array new function creation 
   isArray if it is not an array return false 
+  also item in array needs to be a string  the isString 
+  function will help with this. 
 
 
 contains  

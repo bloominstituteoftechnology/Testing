@@ -21,46 +21,61 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
-  if (num === 10 || num === 5) {
+  let numb = isNumber(num);
+  numb = numb[0]; 
+  if (numb === 10 || numb === 5) {
     return true;
   }
   return false;
 };
 
 const isInRange = num => {
-  if (num < 50 && num > 20) {
+  let numb = isNumber(num); 
+  numb = numb[0];
+  if(numb < 50 && numb > 20){
     return true;
+  } else {
+    return false; 
   }
-  return false;
 };
 
 const isInteger = num => {
-  if (Math.floor(num) === num) {
+  let numb = isNumber(num); 
+  numb = numb[0];
+  if(Math.floor(numb) === numb){
     return true;
+  } else {
+    return false; 
   }
-  return false;
 };
 
 const fizzBuzz = num => {
-  if (num % 5 === 0 && num % 3 === 0) {
+  let numb = isNumber(num); 
+  numb = anyZeros(numb[0]);
+  numb = numb[0]
+  if(numb){
+    if (numb % 5 === 0 && numb % 3 === 0) {
     return 'fizzbuzz';
-  } else if (num % 5 === 0) {
+  } else if (numb % 5 === 0) {
     return 'buzz';
-  } else if (num % 3 === 0) {
+  } else if (numb % 3 === 0) {
     return 'fizz';
   }
-  return num;
+  }
+  return numb; 
 };
 
 const isPrime = num => {
-  if (num < 0) {
+  let numb = isNumber(num); 
+  numb = numb[0];
+  if (numb < 0) {
     return false;
   }
-  if (num === 1 || num === 0) {
+  if (numb === 1 || numb === 0) {
     return false;
   }
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
+  for (let i = 2; i < numb; i++) {
+    if (numb % i === 0) {
       return false;
     }
   }
@@ -68,65 +83,117 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  return arr[0];
+  const result = isArray(arr);
+   if(result){
+     return result[0];  
+   } else {
+     return false; 
+   }
 };
 
 const returnLast = arr => {
-  return arr[arr.length - 1];
+  const result = isArray(arr);
+   if(result){
+     return result[result.length -1];  
+   } else {
+     return false; 
+   }
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+  const result = isArray(arr);
+   if(result){
+     return result.length; 
+   } else {
+     return false; 
+   }
 };
 
 const incrementByOne = arr => {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
+  const result = isArray(arr);
+  if(result){
+    for (let i = 0; i <arr.length; i++){
+      let num = isNumber(arr[i]);
+      num++; 
+      arr[i] = num; 
+    }
+  }else {
+    return false; 
   }
   return arr;
 };
 
 const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
+  const result = isArray(arr); 
+   if(result){
+     result.push(item)
+     return result; 
+   } else {
+     return false 
+   }
 };
 
 const addItemToFront = (arr, item) => {
-  arr.unshift(item);
-  return arr;
+  const result = isArray(arr); 
+   if(result){
+     result.unshift(item)
+     return result; 
+   } else {
+     return false 
+  }
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
-  for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
+  const arr = isArray(words); 
+  let newSentence = ""; 
+  if(arr){
+    for(let i = 0; i < arr.length; i++){
+      let newWord = isString(arr[i]); 
+      newWord = newWord[0];
+      if (i === 0) {
+      newSentence += `${newWord}`;
     } else {
-      newSentence += ` ${words[i]}`;
+      newSentence += ` ${newWord}`;
     }
   }
   return newSentence;
+  } else {
+    return false; 
+  }
 };
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      itemCounter++;
-    }
-  }
-  if (itemCounter > 0) {
-    return true;
-  }
-  return false;
+  const result = isArray(arr); 
+   let itemCounter = 0; 
+   if(result){
+     for (let i = 0; i< result.length; i++){
+       if (arr[i] === item){
+         itemCounter++; 
+       }
+     }
+   } else {
+     return false; 
+   }
+   if (itemCounter > 0) {
+     return true; 
+   } else {
+     return false; 
+   }
 };
 
 const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
-  }
-  return sumOfNumbers;
+  let sumOfNumbers = 0; 
+   let arr = isArray(numbers); 
+   if(arr){
+     for (let i = 0; i< numbers.length; i++){
+       let num = isNumber(numbers[i]); 
+       sumOfNumbers += num[0]; 
+     }
+     return sumOfNumbers; 
+   } else {
+     return false; 
+   }
+   return sumOfNumbers;
 };
 
 const averageTestScore = testScores => {
@@ -144,8 +211,9 @@ const averageTestScore = testScores => {
   }
   if(totalSumScores){
     return totalSumScores / numberOfScores
-  } else 
-  return false;
+  } else {
+    return false; 
+  }
 };
 
 const largestNumber = numbers => {
