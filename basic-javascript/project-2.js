@@ -113,9 +113,9 @@ const wordsToSentence = words => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
-      newSentence += `${words[i]}`;
+      newSentence += `${words[i].toString()}`;
     } else {
-      newSentence += ` ${words[i]}`;
+      newSentence += ` ${words[i].toString()}`;
     }
   }
   return newSentence;
