@@ -13,7 +13,11 @@ const greeting = language => {
   switch (language) {
     case 'German':
       return 'Guten Tag!';
+    case 'german':
+      return 'Guten Tag!';
     case 'Spanish':
+      return 'Hola!';
+    case 'spanish':
       return 'Hola!';
     default:
       return 'Hello!';
