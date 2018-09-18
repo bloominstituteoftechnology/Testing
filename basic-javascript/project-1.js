@@ -85,16 +85,28 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
+  if (typeof num !== "number" && typeof num !== "string") {
+    return false;
+  }
+  num = parseFloat(num, 10);
+  if (num % 2 === 0 && typeof num === "number") {
     return true;
   }
   return false;
 };
 
 const isOdd = num => {
+  if (typeof num !== "number" && typeof num !== "string") {
+    return false;
+  }
+  num = parseFloat(num, 10);
   if (num % 2 === 0) {
     return false;
   }
+  if (isNaN(num)) {
+    return false;
+  }
+
   return true;
 };
 

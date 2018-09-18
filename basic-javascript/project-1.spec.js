@@ -101,8 +101,7 @@ it("should convert strings to numbers if possible", () => {
 //greaterThanFifty
 
 it("return true if the argument is a number greater than 50", () => {
-  expect(helpers.greaterThanFifty(89)).toBe(true);
-  expect(helpers.greaterThanFifty(31)).toBe(false);
+  expect(helpers.greaterThanFifty(51)).toBe(true);
 });
 
 it("should convert strings to numbers if possible", () => {
@@ -134,7 +133,7 @@ it("should convert strings to numbers if possible", () => {
 
 //divide
 
-it("return the results of one number subtracted from another", () => {
+it("return the remainder of one number divided by another", () => {
   expect(helpers.divide(10, 2)).toBe(5);
 });
 
@@ -145,7 +144,7 @@ it("should convert strings to numbers if possible", () => {
 
 //multiply
 
-it("return the results of one number subtracted from another", () => {
+it("return the product of one number multiplied by another", () => {
   expect(helpers.multiply(5, 2)).toBe(10);
 });
 
@@ -156,11 +155,53 @@ it("should convert strings to numbers if possible", () => {
 
 //getRemainder
 
-it("return the results of one number subtracted from another", () => {
-    expect(helpers.getRemainder(5, 2)).toBe(1);
+it("return the remainder of one number divided by another", () => {
+  expect(helpers.getRemainder(5, 2)).toBe(1);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.getRemainder("5", 2)).toBe(1);
+  expect(helpers.getRemainder(5, "2")).toBe(1);
+});
+
+//isEven
+
+it("return true if the argument is an even number", () => {
+  expect(helpers.isEven(2)).toBe(true);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.isEven("2")).toBe(true);
+});
+
+it("should return false if passed an argument other than a string or number", () => {
+    expect(helpers.isEven([])).toBe(false);
+    expect(helpers.isEven({})).toBe(false);
+    expect(helpers.isEven(NaN)).toBe(false);
+  });
+
+//isOdd
+
+it("return true if the argument is an odd number", () => {
+  expect(helpers.isOdd(1)).toBe(true);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.isOdd("2")).toBe(false);
+});
+
+it("should return false if passed an argument other than a string or number", () => {
+    expect(helpers.isOdd([])).toBe(false);
+    expect(helpers.isOdd({})).toBe(false);
+    expect(helpers.isOdd(NaN)).toBe(false);
+  });
+
+//square
+
+it("return true if the argument is an odd number", () => {
+    expect(helpers.isOdd(1)).toBe(true);
   });
   
   it("should convert strings to numbers if possible", () => {
-    expect(helpers.getRemainder("5", 2)).toBe(1);
-    expect(helpers.getRemainder(5, "2")).toBe(1);
+    expect(helpers.isOdd("2")).toBe(false);
   });
