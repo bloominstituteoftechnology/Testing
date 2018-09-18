@@ -1,6 +1,20 @@
 /* eslint-disable arrow-parens */
 
+
+// works with numbers and number strings
 const getBiggest = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values';
+  }
+
+  if (typeof x === 'object' || typeof x === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  if (typeof y === 'object' || typeof y === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -9,14 +23,20 @@ const getBiggest = (x, y) => {
   return y;
 };
 
+
+// only works with strings
 const greeting = language => {
+  if (typeof language !== 'string') {
+    return 'Please provide a string'
+  }
+
   switch (language) {
     case 'German':
       return 'Guten Tag!';
     case 'Spanish':
       return 'Hola!';
     default:
-      return 'Hello!';
+      return 'Please provide language';
   }
 };
 
@@ -67,34 +87,96 @@ const isPrime = num => {
   return true;
 };
 
+
+// only works with arrays
 const returnFirst = arr => {
-  return arr[0];
-};
-
-const returnLast = arr => {
-  return arr[arr.length - 1];
-};
-
-const getArrayLength = arr => {
-  return arr.length;
-};
-
-const incrementByOne = arr => {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
+  if (Array.isArray(arr)) {
+    if (arr.length === 0) {
+      return 'array can\'t be empty' 
+    } else {
+      return arr[0];
+    }
+  } else {
+    return 'Please provide an array'
   }
-  return arr;
 };
 
+
+// only works with arrays
+const returnLast = arr => {
+  if (Array.isArray(arr)) {
+    if (arr.length === 0) {
+      return 'array can\'t be empty' 
+    } else {
+      return arr[arr.length - 1];
+    }
+  } else {
+    return 'Please provide an array'
+  }
+};
+
+
+// only works with arrays
+const getArrayLength = arr => {
+  if (Array.isArray(arr)) {
+    return arr.length;
+  } else {
+    return 'Please provide an array'
+  }
+};
+
+
+// only works with arrays
+const incrementByOne = arr => {
+
+  if (Array.isArray(arr)) {
+    if (arr.length === 0) {
+      return 'array can\'t be empty' 
+    } else {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i]++;
+      }
+      return arr;
+    }
+  } else {
+    return 'Please provide an array'
+  }
+
+};
+
+
+// only works with arrays, no empty values
 const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
+  if (item === undefined || arr === undefined) {
+    return 'please provide both values';
+  }
+
+  if (Array.isArray(arr)) {
+    arr.push(item);
+    return arr;
+  } else {
+    return 'Please provide an array'
+  }
+
 };
 
+
+// only works with arrays, no empty values
 const addItemToFront = (arr, item) => {
-  arr.unshift(item);
-  return arr;
+  if (item === undefined || arr === undefined) {
+    return 'please provide both values';
+  }
+
+  if (Array.isArray(arr)) {
+    arr.unshift(item);
+    return arr;
+  } else {
+    return 'Please provide an array'
+  }
+
 };
+
+
 
 const wordsToSentence = words => {
   let newSentence = '';

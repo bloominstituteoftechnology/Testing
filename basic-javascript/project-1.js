@@ -67,8 +67,17 @@ const subtractFive = num => {
 // only strings and arrays can compare with .length
 // anything else .length === undefined
 // null/undefined break with .length
+// missing arg => undefined
 
 const areSameLength = (str1, str2) => {
+  if (str1 === undefined || str2 === undefined) {
+    return 'Please provide a pair of strings or arrays to compare';
+  }
+
+  if (str1 === null || str2 === null) {
+    return 'Please provide a pair of strings or arrays to compare';
+  }
+
   let v1;
   if (
     !Array.isArray(str1) &&
@@ -90,6 +99,14 @@ const areSameLength = (str1, str2) => {
 
 // You can compare anything
 const areEqual = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values to compare';
+  }
+
+  if (x === null || y === null) {
+    return 'Please provide two values to compare';
+  }
+
   v1 = x === y;
   if (typeof v1 !== 'boolean') {
     return 'unable to compare, check inputs';
@@ -127,38 +144,132 @@ const greaterThanFifty = num => {
 
 // only works with numbers, strings will coerce+concat
 const add = (x, y) => {
-  if (typeof x !== 'number' || typeof y !== 'number') {
-    return 'please provide a number';
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values';
   }
+
+  if (x === null || y === null) {
+    return 'Please provide two values';
+  }
+
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    return 'please provide two numbers';
+  }
+
   return x + y;
 };
 
 
-// only works with numbers, strings will coerce+concat
+// works with numbers and number strings
 const subtract = (x, y) => {
-  if (typeof x !== 'number' || typeof y !== 'number') {
-    return 'please provide a number';
+  let v1;
+
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values';
   }
+
+  if (typeof x === 'object' || typeof x === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  if (typeof y === 'object' || typeof y === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  v1 = x - y;
+
+  if (isNaN(v1)) {
+    return 'Please provide a number';
+  }
+
   return x - y;
 };
 
 
+// works with numbers and number strings
 const divide = (x, y) => {
+  let v1;
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values';
+  }
+
+  if (typeof x === 'object' || typeof x === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  if (typeof y === 'object' || typeof y === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  v1 = x / y;
+
+  if (isNaN(v1)) {
+    return 'Please provide a number';
+  }
+
   return x / y;
 };
 
 
+// works with numbers and number strings
 const multiply = (x, y) => {
+  let v1;
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values';
+  }
+
+  if (typeof x === 'object' || typeof x === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  if (typeof y === 'object' || typeof y === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  v1 = x * y;
+
+  if (isNaN(v1)) {
+    return 'Please provide a number';
+  }
+
   return x * y;
 };
 
 
+// works with numbers and number strings
 const getRemainder = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return 'Please provide two values';
+  }
+
+  if (typeof x === 'object' || typeof x === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  if (typeof y === 'object' || typeof y === 'boolean') {
+    return 'Please provide two numbers';
+  }
+
+  v1 = x % y;
+
+  if (isNaN(v1)) {
+    return 'Please provide a number';
+  }
+
   return x % y;
 };
 
 
+// works with numbers and number strings
 const isEven = num => {
+  if (num === undefined) {
+    return 'Please provide a value';
+  }
+
+  if (typeof num === 'object' || typeof num === 'boolean') {
+    return 'Please provide a number';
+  }
+
   if (num % 2 === 0) {
     return true;
   }
@@ -166,7 +277,16 @@ const isEven = num => {
 };
 
 
+// works with numbers and number strings
 const isOdd = num => {
+  if (num === undefined) {
+    return 'Please provide a value';
+  }
+
+  if (typeof num === 'object' || typeof num === 'boolean') {
+    return 'Please provide a number';
+  }
+
   if (num % 2 === 0) {
     return false;
   }
@@ -174,12 +294,30 @@ const isOdd = num => {
 };
 
 
+// works with numbers and number strings
 const square = num => {
+  if (num === undefined) {
+    return 'Please provide a value';
+  }
+
+  if (typeof num === 'object' || typeof num === 'boolean') {
+    return 'Please provide a number';
+  }
+
   return num * num;
 };
 
 
+// works with numbers and number strings
 const cube = num => {
+  if (num === undefined) {
+    return 'Please provide a value';
+  }
+
+  if (typeof num === 'object' || typeof num === 'boolean') {
+    return 'Please provide a number';
+  }
+
   return num * num * num;
 };
 
