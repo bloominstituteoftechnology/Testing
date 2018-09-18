@@ -135,14 +135,25 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
+  if(!str){
+    return false;
+  }else{
   return (str += '!');
+  }
 };
 
 const combineNames = (firstName, lastName) => {
+  if(!firstName||!lastName){
+    return false;
+  }else{
   return `${firstName} ${lastName}`;
+  }
 };
 
 const getGreeting = name => {
+  if(!name){
+    return 'Hello!'
+  }
   return `Hello ${name}!`;
 };
 

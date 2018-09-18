@@ -246,4 +246,72 @@ it('round number up',() => {
 })
 
 
+it('should add an exclamation point',() => {
+    const addEx = helpers.addExclamationPoint;
 
+    const result1 = addEx('this is a string');
+    const result2 = addEx();
+
+    expect(result1).toBe('this is a string!');
+    expect(result2).toBe(false);
+}) 
+
+it('should combine names',() => {
+    const combine = helpers.combineNames;
+
+    const result1 = combine('firstName','lastName')
+    const result2 = combine();
+
+    expect(result1).toBe('firstName lastName');
+    expect(result2).toBe(false);
+}) 
+
+it('should greet using provided name',() => {
+    const greeting = helpers.getGreeting;
+
+    const result1 = greeting('person');
+    const result2 = greeting();
+
+    expect(result1).toBe('Hello person!');
+    expect(result2).toBe('Hello!');
+}) 
+
+it('should return the rectangle area',() => {
+    const recArea = helpers.getRectangleArea;
+
+    const result1 = recArea(3,4);
+    const result2 = recArea(3,-4)
+
+    expect(result1).toBe(12);
+    expect(result2).toBe(-12);
+}) 
+
+it('should return the triangle area',() => {
+    const triArea = helpers.getTriangleArea;
+
+    const result1 = triArea(3,4);
+    const result2 = triArea(3,-4)
+
+    expect(result1).toBe(6);
+    expect(result2).toBe(-6);
+}) 
+
+it('should return the circle area',() => {
+    const circArea = helpers.getCircleArea;
+
+    const result1 = circArea(1);
+    const result2 = circArea(5)
+
+    expect(result1).toBeCloseTo(3.14,1);
+    expect(result2).toBeCloseTo(78.54,1);
+}) 
+
+it('should return the prism volume',() => {
+    const prism = helpers.getRectangularPrismVolume;
+
+    const result1 = prism(3,4,10);
+    const result2 = prism(3,-4,10)
+
+    expect(result1).toBe(120);
+    expect(result2).toBe(-120);
+}) 
