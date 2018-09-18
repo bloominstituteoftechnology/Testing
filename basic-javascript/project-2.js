@@ -144,8 +144,9 @@ const largestNumber = numbers => {
    const arr = isArray(numbers)
    if(arr){
      for (let i = 0; i< arr.length; i++){
-       if(arr[i] > biggestInteger){
-         biggestInteger = arr[i]; 
+       const numConverter = isNumber(arr[i])
+       if(numConverter[0] > biggestInteger){
+         biggestInteger = numConverter[0]; 
        }
      }
      return biggestInteger; 
