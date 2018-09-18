@@ -1,5 +1,7 @@
 const helpers = require('./project-1');
 
+
+
 // start testing!
 
 // Testing multiplyByTen
@@ -131,13 +133,38 @@ it('should subtract two numbers', () => {
 it('should return a quotient', () => {
     const divide = helpers.divide;
 
-    const result1 = divide(10,0); // infinity
+    const result1 = divide(5); //message
+    const result2 = divide(10,0); // message
+    const result3 = divide('3','4');
 
-    expect(result1).toBe('cannot divide by 0');
+    expect(result1).toBe('must have two numbers')
+    expect(result2).toBe('cannot divide by 0');
+    expect(result3).toBe('both values must be numbers');
+})
+
+//testing multiply
+it('should return a product', () => {
+    const multiply = helpers.multiply;
+
+    const result1 = multiply(4); // message
+    const result2 = multiply('3','4'); //message
+
+    expect(result1).toBe('must have two numbers')
+    expect(result2).toBe('both values must be numbers');
 })
 
 
+it('should return a remainder', () => {
+    const remainder = helpers.getRemainder;
 
+    const result1 = remainder(5); //message
+    const result2 = remainder(10,0); // message
+    const result3 = remainder('3','4');
+
+    expect(result1).toBe('must have two numbers')
+    expect(result2).toBe('cannot divide by 0');
+    expect(result3).toBe('both values must be numbers');
+})
 
 
 
