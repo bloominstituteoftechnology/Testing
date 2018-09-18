@@ -43,4 +43,38 @@ describe('Arrays', () => {
       })).toBe('number');
     });
   });
+
+  describe('find', () => {
+    const find = arrayFunctions.find;
+    it('should be a function', () => {
+      expect(typeof find).toBe('function');
+    });
+    it('should return an element of the array, same type', () => {
+      expect(typeof find(['test', 'hello', 'find'], (item) => {
+        return item === 'hello'
+      })).toBe('string');
+    })
+  });
+
+  describe('filter', () => {
+    const filter = arrayFunctions.filter;
+    it('should be a function', () => {
+      expect(typeof filter).toBe('function');
+    });
+    it('should return an array of filtered items', () => {
+      expect(Array.isArray(filter(['test', 'hello', 'find'], (item) => {
+        item.includes('f')
+      }))).toBe(true);
+    });
+  });
+
+  describe('flatten', () => {
+    const flatten = arrayFunctions.flatten;
+    it('should be a function', () => {
+      expect(typeof flatten).toBe('function');
+    });
+    it('should return an array', () => {
+      expect(Array.isArray(flatten([1, 2, [3, 4, 5], 6]))).toBe(true);
+    });
+  });
 });
