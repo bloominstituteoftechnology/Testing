@@ -271,3 +271,38 @@ it("should convert its argument to a string if passed a number or array", () => 
   expect(helpers.addExclamationPoint(["dog"])).toBe("dog!");
 });
 
+//combineNames
+
+it("should combine two name strings into one", () => {
+  expect(helpers.combineNames("cat", "dog")).toBe("cat dog");
+});
+
+it("should return false if either one or both arguments are not a string", () => {
+  expect(helpers.combineNames(undefined, "cat")).toBe(false);
+  expect(helpers.combineNames(null, 33)).toBe(false);
+  expect(helpers.combineNames("dog", null)).toBe(false);
+  expect(helpers.combineNames(33, undefined)).toBe(false);
+});
+
+//getGreeting
+
+it("should return a greeting strings into one", () => {
+    expect(helpers.getGreeting("nurse")).toBe("Hello nurse!");
+  });
+  
+  it("should return false if its argument is not a string", () => {
+    expect(helpers.getGreeting(undefined)).toBe(false);
+    expect(helpers.getGreeting(33)).toBe(false);
+    expect(helpers.getGreeting({})).toBe(false);
+  });
+
+  //getRectangleArea
+  
+  it("return the area of a rectangle as a number", () => {
+    expect(helpers.getRectangleArea(5, 2)).toBe(10);
+  });
+  
+  it("should convert strings to numbers if possible", () => {
+    expect(helpers.getRectangleArea("5vvv", 2)).toBe(10);
+    expect(helpers.getRectangleArea(5, "2sss")).toBe(10);
+  });

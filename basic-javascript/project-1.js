@@ -165,15 +165,24 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
+  if (typeof firstName !== "string") {
+    return false;
+  }
+  if (typeof lastName !== "string") {
+    return false;
+  }
   return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
+  if (typeof name !== "string") {
+    return false;
+  }
   return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  return parseFloat(length, 10) * parseFloat(width, 10);
 };
 
 const getTriangleArea = (base, height) => {
