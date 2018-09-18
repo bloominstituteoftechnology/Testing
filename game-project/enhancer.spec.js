@@ -24,9 +24,6 @@ describe('actions', () => {
         const actual = enhancer.fail(item);
         it('should return fail +1 if level is < 16', () => {
 
-
-            
-
             expect(actual.failCount).toBe(1);
             expect(enhancer.fail(actual).failCount).toBe(2);
         });

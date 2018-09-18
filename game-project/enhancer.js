@@ -9,7 +9,7 @@ function enhance(item){
 }
 
 function fail(item){
-    if (item.level < 16) {
+    if (item.failCount < 16) {
         return {...item, failCount: ++item.failCount, durability: item.durability = item.durability - 10};
     };
   
