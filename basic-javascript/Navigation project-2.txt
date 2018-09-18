@@ -1,0 +1,99 @@
+getBiggest 
+x and y makes me believe anything can be entered in. 
+num or str would limit it. therefore it has to be 
+treated differently. 
+If its a num this is easy  2 > 4 
+if its a string a bit trickery 
+"2" < "12" is false  because it works off 
+alphabetical order. 
+need to try to convert it to a number
+however what if it is not convertable?
+"2"  > "john"  === false 
+a conversion needs to be done.  
+What if there is two arrays.   
+[1,2,3,4] [1,2,3] what makes the other bigger? 
+well since there aren't any direct rules to follow 
+I would say the length of the array or object would 
+make it bigger.  
+{a:3, b:4, c:6}   {d: 10, e:12, f:13, g:15}
+I will use the lengh I believe for these. 
+For these reasons   this function should be handled 
+  1. check if NaN  
+  2. check  if an array 
+  3 check if object after it has been figured out
+  it is not an array
+  4. check if it is a string. 
+  check if the string can be converted to a number 
+  5. 
+
+  greeting 
+  I don't see many issues either you enter in a 
+  correct language or you don't. 
+  the only thing i can see become a problem is the case 
+  'German' !== "german"
+  most simple way is to change the actual case to lowercase
+  then do a check on the lowercase version of what 
+  a user may enter in. 
+
+  isTenOrFive  
+  the function is Number should solve any issues. 
+
+  isInRange  
+  the function is number should solve any issues 
+
+  isInteger 
+  the function isNumber should solve any issues  
+
+  fizzBuzz 
+  combination of isNumber and anyZeros should 
+  solve any issues. 
+
+  isPrime  
+  isNumber should get this done. 
+
+  returnFirst 
+  expects an array  new function creation 
+  isArray  if it is not an array return false 
+
+  return last   
+  expects an array new function creation 
+  isArray if it is not an array return false 
+
+  getArrayLength 
+  expects an array new function creation 
+  isArray if it is not an array return false 
+
+  incrementByOne  
+    expects an array new function creation 
+  isArray if it is not an array return false 
+
+addItemToArray 
+  expects an array new function creation 
+  isArray if it is not an array return false 
+the item type doesn't matter 
+
+addItemToFront  
+  expects an array new function creation 
+  isArray if it is not an array return false 
+the item doesn't matter 
+
+wordsToSentence  
+  expects an array new function creation 
+  isArray if it is not an array return false 
+
+
+contains  
+  expects an array new function creation 
+  isArray if it is not an array return false 
+
+addNumbers 
+  expects an array new function creation 
+  isArray if it is not an array return false 
+
+
+largestNumber 
+  expects an array new function creation 
+  isArray if it is not an array return false 
+
+
+
