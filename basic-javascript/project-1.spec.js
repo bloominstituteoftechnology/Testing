@@ -50,6 +50,27 @@ it("should convert a string to a number if possible", () => {
   expect(helpers.subtractFive("10.5")).toBe(5.5);
 });
 
-//areSameLength 
+//areSameLength
+
+it("should check if two strings have the same length", () => {
+  expect(helpers.areSameLength("cat", "dog")).toBe(true);
+});
+
+it("should convert one or both arguments to a string if passed a number or array", () => {
+  expect(helpers.areSameLength(222, 444)).toBe(true);
+  expect(helpers.areSameLength(222, "cat")).toBe(true);
+  expect(helpers.areSameLength("dog", 444)).toBe(true);
+  expect(helpers.areSameLength("dog", ["dog"])).toBe(true);
+  expect(helpers.areSameLength(["dog"], 444)).toBe(true);
+});
+
+it("should return false if either one or both arguments are not a number, string, or array", () => {
+  expect(helpers.areSameLength(undefined, "cat")).toBe(false);
+  expect(helpers.areSameLength(null, 33)).toBe(false);
+  expect(helpers.areSameLength("dog", null)).toBe(false);
+  expect(helpers.areSameLength(33, undefined)).toBe(false);
+});
+
+//areEqual 
 
 

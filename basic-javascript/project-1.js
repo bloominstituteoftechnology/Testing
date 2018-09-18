@@ -1,20 +1,46 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  if(typeof num !== "number" && typeof num !== "string") {
+  if (typeof num !== "number" && typeof num !== "string") {
     return 0;
   }
-  return parseFloat(num, 10) * 10 || 0 ;
+  if (typeof num === "string" && num.match(/[a-zA-Z]/g)) {
+    return 0;
+  }
+  return parseFloat(num) * 10 || 0;
 };
 
 const subtractFive = num => {
   if (typeof num !== "number" && typeof num !== "string") {
     return 0;
   }
+  if (typeof num === "string" && num.match(/[a-zA-Z]/g)) {
+    return 0;
+  }
   return parseFloat(num, 10) - 5 || 0;
 };
 
 const areSameLength = (str1, str2) => {
+  if (
+    typeof str1 !== "number" &&
+    typeof str1 !== "string" &&
+    Array.isArray(str1) === false
+  ) {
+    return false;
+  }
+  if (
+    typeof str2 !== "number" &&
+    typeof str2 !== "string" &&
+    Array.isArray(str2) === false
+  ) {
+    return false;
+  }
+  if (typeof str1 === "number" || Array.isArray(str1) === true) {
+    str1 = str1.toString();
+  }
+  if (typeof str2 === "number" || Array.isArray(str2) === true) {
+    str2 = str2.toString();
+  }
   return str1.length === str2.length;
 };
 
@@ -91,7 +117,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
