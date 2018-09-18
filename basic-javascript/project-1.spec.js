@@ -53,11 +53,17 @@ it("Should compare any two items and check if they are equal", () => {
   expect(helpers.areEqual("yes", "yes")).toBe(true);
   expect(helpers.areEqual(1, "1")).toBeFalsy();
 });
-it('should check if a number is less than 90', () => {
+it("should check if a number is less than 90", () => {
   expect(helpers.lessThanNinety(80)).toBe(true);
-  expect(helpers.lessThanNinety(90)).toBeFalsy(); 
+  expect(helpers.lessThanNinety(90)).toBeFalsy();
   expect(helpers.lessThanNinety(89.9)).toBeTruthy();
-  expect(helpers.lessThanNinety("23")).toBeTruthy(); 
+  expect(helpers.lessThanNinety("23")).toBeTruthy();
   expect(helpers.lessThanNinety("nothing")).toBeTruthy();
 });
-
+it("should check if value is greater than 50", () => {
+  expect(helpers.greaterThanFifty(75)).toBe(true);
+  expect(helpers.greaterThanFifty(99)).toBeTruthy();
+  expect(helpers.greaterThanFifty("55")).toBe(true);
+  expect(helpers.greaterThanFifty("50")).toBeFalsy();
+  expect(helpers.greaterThanFifty("nothing")).toBeFalsy();
+});
