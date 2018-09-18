@@ -287,22 +287,46 @@ it("should return false if either one or both arguments are not a string", () =>
 //getGreeting
 
 it("should return a greeting strings into one", () => {
-    expect(helpers.getGreeting("nurse")).toBe("Hello nurse!");
-  });
-  
-  it("should return false if its argument is not a string", () => {
-    expect(helpers.getGreeting(undefined)).toBe(false);
-    expect(helpers.getGreeting(33)).toBe(false);
-    expect(helpers.getGreeting({})).toBe(false);
-  });
+  expect(helpers.getGreeting("nurse")).toBe("Hello nurse!");
+});
 
-  //getRectangleArea
-  
-  it("return the area of a rectangle as a number", () => {
-    expect(helpers.getRectangleArea(5, 2)).toBe(10);
-  });
-  
-  it("should convert strings to numbers if possible", () => {
-    expect(helpers.getRectangleArea("5vvv", 2)).toBe(10);
-    expect(helpers.getRectangleArea(5, "2sss")).toBe(10);
-  });
+it("should return false if its argument is not a string", () => {
+  expect(helpers.getGreeting(undefined)).toBe(false);
+  expect(helpers.getGreeting(33)).toBe(false);
+  expect(helpers.getGreeting({})).toBe(false);
+});
+
+//getRectangleArea
+
+it("return the area of a rectangle as a number", () => {
+  expect(helpers.getRectangleArea(5, 2)).toBe(10);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.getRectangleArea("5vvv", 2)).toBe(10);
+  expect(helpers.getRectangleArea(5, "2sss")).toBe(10);
+});
+
+//getTriangleArea
+
+it("return the area of a triangle as a number", () => {
+  expect(helpers.getTriangleArea(5, 2)).toBe(5);
+  expect(helpers.getTriangleArea(3.55, 2.55)).toBeCloseTo(4.53);
+  expect(helpers.getTriangleArea(-2, 2)).toBe(-2);
+});
+
+//getCircleArea
+
+it("return the area of a circle as a number", () => {
+  expect(helpers.getCircleArea(2)).toBeCloseTo(12.57);
+  expect(helpers.getCircleArea(3.55)).toBeCloseTo(39.59);
+  expect(helpers.getCircleArea(-2)).toBeCloseTo(12.57);
+});
+
+//getRectangularPrismVolume
+
+it("return the volume of a rectangular prism as a number", () => {
+  expect(helpers.getRectangularPrismVolume(2, 2, 2)).toBe(8);
+  expect(helpers.getRectangularPrismVolume(2.55,2.55,2.55)).toBeCloseTo(16.58);
+  expect(helpers.getRectangularPrismVolume(-2, -2, -2)).toBe(-8);
+});
