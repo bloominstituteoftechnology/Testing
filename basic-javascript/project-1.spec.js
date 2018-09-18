@@ -67,3 +67,10 @@ it("should check if value is greater than 50", () => {
   expect(helpers.greaterThanFifty("50")).toBeFalsy();
   expect(helpers.greaterThanFifty("nothing")).toBeFalsy();
 });
+it('take to whole numbers and then add them together', () => {
+  expect(helpers.add(5,9)).toBe(14);
+  expect(helpers.add("12", "23")).toBe(35);
+  expect(helpers.add(45, "56")).toBe(101);
+  expect(helpers.add("23", "something")).toBe(23);
+  expect(helpers.add("23r","56kd")).toBe(0);
+});
