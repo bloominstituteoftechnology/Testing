@@ -47,33 +47,41 @@ describe('enhancer', () => {
   });
 
   describe('fail function', () => {
-    it('should decrease durability by 10 on failure and increase failCount', () => {
+    const item = {
+      durability: 100,
+      failCount: 0,
+      level: 7,
+    };
+    const maxItem={
+      durability: 100,
+      failCount: 5,
+      level: 'V'
+    }
+    const romanItem={
+      durability: 90,
+      failCount: 0,
+      level: 'II',
+    }
+    it('should decrease durability by 10 on failure', () => {
       // arrange
-      const item = {
-        durability: 100,
-        failCount: 0,
-        level: 7,
-      };
-      const maxItem={
-        durability: 100,
-        failCount: 5,
-        level: 'V'
-      }
-      const romanItem={
-        durability: 90,
-        failCount: 0,
-        level: 'II',
-      }
       // act
       const actual = enhancer.fail(item);
       const maxActual = enhancer.fail(maxItem);
       const romanActual = enhancer.fail(romanItem);
       // assert
       expect(actual.durability).toBe(95);
-      expect(actual.failCount).toBe(1);
       expect(maxActual.durability).toBe(95);
-      expect(maxActual.failCount).toBe(5);
       expect(romanActual.durability).toBe(85);
+    });
+    it('should increase failCount based on item.level', () => {
+      // arrange
+      // act
+      const actual = enhancer.fail(item);
+      const maxActual = enhancer.fail(maxItem);
+      const romanActual = enhancer.fail(romanItem);
+      // assert
+      expect(actual.failCount).toBe(1);
+      expect(maxActual.failCount).toBe(5);
       expect(romanActual.failCount).toBe(3);
     });
   });

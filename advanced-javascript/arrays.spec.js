@@ -31,4 +31,16 @@ describe('Arrays', () => {
       }))).toBe(true);
     });
   });
+
+  describe('reduce', () => {
+    const reduce = arrayFunctions.reduce;
+    it('should be a function', () => {
+      expect(typeof reduce).toBe('function');
+    });
+    it('should return a number', () => {
+      expect(typeof reduce([1, 2, 3], (item, acc) => {
+        return item + acc
+      })).toBe('number');
+    });
+  });
 });
