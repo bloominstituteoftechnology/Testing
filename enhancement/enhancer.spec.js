@@ -1,7 +1,7 @@
 // requirement
-// - item begins at 0.
-// - item fail count begins at 0.
-// - item durability begins at 100.
+// - item begins at 0. X
+// - item fail count begins at 0. X
+// - item durability begins at 100. X
 // - repairing an item will restore it's durability 10 points at a time until 100.
 // - item can be enhanced up to 20.
 // - from 1 to 15 use Arabic numerals.
@@ -19,6 +19,7 @@
 const enhancer = require("./enhancer.js");
 
 describe("enhancer function", () => {
+  // starting prop
   describe("initial starting variables check", () => {
     it("item level starts at 0", () => {
       expect(enhancer.enhancer().item_level).toBe(0);
@@ -28,6 +29,20 @@ describe("enhancer function", () => {
     });
     it("item durability level starts at 100", () => {
       expect(enhancer.enhancer().item_durability).toBe(100);
+    });
+  });
+  // item repair
+  describe("item repair", () => {
+    it("repair raises item durability 10 points", () => {
+      // arrange
+      const item = {
+        item_durability: 0,
+      };
+
+      // act
+      const actual = enhancer.enhancer().itemRepair(item).item_durability;
+      // assert
+      expect(actual).toBe(10);
     });
   });
 });
