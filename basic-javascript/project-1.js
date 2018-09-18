@@ -230,30 +230,19 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  let v1 = result1[0];
-  let v2 = result1[1];
-  return v1 * v2;
+  return multiply(length, width)
 };
 
 const getTriangleArea = (base, height) => {
-  const result1 = isNumber(base, height);
-  let v1 = result1[0];
-  let v2 = result1[1];
-  return 0.5 * v1 * v2;
+  return 0.5 * multiply(base,height);
 };
 
 const getCircleArea = radius => {
-  const result1 = isNumber(radius);
-  let v1 = result1[0];
-  return Math.PI * radius * radius;
+  return Math.PI * multiply(radius, radius)
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  const result1 = isNumber(length, width, height);
-  let v1 = result1[0];
-  let v2 = result1[1];
-  let v3 = result1[2];
-  return v1 * v2 * v3;
+  return multiply(length,1) * multiply(width, 1) * multiply(height,1);
 };
 
 //Because some of the number checkers have various argument lengths
@@ -337,6 +326,7 @@ function isObject(obj1, obj2) {
 }
 
 function isString(...args) {
+  
   for (let i = 0; i < args.length; i++) {
       if (args[i]) {
           args[i] = args[i].toString();

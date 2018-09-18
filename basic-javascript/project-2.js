@@ -126,8 +126,12 @@ const incrementByOne = arr => {
 const addItemToArray = (arr, item) => {
   const result = isArray(arr);
   if (result) {
-    result.push(item);
-    return result;
+    if(item){
+      result.push(item);
+      return result;
+    } else {
+      return result; 
+    }
   } else {
     return false;
   }
@@ -136,8 +140,12 @@ const addItemToArray = (arr, item) => {
 const addItemToFront = (arr, item) => {
   const result = isArray(arr);
   if (result) {
-    result.unshift(item);
-    return result;
+    if(item){
+      result.unshift(item);
+      return result;
+    } else {
+      return result; 
+    }
   } else {
     return false;
   }
