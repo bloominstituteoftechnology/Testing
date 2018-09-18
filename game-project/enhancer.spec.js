@@ -47,27 +47,27 @@ describe('enhancer', () => {
   });
 
   describe('fail function', () => {
-    it('should decrease durability by 10 on failure', () => {
+    it('should decrease durability by 10 on failure and increase failCount', () => {
       // arrange
       const item = {
         durability: 100,
-        failCount:0,
-        level:7,
+        failCount: 0,
+        level: 7,
       };
       const maxItem={
-        durability:100,
-        failCount:5,
-        level:'V'
+        durability: 100,
+        failCount: 5,
+        level: 'V'
       }
       const romanItem={
-        durability:90,
-        failCount:0,
-        level:'II',
+        durability: 90,
+        failCount: 0,
+        level: 'II',
       }
       // act
       const actual = enhancer.fail(item);
-      const maxActual=enhancer.fail(maxItem);
-      const romanActual=enhancer.fail(romanItem);
+      const maxActual = enhancer.fail(maxItem);
+      const romanActual = enhancer.fail(romanItem);
       // assert
       expect(actual.durability).toBe(95);
       expect(actual.failCount).toBe(1);
@@ -77,15 +77,34 @@ describe('enhancer', () => {
       expect(romanActual.failCount).toBe(3);
     });
   });
-  describe('succeed function',()=>{
-    it('should reset fail count to 0',()=>{
-      const item={
-        failCount:5,
+  describe('succeed function', () => {
+    it('should reset fail count to 0', () => {
+      const item = {
+        failCount: 5,
       }
-      const actual=enhancer.succeed(item);
+      const actual = enhancer.succeed(item);
       expect(actual.failCount).toBe(0);
-    })
-  })
+    });
+  });
+
+  describe('repair function', () => {
+    it('should add durability in units of 10 up to 100', () => {
+      const item = {
+        durability: 40,
+      }
+
+      const maxItem = {
+        durability: 100
+      }
+
+      const actual = enhancer.repair(item);
+      const maxActual = enhancer.repair(maxItem);
+
+      expect(actual.durability).toBe(50);
+      expect(enhancer.repair(actual).durability).toBe(60);
+      expect(maxActual.durability).toBe(100);
+    });
+  });
 });
 
 describe('async', () => {

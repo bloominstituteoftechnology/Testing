@@ -1,21 +1,22 @@
 module.exports = {
   enhance,
   fail,
-  succeed
+  succeed,
+  repair,
 };
 
 function enhance(item) {
   // set limit on level, increase if under 20
   switch(item.level){
-    case 'I':item.level=16;
+    case 'I': item.level = 16;
     break;
-    case 'II':item.level=17;
+    case 'II': item.level = 17;
     break;
-    case 'III':item.level=18;
+    case 'III': item.level = 18;
     break;
-    case 'IV':item.level=19;
+    case 'IV': item.level = 19;
     break;
-    default:item.level=item.level;
+    default: item.level = item.level;
     break;
   }
   if (item.level < 20) {
@@ -40,29 +41,39 @@ function enhance(item) {
 
 function fail(item) {
   const durability = item.durability - 5;
-  let failCount=item.failCount;
+  let failCount = item.failCount;
   switch(item.level){
     case 'I':
-      failCount+=2;
+      failCount += 2;
       break;
     case 'II':
-      failCount+=3;
+      failCount += 3;
       break;
     case 'III':
-      failCount+=4;
+      failCount += 4;
       break;
     case 'IV':
-      failCount+=5;
+      failCount += 5;
       break;
     case 'V':
-      failCount=failCount;
+      failCount = failCount;
       break;
     default:
-      failCount+=1;
+      failCount += 1;
   }
   return { ...item, durability,failCount };
 }
 function succeed(item){
-  let failCount=0;
+  let failCount = 0;
   return {...item,failCount};
+}
+
+function repair(item) {
+  let durability = item.durability;
+
+  if (durability <= 90) {
+    durability += 10;
+  }
+
+  return { ...item, durability };
 }
