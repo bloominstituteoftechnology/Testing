@@ -2,6 +2,17 @@ const helpers = require('./project-1');
 
 // start testing!
 
+// //template
+// it('',() => {
+//     const 
+
+//     const result1 = 
+//     const result2 = 
+
+//     expect(result1).toBe();
+//     expect(result2).toBe();
+// }) 
+
 // Testing multiplyByTen
 
 it('should multiply by 10', () => {
@@ -164,8 +175,75 @@ it('should return a remainder', () => {
     expect(result3).toBe('both values must be numbers');
 })
 
+it('should check if a number is even',() => {
+    const even = helpers.isEven;
 
+    const result1 = even(12);
+    const result2 = even(11);
 
+    expect(result1).toBe(true);
+    expect(result2).toBe(false);
+})
+
+it('should check if a number is odd',() => {
+    const odd = helpers.isOdd
+
+    const result1 = odd(12);
+    const result2 = odd(11);
+
+    expect(result1).toBe(false);
+    expect(result2).toBe(true);
+})
+
+it('should return the square of the number',() => {
+    const square = helpers.square;
+
+    const result1 = square(3);
+    const result2 = square(-3);
+
+    expect(result1).toBe(9);
+    expect(result2).toBe(9);
+})
+
+it('should return the cube of the number',() => {
+    const cube = helpers.cube;
+
+    const result1 = cube(3);
+    const result2 = cube(-3);
+
+    expect(result1).toBe(27);
+    expect(result2).toBe(-27);
+})
+
+it('should raise the number to the exponent provided',() => {
+    const power = helpers.raiseToPower;
+
+    const result1 = power(5,2)
+    const result2 = power(5,-2)
+
+    expect(result1).toBe(25);
+    expect(result2).toBe(.04);
+})
+
+it('round number',() => {
+    const round = helpers.roundNumber;
+
+    const result1 = round(4.2)
+    const result2 = round(4.6)
+
+    expect(result1).toBe(4);
+    expect(result2).toBe(5);
+})
+
+it('round number up',() => {
+    const roundUp = helpers.roundUp;
+
+    const result1 = roundUp(4.2)
+    const result2 = roundUp(4.6)
+
+    expect(result1).toBe(5);
+    expect(result2).toBe(5);
+})
 
 
 
