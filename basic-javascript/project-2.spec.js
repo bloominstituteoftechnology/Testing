@@ -88,4 +88,55 @@ it('should return first element in array', () => {
 
 it('should return undefined if the array is empty', () => {
     expect(funcs.returnFirst([])).toBe(undefined); 
+}); 
+
+//----------------- RETURN LAST TEST -------------------------
+
+it('should return the last value of the array', () => {
+    expect(funcs.returnLast([1,2,3,4])).toBe(4); 
+    expect(funcs.returnLast([25])).toBe(25); 
+})
+
+it('should return undefined if the array is empty', () => {
+    expect(funcs.returnLast([])).toBe(undefined); 
+})
+
+// --------------- GET ARRAY LENGTH TEST ---------------------
+
+it('should return correct length of array', () => {
+    expect(funcs.getArrayLength([1,2,3,4])).toBe(4); 
+}); 
+
+it('should return 0 if array is empty', () => {
+    expect(funcs.getArrayLength([])).toBe(0); 
+}); 
+
+// -------------- INCREMENT BY ONE TEST -----------------------
+
+it('should increment each value in the array by one', () => {
+    expect(funcs.incrementByOne([1,2])).toEqual([2,3]); 
+   
+})
+
+// --------------- ADD ITEM TO ARRAY ----------------------
+
+it('should add value to the arr', () => {
+    expect(funcs.addItemToArray([2,14], 10)).toEqual([2, 14, 10]); 
+}); 
+
+// ----------------- ADD ITEM TO FRONT ------------------
+
+it('should add an item to the beginning of an array ', () => {
+    expect(funcs.addItemToFront([2,14], 10)).toEqual([10, 2, 14])
+}); 
+
+// ------------------ WORDS TO SENTENCE ------------------
+
+it('should return the words array that is concatenated into a string', () => {
+    expect(funcs.wordsToSentence(['The', 'fox', 'jumped', 'over', 'the', 'dog'])).toEqual("The fox jumped over the dog")
+}); 
+
+it('should return whether the item is found in array or not', () => {
+    expect(funcs.contains([1,2,3,3],3 )).toBeTruthy();
+    expect(funcs.contains([1,2,3], 4)).toBeFalsy(); 
 })
