@@ -6,6 +6,7 @@ it('should return the bigger of two values', () => {
     expect(funcs.getBiggest(3, 4)).toBe(4);
     expect(funcs.getBiggest(3, 3)).toBe(3);
     expect(funcs.getBiggest(5, 2)).toBe(5);
+    expect(funcs.getBiggest('hello', 1)).toBe(null);
 });
 
 it('should greet you in the specified language', () => {
@@ -108,4 +109,5 @@ it('should return the largest value in the array', () => {
     expect(funcs.largestNumber([1, 2, 3, 4, 5])).toBe(5);
     expect(funcs.largestNumber([10, 20, 30, 40, 50])).toBe(50);
     expect(funcs.largestNumber([111, 222, 333, 444, 555])).toBe(555);
+    expect(funcs.largestNumber([1, 2, 3, 'bob'])).toBe(null);
 })

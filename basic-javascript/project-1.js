@@ -1,10 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (typeof num === 'string') return null;
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (typeof num === 'string') return null;
   return num - 5;
 };
 
@@ -109,6 +111,7 @@ const getCircleArea = radius => {
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if(typeof length == 'string' || typeof width == 'string' || typeof height == 'string') return null;
   return width * height * length;
 };
 

@@ -4,12 +4,14 @@ it('should return a number multiplied by ten', () => {
     expect(helpers.multiplyByTen(3)).toBe(30);
     expect(helpers.multiplyByTen(4)).toBe(40);
     expect(helpers.multiplyByTen(2)).toBe(20);
+    expect(helpers.multiplyByTen('hello')).toBe(null)
 });
 
 it('should return a number minus five', () => {
     expect(helpers.subtractFive(5)).toBe(0);
     expect(helpers.subtractFive(14)).toBe(9);
     expect(helpers.subtractFive(0)).toBe(-5);
+    expect(helpers.subtractFive('hello')).toBe(null);
 });
 
 it('should return whether two strings\' lengths are equal', () => {
@@ -147,4 +149,5 @@ it('should return length times width times height', () => {
     expect(helpers.getRectangularPrismVolume(10, 10, 10)).toBe(1000);
     expect(helpers.getRectangularPrismVolume(5, 10, 25)).toBe(1250);
     expect(helpers.getRectangularPrismVolume(3, 4, 5)).toBe(60);
+    expect(helpers.getRectangularPrismVolume('test', 5, 6)).toBe(null);
 });

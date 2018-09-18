@@ -1,6 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if(typeof x === 'string' || typeof y === 'string') return null;
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -142,6 +143,7 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] == 'string') return null;
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
