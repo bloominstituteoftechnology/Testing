@@ -1,11 +1,17 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return parseInt(num, 10) * 10 || 0 ;
+  if(typeof num !== "number" && typeof num !== "string") {
+    return 0;
+  }
+  return parseFloat(num, 10) * 10 || 0 ;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (typeof num !== "number" && typeof num !== "string") {
+    return 0;
+  }
+  return parseFloat(num, 10) - 5 || 0;
 };
 
 const areSameLength = (str1, str2) => {
