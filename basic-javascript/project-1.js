@@ -336,6 +336,17 @@ function isObject(obj1, obj2) {
   return true;
 }
 
+function isString(...args) {
+  for (let i = 0; i < args.length; i++) {
+      if (args[i]) {
+          args[i] = args[i].toString();
+      } else {
+          args[i] = "";
+      }
+  }
+  return args;
+}
+
 module.exports = {
   multiplyByTen,
   subtractFive,

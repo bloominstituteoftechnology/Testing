@@ -23,3 +23,13 @@ it("should take a number and subtract 5 from it", () => {
 });
 
 // start testing!
+it("should take two strings and compare their length", () => {
+  const expected = false; 
+  const actual = helpers.areSameLength("jonathan", "jason");
+  expect(actual).toBe(expected);
+  expect(actual).toBeFalsy(); 
+  expect(helpers.areSameLength("23", "ab")).toBe(true);
+  expect(helpers.areSameLength("ab", 23)).toBeTruthy();
+  expect(helpers.areSameLength("razzle dazzle", "something something")).toBeDefined();
+
+})
