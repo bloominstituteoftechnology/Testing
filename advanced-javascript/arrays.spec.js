@@ -1,5 +1,6 @@
 const arrayFunctions = require('./arrays');
-
+const helpers1 = require('../basic-javascript/project-1');
+const helpers2 = require('../basic-javascript/project-2');
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
 // first step is to make sure all these assertions work.
@@ -10,8 +11,9 @@ const arrayFunctions = require('./arrays');
 describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      const expected = [10,20,30,40,50];
+      const actual = arrayFunctions.map([1,2,3,4,5],helpers1.multiplyByTen);
+      expect(actual).toEqual(expected);
     });
   });
 });
