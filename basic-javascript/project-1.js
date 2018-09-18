@@ -1,5 +1,8 @@
 /* eslint-disable arrow-parens */
 
+const numberCheck = 'input must be a number';
+const numbersCheck = 'inputs must be numbers';
+
 const multiplyByTen = num => {
   if (num === undefined){
     return false;
