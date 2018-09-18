@@ -57,6 +57,7 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  num = parseFloat(num, 10);
   if (num > 50) {
     return true;
   }
@@ -64,23 +65,23 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  return parseFloat(x, 10) + parseFloat(y, 10);
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  return parseFloat(x, 10) - parseFloat(y, 10);
 };
 
 const divide = (x, y) => {
-  return x / y;
+  return parseFloat(x, 10) / parseFloat(y, 10);
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  return parseFloat(x, 10) * parseFloat(y, 10);
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  return parseFloat(x, 10) % parseFloat(y, 10);
 };
 
 const isEven = num => {

@@ -95,5 +95,72 @@ it("return true if the argument is a number less than 90", () => {
 
 it("should convert strings to numbers if possible", () => {
   expect(helpers.lessThanNinety("89")).toBe(true);
-  expect(helpers.areEqual("89.9999999")).toBe(true);
+  expect(helpers.lessThanNinety("89.9999999")).toBe(true);
 });
+
+//greaterThanFifty
+
+it("return true if the argument is a number greater than 50", () => {
+  expect(helpers.greaterThanFifty(89)).toBe(true);
+  expect(helpers.greaterThanFifty(31)).toBe(false);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.greaterThanFifty("89")).toBe(true);
+  expect(helpers.greaterThanFifty("89.9999999")).toBe(true);
+});
+
+//add
+
+it("return the sum of two numbers added together", () => {
+  expect(helpers.add(89, 1)).toBe(90);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.add("89", 1)).toBe(90);
+  expect(helpers.add(89, "1")).toBe(90);
+});
+
+//subtract
+
+it("return the results of one number subtracted from another", () => {
+  expect(helpers.subtract(91, 1)).toBe(90);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.subtract("91", 1)).toBe(90);
+  expect(helpers.subtract(91, "1")).toBe(90);
+});
+
+//divide
+
+it("return the results of one number subtracted from another", () => {
+  expect(helpers.divide(10, 2)).toBe(5);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.divide("10", 2)).toBe(5);
+  expect(helpers.divide(10, "2")).toBe(5);
+});
+
+//multiply
+
+it("return the results of one number subtracted from another", () => {
+  expect(helpers.multiply(5, 2)).toBe(10);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.multiply("5", 2)).toBe(10);
+  expect(helpers.multiply(5, "2")).toBe(10);
+});
+
+//getRemainder
+
+it("return the results of one number subtracted from another", () => {
+    expect(helpers.getRemainder(5, 2)).toBe(1);
+  });
+  
+  it("should convert strings to numbers if possible", () => {
+    expect(helpers.getRemainder("5", 2)).toBe(1);
+    expect(helpers.getRemainder(5, "2")).toBe(1);
+  });
