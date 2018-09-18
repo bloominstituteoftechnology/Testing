@@ -16,8 +16,18 @@
 // - when enhancement succeeds, the fail count is reset to 0 again.
 // - when enhancement fails, the durability is decreased by 5.
 
-// const enhancer = require("./enhancer.js");
+const enhancer = require("./enhancer.js");
 
-describe.skip("enhancer", () => {
-  decscribe("");
+describe("enhancer function", () => {
+  describe("initial starting variables check", () => {
+    it("item level starts at 0", () => {
+      expect(enhancer.enhancer().item_level).toBe(0);
+    });
+    it("item fail count level starts at 0", () => {
+      expect(enhancer.enhancer().item_fail_count).toBe(0);
+    });
+    it("item durability level starts at 100", () => {
+      expect(enhancer.enhancer().item_durability).toBe(100);
+    });
+  });
 });

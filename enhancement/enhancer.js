@@ -17,9 +17,19 @@
 // - when enhancement fails, the durability is decreased by 5.
 
 module.exports = {
-  enchancer,
+  enhancer,
 };
 
 function enhancer(item) {
-  return { ...item };
+  let itemClone = { ...item };
+  // starting variables
+  let item_level = 0;
+  let item_fail_count = 0;
+  let item_durability = 100;
+  // set variable props on item object
+  itemClone["item_level"] = item_level;
+  itemClone["item_fail_count"] = item_fail_count;
+  itemClone["item_durability"] = item_durability;
+
+  return { ...itemClone };
 }
