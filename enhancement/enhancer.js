@@ -24,15 +24,20 @@ function enhancer(item) {
   let itemClone = { ...item };
   // // check for existing starting item durability
   if (Object.keys(itemClone).includes("item_durability")) {
-    itemClone["item_durability"] = itemClone.item_durability;
+    itemClone.item_durability = itemClone.item_durability;
   } else {
+    // set initial item_durability
     itemClone["item_durability"] = 100;
   }
-  // starting variables
-  let item_level = 0;
+  // check for level 20 item level
+  if (Object.keys(itemClone).includes("item_level")) {
+    itemClone.item_level = itemClone.item_level;
+  } else {
+    // set initial item_level
+    itemClone["item_level"] = 0;
+  }
   let item_fail_count = 0;
   // set variable props on item object
-  itemClone["item_level"] = item_level;
   itemClone["item_fail_count"] = item_fail_count;
 
   // repair function

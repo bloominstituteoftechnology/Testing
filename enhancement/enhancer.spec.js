@@ -2,7 +2,7 @@
 // - item begins at 0. X
 // - item fail count begins at 0. X
 // - item durability begins at 100. X
-// - repairing an item will restore it's durability 10 points at a time until 100.
+// - repairing an item will restore it's durability 10 points at a time until 100. X
 // - item can be enhanced up to 20.
 // - from 1 to 15 use Arabic numerals.
 // - from +16 up use Roman numerals (+16 = I, +17 = II, +18 = III, +19 = IV, +20 = V).
@@ -31,6 +31,7 @@ describe("enhancer function", () => {
       expect(enhancer.enhancer().item_durability).toBe(100);
     });
   });
+
   // item repair
   describe("item repair", () => {
     it("repair raises item durability 10 points", () => {
@@ -52,6 +53,19 @@ describe("enhancer function", () => {
       const actual = enhancer.enhancer().itemRepair(item).item_durability;
       // assert
       expect(actual).toBe(100);
+    });
+  });
+  // item level check
+  describe("item level check", () => {
+    it("if item max level(20), don't increase level on enhance", () => {
+      // arrange
+      const item = {
+        item_level: 20,
+      };
+      // act
+      const actual = enhancer.enhancer(item).item_level;
+      // assert
+      expect(actual).toBe(20);
     });
   });
 });
