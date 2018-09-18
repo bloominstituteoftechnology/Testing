@@ -18,15 +18,12 @@ describe('Arrays', () => {
       expect(Value).toEqual([2, 4, 6]);
     });
   });
-});
 
-describe('Arrays', () => {
   describe('each', () => {
     it('invokes cb for every array element', () => {
       const each = arrayFunctions.each;
 
       expect(typeof each).toBe('function');
-    });
     });
   });
 
@@ -57,27 +54,28 @@ describe('Arrays', () => {
   });
 
   describe('filter', () => {
-  it('filter arrays elements with callback', () => {
-    const filter = arrayFunctions.filter;
-    const Value1 = filter([], num => num === 1);
-    const Value2 = filter([1, 2, 3, 4, 5, 6, 4, 4, 5], num => num === 4);
-    const Value3 = filter([1, 2, 3, 4, 5, 3, 5], num => num === 5)
-    
-    expect(Value1).toEqual([])
-    expect(Value2).toEqual([4, 4, 4]);
-    expect(Value3).toEqual([5, 5]);
+    it('filter arrays elements with callback', () => {
+      const filter = arrayFunctions.filter;
+      const Value1 = filter([], num => num === 1);
+      const Value2 = filter([1, 2, 3, 4, 5, 6, 4, 4, 5], num => num === 4);
+      const Value3 = filter([1, 2, 3, 4, 5, 3, 5], num => num === 5)
+      
+      expect(Value1).toEqual([])
+      expect(Value2).toEqual([4, 4, 4]);
+      expect(Value3).toEqual([5, 5]);
+    });
   });
-});  
 
-describe('flatten', () => {
-  it('Convert multi-dimensional array to a one-dimentional array', () => {
-    const flatten = arrayFunctions.flatten;
-    const Value1 = flatten([0, 1, [3, 4, [6, 7]]]);
-    const Value2 = flatten([0, 1, 2]);
-    const Value3 = flatten({ memo: "item" });
-    
-    expect(Value1).toEqual([0, 1, 3, 4, 6, 7]);
-    expect(Value2).toEqual([0, 1, 2]);
-    expect(Value3).toEqual([]);
+  describe('flatten', () => {
+    it('Convert multi-dimensional array to a one-dimentional array', () => {
+      const flatten = arrayFunctions.flatten;
+      const Value1 = flatten([0, 1, [3, 4, [6, 7]]]);
+      const Value2 = flatten([0, 1, 2]);
+      const Value3 = flatten({ memo: "item" });
+      
+      expect(Value1).toEqual([0, 1, 3, 4, 6, 7]);
+      expect(Value2).toEqual([0, 1, 2]);
+      expect(Value3).toEqual([]);
+    });
   });
-}); 
+});
