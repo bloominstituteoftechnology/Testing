@@ -45,10 +45,11 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  return parseFloat(x, 10) === parseFloat(y, 10);
 };
 
 const lessThanNinety = num => {
+  num = parseFloat(num, 10);
   if (num < 90) {
     return true;
   }

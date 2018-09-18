@@ -71,6 +71,29 @@ it("should return false if either one or both arguments are not a number, string
   expect(helpers.areSameLength(33, undefined)).toBe(false);
 });
 
-//areEqual 
+//areEqual
 
+it("should check if two numbers are equal", () => {
+  expect(helpers.areEqual(4, 4)).toBe(true);
+  expect(helpers.areEqual(4, 5)).toBe(false);
+});
 
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.areEqual("10", "10")).toBe(true);
+  expect(helpers.areEqual("10.5", "10.5")).toBe(true);
+  expect(helpers.areEqual("10", 10)).toBe(true);
+  expect(helpers.areEqual(10, "10")).toBe(true);
+  expect(helpers.areEqual("10", "11")).toBe(false);
+});
+
+//lessThanNinety
+
+it("return true if the argument is a number less than 90", () => {
+  expect(helpers.lessThanNinety(89)).toBe(true);
+  expect(helpers.lessThanNinety(91)).toBe(false);
+});
+
+it("should convert strings to numbers if possible", () => {
+  expect(helpers.lessThanNinety("89")).toBe(true);
+  expect(helpers.areEqual("89.9999999")).toBe(true);
+});
