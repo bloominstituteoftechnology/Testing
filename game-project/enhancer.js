@@ -1,12 +1,21 @@
 module.exports = {
     enhance,
-
+    fail
 }
 
 function enhance(item){
     return {...item, level: ++item.level}
 }
 
+function fail(item){
+    if (item.level < 16) {
+        return {...item, failCount: ++item.failCount};
+    };
+    // {...item, failCount: (
+    //     if (item.level < 16) {
+    //         return ++item.failCount;
+    // })}
+}
 
 // -ITEM
 //   -fail count(no max, starts at 0)

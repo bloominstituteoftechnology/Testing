@@ -1,19 +1,33 @@
 const enhancer = require('./enhancer.js');
 
-describe('enhance', () => {
-    it('should increase level by one', () => {
-        const item = {
-            level: 0, 
-        }
+describe('actions', () => {
+    describe('enhance', () => {
+        it('should increase level by one', () => {
+            const item = {
+                level: 0, 
+            }
+    
+            const actual = enhancer.enhance(item); //should be 1
+    
+            expect(actual.level).toBe(1);
+            expect(enhancer.enhance(actual).level).toBe(2);
+            expect(enhancer.enhance(actual).level).toBe(3);
+        })
+    })
 
-        const actual = enhancer.enhance(item); //should be 1
+    describe('fail', () => {
+        it('should return fail +1 if level is < 16', () => {
+            const item = {
+                level: 0,
+                failCount: 0
+            }
 
-        expect(actual.level).toBe(1);
-        expect(enhancer.enhance(actual).level).toBe(2);
-        expect(enhancer.enhance(actual).level).toBe(3);
+            const actual = enhancer.fail(item);
+
+            expect(actual.failCount).toBe(1);
+        })
     })
 })
-
 
 
 
