@@ -1,5 +1,14 @@
 class GameItem {
-  constructor({ name = 'Unnamed Item', durability = 100, level = 0, failLevel = 0 } = {a: 'Unnamed Item', durability: 100, level: 0, failLevel: 0}){
+  constructor({ name = 'Unnamed Item',
+                durability = 100,
+                level = 0,
+                failLevel = 0
+              } = {
+                    a: 'Unnamed Item',
+                    durability: 100,
+                    level: 0,
+                    failLevel: 0
+                  }){
     this.name = name;
     this.durability = durability;
     this.level = level;
@@ -20,7 +29,7 @@ class GameItem {
   enhance(passed) {
     if(passed){
       this.level += 1;
-      this.fail = 0;
+      this.failLevel = 0;
     }else{
       this.durability - 5 < 0 ? this.durability = 0 : this.durability -= 5;
       switch(this.level){
@@ -37,7 +46,7 @@ class GameItem {
           this.failLevel += 5;
           break;
         default:
-          this.failLevel += 1
+          this.failLevel += 1;
       };
     }
   }
@@ -62,7 +71,7 @@ class GameItem {
   getItemData(){
     return {
       name: this.name,
-      level: this.getLevel,
+      level: this.getLevel(),
       durability : this.durability,
       failLevel: this.failLevel
     }
