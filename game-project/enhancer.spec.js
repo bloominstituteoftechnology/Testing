@@ -29,6 +29,7 @@ describe('actions', () => {
         });
         it('should return durability -10 if fail counter increases', () => {
             expect(actual.durability).toBe(80);
+            expect(enhancer.fail(actual).durability).toBe(70);
         })
     })
 })

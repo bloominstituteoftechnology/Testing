@@ -10,8 +10,11 @@ function enhance(item){
 
 function fail(item){
     if (item.failCount < 16) {
-        return {...item, failCount: ++item.failCount, durability: item.durability = item.durability - 10};
-    };
+        return {...item, failCount: ++item.failCount, durability: item.durability-=10}
+            // item.durability = item.durability - 10};
+    // } else if (item.failCount === 16) {
+    //     return {...item, failCount: }
+    }
   
 }
 
