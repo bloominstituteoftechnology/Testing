@@ -3,25 +3,33 @@ const helpers = require('./project-1');
 // start testing!
 it('should multiply a number by 10', () => {
     expect(helpers.multiplyByTen(4)).toBe(40);
+    expect(helpers.multiplyByTen('')).toBe(NaN);
+    expect(helpers.multiplyByTen(true)).toBe(NaN);
   });
 it('should subtract a number by 5',()=>{
     expect(helpers.subtractFive(4)).toBe(-1);
+    expect(helpers.subtractFive('')).toBe(NaN);
+    expect(helpers.subtractFive(true)).toBe(NaN);
 })
 it('should return a bool of whether lengths are equal',()=>{
     expect(helpers.areSameLength('words','words')).toBe(true);
     expect(helpers.areSameLength('words!','words')).toBe(false);
+    expect(helpers.areSameLength([],'a')).toBe(false);
 })
 it('should return a bool on whether two numbers are equal',()=>{
     expect(helpers.areEqual(4,5)).toBe(false);
     expect(helpers.areEqual(4,4)).toBe(true);
+    expect(helpers.areEqual('4',4)).toBe(false);
 })
 it('should return a bool of whether or not a number is less than 90',()=>{
+    expect(helpers.lessThanNinety('45')).toBe(false);
     expect(helpers.lessThanNinety(45)).toBe(true);
     expect(helpers.lessThanNinety(100)).toBe(false);
     expect(helpers.lessThanNinety(90)).toBe(false);
 })
 it('should return a bool on wehther a number is greater than 50',()=>{
     expect(helpers.greaterThanFifty(55)).toBe(true);
+    expect(helpers.greaterThanFifty('55')).toBe(false);
     expect(helpers.greaterThanFifty(50)).toBe(false);
     expect(helpers.greaterThanFifty(45)).toBe(false);
 })

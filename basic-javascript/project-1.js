@@ -1,33 +1,53 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (isNaN(num) || num==false ||num===true) {
+    return NaN;
+  }
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (isNaN(num) || num==false ||num===true) {
+    return NaN;
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !=='string' ||typeof str2!=='string') {
+    return false;
+  }
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+  if (typeof x!=='number' ||typeof y!=='number') {
+    return false;
+  }
   return x === y;
 };
 
 const lessThanNinety = num => {
+  if (typeof num!=='number') {
+    return false;
+  } else{
   if (num < 90) {
     return true;
   }
   return false;
+}
 };
 
 const greaterThanFifty = num => {
+  if (typeof num!=='number') {
+    return false;
+  } else {
   if (num > 50) {
     return true;
   }
   return false;
+}
 };
 
 const add = (x, y) => {
