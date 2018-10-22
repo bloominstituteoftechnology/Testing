@@ -66,10 +66,11 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (num % 2 === 0) {
+		return true;
+	}
+	return false;
 };
 
 const isOdd = num => {

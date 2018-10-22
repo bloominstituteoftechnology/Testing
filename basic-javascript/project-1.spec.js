@@ -17,6 +17,7 @@ describe('Testing project-1.js', () => {
 		divide,
 		multiply,
 		getRemainder,
+		isEven,
 	} = helpers;
 
 	// multiplyByTen()
@@ -335,6 +336,40 @@ describe('Testing project-1.js', () => {
 				expect(getRemainder(10, -2)).toBe(0);
 				expect(getRemainder(0.1, 0.2)).toBe(0.1);
 				expect(getRemainder(0.2, 0.1)).toBe(0);
+			});
+		});
+	});
+
+	// isEven()
+	describe('Testing isEven()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					isEven('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					isEven(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					isEven(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if the number is even', () => {
+				expect(isEven(0)).toBe(true);
+				expect(isEven(2)).toBe(true);
+				expect(isEven(-2)).toBe(true);
+			});
+
+			it('should return false if the number is not even', () => {
+				expect(isEven(1)).toBe(false);
+				expect(isEven(-3)).toBe(false);
+				expect(isEven(1.1)).toBe(false);
+				expect(isEven(-2.2)).toBe(false);
 			});
 		});
 	});
