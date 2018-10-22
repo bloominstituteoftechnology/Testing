@@ -89,8 +89,8 @@ it('should divide two numbers', () => {
     });
 
     it('should round up a number', () => {
-        expect(helpers.roundNumber(2.01)).toBe(3);
-        expect(helpers.roundNumber(2.99)).toBe(3); 
+        expect(helpers.roundUp(2.01)).toBe(3);
+        expect(helpers.roundUp(2.99)).toBe(3); 
     });
     
     it('should add an exclamation point to the end of a string', () => {
