@@ -123,6 +123,39 @@ describe('project-1.js', () => {
         })
     })
 
+    describe('getRemainder()', () => {
+
+        it('should find the remainder of a quotient', () => {
+            const expected = 1;
+
+            const actual = helpers.getRemainder(10, 3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('isEven()', () => {
+
+        it('should return true if number is even', () => {
+            const expected = true;
+
+            const actual = helpers.isEven(100);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('isOdd()', () => {
+
+        it('should return true if number is odd', () => {
+            const expected = true;
+            
+            const actual = helpers.isOdd(99);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
 
     
     
