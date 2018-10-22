@@ -59,13 +59,13 @@ describe('project-1.js', () => {
 		// const areSameLength = (str1, str2) => {
 		// 	return str1.length === str2.length;
 		// };
-		// true
+		// return true
 		it('should return true when provided two strings of equal length', () => {
 			const lengthEqual = helpers.areSameLength('str1', 'str2');
 			expect(lengthEqual).toEqual(true);
 		});
 
-		// false
+		// return false
 		it('should return false when provided two strings of unequal length', () => {
 			const lengthUnequal = helpers.areSameLength('str1aaaaaaa', 'str2');
 			expect(lengthUnequal).toEqual(false);
@@ -86,9 +86,36 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const areEqual = (x, y) => {
-	// 	return x === y;
-	// };
+	describe('areEqual()', () => {
+		// const areEqual = (x, y) => {
+		// 	return x === y;
+		// };
+		// are equal
+		it('should return true if values are equal', () => {
+			const actual = helpers.areEqual(4, 4);
+			expect(actual).toEqual(true);
+		});
+
+		// not equal
+		it('should return false if values are not equal', () => {
+			const actual = helpers.areEqual(2, 4);
+			expect(actual).toEqual(false);
+		});
+
+		// input null
+		it('should throw an error if one or both values are null', () => {
+			expect(() => {
+				helpers.areEqual(3);
+			}).toThrow();
+		});
+
+		// input not number
+		it('should throw an error if one or both values are not a number', () => {
+			expect(() => {
+				helpers.areEqual('3', '4');
+			}).toThrow();
+		});
+	});
 
 	// const lessThanNinety = (num) => {
 	// 	if (num < 90) {

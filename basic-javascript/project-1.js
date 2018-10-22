@@ -17,6 +17,7 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
+	if (!(x || y) || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x === y;
 };
 
