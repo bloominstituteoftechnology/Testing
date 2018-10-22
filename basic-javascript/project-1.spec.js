@@ -79,6 +79,50 @@ describe('project-1.js', () => {
         });
     })
 
+    describe('add()', () => {
+
+        it('should add together two values', () => {
+            const expected = 4;
+
+            const actual = helpers.add(2, 2);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('subtract()', () => {
+
+        it('should subtract the second value from the first', () => {
+            const expected = 3;
+
+            const actual = helpers.subtract(10, 7);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('divide()', () => {
+
+        it('should divide the first value by the second value', () => {
+            const expected = 2;
+
+            const actual = helpers.divide(10, 5);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('multiply()', () => {
+
+        it('should find the product of two values', () => {
+            const expected = 100;
+
+            const actual = helpers.multiply(50, 2);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
 
     
     
