@@ -80,27 +80,35 @@ describe('tests for subtractFive()', () => {
 // starting with single tests from here on out in the interest of time
 
 test('should return strings of same length', () => {
-  const str1 = 'testone';
-  const str2 = 'testtwo';
+  const one = 'testone';
+  const two = 'testtwo';
+  const equal = helpers.areSameLength(one.length, two.length);
 
-  expect(str1.length).toEqual(str2.length);
+  expect(equal).toBe(true);
 });
 
 test('should return numbers of equal value', () => {
   const x = 3;
   const y = 3;
-
+  const equalValue = helpers.areEqual(x, y);
+  
   expect(x).toEqual(y);
 });
 
 test('should be true when given number is less than 90', () => {
-  const num = 5;
+  const isLess = helpers.lessThanNinety(45);
 
-  expect(num).toBeLessThan(90);
+  expect(isLess).toBe(true);
 });
 
 test('should be true when given number is greater than 50', () => {
-  const num = 75;
+  const isGreater = helpers.greaterThanFifty(55);
 
-  expect(num).toBeGreaterThan(50);
+  expect(isGreater).toBe(true);
+});
+
+test('should return the sum of two numbers', () => {
+  const sum = 5 + 6;
+
+  expect(sum).toBe(11);
 });
