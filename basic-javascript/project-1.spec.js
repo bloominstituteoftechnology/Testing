@@ -16,6 +16,7 @@ describe('Testing project-1.js', () => {
 		subtract,
 		divide,
 		multiply,
+		getRemainder,
 	} = helpers;
 
 	// multiplyByTen()
@@ -298,6 +299,42 @@ describe('Testing project-1.js', () => {
 				expect(multiply(-10, 2)).toBe(-20);
 				expect(multiply(-10, -2)).toBe(20);
 				expect(multiply(0.1, 0.2)).toBeCloseTo(0.02);
+			});
+		});
+	});
+
+	// getRemainder()
+	describe('Testing getRemainder()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					getRemainder('one', 2);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getRemainder(1, null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					getRemainder(undefined, 1);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should throw an error when dividing by 0', () => {
+				expect(() => {
+					divide(0, 0);
+				}).toThrow('Cannot divide by zero.');
+			});
+
+			it('should return the remainder of the division of the numbers given', () => {
+				expect(getRemainder(1, 2)).toBe(1);
+				expect(getRemainder(2, 1)).toBe(0);
+				expect(getRemainder(-10, 2)).toBe(0);
+				expect(getRemainder(10, -2)).toBe(0);
+				expect(getRemainder(0.1, 0.2)).toBe(0.1);
+				expect(getRemainder(0.2, 0.1)).toBe(0);
 			});
 		});
 	});

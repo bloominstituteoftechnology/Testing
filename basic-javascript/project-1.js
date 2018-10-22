@@ -1,17 +1,20 @@
 /* eslint-disable arrow-parens */
 
+const nonNumberTypeError = 'Value must be a number.';
+const nonStringTypeError = 'Value must be a string.';
+
 const multiplyByTen = num => {
-	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
 	return num * 10;
 };
 
 const subtractFive = num => {
-	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
 	return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-	if (typeof(str1) !== 'string' || typeof(str2) !== 'string') throw new Error('Value must be a string.');
+	if (typeof(str1) !== 'string' || typeof(str2) !== 'string') throw new Error(nonStringTypeError);
 	return str1.length === str2.length;
 };
 
@@ -20,7 +23,7 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
 	if (num < 90) {
 		return true;
 	}
@@ -28,7 +31,7 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
-	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
 	if (num > 50) {
 		return true;
 	}
@@ -36,28 +39,30 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
 	return x + y;
 };
 
 const subtract = (x, y) => {
-	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
 	return x - y;
 };
 
 const divide = (x, y) => {
-	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
 	if (y === 0) throw new Error('Cannot divide by zero.');
 	return x / y;
 };
 
 const multiply = (x, y) => {
-	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
 	return x * y;
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
+	if (y === 0) throw new Error('Cannot divide by zero.');
+	return (x % y) === -0 ? 0 : (x % y);
 };
 
 const isEven = num => {
