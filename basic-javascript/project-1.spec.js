@@ -25,6 +25,7 @@ describe('Testing project-1.js', () => {
 		roundNumber,
 		roundUp,
 		addExclamationPoint,
+		combineNames,
 	} = helpers;
 
 	// multiplyByTen()
@@ -579,6 +580,41 @@ describe('Testing project-1.js', () => {
 				expect(addExclamationPoint('')).toBe('!');
 				expect(addExclamationPoint('Hello')).toBe('Hello!');
 				expect(addExclamationPoint('1')).toBe('1!');
+			});
+		});
+	});
+
+	// combineNames()
+	describe('Testing combineNames()', () => {
+		describe('Calling with a number, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					combineNames(1);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					combineNames(null);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					combineNames(undefined);
+				}).toThrow(nonStringTypeError);
+			});
+		});
+
+		describe('Calling with string types', () => {
+			it('should throw an error if a name is an empty string', () => {
+				expect(() => {
+					combineNames('', 'Johnson');
+				}).toThrow('Names cannot be empty.');
+
+				expect(() => {
+					combineNames('Alice', '');
+				}).toThrow('Names cannot be empty.');
+			});
+
+			it('should return the first and last names joined by a space', () => {
+				expect(combineNames('Alice', 'Johnson')).toBe('Alice Johnson');
 			});
 		});
 	});

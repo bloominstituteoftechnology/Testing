@@ -112,7 +112,9 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+	if (typeof(firstName) !== 'string' || typeof(lastName) !== 'string') throw new Error(nonStringTypeError);
+	if (!firstName || !lastName) throw new Error('Names cannot be empty.');
+	return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
