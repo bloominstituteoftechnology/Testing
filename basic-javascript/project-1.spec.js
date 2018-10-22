@@ -12,6 +12,18 @@ describe('helpers.js', () => {
             // Assert : check that it works
         });
     });
+
+    // describe('checkForNumber', () => {
+    //     it('should return 0 when called with no value', () => {
+    //         const product = helpers.multiplyByTen();
+        
+    //         expect(product).toBe(0);
+    //     });
+
+    //     it('should throw error when called with a string', () => {
+    //         expect(() => { helpers.multiplyByTen('five') }).toThrow();
+    //     });
+    // });
     
     describe('multiplyByTen()', () => {
         it('should multiply provided number by 10', () => {
@@ -88,6 +100,25 @@ describe('helpers.js', () => {
             expect(actual).toEqual(expected);
         });
     });
+
+    describe('lessThanNinety', () => {
+        it('should return false if the number is greater than or equal to 90', () => {
+            const expected = false;
+
+            const actual = helpers.lessThanNinety(91);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return true if the number is less than 90', () => {
+            const expected = true;
+
+            const actual = helpers.lessThanNinety(89);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
 
     
     

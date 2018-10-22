@@ -1,5 +1,15 @@
 /* eslint-disable arrow-parens */
 
+// const checkForNumber = num => {
+//   if (!num) {
+//     return 0;
+//   }
+
+//   if (typeof num === 'string') {
+//     throw new Error('value must be a number');
+//   }
+// };
+
 const multiplyByTen = num => {
   if (!num) {
     return 0;
@@ -8,6 +18,7 @@ const multiplyByTen = num => {
   if (typeof num === 'string') {
     throw new Error('value must be a number');
   }
+  
 
   return num * 10;
 };
@@ -16,7 +27,7 @@ const subtractFive = num => {
   if (!num) {
     return 0;
   }
-  
+
   if (typeof num === 'string') {
     throw new Error('value must be a number');
   }
@@ -24,13 +35,18 @@ const subtractFive = num => {
   return num - 5;
 };
 
+
 const areSameLength = (str1, str2) => {
   return str1.length === str2.length;
 };
+//areSameLength notes
+//add check for string argument
 
 const areEqual = (x, y) => {
   return x === y;
 };
+//areEqual notes
+// add check for number argument
 
 const lessThanNinety = num => {
   if (num < 90) {
@@ -38,6 +54,7 @@ const lessThanNinety = num => {
   }
   return false;
 };
+// add check for number argument
 
 const greaterThanFifty = num => {
   if (num > 50) {
@@ -45,6 +62,7 @@ const greaterThanFifty = num => {
   }
   return false;
 };
+// add check for number argument
 
 const add = (x, y) => {
   return x + y;
