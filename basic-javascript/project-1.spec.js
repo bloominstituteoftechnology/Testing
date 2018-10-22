@@ -244,5 +244,47 @@ describe('multiplyByTen()', ()=> {
             const actual = helpers.getRectangleArea(3, 5);
             expect(actual).toEqual(15);
         });
+
+        it('should return message Rectangles need a length and a width if only one value given', ()=> {
+            const actual = helpers.getRectangleArea(3);
+            expect(actual).toBe('Rectangles need a length and a width');
+        });
     });
+
+    describe('getTriangleArea()', ()=> {
+        it('should return the product of base and height times .5', ()=> {
+            const actual = helpers.getTriangleArea(3, 5);
+            expect(actual).toEqual(7.5);
+        });
+
+        it('should return message Triangles need a base and a height if only one value given', ()=> {
+            const actual = helpers.getTriangleArea(3);
+            expect(actual).toBe('Triangles need a base and a height');
+        });
+    });
+
+    describe('getCircleArea()', ()=> {
+        it('should return the product of radius squared times pi rounded to nearest integer', ()=> {
+            const actual = helpers.getCircleArea(6);
+            expect(actual).toEqual(113);
+        });
+
+        it('should return message Circles need a radius if one is not given', ()=> {
+            const actual = helpers.getCircleArea();
+            expect(actual).toBe('Circles need a radius');
+        });
+    });
+
+    describe('getRectangularPrismVolume()', ()=> {
+        it('should return the product of height times length times width', ()=> {
+            const actual = helpers.getRectangularPrismVolume(2, 3, 4);
+            expect(actual).toEqual(24);
+        });
+
+        it('should return message Prisms need a width, height, and length if one is not given', ()=> {
+            const actual = helpers.getRectangularPrismVolume();
+            expect(actual).toBe('Prisms need a width, height, and length');
+        });
+    });
+
 // start testing!

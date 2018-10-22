@@ -109,18 +109,31 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if (!length || !width) {
+    return 'Rectangles need a length and a width';
+  }
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (!base || !height) {
+    return 'Triangles need a base and a height';
+  }
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  if (!radius) {
+    return 'Circles need a radius';
+  }
+  const unrounded =  Math.PI * radius * radius;
+  return Math.round(unrounded);
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if (!width || !height || !length) {
+    return 'Prisms need a width, height, and length';
+  }
   return width * height * length;
 };
 
