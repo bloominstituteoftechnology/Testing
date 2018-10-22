@@ -15,6 +15,7 @@ describe('Testing project-1.js', () => {
 		add,
 		subtract,
 		divide,
+		multiply,
 	} = helpers;
 
 	// multiplyByTen()
@@ -266,7 +267,37 @@ describe('Testing project-1.js', () => {
 			it('should return the division of both numbers', () => {
 				expect(divide(1, 2)).toBe(0.5);
 				expect(divide(-10, 2)).toBe(-5);
+				expect(divide(-10, -2)).toBe(5);
 				expect(divide(6.6, 2.2)).toBeCloseTo(3);
+			});
+		});
+	});
+
+	// multiply()
+	describe('Testing multiply()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					multiply('one', 2);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					multiply(1, null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					multiply(undefined, 1);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the division of both numbers', () => {
+				expect(multiply(1, 2)).toBe(2);
+				expect(multiply(0, 0)).toBe(0);
+				expect(multiply(-10, 2)).toBe(-20);
+				expect(multiply(-10, -2)).toBe(20);
+				expect(multiply(0.1, 0.2)).toBeCloseTo(0.02);
 			});
 		});
 	});

@@ -52,7 +52,8 @@ const divide = (x, y) => {
 };
 
 const multiply = (x, y) => {
-  return x * y;
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	return x * y;
 };
 
 const getRemainder = (x, y) => {
