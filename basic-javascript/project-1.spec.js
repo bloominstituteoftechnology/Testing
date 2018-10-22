@@ -232,6 +232,61 @@ describe('project-1.js', () => {
             expect(actual).toEqual(expected);
         })
     })
+
+    describe('getGreeting()', () => {
+
+        it('should add "hello " to the front of a string and "!" to the end of it', () => {
+            const expected = 'Hello Michael!';
+
+            const actual = helpers.getGreeting('Michael');
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('getRectangleArea()', () => {
+
+        it('should multiply two numbers together to return a product (L x W = area)', () => {
+            const expected = 20;
+
+            const actual = helpers.getRectangleArea(5, 4);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('getTriangleArea()', () => {
+
+        it('should multiply two given numbers and 0.5', () => {
+            const expected = 25;
+
+            const actual = helpers.getTriangleArea(10, 5);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('getCircleArea()', () => {
+
+        it('should multiply PI by given radius^2', () => {
+            const expected = 28;
+
+            const actual = Math.round(helpers.getCircleArea(3, 3));
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('getRectangularPrismVolume()', () => {
+
+        it('should 3 values together (L x W x H)', () => {
+            const expected = 60;
+
+            const actual = helpers.getRectangularPrismVolume(3, 4, 5);
+
+            expect(actual).toEqual(expected);
+        })
+    })
     
     
 });
