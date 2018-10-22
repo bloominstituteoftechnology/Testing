@@ -1,10 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = (num) => {
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
 	return num * 10;
 };
 
 const subtractFive = (num) => {
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
 	return num - 5;
 };
 

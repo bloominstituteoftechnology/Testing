@@ -2,114 +2,160 @@ const helpers = require('./project-1');
 
 // start testing!
 
-// const multiplyByTen = (num) => {
-// 	return num * 10;
-// };
+describe('project-1.js', () => {
+	describe('multiplyByTen()', () => {
+		// const multiplyByTen = (num) => {
+		// 	return num * 10;
+		// };
+		// expected multiplication
+		it('should multiply provided num by ten', () => {
+			const expected = 20;
+			const actual = helpers.multiplyByTen(2);
+			expect(actual).toEqual(expected);
+		});
 
-// const subtractFive = (num) => {
-// 	return num - 5;
-// };
+		// input null
+		it('should throw an error when called with no value', () => {
+			expect(() => {
+				helpers.multiplyByTen();
+			}).toThrow();
+		});
 
-// const areSameLength = (str1, str2) => {
-// 	return str1.length === str2.length;
-// };
+		// input string
+		it('should throw error when called with a string', () => {
+			expect(() => {
+				helpers.multiplyByTen('five');
+			}).toThrow();
+		});
+	});
 
-// const areEqual = (x, y) => {
-// 	return x === y;
-// };
+	describe('subtractFive()', () => {
+		// const subtractFive = (num) => {
+		// 	return num - 5;
+		// };
+		// expected subtraction
+		it('should subtract five from provided number', () => {
+			const expected = 6;
+			const actual = helpers.subtractFive(11);
+			expect(actual).toEqual(expected);
+		});
 
-// const lessThanNinety = (num) => {
-// 	if (num < 90) {
-// 		return true;
-// 	}
-// 	return false;
-// };
+		// input null
+		it('should throw an error when called with no value', () => {
+			expect(() => {
+				helpers.subtractFive();
+			}).toThrow();
+		});
 
-// const greaterThanFifty = (num) => {
-// 	if (num > 50) {
-// 		return true;
-// 	}
-// 	return false;
-// };
+		// input string
+		it('should throw error when called with a string', () => {
+			expect(() => {
+				helpers.subtractFive('eleven');
+			}).toThrow();
+		});
+	});
 
-// const add = (x, y) => {
-// 	return x + y;
-// };
+	// const areSameLength = (str1, str2) => {
+	// 	return str1.length === str2.length;
+	// };
 
-// const subtract = (x, y) => {
-// 	return x - y;
-// };
+	// const areEqual = (x, y) => {
+	// 	return x === y;
+	// };
 
-// const divide = (x, y) => {
-// 	return x / y;
-// };
+	// const lessThanNinety = (num) => {
+	// 	if (num < 90) {
+	// 		return true;
+	// 	}
+	// 	return false;
+	// };
 
-// const multiply = (x, y) => {
-// 	return x * y;
-// };
+	// const greaterThanFifty = (num) => {
+	// 	if (num > 50) {
+	// 		return true;
+	// 	}
+	// 	return false;
+	// };
 
-// const getRemainder = (x, y) => {
-// 	return x % y;
-// };
+	// const add = (x, y) => {
+	// 	return x + y;
+	// };
 
-// const isEven = (num) => {
-// 	if (num % 2 === 0) {
-// 		return true;
-// 	}
-// 	return false;
-// };
+	// const subtract = (x, y) => {
+	// 	return x - y;
+	// };
 
-// const isOdd = (num) => {
-// 	if (num % 2 === 0) {
-// 		return false;
-// 	}
-// 	return true;
-// };
+	// const divide = (x, y) => {
+	// 	return x / y;
+	// };
 
-// const square = (num) => {
-// 	return num * num;
-// };
+	// const multiply = (x, y) => {
+	// 	return x * y;
+	// };
 
-// const cube = (num) => {
-// 	return num * num * num;
-// };
+	// const getRemainder = (x, y) => {
+	// 	return x % y;
+	// };
 
-// const raiseToPower = (num, exponent) => {
-// 	return num ** exponent;
-// };
+	// const isEven = (num) => {
+	// 	if (num % 2 === 0) {
+	// 		return true;
+	// 	}
+	// 	return false;
+	// };
 
-// const roundNumber = (num) => {
-// 	return Math.round(num);
-// };
+	// const isOdd = (num) => {
+	// 	if (num % 2 === 0) {
+	// 		return false;
+	// 	}
+	// 	return true;
+	// };
 
-// const roundUp = (num) => {
-// 	return Math.ceil(num);
-// };
+	// const square = (num) => {
+	// 	return num * num;
+	// };
 
-// const addExclamationPoint = (str) => {
-// 	return (str += '!');
-// };
+	// const cube = (num) => {
+	// 	return num * num * num;
+	// };
 
-// const combineNames = (firstName, lastName) => {
-// 	return `${firstName} ${lastName}`;
-// };
+	// const raiseToPower = (num, exponent) => {
+	// 	return num ** exponent;
+	// };
 
-// const getGreeting = (name) => {
-// 	return `Hello ${name}!`;
-// };
+	// const roundNumber = (num) => {
+	// 	return Math.round(num);
+	// };
 
-// const getRectangleArea = (length, width) => {
-// 	return length * width;
-// };
+	// const roundUp = (num) => {
+	// 	return Math.ceil(num);
+	// };
 
-// const getTriangleArea = (base, height) => {
-// 	return 0.5 * base * height;
-// };
+	// const addExclamationPoint = (str) => {
+	// 	return (str += '!');
+	// };
 
-// const getCircleArea = (radius) => {
-// 	return Math.PI * radius * radius;
-// };
+	// const combineNames = (firstName, lastName) => {
+	// 	return `${firstName} ${lastName}`;
+	// };
 
-// const getRectangularPrismVolume = (length, width, height) => {
-// 	return width * height * length;
-// };
+	// const getGreeting = (name) => {
+	// 	return `Hello ${name}!`;
+	// };
+
+	// const getRectangleArea = (length, width) => {
+	// 	return length * width;
+	// };
+
+	// const getTriangleArea = (base, height) => {
+	// 	return 0.5 * base * height;
+	// };
+
+	// const getCircleArea = (radius) => {
+	// 	return Math.PI * radius * radius;
+	// };
+
+	// const getRectangularPrismVolume = (length, width, height) => {
+	// 	return width * height * length;
+	// };
+});
