@@ -1,10 +1,26 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
+
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (!num && num !== 0) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
+
   return num - 5;
 };
 
@@ -137,5 +153,5 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
 };
