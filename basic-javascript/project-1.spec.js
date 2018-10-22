@@ -137,4 +137,24 @@ describe('project-1.js', () => {
     expect(helpers.getGreeting("Bob")).toBe("Hello Bob!");
   });
 
+  test("should output correct rectable area given length and width inputs", () => {
+    const actual = helpers.getRectangleArea(10, 20);
+    expect(actual).toBe(200);
+  });
+
+  test("should output correct triangle area given base and height inputs", () => {
+    const actual = helpers.getTriangleArea(10, 20);
+    expect(actual).toBe(100);
+  });
+
+  test("should output correct circle area given radius input", () => {
+    const actual = helpers.getCircleArea(5);
+    expect(actual).toBe(78.53981633974483);
+  });
+
+  test("should output correct rectangular prism volume given length, width, and height inputs", () => {
+    const actual = helpers.getRectangularPrismVolume(2, 3, 4);
+    expect(actual).toBe(24);
+  });
+
 }); 
