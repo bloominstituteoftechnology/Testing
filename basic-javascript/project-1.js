@@ -67,6 +67,8 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
+    if (!num) return false;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   if (num % 2 === 0) {
     return true;
   }

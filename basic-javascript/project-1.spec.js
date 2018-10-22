@@ -205,4 +205,24 @@ describe('project-1.js', () => {
             expect( () => { helpers.getRemainder('four', 'two') }).toThrow();
         });
     });
+
+    describe('isEven', () => {
+        it('should return true if the number is even', () => {
+            const expected = true;
+
+            const actual = helpers.isEven(2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.isEven();
+
+            expect(product).toBe(false);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.isEven('four') }).toThrow();
+        });
+    });
 });
