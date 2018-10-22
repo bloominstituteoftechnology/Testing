@@ -156,7 +156,82 @@ describe('project-1.js', () => {
         })
     })
 
+    describe('square()', () => {
 
+        it('should return product of entered number multiplied by itself', () => {
+            const expected = 144;
+
+            const actual = helpers.square(12);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('cube()', () => {
+
+        it('should return cubic value (num^3) of entered value', () => {
+            const expected = 27;
+
+            const actual = helpers.cube(3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('raiseToPower()', () => {
+
+        it('should raise first value to the power of second value', () => {
+            const expected = 125;
+
+            const actual = helpers.raiseToPower(5, 3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('roundNumber()', () => {
+
+        it('should round value to the nearest integer', () => {
+            const expected = 5;
+
+            const actual = helpers.roundNumber(5.3);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('roundUp()', () => {
+
+        it('should round value up to the next integer', () => {
+            const expected = 5;
+
+            const actual = helpers.roundUp(4.1);
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('addExclamationPoint()', () => {
+
+        it('should add a "!" at the end of a given string', () => {
+            const expected = 'hello!';
+
+            const actual = helpers.addExclamationPoint('hello');
+
+            expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('combineNames()', () => {
+
+        it('should combine two strings into a single string', () => {
+            const expected = 'Michael Hacker';
+
+            const actual = helpers.combineNames('Michael', 'Hacker');
+
+            expect(actual).toEqual(expected);
+        })
+    })
     
     
 });
