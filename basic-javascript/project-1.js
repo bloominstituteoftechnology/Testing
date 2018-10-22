@@ -103,6 +103,8 @@ const raiseToPower = (num, exponent) => {
 };
 
 const roundNumber = num => {
+    if (!num) return 0;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   return Math.round(num);
 };
 
