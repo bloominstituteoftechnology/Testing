@@ -57,53 +57,91 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
-  return x / y;
+  if (x, y && typeof x === "number" && typeof y === "number") {
+    return x / y;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if (x, y && typeof x === "number" && typeof y === "number") {
+    return x * y;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  if (x, y && typeof x === "number" && typeof y === "number") {
+    return x % y;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
+  if (num && typeof num === "number") {
+    return num % 2 === 0;
+  } else {
+    return "invalid entry";
   }
-  return false;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  if (num && typeof num === "number") {
+    return num % 2 !== 0;
+  } else {
+    return "invalid entry";
   }
-  return true;
 };
 
 const square = num => {
-  return num * num;
+  if (num && typeof num === "number") {
+    return num * num;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const cube = num => {
-  return num * num * num;
+  if (num && typeof num === "number") {
+    return num * num * num;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  if (num && typeof num === "number") {
+    return num ** exponent;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const roundNumber = num => {
-  return Math.round(num);
+  if (num && typeof num === "number") {
+    return Math.round(num)
+  } else {
+    return "invalid entry";
+  }
 };
 
 const roundUp = num => {
-  return Math.ceil(num);
+  if (num && typeof num === "number") {
+    return Math.ceil(num);
+  } else {
+    return "invalid entry";
+  }
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  if (str && typeof str === "string") {
+    return (str += '!');
+  } else {
+    return "invalid entry";
+  }
 };
 
 const combineNames = (firstName, lastName) => {
