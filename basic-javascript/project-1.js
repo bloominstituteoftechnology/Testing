@@ -1,18 +1,24 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+    if(!num) return 0;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   return num * 10;
 };
 
 const subtractFive = num => {
+    if(!num) return 0;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2) return false;
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+  if (!x || !y) return false;
   return x === y;
 };
 
