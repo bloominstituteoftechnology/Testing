@@ -10,7 +10,7 @@ const multiplyByTen = num => {
 
 const subtractFive = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
   return num - 5;
@@ -110,7 +110,7 @@ const getRemainder = (x, y) => {
 
 const isEven = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
   
@@ -122,7 +122,7 @@ const isEven = num => {
 
 const isOdd = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
 
@@ -134,7 +134,7 @@ const isOdd = num => {
 
 const square = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
 
@@ -143,7 +143,7 @@ const square = num => {
 
 const cube = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
 
@@ -153,8 +153,8 @@ const cube = num => {
 const raiseToPower = (num, exponent) => {
   if (!num) return 'Please provide a number';
   if (!exponent) return 1;
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (typeof num !== 'number' || typeof exponent !== 'number') {
+    throw new Error('values must be numbers');
   };
 
   return num ** exponent;
@@ -162,7 +162,7 @@ const raiseToPower = (num, exponent) => {
 
 const roundNumber = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
 
@@ -171,7 +171,7 @@ const roundNumber = num => {
 
 const roundUp = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
 

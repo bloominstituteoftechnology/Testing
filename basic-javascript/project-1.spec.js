@@ -135,24 +135,50 @@ describe('11-15', () => {
 
 
 
-// /*
-//   raiseToPower,
-//   roundNumber,
-//   roundUp,
-//   addExclamationPoint,
-//   combineNames,
-// */
+/*
+  raiseToPower,
+  roundNumber,
+  roundUp,
+  addExclamationPoint,
+  combineNames,
 
+  const expected = ;
+  const actual = helpers.;
+  expect(actual).toEqual(expected);
+*/
 
-// it('raiseToPower', () => {});
+describe('16-20', () => {
+  it('raiseToPower', () => {
+    const expected = 16;
+    const actual = helpers.raiseToPower(4, 2);
+    expect(actual).toEqual(expected);
+  });
 
-// it('roundNumber', () => {});
+  it('roundNumber', () => {
+    const expected = 5;
+    const actual = helpers.roundNumber(4.9);
+    expect(actual).toEqual(expected);
+  });
+  
+  it('roundUp', () => {
+    const expected = 5;
+    const actual = helpers.roundUp(4.2);
+    expect(actual).toEqual(expected);
+  });
+  
+  it('addExclamationPoint', () => {
+    const expected = 'when pigs fly!';
+    const actual = helpers.addExclamationPoint('when pigs fly');
+    expect(actual).toEqual(expected);
+  });
+  
+  it('combineNames', () => {
+    const expected = 'Spongebob Squarepants';
+    const actual = helpers.combineNames('Spongebob', 'Squarepants');
+    expect(actual).toEqual(expected);
+  });
+});
 
-// it('roundUp', () => {});
-
-// it('addExclamationPoint', () => {});
-
-// it('combineNames', () => {});
 
 
 // /*
