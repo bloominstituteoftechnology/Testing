@@ -1,6 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+  if (typeof num === 'string') {
+    throw new Error('Should be a number');
+  }
   return num * 10;
 };
 
@@ -89,10 +95,16 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
+  if (!lastName) {
+    return `${firstName} McNoName`;
+  }
   return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
+  if (!name) {
+    return 'Hello you!';
+  }
   return `Hello ${name}!`;
 };
 
