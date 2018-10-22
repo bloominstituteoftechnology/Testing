@@ -146,30 +146,4 @@ describe('Arrays', () => {
 		})
 
 	})
-
-// var arr1 = [1, 2, [3, 4]];
-// arr1.flat(); 
-// [1, 2, 3, 4]
-
-// const flatten = elements => {
-//   const flattenedArr = reduce(
-//     elements,
-//     (memo, item) => {
-//       if (Array.isArray(item)) return memo.concat(flatten(item));
-//       return memo.concat(item);
-//     },
-//     []
-//   );
-//   return flattenedArr;
-// };
-
-
-
-
-
-
-
-
-
-
 });
