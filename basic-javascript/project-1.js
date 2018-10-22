@@ -11,7 +11,8 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+	if (typeof(str1) !== 'string' || typeof(str2) !== 'string') throw new Error('Values must be strings.');
+	return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {

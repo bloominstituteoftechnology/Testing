@@ -1,4 +1,5 @@
 module.exports = function(testFunction) {
+	// Note: It is assumed testFunction will take in one argument.
 	const nonNumberTypeError = 'Value must be a number.';
 
 	it('should throw an error when called with a non-number type', () => {
@@ -27,8 +28,8 @@ module.exports = function(testFunction) {
 		}).toThrow(nonNumberTypeError);
 
 		expect(() => {
-			const testFunc = () => { return true; };
-			testFunction(testFunc);
+			const myFunc = () => { return true; };
+			testFunction(myFunc);
 		}).toThrow(nonNumberTypeError);
 
 		expect(() => {
