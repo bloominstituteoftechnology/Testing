@@ -4,7 +4,7 @@ const multiplyByTen = num => {
   if (!num) {
     return NaN;
   }
-  
+
   if (typeof num !== 'number') {
     throw new Error('Expected input to be a number.');
   }
@@ -13,6 +13,14 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
+  if (!num) {
+    return NaN;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Expected input to be a number.');
+  }
+  
   return num - 5;
 };
 

@@ -35,8 +35,44 @@ describe('tests for multiplyByTen()', () => {
 
   test('should throw error when called with undefined variables', () => {
     expect(() => {
-      helpers.multiplyByTen(undefinedVaraible);
+      helpers.multiplyByTen(undefinedVariable);
     }).toThrow();
   });
 
+});
+
+describe('tests for subtractFive()', () => {
+  test('should return given number minus five', () => {
+    const expected = 45;
+    const actual = helpers.subtractFive(50);
+
+    expect(actual).toEqual(expected);
+  });
+
+  test('should return NaN when called with no value', () => {
+      const difference = helpers.subtractFive();
+
+      expect(difference).toBe(NaN);
+  });
+
+  // same type-checking tests as multiplyByTen()
+
+  test('should throw error when called with a string', () => {
+    expect(() => {
+      helpers.subtractFive('string');
+    }).toThrow();
+  });
+
+  test('should throw error when called with a boolean', () => {
+    expect(() => {
+      helpers.subtractFive(true);
+    }).toThrow();
+  });
+
+  test('should throw error when called with undefined variables', () => {
+    expect(() => {
+      helpers.subtractFive(undefinedVariable);
+    }).toThrow();
+  });
+  
 });
