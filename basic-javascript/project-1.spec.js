@@ -155,3 +155,23 @@ describe('basic math operations', () => {
   });
 
 }); // basic math operations
+
+describe('even and odd tests', () => {
+
+  test('should return true if a number is even', () => {
+    const num = 4;
+    const even = helpers.isEven(num);
+
+    expect(even).toBe(true);
+  });
+
+  test('should return true if a number is odd', () => {
+    const num = 11;
+    const odd = helpers.isOdd(num);
+
+    expect(odd).toBe(true);
+  });
+
+});
+
+describe('exponential operations')
