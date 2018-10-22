@@ -249,3 +249,39 @@ describe('simple string operations', () => {
   });
 
 }); // simple string operations
+
+describe('geometrical operations', () => {
+
+  test('should return the area of a rectangle with given length and width', () => {
+    const length = 5;
+    const width = 6;
+    const area = helpers.getRectangleArea(length, width);
+
+    expect(area).toEqual(30);
+  });
+
+  test('should return the area of a triangle with given base and height', () => {
+    const base = 3;
+    const height = 4;
+    const area = helpers.getTriangleArea(base, height);
+
+    expect(area).toEqual(6);
+  });
+
+  test('should return the area of a circle with given radius', () => {
+    const radius = 10;
+    const area = helpers.getCircleArea(radius);
+
+    expect(area).toEqual(314.1592653589793); // with more time, will add other tests to simplify this number
+  });
+
+  test('should return the volume of a rectangular prism with given width, height, and length', () => {
+    const width = 5;
+    const height = 3;
+    const length = 5;
+    const volume = helpers.getRectangularPrismVolume(length, width, height);
+
+    expect(volume).toEqual(75);
+  });
+
+}); // geometrical operations
