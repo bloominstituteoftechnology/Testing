@@ -174,4 +174,28 @@ describe('even and odd tests', () => {
 
 });
 
-describe('exponential operations')
+describe('exponential operations', () => {
+
+  test('should return the square of a given number', () => {
+    const num = 3;
+    const squared = helpers.square(num);
+
+    expect(squared).toBe(9);
+  });
+
+  test('should return the cube of a given number', () => {
+    const num = 4;
+    const cubed = helpers.cube(num);
+
+    expect(cubed).toBe(64);
+  });
+
+  test('should raise the number to the power of the given exponent', () => {
+      const num = 3;
+      const raiseTo = 4;
+      const raised = helpers.raiseToPower(num, raiseTo);
+
+      expect(raised).toBe(81);
+  });
+
+}); // exponential operations
