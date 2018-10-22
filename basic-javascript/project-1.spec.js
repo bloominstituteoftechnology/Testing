@@ -95,63 +95,76 @@ describe('project-1.js', () => {
     expect(actual).toEqual(expected);
   });
 
+  // square
   test("should square a number correctly", () => {
     const actual = helpers.square(8);
     expect(actual).toBe(64);
   });
 
+  // cube
   test("should cube a number correctly", () => {
     const actual = helpers.cube(2);
     expect(actual).toBe(8);
   });
 
+  // raiseToPower
   test("should produce correct value when raising num to an exponent", () => {
     const actual = helpers.raiseToPower(5, 2);
     expect(actual).toBe(25);
   });
 
+  // roundNumber
   test("should correctly round a number", () => {
     const actual = helpers.roundNumber(5.6);
     expect(actual).toBe(6);
   });
 
+  // roundUp
   test("should correctly round a number up", () => {
     const actual = helpers.roundUp(5.3);
     expect(actual).toBe(6);
   });
 
+  // roundNumber
   test("should correctly round a number", () => {
     const actual = helpers.roundNumber(5.6);
     expect(actual).toBe(6);
   });
 
+  // addExclamationPoint
   test("should successfully append an exclamation point to a string", () => {
     expect(helpers.addExclamationPoint("I went to the store")).toBe("I went to the store!");
   });
 
+  // combineNames
   test("should successfully combine two names inputted into a string with both", () => {
     expect(helpers.combineNames("Andrew", "Ghobrial")).toBe("Andrew Ghobrial");
   });
 
+  // getGreeting
   test("should successfully return greeting containing respective name input", () => {
     expect(helpers.getGreeting("Bob")).toBe("Hello Bob!");
   });
 
+  // getRectangleArea
   test("should output correct rectable area given length and width inputs", () => {
     const actual = helpers.getRectangleArea(10, 20);
     expect(actual).toBe(200);
   });
 
+  // getTriangleArea
   test("should output correct triangle area given base and height inputs", () => {
     const actual = helpers.getTriangleArea(10, 20);
     expect(actual).toBe(100);
   });
 
+  // getCircleArea
   test("should output correct circle area given radius input", () => {
     const actual = helpers.getCircleArea(5);
     expect(actual).toBe(78.53981633974483);
   });
 
+  // getRectangularPrismVolume
   test("should output correct rectangular prism volume given length, width, and height inputs", () => {
     const actual = helpers.getRectangularPrismVolume(2, 3, 4);
     expect(actual).toBe(24);
