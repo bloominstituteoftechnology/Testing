@@ -13,6 +13,7 @@ describe('Testing project-1.js', () => {
 		lessThanNinety,
 		greaterThanFifty,
 		add,
+		subtract,
 	} = helpers;
 
 	// multiplyByTen()
@@ -204,6 +205,34 @@ describe('Testing project-1.js', () => {
 				expect(add(0, 0)).toBe(0);
 				expect(add(-10, 3)).toBe(-7);
 				expect(add(2.2, -5.5)).toBe(-3.3);
+			});
+		});
+	});
+
+	// subtract()
+	describe('Testing subtract()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					subtract('one', 2);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					subtract(1, null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					subtract(undefined, 1);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the subtraction of both numbers', () => {
+				expect(subtract(1, 2)).toBe(-1);
+				expect(subtract(0, 0)).toBe(0);
+				expect(subtract(-10, 3)).toBe(-13);
+				expect(subtract(5.5, 2.2)).toBe(3.3);
 			});
 		});
 	});

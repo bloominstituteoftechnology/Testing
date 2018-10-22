@@ -41,7 +41,8 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
-  return x - y;
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	return x - y;
 };
 
 const divide = (x, y) => {
