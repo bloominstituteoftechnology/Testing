@@ -43,10 +43,14 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
+    if (!x || !y) return 0;
+    if(typeof x === 'string' || typeof y === 'string') throw new Error('Value must be a number');
   return x - y;
 };
 
 const divide = (x, y) => {
+    if (!x || !y) return 0;
+    if(typeof x === 'string' || typeof y === 'string') throw new Error('Value must be a number');
   return x / y;
 };
 

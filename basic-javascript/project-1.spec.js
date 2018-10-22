@@ -125,4 +125,44 @@ describe('project-1.js', () => {
             expect( () => { helpers.add('five', 'five') }).toThrow();
         });
     });
+
+    describe('subtract', () => {
+        it('should subtract the two numbers together', () => {
+            const expected = 0;
+
+            const actual = helpers.subtract(5, 5);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.subtract();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.subtract('five', 'five') }).toThrow();
+        });
+    });
+
+    describe('divide', () => {
+        it('should divide the two numbers', () => {
+            const expected = 2;
+
+            const actual = helpers.divide(4, 2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.divide();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.divide('five', 'five') }).toThrow();
+        });
+    });
 });
