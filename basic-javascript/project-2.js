@@ -147,7 +147,8 @@ const averageTestScore = testScores => {
     totalSumScores += testScores[i];
     numberOfScore++;
   }
-  return totalSumScores / numberOfScore;
+  const avg = totalSumScores / numberOfScore;
+  return Math.round(avg);
 };
 
 const largestNumber = numbers => {

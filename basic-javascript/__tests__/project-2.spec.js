@@ -216,6 +216,49 @@ describe('wordsToSentence()', ()=> {
     });
 });
 
+describe('contains()', ()=> {
+    it('should return true if given item is contained in given array', ()=> {
+        const actual = funcs.contains(['apples', 'oranges', 'bananas'], 'apples');
+        expect(actual).toBeTruthy();
+    });
+
+    it('should return false if given item is not found in given array', ()=> {
+        const actual = funcs.contains(['apples', 'oranges', 'bananas'], 'cherries');
+        expect(actual).toBeFalsy();
+    });
+});
+
+describe('addNumbers()', ()=> {
+    it('should add all the numbers in the array', ()=> {
+        const actual = funcs.addNumbers([1, 2, 3, 4, 5]);
+        expect(actual).toEqual(15);
+    });
+
+    it('should return 0 if passed an empty array', ()=> {
+        const actual = funcs.addNumbers([]);
+        expect(actual).toEqual(0);
+    });
+});
+
+describe('averageTestScore()', ()=> {
+    it('should return the average of numbers in the array', ()=> {
+        const actual = funcs.averageTestScore([100, 90, 76, 82, 60, 94]);
+        expect(actual).toEqual(84);
+    });
+});
+
+describe('largestNumber()', ()=> {
+    it('should return the largest number in an array', ()=> {
+        const actual = funcs.largestNumber([1, 999, 5, 72]);
+        expect(actual).toEqual(999);
+    });
+
+    it('should return 0 if passed an empty array', ()=> {
+        const actual = funcs.largestNumber([]);
+        expect(actual).toEqual(0);
+    });
+});
+
 
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
