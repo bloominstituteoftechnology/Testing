@@ -141,8 +141,12 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
+  if (num === 0) {
+    return true;
+  }
+
   if ( !num ) {
-    return 0;
+    return false;
   }
 
   if (typeof num !== 'number') {
@@ -156,8 +160,13 @@ const isEven = num => {
 };
 
 const isOdd = num => {
+
+  if (num === 0) {
+    return false;
+  }
+
   if ( !num ) {
-    return 0;
+    return false;
   }
 
   if (typeof num !== 'number') {
