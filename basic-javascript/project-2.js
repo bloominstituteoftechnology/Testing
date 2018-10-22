@@ -1,6 +1,8 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (!x || !y) return 0;
+  if(typeof x === 'string' || typeof y === 'string') throw new Error('Value must be a number');
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -21,6 +23,8 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if(!num) return false;
+  if(typeof num === 'string') throw new Error('Value must be a number');
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +32,8 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if(!num) return false;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   if (num < 50 && num > 20) {
     return true;
   }
@@ -35,6 +41,8 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+    if(!num) return false;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,6 +50,8 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+    if(!num) return 'no fizzbuzz';
+    if(typeof num === 'string') throw new Error('Value must be a number');
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -53,6 +63,8 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+    if(!num) return false;
+    if(typeof num === 'string') throw new Error('Value must be a number');
   if (num < 0) {
     return false;
   }
@@ -68,18 +80,22 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if(!arr) return 0;
   return arr[0];
 };
 
 const returnLast = arr => {
+  if(!arr) return 0;
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if(!arr) return 0;
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if(!arr) return 0;
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -87,16 +103,19 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
+  if(!arr || !item) throw new Error('Need array and item!');
   arr.push(item);
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
+  if(!arr || !item) throw new Error('Need array and item!');
   arr.unshift(item);
   return arr;
 };
 
 const wordsToSentence = words => {
+    if(!words) throw new Error('Need array of words!');
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
@@ -109,6 +128,7 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
+  if(!arr || !item) throw new Error('Need array and item!');
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
@@ -122,17 +142,21 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
+    if(!numbers) throw new Error('Need an array of numbers');
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if(typeof numbers[i] === 'string') throw new Error('Needs to be a real number!');
     sumOfNumbers += numbers[i];
   }
   return sumOfNumbers;
 };
 
 const averageTestScore = testScores => {
+    if(!testScores) throw new Error('Need an array of numbers');
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+      if(typeof testScores[i] === 'string') throw new Error('Needs to be a real number!');
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -140,9 +164,11 @@ const averageTestScore = testScores => {
 };
 
 const largestNumber = numbers => {
+    if(!numbers) throw new Error('Need an array of numbers');
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
+      if(typeof numbers[i] === 'string') throw new Error('Needs to be a real number!');
+      if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
   }
