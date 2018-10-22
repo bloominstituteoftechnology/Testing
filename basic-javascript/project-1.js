@@ -2,7 +2,7 @@
 
 const multiplyByTen = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
   return num * 10;
@@ -17,23 +17,21 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  if (typeof str1 === 'string' || typeof str2 === 'string') {
-    throw new Error('value must be a string');
-  };
+  
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  if (!num) return 0;
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (!x || !y) return 'Please enter an x-value AND y-value';
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('values must be numbers');
   };
   return x === y;
 };
 
 const lessThanNinety = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   }
 
@@ -45,7 +43,7 @@ const lessThanNinety = num => {
 
 const greaterThanFifty = num => {
   if (!num) return 0;
-  if (typeof num === 'string') {
+  if (typeof num !== 'number') {
     throw new Error('value must be a number');
   };
 
@@ -57,10 +55,10 @@ const greaterThanFifty = num => {
 
 const add = (x, y) => {
   if (!x && !y) return 0;
-  if (!x) return 'Please enter a y-value';
-  if (!y) return 'Please enter an x-value';
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (!x) return 'Please enter a x-value';
+  if (!y) return 'Please enter an y-value';
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('values must be numbers');
   };
 
   return x + y;
@@ -68,10 +66,10 @@ const add = (x, y) => {
 
 const subtract = (x, y) => {
   if (!x && !y) return 0;
-  if (!x) return 'Please enter a y-value';
-  if (!y) return 'Please enter an x-value';
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (!x) return 'Please enter a x-value';
+  if (!y) return 'Please enter an y-value';
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('values must be numbers');
   };
 
   return x - y;
@@ -79,10 +77,10 @@ const subtract = (x, y) => {
 
 const divide = (x, y) => {
   if (!x && !y) return 0;
-  if (!x) return 'Please enter a y-value';
-  if (!y) return 'Please enter an x-value';
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (!x) return 'Please enter a x-value';
+  if (!y) return 'Please enter an y-value';
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('values must be numbers');
   };
 
   return x / y;
@@ -90,10 +88,10 @@ const divide = (x, y) => {
 
 const multiply = (x, y) => {
   if (!x && !y) return 0;
-  if (!x) return 'Please enter a y-value';
-  if (!y) return 'Please enter an x-value';
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (!x) return 'Please enter a x-value';
+  if (!y) return 'Please enter an y-value';
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('values must be numbers');
   };
 
   return x * y;
@@ -101,10 +99,10 @@ const multiply = (x, y) => {
 
 const getRemainder = (x, y) => {
   if (!x && !y) return 0;
-  if (!x) return 'Please enter a y-value';
-  if (!y) return 'Please enter an x-value';
-  if (typeof num === 'string') {
-    throw new Error('value must be a number');
+  if (!x) return 'Please enter a x-value';
+  if (!y) return 'Please enter an y-value';
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('values must be numbers');
   };
 
   return x % y;
