@@ -1,12 +1,15 @@
 /* eslint-disable arrow-parens */
 
+const nonNumberTypeError = 'Value must be a number.';
+
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
-    return y;
-  }
-  return y;
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
+	if (x > y) {
+		return x;
+	} else if (x === y) {
+		return y;
+	}
+	return y;
 };
 
 const greeting = language => {
