@@ -151,20 +151,89 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const greaterThanFifty = (num) => {
-	// 	if (num > 50) {
-	// 		return true;
-	// 	}
-	// 	return false;
-	// };
+	describe('greaterThanFifty()', () => {
+		// const greaterThanFifty = (num) => {
+		// 	if (num > 50) {
+		// 		return true;
+		// 	}
+		// 	return false;
+		// };
+		// greater than 50
+		it('should return true if input is greater than fifty', () => {
+			const actual = helpers.greaterThanFifty(51);
+			expect(actual).toEqual(true);
+		});
 
-	// const add = (x, y) => {
-	// 	return x + y;
-	// };
+		// less than 50
+		it('should return false if input is less than 51', () => {
+			const actual = helpers.greaterThanFifty(50);
+			expect(actual).toEqual(false);
+		});
 
-	// const subtract = (x, y) => {
-	// 	return x - y;
-	// };
+		// input null
+		it('should throw an error if input is null', () => {
+			expect(() => {
+				helpers.greaterThanFifty();
+			}).toThrow();
+		});
+
+		// input not a number
+		it('should throw an error if the input is not a number', () => {
+			expect(() => {
+				helpers.greaterThanFifty('42');
+			}).toThrow();
+		});
+	});
+
+	describe('add()', () => {
+		// const add = (x, y) => {
+		// 	return x + y;
+		// };
+		// expected addition
+		it('should add provided nums together', () => {
+			const actual = helpers.add(2, 3);
+			expect(actual).toEqual(5);
+		});
+
+		// input null
+		it('should throw an error when called with no value', () => {
+			expect(() => {
+				helpers.add(4);
+			}).toThrow();
+		});
+
+		// input string
+		it('should throw error when called with a string', () => {
+			expect(() => {
+				helpers.add('5', 4);
+			}).toThrow();
+		});
+	});
+
+	describe('subtract()', () => {
+		// const subtract = (x, y) => {
+		// 	return x - y;
+		// };
+		// expected subtraction
+		it('should subtract provided nums', () => {
+			const actual = helpers.subtract(10, 5);
+			expect(actual).toEqual(5);
+		});
+
+		// input null
+		it('should throw an error when called with no values', () => {
+			expect(() => {
+				helpers.subtract(11);
+			}).toThrow();
+		});
+
+		// input string
+		it('should throw an error when called with a string', () => {
+			expect(() => {
+				helpers.add(4, '4');
+			}).toThrow();
+		});
+	});
 
 	// const divide = (x, y) => {
 	// 	return x / y;

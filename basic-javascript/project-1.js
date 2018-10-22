@@ -31,17 +31,21 @@ const lessThanNinety = (num) => {
 };
 
 const greaterThanFifty = (num) => {
-	if (num > 50) {
-		return true;
-	}
-	return false;
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
+	// if (num > 50) {
+	// 	return true;
+	// }
+	// return false;
+	return num > 50 ? true : false;
 };
 
 const add = (x, y) => {
+	if (!(x || y) || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x + y;
 };
 
 const subtract = (x, y) => {
+	if (!(x || y) || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x - y;
 };
 
