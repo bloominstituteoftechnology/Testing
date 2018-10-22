@@ -199,3 +199,53 @@ describe('exponential operations', () => {
   });
 
 }); // exponential operations
+
+describe('rounding operations', () => {
+
+  test('should round the number', () => {
+    const num = 9.7;
+    const numDown = 9.2; // testing rounding down as well
+    const rounded = helpers.roundNumber(num);
+    const roundedDown = helpers.roundNumber(numDown);
+
+    expect(rounded).toBe(10);
+    expect(roundedDown).toBe(9);
+  });
+
+  test('should round the number upwards only', () => {
+    const num = 9.7;
+    const numStillUp = 4.2;
+    const rounded = helpers.roundUp(num);
+    const roundedLower = helpers.roundUp(numStillUp);
+
+    expect(rounded).toBe(10);
+    expect(roundedLower).toBe(5);
+  });
+
+}); // rounding operations
+
+describe('simple string operations', () => {
+
+  test('should add an exclamation point at the end of a given string', () => {
+    const string = 'exclamify me';
+    const withExcl = helpers.addExclamationPoint(string);
+
+    expect(withExcl).toBe('exclamify me!');
+  });
+
+  test('should return two names concatenated', () => {
+    const nameOne = 'Evan';
+    const nameTwo = 'EvanAgain';
+    const combined = helpers.combineNames(nameOne, nameTwo);
+
+    expect(combined).toBe('Evan EvanAgain');
+  });
+
+  test('should return a personalized greeting with user name', () => {
+    const name = 'Evan';
+    const greeting = helpers.getGreeting(name);
+
+    expect(greeting).toBe('Hello Evan!');
+  });
+
+}); // simple string operations
