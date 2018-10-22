@@ -107,7 +107,8 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+	if (typeof(str) !== 'string') throw new Error(nonStringTypeError);
+	return (str += '!');
 };
 
 const combineNames = (firstName, lastName) => {

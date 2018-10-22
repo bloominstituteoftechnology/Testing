@@ -24,6 +24,7 @@ describe('Testing project-1.js', () => {
 		raiseToPower,
 		roundNumber,
 		roundUp,
+		addExclamationPoint,
 	} = helpers;
 
 	// multiplyByTen()
@@ -86,7 +87,7 @@ describe('Testing project-1.js', () => {
 
 	// areSameLength()
 	describe('Testing areSameLength()', () => {
-		describe('Calling with number types', () => {
+		describe('Calling with number, null or undefined types', () => {
 			it('should throw an error', () => {
 				expect(() => {
 					areSameLength(1, 2);
@@ -551,6 +552,33 @@ describe('Testing project-1.js', () => {
 				expect(roundUp(0.2)).toBe(1);
 				expect(roundUp(-0.9)).toBeCloseTo(0);
 				expect(roundUp(-1.54)).toBeCloseTo(-1);
+			});
+		});
+	});
+
+	// addExclamationPoint()
+	describe('Testing addExclamationPoint()', () => {
+		describe('Calling with a number, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					addExclamationPoint(1);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					addExclamationPoint(null);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					addExclamationPoint(undefined);
+				}).toThrow(nonStringTypeError);
+			});
+		});
+
+		describe('Calling with string types', () => {
+			it('should return the string with an exclamation point at the end', () => {
+				expect(addExclamationPoint('')).toBe('!');
+				expect(addExclamationPoint('Hello')).toBe('Hello!');
+				expect(addExclamationPoint('1')).toBe('1!');
 			});
 		});
 	});
