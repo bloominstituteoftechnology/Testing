@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  return num && typeof num == "number" ? num * 10 : "invalid entry";
 };
 
 const subtractFive = num => {
