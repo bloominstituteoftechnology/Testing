@@ -28,10 +28,11 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
-  }
-  return false;
+	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	if (num > 50) {
+		return true;
+	}
+	return false;
 };
 
 const add = (x, y) => {

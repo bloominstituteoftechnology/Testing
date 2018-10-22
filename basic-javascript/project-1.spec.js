@@ -11,6 +11,7 @@ describe('Testing project-1.js', () => {
 		areSameLength,
 		areEqual,
 		lessThanNinety,
+		greaterThanFifty,
 	} = helpers;
 
 	// multiplyByTen()
@@ -143,6 +144,37 @@ describe('Testing project-1.js', () => {
 			it('should return false if given number is not less than ninety', () => {
 				expect(lessThanNinety(90)).toBe(false);
 				expect(lessThanNinety(91)).toBe(false);
+			});
+		});
+	});
+
+	// greaterThanFifty()
+	describe('Testing greaterThanFifty()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					greaterThanFifty('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					greaterThanFifty(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					greaterThanFifty(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if given number is greater than fifty', () => {
+				expect(greaterThanFifty(51)).toBe(true);
+				expect(greaterThanFifty(100)).toBe(true);
+			});
+
+			it('should return false if given number is not greater than fifty', () => {
+				expect(greaterThanFifty(50)).toBe(false);
+				expect(greaterThanFifty(-91)).toBe(false);
 			});
 		});
 	});
