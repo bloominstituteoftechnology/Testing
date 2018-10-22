@@ -82,7 +82,8 @@ const isOdd = num => {
 };
 
 const square = num => {
-  return num * num;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	return num * num;
 };
 
 const cube = num => {

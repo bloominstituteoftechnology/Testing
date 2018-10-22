@@ -19,6 +19,7 @@ describe('Testing project-1.js', () => {
 		getRemainder,
 		isEven,
 		isOdd,
+		square,
 	} = helpers;
 
 	// multiplyByTen()
@@ -404,6 +405,34 @@ describe('Testing project-1.js', () => {
 				expect(isOdd(0)).toBe(false);
 				expect(isOdd(4)).toBe(false);
 				expect(isOdd(-2)).toBe(false);
+			});
+		});
+	});
+
+	// square()
+	describe('Testing square()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					square('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					square(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					square(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the square of the number', () => {
+				expect(square(0)).toBe(0);
+				expect(square(1)).toBe(1);
+				expect(square(-2)).toBe(4);
+				expect(square(-0.2)).toBeCloseTo(0.04);
 			});
 		});
 	});
