@@ -48,7 +48,7 @@ const areEqual = (x, y) => {
 
 const lessThanNinety = num => {
   if ( !num ) {
-    return 0;
+    return false;
   }
 
   if (typeof num !== 'number') {
@@ -63,7 +63,7 @@ const lessThanNinety = num => {
 
 const greaterThanFifty = num => {
   if ( !num ) {
-    return 0;
+    return false;
   }
 
   if (typeof num !== 'number') {
