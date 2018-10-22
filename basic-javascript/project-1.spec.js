@@ -74,4 +74,25 @@ describe('project-1.js', () => {
     expect(actual).toEqual(expected);
   });
 
+  // getRemainder
+  test("should return correct remainder when dividing two numbers", () => {
+    const expected = 1;
+    const actual = helpers.getRemainder(101, 5);
+    expect(actual).toEqual(expected);
+  });
+
+  // isEven
+  test("should return true when number is in fact even", () => {
+    const expected = true;
+    const actual = helpers.isEven(12);
+    expect(actual).toEqual(expected);
+  });
+
+  // isOdd
+  test("should return true when number is in fact odd", () => {
+    const expected = true;
+    const actual = helpers.isOdd(7);
+    expect(actual).toEqual(expected);
+  });
+
 }); 
