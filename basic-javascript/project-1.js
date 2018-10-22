@@ -120,6 +120,7 @@ const combineNames = (firstName, lastName) => {
 };
 
 const getGreeting = (name) => {
+	if (!name || typeof name !== 'string') throw new Error('Only strings supported!');
 	return `Hello ${name}!`;
 };
 

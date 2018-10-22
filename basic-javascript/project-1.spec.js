@@ -536,9 +536,30 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const getGreeting = (name) => {
-	// 	return `Hello ${name}!`;
-	// };
+	describe('getGreeting()', () => {
+		// const getGreeting = (name) => {
+		// 	return `Hello ${name}!`;
+		// };
+		// expected greeting string
+		it('should return a string like "Hello Dolly!"', () => {
+			const actual = helpers.getGreeting('Vera');
+			expect(actual).toMatch(/^Hello Vera!$/);
+		});
+
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.getGreeting();
+			}).toThrowError();
+		});
+
+		// input number
+		it('should throw an error when provided input that is not a string', () => {
+			expect(() => {
+				helpers.getGreeting(42);
+			}).toThrowError();
+		});
+	});
 
 	// const getRectangleArea = (length, width) => {
 	// 	return length * width;
