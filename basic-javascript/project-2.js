@@ -26,10 +26,11 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
-  if (num === 10 || num === 5) {
-    return true;
-  }
-  return false;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (num === 10 || num === 5) {
+		return true;
+	}
+	return false;
 };
 
 const isInRange = num => {

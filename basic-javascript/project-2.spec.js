@@ -8,6 +8,7 @@ describe('Testing project-2.js', () => {
 	const {
 		getBiggest,
 		greeting,
+		isTenOrFive,
 	} = funcs;
 
 	// getBiggest()
@@ -61,6 +62,40 @@ describe('Testing project-2.js', () => {
 			it('should return hello in the language given', () => {
 				expect(greeting('Spanish')).toBe('Hola!');
 				expect(greeting('English')).toBe('Hello!');
+			});
+		});
+	});
+
+	// isTenOrFive()
+	describe('Testing isTenOrFive()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					isTenOrFive('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					isTenOrFive(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					isTenOrFive(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if num is 10 or 5', () => {
+				expect(isTenOrFive(10)).toBe(true);
+				expect(isTenOrFive(5)).toBe(true);
+			});
+
+			it('should return false if num is not 10 or 5', () => {
+				expect(isTenOrFive(0)).toBe(false);
+				expect(isTenOrFive(1)).toBe(false);
+				expect(isTenOrFive(0.2)).toBe(false);
+				expect(isTenOrFive(-1)).toBe(false);
+				expect(isTenOrFive(-0.2)).toBe(false);
 			});
 		});
 	});
