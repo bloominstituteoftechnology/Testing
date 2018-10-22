@@ -73,4 +73,56 @@ describe('project-1.js', () => {
             expect(product).toBe(false);
         });
     });
+
+    describe('lessThanNinety', () => {
+        it('should return true if values are less than 90', () => {
+            const expected = true;
+
+            const actual = helpers.lessThanNinety(89);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.lessThanNinety();
+
+            expect(product).toBe(false);
+        });
+    });
+
+    describe('greaterThanFifty', () => {
+        it('should return true if values are more than 50', () => {
+            const expected = true;
+
+            const actual = helpers.greaterThanFifty(51);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.greaterThanFifty();
+
+            expect(product).toBe(false);
+        });
+    });
+
+    describe('add', () => {
+        it('should add the two numbers together', () => {
+            const expected = 10;
+
+            const actual = helpers.add(5, 5);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.add();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.add('five', 'five') }).toThrow();
+        });
+    });
 });

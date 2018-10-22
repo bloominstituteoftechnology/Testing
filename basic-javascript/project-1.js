@@ -37,6 +37,8 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (!x || !y) return 0;
+    if(typeof x === 'string' || typeof y === 'string') throw new Error('Value must be a number');
   return x + y;
 };
 
