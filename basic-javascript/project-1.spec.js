@@ -218,11 +218,91 @@ describe('project-1.js', () => {
         it('should return false when called with no value', () => {
             const product = helpers.isEven();
 
-            expect(product).toBe(false);
+            expect(product).toBe(0);
         });
 
         it('should throw an error when called with a string', () => {
             expect( () => { helpers.isEven('four') }).toThrow();
+        });
+    });
+
+    describe('isOdd', () => {
+        it('should return true if the number is odd', () => {
+            const expected = true;
+
+            const actual = helpers.isOdd(3);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.isOdd();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.isOdd('four') }).toThrow();
+        });
+    });
+
+    describe('square', () => {
+        it('should return the square of the number', () => {
+            const expected = 4;
+
+            const actual = helpers.square(2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.square();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.square('four') }).toThrow();
+        });
+    });
+
+    describe('cube', () => {
+        it('should return the cube of the number', () => {
+            const expected = 8;
+
+            const actual = helpers.cube(2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.cube();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.cube('four') }).toThrow();
+        });
+    });
+
+    describe('raiseToPower', () => {
+        it('should return the raised power of the two numbers', () => {
+            const expected = 4;
+
+            const actual = helpers.raiseToPower(2, 2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return false when called with no value', () => {
+            const product = helpers.raiseToPower();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.raiseToPower('four', 'four') }).toThrow();
         });
     });
 });
