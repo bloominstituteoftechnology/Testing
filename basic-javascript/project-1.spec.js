@@ -53,10 +53,24 @@ describe('project-1.js', () => {
     expect(actual).toEqual(expected);
   });
 
-  // greaterThanFifty
-  test("should return true when input is in fact greater than 50", () => {
-    const expected = true;
-    const actual = helpers.greaterThanFifty(60);
+  // subtract
+  test("should return correct difference of two numbers", () => {
+    const expected = 70;
+    const actual = helpers.subtract(100, 30);
+    expect(actual).toEqual(expected);
+  });
+
+  // divide
+  test("should return correct quotient of two numbers", () => {
+    const expected = 25;
+    const actual = helpers.divide(100, 4);
+    expect(actual).toEqual(expected);
+  });
+
+  // multiply
+  test("should return correct product of two numbers", () => {
+    const expected = 24;
+    const actual = helpers.multiply(3, 8);
     expect(actual).toEqual(expected);
   });
 
