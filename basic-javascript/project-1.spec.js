@@ -387,4 +387,84 @@ describe('project-1.js', () => {
             expect( () => { helpers.getGreeting() }).toThrow();
         });
     });
+
+    describe('getRectangleArea', () => {
+        it('should return the area of the rectangle', () => {
+            const expected = 4;
+
+            const actual = helpers.getRectangleArea(2, 2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.getRectangleArea();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.getRectangleArea('four', 'four') }).toThrow();
+        });
+    });
+
+    describe('getTriangleArea', () => {
+        it('should return the area of the triangle', () => {
+            const expected = 2;
+
+            const actual = helpers.getTriangleArea(2, 2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.getTriangleArea();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.getTriangleArea('four', 'four') }).toThrow();
+        });
+    });
+
+    describe('getCircleArea', () => {
+        it('should return the area of the rectangle', () => {
+            const expected = 12.566370614359172;
+
+            const actual = helpers.getCircleArea(2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.getCircleArea();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.getCircleArea('four') }).toThrow();
+        });
+    });
+
+    describe('getRectangularPrismVolume', () => {
+        it('should return the area of the rectangle', () => {
+            const expected = 8;
+
+            const actual = helpers.getRectangularPrismVolume(2,2,2);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return 0 when called with no value', () => {
+            const product = helpers.getRectangularPrismVolume();
+
+            expect(product).toBe(0);
+        });
+
+        it('should throw an error when called with a string', () => {
+            expect( () => { helpers.getRectangularPrismVolume('four', 'four', 'four', 'four') }).toThrow();
+        });
+    });
 });
