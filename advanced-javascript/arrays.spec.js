@@ -38,7 +38,7 @@ describe("Arrays", () => {
     });
   });
 
-  describe("reduce tests", () => {
+  describe("array reduce tests", () => {
     test("tests if reduce [2, 10] x * y returns [20]", () => {
       expect(
         arrayFunctions.reduce([2, 10], (x, y) => {
@@ -52,7 +52,7 @@ describe("Arrays", () => {
     });
   });
 
-  describe("find tests", () => {
+  describe("array find tests", () => {
     test("tests if find [200, 30, 45, 56, 102, 104] where x = 102 returns 102", () => {
       expect(
         arrayFunctions.find([200, 30, 45, 56, 102, 104], x => {
@@ -68,7 +68,7 @@ describe("Arrays", () => {
     });
   });
 
-  describe("filter tests", () => {
+  describe("array filter tests", () => {
     test("test filter on [23, 45, 56, 20, 50, 40, 45, 50] where x = 50 returns [50, 50]", () => {
       expect(
         filter([20, 10, 14, 20, 10, 10], x => {
@@ -83,7 +83,7 @@ describe("Arrays", () => {
     });
   });
 
-  describe("flatten tests", () => {
+  describe("array flatten tests", () => {
     test("tests if flatten of [23, 45, 22, [45 , 45]] returns [23, 45, 22, 45, 45]", () => {
       expect(arrayFunctions.flatten([23, 45, 22, [45, 45]])).toEqual([
         23,
