@@ -20,10 +20,11 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
-  }
-  return false;
+	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	if (num < 90) {
+		return true;
+	}
+	return false;
 };
 
 const greaterThanFifty = num => {

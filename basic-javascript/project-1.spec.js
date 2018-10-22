@@ -10,6 +10,7 @@ describe('Testing project-1.js', () => {
 		subtractFive,
 		areSameLength,
 		areEqual,
+		lessThanNinety,
 	} = helpers;
 
 	// multiplyByTen()
@@ -111,6 +112,38 @@ describe('Testing project-1.js', () => {
 			expect(areEqual(1, 2)).toBe(false);
 			expect(areEqual('str', 'str1')).toBe(false);
 			expect(areEqual(NaN, NaN)).toBe(false);
+		});
+	});
+
+	// lessThanNinety()
+	describe('Testing lessThanNinety()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					lessThanNinety('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					lessThanNinety(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					lessThanNinety(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if given number is less than ninety', () => {
+				expect(lessThanNinety(0)).toBe(true);
+				expect(lessThanNinety(89)).toBe(true);
+				expect(lessThanNinety(-2)).toBe(true);
+			});
+
+			it('should return false if given number is not less than ninety', () => {
+				expect(lessThanNinety(90)).toBe(false);
+				expect(lessThanNinety(91)).toBe(false);
+			});
 		});
 	});
 });
