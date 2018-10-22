@@ -102,7 +102,8 @@ const roundNumber = num => {
 };
 
 const roundUp = num => {
-  return Math.ceil(num);
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {

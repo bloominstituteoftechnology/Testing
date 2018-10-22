@@ -23,6 +23,7 @@ describe('Testing project-1.js', () => {
 		cube,
 		raiseToPower,
 		roundNumber,
+		roundUp,
 	} = helpers;
 
 	// multiplyByTen()
@@ -521,6 +522,35 @@ describe('Testing project-1.js', () => {
 				expect(roundNumber(0.2)).toBe(0);
 				expect(roundNumber(-0.9)).toBeCloseTo(-1);
 				expect(roundNumber(-1.54)).toBeCloseTo(-2);
+			});
+		});
+	});
+
+	// roundUp()
+	describe('Testing roundUp()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					roundUp('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					roundUp(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					roundUp(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the value of num rounded upward to the nearest integer', () => {
+				expect(roundUp(0)).toBe(0);
+				expect(roundUp(1)).toBe(1);
+				expect(roundUp(0.2)).toBe(1);
+				expect(roundUp(-0.9)).toBeCloseTo(0);
+				expect(roundUp(-1.54)).toBeCloseTo(-1);
 			});
 		});
 	});
