@@ -9,15 +9,30 @@ const arrayFunctions = require("./arrays");
 
 describe("Arrays", () => {
   describe("map of [2, 4, 6, 8] (*2) should return [4, 8, 12, 16]", () => {
-    test("", () => {
+    test("tests the map method on an array of numbers should return double the input", () => {
       expect(
         arrayFunctions.map([2, 4, 6, 8], num => {
           return num * 2;
         })
       ).toEqual([4, 8, 12, 16]);
     });
+
     test("tests type of map returns function", () => {
       expect(typeof arrayFunctions.map).toBe("function");
+    });
+  });
+
+  describe("tests if each of [2,4,6,8] * 2 returns [4, 8, 12, 16]", () => {
+    test("tests the each method on an array of numbers should return array of doulble of each element", () => {
+      expect(
+        arrayFunctions.each([2, 4, 6, 8], item => {
+          return item * 2;
+        })
+      ).toEqual([4, 8, 12, 16]);
+    });
+
+    test("tests type of each returns function", () => {
+      expect(typeof arrayFunctions.each).toBe("function");
     });
   });
 });
