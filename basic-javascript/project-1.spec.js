@@ -55,9 +55,36 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const areSameLength = (str1, str2) => {
-	// 	return str1.length === str2.length;
-	// };
+	describe('areSameLength()', () => {
+		// const areSameLength = (str1, str2) => {
+		// 	return str1.length === str2.length;
+		// };
+		// true
+		it('should return true when provided two strings of equal length', () => {
+			const lengthEqual = helpers.areSameLength('str1', 'str2');
+			expect(lengthEqual).toEqual(true);
+		});
+
+		// false
+		it('should return false when provided two strings of unequal length', () => {
+			const lengthUnequal = helpers.areSameLength('str1aaaaaaa', 'str2');
+			expect(lengthUnequal).toEqual(false);
+		});
+
+		// input null
+		it('should throw an error when called with no value', () => {
+			expect(() => {
+				helpers.areSameLength('str1');
+			}).toThrow();
+		});
+
+		// input not string
+		it('should throw error when called with a non-string', () => {
+			expect(() => {
+				helpers.areSameLength(42, 'as');
+			}).toThrow();
+		});
+	});
 
 	// const areEqual = (x, y) => {
 	// 	return x === y;
