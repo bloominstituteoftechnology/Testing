@@ -18,6 +18,7 @@ describe('Testing project-1.js', () => {
 		multiply,
 		getRemainder,
 		isEven,
+		isOdd,
 	} = helpers;
 
 	// multiplyByTen()
@@ -370,6 +371,39 @@ describe('Testing project-1.js', () => {
 				expect(isEven(-3)).toBe(false);
 				expect(isEven(1.1)).toBe(false);
 				expect(isEven(-2.2)).toBe(false);
+			});
+		});
+	});
+
+	// isOdd()
+	describe('Testing isOdd()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					isOdd('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					isOdd(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					isOdd(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if the number is odd', () => {
+				expect(isOdd(1)).toBe(true);
+				expect(isOdd(3)).toBe(true);
+				expect(isOdd(-3)).toBe(true);
+			});
+
+			it('should return false if the number is not odd', () => {
+				expect(isOdd(0)).toBe(false);
+				expect(isOdd(4)).toBe(false);
+				expect(isOdd(-2)).toBe(false);
 			});
 		});
 	});

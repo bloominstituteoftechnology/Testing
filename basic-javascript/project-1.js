@@ -74,10 +74,11 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
-  }
-  return true;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (num % 2 === 0) {
+		return false;
+	}
+	return true;
 };
 
 const square = num => {
