@@ -113,7 +113,7 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  if (num && typeof num === "number") {
+  if (num && exponent && typeof num === "number" && typeof exponent === "number") {
     return num ** exponent;
   } else {
     return "invalid entry";
@@ -145,27 +145,51 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+  if (firstName, lastName && typeof firstName === "string" && typeof lastName === "string") {
+    return `${firstName} ${lastName}`;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+  if (name && typeof name === "string") {
+    return `Hello ${name}!`;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  if (length && width && typeof length === "number" && typeof width === "number") {
+    return length * width;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  if (base && height && typeof base === "number" && typeof height === "number") {
+    return 0.5 * base * height;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  if (radius && typeof radius === "number") {
+    return Math.PI * radius * radius;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  if (length && width && height && typeof length === "number" && typeof width === "number" && typeof height === "number") {
+    return width * height * length;
+  } else {
+    return "invalid entry";
+  }
 };
 
 module.exports = {

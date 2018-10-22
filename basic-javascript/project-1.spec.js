@@ -324,6 +324,108 @@ describe('project-1.js', () => {
       expect(actual).toEqual(expected)
     })
   })
+  describe('combineNames()', () => {
+    it('checks if names are appended with space', () => {
+      const expected = "Green Bream";
+      const actual = helpers.combineNames("Green", "Bream");
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.combineNames();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a number was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.combineNames(5, 5);
+      expect(actual).toEqual(expected)
+    })
+  })
+  describe('getGreeting()', () => {
+    it('checks if greeting is returned correctly', () => {
+      const expected = "Hello Bream!";
+      const actual = helpers.getGreeting("Bream");
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getGreeting();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a number was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getGreeting(5);
+      expect(actual).toEqual(expected)
+    })
+  })
+  describe('getRectangleArea()', () => {
+    it('checks if rectagle area is correct', () => {
+      const expected = 25;
+      const actual = helpers.getRectangleArea(5, 5);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getRectangleArea();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a number was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getRectangleArea(5);
+      expect(actual).toEqual(expected)
+    })
+  })
+  describe('getTriangleArea()', () => {
+    it('checks if triangle area is correct', () => {
+      const expected = 2;
+      const actual = helpers.getTriangleArea(2, 2);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getTriangleArea();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a number was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getTriangleArea(5);
+      expect(actual).toEqual(expected)
+    })
+  })
+  describe('getCircleArea()', () => {
+    it('checks if circle area is correct', () => {
+      const expected = 12.566370614359172;
+      const actual = helpers.getCircleArea(2, 2);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getCircleArea();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a string was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getCircleArea("5");
+      expect(actual).toEqual(expected)
+    })
+  })
+  describe('getRectangularPrismVolume()', () => {
+    it('checks if rectagular prism volume is correct', () => {
+      const expected = 20;
+      const actual = helpers.getRectangularPrismVolume(2, 2, 5);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getRectangularPrismVolume();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a string was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.getRectangularPrismVolume("5");
+      expect(actual).toEqual(expected)
+    })
+  })
 })
 
 // add error tests for subtract and fixed code for invalid states
