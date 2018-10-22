@@ -507,11 +507,34 @@ describe('project-1.js', () => {
 				helpers.addExclamationPoint();
 			}).toThrowError();
 		});
+
+		// no check for numbers. how do I know whether someone is really excited about pi or such?
 	});
 
-	// const combineNames = (firstName, lastName) => {
-	// 	return `${firstName} ${lastName}`;
-	// };
+	describe('combineNames()', () => {
+		// const combineNames = (firstName, lastName) => {
+		// 	return `${firstName} ${lastName}`;
+		// };
+		// expected concated strings
+		it('should return the names provided concatinated', () => {
+			const actual = helpers.combineNames('Vera', 'Simon');
+			expect(actual).toMatch(/Vera Simon/);
+		});
+
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.combineNames('Yoko');
+			}).toThrowError();
+		});
+
+		// input number
+		it('should throw an error when provided numbers', () => {
+			expect(() => {
+				helpers.combineNames(13, 'Yeah!');
+			}).toThrowError();
+		});
+	});
 
 	// const getGreeting = (name) => {
 	// 	return `Hello ${name}!`;

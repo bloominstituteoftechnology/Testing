@@ -114,6 +114,8 @@ const addExclamationPoint = (str) => {
 };
 
 const combineNames = (firstName, lastName) => {
+	if (!firstName || !lastName || typeof firstName !== 'string' || typeof lastName !== 'string')
+		throw new Error('Only strings supported!');
 	return `${firstName} ${lastName}`;
 };
 
