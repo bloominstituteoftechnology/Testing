@@ -18,14 +18,14 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value', () => {
 			expect(() => {
 				helpers.multiplyByTen();
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input string
 		it('should throw error when called with a string', () => {
 			expect(() => {
 				helpers.multiplyByTen('five');
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -44,14 +44,14 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value', () => {
 			expect(() => {
 				helpers.subtractFive();
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input string
 		it('should throw error when called with a string', () => {
 			expect(() => {
 				helpers.subtractFive('eleven');
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -75,14 +75,14 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value', () => {
 			expect(() => {
 				helpers.areSameLength('str1');
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input not string
 		it('should throw error when called with a non-string', () => {
 			expect(() => {
 				helpers.areSameLength(42, 'as');
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -106,14 +106,14 @@ describe('project-1.js', () => {
 		it('should throw an error if one or both values are null', () => {
 			expect(() => {
 				helpers.areEqual(3);
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input not number
 		it('should throw an error if one or both values are not a number', () => {
 			expect(() => {
 				helpers.areEqual('3', '4');
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -140,14 +140,14 @@ describe('project-1.js', () => {
 		it('should throw an error if input is null', () => {
 			expect(() => {
 				helpers.lessThanNinety();
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input not number
 		it('should throw an error if input is not a number', () => {
 			expect(() => {
 				helpers.lessThanNinety('3');
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -174,14 +174,14 @@ describe('project-1.js', () => {
 		it('should throw an error if input is null', () => {
 			expect(() => {
 				helpers.greaterThanFifty();
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input not a number
 		it('should throw an error if the input is not a number', () => {
 			expect(() => {
 				helpers.greaterThanFifty('42');
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -199,14 +199,14 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value', () => {
 			expect(() => {
 				helpers.add(4);
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input string
 		it('should throw error when called with a string', () => {
 			expect(() => {
 				helpers.add('5', 4);
-			}).toThrow();
+			}).toThrowError();
 		});
 	});
 
@@ -224,35 +224,119 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no values', () => {
 			expect(() => {
 				helpers.subtract(11);
-			}).toThrow();
+			}).toThrowError();
 		});
 
 		// input string
 		it('should throw an error when called with a string', () => {
 			expect(() => {
-				helpers.add(4, '4');
-			}).toThrow();
+				helpers.subtract(4, '4');
+			}).toThrowError();
 		});
 	});
 
-	// const divide = (x, y) => {
-	// 	return x / y;
-	// };
+	describe('divide()', () => {
+		// const divide = (x, y) => {
+		// 	return x / y;
+		// };
+		// expected division
+		it('should divide the provided numbers', () => {
+			const actual = helpers.divide(20, 4);
+			expect(actual).toEqual(5);
+		});
 
-	// const multiply = (x, y) => {
-	// 	return x * y;
-	// };
+		// input null
+		it('should throw an error when called with no values', () => {
+			expect(() => {
+				helpers.divide(3);
+			}).toThrowError();
+		});
 
-	// const getRemainder = (x, y) => {
-	// 	return x % y;
-	// };
+		// input string
+		it('should throw an error when called with a string', () => {
+			expect(() => {
+				helpers.divide(10, '2');
+			}).toThrowError();
+		});
+	});
 
-	// const isEven = (num) => {
-	// 	if (num % 2 === 0) {
-	// 		return true;
-	// 	}
-	// 	return false;
-	// };
+	describe('multiply()', () => {
+		// const multiply = (x, y) => {
+		// 	return x * y;
+		// };
+		// expected multiplication
+		it('should multiply the provided numbers', () => {
+			const actual = helpers.multiply(20, 5);
+			expect(actual).toEqual(100);
+		});
+
+		// input null
+		it('should throw an error when called with no values', () => {
+			expect(() => {
+				helpers.multiply(10);
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when called with a string', () => {
+			expect(() => {
+				helpers.multiply(10, '5');
+			}).toThrowError();
+		});
+	});
+
+	describe('getRemainder()', () => {
+		// const getRemainder = (x, y) => {
+		// 	return x % y;
+		// };
+		// expected remainder
+		it('should return remainder of provided numbers', () => {
+			const actual = helpers.getRemainder(20, 3);
+			expect(actual).toEqual(2);
+		});
+
+		// input null
+		it('should throw an error when called with no values', () => {
+			expect(() => {
+				helpers.getRemainder(4);
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when called with a string', () => {
+			expect(() => {
+				helpers.getRemainder(20, '3');
+			}).toThrowError();
+		});
+	});
+
+	describe('isEven()', () => {
+		// const isEven = (num) => {
+		// 	if (num % 2 === 0) {
+		// 		return true;
+		// 	}
+		// 	return false;
+		// };
+		// expected bool
+		it('should return true if input is even', () => {
+			const actual = helpers.isEven(42);
+			expect(actual).toEqual(true);
+		});
+
+		// input null
+		it('should throw an error when called with no value', () => {
+			expect(() => {
+				helpers.isEven();
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when called with a string', () => {
+			expect(() => {
+				helpers.isEven('42');
+			}).toThrowError();
+		});
+	});
 
 	// const isOdd = (num) => {
 	// 	if (num % 2 === 0) {

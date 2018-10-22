@@ -40,32 +40,37 @@ const greaterThanFifty = (num) => {
 };
 
 const add = (x, y) => {
-	if (!(x || y) || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
+	if (!x || !y || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x + y;
 };
 
 const subtract = (x, y) => {
-	if (!(x || y) || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
+	if (!x || !y || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x - y;
 };
 
 const divide = (x, y) => {
+	if (!(x || y) || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x / y;
 };
 
 const multiply = (x, y) => {
+	if (!x || !y || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x * y;
 };
 
 const getRemainder = (x, y) => {
+	if (!x || !y || typeof x !== 'number' || typeof y !== 'number') throw new Error('Only numbers supported!');
 	return x % y;
 };
 
 const isEven = (num) => {
-	if (num % 2 === 0) {
-		return true;
-	}
-	return false;
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
+	// if (num % 2 === 0) {
+	// 	return true;
+	// }
+	// return false;
+	return num % 2 === 0 ? true : false;
 };
 
 const isOdd = (num) => {
