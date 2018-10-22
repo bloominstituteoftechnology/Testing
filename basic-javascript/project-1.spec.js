@@ -84,4 +84,11 @@ test('should return strings of same length', () => {
   const str2 = 'testtwo';
 
   expect(str1.length).toEqual(str2.length);
-})
+});
+
+test('should return numbers of equal value', () => {
+  const x = 3;
+  const y = 3;
+
+  expect(x).toEqual(y);
+});
