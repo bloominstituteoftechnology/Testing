@@ -25,14 +25,36 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
+
+  if (!str1 || !str2) {
+    return false;
+  }
+
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    throw new Error('Provided value must be a string.')
+  }
+
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+
+  if ( !x || !y ) {
+    return false;
+  }
+
   return x === y;
 };
 
 const lessThanNinety = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   if (num < 90) {
     return true;
   }
@@ -40,13 +62,21 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   if (num > 50) {
     return true;
   }
   return false;
 };
 
-const add = (x, y) => {
+const add = (x, y) => {  
   return x + y;
 };
 
@@ -67,6 +97,14 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   if (num % 2 === 0) {
     return true;
   }
@@ -74,6 +112,14 @@ const isEven = num => {
 };
 
 const isOdd = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   if (num % 2 === 0) {
     return false;
   }
@@ -81,10 +127,26 @@ const isOdd = num => {
 };
 
 const square = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   return num * num;
 };
 
 const cube = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   return num * num * num;
 };
 
@@ -93,10 +155,26 @@ const raiseToPower = (num, exponent) => {
 };
 
 const roundNumber = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   return Math.ceil(num);
 };
 
