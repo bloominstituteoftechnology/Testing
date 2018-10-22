@@ -118,7 +118,9 @@ const combineNames = (firstName, lastName) => {
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+	if (typeof(name) !== 'string') throw new Error(nonStringTypeError);
+	if (!name) throw new Error('Name cannot be empty.');
+	return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {

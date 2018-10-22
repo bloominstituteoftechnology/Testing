@@ -26,6 +26,7 @@ describe('Testing project-1.js', () => {
 		roundUp,
 		addExclamationPoint,
 		combineNames,
+		getGreeting,
 	} = helpers;
 
 	// multiplyByTen()
@@ -615,6 +616,37 @@ describe('Testing project-1.js', () => {
 
 			it('should return the first and last names joined by a space', () => {
 				expect(combineNames('Alice', 'Johnson')).toBe('Alice Johnson');
+			});
+		});
+	});
+
+	// getGreeting()
+	describe('Testing getGreeting()', () => {
+		describe('Calling with a number, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					getGreeting(1);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					getGreeting(null);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					getGreeting(undefined);
+				}).toThrow(nonStringTypeError);
+			});
+		});
+
+		describe('Calling with string types', () => {
+			it('should throw an error if name is an empty string', () => {
+				expect(() => {
+					getGreeting('');
+				}).toThrow('Name cannot be empty.');
+			});
+
+			it('should return the appropriate greeting given the name', () => {
+				expect(getGreeting('Alice')).toBe('Hello Alice!');
 			});
 		});
 	});
