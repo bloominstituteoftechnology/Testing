@@ -95,4 +95,46 @@ describe('project-1.js', () => {
     expect(actual).toEqual(expected);
   });
 
+  test("should square a number correctly", () => {
+    const actual = helpers.square(8);
+    expect(actual).toBe(64);
+  });
+
+  test("should cube a number correctly", () => {
+    const actual = helpers.cube(2);
+    expect(actual).toBe(8);
+  });
+
+  test("should produce correct value when raising num to an exponent", () => {
+    const actual = helpers.raiseToPower(5, 2);
+    expect(actual).toBe(25);
+  });
+
+  test("should correctly round a number", () => {
+    const actual = helpers.roundNumber(5.6);
+    expect(actual).toBe(6);
+  });
+
+  test("should correctly round a number up", () => {
+    const actual = helpers.roundUp(5.3);
+    expect(actual).toBe(6);
+  });
+
+  test("should correctly round a number", () => {
+    const actual = helpers.roundNumber(5.6);
+    expect(actual).toBe(6);
+  });
+
+  test("should successfully append an exclamation point to a string", () => {
+    expect(helpers.addExclamationPoint("I went to the store")).toBe("I went to the store!");
+  });
+
+  test("should successfully combine two names inputted into a string with both", () => {
+    expect(helpers.combineNames("Andrew", "Ghobrial")).toBe("Andrew Ghobrial");
+  });
+
+  test("should successfully return greeting containing respective name input", () => {
+    expect(helpers.getGreeting("Bob")).toBe("Hello Bob!");
+  });
+
 }); 
