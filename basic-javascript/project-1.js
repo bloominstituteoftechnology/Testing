@@ -25,10 +25,11 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
+  if (num && typeof num === "number") {
+    return num < 90;
+  } else {
+    return "invalid entry";
   }
-  return false;
 };
 
 const greaterThanFifty = num => {
