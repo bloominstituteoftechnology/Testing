@@ -136,7 +136,9 @@ const getTriangleArea = (base, height) => {
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+	if (typeof(radius) !== 'number') throw new Error(nonNumberTypeError);
+	if (radius < 0) throw new Error('Radius cannot have negative values.');
+	return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {

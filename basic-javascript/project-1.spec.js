@@ -29,6 +29,7 @@ describe('Testing project-1.js', () => {
 		getGreeting,
 		getRectangleArea,
 		getTriangleArea,
+		getCircleArea,
 	} = helpers;
 
 	// multiplyByTen()
@@ -725,6 +726,40 @@ describe('Testing project-1.js', () => {
 				expect(getTriangleArea(0, 1)).toBe(0);
 				expect(getTriangleArea(2, 1)).toBe(1);
 				expect(getTriangleArea(0.2, 0.1)).toBeCloseTo(0.01);
+			});
+		});
+	});
+
+	// getCircleArea()
+	describe('Testing getCircleArea()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					getCircleArea('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getCircleArea(null);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getCircleArea(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number types', () => {
+			it('should throw an error if a dimension is negative', () => {
+				expect(() => {
+					getCircleArea(-1);
+				}).toThrow('Radius cannot have negative values.');
+			});
+
+			it('should return the area of the circle with the given radius', () => {
+				expect(getCircleArea(0)).toBe(0);
+				expect(getCircleArea(0)).toBe(0);
+				expect(getCircleArea(2)).toBe(12.566370614359172);
+				expect(getCircleArea(0.2)).toBeCloseTo(0.12566370614359174);
 			});
 		});
 	});
