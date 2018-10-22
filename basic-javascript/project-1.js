@@ -98,9 +98,9 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  if (!number) return "Please provide a number."
+  if (!num) return "Please provide a number."
   else if (!exponent) return "Please provide an exponent."
-  else if (!number && !exponent) return "Please provide a number and an exponent."
+  else if (!num && !exponent) return "Please provide a number and an exponent."
   return num ** exponent;
 };
 
