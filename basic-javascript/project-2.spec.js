@@ -10,6 +10,7 @@ describe('Testing project-2.js', () => {
 		greeting,
 		isTenOrFive,
 		isInRange,
+		isInteger,
 	} = funcs;
 
 	// getBiggest()
@@ -131,6 +132,38 @@ describe('Testing project-2.js', () => {
 				expect(isInRange(-1)).toBe(false);
 				expect(isInRange(51)).toBe(false);
 				expect(isInRange(0.2)).toBe(false);
+			});
+		});
+	});
+
+	// isInteger()
+	describe('Testing isInteger()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					isInteger('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					isInteger(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					isInteger(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if num is an integer', () => {
+				expect(isInteger(0)).toBe(true);
+				expect(isInteger(1)).toBe(true);
+				expect(isInteger(-1)).toBe(true);
+			});
+
+			it('should return false if num is not an integer', () => {
+				expect(isInteger(0.1)).toBe(false);
+				expect(isInteger(-0.2)).toBe(false);
 			});
 		});
 	});

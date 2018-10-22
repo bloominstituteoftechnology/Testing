@@ -42,10 +42,11 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
-  if (Math.floor(num) === num) {
-    return true;
-  }
-  return false;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (Math.floor(num) === num) {
+		return true;
+	}
+	return false;
 };
 
 const fizzBuzz = num => {
