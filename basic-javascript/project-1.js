@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
   return num * 10;
 };
 
@@ -85,7 +88,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
