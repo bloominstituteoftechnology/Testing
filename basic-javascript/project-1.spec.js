@@ -74,5 +74,14 @@ describe('tests for subtractFive()', () => {
       helpers.subtractFive(undefinedVariable);
     }).toThrow();
   });
-  
+
 });
+
+// starting with single tests from here on out in the interest of time
+
+test('should return strings of same length', () => {
+  const str1 = 'testone';
+  const str2 = 'testtwo';
+
+  expect(str1.length).toEqual(str2.length);
+})
