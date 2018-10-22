@@ -1,7 +1,6 @@
 const helpers = require('./project-1');
 
-// start testing!
-
+//========== MULTIPLY BY 10
 describe('multiplyByTen()', () => {
     it('should multiply provided number by ten', () => {
         const expected = 50;
@@ -19,6 +18,7 @@ describe('multiplyByTen()', () => {
     });
 });
 
+//============ SUBTRACT BY 5
 describe('subtractFive()', () => {
     it('should subtract provided number by five', () => {
         const expected = 25;
@@ -27,6 +27,7 @@ describe('subtractFive()', () => {
     });
 });
 
+//============ SAME LENGTH STRINGS
 describe('areSameLength()', () => {
     it('should return true if both strings are the same length', () => {
         const expected = true;
@@ -35,6 +36,7 @@ describe('areSameLength()', () => {
     });
 });
 
+//============ DEEP EQUAL!
 describe('areEqual', () => {
     it('should return true if both variables are deep equal', () => {
         const expected = true;
@@ -45,6 +47,7 @@ describe('areEqual', () => {
     });
 });
 
+//============ LESS THAN 90
 describe('lessThanNinety()', () => {
     it('should return true if number is less than 90', () => {
         const expected = true;
@@ -58,6 +61,7 @@ describe('lessThanNinety()', () => {
     });
 });
 
+//============ GREATER THAN 50
 describe('greaterThanFifty()', () => {
     it('should return true if number greater than 50', () => {
         const expected = true;
@@ -71,6 +75,7 @@ describe('greaterThanFifty()', () => {
     });
 });
 
+//============ ADD
 describe('add()', () => {
     it('should return the sum of two numbers', () => {
         const expected = 25;
@@ -79,6 +84,7 @@ describe('add()', () => {
     });
 });
 
+//============ SUBTRACT
 describe('subtract()', () => {
     it('should return the difference of two numbers', () => {
         const expected = 25;
@@ -87,6 +93,7 @@ describe('subtract()', () => {
     });
 });
 
+//============ DIVIDE
 describe('divide()', () => {
     it('should divide the first number by the second number', () => {
         const expected = 25;
@@ -95,6 +102,7 @@ describe('divide()', () => {
     });
 });
 
+//============ MULTIPLY
 describe('multiply()', () => {
     it('should return the product of two numbers', () => {
         const expected = 25;
@@ -103,6 +111,7 @@ describe('multiply()', () => {
     });
 });
 
+//============ GET REMAINDER
 describe('getRemainder()', () => {
     it('should return the remainder of two numbers', () => {
         const expected = 0;
@@ -111,7 +120,7 @@ describe('getRemainder()', () => {
     });
 });
 
-
+//============ EVEN
 describe('isEven()', () => {
     it('should return true if number is even', () => {
         const expected = true;
@@ -120,6 +129,7 @@ describe('isEven()', () => {
     });
 });
 
+//============ ODD
 describe('isOdd()', () => {
     it('should return true if number is odd', () => {
         const expected = true;
@@ -128,6 +138,7 @@ describe('isOdd()', () => {
     });
 });
 
+//============ SQUARE
 describe('square()', () => {
     it('should return the product of a number multiplied by itself', () => {
         const expected = 25;
@@ -136,6 +147,7 @@ describe('square()', () => {
     });
 });
 
+//============ CUBE
 describe('cube()', () => {
     it('should return (number^3)', () => {
         const expected = 125;
@@ -144,6 +156,7 @@ describe('cube()', () => {
     });
 });
 
+//============ RAISE TO POWER
 describe('raiseToPower()', () => {
     it('should raise first value to the power of second value', () => {
         const expected = 125;
@@ -152,6 +165,7 @@ describe('raiseToPower()', () => {
     });
 });
 
+//============ ROUND TO NEAREST
 describe('roundNumber()', () => {
     it('should round number to the nearest integer', () => {
         const expected = 5;
@@ -160,6 +174,7 @@ describe('roundNumber()', () => {
     });
 });
 
+//============ ROUND UP 
 describe('roundUp()', () => {
     it('should round number up to the next integer', () => {
         const expected = 5;
@@ -168,6 +183,7 @@ describe('roundUp()', () => {
     });
 });
 
+//============ ADD "!"
 describe('addExclamationPoint()', () => {
     it('should add "!" at the end of a given string', () => {
         const expected = 'wow!';
@@ -176,6 +192,7 @@ describe('addExclamationPoint()', () => {
     });
 });
 
+//============ COMBINE FIRST AND LAST NAME
 describe('combineNames()', () => {
     it('should combine two strings into a single string', () => {
         const expected = 'Lucas Beemer';
@@ -184,6 +201,7 @@ describe('combineNames()', () => {
     });
 });
 
+//============ GREETING
 describe('getGreeting()', () => {
     it('should add "hello" before name and "!" at the end', () => {
         const expected = 'Hello Lucas!';
@@ -192,6 +210,7 @@ describe('getGreeting()', () => {
     });
 });
 
+//============ LENGTH X WIDTH
 describe('getRectangleArea()', () => {
     it('should multiply two numbers to return a product (L x W = area)', () => {
         const expected = 100;
@@ -200,6 +219,7 @@ describe('getRectangleArea()', () => {
     });
 });
 
+//============ TRIANGLE AREA
 describe('getTriangleArea()', () => {
     it('should multiply two given numbers and 0.5', () => {
         const expected = 25;
@@ -208,6 +228,7 @@ describe('getTriangleArea()', () => {
     });
 });
 
+//============ CIRCLE AREA
 describe('getCircleArea()', () => {
     it('should multiply PI by given radius^2', () => {
         const expected = 28;
@@ -216,6 +237,7 @@ describe('getCircleArea()', () => {
     });
 });
 
+//============ RECTANGULAR PRISM VOLUME
 describe('getRectangularPrismVolume()', () => {
     it('should return the volume from 3 values multiplied (L x W x H)', () => {
         const expected = 125;
