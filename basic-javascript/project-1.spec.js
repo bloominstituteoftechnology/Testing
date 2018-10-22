@@ -12,6 +12,7 @@ describe('Testing project-1.js', () => {
 		areEqual,
 		lessThanNinety,
 		greaterThanFifty,
+		add,
 	} = helpers;
 
 	// multiplyByTen()
@@ -175,6 +176,34 @@ describe('Testing project-1.js', () => {
 			it('should return false if given number is not greater than fifty', () => {
 				expect(greaterThanFifty(50)).toBe(false);
 				expect(greaterThanFifty(-91)).toBe(false);
+			});
+		});
+	});
+
+	// add()
+	describe('Testing add()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					add('one', 2);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					add(1, null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					add(undefined, 1);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the sum of both numbers', () => {
+				expect(add(1, 2)).toBe(3);
+				expect(add(0, 0)).toBe(0);
+				expect(add(-10, 3)).toBe(-7);
+				expect(add(2.2, -5.5)).toBe(-3.3);
 			});
 		});
 	});
