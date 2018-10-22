@@ -38,9 +38,9 @@ describe('areSameLength()', () => {
 describe('areEqual', () => {
     it('should return true if both variables are deep equal', () => {
         const expected = true;
-        const a = 'test123';
-        const b = 'test123';
-        const actual = helpers.areEqual(a, b);
+        const x = 'Test123!';
+        const y = 'Test123!';
+        const actual = helpers.areEqual(x, y);
         expect(actual).toEqual(expected);
     });
 });
@@ -71,7 +71,7 @@ describe('greaterThanFifty()', () => {
     });
 });
 
-describe('add', () => {
+describe('add()', () => {
     it('should return the sum of two numbers', () => {
         const expected = 25;
         const actual = helpers.add(20, 5);
@@ -79,7 +79,7 @@ describe('add', () => {
     });
 });
 
-describe('subtract', () => {
+describe('subtract()', () => {
     it('should return the difference of two numbers', () => {
         const expected = 25;
         const actual = helpers.subtract(30, 5);
@@ -87,7 +87,7 @@ describe('subtract', () => {
     });
 });
 
-describe('divide', () => {
+describe('divide()', () => {
     it('should divide the first number by the second number', () => {
         const expected = 25;
         const actual = helpers.divide(100, 4);
@@ -95,7 +95,7 @@ describe('divide', () => {
     });
 });
 
-describe('multiply', () => {
+describe('multiply()', () => {
     it('should return the product of two numbers', () => {
         const expected = 25;
         const actual = helpers.multiply(5, 5);
@@ -103,10 +103,123 @@ describe('multiply', () => {
     });
 });
 
-describe('getRemainder', () => {
+describe('getRemainder()', () => {
     it('should return the remainder of two numbers', () => {
         const expected = 0;
         const actual = helpers.getRemainder(25, 5);
+        expect(actual).toEqual(expected);
+    });
+});
+
+
+describe('isEven()', () => {
+    it('should return true if number is even', () => {
+        const expected = true;
+        const actual = helpers.isEven(100);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('isOdd()', () => {
+    it('should return true if number is odd', () => {
+        const expected = true;
+        const actual = helpers.isOdd(5);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('square()', () => {
+    it('should return the product of a number multiplied by itself', () => {
+        const expected = 25;
+        const actual = helpers.square(5);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('cube()', () => {
+    it('should return (number^3)', () => {
+        const expected = 125;
+        const actual = helpers.cube(5);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('raiseToPower()', () => {
+    it('should raise first value to the power of second value', () => {
+        const expected = 125;
+        const actual = helpers.raiseToPower(5, 3);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('roundNumber()', () => {
+    it('should round number to the nearest integer', () => {
+        const expected = 5;
+        const actual = helpers.roundNumber(5.4);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('roundUp()', () => {
+    it('should round number up to the next integer', () => {
+        const expected = 5;
+        const actual = helpers.roundUp(4.1);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('addExclamationPoint()', () => {
+    it('should add "!" at the end of a given string', () => {
+        const expected = 'wow!';
+        const actual = helpers.addExclamationPoint('wow');
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('combineNames()', () => {
+    it('should combine two strings into a single string', () => {
+        const expected = 'Lucas Beemer';
+        const actual = helpers.combineNames('Lucas', 'Beemer');
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('getGreeting()', () => {
+    it('should add "hello" before name and "!" at the end', () => {
+        const expected = 'Hello Lucas!';
+        const actual = helpers.getGreeting('Lucas');
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('getRectangleArea()', () => {
+    it('should multiply two numbers to return a product (L x W = area)', () => {
+        const expected = 100;
+        const actual = helpers.getRectangleArea(20, 5);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('getTriangleArea()', () => {
+    it('should multiply two given numbers and 0.5', () => {
+        const expected = 25;
+        const actual = helpers.getTriangleArea(10, 5);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('getCircleArea()', () => {
+    it('should multiply PI by given radius^2', () => {
+        const expected = 28;
+        const actual = Math.round(helpers.getCircleArea(3, 3));
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('getRectangularPrismVolume()', () => {
+    it('should return the volume from 3 values multiplied (L x W x H)', () => {
+        const expected = 125;
+        const actual = helpers.getRectangularPrismVolume(5, 5, 5);
         expect(actual).toEqual(expected);
     });
 });
