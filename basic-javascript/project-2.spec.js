@@ -2,6 +2,7 @@ const funcs = require('./project-2');
 
 const nonNumberTypeError = 'Value must be a number.';
 const nonStringTypeError = 'Value must be a string.';
+const nonArrayTypeError = 'Value must be an array.';
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Testing project-2.js', () => {
@@ -13,6 +14,7 @@ describe('Testing project-2.js', () => {
 		isInteger,
 		fizzBuzz,
 		isPrime,
+		returnFirst,
 	} = funcs;
 
 	// getBiggest()
@@ -243,6 +245,47 @@ describe('Testing project-2.js', () => {
 				expect(isPrime(0)).toBe(false);
 				expect(isPrime(1)).toBe(false);
 				expect(isPrime(-1)).toBe(false);
+			});
+		});
+	});
+
+	// returnFirst()
+	describe('Testing returnFirst()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					returnFirst('one');
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					returnFirst(1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					returnFirst({ 'one': 1 });
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					returnFirst(null);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					returnFirst(undefined);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with array type', () => {
+			it('should throw an error if the array is empty', () => {
+				expect(() => {
+					returnFirst([]);
+				}).toThrow('Array cannot be empty.');
+			});
+
+			it('should return the first value of the array', () => {
+				expect(returnFirst([1, 2])).toBe(1);
+				expect(returnFirst([{ one: 1 }, 2])).toEqual({ one: 1 });
+				expect(returnFirst([[ 1, 2 ], 2])).toEqual([ 1, 2 ]);
 			});
 		});
 	});

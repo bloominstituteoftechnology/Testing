@@ -2,6 +2,7 @@
 
 const nonNumberTypeError = 'Value must be a number.';
 const nonStringTypeError = 'Value must be a string.';
+const nonArrayTypeError = 'Value must be an array.';
 
 const getBiggest = (x, y) => {
 	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
@@ -78,7 +79,9 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  return arr[0];
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	if (!arr.length) throw new Error('Array cannot be empty.');
+	return arr[0];
 };
 
 const returnLast = arr => {
