@@ -49,7 +49,11 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if (x, y && typeof x === "number" && typeof y === "number") {
+    return x - y;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const divide = (x, y) => {

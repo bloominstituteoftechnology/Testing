@@ -120,6 +120,23 @@ describe('project-1.js', () => {
       expect(actual).toEqual(expected)
     })
   })
+  describe('subtract()', () => {
+    it('checks if both values subtracted are the correct value', () => {
+      const expected = 1;
+      const actual = helpers.subtract(6, 5);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.subtract();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a string was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.subtract("5");
+      expect(actual).toEqual(expected)
+    })
+  })
 })
 
-// add error tests for greaterThanFifty and fixed code for invalid states
+// add error tests for add and fixed code for invalid states
