@@ -92,3 +92,15 @@ test('should return numbers of equal value', () => {
 
   expect(x).toEqual(y);
 });
+
+test('should be true when given number is less than 90', () => {
+  const num = 5;
+
+  expect(num).toBeLessThan(90);
+});
+
+test('should be true when given number is greater than 50', () => {
+  const num = 75;
+
+  expect(num).toBeGreaterThan(50);
+});
