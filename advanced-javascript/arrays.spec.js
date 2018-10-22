@@ -79,8 +79,22 @@ describe("Arrays", () => {
       ).toEqual([50, 50]);
     });
     test("tests type of filter returns function", () => {
-      const filter = arrayFunctions.filter;
-      expect(typeof filter).toBe("function");
+      expect(typeof arrayFunctions.filter).toBe("function");
+    });
+  });
+
+  describe("flatten tests", () => {
+    test("tests if flatten of [23, 45, 22, [45 , 45]] returns [23, 45, 22, 45, 45]", () => {
+      expect(arrayFunctions.flatten([23, 45, 22, [45, 45]])).toEqual([
+        23,
+        45,
+        22,
+        45,
+        45
+      ]);
+    });
+    it("tests type of flatten returns function", () => {
+      expect(typeof arrayFunctions.flatten).toBe("function");
     });
   });
 });
