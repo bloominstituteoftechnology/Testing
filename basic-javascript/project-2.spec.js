@@ -11,6 +11,7 @@ describe('Testing project-2.js', () => {
 		isTenOrFive,
 		isInRange,
 		isInteger,
+		fizzBuzz,
 	} = funcs;
 
 	// getBiggest()
@@ -164,6 +165,51 @@ describe('Testing project-2.js', () => {
 			it('should return false if num is not an integer', () => {
 				expect(isInteger(0.1)).toBe(false);
 				expect(isInteger(-0.2)).toBe(false);
+			});
+		});
+	});
+
+	// fizzBuzz()
+	describe('Testing fizzBuzz()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					fizzBuzz('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					fizzBuzz(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					fizzBuzz(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return fizzbuzz if num divisible by both 5 and 3', () => {
+				expect(fizzBuzz(0)).toBe('fizzbuzz');
+				expect(fizzBuzz(15)).toBe('fizzbuzz');
+				expect(fizzBuzz(-15)).toBe('fizzbuzz');
+				expect(fizzBuzz(30)).toBe('fizzbuzz');
+			});
+
+			it('should return buzz if num divisible by 5 and not 3', () => {
+				expect(fizzBuzz(5)).toBe('buzz');
+				expect(fizzBuzz(20)).toBe('buzz');
+				expect(fizzBuzz(-20)).toBe('buzz');
+			});
+
+			it('should return fizz if num divisible by 3 and not 5', () => {
+				expect(fizzBuzz(3)).toBe('fizz');
+				expect(fizzBuzz(6)).toBe('fizz');
+				expect(fizzBuzz(-9)).toBe('fizz');
+			});
+
+			it('should return the number if num is not divisible by 3 or 5', () => {
+				expect(fizzBuzz(7)).toBe(7);
+				expect(fizzBuzz(-7)).toBe(-7);
 			});
 		});
 	});
