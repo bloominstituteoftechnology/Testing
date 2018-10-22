@@ -13,6 +13,14 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
+  if ( !num ) {
+    return 0;
+  }
+
+  if (typeof num !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   return num - 5;
 };
 
