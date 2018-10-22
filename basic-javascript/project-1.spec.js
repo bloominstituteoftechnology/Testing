@@ -18,4 +18,21 @@ describe('project-1.js', () => {
       expect(actual).toEqual(expected)
     })
   })
+  describe('subtractFive()', () => {
+    it('subtracts a number by 5', () => {
+      const expected = 5;
+      const actual = helpers.subtractFive(10);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.subtractFive();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a string was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.subtractFive("5");
+      expect(actual).toEqual(expected)
+    })
+  })
 })
