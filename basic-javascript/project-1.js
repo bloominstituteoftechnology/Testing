@@ -130,7 +130,9 @@ const getRectangleArea = (length, width) => {
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+	if (typeof(base) !== 'number' || typeof(height) !== 'number') throw new Error(nonNumberTypeError);
+	if (base < 0 || height < 0) throw new Error('Triangle dimension cannot have negative values.');
+	return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {

@@ -28,6 +28,7 @@ describe('Testing project-1.js', () => {
 		combineNames,
 		getGreeting,
 		getRectangleArea,
+		getTriangleArea,
 	} = helpers;
 
 	// multiplyByTen()
@@ -686,6 +687,44 @@ describe('Testing project-1.js', () => {
 				expect(getRectangleArea(0, 1)).toBe(0);
 				expect(getRectangleArea(2, 1)).toBe(2);
 				expect(getRectangleArea(0.2, 0.1)).toBeCloseTo(0.02);
+			});
+		});
+	});
+
+	// getTriangleArea()
+	describe('Testing getTriangleArea()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					getTriangleArea(1, 'one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getTriangleArea(null, 1);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getTriangleArea(1, undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number types', () => {
+			it('should throw an error if a dimension is negative', () => {
+				expect(() => {
+					getTriangleArea(-1, 2);
+				}).toThrow('Triangle dimension cannot have negative values.');
+
+				expect(() => {
+					getTriangleArea(1, -2);
+				}).toThrow('Triangle dimension cannot have negative values.');
+			});
+
+			it('should return the area of the triangle with the given dimensions', () => {
+				expect(getTriangleArea(0, 0)).toBe(0);
+				expect(getTriangleArea(0, 1)).toBe(0);
+				expect(getTriangleArea(2, 1)).toBe(1);
+				expect(getTriangleArea(0.2, 0.1)).toBeCloseTo(0.01);
 			});
 		});
 	});
