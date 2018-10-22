@@ -9,6 +9,7 @@ describe('Testing project-2.js', () => {
 		getBiggest,
 		greeting,
 		isTenOrFive,
+		isInRange,
 	} = funcs;
 
 	// getBiggest()
@@ -96,6 +97,40 @@ describe('Testing project-2.js', () => {
 				expect(isTenOrFive(0.2)).toBe(false);
 				expect(isTenOrFive(-1)).toBe(false);
 				expect(isTenOrFive(-0.2)).toBe(false);
+			});
+		});
+	});
+
+	// isInRange()
+	describe('Testing isInRange()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					isInRange('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					isInRange(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					isInRange(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if num is less than 50 and more than 20', () => {
+				expect(isInRange(21)).toBe(true);
+				expect(isInRange(49)).toBe(true);
+			});
+
+			it('should return false if num is not less than 50 and more than 20', () => {
+				expect(isInRange(20)).toBe(false);
+				expect(isInRange(50)).toBe(false);
+				expect(isInRange(-1)).toBe(false);
+				expect(isInRange(51)).toBe(false);
+				expect(isInRange(0.2)).toBe(false);
 			});
 		});
 	});
