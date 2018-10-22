@@ -1,9 +1,9 @@
 {
-  "name": "basic-javascript",
+  "name": "testpg",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {
+  "scripts":{
     "test": "jest --watch --verbose"
   },
   "devDependencies": {

@@ -1,5 +1,4 @@
 /* eslint-disable arrow-parens */
-const assert = require('assert');
 
 const multiplyByTen = num => {
   if (!num){
@@ -36,7 +35,7 @@ const areEqual = (x, y) => {
     throw new Error('values must not be null');
   }
   if (typeof x ==="object" && typeof y ==="object"){
-    return assert.deepStrictEqual(x,y);
+    return JSON.stringify(x)===JSON.stringify(y);
   }
   return x===y;
 };
