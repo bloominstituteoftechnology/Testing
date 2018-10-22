@@ -21,6 +21,7 @@ describe('Testing project-1.js', () => {
 		isOdd,
 		square,
 		cube,
+		raiseToPower,
 	} = helpers;
 
 	// multiplyByTen()
@@ -462,6 +463,34 @@ describe('Testing project-1.js', () => {
 				expect(cube(1)).toBe(1);
 				expect(cube(-2)).toBe(-8);
 				expect(cube(-0.2)).toBeCloseTo(-0.008);
+			});
+		});
+	});
+
+	// raiseToPower()
+	describe('Testing raiseToPower()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					raiseToPower('one', 2);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					raiseToPower(1, null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					raiseToPower(undefined, 1);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the value of num raised to the value of exponent', () => {
+				expect(raiseToPower(0, 1)).toBe(0);
+				expect(raiseToPower(1, 0)).toBe(1);
+				expect(raiseToPower(-2, -2)).toBe(0.25);
+				expect(raiseToPower(4, -.5)).toBeCloseTo(0.5);
 			});
 		});
 	});

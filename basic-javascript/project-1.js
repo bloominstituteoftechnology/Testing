@@ -92,7 +92,8 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+	if (typeof(num) !== 'number' || typeof(exponent) !== 'number') throw new Error(nonNumberTypeError);
+	return num ** exponent;
 };
 
 const roundNumber = num => {
