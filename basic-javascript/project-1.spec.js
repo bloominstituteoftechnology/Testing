@@ -76,4 +76,54 @@ describe("helpers.js", () => {
   test("tests if 10 cubed is equal to 1000", () => {
     expect(helpers.cube(10)).toBe(1000);
   });
+
+  // raiseToPower
+  test("tests if 10 to the power of 10 is 10000000000", () => {
+    expect(helpers.raiseToPower(10, 10)).toBe(10000000000);
+  });
+
+  // roundNumber
+  test("tests if 23.6 roundes is 24", () => {
+    expect(helpers.roundNumber(23.6)).toBe(24);
+  });
+
+  // roundUp
+  test("tests if 34.3 rounded up equals 35", () => {
+    expect(helpers.roundUp(34.3)).toBe(35);
+  });
+
+  // addExclamationPoint
+  test("tests if 'bang' addExclamationPoint equals 'bang!'", () => {
+    expect(helpers.addExclamationPoint(bang)).toBe("bang!");
+  });
+
+  // combineNames
+  test("tests if combineNames('Tom', 'Tarpey') equals Tom Tarpey", () => {
+    expect(helpers.combineNames("Tom", "Tarpey")).toBe("Tom Tarpey");
+  });
+
+  // getGreeting
+  test("tests if getGreeting('Luis') returns 'Hello Luis'", () => {
+    expect(helpers.getGreeting("Luis")).toBe("Hello Luis");
+  });
+
+  // getRectangleArea
+  test("tests if getRectangleArea(200, 100) returns 20000", () => {
+    expect(helpers.getRectangleArea(200, 100)).toBe(20000);
+  });
+
+  // getTriangleArea
+  test("tests if getTriangleArea(20, 20) returns 200", () => {
+    expect(helpers.getTriangleArea(20, 20)).toBe(200);
+  });
+
+  // getCircleArea
+  test("tests if getCircleArea(3) is close to 28.27", () => {
+    expect(helpers.getCircleArea(3)).toBeCloseTo(28.27);
+  });
+
+  // getRectangularPrismVolume
+  test("tests if getRectangularPrismVolume(10, 10, 10) returns 1000", () => {
+    expect(helpers.getRectangularPrismVolume(10, 10, 10)).toBe(1000);
+  });
 });
