@@ -561,9 +561,30 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const getRectangleArea = (length, width) => {
-	// 	return length * width;
-	// };
+	describe('getRectangleArea()', () => {
+		// const getRectangleArea = (length, width) => {
+		// 	return length * width;
+		// };
+		// expected computed area of rectangle
+		it('should return the area of a rectangle based on the provided length and width', () => {
+			const actual = helpers.getRectangleArea(4, 4);
+			expect(actual).toEqual(16);
+		});
+
+		// input null
+		it('should throw an error when provided null/undefined input', () => {
+			expect(() => {
+				helpers.getRectangleArea(3);
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when provided string input', () => {
+			expect(() => {
+				helpers.getRectangleArea(5, '5');
+			}).toThrowError();
+		});
+	});
 
 	// const getTriangleArea = (base, height) => {
 	// 	return 0.5 * base * height;

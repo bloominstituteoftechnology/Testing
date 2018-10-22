@@ -125,6 +125,8 @@ const getGreeting = (name) => {
 };
 
 const getRectangleArea = (length, width) => {
+	if (!length || !width || typeof length !== 'number' || typeof width !== 'number')
+		throw new Error('Only numbers supported!');
 	return length * width;
 };
 
