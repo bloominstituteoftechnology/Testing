@@ -1,6 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const nonNumberTypeError = 'Value must be a number.';
+const nonStringTypeError = 'Value must be a string.';
 
 const getBiggest = (x, y) => {
 	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
@@ -13,14 +14,15 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
-  switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
-    default:
-      return 'Hello!';
-  }
+	if (typeof(language) !== 'string') throw new Error(nonStringTypeError);
+	switch (language) {
+		case 'German':
+		return 'Guten Tag!';
+		case 'Spanish':
+		return 'Hola!';
+		default:
+		return 'Hello!';
+	}
 };
 
 const isTenOrFive = num => {

@@ -1,11 +1,13 @@
 const funcs = require('./project-2');
 
 const nonNumberTypeError = 'Value must be a number.';
+const nonStringTypeError = 'Value must be a string.';
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Testing project-2.js', () => {
 	const {
 		getBiggest,
+		greeting,
 	} = funcs;
 
 	// getBiggest()
@@ -33,6 +35,32 @@ describe('Testing project-2.js', () => {
 				expect(getBiggest(0.1, 0.2)).toBe(0.2);
 				expect(getBiggest(-1, 2)).toBe(2);
 				expect(getBiggest(-2, -1)).toBe(-1);
+			});
+		});
+	});
+
+	// greeting()
+	describe('Testing greeting()', () => {
+		describe('Calling with a number, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					greeting(1);
+				}).toThrow(nonStringTypeError);
+
+				expect(() => {
+					greeting(null);
+				}).toThrow(nonStringTypeError);
+	
+				expect(() => {
+					greeting(undefined);
+				}).toThrow(nonStringTypeError);
+			});
+		});
+
+		describe('Calling with string type', () => {
+			it('should return hello in the language given', () => {
+				expect(greeting('Spanish')).toBe('Hola!');
+				expect(greeting('English')).toBe('Hello!');
 			});
 		});
 	});
