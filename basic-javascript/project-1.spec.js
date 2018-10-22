@@ -338,20 +338,83 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const isOdd = (num) => {
-	// 	if (num % 2 === 0) {
-	// 		return false;
-	// 	}
-	// 	return true;
-	// };
+	describe('isOdd()', () => {
+		// const isOdd = (num) => {
+		// 	if (num % 2 === 0) {
+		// 		return false;
+		// 	}
+		// 	return true;
+		// };
+		// expected bool
+		it('should return true if input is odd', () => {
+			const actual = helpers.isOdd(13);
+			expect(actual).toEqual(true);
+		});
 
-	// const square = (num) => {
-	// 	return num * num;
-	// };
+		// input null
+		it('should throw an error if input is null/undefined', () => {
+			expect(() => {
+				helpers.isOdd();
+			}).toThrowError();
+		});
 
-	// const cube = (num) => {
-	// 	return num * num * num;
-	// };
+		// input string
+		it('should throw an error if input is a string', () => {
+			expect(() => {
+				helpers.isOdd('27');
+			}).toThrowError();
+		});
+	});
+
+	describe('square()', () => {
+		// const square = (num) => {
+		// 	return num * num;
+		// };
+		// expected squared number
+		it('should return the square of the value provided', () => {
+			const actual = helpers.square(3);
+			expect(actual).toEqual(9);
+		});
+
+		// input null
+		it('should throw an error when input is null/undefined', () => {
+			expect(() => {
+				helpers.square();
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when input is a string', () => {
+			expect(() => {
+				helpers.square('4');
+			}).toThrowError();
+		});
+	});
+
+	describe('cube', () => {
+		// const cube = (num) => {
+		// 	return num * num * num;
+		// };
+		// expected cubed number
+		it('should return the cube of the number provided', () => {
+			const actual = helpers.cube(3);
+			expect(actual).toEqual(27);
+		});
+
+		// input null
+		it('should throw an error when provided a null value', () => {
+			expect(() => {
+				helpers.cube();
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when provided a string value', () => {
+			expect(() => {
+				helpers.cube('4');
+			}).toThrowError();
+		});
+	});
 
 	// const raiseToPower = (num, exponent) => {
 	// 	return num ** exponent;

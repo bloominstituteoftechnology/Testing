@@ -74,17 +74,21 @@ const isEven = (num) => {
 };
 
 const isOdd = (num) => {
-	if (num % 2 === 0) {
-		return false;
-	}
-	return true;
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
+	// if (num % 2 === 0) {
+	// 	return false;
+	// }
+	// return true;
+	return num % 2 === 0 ? false : true;
 };
 
 const square = (num) => {
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
 	return num * num;
 };
 
 const cube = (num) => {
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
 	return num * num * num;
 };
 
