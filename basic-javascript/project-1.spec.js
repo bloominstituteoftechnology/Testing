@@ -38,7 +38,7 @@ describe('helpers.js', () => {
     });
   });
 
-  describe ('subtractFive()', () => {
+  describe('subtractFive()', () => {
     it('should subtract 5 from provided number', () => {
       const expected = 25;
 
@@ -56,6 +56,22 @@ describe('helpers.js', () => {
     it('should throw error when called with a string', () => {
       expect(() => {
         helpers.subtractFive('twenty five');
+      }).toThrow();
+    });
+  });
+
+  describe('areSameLength()', () => {
+    it('should show that both strings are the same length', () => {
+      const expected = true;
+
+      const actual = helpers.areSameLength('hello', 'there');
+
+      expect(actual).toBe(expected);
+    });
+
+    it('should throw error when called with something is not a string', () => {
+      expect(() => {
+        helpers.areSameLength(365);
       }).toThrow();
     });
   });
