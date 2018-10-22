@@ -27,4 +27,73 @@ describe("testing the second set of functions for the project", () => {
   test("tests if isIntger(1.23) returns false", () => {
     expect(funcs.isInteger(1.23)).toBe(false);
   });
+
+  // fizBuzz
+  test("tests if fixBuzz(15) returns 'fizzbuzz", () => {
+    expect(funcs.fizzBuzz(15)).toBe("fizzbuzz");
+  });
+
+  // isPrime
+  test("tests if isPrime(3) returns true", () => {
+    expect(funcs.isPrime(3)).toBe(true);
+  });
+
+  // returnFirst
+  test("tests if returnFirst([10, 20, 30]) returns 10", () => {
+    expect(funcs.returnFirst([10, 20, 30])).toBe(10);
+  });
+
+  // returnLast
+  test("tests if returnLast([10, 20, 30]) returns 30", () => {
+    expect(funcs.returnLast([10, 20, 30])).toBe(30);
+  });
+
+  // getArrayLength
+  test("tests if getArrayLength([12, 12, 23, 34, 45, 56]) returns 6", () => {
+    expect(funcs.getArrayLength([12, 12, 23, 34, 45, 56])).toBe(6);
+  });
+
+  // incrementByOne
+  test("tests if incrementByOne([120, 100, 10, 20]) returns [121, 101, 11, 21]", () => {
+    expect(funcs.incrementByOne([120, 100, 10, 20])).toBe([121, 101, 11, 21]);
+  });
+
+  // addItemToArray
+  test("tests if addItemToArray([10, 20, 30], 40) returns [10, 20, 30, 40]", () => {
+    expect(funcs.addItemToArray([10, 20, 30], 40)).toBe([10, 20, 30, 40]);
+  });
+
+  // addItemToFront
+  test("tests if addItemToFront([10, 20, 30], 40) returns [40, 10, 20, 30]", () => {
+    expect(funcs.addItemToFront([10, 20, 30], 40)).toBe([40, 10, 20, 30]);
+  });
+
+  // wordsToSentence
+  test("tests if wordsToSentence(['the', 'misty', 'blue', 'eats', 'beans', 0]) returns 'the misty blue eats beans'", () => {
+    expect(
+      funcs.wordsToSentence(["the", "misty", "blue", "eats", "beans", 0])
+    ).toBe("the misty blue eats beans");
+  });
+
+  // contains
+  test("tests if contains([10, 20, 30], 20) returns true", () => {
+    expect(funcs.contains([10, 20, 30], 20)).toBe(true);
+  });
+
+  // addNumbers
+  test("tests if addNumbers(2, 4, 6, 8) returns 20", () => {
+    expect(funcs.addNumbers(2, 4, 6, 8)).toBe(20);
+  });
+
+  // averageTestScore
+  test("tests if averageTestScore([10, 10, 10, 10, 20, 20, 20, 20, 10, 20] returns 15)", () => {
+    expect(
+      funcs.averageTestScore([10, 10, 10, 10, 20, 20, 20, 20, 10, 20])
+    ).toBe(15);
+  });
+
+  // largestNumber
+  test("tests if largestNumber([10, 20, 30]) returns 30", () => {
+    expect(funcs.largestNumber([10, 20, 30])).toBe(30);
+  });
 });
