@@ -830,48 +830,48 @@ describe('project-1.js', () => {
     // -- Square --
     describe('Square', () => {
     // Return Value After Expected Input
-    it('Should return the number raised to the power of 2.', () => {
-        let expected = 1764;
-        const actual = helpers.square(42);
-        expect(actual).toBe(expected);
-    })
+        it('Should return the number raised to the power of 2.', () => {
+            let expected = 1764;
+            const actual = helpers.square(42);
+            expect(actual).toBe(expected);
+        })
 
-    // Return Value After Empty Input
-    it('Should return 0 if no input is provided', () => {
-        let expected = 0;
-        const actual = helpers.square();
-        expect(actual).toBe(expected);
-    })
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.square();
+            expect(actual).toBe(expected);
+        })
 
-    // Return Values After Unexpected Inputs
-    describe('Unexpected Inputs', () => {
-        // Return Value After Boolean Input
-        it('Should throw an error if a boolean is provided', () => {
-            const actual = () => { helpers.square(true) };
-            expect(actual).toThrow();
-        })
-        // Return Value After String Input
-        it('Should throw an error if a string is provided', () => {
-            const actual = () => { helpers.square('test') };
-            expect(actual).toThrow();
-        })
-        // Return Value After Array Input
-        it('Should throw an error if an array is provided', () => {
-            const actual = () => { helpers.square([42]) };
-            expect(actual).toThrow();
-        })
-        // Return Value After Object Input
-        it('Should throw an error if an object is provided', () => {
-            const actual = () => { helpers.square({number: 42}) };
-            expect(actual).toThrow();
-        })
-        // Return Value After Function Input
-        it('Should throw an error if a function is provided', () => {
-            const actual = () => { helpers.square(() => 42) };
-            expect(actual).toThrow();
-        })           
-    });
-})    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.square(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.square('test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.square([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.square({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.square(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+});    
 
     // -- Cube --
     describe('Cube', () => {
@@ -917,7 +917,7 @@ describe('project-1.js', () => {
                 expect(actual).toThrow();
             })           
         });
-    })  
+    });  
     
     // -- Raise to Power --
     describe('Cube', () => {
@@ -999,7 +999,106 @@ describe('project-1.js', () => {
                 expect(actual).toThrow();
             })           
         });
-    })   
+    });   
+
+    // -- Round Number--
+    describe('Round Number', () => {
+        // Return Value After Expected Input
+        it('Should round down if the number has less than five tenths.', () => {
+            let expected = 42;
+            const actual = helpers.roundNumber(42.2);
+            expect(actual).toBe(expected);
+        })
+
+        it('Should round up if the number has greater than or equal to five tenths.', () => {
+            let expected = 42;
+            const actual = helpers.roundNumber(41.7);
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.cube();
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.roundNumber(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.roundNumber('test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.roundNumber([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.roundNumber({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.roundNumber(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    }); 
+
+    // -- Round Up --
+    describe('Round Up', () => {
+        // Return Value After Expected Input
+        it('Should round up always.', () => {
+            let expected = 42;
+            const actual = helpers.roundUp(41.2);
+            expect(actual).toBe(expected);
+        })
+
+    
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.roundUp();
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.roundUp(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.roundUp('test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.roundUp([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.roundUp({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.roundUp(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    });
 });
 
 
