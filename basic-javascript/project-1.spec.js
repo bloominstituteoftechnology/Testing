@@ -103,6 +103,23 @@ describe('project-1.js', () => {
       expect(actual).toEqual(expected)
     })
   })
+  describe('add()', () => {
+    it('checks if both values added are the correct value', () => {
+      const expected = 10;
+      const actual = helpers.add(5, 5);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.add();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a string was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.add("5");
+      expect(actual).toEqual(expected)
+    })
+  })
 })
 
-// add error tests for lessThanNinety and fixed code for invalid states
+// add error tests for greaterThanFifty and fixed code for invalid states

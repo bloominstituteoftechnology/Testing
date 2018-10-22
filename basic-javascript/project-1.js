@@ -41,7 +41,11 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (x, y && typeof x === "number" && typeof y === "number") {
+    return x + y;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const subtract = (x, y) => {
