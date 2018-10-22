@@ -12,6 +12,7 @@ describe('Testing project-2.js', () => {
 		isInRange,
 		isInteger,
 		fizzBuzz,
+		isPrime,
 	} = funcs;
 
 	// getBiggest()
@@ -210,6 +211,38 @@ describe('Testing project-2.js', () => {
 			it('should return the number if num is not divisible by 3 or 5', () => {
 				expect(fizzBuzz(7)).toBe(7);
 				expect(fizzBuzz(-7)).toBe(-7);
+			});
+		});
+	});
+
+	// isPrime()
+	describe('Testing isPrime()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					isPrime('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					isPrime(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					isPrime(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return true if num is prime', () => {
+				expect(isPrime(2)).toBe(true);
+				expect(isPrime(7)).toBe(true);
+			});
+
+			it('should return false if num is not prime', () => {
+				expect(isPrime(0)).toBe(false);
+				expect(isPrime(1)).toBe(false);
+				expect(isPrime(-1)).toBe(false);
 			});
 		});
 	});

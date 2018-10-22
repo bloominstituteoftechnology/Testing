@@ -62,18 +62,19 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
-  if (num < 0) {
-    return false;
-  }
-  if (num === 1 || num === 0) {
-    return false;
-  }
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (num < 0) {
+		return false;
+	}
+	if (num === 1 || num === 0) {
+		return false;
+	}
+	for (let i = 2; i < num; i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+	return true;
 };
 
 const returnFirst = arr => {
