@@ -75,4 +75,45 @@ describe('helpers.js', () => {
       }).toThrow();
     });
   });
+
+  describe('areEqual()', () => {
+    it('should check for deep equality', () => {
+      const x = { are: 'the same' };
+      const y = { are: 'the same' };
+
+      expect(x).toEqual(y);
+    });
+  });
+
+describe('lessThanNinety()', () => {
+  it('should say true if provided number is less than ninety otherwise it should say false', () => {
+    const expected = true;
+
+    const actual = helpers.lessThanNinety(55);
+
+    expect(expected).toBe(actual);
+  });
+
+  it('should throw error when called with a string', () => {
+    expect(() => {
+      helpers.lessThanNinety('fifty five');
+    }).toThrow();
+  });
+}); 
+
+describe('greaterThanFifty()', () => {
+  it('should say true if provided number is greater than ninety otherwise it should say false', () => {
+    const expected = true;
+
+    const actual = helpers.greaterThanFifty(105);
+
+    expect(expected).toBe(actual);
+  });
+
+  it('should throw error when called with a string', () => {
+    expect(() => {
+      helpers.greaterThanFifty('one hundred five');
+    }).toThrow();
+  });
+}); 
 });
