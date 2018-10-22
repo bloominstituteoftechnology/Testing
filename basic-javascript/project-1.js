@@ -1,7 +1,8 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	return num * 10;
 };
 
 const subtractFive = num => {
