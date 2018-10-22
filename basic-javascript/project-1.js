@@ -1,22 +1,53 @@
 /* eslint-disable arrow-parens */
+const assert = require('assert');
 
 const multiplyByTen = num => {
-  return num * 10;
+  if (!num){
+    return 0;
+  }
+  if(typeof num==='string'){
+    throw new Error('value must be a number');
+  }
+    return num * 10;
 };
 
 const subtractFive = num => {
+  if (!num){
+    return 0;
+  }
+  if(typeof num==='string'){
+    throw new Error('value must be a number');
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2){
+    throw new Error('values must not be null');
+  }
+  if(typeof str1==='boolean' || typeof str2==='boolean'){
+    throw new Error('values must not be boolean');
+  }
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (typeof x === "undefined" || typeof y === "undefined"){
+    throw new Error('values must not be null');
+  }
+  if (typeof x ==="object" && typeof y ==="object"){
+    return assert.deepStrictEqual(x,y);
+  }
+  return x===y;
 };
 
 const lessThanNinety = num => {
+  if (!num){
+    throw new Error('must provide a value');
+  }
+  if(typeof num!=='number'){
+    throw new Error('value must be a number');
+  }
   if (num < 90) {
     return true;
   }
