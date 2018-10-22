@@ -15,6 +15,7 @@ describe('Testing project-2.js', () => {
 		fizzBuzz,
 		isPrime,
 		returnFirst,
+		returnLast,
 	} = funcs;
 
 	// getBiggest()
@@ -283,9 +284,50 @@ describe('Testing project-2.js', () => {
 			});
 
 			it('should return the first value of the array', () => {
-				expect(returnFirst([1, 2])).toBe(1);
-				expect(returnFirst([{ one: 1 }, 2])).toEqual({ one: 1 });
-				expect(returnFirst([[ 1, 2 ], 2])).toEqual([ 1, 2 ]);
+				expect(returnFirst([ 1, 2 ])).toBe(1);
+				expect(returnFirst([ { one: 1 }, 2 ])).toEqual({ one: 1 });
+				expect(returnFirst([ [ 1, 2 ], 2 ])).toEqual([ 1, 2 ]);
+			});
+		});
+	});
+
+	// returnLast()
+	describe('Testing returnLast()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					returnLast('one');
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					returnLast(1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					returnLast({ 'one': 1 });
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					returnLast(null);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					returnLast(undefined);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with array type', () => {
+			it('should throw an error if the array is empty', () => {
+				expect(() => {
+					returnLast([]);
+				}).toThrow('Array cannot be empty.');
+			});
+
+			it('should return the last value of the array', () => {
+				expect(returnLast([ 1, 2 ])).toBe(2);
+				expect(returnLast([ 2, { one: 1 } ])).toEqual({ one: 1 });
+				expect(returnLast([ 2, [ 1, 2 ] ])).toEqual([ 1, 2 ]);
 			});
 		});
 	});

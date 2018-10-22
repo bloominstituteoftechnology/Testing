@@ -85,7 +85,9 @@ const returnFirst = arr => {
 };
 
 const returnLast = arr => {
-  return arr[arr.length - 1];
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	if (!arr.length) throw new Error('Array cannot be empty.');
+	return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
