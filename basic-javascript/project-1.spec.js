@@ -16,7 +16,6 @@ describe('helpers.js', () => {
   });
 
   describe('multiplyByTen()', () => {
-    // low hanging fruit
     it('should multiply provided number by ten', () => {
       const expected = 100;
 
@@ -85,35 +84,124 @@ describe('helpers.js', () => {
     });
   });
 
-describe('lessThanNinety()', () => {
-  it('should say true if provided number is less than ninety otherwise it should say false', () => {
-    const expected = true;
+  describe('lessThanNinety()', () => {
+    it('should say true if provided number is less than ninety otherwise it should say false', () => {
+      const expected = true;
 
-    const actual = helpers.lessThanNinety(55);
+      const actual = helpers.lessThanNinety(55);
 
-    expect(expected).toBe(actual);
+      expect(expected).toBe(actual);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.lessThanNinety('fifty five');
+      }).toThrow();
+    });
   });
 
-  it('should throw error when called with a string', () => {
-    expect(() => {
-      helpers.lessThanNinety('fifty five');
-    }).toThrow();
+  describe('greaterThanFifty()', () => {
+    it('should say true if provided number is greater than ninety otherwise it should say false', () => {
+      const expected = true;
+
+      const actual = helpers.greaterThanFifty(105);
+
+      expect(expected).toBe(actual);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.greaterThanFifty('one hundred five');
+      }).toThrow();
+    });
   });
-}); 
 
-describe('greaterThanFifty()', () => {
-  it('should say true if provided number is greater than ninety otherwise it should say false', () => {
-    const expected = true;
+  describe('add()', () => {
+    it('should add provided numbers', () => {
+      const expected = 15;
 
-    const actual = helpers.greaterThanFifty(105);
+      const actual = helpers.add(8, 7);
 
-    expect(expected).toBe(actual);
-  });
+      expect(actual).toEqual(expected);
+    });
 
-  it('should throw error when called with a string', () => {
-    expect(() => {
-      helpers.greaterThanFifty('one hundred five');
-    }).toThrow();
-  });
-}); 
+    it('should return 0 when called with no value', () => {
+      const result = helpers.add();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.add('eight', 'seven');
+      }).toThrow();
+    });
+  }); 
+
+  describe('subtract()', () => {
+    it('should subtract provided numbers', () => {
+      const expected = 200;
+
+      const actual = helpers.subtract(205, 5);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.subtract();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.subtract('two hundred five', 'five');
+      }).toThrow();
+    });
+  }); 
+
+  describe('divide()', () => {
+    it('should divide provided numbers', () => {
+      const expected = 5;
+
+      const actual = helpers.divide(10, 2);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.divide();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.divide('ten', 'two');
+      }).toThrow();
+    });
+  }); 
+
+  describe('multiply()', () => {
+    it('should multiply provided numbers', () => {
+      const expected = 500;
+
+      const actual = helpers.multiply(5, 100);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.multiply();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.multiply('five', 'one hundred');
+      }).toThrow();
+    });
+  }); 
 });
+
