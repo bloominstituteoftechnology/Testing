@@ -4,7 +4,10 @@ const nonNumberTypeTests = require('./nonNumberTypeTests.js');
 
 // start testing!
 describe('Testing project-1.js', () => {
-	const multiplyByTen = helpers.multiplyByTen;
+	const {
+		multiplyByTen,
+		subtractFive,
+	} = helpers;
 
 	describe('Testing multiplyByTen()', () => {
 		describe('Calling with non-number types', () => {
@@ -16,6 +19,24 @@ describe('Testing project-1.js', () => {
 				expect(multiplyByTen(0)).toBe(0);
 				expect(multiplyByTen(1)).toBe(10);
 				expect(multiplyByTen(5)).toBe(50);
+				expect(multiplyByTen(0.55)).toBe(5.5);
+				expect(multiplyByTen(-11.25)).toBe(-112.5);
+			});
+		});
+	});
+
+	describe('Testing subtractFive()', () => {
+		describe('Calling with non-number types', () => {
+			nonNumberTypeTests(subtractFive);
+		});
+
+		describe('Calling with number type', () => {
+			it('should subtract 5 from given number', () => {
+				expect(subtractFive(0)).toBe(-5);
+				expect(subtractFive(1)).toBe(-4);
+				expect(subtractFive(5)).toBe(0);
+				expect(subtractFive(0.55)).toBe(-4.45);
+				expect(subtractFive(-11.25)).toBe(-16.25);
 			});
 		});
 	});

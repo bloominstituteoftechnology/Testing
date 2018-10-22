@@ -6,7 +6,8 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
-  return num - 5;
+	if (typeof(num) !== 'number') throw new Error('Value must be a number.');
+	return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
