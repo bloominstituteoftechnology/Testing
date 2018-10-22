@@ -91,7 +91,8 @@ const returnLast = arr => {
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	return arr.length;
 };
 
 const incrementByOne = arr => {

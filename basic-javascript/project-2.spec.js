@@ -16,6 +16,7 @@ describe('Testing project-2.js', () => {
 		isPrime,
 		returnFirst,
 		returnLast,
+		getArrayLength,
 	} = funcs;
 
 	// getBiggest()
@@ -328,6 +329,41 @@ describe('Testing project-2.js', () => {
 				expect(returnLast([ 1, 2 ])).toBe(2);
 				expect(returnLast([ 2, { one: 1 } ])).toEqual({ one: 1 });
 				expect(returnLast([ 2, [ 1, 2 ] ])).toEqual([ 1, 2 ]);
+			});
+		});
+	});
+
+	// getArrayLength()
+	describe('Testing getArrayLength()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					getArrayLength('one');
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					getArrayLength(1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					getArrayLength({ 'one': 1 });
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					getArrayLength(null);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					getArrayLength(undefined);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with array type', () => {
+			it('should return the length of the array', () => {
+				expect(getArrayLength([])).toBe(0);
+				expect(getArrayLength([ 2, { one: 1 } ])).toEqual(2);
+				expect(getArrayLength([ 2, [ 1, 2 ], 'three' ])).toEqual(3);
 			});
 		});
 	});
