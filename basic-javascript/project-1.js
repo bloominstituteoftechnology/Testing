@@ -204,6 +204,19 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
+
+  if ( !num ) {
+    return 0;
+  }
+
+  if ( !exponent ) {
+    exponent = 1;
+  }
+
+  if (typeof num !== 'number' || typeof exponent !== 'number') {
+    throw new Error('Provided value must be a number.')
+  }
+
   return num ** exponent;
 };
 

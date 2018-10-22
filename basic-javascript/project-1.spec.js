@@ -824,7 +824,182 @@ describe('project-1.js', () => {
                 expect(actual).toThrow();
             })           
         });
-    })       
+    })    
+    
+    
+    // -- Square --
+    describe('Square', () => {
+    // Return Value After Expected Input
+    it('Should return the number raised to the power of 2.', () => {
+        let expected = 1764;
+        const actual = helpers.square(42);
+        expect(actual).toBe(expected);
+    })
+
+    // Return Value After Empty Input
+    it('Should return 0 if no input is provided', () => {
+        let expected = 0;
+        const actual = helpers.square();
+        expect(actual).toBe(expected);
+    })
+
+    // Return Values After Unexpected Inputs
+    describe('Unexpected Inputs', () => {
+        // Return Value After Boolean Input
+        it('Should throw an error if a boolean is provided', () => {
+            const actual = () => { helpers.square(true) };
+            expect(actual).toThrow();
+        })
+        // Return Value After String Input
+        it('Should throw an error if a string is provided', () => {
+            const actual = () => { helpers.square('test') };
+            expect(actual).toThrow();
+        })
+        // Return Value After Array Input
+        it('Should throw an error if an array is provided', () => {
+            const actual = () => { helpers.square([42]) };
+            expect(actual).toThrow();
+        })
+        // Return Value After Object Input
+        it('Should throw an error if an object is provided', () => {
+            const actual = () => { helpers.square({number: 42}) };
+            expect(actual).toThrow();
+        })
+        // Return Value After Function Input
+        it('Should throw an error if a function is provided', () => {
+            const actual = () => { helpers.square(() => 42) };
+            expect(actual).toThrow();
+        })           
+    });
+})    
+
+    // -- Cube --
+    describe('Cube', () => {
+        // Return Value After Expected Input
+        it('Should return the number raised to the power of 3.', () => {
+            let expected = 74088;
+            const actual = helpers.cube(42);
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.cube();
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.cube(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.cube('test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.cube([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.cube({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.cube(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    })  
+    
+    // -- Raise to Power --
+    describe('Cube', () => {
+        // Return Value After Expected Input
+        it('Should return the number raised to the power of the provided exponent.', () => {
+            let expected = 74088;
+            const actual = helpers.raiseToPower(42, 3);
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.raiseToPower();
+            expect(actual).toBe(expected);
+        })
+
+        // Return Value if No Exponent is Provided
+        it('Should return the number if no exponent is provided.', () => {
+            let expected = 42;
+            const actual = helpers.raiseToPower(42);
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs (number)
+        describe('Unexpected Inputs (number)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.raiseToPower(true, 42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.raiseToPower('test', 42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.raiseToPower([42], 42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.raiseToPower({number: 42}, 42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.raiseToPower(() => 42, 42) };
+                expect(actual).toThrow();
+            })           
+        });
+
+        // Return Values After Unexpected Inputs (exponent)
+        describe('Unexpected Inputs (exponent)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.raiseToPower(42, true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.raiseToPower(42, 'test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.raiseToPower(42, [42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.raiseToPower(42, {number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.raiseToPower(42, () => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    })   
 });
 
 
