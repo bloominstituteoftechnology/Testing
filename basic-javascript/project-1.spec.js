@@ -86,6 +86,23 @@ describe('project-1.js', () => {
       expect(actual).toEqual(expected)
     })
   })
+  describe('greaterThanFifty()', () => {
+    it('checks the value of two numbers and returns if they are equal', () => {
+      const expected = true;
+      const actual = helpers.greaterThanFifty(51);
+      expect(actual).toEqual(expected);
+    })
+    it('return "invalid entry" if nothing was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.greaterThanFifty();
+      expect(actual).toEqual(expected)
+    })
+    it('return "invalid entry" if a string was entered', () => {
+      const expected = "invalid entry";
+      const actual = helpers.greaterThanFifty("5");
+      expect(actual).toEqual(expected)
+    })
+  })
 })
 
-// add error tests for # and fixed code for invalid states
+// add error tests for lessThanNinety and fixed code for invalid states

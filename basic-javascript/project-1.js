@@ -33,10 +33,11 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
+  if (num && typeof num === "number") {
+    return num > 50;
+  } else {
+    return "invalid entry";
   }
-  return false;
 };
 
 const add = (x, y) => {
