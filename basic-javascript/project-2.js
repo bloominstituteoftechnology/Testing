@@ -70,10 +70,16 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr.length === 0) {
+    return 'No Items';
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length === 0) {
+    return 'No Items';
+  }
   return arr[arr.length - 1];
 };
 
@@ -82,6 +88,9 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  if (arr.length === 0) {
+    return 'No Items';
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }

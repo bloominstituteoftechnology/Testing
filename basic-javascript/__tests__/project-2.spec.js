@@ -140,4 +140,82 @@ describe('isPrime()', ()=> {
     });
 });
 
+describe('returnFirst()', ()=> {
+    it('should return the first item in the array', ()=> {
+        const actual = funcs.returnFirst(['apple', 'orange', 'banana']);
+        expect(actual).toBe('apple');
+    });
+
+    it('should return No Items if passed empty array', ()=> {
+        const actual = funcs.returnFirst([]);
+        expect(actual).toBe('No Items');
+    });
+});
+
+describe('returnLast()', ()=> {
+    it('should return the last item in the array', ()=> {
+        const actual = funcs.returnLast(['apple', 'orange', 'banana']);
+        expect(actual).toBe('banana');
+    });
+
+    it('should return No Items if passed empty array', ()=> {
+        const actual = funcs.returnLast([]);
+        expect(actual).toBe('No Items');
+    });
+});
+
+describe('getArrayLength()', ()=> {
+    it('should return the length of the array', ()=> {
+        const actual = funcs.getArrayLength(['apple', 'orange', 'banana']);
+        expect(actual).toBe(3);
+    });
+
+    it('should return 0 if passed an empty array', ()=> {
+        const actual = funcs.getArrayLength([]);
+        expect(actual).toBe(0);
+    });
+});
+
+describe('incrementByOne()', ()=> {
+    it('should return the items of the array incremented by one', ()=> {
+        const actual = funcs.incrementByOne([1, 2, 3, 4, 5]);
+        expect(actual).toEqual([2, 3, 4, 5, 6]);
+    });
+
+    it('should return No Items if passed an empty array', ()=> {
+        const actual = funcs.incrementByOne([]);
+        expect(actual).toBe('No Items');
+    });
+});
+
+describe('addItemToArray()', ()=> {
+    it('should add given item to end of given array', ()=> {
+        const actual = funcs.addItemToArray([1, 2, 3, 4, 5], 6);
+        expect(actual).toEqual([1, 2, 3, 4, 5, 6]);
+    });
+});
+
+describe('addItemToFront()', ()=> {
+    it('should add given item to front of given array', ()=> {
+        const actual = funcs.addItemToFront([1, 2, 3, 4, 5], 6);
+        expect(actual).toEqual([6, 1, 2, 3, 4, 5]);
+    });
+});
+
+describe('addItemToArray()', ()=> {
+    it('should add given item to end of given array', ()=> {
+        const actual = funcs.addItemToArray([1, 2, 3, 4, 5], 6);
+        expect(actual).toEqual([1, 2, 3, 4, 5, 6]);
+    });
+});
+
+describe('wordsToSentence()', ()=> {
+    it('should turn words into a sentence', ()=> {
+        const actual = funcs.wordsToSentence(['hello', 'how', 'are', 'you']);
+        expect(actual).toBe('hello how are you');
+    });
+});
+
+
+
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
