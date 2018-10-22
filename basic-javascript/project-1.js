@@ -245,14 +245,39 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
+  if (!str) {
+    return '!';
+  }
+
+  if (typeof str !== 'string') {
+    throw new Error('Provided value must be a string.')
+  }
+
   return (str += '!');
 };
 
-const combineNames = (firstName, lastName) => {
+const combineNames = (firstName = "", lastName = "") => {
+
+  if (typeof firstName !== 'string' || typeof lastName !== 'string') {
+    throw new Error('Provided value must be a string.')
+  }
+
+  if (!firstName || !lastName) {
+    return `${firstName}${lastName}`;
+  }
+
   return `${firstName} ${lastName}`;
 };
 
-const getGreeting = name => {
+const getGreeting = (name = "") => {
+  if (typeof name !== 'string') {
+    throw new Error('Provided value must be a string.')
+  }
+
+  if (!name) {
+    return `Hello!`;
+  }
+
   return `Hello ${name}!`;
 };
 

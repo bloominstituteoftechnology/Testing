@@ -1099,6 +1099,229 @@ describe('project-1.js', () => {
             })           
         });
     });
+
+
+        // -- Round Up --
+    describe('Round Up', () => {
+        // Return Value After Expected Input
+        it('Should round up always.', () => {
+            let expected = 42;
+            const actual = helpers.roundUp(41.2);
+            expect(actual).toBe(expected);
+        })
+
+    
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.roundUp();
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.roundUp(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.roundUp('test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.roundUp([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.roundUp({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.roundUp(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    });
+
+    // -- Add Exclamation Point --
+    describe('Add Exlamation Point', () => {
+        // Return Value After Expected Input
+        it('Adds an exclamation point onto the end of the provided string', () => {
+            let expected = "Nidoran, I choose you!";
+            const actual = helpers.addExclamationPoint("Nidoran, I choose you");
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Value After Empty Input
+        it('Should return an exclamation point if no input is provided', () => {
+            let expected = '!';
+            const actual = helpers.addExclamationPoint();
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.addExclamationPoint(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Number Input
+            it('Should throw an error if a number is provided', () => {
+                const actual = () => { helpers.addExclamationPoint(42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.addExclamationPoint([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.addExclamationPoint({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.addExclamationPoint(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    });
+
+        // -- Combine Names --
+        describe('Combine Names', () => {
+            // Return Value After Expected Input
+            it('Returns the two names combined with a space between them', () => {
+                let expected = "Brock Harrison";
+                const actual = helpers.combineNames("Brock", "Harrison");
+                expect(actual).toBe(expected);
+            })
+        
+            // Return Value After Empty Input
+            it('Should return an empty string if no input is provided', () => {
+                let expected = '';
+                const actual = helpers.combineNames();
+                expect(actual).toBe(expected);
+            })
+
+            // Return Value After Empty Input
+            it('Should just return the string if only one input is provided', () => {
+                let expected = 'Nidoran';
+                const actual = helpers.combineNames('Nidoran');
+                expect(actual).toBe(expected);
+            })
+
+
+        // Return Values After Unexpected Inputs (firstName)
+        describe('Unexpected Inputs (firstName)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.combineNames(true, "lastName") };
+                expect(actual).toThrow();
+            })
+            // Return Value After Number Input
+            it('Should throw an error if a number is provided', () => {
+                const actual = () => { helpers.combineNames(42, "lastName") };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.combineNames([42], "lastName") };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.combineNames({number: 42}, "lastName") };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.combineNames(() => 42, "lastName") };
+                expect(actual).toThrow();
+            })           
+        });
+
+        // Return Values After Unexpected Inputs (lastName)
+        describe('Unexpected Inputs (lastName)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.combineNames("firstName", true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Number Input
+            it('Should throw an error if a number is provided', () => {
+                const actual = () => { helpers.combineNames("firstName", 42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.combineNames("firstName", [42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.combineNames("firstName", {number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.combineNames("firstName", () => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    });
+
+    // -- Get Greeting --
+    describe('Get Greeting', () => {
+        // Return Value After Expected Input
+        it('Adds Hello to the beginning and an exclamation point to the end of the provided string.', () => {
+            let expected = "Hello Nidoran!";
+            const actual = helpers.getGreeting("Nidoran");
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Value After Empty Input
+        it('Should return Hello! if no input is provided', () => {
+            let expected = 'Hello!';
+            const actual = helpers.getGreeting();
+            expect(actual).toBe(expected);
+        })
+    
+        // Return Values After Unexpected Inputs
+        describe('Unexpected Inputs', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.getGreeting(true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Number Input
+            it('Should throw an error if a number is provided', () => {
+                const actual = () => { helpers.getGreeting(42) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.getGreeting([42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.getGreeting({number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.getGreeting(() => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    });
 });
 
 
