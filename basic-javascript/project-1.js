@@ -46,7 +46,9 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
-  return x / y;
+	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error('Value must be a number.');
+	if (y === 0) throw new Error('Cannot divide by zero.');
+	return x / y;
 };
 
 const multiply = (x, y) => {
