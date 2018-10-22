@@ -109,18 +109,23 @@ const roundNumber = num => {
 };
 
 const roundUp = num => {
+  if(!num) return 0;
+    if(typeof num === 'string') throw new Error('Value must exist');
   return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
+    if(!str) throw new Error('Value must exist');
   return (str += '!');
 };
 
 const combineNames = (firstName, lastName) => {
+    if(!firstName || !lastName) throw new Error('Value must exist');
   return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
+  if(!name) throw new Error('Value must exist');
   return `Hello ${name}!`;
 };
 
