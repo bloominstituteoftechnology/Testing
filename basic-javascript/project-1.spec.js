@@ -79,36 +79,79 @@ describe('tests for subtractFive()', () => {
 
 // starting with single tests from here on out in the interest of time
 
-test('should return strings of same length', () => {
-  const one = 'testone';
-  const two = 'testtwo';
-  const equal = helpers.areSameLength(one.length, two.length);
+describe('tests of equality and inequality', () => {
 
-  expect(equal).toBe(true);
-});
+  test('should return strings of same length', () => {
+    const one = 'testone';
+    const two = 'testtwo';
+    const equal = helpers.areSameLength(one.length, two.length);
 
-test('should return numbers of equal value', () => {
-  const x = 3;
-  const y = 3;
-  const equalValue = helpers.areEqual(x, y);
-  
-  expect(x).toEqual(y);
-});
+    expect(equal).toBe(true);
+  });
 
-test('should be true when given number is less than 90', () => {
-  const isLess = helpers.lessThanNinety(45);
+  test('should return numbers of equal value', () => {
+    const x = 3;
+    const y = 3;
+    const equalValue = helpers.areEqual(x, y);
 
-  expect(isLess).toBe(true);
-});
+    expect(x).toEqual(y);
+  });
 
-test('should be true when given number is greater than 50', () => {
-  const isGreater = helpers.greaterThanFifty(55);
+  test('should be true when given number is less than 90', () => {
+    const isLess = helpers.lessThanNinety(45);
 
-  expect(isGreater).toBe(true);
-});
+    expect(isLess).toBe(true);
+  });
 
-test('should return the sum of two numbers', () => {
-  const sum = 5 + 6;
+  test('should be true when given number is greater than 50', () => {
+    const isGreater = helpers.greaterThanFifty(55);
 
-  expect(sum).toBe(11);
-});
+    expect(isGreater).toBe(true);
+  });
+
+}); // equality/inequality
+
+describe('basic math operations', () => {
+
+  test('should return the sum of two numbers', () => {
+    const x = 10;
+    const y = 5;
+    const sum = helpers.add(x, y);
+
+    expect(sum).toBe(15);
+
+  });
+
+  test('should return the difference between two numbers', () => {
+    const x = 10;
+    const y = 5;
+    const difference = helpers.subtract(x, y);
+
+    expect(difference).toBe(5);
+  });
+
+  test('should return the product of two numbers', () => {
+    const x = 10;
+    const y = 5;
+    const product = helpers.multiply(x, y);
+
+    expect(product).toBe(50);
+  });
+
+  test('should return the quotient of two numbers', () => {
+    const x = 10;
+    const y = 5;
+    const quotient = helpers.divide(x, y);
+
+    expect(quotient).toBe(2);
+  });
+
+  test('should return the remainder after dividing two numbers', () => {
+    const x = 10;
+    const y = 3;
+    const modulus = helpers.getRemainder(x, y);
+
+    expect(modulus).toBe(1);
+  });
+
+}); // basic math operations
