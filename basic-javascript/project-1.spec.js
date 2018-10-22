@@ -44,3 +44,16 @@ describe('areEqual', () => {
         expect(actual).toEqual(expected);
     });
 });
+
+describe('lessThanNinety()', () => {
+    it('should return true if number is less than 90', () => {
+        const expected = true;
+        const actual = helpers.lessThanNinety(89);
+        expect(actual).toEqual(expected);
+    });
+    it('should return false if number is greater than 90', () => {
+        const expected = false;
+        const actual = helpers.lessThanNinety(91);
+        expect(actual).toEqual(expected);
+    });
+});
