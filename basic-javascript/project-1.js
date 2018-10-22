@@ -9,7 +9,11 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (str1 && str2 && typeof str1 === "string" && typeof str2 === "string") {
+    return str1.length === str2.length;
+  } else {
+    return "invalid entry";
+  }
 };
 
 const areEqual = (x, y) => {
