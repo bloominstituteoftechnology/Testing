@@ -142,7 +142,9 @@ const getCircleArea = radius => {
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+	if (typeof(length) !== 'number' || typeof(width) !== 'number' || typeof(height) !== 'number') throw new Error(nonNumberTypeError);
+	if (length < 0 || width < 0 || height < 0) throw new Error('Prism dimensions cannot have negative values.');
+	return width * height * length;
 };
 
 module.exports = {

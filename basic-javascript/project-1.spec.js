@@ -30,6 +30,7 @@ describe('Testing project-1.js', () => {
 		getRectangleArea,
 		getTriangleArea,
 		getCircleArea,
+		getRectangularPrismVolume,
 	} = helpers;
 
 	// multiplyByTen()
@@ -760,6 +761,47 @@ describe('Testing project-1.js', () => {
 				expect(getCircleArea(0)).toBe(0);
 				expect(getCircleArea(2)).toBe(12.566370614359172);
 				expect(getCircleArea(0.2)).toBeCloseTo(0.12566370614359174);
+			});
+		});
+	});
+
+	// getRectangularPrismVolume()
+	describe('Testing getRectangularPrismVolume()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					getRectangularPrismVolume('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getRectangularPrismVolume(null);
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					getRectangularPrismVolume(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number types', () => {
+			it('should throw an error if a dimension is negative', () => {
+				expect(() => {
+					getRectangularPrismVolume(-1, 1, 1);
+				}).toThrow('Prism dimensions cannot have negative values.');
+
+				expect(() => {
+					getRectangularPrismVolume(1, -1, 1);
+				}).toThrow('Prism dimensions cannot have negative values.');
+
+				expect(() => {
+					getRectangularPrismVolume(1, 1, -1);
+				}).toThrow('Prism dimensions cannot have negative values.');
+			});
+
+			it('should return the volume of the prism with the given dimensions', () => {
+				expect(getRectangularPrismVolume(0, 0, 0)).toBe(0);
+				expect(getRectangularPrismVolume(1, 2, 3)).toBe(6);
+				expect(getRectangularPrismVolume(0.2, 0.1, 0.1)).toBeCloseTo(0.002);
 			});
 		});
 	});
