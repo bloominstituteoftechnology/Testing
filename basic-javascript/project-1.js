@@ -87,7 +87,8 @@ const square = num => {
 };
 
 const cube = num => {
-  return num * num * num;
+	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {

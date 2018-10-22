@@ -20,6 +20,7 @@ describe('Testing project-1.js', () => {
 		isEven,
 		isOdd,
 		square,
+		cube,
 	} = helpers;
 
 	// multiplyByTen()
@@ -433,6 +434,34 @@ describe('Testing project-1.js', () => {
 				expect(square(1)).toBe(1);
 				expect(square(-2)).toBe(4);
 				expect(square(-0.2)).toBeCloseTo(0.04);
+			});
+		});
+	});
+
+	// cube()
+	describe('Testing cube()', () => {
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					cube('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					cube(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					cube(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
+		});
+
+		describe('Calling with number type', () => {
+			it('should return the cube of the number', () => {
+				expect(cube(0)).toBe(0);
+				expect(cube(1)).toBe(1);
+				expect(cube(-2)).toBe(-8);
+				expect(cube(-0.2)).toBeCloseTo(-0.008);
 			});
 		});
 	});
