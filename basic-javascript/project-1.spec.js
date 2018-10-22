@@ -416,21 +416,98 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const raiseToPower = (num, exponent) => {
-	// 	return num ** exponent;
-	// };
+	describe('raiseToPower()', () => {
+		// const raiseToPower = (num, exponent) => {
+		// 	return num ** exponent;
+		// };
+		// expected number
+		it('should return a number raised to the specified power', () => {
+			const actual = helpers.raiseToPower(3, 3);
+			expect(actual).toEqual(27);
+		});
 
-	// const roundNumber = (num) => {
-	// 	return Math.round(num);
-	// };
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.raiseToPower(4);
+			}).toThrowError();
+		});
 
-	// const roundUp = (num) => {
-	// 	return Math.ceil(num);
-	// };
+		// input string
+		it('should throw an error when the provided input is a string', () => {
+			expect(() => {
+				helpers.raiseToPower(2, '4');
+			}).toThrowError();
+		});
+	});
 
-	// const addExclamationPoint = (str) => {
-	// 	return (str += '!');
-	// };
+	describe('roundNumber()', () => {
+		// const roundNumber = (num) => {
+		// 	return Math.round(num);
+		// };
+		// expected rounded number
+		it('should return the rounded version of the provided input', () => {
+			const actual = helpers.roundNumber(5.6);
+			expect(actual).toEqual(6);
+		});
+
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.roundNumber();
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when provided input is string', () => {
+			expect(() => {
+				helpers.roundNumber('3.141592653');
+			}).toThrowError();
+		});
+	});
+
+	describe('roundUp()', () => {
+		// const roundUp = (num) => {
+		// 	return Math.ceil(num);
+		// };
+		// expected rounded up number
+		it('should return the provided value rounded up to the next whole number', () => {
+			const actual = helpers.roundUp(3.33333333);
+			expect(actual).toEqual(4);
+		});
+
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.roundUp();
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when provided input is string', () => {
+			expect(() => {
+				helpers.roundUp('2.222222222');
+			}).toThrowError();
+		});
+	});
+
+	describe('addExclamationPoint()', () => {
+		// const addExclamationPoint = (str) => {
+		// 	return (str += '!');
+		// };
+		// expected string with !
+		it('should return a string ending in !', () => {
+			const actual = helpers.addExclamationPoint("I'm a little teapot, short and stout");
+			expect(actual).toMatch(/!$/);
+		});
+
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.addExclamationPoint();
+			}).toThrowError();
+		});
+	});
 
 	// const combineNames = (firstName, lastName) => {
 	// 	return `${firstName} ${lastName}`;

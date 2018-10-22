@@ -93,18 +93,23 @@ const cube = (num) => {
 };
 
 const raiseToPower = (num, exponent) => {
+	if (!num || !exponent || typeof num !== 'number' || typeof exponent !== 'number')
+		throw new Error('Only numbers supported!');
 	return num ** exponent;
 };
 
 const roundNumber = (num) => {
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
 	return Math.round(num);
 };
 
 const roundUp = (num) => {
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
 	return Math.ceil(num);
 };
 
 const addExclamationPoint = (str) => {
+	if (!str) throw new Error('Input required!');
 	return (str += '!');
 };
 
