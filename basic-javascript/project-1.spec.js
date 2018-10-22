@@ -167,4 +167,32 @@ it('return a string that combines the first and last name parameters',  () => {
 it('return Hello with the name of the parameter as a string', () => {
   expect(helpers.getGreeting('Dude')).toBe('Hello Dude!'); 
   expect(helpers.getGreeting('Dudet')).toBe('Hello Dudet!')
+});
+
+// ---------------- RECTANGLE AREA ----------------
+
+it('return the product of the two parameters', () => {
+  expect(helpers.getRectangleArea(10,10)).toBe(100); 
+  expect(helpers.getRectangleArea(-10,10)).toBe(-100); 
+})
+
+// ---------------- TRIANGLE AREA ----------------------
+
+it('return product of two parameters divided by two', () => {
+  expect(helpers.getTriangleArea(10,10)).toBe(50); 
+  expect(helpers.getTriangleArea(1,2)).toBe(1); 
+}); 
+
+// --------------- CIRCLE AREA --------------------------
+
+it('return the parameter squared and multiplied by pi', () => {
+  expect(helpers.getCircleArea(100)).toBe(10000 * Math.PI); 
+  expect(helpers.getCircleArea(10)).toBe(100 * Math.PI); 
+}); 
+
+// --------------- RECTANGULAR PRISM ----------------
+
+it('return the product of all three parameters', () => {
+  expect(helpers.getRectangularPrismVolume(10,10,10)).toBe(1000); 
+  expect(helpers.getRectangularPrismVolume(11,22,33)).toBe(7986); 
 }); 
