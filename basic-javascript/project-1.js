@@ -124,7 +124,9 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+	if (typeof(length) !== 'number' || typeof(width) !== 'number') throw new Error(nonNumberTypeError);
+	if (length < 0 || width < 0) throw new Error('Rectangle dimension cannot have negative values.');
+	return length * width;
 };
 
 const getTriangleArea = (base, height) => {
