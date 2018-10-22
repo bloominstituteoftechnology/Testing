@@ -27,14 +27,59 @@ describe('project-1.js', () => {
             expect(actual).toEqual(expected);
         });
     })
-    
-    it ('should return true of both strings are the same length', () => {
-        const expected = true;
-        
-        const actual = helpers.areSameLength('hello', 'teach');
-        
-        expect(actual).toEqual(expected);
-    });
+    describe('areSameLength()', () => {
+
+        it('should return true of both strings are the same length', () => {
+            const expected = true;
+            
+            const actual = helpers.areSameLength('hello', 'teach');
+            
+            expect(actual).toEqual(expected);
+        });
+    })
+
+    describe('areEqual()', () => {
+
+        it('should return true if both variables are deep equal', () => {
+            const expected = true;
+            const a = 'test123';
+            const b = 'test123';
+            const actual = helpers.areEqual(a, b);
+
+            expect(actual).toEqual(expected);
+        });
+    })
+
+    describe('lessThanNinety()', () => {
+
+        it('should return true if number less than 90', () => {
+            const expected = true;
+
+            const actual = helpers.lessThanNinety(85);
+
+            expect(actual).toEqual(expected);
+        });
+        it('should return false if number greater than 90', () => {
+            const expected = false;
+
+            const actual = helpers.lessThanNinety(95);
+
+            expect(actual).toEqual(expected);
+        });
+    })
+
+    describe('greaterThanFifty()', () => {
+
+        it('should return true if number greater than 50', () => {
+            const expected = true;
+
+            const actual = helpers.greaterThanFifty(55);
+
+            expect(actual).toEqual(expected);
+        });
+    })
+
+
     
     
 });
