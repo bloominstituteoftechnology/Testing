@@ -125,4 +125,46 @@ it('return squared value', () => {
 it('return cubed value', () => {
   expect(helpers.cube(10)).toBe(1000); 
   expect(helpers.cube(0)).toBe(0); 
+});
+
+//----------------RAISE TO POWER-----------------------------
+
+it('return the result of the first param to the power of the second param', () => {
+  expect(helpers.raiseToPower(10,2)).toBe(100); 
+  expect(helpers.raiseToPower(10,3)).toBe(1000); 
+}); 
+
+// --------------ROUND NUMBER ---------------------------------
+
+it('return a rounded param value', () => {
+  expect(helpers.roundNumber(10.9)).toBe(11); 
+  expect(helpers.roundNumber(10.1)).toBe(10); 
+})
+
+//-----------------ROUND ^ ---------------------------------------
+
+it('return the value rounded up to the nearest whole number', () => {
+  expect(helpers.roundUp(9.2)).toBe(10); 
+  expect(helpers.roundUp(100.0)).toBe(100); 
+})
+
+// -----------------ADD (!) ----------------------
+
+it('return a string with an exclamation concatenated to the end', () => {
+  expect(helpers.addExclamationPoint('GO AWAY')).toBe('GO AWAY!');
+  expect(helpers.addExclamationPoint('Tadaaaaaa')).toBe("Tadaaaaaa!"); 
+}); 
+
+//-----------------COMBINE NAMES ----------------------------
+
+it('return a string that combines the first and last name parameters',  () => {
+  expect(helpers.combineNames('Terrance', 'Danckert')).toBe('Terrance Danckert'); 
+  expect(helpers.combineNames('Jimmy', 'Neutron')).toBe('Jimmy Neutron'); 
+})
+
+// ------------------ GREETING-----------------
+
+it('return Hello with the name of the parameter as a string', () => {
+  expect(helpers.getGreeting('Dude')).toBe('Hello Dude!'); 
+  expect(helpers.getGreeting('Dudet')).toBe('Hello Dudet!')
 }); 
