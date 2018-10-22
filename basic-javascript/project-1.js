@@ -11,12 +11,12 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
-	if (typeof(str1) !== 'string' || typeof(str2) !== 'string') throw new Error('Values must be strings.');
+	if (typeof(str1) !== 'string' || typeof(str2) !== 'string') throw new Error('Value must be a string.');
 	return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+	return x === y;
 };
 
 const lessThanNinety = num => {

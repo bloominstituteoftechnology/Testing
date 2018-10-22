@@ -1,9 +1,7 @@
 const helpers = require('./project-1');
 
-const {
-	nonNumberTypeTests,
-	nonStringTypeTests,
-} = require('./nonTypeTests.js/index.js');
+const nonNumberTypeError = 'Value must be a number.';
+const nonStringTypeError = 'Value must be a string.';
 
 // start testing!
 describe('Testing project-1.js', () => {
@@ -11,11 +9,25 @@ describe('Testing project-1.js', () => {
 		multiplyByTen,
 		subtractFive,
 		areSameLength,
+		areEqual,
 	} = helpers;
 
+	// multiplyByTen()
 	describe('Testing multiplyByTen()', () => {
-		describe('Calling with non-number types', () => {
-			nonNumberTypeTests(multiplyByTen);
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					multiplyByTen('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					multiplyByTen(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					multiplyByTen(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
 		});
 
 		describe('Calling with number type', () => {
@@ -29,9 +41,22 @@ describe('Testing project-1.js', () => {
 		});
 	});
 
+	// subtractByFive()
 	describe('Testing subtractFive()', () => {
-		describe('Calling with non-number types', () => {
-			nonNumberTypeTests(subtractFive);
+		describe('Calling with a string, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					subtractFive('one');
+				}).toThrow(nonNumberTypeError);
+
+				expect(() => {
+					subtractFive(null);
+				}).toThrow(nonNumberTypeError);
+	
+				expect(() => {
+					subtractFive(undefined);
+				}).toThrow(nonNumberTypeError);
+			});
 		});
 
 		describe('Calling with number type', () => {
@@ -45,9 +70,22 @@ describe('Testing project-1.js', () => {
 		});
 	});
 
+	// areSameLength()
 	describe('Testing areSameLength()', () => {
-		describe('Calling with non-string types', () => {
-			nonStringTypeTests(areSameLength);
+		describe('Calling with number types', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					areSameLength(1, 2);
+				}).toThrow(nonStringTypeError);
+	
+				expect(() => {
+					areSameLength(null, null);
+				}).toThrow(nonStringTypeError);
+	
+				expect(() => {
+					areSameLength(undefined, undefined);
+				}).toThrow(nonStringTypeError);
+			});
 		});
 
 		describe('Calling with string types', () => {
@@ -58,6 +96,21 @@ describe('Testing project-1.js', () => {
 			it('should return false if strings are different lengths', () => {
 				expect(areSameLength('one', 'three')).toBe(false);
 			});
+		});
+	});
+
+	// areEqual()
+	describe('Testing areEqual()', () => {
+		it('should return true if they are equal', () => {
+			expect(areEqual(1, 1)).toBe(true);
+			expect(areEqual('', '')).toBe(true);
+			expect(areEqual(null, null)).toBe(true);
+		});
+
+		it('should return false if they are not equal', () => {
+			expect(areEqual(1, 2)).toBe(false);
+			expect(areEqual('str', 'str1')).toBe(false);
+			expect(areEqual(NaN, NaN)).toBe(false);
 		});
 	});
 });
