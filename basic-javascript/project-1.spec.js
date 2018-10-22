@@ -56,3 +56,73 @@ it('return true if value is greater than fifty', () => {
     expect(helpers.greaterThanFifty(10)).toBeFalsy();
 
 });
+
+// ---------------------- + --------------------------
+
+it('add both values and return the sum', () => {
+  expect(helpers.add(25,25)).toBe(50);
+  expect(helpers.add(-50,-50)).toBe(-100);
+  expect(helpers.add(10,-10)).toBe(0);
+});
+
+
+// ---------------------- ( - ) -------------------------------
+
+it('subtract second param from first param', () => {
+  expect(helpers.subtract(10,10)).toBe(0); 
+  expect(helpers.subtract(-10,10)).toBe(-20); 
+})
+
+it('subtract param 2 from param 2, as a string', () => {
+  expect(helpers.subtract('-10', 10)).toBe(-20); 
+  expect(helpers.subtract('0', '0')).toBe(0)
+})
+
+// ----------------------- ( / ) -----------------------------------
+
+it('divide param 1 by param 2', () => {
+  expect(helpers.divide(10, 10)).toBe(1); 
+  expect(helpers.divide(-5, -5)).toBe(1); 
+}); 
+
+// ---------------------- ( * ) -----------------------------
+
+it('multiply both parameters and return product or param 1 and 2', () => {
+  expect(helpers.multiply(9,9)).toBe(81); 
+  expect(helpers.multiply(-10, -10)).toBe(100); 
+}); 
+
+//-----------------------REMAINDER---------------------
+
+it('return remainder of param 2 divided by param 1', () => {
+  expect(helpers.getRemainder(10, 3)).toBe(1); 
+  expect(helpers.getRemainder(5, 1)).toBe(0); 
+}); 
+
+// -------------------IS EVEN ---------------------------------
+
+it('return whether value is even', () => {
+  expect(helpers.isEven(10)).toBeTruthy(); 
+  expect(helpers.isEven(5)).toBeFalsy(); 
+})
+
+//-------------------IS ODD----------------------------------
+
+it('return whether value is odd', () => {
+  expect(helpers.isOdd(10)).toBeFalsy();
+  expect(helpers.isOdd(11)).toBeTruthy();  
+}); 
+
+//-----------------SQUARE--------------------------------
+
+it('return squared value', () => {
+  expect(helpers.square(9)).toBe(81); 
+  expect(helpers.square(10)).toBe(100); 
+}); 
+
+//----------------CUBE----------------------------------------
+
+it('return cubed value', () => {
+  expect(helpers.cube(10)).toBe(1000); 
+  expect(helpers.cube(0)).toBe(0); 
+}); 
