@@ -48,8 +48,22 @@ describe("Arrays", () => {
     });
 
     test("tests type of reduce returns function", () => {
-      const reduce = arrayFunctions.reduce;
-      expect(typeof reduce).toBe("function");
+      expect(typeof arrayFunctions.reduce).toBe("function");
     });
   });
+
+
+  describe('find', () => {
+
+		test('should return the correct value', () => {
+			
+			expect(arrayFunctions.find([200,30,45,56,102, 104], (x) => {
+				if (x === 102){ return x}
+			})).toBe(102);
+    });
+
+    test("tests type of find returns function", () => {
+      expect(typeof arrayFunctions.find).toBe("function");
+    });
+
 });
