@@ -117,12 +117,39 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const lessThanNinety = (num) => {
-	// 	if (num < 90) {
-	// 		return true;
-	// 	}
-	// 	return false;
-	// };
+	describe('lessThanNinety()', () => {
+		// const lessThanNinety = (num) => {
+		// 	if (num < 90) {
+		// 		return true;
+		// 	}
+		// 	return false;
+		// };
+		// less than 90
+		it('should return true if input is less than ninety', () => {
+			const actual = helpers.lessThanNinety(42);
+			expect(actual).toEqual(true);
+		});
+
+		// greater than or equal to 90
+		it('should return false if input is greater than eighty-nine', () => {
+			const actual = helpers.lessThanNinety(90);
+			expect(actual).toEqual(false);
+		});
+
+		// input null
+		it('should throw an error if input is null', () => {
+			expect(() => {
+				helpers.lessThanNinety();
+			}).toThrow();
+		});
+
+		// input not number
+		it('should throw an error if input is not a number', () => {
+			expect(() => {
+				helpers.lessThanNinety('3');
+			}).toThrow();
+		});
+	});
 
 	// const greaterThanFifty = (num) => {
 	// 	if (num > 50) {

@@ -22,10 +22,12 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = (num) => {
-	if (num < 90) {
-		return true;
-	}
-	return false;
+	if (!num || typeof num !== 'number') throw new Error('Only numbers supported!');
+	// if (num < 90) {
+	// 	return true;
+	// }
+	// return false;
+	return num < 90 ? true : false;
 };
 
 const greaterThanFifty = (num) => {
