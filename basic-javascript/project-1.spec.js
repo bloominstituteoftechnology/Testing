@@ -221,8 +221,6 @@ describe('project-1.js', () => {
 
 })
 
-})
-
     // -- Less Than 90 --
     describe('Less Than 90', () => {
         // Return Value After Expected Input
@@ -327,51 +325,389 @@ describe('project-1.js', () => {
         });
     })
 
-    //         // -- Multiply by 10 --
-    // describe('Multiply by 10', () => {
-    //     // Return Value After Expected Input
-    //     it('Should return the provided number multiplied by 10', () => {
-    //         let expected = 420;
-    //         const actual = helpers.multiplyByTen(42);
-    //         expect(actual).toBe(expected);
-    //     })
+    // -- Add --
+    describe('Add', () => {
+        // Return Value After Expected Input
+        it('Should return the sum of the provided numbers', () => {
+            let expected = 42;
+            const actual = helpers.add(40, 2);
+            expect(actual).toBe(expected);
+        })
 
-    //     // Return Value After Empty Input
-    //     it('Should return 0 if no input is provided', () => {
-    //         let expected = 0;
-    //         const actual = helpers.multiplyByTen();
-    //         expect(actual).toBe(expected);
-    //     })
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.add();
+            expect(actual).toBe(expected);
+        })
 
-    //     // Return Values After Unexpected Inputs
-    //     describe('Unexpected Inputs', () => {
-    //         // Return Value After Boolean Input
-    //         it('Should throw an error if a boolean is provided', () => {
-    //             const actual = () => { helpers.multiplyByTen(true) };
-    //             expect(actual).toThrow();
-    //         })
-    //         // Return Value After String Input
-    //         it('Should throw an error if a string is provided', () => {
-    //             const actual = () => { helpers.multiplyByTen('test') };
-    //             expect(actual).toThrow();
-    //         })
-    //         // Return Value After Array Input
-    //         it('Should throw an error if an array is provided', () => {
-    //             const actual = () => { helpers.multiplyByTen([42]) };
-    //             expect(actual).toThrow();
-    //         })
-    //         // Return Value After Object Input
-    //         it('Should throw an error if an object is provided', () => {
-    //             const actual = () => { helpers.multiplyByTen({number: 42}) };
-    //             expect(actual).toThrow();
-    //         })
-    //         // Return Value After Function Input
-    //         it('Should throw an error if a function is provided', () => {
-    //             const actual = () => { helpers.multiplyByTen(() => 42) };
-    //             expect(actual).toThrow();
-    //         })           
-    //     });
-    // })
+        // Return Values After Unexpected Inputs (x)
+        describe('Unexpected Inputs (x)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.add(true, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.add('test', 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.add([42], 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.add({number: 42}, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.add(() => 42, 2) };
+                expect(actual).toThrow();
+            })           
+        });
+    
+        // Return Values After Unexpected Inputs (y)
+        describe('Unexpected Inputs (y)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.add(40, true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.add(40, 'test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.add(40, [42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.add(40, {number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.add(40, () => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    })
+
+    // -- Subtract --
+    describe('Subtract', () => {
+        // Return Value After Expected Input
+        it('Should return the result of the second number subtracted from the first number.', () => {
+            let expected = 42;
+            const actual = helpers.subtract(44, 2);
+            expect(actual).toBe(expected);
+        })
+
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.subtract();
+            expect(actual).toBe(expected);
+        })
+
+        // Return Values After Unexpected Inputs (x)
+        describe('Unexpected Inputs (x)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.subtract(true, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.subtract('test', 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.subtract([42], 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.subtract({number: 42}, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.subtract(() => 42, 2) };
+                expect(actual).toThrow();
+            })           
+        });
+    
+        // Return Values After Unexpected Inputs (y)
+        describe('Unexpected Inputs (y)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.subtract(40, true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.subtract(40, 'test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.subtract(40, [42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.subtract(40, {number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.subtract(40, () => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    })
+
+
+    // -- Divide --
+    describe('Divide', () => {
+        // Return Value After Expected Input
+        it('Should return the result of a quotient of the first and second numbers provided.', () => {
+            let expected = 42;
+            const actual = helpers.divide(84, 2);
+            expect(actual).toBe(expected);
+        })
+
+        it('Should throw an error if 0 is provided as the denominator', () => {
+            const actual = () => helpers.divide(42, 0);
+            expect(actual).toThrow();
+        })
+
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.divide();
+            expect(actual).toBe(expected);
+        })
+
+        // Return Values After Unexpected Inputs (x)
+        describe('Unexpected Inputs (x)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.divide(true, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.divide('test', 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.divide([42], 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.divide({number: 42}, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.divide(() => 42, 2) };
+                expect(actual).toThrow();
+            })           
+        });
+    
+        // Return Values After Unexpected Inputs (y)
+        describe('Unexpected Inputs (y)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.divide(40, true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.divide(40, 'test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.divide(40, [42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.divide(40, {number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.divide(40, () => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    })
+
+
+    // -- Multiply --
+    describe('Multiply', () => {
+        // Return Value After Expected Input
+        it('Should return the product of two provided numbers.', () => {
+            let expected = 42;
+            const actual = helpers.multiply(21, 2);
+            expect(actual).toBe(expected);
+        })
+
+        // Return Value After Empty Input
+        it('Should return 0 if no input is provided', () => {
+            let expected = 0;
+            const actual = helpers.multiply();
+            expect(actual).toBe(expected);
+        })
+
+        // Return Values After Unexpected Inputs (x)
+        describe('Unexpected Inputs (x)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.multiply(true, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.multiply('test', 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.multiply([42], 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.multiply({number: 42}, 2) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.multiply(() => 42, 2) };
+                expect(actual).toThrow();
+            })           
+        });
+    
+        // Return Values After Unexpected Inputs (y)
+        describe('Unexpected Inputs (y)', () => {
+            // Return Value After Boolean Input
+            it('Should throw an error if a boolean is provided', () => {
+                const actual = () => { helpers.multiply(40, true) };
+                expect(actual).toThrow();
+            })
+            // Return Value After String Input
+            it('Should throw an error if a string is provided', () => {
+                const actual = () => { helpers.multiply(40, 'test') };
+                expect(actual).toThrow();
+            })
+            // Return Value After Array Input
+            it('Should throw an error if an array is provided', () => {
+                const actual = () => { helpers.multiply(40, [42]) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Object Input
+            it('Should throw an error if an object is provided', () => {
+                const actual = () => { helpers.multiply(40, {number: 42}) };
+                expect(actual).toThrow();
+            })
+            // Return Value After Function Input
+            it('Should throw an error if a function is provided', () => {
+                const actual = () => { helpers.multiply(40, () => 42) };
+                expect(actual).toThrow();
+            })           
+        });
+    })
+
+        // -- Get Remainder --
+        describe('Get Remainder', () => {
+            // Return Value After Expected Input
+            it('Should return the remainder of a quotient of two provided numbers.', () => {
+                let expected = 1;
+                const actual = helpers.getRemainder(43, 2);
+                expect(actual).toBe(expected);
+            })
+    
+            // Return Value After Empty Input
+            it('Should return 0 if no input is provided', () => {
+                let expected = 0;
+                const actual = helpers.getRemainder();
+                expect(actual).toBe(expected);
+            })
+    
+            // Return Values After Unexpected Inputs (x)
+            describe('Unexpected Inputs (x)', () => {
+                // Return Value After Boolean Input
+                it('Should throw an error if a boolean is provided', () => {
+                    const actual = () => { helpers.getRemainder(true, 2) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After String Input
+                it('Should throw an error if a string is provided', () => {
+                    const actual = () => { helpers.getRemainder('test', 2) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After Array Input
+                it('Should throw an error if an array is provided', () => {
+                    const actual = () => { helpers.getRemainder([42], 2) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After Object Input
+                it('Should throw an error if an object is provided', () => {
+                    const actual = () => { helpers.getRemainder({number: 42}, 2) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After Function Input
+                it('Should throw an error if a function is provided', () => {
+                    const actual = () => { helpers.getRemainder(() => 42, 2) };
+                    expect(actual).toThrow();
+                })           
+            });
+        
+            // Return Values After Unexpected Inputs (y)
+            describe('Unexpected Inputs (y)', () => {
+                // Return Value After Boolean Input
+                it('Should throw an error if a boolean is provided', () => {
+                    const actual = () => { helpers.getRemainder(40, true) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After String Input
+                it('Should throw an error if a string is provided', () => {
+                    const actual = () => { helpers.getRemainder(40, 'test') };
+                    expect(actual).toThrow();
+                })
+                // Return Value After Array Input
+                it('Should throw an error if an array is provided', () => {
+                    const actual = () => { helpers.getRemainder(40, [42]) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After Object Input
+                it('Should throw an error if an object is provided', () => {
+                    const actual = () => { helpers.getRemainder(40, {number: 42}) };
+                    expect(actual).toThrow();
+                })
+                // Return Value After Function Input
+                it('Should throw an error if a function is provided', () => {
+                    const actual = () => { helpers.getRemainder(40, () => 42) };
+                    expect(actual).toThrow();
+                })           
+            });
+        })
+})
+
 
     // // -- Multiply by 10 --
     // describe('Multiply by 10', () => {

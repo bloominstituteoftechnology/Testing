@@ -77,22 +77,66 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {  
+  if ( !x || !y ) {
+    return 0;
+  }
+
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('Provided values must be numbers.')
+  }
+
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if ( !x || !y ) {
+    return 0;
+  }
+
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('Provided values must be numbers.')
+  }
+
   return x - y;
 };
 
 const divide = (x, y) => {
+  if ( y === 0 ) {
+    throw new Error('Cannot divide by zero.')
+  }
+
+  if ( !x || !y ) {
+    return 0;
+  }
+
+  if ( typeof x !== 'number' || typeof y !== 'number' ) {
+    throw new Error('Provided values must be numbers.')
+  }
+
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if ( !x || !y ) {
+    return 0;
+  }
+
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('Provided values must be numbers.')
+  }
+
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if ( !x || !y ) {
+    return 0;
+  }
+
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw new Error('Provided values must be numbers.')
+  }
+
   return x % y;
 };
 
