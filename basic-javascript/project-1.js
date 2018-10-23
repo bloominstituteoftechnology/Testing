@@ -31,6 +31,9 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
   return x === y;
 };
 
@@ -64,22 +67,37 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
   return x % y;
 };
 
@@ -175,14 +193,23 @@ const combineNames = (firstName, lastName) => {
 };
 
 const getGreeting = name => {
+  if (typeof name !== 'string') {
+    throw new Error('name must be a string!');
+  }
   return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
+  if (!length || !width) {
+    return null;
+  }
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (!base || !height) {
+    return null;
+  }
   return 0.5 * base * height;
 };
 
@@ -191,6 +218,9 @@ const getCircleArea = radius => {
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if (!length || !width || !height) {
+    return null;
+  }
   return width * height * length;
 };
 

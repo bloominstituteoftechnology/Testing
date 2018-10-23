@@ -68,6 +68,11 @@ describe('project-1.js', () => {
 
             expect(actual).toEqual(expected);
         });
+        it('should return null if x or y are null or undefined', () => {
+            expect(helpers.areEqual(null, 'a')).toBe(null);
+            expect(helpers.areEqual('a', null)).toBe(null);
+            expect(helpers.areEqual(null, null)).toBe(null);
+        })
     })
 
     describe('lessThanNinety()', () => {
@@ -205,6 +210,7 @@ describe('project-1.js', () => {
 
             expect(actual).toEqual(expected);
         })
+        
     })
 
     describe('square()', () => {
