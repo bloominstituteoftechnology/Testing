@@ -151,11 +151,13 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
-  }
-  return sumOfNumbers;
+	if (!Array.isArray(numbers)) throw new Error(nonArrayTypeError);
+	let sumOfNumbers = 0;
+	for (let i = 0; i < numbers.length; i++) {
+		if (typeof(numbers[i]) !== 'number') throw new Error(nonNumberTypeError);
+		sumOfNumbers += numbers[i];
+	}
+	return sumOfNumbers;
 };
 
 const averageTestScore = testScores => {

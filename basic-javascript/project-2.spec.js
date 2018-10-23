@@ -23,6 +23,7 @@ describe('Testing project-2.js', () => {
 		addItemToFront,
 		wordsToSentence,
 		contains,
+		addNumbers,
 	} = funcs;
 
 	// getBiggest()
@@ -534,7 +535,7 @@ describe('Testing project-2.js', () => {
 			});
 
 			it('should return a string with all the words in the array joined by a space', () => {
-				expect(wordsToSentence(['This', 'is', 'a', 'sentence.'])).toEqual('This is a sentence.');
+				expect(wordsToSentence(['This', 'is', 'a', 'sentence.'])).toBe('This is a sentence.');
 			});
 		});
 	});
@@ -575,13 +576,58 @@ describe('Testing project-2.js', () => {
 
 		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
 			it('should return true if item is in array', () => {
-				expect(contains([ 1, 2 ], 1)).toEqual(true);
-				expect(contains([ 'one', 'two' ], 'two')).toEqual(true);
+				expect(contains([ 1, 2 ], 1)).toBe(true);
+				expect(contains([ 'one', 'two' ], 'two')).toBe(true);
 			});
 
 			it('should return false if item is not in array', () => {
-				expect(contains([], 1)).toEqual(false);
-				expect(contains([ 1, 2 ], 3)).toEqual(false);
+				expect(contains([], 1)).toBe(false);
+				expect(contains([ 1, 2 ], 3)).toBe(false);
+			});
+		});
+	});
+
+	// addNumbers()
+	describe('Testing addNumbers()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					addNumbers('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addNumbers(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addNumbers({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addNumbers(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					addNumbers(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an array type', () => {
+			it('should throw an error if a member of the array is not a number', () => {
+				expect(() => {
+					addNumbers([ 1, 'two' ]);
+				}).toThrow(nonNumberTypeError);
+			});
+
+			it('should return 0 if the array is empty', () => {
+				expect(addNumbers([])).toBe(0);
+			});
+
+			it('should return the sum of the numbers in the array', () => {
+				expect(addNumbers([ 1, 2 ])).toBe(3);
+				expect(addNumbers([ 0, -2, 2 ])).toBe(0);
+				expect(addNumbers([ 0.1, 0.2 ])).toBeCloseTo(0.3);
 			});
 		});
 	});
