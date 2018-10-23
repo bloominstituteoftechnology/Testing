@@ -40,7 +40,7 @@ describe("subtractFive()", () => {
     expect(actual).toEqual(expected);
   });
 
-  it("should subtract provided number by five", () => {
+  it("should return null if no number is provided", () => {
     const actual = helpers.subtractFive(undefined);
     expect(actual).toBe(null);
   });

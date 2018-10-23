@@ -1,6 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("value must be a number");
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -11,16 +17,19 @@ const getBiggest = (x, y) => {
 
 const greeting = language => {
   switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
+    case "German":
+      return "Guten Tag!";
+    case "Spanish":
+      return "Hola!";
     default:
-      return 'Hello!';
+      return "Hello!";
   }
 };
 
 const isTenOrFive = num => {
+  if (typeof num === "string") {
+    throw new Error("value must be a number");
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +37,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (typeof num === "string") {
+    throw new Error("value must be a number");
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -43,11 +55,11 @@ const isInteger = num => {
 
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return "fizzbuzz";
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return "buzz";
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return "fizz";
   }
   return num;
 };
@@ -97,7 +109,7 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
+  let newSentence = "";
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
