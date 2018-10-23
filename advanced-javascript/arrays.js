@@ -56,24 +56,22 @@ const filter = (elements, cb) => {
 };
 
 const flatten = elements => {
-  const flattenedArr = reduce(
-    elements,
-    (memo, item) => {
-      if (Array.isArray(item)) return memo.concat(flatten(item));
-      return memo.concat(item);
-    },
-    []
-  );
-  return flattenedArr;
+	if (!Array.isArray(elements)) throw new Error(nonArrayTypeError);
+	if (!elements.length) throw new Error(emptyArrayError);
+	const flattenedArr = reduce(elements, (memo, item) => {
+		if (Array.isArray(item)) return memo.concat(flatten(item));
+		return memo.concat(item);
+	}, []);
+	return flattenedArr;
 };
 
 /* eslint-enable no-unused-vars, max-len */
 
 module.exports = {
-  each,
-  map,
-  reduce,
-  find,
-  filter,
-  flatten,
+	each,
+	map,
+	reduce,
+	find,
+	filter,
+	flatten,
 };

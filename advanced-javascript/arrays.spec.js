@@ -19,6 +19,7 @@ const {
 	reduce,
 	find,
 	filter,
+	flatten,
 } = arrayFunctions;
 
 // helper
@@ -160,5 +161,37 @@ describe('Arrays', () => {
 		});
 
 		argCheckForFuncsWithBasic2Params(filter);
+	});
+
+	// flatten()
+	describe('flatten', () => {
+		it('should be a function', () => {
+			expect(typeof flatten).toBe('function');
+		});
+
+		describe('calling with a non empty array', () => {
+			it('should flatten the array elements in the array given and concats them together', () => {
+				expect(flatten([ [ 'one', [ 'two', [ 'three', 'four' ] ] ], 'five' ])).toEqual([ 'one', 'two', 'three', 'four', 'five' ]);
+			});
+		});
+
+		describe('calling an empty array', () => {
+			it('should throw an error', () => {
+				expect(() => { flatten([], () => {}); }).toThrow(emptyArrayError);
+			});
+		});
+
+		describe('calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { flatten(1, () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten(NaN, () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten('', () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten(false, () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten({}, () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten(() => {}, () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten(null, () => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { flatten(undefined, () => {}); }).toThrow(nonArrayTypeError);
+			});
+		});
 	});
 });
