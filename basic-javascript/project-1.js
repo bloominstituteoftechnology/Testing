@@ -1,7 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if (!num || typeof num === "string") {
+    return 0;
+  } else return num * 10;
 };
 
 const subtractFive = num => {
@@ -31,6 +33,9 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (!x || typeof x === "string" || !y || typeof y === "string") {
+    return 0;
+  }
   return x + y;
 };
 
@@ -85,7 +90,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
