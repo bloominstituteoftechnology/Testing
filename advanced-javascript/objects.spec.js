@@ -12,3 +12,16 @@ describe("keys", () => {
     );
   });
 });
+
+describe("mapObject", () => {
+  test("this should map over object and return 2 * key", () => {
+    expect(
+      objectFunctions.mapObject(
+        { age: 12, dobinseconds: 400, height: 200 },
+        num => {
+          return num * 2;
+        }
+      )
+    ).toEqual({ age: 24, dobinseconds: 800, height: 400 });
+  });
+});
