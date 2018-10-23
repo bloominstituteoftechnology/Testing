@@ -16,9 +16,11 @@ const {
 
 const {
 	map,
+	reduce,
 } = arrayFunctions;
 
 describe('Arrays', () => {
+	// map()
 	describe('map', () => {
 		it('should be a function', () => {
 			expect(typeof map).toBe('function');
@@ -60,6 +62,51 @@ describe('Arrays', () => {
 				expect(() => { map([ 1 ], {}); }).toThrow(nonFunctionTypeError);
 				expect(() => { map([ 1 ], null); }).toThrow(nonFunctionTypeError);
 				expect(() => { map([ 1 ], undefined); }).toThrow(nonFunctionTypeError);
+			});
+		});
+	});
+
+	// reduce()
+	describe('reduce', () => {
+		it('should be a function', () => {
+			expect(typeof reduce).toBe('function');
+		});
+
+		describe('calling with a non empty array as first arg and function as second arg', () => {
+			it('should reduce all the items in the array given according to the function given', () => {
+				expect(reduce([ 'take a walk', 'cook dinner', 'go to sleep' ], (memo, item) => { return `${ memo }, and ${ item }`; })).toEqual('take a walk, and cook dinner, and go to sleep');
+			});
+		});
+
+		describe('calling an empty array as the first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { reduce([], () => {}); }).toThrow(emptyArrayError);
+			});
+		});
+
+		describe('calling with non array type as the first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { reduce(1, () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce(NaN, () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce('', () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce(false, () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce({}, () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce(() => {}, () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce(null, () => {}, ''); }).toThrow(nonArrayTypeError);
+				expect(() => { reduce(undefined, () => {}, ''); }).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('calling with non function type as the second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { reduce([ 'one' ], 1); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], NaN); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], ''); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], false); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], []); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], {}); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], null); }).toThrow(nonFunctionTypeError);
+				expect(() => { reduce([ 'one' ], undefined); }).toThrow(nonFunctionTypeError);
 			});
 		});
 	});

@@ -25,10 +25,13 @@ const map = (elements, cb) => {
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-  each(elements, item => {
-    memo = cb(memo, item);
-  });
-  return memo;
+	if (!Array.isArray(elements)) throw new Error(nonArrayTypeError);
+	if (typeof(cb) !== 'function') throw new Error(nonFunctionTypeError);
+	if (!elements.length) throw new Error(emptyArrayError);
+	each(elements, item => {
+		memo = cb(memo, item);
+	});
+	return memo;
 };
 
 const find = (elements, cb) => {
