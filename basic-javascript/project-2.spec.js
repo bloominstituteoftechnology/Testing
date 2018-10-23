@@ -1,7 +1,7 @@
 const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
-describe('project-2.js', () => {
+describe.only('project-2.js', () => {
   describe('checks the biggest number', () => {
     it('x returned if it is greater', () => {
       expect(funcs.getBiggest(9, 5)).toBe(9);
@@ -28,6 +28,10 @@ describe('project-2.js', () => {
     it('respond default', () => {
       expect(funcs.greeting('Hi')).toBe('Hello!');
     });
+
+    it('returns null if not a string', () => {
+      expect(funcs.greeting(78)).toBeNull();
+    });
   }); //greeting
 
   describe('checks to see if ten or five', () => {
@@ -41,6 +45,10 @@ describe('project-2.js', () => {
 
     it('check to if it is false with numbers not 10 or 5', () => {
       expect(funcs.isTenOrFive(7)).toBeFalsy();
+    });
+
+    it('return null if not a number', () => {
+      expect(funcs.isTenOrFive('7')).toBeNull();
     });
   }); //is ten or five
 
