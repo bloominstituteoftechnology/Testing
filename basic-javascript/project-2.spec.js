@@ -18,6 +18,7 @@ describe('Testing project-2.js', () => {
 		returnLast,
 		getArrayLength,
 		incrementByOne,
+		addItemToArray,
 	} = funcs;
 
 	// getBiggest()
@@ -405,6 +406,49 @@ describe('Testing project-2.js', () => {
 			it('should return the length of the array', () => {
 				expect(incrementByOne([ 0, 1 ])).toEqual([ 1, 2 ]);
 				expect(incrementByOne([ -2, -5.1 ])).toEqual([ -1, -4.1 ]);
+			});
+		});
+	});
+
+	// addItemToArray()
+	describe('Testing addItemToArray()', () => {
+		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					addItemToArray('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addItemToArray(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addItemToArray({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addItemToArray(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					addItemToArray(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an undefined type for the second argument', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					addItemToArray([ 'one' ], undefined);
+				}).toThrow('Item cannot be undefined.');
+			});
+		});
+
+		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
+			it('should return the array with the item pushed onto it', () => {
+				expect(addItemToArray([], 1)).toEqual([ 1 ]);
+				expect(addItemToArray([ 'one' ], 'two')).toEqual([ 'one', 'two' ]);
+				expect(addItemToArray([ { 'one': 1 }, { 'two': 2 } ], { 'three': 3 })).toEqual([ { 'one': 1 }, { 'two': 2 }, { 'three': 3 } ]);
 			});
 		});
 	});

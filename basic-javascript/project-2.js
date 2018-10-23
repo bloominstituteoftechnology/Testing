@@ -106,8 +106,10 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	if (item === undefined) throw new Error('Item cannot be undefined.');
+	arr.push(item);
+	return arr;
 };
 
 const addItemToFront = (arr, item) => {
