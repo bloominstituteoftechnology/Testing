@@ -2,7 +2,7 @@ const helpers = require('./project-1');
 
 // start testing!
 
-describe('helpers.js', () => {
+describe.skip('project-1.js', () => {
   describe('jest', () => {
     test('should run tests', () => {
       // test all the things

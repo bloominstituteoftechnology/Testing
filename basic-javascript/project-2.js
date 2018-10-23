@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (typeof (x, y) === 'string') {
+    throw new Error('value must be a number');
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -21,6 +24,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if (typeof (num) === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +34,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (typeof (num) === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -35,6 +44,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (typeof (num) === 'string') {
+    throw new Error('value must be a number');
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,6 +54,9 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (typeof (num) === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -53,6 +68,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (typeof (num) === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num < 0) {
     return false;
   }
