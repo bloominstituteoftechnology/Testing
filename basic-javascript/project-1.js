@@ -9,6 +9,12 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
+  if (!(str1 && str2)) {
+    throw new Error('Provide an input');
+  }
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    return undefined;
+  }
   return str1.length === str2.length;
 };
 
@@ -31,23 +37,26 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  return ~~x + ~~y;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  return ~~x - ~~y;
 };
 
 const divide = (x, y) => {
-  return x / y;
+  return ~~x / ~~y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  return ~~x * ~~y;
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  if (typeof x === 'symbol' || typeof y === 'symbol') {
+    return undefined;
+  }
+  return ~~x % ~~y;
 };
 
 const isEven = num => {
