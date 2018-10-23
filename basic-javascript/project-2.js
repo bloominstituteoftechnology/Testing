@@ -15,6 +15,8 @@ const greeting = language => {
       return 'Guten Tag!';
     case 'Spanish':
       return 'Hola!';
+    case 'Italian':
+      return 'I dont speak Italian';
     default:
       return 'Hello!';
   }
@@ -28,7 +30,7 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
-  if (num < 50 && num > 20) {
+  if (num <= 50 && num >= 20) {
     return true;
   }
   return false;
@@ -37,6 +39,9 @@ const isInRange = num => {
 const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
+  }
+  if (typeof num === 'string'){
+    return null;
   }
   return false;
 };
@@ -68,10 +73,16 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr.length === 0) {
+    return 'No Items';
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length === 0) {
+    return 'No Items';
+  }
   return arr[arr.length - 1];
 };
 
@@ -80,6 +91,9 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  if (arr.length === 0) {
+    return 'No Items';
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -104,6 +118,9 @@ const wordsToSentence = words => {
     } else {
       newSentence += ` ${words[i]}`;
     }
+  }
+  if (typeof words === 'number') {
+    return null;
   }
   return newSentence;
 };
@@ -136,7 +153,8 @@ const averageTestScore = testScores => {
     totalSumScores += testScores[i];
     numberOfScore++;
   }
-  return totalSumScores / numberOfScore;
+  const avg = totalSumScores / numberOfScore;
+  return Math.round(avg);
 };
 
 const largestNumber = numbers => {
