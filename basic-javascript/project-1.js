@@ -27,7 +27,11 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (!x || !y) {
+    throw "error";
+  } else {
+    return x === y;
+  }
 };
 
 const lessThanNinety = num => {
@@ -62,23 +66,36 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
-  if(isNaN(x) || isNaN(y)){
-    throw 'You can only subtract numbers'
+  if (isNaN(x) || isNaN(y)) {
+    throw "You can only subtract numbers";
   } else {
-  return x - y;
+    return x - y;
   }
 };
 
 const divide = (x, y) => {
-  return x / y;
+  if (isNaN(x) || isNaN(y)) {
+    throw "error";
+  } else {
+    return x / y;
+  }
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if (!x || !y || isNaN(x) || isNaN(y)) {
+    throw "error";
+  } else {
+    return x * y;
+  }
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  if(isNaN(x) || isNaN(y)){
+    throw 'error'
+  } else {
+    return x % y;
+
+  }
 };
 
 const isEven = num => {
