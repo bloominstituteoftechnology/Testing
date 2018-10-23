@@ -97,19 +97,35 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  if(length <= 0 || width <= 0) {
+    return undefined; 
+  } else {  
+      return length * width;
+    }
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  if(base <= 0 || height <= 0) {
+    return undefined; 
+  } else {
+      return 0.5 * base * height;
+    }
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  if(radius <= 0) {
+    return undefined; 
+  } else {
+      return Math.PI * radius * radius;
+    }
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  if(length <= 0 || width <= 0 || height <= 0) {
+    return undefined; 
+  } else { 
+      return width * height * length;
+    }
 };
 
 module.exports = {

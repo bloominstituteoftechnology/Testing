@@ -15,7 +15,7 @@ const greeting = language => {
       return 'Guten Tag!';
     case 'Spanish':
       return 'Hola!';
-    default:
+    case 'English':
       return 'Hello!';
   }
 };
@@ -101,6 +101,8 @@ const wordsToSentence = words => {
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
+    } else if(i === words.length - 1){
+      newSentence += ` ${words[i]}.`
     } else {
       newSentence += ` ${words[i]}`;
     }
