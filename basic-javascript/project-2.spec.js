@@ -56,3 +56,14 @@ describe("is an integar", () => {
 		expect(funcs.isInteger(5.5)).toBe(false);
 	});
 });
+describe("fizz buzz", () => {
+	test("is divisable by 3 and 5", () => {
+		expect(funcs.fizzBuzz(15)).toBe("fizzbuzz");
+	});
+	test("is divisable by 3", () => {
+		expect(funcs.fizzBuzz(6)).toBe("fizz");
+	});
+	test("is divisable by 5", () => {
+		expect(funcs.fizzBuzz(20)).toBe("buzz");
+	});
+});
