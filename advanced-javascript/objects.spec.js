@@ -3,8 +3,8 @@ const testObject = {'test': 'object'};
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('objects', () => {
-  it('should recognize an object', () => {
-    expect(typeof testObject).toBe(typeof {});
+  it('should recognize testObject as an object', () => {
+    expect(typeof testObject).toBe("object");
   });
   describe('keys()', () => {
     it('should return the keys of an object', () => {
