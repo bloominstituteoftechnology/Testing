@@ -47,7 +47,7 @@ describe("invert", () => {
 });
 
 describe("defaults", () => {
-  test("this should return the default values", () => {
+  test("this should return the default values (first first last last middle middle)", () => {
     expect(
       objectFunctions.defaults(
         { dave: "jones", steve: "smith", jim: "bob" },
