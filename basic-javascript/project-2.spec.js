@@ -55,23 +55,28 @@ describe("testing the second set of functions for the project", () => {
 
   // incrementByOne
   test("tests if incrementByOne([120, 100, 10, 20]) returns [121, 101, 11, 21]", () => {
-    expect(funcs.incrementByOne([120, 100, 10, 20])).toBe([121, 101, 11, 21]);
+    expect(funcs.incrementByOne([120, 100, 10, 20])).toEqual([
+      121,
+      101,
+      11,
+      21
+    ]);
   });
 
   // addItemToArray
   test("tests if addItemToArray([10, 20, 30], 40) returns [10, 20, 30, 40]", () => {
-    expect(funcs.addItemToArray([10, 20, 30], 40)).toBe([10, 20, 30, 40]);
+    expect(funcs.addItemToArray([10, 20, 30], 40)).toEqual([10, 20, 30, 40]);
   });
 
   // addItemToFront
   test("tests if addItemToFront([10, 20, 30], 40) returns [40, 10, 20, 30]", () => {
-    expect(funcs.addItemToFront([10, 20, 30], 40)).toBe([40, 10, 20, 30]);
+    expect(funcs.addItemToFront([10, 20, 30], 40)).toEqual([40, 10, 20, 30]);
   });
 
   // wordsToSentence
   test("tests if wordsToSentence(['the', 'misty', 'blue', 'eats', 'beans', 0]) returns 'the misty blue eats beans'", () => {
     expect(
-      funcs.wordsToSentence(["the", "misty", "blue", "eats", "beans", 0])
+      funcs.wordsToSentence(["the", "misty", "blue", "eats", "beans"])
     ).toBe("the misty blue eats beans");
   });
 
@@ -81,8 +86,8 @@ describe("testing the second set of functions for the project", () => {
   });
 
   // addNumbers
-  test("tests if addNumbers(2, 4, 6, 8) returns 20", () => {
-    expect(funcs.addNumbers(2, 4, 6, 8)).toBe(20);
+  test("tests if addNumbers([2, 4, 6, 8]) returns 20", () => {
+    expect(funcs.addNumbers([2, 4, 6, 8])).toBe(20);
   });
 
   // averageTestScore
@@ -96,4 +101,22 @@ describe("testing the second set of functions for the project", () => {
   test("tests if largestNumber([10, 20, 30]) returns 30", () => {
     expect(funcs.largestNumber([10, 20, 30])).toBe(30);
   });
+});
+const someApiCall = () => {
+  return new Promise(resolve => resolve => setTimeout(resolve, 250));
+};
+describe("async tests", () => {
+  it("using callback", done => {
+    setTimeout(() => {
+      done();
+    }, 2000);
+  });
+
+  it("using promises", () => {
+    return new Promise(resolve => {
+      setTimeout(resolve, 2000);
+    });
+  });
+
+  it("using async / await", () => {});
 });

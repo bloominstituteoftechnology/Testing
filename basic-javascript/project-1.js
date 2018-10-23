@@ -16,6 +16,15 @@ const areEqual = (x, y) => {
   return x === y;
 };
 
+const areEquals = (x, y) => {
+  //return x === y;
+
+  if (x === null || y === null || x === undefined || y === undefined) {
+    return null;
+  }
+  if (x !== y) return false;
+};
+
 const lessThanNinety = num => {
   if (num < 90) {
     return true;
@@ -85,7 +94,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
@@ -137,5 +146,6 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
+  areEquals
 };

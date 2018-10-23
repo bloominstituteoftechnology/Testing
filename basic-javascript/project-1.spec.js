@@ -94,7 +94,7 @@ describe("helpers.js", () => {
 
   // addExclamationPoint
   test("tests if 'bang' addExclamationPoint equals 'bang!'", () => {
-    expect(helpers.addExclamationPoint(bang)).toBe("bang!");
+    expect(helpers.addExclamationPoint("bang")).toBe("bang!");
   });
 
   // combineNames
@@ -104,7 +104,7 @@ describe("helpers.js", () => {
 
   // getGreeting
   test("tests if getGreeting('Luis') returns 'Hello Luis'", () => {
-    expect(helpers.getGreeting("Luis")).toBe("Hello Luis");
+    expect(helpers.getGreeting("Luis")).toBe("Hello Luis!");
   });
 
   // getRectangleArea
@@ -125,5 +125,20 @@ describe("helpers.js", () => {
   // getRectangularPrismVolume
   test("tests if getRectangularPrismVolume(10, 10, 10) returns 1000", () => {
     expect(helpers.getRectangularPrismVolume(10, 10, 10)).toBe(1000);
+  });
+});
+
+describe("are equals tdd implementation", () => {
+  it("should return null if x or y are null or undefined", () => {
+    expect(helpers.areEquals(null, "a")).toBe(null);
+    expect(helpers.areEquals(10, null)).toBe(null);
+    expect(helpers.areEquals("65", null)).toBe(null);
+    expect(helpers.areEquals(undefined, 23)).toBe(null);
+  });
+  it("should return false if x and y are not equal", () => {
+    expect(helpers.areEquals(10, 23)).toBe(false);
+    expect(helpers.areEquals(10, "a")).toBe(false);
+    expect(helpers.areEquals("65", 2)).toBe(false);
+    expect(helpers.areEquals(12, 23)).toBe(false);
   });
 });
