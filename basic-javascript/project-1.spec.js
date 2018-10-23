@@ -181,21 +181,46 @@ describe('16-20', () => {
 
 
 
-// /*
-//   getGreeting,
-//   getRectangleArea,
-//   getTriangleArea,
-//   getCircleArea,
-//   getRectangularPrismVolume
-// */
+/*
+  getGreeting,
+  getRectangleArea,
+  getTriangleArea,
+  getCircleArea,
+  getRectangularPrismVolume
 
+  const expected = ;
+  const actual = helpers.;
+  expect(actual).toEqual(expected);
+*/
 
-// it('getGreeting', () => {});
+describe.only('21-25', () => {
+  it('getGreeting', () => {
+    const expected = 'Hello Bob!';
+    const actual = helpers.getGreeting('Bob');
+    expect(actual).toEqual(expected);
+  });
 
-// it('getRectangleArea', () => {});
-
-// it('getTriangleArea', () => {});
-
-// it('getCircleArea', () => {});
-
-// it('getRectangularPrismVolume', () => {});
+  it('getRectangleArea', () => {
+    const expected = 15;
+    const actual = helpers.getRectangleArea(5, 3);
+    expect(actual).toEqual(expected);
+  });
+  
+  it('getTriangleArea', () => {
+    const expected = 2;
+    const actual = helpers.getTriangleArea(2,2);
+    expect(actual).toEqual(expected);
+  });
+  
+  it('getCircleArea', () => {
+    const expected = Math.PI * 4;
+    const actual = helpers.getCircleArea(2);
+    expect(actual).toEqual(expected);
+  });
+  
+  it('getRectangularPrismVolume', () => {
+    const expected = 24;
+    const actual = helpers.getRectangularPrismVolume(2,3,4);
+    expect(actual).toEqual(expected);
+  });
+});

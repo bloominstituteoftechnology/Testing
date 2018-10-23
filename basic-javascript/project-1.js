@@ -196,25 +196,25 @@ const getGreeting = name => {
 
 const getRectangleArea = (length, width) => {
   if (!length || !width) 'Please provide both a length and width!';
-  if (typeof length !== 'string' || typeof width !== 'string') return 'Please provide a NUMBER for both length and width';
+  if (typeof length !== 'number' || typeof width !== 'number') return 'Please provide a NUMBER for both length and width';
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
   if (!base || !height) 'Please provide both a base and height!';
-  if (typeof base !== 'string' || typeof height !== 'string') return 'Please provide a NUMBER for both base and height';
+  if (typeof base !== 'number' || typeof height !== 'number') return 'Please provide a NUMBER for both base and height';
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
   if (!radius) return 'Who stole our pi?!?!';
-  if (typeof radius !== number) return 'Please provide a number';
+  if (typeof radius !== 'number') return 'Please provide a number';
   return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
   if (!length || !width || !height) 'Please provide both a length and height!';
-  if (typeof length !== number || typeof width !== number || typeof height !== number) return 'Please provide a NUMBER for both length and height';
+  if (typeof length !== 'number' || typeof width !== 'number' || typeof height !== 'number') return 'Please provide a NUMBER for both length and height';
   return width * height * length;
 };
 

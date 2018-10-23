@@ -1,20 +1,26 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (!x || !y || typeof x !== 'number' || typeof y !== 'number') {
+    return 'Please enter an x-value and a y-value that is a number';
+  }
+
   if (x > y) {
     return x;
-  } else if (x === y) {
+  } else if (x < y) {
     return y;
-  }
-  return y;
+  } else if (x === y) {
+    return 'Same Value'
+  } 
 };
 
 const greeting = language => {
+  
   switch (language) {
     case 'German':
       return 'Guten Tag!';
     case 'Spanish':
-      return 'Hola!';
+      return 'Hola!';      
     default:
       return 'Hello!';
   }
@@ -23,11 +29,16 @@ const greeting = language => {
 const isTenOrFive = num => {
   if (num === 10 || num === 5) {
     return true;
+  } else if (typeof num !== 'number') {
+    return 'Please enter a number';
   }
   return false;
 };
 
 const isInRange = num => {
+  if (!num || typeof num !== 'number') {
+    return 'Please enter a number';
+  }
   if (num < 50 && num > 20) {
     return true;
   }
