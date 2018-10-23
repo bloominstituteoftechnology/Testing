@@ -98,6 +98,22 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return false;
 		// };
+		// in range
+		it('should return true if 20 < num < 50', () => {
+			const actual = funcs.isInRange(42);
+			expect(actual).toBe(true);
+		});
+
+		// out of range
+		it('should return false if not between 20 and 50 or is non-numeric', () => {
+			const oor = funcs.isInRange(50);
+			const func = funcs.isInRange(() => {});
+			const str = funcs.isInRange('forty-two');
+
+			expect(oor).toBe(false);
+			expect(func).toBe(false);
+			expect(str).toBe(false);
+		});
 	});
 
 	describe('isInteger()', () => {
@@ -107,6 +123,22 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return false;
 		// };
+		// is int
+		it('should return true if passed an integer', () => {
+			const int = funcs.isInteger(42);
+			expect(int).toBe(true);
+		});
+
+		// isn't int
+		it('should return false if not an integer', () => {
+			const dec = funcs.isInteger(3.141592653);
+			const func = funcs.isInteger(() => {});
+			const str = funcs.isInteger('7');
+
+			expect(dec).toBe(false);
+			expect(func).toBe(false);
+			expect(str).toBe(false);
+		});
 	});
 
 	describe('fizzBuzz()', () => {
