@@ -8,6 +8,7 @@ const arrayFunctions = require('./arrays');
 // // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
+  //================ MAP
   describe('map', () => {
   	it('should return correct values', () => {
   		const map = arrayFunctions.map;
@@ -25,6 +26,7 @@ describe('Arrays', () => {
     });
   });
 
+  //================ EACH
 describe('each', () => {
   it('should return correct values', () => {
     const each = arrayFunctions.each;
@@ -41,6 +43,7 @@ describe('each', () => {
   });
 });
 
+//================ REDUCE
 describe('reduce', () => {
   it('should return the correct values', () => {
     const reduce = arrayFunctions.reduce;
@@ -58,6 +61,7 @@ describe('reduce', () => {
   });
 });
 
+//================ FIND
 describe('find', () => {
   it('should return the correct value', () => {
     const find = arrayFunctions.find;
@@ -80,6 +84,7 @@ describe('find', () => {
   });
 });
 
+//================ FILTER
 describe('filter', () => {
   it('should return the correct value', () => {
   const filter = arrayFunctions.filter;
@@ -96,6 +101,7 @@ describe('filter', () => {
   });
 });
 
+//================ FLATTEN
 describe('flatten', () => {
   it('should return the correct value', () => {
     const flatten = arrayFunctions.flatten;
