@@ -9,213 +9,233 @@ test("should run tests", () => {});
 it("should run tests using it() in addition to test()", () => {});
 
 //Multiply by ten
-it("should multiply provided number by ten", () => {
-  const expected = 100;
+describe("multiplyByTen()", () => {
+  it("should multiply provided number by ten", () => {
+    const expected = 100;
 
-  const actual = helpers.multiplyByTen(10);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.multiplyByTen(10);
+    expect(actual).toEqual(expected);
+  });
 
-it("should multiply provided number by ten", () => {
-  const expected = 30;
+  it("should multiply provided number by ten", () => {
+    const expected = 30;
 
-  const actual = helpers.multiplyByTen("3");
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.multiplyByTen("3");
+    expect(actual).toEqual(expected);
+  });
 
-it("should return 0 when called with no value", () => {
-  const product = helpers.multiplyByTen();
+  it("should return 0 when called with no value", () => {
+    const product = helpers.multiplyByTen();
 
-  expect(product).toBe(0);
+    expect(product).toBe(0);
+  });
 });
 
 //Subtract by five
-it("should subtract provided number by five", () => {
-  const expected = 6;
+describe("subtractFive()", () => {
+  it("should subtract provided number by five", () => {
+    const expected = 6;
 
-  const actual = helpers.subtractFive(11);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.subtractFive(11);
+    expect(actual).toEqual(expected);
+  });
 
-it("should subtract provided number by five", () => {
-  const expected = -16;
+  it("should subtract provided number by five", () => {
+    const expected = -16;
 
-  const actual = helpers.subtractFive(-11);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.subtractFive(-11);
+    expect(actual).toEqual(expected);
+  });
 
-it("should subtract provided number by five", () => {
-  const expected = 6;
+  it("should subtract provided number by five", () => {
+    const expected = 6;
 
-  const actual = helpers.subtractFive("11");
-  expect(actual).toEqual(expected);
+    const actual = helpers.subtractFive("11");
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Are the strings the same length
-it("should check if strings are the same length", () => {
-  const expected = true;
+describe("areSameLength()", () => {
+  it("should check if strings are the same length", () => {
+    const expected = true;
 
-  const actual = helpers.areSameLength("bear", "bear");
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.areSameLength("bear", "bear");
+    expect(actual).toEqual(expected);
+  });
 
-it("should check if strings are the same length", () => {
-  const expected = false;
+  it("should check if strings are the same length", () => {
+    const expected = false;
 
-  const actual = helpers.areSameLength("bears", "bear");
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.areSameLength("bears", "bear");
+    expect(actual).toEqual(expected);
+  });
 
-it("should check if strings are the same length", () => {
-  const expected = true;
+  it("should check if strings are the same length", () => {
+    const expected = true;
 
-  const actual = helpers.areSameLength("123", "123");
-  expect(actual).toEqual(expected);
+    const actual = helpers.areSameLength("123", "123");
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Are the values equal
-it("should check if values are the equal", () => {
-  const expected = true;
+describe("areEqual()", () => {
+  it("should check if values are the equal", () => {
+    const expected = true;
 
-  const actual = helpers.areEqual("bear", "bear");
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.areEqual("bear", "bear");
+    expect(actual).toEqual(expected);
+  });
 
-it("should check if values are the equal", () => {
-  const expected = true;
+  it("should check if values are the equal", () => {
+    const expected = true;
 
-  const actual = helpers.areEqual(3, 3);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.areEqual(3, 3);
+    expect(actual).toEqual(expected);
+  });
 
-it("should check if values are the equal", () => {
-  const expected = false;
+  it("should check if values are the equal", () => {
+    const expected = false;
 
-  const actual = helpers.areEqual(3, "3");
-  expect(actual).toEqual(expected);
+    const actual = helpers.areEqual(3, "3");
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Are the values less than 90
-it("should check if values are less than 90", () => {
-  const expected = true;
+describe("lessThanNinety()", () => {
+  it("should check if values are less than 90", () => {
+    const expected = true;
 
-  const actual = helpers.lessThanNinety(80);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.lessThanNinety(80);
+    expect(actual).toEqual(expected);
+  });
 
-it("should check if values are less than 90", () => {
-  const expected = true;
+  it("should check if values are less than 90", () => {
+    const expected = true;
 
-  const actual = helpers.lessThanNinety(80.99);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.lessThanNinety(80.99);
+    expect(actual).toEqual(expected);
+  });
 
-it("should check if values are less than 90", () => {
-  const expected = false;
+  it("should check if values are less than 90", () => {
+    const expected = false;
 
-  const actual = helpers.lessThanNinety(90.1);
-  expect(actual).toEqual(expected);
+    const actual = helpers.lessThanNinety(90.1);
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Are the values greater than 50
-it("should check if values are greater than 50", () => {
-  const expected = true;
+describe("greaterThanFifty()", () => {
+  it("should check if values are greater than 50", () => {
+    const expected = true;
 
-  const actual = helpers.greaterThanFifty(80);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.greaterThanFifty(80);
+    expect(actual).toEqual(expected);
+  });
 
-it("should check negative numbers", () => {
-  const expected = false;
+  it("should check negative numbers", () => {
+    const expected = false;
 
-  const actual = helpers.greaterThanFifty(-80);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.greaterThanFifty(-80);
+    expect(actual).toEqual(expected);
+  });
 
-it("should accept strings", () => {
-  const expected = true;
+  it("should accept strings", () => {
+    const expected = true;
 
-  const actual = helpers.greaterThanFifty("80");
-  expect(actual).toEqual(expected);
+    const actual = helpers.greaterThanFifty("80");
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Add two values
-it("should give the sum of two numbers", () => {
-  const expected = 180;
+describe("add()", () => {
+  it("should give the sum of two numbers", () => {
+    const expected = 180;
 
-  const actual = helpers.add(80, 100);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.add(80, 100);
+    expect(actual).toEqual(expected);
+  });
 
-it("should accept decimals", () => {
-  const expected = 180.92;
+  it("should accept decimals", () => {
+    const expected = 180.92;
 
-  const actual = helpers.add(80.512, 100.41);
-  expect(actual).toBeCloseTo(expected);
-});
+    const actual = helpers.add(80.512, 100.41);
+    expect(actual).toBeCloseTo(expected);
+  });
 
-it("should accept negative numbers", () => {
-  const expected = -180;
+  it("should accept negative numbers", () => {
+    const expected = -180;
 
-  const actual = helpers.add(-80, -100);
-  expect(actual).toEqual(expected);
+    const actual = helpers.add(-80, -100);
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Subtract the second value from first
-it("should subtract the second value from the first", () => {
-  const expected = 100;
+describe("subtract()", () => {
+  it("should subtract the second value from the first", () => {
+    const expected = 100;
 
-  const actual = helpers.subtract(180, 80);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.subtract(180, 80);
+    expect(actual).toEqual(expected);
+  });
 
-it("should accept negative numbers", () => {
-  const expected = 260;
+  it("should accept negative numbers", () => {
+    const expected = 260;
 
-  const actual = helpers.subtract(180, -80);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.subtract(180, -80);
+    expect(actual).toEqual(expected);
+  });
 
-it("should accept strings", () => {
-  const expected = 100;
+  it("should accept strings", () => {
+    const expected = 100;
 
-  const actual = helpers.subtract("180", "80");
-  expect(actual).toEqual(expected);
+    const actual = helpers.subtract("180", "80");
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Divide
-it("should divide the first value by the second", () => {
-  const expected = 50;
+describe("divide()", () => {
+  it("should divide the first value by the second", () => {
+    const expected = 50;
 
-  const actual = helpers.divide(100, 2);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.divide(100, 2);
+    expect(actual).toEqual(expected);
+  });
 
-it("should accept decimal values close to solution", () => {
-  const expected = 33.33;
+  it("should accept decimal values close to solution", () => {
+    const expected = 33.33;
 
-  const actual = helpers.divide(100, 3);
-  expect(actual).toBeCloseTo(expected);
-});
+    const actual = helpers.divide(100, 3);
+    expect(actual).toBeCloseTo(expected);
+  });
 
-it("should accept fractions", () => {
-  const expected = 0.44;
+  it("should accept fractions", () => {
+    const expected = 0.44;
 
-  const actual = helpers.divide(1 / 3, 6 / 8);
-  expect(actual).toBeCloseTo(expected);
+    const actual = helpers.divide(1 / 3, 6 / 8);
+    expect(actual).toBeCloseTo(expected);
+  });
 });
 
 //Multiply
-it("should give the product of two numbers", () => {
-  const expected = 200;
+describe("multiply()", () => {
+  it("should give the product of two numbers", () => {
+    const expected = 200;
 
-  const actual = helpers.multiply(100, 2);
-  expect(actual).toEqual(expected);
-});
+    const actual = helpers.multiply(100, 2);
+    expect(actual).toEqual(expected);
+  });
 
-it("should return NaN if not a number", () => {
-  const actual = helpers.multiply(100, "cat");
-  expect(actual).toBeNaN();
+  it("should return NaN if not a number", () => {
+    const actual = helpers.multiply(100, "cat");
+    expect(actual).toBeNaN();
+  });
 });
 
 //Get Remainder
