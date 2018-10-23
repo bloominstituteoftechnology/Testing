@@ -1,11 +1,19 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if(!num){
+    return 0;
+  } else {
   return num * 10;
+  }
 };
 
 const subtractFive = num => {
+  if(!num){
+    return -5;
+  } else {
   return num - 5;
+  }
 };
 
 const areSameLength = (str1, str2) => {
