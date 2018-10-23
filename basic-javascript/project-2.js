@@ -136,16 +136,18 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      itemCounter++;
-    }
-  }
-  if (itemCounter > 0) {
-    return true;
-  }
-  return false;
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	if (item === undefined) throw new Error('Item cannot be undefined.');
+	let itemCounter = 0;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] === item) {
+			itemCounter++;
+		}
+	}
+	if (itemCounter > 0) {
+		return true;
+	}
+	return false;
 };
 
 const addNumbers = numbers => {

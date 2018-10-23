@@ -22,6 +22,7 @@ describe('Testing project-2.js', () => {
 		addItemToArray,
 		addItemToFront,
 		wordsToSentence,
+		contains,
 	} = funcs;
 
 	// getBiggest()
@@ -534,6 +535,53 @@ describe('Testing project-2.js', () => {
 
 			it('should return a string with all the words in the array joined by a space', () => {
 				expect(wordsToSentence(['This', 'is', 'a', 'sentence.'])).toEqual('This is a sentence.');
+			});
+		});
+	});
+
+	// contains()
+	describe('Testing contains()', () => {
+		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					contains('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					contains(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					contains({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					contains(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					contains(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an undefined type for the second argument', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					contains([ 'one' ], undefined);
+				}).toThrow('Item cannot be undefined.');
+			});
+		});
+
+		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
+			it('should return true if item is in array', () => {
+				expect(contains([ 1, 2 ], 1)).toEqual(true);
+				expect(contains([ 'one', 'two' ], 'two')).toEqual(true);
+			});
+
+			it('should return false if item is not in array', () => {
+				expect(contains([], 1)).toEqual(false);
+				expect(contains([ 1, 2 ], 3)).toEqual(false);
 			});
 		});
 	});
