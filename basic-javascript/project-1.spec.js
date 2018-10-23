@@ -32,3 +32,51 @@ it('compare values for equality', () => {
 
     expect(actual).toEqual(expected);
 });
+
+it('value of input less than ninety', () => {
+    const expected = true;
+
+    const actual = helpers.lessThanNinety(89);
+
+    expect(actual).toEqual(expected);
+});
+
+it('value of input is more than fifty', () => {
+    const expected = true;
+
+    const actual = helpers.greaterThanFifty(51);
+
+    expect(actual).toEqual(expected);
+});
+
+it('value of two numbers summed', () => {
+    const expected = 3;
+
+    const actual = helpers.add(1.4, 1.6);
+
+    expect(actual).toEqual(expected);
+});
+
+it('value of two numbers subtracted ', () => {
+    const expected = 1001;
+
+    const actual = helpers.subtract(1002,1);
+
+    expect(actual).toEqual(expected);
+});
+
+it('value of two numbers divided', () => {
+    const expected = 2;
+
+    const actual = helpers.divide(10,5);
+
+    expect(actual).toEqual(expected);
+});
+
+it('value of two numbers multiplied', () => {
+    const expected = 6;
+
+    const actual = helpers.multiply(2,3);
+
+    expect(actual).toEqual(expected);
+});
