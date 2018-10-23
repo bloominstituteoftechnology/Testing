@@ -1,49 +1,85 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  	if(num===undefined || num===null) return false;
+	else return num * 10;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  	if(num===undefined || num===null) return false;
+	else return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  	if(str1===undefined || str2===undefined || str1 ===null || str2===null){
+	return false;
+	}	
+	
+	else if(typeof str1!== 'string' || typeof str2!== 'string') return false;
+
+	else {
+	return str1.length === str2.length;
+	}	
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  
+	return x === y;
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+if(num===undefined || num===null) return false;  
+
+else{	
+if (num < 90) {
     return true;
   }
   return false;
+}
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
+if(num===undefined || num===null) return false;
+
+else{	
+	
+if (num > 50) {
     return true;
   }
   return false;
+}
 };
 
 const add = (x, y) => {
-  return x + y;
+ if(x===undefined || x===null || y===null || y===undefined) return false;
+
+ else if(typeof x!=='number' || typeof y!=='number') return false;
+
+ else return x + y;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+ if(x===undefined || x===null || y===null || y===undefined) return false;
+
+ else if(typeof x!=='number' || typeof y!=='number') return false;
+
+ else return x - y;
 };
 
 const divide = (x, y) => {
-  return x / y;
+if(x===undefined || x===null || y===null || y===undefined || y===0) return false;
+
+else if(typeof x!=='number' || typeof y!=='number') return false; 
+	
+else return x / y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+if(x===undefined || x===null || y===null || y===undefined) return false;
+
+else if(typeof x!=='number' || typeof y!=='number') return false; 
+        
+else return x * y;
 };
 
 const getRemainder = (x, y) => {
