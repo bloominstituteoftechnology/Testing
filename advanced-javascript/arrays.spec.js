@@ -8,10 +8,21 @@ const arrayFunctions = require('./arrays');
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
-  describe('map', () => {
+  describe('each', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof each).toBe('function');
+    });
+    it('should be a function', () => {
+      expect(typeof each).toBe('function');
     });
   });
+  describe('map', () => {
+    const map = arrayFunctions.map;
+    it('should be a function', () => {
+      expect(typeof map).toBe('function');
+    });
+  });
+  
+
 });
