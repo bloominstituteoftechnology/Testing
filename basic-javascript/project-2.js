@@ -96,7 +96,7 @@ const addItemToFront = (arr, item) => {
   return arr;
 };
 
-const wordsToSentence = words => {
+const wordsToSentence = (words) => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
