@@ -80,6 +80,13 @@ describe("isInRange()", () => {
     expect(actual).toEqual(expected);
   });
 
+  it("should return true if the number is between 20-50", () => {
+    const expected = true;
+
+    const actual = funcs.isInRange(21);
+    expect(actual).toEqual(expected);
+  });
+
   it("should throw an error if a string is passed", () => {
     expect(() => {
       funcs.isInRange("30");
@@ -96,14 +103,35 @@ describe("isInteger()", () => {
     const actual = funcs.isInteger(5);
     expect(actual).toEqual(expected);
   });
+
+  it("should return false if the number is not an integer", () => {
+    const expected = false;
+
+    const actual = funcs.isInteger(0.5);
+    expect(actual).toEqual(expected);
+  });
 });
 
 //FizzBuzz
 describe("fizzBuzz()", () => {
-  it("should return fizzbuzz if num divisible by 3 and 5, buzz if just 5, and fizz if just 3", () => {
+  it("should return fizzbuzz if num divisible by 3", () => {
     const expected = "fizz";
 
     const actual = funcs.fizzBuzz(27);
+    expect(actual).toEqual(expected);
+  });
+
+  it("should return fizzbuzz if num divisible by 3 and 5", () => {
+    const expected = "fizzbuzz";
+
+    const actual = funcs.fizzBuzz(15);
+    expect(actual).toEqual(expected);
+  });
+
+  it("should return buzz if num divisible by 5", () => {
+    const expected = "buzz";
+
+    const actual = funcs.fizzBuzz(25);
     expect(actual).toEqual(expected);
   });
 });
@@ -116,6 +144,13 @@ describe("isPrime()", () => {
     const actual = funcs.isPrime(5);
     expect(actual).toEqual(expected);
   });
+
+  it("should return false if a number is not prime", () => {
+    const expected = false;
+
+    const actual = funcs.isPrime(14);
+    expect(actual).toEqual(expected);
+  });
 });
 
 //Returns the first item in an array
@@ -125,6 +160,11 @@ describe("returnFirst()", () => {
 
     const actual = funcs.returnFirst([1, 2, 3]);
     expect(actual).toEqual(expected);
+  });
+
+  it("should return null if no array is provided", () => {
+    const actual = funcs.returnFirst(undefined);
+    expect(actual).toBe(null);
   });
 });
 
@@ -136,6 +176,11 @@ describe("returnLast()", () => {
     const actual = funcs.returnLast([1, 2, 3]);
     expect(actual).toEqual(expected);
   });
+
+  it("should return null if no array is provided", () => {
+    const actual = funcs.returnLast(undefined);
+    expect(actual).toBe(null);
+  });
 });
 
 //Returns the length of an array
@@ -145,6 +190,11 @@ describe("getArrayLength()", () => {
 
     const actual = funcs.getArrayLength([1, 2, 3, 4]);
     expect(actual).toEqual(expected);
+  });
+
+  it("should return null if no array is provided", () => {
+    const actual = funcs.getArrayLength(undefined);
+    expect(actual).toBe(null);
   });
 });
 
@@ -156,6 +206,11 @@ describe("incrementByOne()", () => {
     const actual = funcs.incrementByOne([1, 2, 3]);
     expect(actual).toEqual(expected);
   });
+
+  it("should return null if no array is provided", () => {
+    const actual = funcs.incrementByOne(undefined);
+    expect(actual).toBe(null);
+  });
 });
 
 //Adds an item to an array
@@ -166,15 +221,29 @@ describe("addItemToArray()", () => {
     const actual = funcs.addItemToArray([1, 2, 3], 4);
     expect(actual).toEqual(expected);
   });
+
+  it("should throw an error if the array or item are not given", () => {
+    expect(() => {
+      funcs.addItemToArray(undefined, undefined);
+    }).toThrow();
+    expect;
+  });
 });
 
 //Adds an item to the font of an array
-describe("addItemToArray()", () => {
+describe("addItemToFront()", () => {
   it("should return the array with an item added to the front", () => {
     const expected = [1, 2, 3, 4];
 
     const actual = funcs.addItemToFront([2, 3, 4], 1);
     expect(actual).toEqual(expected);
+  });
+
+  it("should throw an error if the array or item are not given", () => {
+    expect(() => {
+      funcs.addItemToFront(undefined, undefined);
+    }).toThrow();
+    expect;
   });
 });
 
@@ -185,6 +254,13 @@ describe("wordsToSentence()", () => {
 
     const actual = funcs.wordsToSentence(["The", "dog", "ran", "!"]);
     expect(actual).toEqual(expected);
+  });
+
+  it("should throw an error if the array is not given", () => {
+    expect(() => {
+      funcs.wordsToSentence(undefined);
+    }).toThrow();
+    expect;
   });
 });
 
@@ -197,7 +273,7 @@ describe("contains()", () => {
     expect(actual).toEqual(expected);
   });
 
-  it("should return flase if an array does not contain the specified item", () => {
+  it("should return false if an array does not contain the specified item", () => {
     const expected = false;
 
     const actual = funcs.contains(["The", "dog", "ran", "!"], "cat");
@@ -213,6 +289,13 @@ describe("addNumbers()", () => {
     const actual = funcs.addNumbers([1, 2, 3, 4]);
     expect(actual).toEqual(expected);
   });
+
+  it("should throw an error if the array is not given", () => {
+    expect(() => {
+      funcs.addNumbers(undefined);
+    }).toThrow();
+    expect;
+  });
 });
 
 //Average test Score
@@ -223,6 +306,13 @@ describe("averageTestScore()", () => {
     const actual = funcs.averageTestScore([100, 78, 63, 95]);
     expect(actual).toEqual(expected);
   });
+
+  it("should throw an error if the array is not given", () => {
+    expect(() => {
+      funcs.averageTestScore(undefined);
+    }).toThrow();
+    expect;
+  });
 });
 
 //Largest Number
@@ -232,5 +322,12 @@ describe("isInteger()", () => {
 
     const actual = funcs.largestNumber([100, 78, 63, 95]);
     expect(actual).toEqual(expected);
+  });
+
+  it("should throw an error if the array is not given", () => {
+    expect(() => {
+      funcs.largestNumber(undefined);
+    }).toThrow();
+    expect;
   });
 });
