@@ -6,6 +6,7 @@ const {
 	nonStringTypeError,
 	nonArrayTypeError,
 	emptyArrayError,
+	undefinedArgumentError,
 } = require('../errors/index.js');
 
 const getBiggest = (x, y) => {
@@ -111,14 +112,14 @@ const incrementByOne = arr => {
 
 const addItemToArray = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (item === undefined) throw new Error('Item cannot be undefined.');
+	if (item === undefined) throw new Error(undefinedArgumentError);
 	arr.push(item);
 	return arr;
 };
 
 const addItemToFront = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (item === undefined) throw new Error('Item cannot be undefined.');
+	if (item === undefined) throw new Error(undefinedArgumentError);
 	arr.unshift(item);
 	return arr;
 };
@@ -140,7 +141,7 @@ const wordsToSentence = words => {
 
 const contains = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (item === undefined) throw new Error('Item cannot be undefined.');
+	if (item === undefined) throw new Error(undefinedArgumentError);
 	let itemCounter = 0;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === item) {

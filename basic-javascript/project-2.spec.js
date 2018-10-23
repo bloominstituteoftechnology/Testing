@@ -6,10 +6,11 @@ const {
 	nonStringTypeError,
 	nonArrayTypeError,
 	emptyArrayError,
+	undefinedArgumentError,
 } = require('../errors/index.js');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
-describe('Testing project-2.js', () => {
+describe('project-2.js', () => {
 	const {
 		getBiggest,
 		greeting,
@@ -32,7 +33,7 @@ describe('Testing project-2.js', () => {
 	} = funcs;
 
 	// getBiggest()
-	describe('Testing getBiggest()', () => {
+	describe('getBiggest()', () => {
 		describe('Calling with a string, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -61,7 +62,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// greeting()
-	describe('Testing greeting()', () => {
+	describe('greeting()', () => {
 		describe('Calling with a number, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -87,7 +88,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// isTenOrFive()
-	describe('Testing isTenOrFive()', () => {
+	describe('isTenOrFive()', () => {
 		describe('Calling with a string, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -121,7 +122,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// isInRange()
-	describe('Testing isInRange()', () => {
+	describe('isInRange()', () => {
 		describe('Calling with a string, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -155,7 +156,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// isInteger()
-	describe('Testing isInteger()', () => {
+	describe('isInteger()', () => {
 		describe('Calling with a string, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -187,7 +188,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// fizzBuzz()
-	describe('Testing fizzBuzz()', () => {
+	describe('fizzBuzz()', () => {
 		describe('Calling with a string, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -232,7 +233,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// isPrime()
-	describe('Testing isPrime()', () => {
+	describe('isPrime()', () => {
 		describe('Calling with a string, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -264,7 +265,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// returnFirst()
-	describe('Testing returnFirst()', () => {
+	describe('returnFirst()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -305,7 +306,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// returnLast()
-	describe('Testing returnLast()', () => {
+	describe('returnLast()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -346,7 +347,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// getArrayLength()
-	describe('Testing getArrayLength()', () => {
+	describe('getArrayLength()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -381,7 +382,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// incrementByOne()
-	describe('Testing incrementByOne()', () => {
+	describe('incrementByOne()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -421,7 +422,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// addItemToArray()
-	describe('Testing addItemToArray()', () => {
+	describe('addItemToArray()', () => {
 		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -450,7 +451,7 @@ describe('Testing project-2.js', () => {
 			it('should throw an error', () => {
 				expect(() => {
 					addItemToArray([ 'one' ], undefined);
-				}).toThrow('Item cannot be undefined.');
+				}).toThrow(undefinedArgumentError);
 			});
 		});
 
@@ -464,7 +465,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// addItemToFront()
-	describe('Testing addItemToFront()', () => {
+	describe('addItemToFront()', () => {
 		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -493,7 +494,7 @@ describe('Testing project-2.js', () => {
 			it('should throw an error', () => {
 				expect(() => {
 					addItemToFront([ 'one' ], undefined);
-				}).toThrow('Item cannot be undefined.');
+				}).toThrow(undefinedArgumentError);
 			});
 		});
 
@@ -507,7 +508,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// wordsToSentence()
-	describe('Testing wordsToSentence()', () => {
+	describe('wordsToSentence()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -546,7 +547,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// contains()
-	describe('Testing contains()', () => {
+	describe('contains()', () => {
 		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -575,7 +576,7 @@ describe('Testing project-2.js', () => {
 			it('should throw an error', () => {
 				expect(() => {
 					contains([ 'one' ], undefined);
-				}).toThrow('Item cannot be undefined.');
+				}).toThrow(undefinedArgumentError);
 			});
 		});
 
@@ -593,7 +594,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// addNumbers()
-	describe('Testing addNumbers()', () => {
+	describe('addNumbers()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -638,7 +639,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// averageTestScore()
-	describe('Testing averageTestScore()', () => {
+	describe('averageTestScore()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
@@ -685,7 +686,7 @@ describe('Testing project-2.js', () => {
 	});
 
 	// largestNumber()
-	describe('Testing largestNumber()', () => {
+	describe('largestNumber()', () => {
 		describe('Calling with a string, number, object, null or undefined type', () => {
 			it('should throw an error', () => {
 				expect(() => {
