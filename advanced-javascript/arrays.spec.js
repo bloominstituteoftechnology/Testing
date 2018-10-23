@@ -6,12 +6,17 @@ const arrayFunctions = require('./arrays');
 // // then make sure you have at least 2-3 more assertions for every function.
 // // hint 1. - you need to pass data to the functions and get expected output.
 // // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
+const arr = [1,2,3];
+const plus = (value) => {
+  return value + 1
+}
+
 
 describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('function');
+      expect(typeof map(arr, plus)).toBe('object');
     });
   });
 });
