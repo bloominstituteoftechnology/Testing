@@ -19,6 +19,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value or string value', () => {
 			expect(() => {
 				helpers.multiplyByTen();
+			}).toThrowError();
+			expect(() => {
 				helpers.multiplyByTen('five');
 			}).toThrowError();
 		});
@@ -40,6 +42,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value or string value', () => {
 			expect(() => {
 				helpers.subtractFive();
+			}).toThrowError();
+			expect(() => {
 				helpers.subtractFive('eleven');
 			}).toThrowError();
 		});
@@ -66,6 +70,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value or non-string value', () => {
 			expect(() => {
 				helpers.areSameLength('str1');
+			}).toThrowError();
+			expect(() => {
 				helpers.areSameLength(42, 'as');
 			}).toThrowError();
 		});
@@ -92,6 +98,8 @@ describe('project-1.js', () => {
 		it('should throw an error if one or both values are null or not a number', () => {
 			expect(() => {
 				helpers.areEqual(3);
+			}).toThrowError();
+			expect(() => {
 				helpers.areEqual('3', '4');
 			}).toThrowError();
 		});
@@ -121,6 +129,8 @@ describe('project-1.js', () => {
 		it('should throw an error if input is null or not a number', () => {
 			expect(() => {
 				helpers.lessThanNinety();
+			}).toThrowError();
+			expect(() => {
 				helpers.lessThanNinety('3');
 			}).toThrowError();
 		});
@@ -150,6 +160,8 @@ describe('project-1.js', () => {
 		it('should throw an error if input is null or not a number', () => {
 			expect(() => {
 				helpers.greaterThanFifty();
+			}).toThrowError();
+			expect(() => {
 				helpers.greaterThanFifty('42');
 			}).toThrowError();
 		});
@@ -170,6 +182,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value or a string', () => {
 			expect(() => {
 				helpers.add(4);
+			}).toThrowError();
+			expect(() => {
 				helpers.add('5', 4);
 			}).toThrowError();
 		});
@@ -190,6 +204,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no values or a string', () => {
 			expect(() => {
 				helpers.subtract(11);
+			}).toThrowError();
+			expect(() => {
 				helpers.subtract(4, '4');
 			}).toThrowError();
 		});
@@ -210,6 +226,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no values or a string', () => {
 			expect(() => {
 				helpers.divide(3);
+			}).toThrowError();
+			expect(() => {
 				helpers.divide(10, '2');
 			}).toThrowError();
 		});
@@ -230,6 +248,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no values or a string', () => {
 			expect(() => {
 				helpers.multiply(10);
+			}).toThrowError();
+			expect(() => {
 				helpers.multiply(10, '5');
 			}).toThrowError();
 		});
@@ -250,6 +270,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no values', () => {
 			expect(() => {
 				helpers.getRemainder(4);
+			}).toThrowError();
+			expect(() => {
 				helpers.getRemainder(20, '3');
 			}).toThrowError();
 		});
@@ -273,6 +295,8 @@ describe('project-1.js', () => {
 		it('should throw an error when called with no value', () => {
 			expect(() => {
 				helpers.isEven();
+			}).toThrowError();
+			expect(() => {
 				helpers.isEven('42');
 			}).toThrowError();
 		});
@@ -296,6 +320,8 @@ describe('project-1.js', () => {
 		it('should throw an error if input is null/undefined or a string', () => {
 			expect(() => {
 				helpers.isOdd();
+			}).toThrowError();
+			expect(() => {
 				helpers.isOdd('27');
 			}).toThrowError();
 		});
@@ -316,6 +342,8 @@ describe('project-1.js', () => {
 		it('should throw an error when input is null/undefined or a string', () => {
 			expect(() => {
 				helpers.square();
+			}).toThrowError();
+			expect(() => {
 				helpers.square('4');
 			}).toThrowError();
 		});
@@ -336,6 +364,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided a null value or a string', () => {
 			expect(() => {
 				helpers.cube();
+			}).toThrowError();
+			expect(() => {
 				helpers.cube('4');
 			}).toThrowError();
 		});
@@ -356,6 +386,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or string input', () => {
 			expect(() => {
 				helpers.raiseToPower(4);
+			}).toThrowError();
+			expect(() => {
 				helpers.raiseToPower(2, '4');
 			}).toThrowError();
 		});
@@ -376,6 +408,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or string input', () => {
 			expect(() => {
 				helpers.roundNumber();
+			}).toThrowError();
+			expect(() => {
 				helpers.roundNumber('3.141592653');
 			}).toThrowError();
 		});
@@ -396,6 +430,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or string input', () => {
 			expect(() => {
 				helpers.roundUp();
+			}).toThrowError();
+			expect(() => {
 				helpers.roundUp('2.222222222');
 			}).toThrowError();
 		});
@@ -436,6 +472,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or numeric input', () => {
 			expect(() => {
 				helpers.combineNames('Yoko');
+			}).toThrowError();
+			expect(() => {
 				helpers.combineNames(13, 'Yeah!');
 			}).toThrowError();
 		});
@@ -456,6 +494,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or non-string input', () => {
 			expect(() => {
 				helpers.getGreeting();
+			}).toThrowError();
+			expect(() => {
 				helpers.getGreeting(42);
 			}).toThrowError();
 		});
@@ -476,6 +516,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null/undefined or non-numeric input', () => {
 			expect(() => {
 				helpers.getRectangleArea(3);
+			}).toThrowError();
+			expect(() => {
 				helpers.getRectangleArea(5, '5');
 			}).toThrowError();
 		});
@@ -496,6 +538,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or non-numeric input', () => {
 			expect(() => {
 				helpers.getTriangleArea(3);
+			}).toThrowError();
+			expect(() => {
 				helpers.getTriangleArea(3, '3');
 			}).toThrowError();
 		});
@@ -516,6 +560,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or non-numeric input', () => {
 			expect(() => {
 				helpers.getCircleArea();
+			}).toThrowError();
+			expect(() => {
 				helpers.getCircleArea('3.141592653');
 			}).toThrowError();
 		});
@@ -536,6 +582,8 @@ describe('project-1.js', () => {
 		it('should throw an error when provided null or non-numeric values', () => {
 			expect(() => {
 				helpers.getRectangularPrismVolume(1, 3);
+			}).toThrowError();
+			expect(() => {
 				helpers.getRectangularPrismVolume(1, '2', 3);
 			}).toThrowError();
 		});
