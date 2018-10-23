@@ -37,6 +37,10 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (typeof num !== 'number') {
+    return null;
+  }
+
   if (num < 50 && num > 20) {
     return true;
   }
@@ -44,6 +48,10 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (typeof num !== 'number') {
+    return null;
+  }
+
   if (Math.floor(num) === num) {
     return true;
   }
@@ -57,8 +65,9 @@ const fizzBuzz = num => {
     return 'buzz';
   } else if (num % 3 === 0) {
     return 'fizz';
+  } else {
+    return num;
   }
-  return num;
 };
 
 const isPrime = num => {
@@ -105,7 +114,7 @@ const incrementByOne = arr => {
   }
 
   for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] === 'string') {
+    if (typeof arr[i] !== 'number') {
     } else {
       arr[i]++;
     }
@@ -138,7 +147,9 @@ const wordsToSentence = words => {
 
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
+    if (typeof words[i] !== 'string') {
+      return null;
+    } else if (i === 0) {
       newSentence += `${words[i]}`;
     } else {
       newSentence += ` ${words[i]}`;
@@ -167,6 +178,9 @@ const contains = (arr, item) => {
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null;
+    }
     sumOfNumbers += numbers[i];
   }
   return sumOfNumbers;
@@ -174,12 +188,15 @@ const addNumbers = numbers => {
 
 const averageTestScore = testScores => {
   if (!Array.isArray(testScores)) {
-    return testScores;
+    return null;
   }
 
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (typeof testScores[i] !== 'number') {
+      return null;
+    }
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -188,12 +205,15 @@ const averageTestScore = testScores => {
 
 const largestNumber = numbers => {
   if (!Array.isArray(numbers)) {
-    return numbers;
+    return null;
   }
 
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {
+      if (typeof numbers[i] !== 'number') {
+        return null;
+      }
       biggestInteger = numbers[i];
     }
   }

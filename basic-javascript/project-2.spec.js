@@ -57,15 +57,17 @@ describe.only('project-2.js', () => {
       expect(funcs.isInRange(30)).toBeTruthy();
     }); //number is in range
 
-    describe('number is not in range so will be false', () => {
-      it('higher than range', () => {
-        expect(funcs.isInRange(60)).toBeFalsy();
-      });
+    it('higher than range', () => {
+      expect(funcs.isInRange(60)).toBeFalsy();
+    });
 
-      it('lower than range', () => {
-        expect(funcs.isInRange(10)).toBeFalsy();
-      });
-    }); //number not in range
+    it('lower than range', () => {
+      expect(funcs.isInRange(10)).toBeFalsy();
+    });
+
+    it('return null if not a number', () => {
+      expect(funcs.isInRange('7')).toBeNull();
+    });
   }); //check to see if number it in range
 
   describe('is it an integer?', () => {
@@ -75,6 +77,10 @@ describe.only('project-2.js', () => {
 
     it('check to see if integer function will retrun false', () => {
       expect(funcs.isInteger(4.8)).toBeFalsy();
+    });
+
+    it('return null if not a number', () => {
+      expect(funcs.isInteger('6.3')).toBeNull();
     });
   }); //is an Integer
 
@@ -102,23 +108,21 @@ describe.only('project-2.js', () => {
       expect(funcs.isPrime(11)).toBeTruthy();
     });
 
-    describe('checks for the false values', () => {
-      it('checks that 1 returns false', () => {
-        expect(funcs.isPrime(1)).toBeFalsy();
-      });
+    it('checks that 1 returns false', () => {
+      expect(funcs.isPrime(1)).toBeFalsy();
+    });
 
-      it('checks that 0 returns false', () => {
-        expect(funcs.isPrime(0)).toBeFalsy();
-      });
+    it('checks that 0 returns false', () => {
+      expect(funcs.isPrime(0)).toBeFalsy();
+    });
 
-      it('checks that non primes are false', () => {
-        expect(funcs.isPrime(10)).toBeFalsy();
-        expect(funcs.isPrime(20)).toBeFalsy();
-      });
-    }); //checks the falsey values
+    it('checks that non primes are false', () => {
+      expect(funcs.isPrime(10)).toBeFalsy();
+      expect(funcs.isPrime(20)).toBeFalsy();
+    });
   }); //prime function
 
-  describe('return the first or last', () => {
+  describe('return the first or last values', () => {
     describe('return the first', () => {
       it('returns the first value of the array', () => {
         expect(funcs.returnFirst(['first', 'hi', 'last'])).toBe('first');
@@ -210,6 +214,10 @@ describe.only('project-2.js', () => {
       expect(funcs.wordsToSentence(words)).toEqual('hi how are you');
     });
 
+    it('return null make sure all of the values are a string', () => {
+      expect(funcs.wordsToSentence(['hi', 5, 'are', 'you'])).toBeNull();
+    });
+
     it('return null if not an array', () => {
       expect(funcs.addItemToFront(1)).toBeNull();
     });
@@ -240,6 +248,10 @@ describe.only('project-2.js', () => {
       expect(funcs.addNumbers(numbers)).toBe(24);
     });
 
+    it('return null if there are non number in the array', () => {
+      expect(funcs.addNumbers([4, 6, '7'])).toBeNull();
+    });
+
     it('return 0 if not an array', () => {
       expect(funcs.addNumbers(1)).toBe(0);
     });
@@ -257,9 +269,13 @@ describe.only('project-2.js', () => {
       expect(funcs.averageTestScore(testScores)).toBe(77);
     });
 
-    it('one test score not in array', () => {
+    it('return null if not in an array', () => {
       const testScores = 100;
-      expect(funcs.averageTestScore(testScores)).toBe(100);
+      expect(funcs.averageTestScore(testScores)).toBeNull();
+    });
+
+    it('return null if there are non number in testScores', () => {
+      expect(funcs.averageTestScore([4, 6, '7'])).toBeNull();
     });
   }); //average test scores
 
@@ -276,10 +292,14 @@ describe.only('project-2.js', () => {
       expect(funcs.largestNumber(numbers)).toBe(1);
     });
 
-    it('one number not in array', () => {
+    it('return null if not an array', () => {
       const numbers = 1;
 
-      expect(funcs.largestNumber(numbers)).toBe(1);
+      expect(funcs.largestNumber(numbers)).toBeNull();
     });
-  });
-});
+
+    it('return null if there are non number in numbers', () => {
+      expect(funcs.largestNumber([4, 6, '7'])).toBeNull();
+    });
+  }); //largest number
+}); //project-2
