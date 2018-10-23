@@ -11,6 +11,7 @@ const map = (elements, cb) => {
   each(elements, item => {
     mappedArr.push(cb(item));
   });
+  console.log(`Mapped Array: ${mappedArr}`);
   return mappedArr;
 };
 
@@ -23,7 +24,11 @@ const reduce = (elements, cb, memo = elements.shift()) => {
 
 const find = (elements, cb) => {
   for (let i = 0; i < elements.length; i++) {
-    if (cb(elements[i])) return elements[i];
+    if (cb(elements[i])) 
+    {
+      console.log(elements[i])
+      return elements[i];
+    };
   }
   return undefined;
 };
