@@ -416,6 +416,7 @@ describe('Testing project-1.js', () => {
 				expect(isOdd(0)).toBe(false);
 				expect(isOdd(4)).toBe(false);
 				expect(isOdd(-2)).toBe(false);
+				expect(isOdd(-2.2)).toBe(false);
 			});
 		});
 	});

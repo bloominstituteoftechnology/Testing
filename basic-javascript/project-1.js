@@ -75,10 +75,16 @@ const isEven = num => {
 
 const isOdd = num => {
 	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	// if its divisible by 2, return false
 	if (num % 2 === 0) {
 		return false;
 	}
-	return true;
+	// if its an integer return true
+	if (Math.floor(num) === num) {
+		return true;
+	}
+	// else return false
+	return false;
 };
 
 const square = num => {
