@@ -203,5 +203,131 @@ describe('helpers.js', () => {
       }).toThrow();
     });
   }); 
+
+  describe('getRemainder()', () => {
+    it('should get the remainder after dividing the provided numbers', () => {
+      const expected = 3;
+
+      const actual = helpers.getRemainder(13, 5);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.getRemainder();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.getRemainder('thirteen', 'five');
+      }).toThrow();
+    });
+  }); 
+
+  describe('isEven()', () => {
+    it('should say true when the remainder is 0 after dividing the provided numbers', () => {
+      const expected = true;
+
+      const actual = helpers.isEven(1000);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should say false when the remainder is greater than 0 after dividing the provided numbers', () => {
+      const expected = false;
+
+      const actual = helpers.isEven(1001);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.isEven();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.isEven('one thousand');
+      }).toThrow();
+    });
+  }); 
+
+  describe('isOdd()', () => {
+    it('should say true when the remainder is greater than 0 after dividing the provided numbers', () => {
+      const expected = true;
+
+      const actual = helpers.isOdd(153);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should say false when the remainder is 0 after dividing the provided numbers', () => {
+      const expected = false;
+
+      const actual = helpers.isOdd(10);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.isOdd();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.isEven('one hundered fifty three');
+      }).toThrow();
+    });
+  }); 
+
+  describe('square()', () => {
+    it('should multiply the provided number by itself', () => {
+      const expected = 25;
+
+      const actual = helpers.square(5);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.square();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.square('five');
+      }).toThrow();
+    });
+  }); 
+
+  describe('cube()', () => {
+    it('should multiply the provided number by it times itself 3 times', () => {
+      const expected = 8;
+
+      const actual = helpers.cube(2);
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return 0 when called with no value', () => {
+      const result = helpers.cube();
+
+      expect(result).toBe(0);
+    });
+
+    it('should throw error when called with a string', () => {
+      expect(() => {
+        helpers.cube('two');
+      }).toThrow();
+    });
+  }); 
 });
 
