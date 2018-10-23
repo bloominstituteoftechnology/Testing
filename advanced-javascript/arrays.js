@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars, max-len */
-
 const each = (elements, cb) => {
+  const newAr = [];
   for (let i = 0; i < elements.length; i++) {
-    cb(elements[i], i);
+    newAr.push(cb(elements[i], i));
   }
+  return newAr;
 };
 
 const map = (elements, cb) => {
@@ -56,5 +56,5 @@ module.exports = {
   reduce,
   find,
   filter,
-  flatten,
+  flatten
 };
