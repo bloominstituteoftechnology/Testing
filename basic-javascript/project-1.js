@@ -84,34 +84,54 @@ const getRemainder = (x, y) => {
 const isEven = num => {
   if (num % 2 === 0) {
     return true;
+  } else if (!num || typeof num !== Number){
+    return null;
   }
   return false;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
+  if (num % 2 === 0 || typeof num === 'string') {
     return false;
-  }
+  } else if (!num){
+    return null;
+  } else {
   return true;
+  }
 };
 
 const square = num => {
+  if(!num || typeof num === 'string'){
+    return null;
+  }
   return num * num;
 };
 
 const cube = num => {
+  if(!num || typeof num === 'string'){
+    return null;
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if(!num || !exponent || typeof num === 'string' || typeof exponent === 'string'){
+    return null;
+  }
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if(!num || typeof num === 'string'){
+    return null;
+  }
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if(!num || typeof num === 'string'){
+    return null;
+  }
   return Math.ceil(num);
 };
 

@@ -129,6 +129,10 @@ describe('project-1.js', () => {
 
         const actual = helpers.isEven(6);
         expect(actual).toBe(expected);
+        expect(helpers.isEven('six')).toBe(null);
+        expect(helpers.isEven(undefined)).toBe(null);
+
+        
     })
 
     it('should check to see if num is odd', () => {
@@ -136,6 +140,8 @@ describe('project-1.js', () => {
 
         const actual = helpers.isOdd(7);
         expect(actual).toBe(expected);
+        expect(helpers.isOdd(undefined)).toBe(null);
+        expect(helpers.isOdd('six')).toBe(false);
     })
 
     it('should find square of num', () => {
@@ -143,6 +149,8 @@ describe('project-1.js', () => {
 
         const actual = helpers.square(4);
         expect(actual).toEqual(expected);
+        expect(helpers.square(undefined)).toBe(null);
+        expect(helpers.square('six')).toBe(null);
     })
 
     it('should find num cubed', () => {
@@ -150,6 +158,8 @@ describe('project-1.js', () => {
 
         const actual = helpers.cube(3);
         expect(actual).toEqual(expected);
+        expect(helpers.cube(undefined)).toBe(null);
+        expect(helpers.cube('six')).toBe(null);
     })
 
     it('should raise num to the power of exponent', () => {
@@ -157,6 +167,10 @@ describe('project-1.js', () => {
 
         const actual = helpers.raiseToPower(3, 3);
         expect(actual).toEqual(expected);
+        expect(helpers.raiseToPower('seven', 3)).toBe(null);
+        expect(helpers.raiseToPower(3,'seven')).toBe(null);
+        expect(helpers.raiseToPower(3)).toBe(null);
+        
     })
 
     it('should round num', () => {
@@ -164,6 +178,8 @@ describe('project-1.js', () => {
 
         const actual = helpers.roundNumber(9.8);
         expect(actual).toEqual(expected);
+        expect(helpers.roundNumber(undefined)).toBe(null);
+        expect(helpers.roundNumber('six')).toBe(null);
     })
 
     it('should round num up', () => {
@@ -171,6 +187,8 @@ describe('project-1.js', () => {
 
         const actual = helpers.roundUp(9.8);
         expect(actual).toEqual(expected);
+        expect(helpers.roundUp(undefined)).toBe(null);
+        expect(helpers.roundUp('six')).toBe(null);
     })
 
     it('should add exclamation point to end of str', () => {
