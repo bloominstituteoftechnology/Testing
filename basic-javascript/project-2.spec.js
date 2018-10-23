@@ -34,3 +34,17 @@ describe("is ten or five", () => {
 		expect(funcs.isTenOrFive(25)).toBe(false);
 	});
 });
+describe("is in range of 20 to 50", () => {
+	test("is less than 50 and greater than 20", () => {
+		expect(funcs.isInRange(40)).toBe(true);
+	});
+	test("is not in range of 20 to 50", () => {
+		expect(funcs.isInRange(5)).toBe(false);
+	});
+	test("number as string in range", () => {
+		expect(funcs.isInRange("37")).toBe(true);
+	});
+	test("number as string not in range", () => {
+		expect(funcs.isInRange("3")).toBe(false);
+	});
+});
