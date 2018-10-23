@@ -45,6 +45,20 @@ describe.only('project-2.js', () => {
 		// 			return 'Hello!';
 		// 	}
 		// };
+		// german
+		it('should return passed language', () => {
+			const german = funcs.greeting('German');
+			const spanish = funcs.greeting('Spanish');
+
+			expect(german).toMatch(/^Guten Tag!$/);
+			expect(spanish).toMatch(/^Hola!$/);
+		});
+
+		// default
+		it('should return a default value when not passed a defined language', () => {
+			const gibberish = funcs.greeting(() => {});
+			expect(gibberish).toMatch(/^Hello!$/);
+		});
 	});
 
 	describe('isTenOrFive()', () => {
