@@ -81,3 +81,30 @@ describe("is prime", () => {
 		expect(funcs.isPrime(20)).toBe(false);
 	});
 });
+describe("array tests", () => {
+	let arr = [1, 2, 3, 4, 5];
+	let arruno = [1, 2, 3, 4, 5];
+	let arrdos = [1, 2, 3, 4, 5];
+	let arrAddEnd = [1, 2, 3, 4, 5, 6];
+	let arrAddFront = [0, 1, 2, 3, 4, 5];
+	let arrOne = [2, 3, 4, 5, 6];
+
+	test("first item in array", () => {
+		expect(funcs.returnFirst(arr)).toBe(1);
+	});
+	test("return last item in array", () => {
+		expect(funcs.returnLast(arr)).toBe(5);
+	});
+	test("get array length", () => {
+		expect(funcs.getArrayLength(arr)).toBe(5);
+	});
+	test("increment all elements in array by one", () => {
+		expect(funcs.incrementByOne(arr)).toEqual(arrOne);
+	});
+	test("add item to array", () => {
+		expect(funcs.addItemToArray(arruno, 6)).toEqual(arrAddEnd);
+	});
+	test("add item to front of array", () => {
+		expect(funcs.addItemToFront(arrdos, 0)).toEqual(arrAddFront);
+	});
+});
