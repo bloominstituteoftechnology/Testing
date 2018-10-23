@@ -45,7 +45,7 @@ describe.only('project-2.js', () => {
 		// 			return 'Hello!';
 		// 	}
 		// };
-		// german
+		// german & spanish
 		it('should return passed language', () => {
 			const german = funcs.greeting('German');
 			const spanish = funcs.greeting('Spanish');
@@ -68,6 +68,27 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return false;
 		// };
+		// true if 10 or 5
+		it('should return true if passed value is 10 or 5', () => {
+			const ten = funcs.isTenOrFive(10);
+			const five = funcs.isTenOrFive(5);
+
+			expect(ten).toBe(true);
+			expect(five).toBe(true);
+		});
+
+		// false if not 10 or 5
+		it('should return false if passed value is not 10 or 5', () => {
+			const three = funcs.isTenOrFive(3);
+			const str = funcs.isTenOrFive('two');
+			const func = funcs.isTenOrFive(() => {});
+			const arr = funcs.isTenOrFive([]);
+
+			expect(three).toBe(false);
+			expect(str).toBe(false);
+			expect(func).toBe(false);
+			expect(arr).toBe(false);
+		});
 	});
 
 	describe('isInRange()', () => {
