@@ -24,6 +24,7 @@ describe('Testing project-2.js', () => {
 		wordsToSentence,
 		contains,
 		addNumbers,
+		averageTestScore,
 	} = funcs;
 
 	// getBiggest()
@@ -628,6 +629,53 @@ describe('Testing project-2.js', () => {
 				expect(addNumbers([ 1, 2 ])).toBe(3);
 				expect(addNumbers([ 0, -2, 2 ])).toBe(0);
 				expect(addNumbers([ 0.1, 0.2 ])).toBeCloseTo(0.3);
+			});
+		});
+	});
+
+	// averageTestScore()
+	describe('Testing averageTestScore()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					averageTestScore('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					averageTestScore(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					averageTestScore({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					averageTestScore(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					averageTestScore(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an array type', () => {
+			it('should throw an error if a member of the array is not a number', () => {
+				expect(() => {
+					averageTestScore([ 1, 'two' ]);
+				}).toThrow(nonNumberTypeError);
+			});
+
+			it('should return 0 if the array is empty', () => {
+				expect(averageTestScore([])).toBe(0);
+			});
+
+			it('should return the average of the numbers in the array', () => {
+				expect(averageTestScore([ 1, 2, 3 ])).toBe(2);
+				expect(averageTestScore([ 0 ])).toBe(0);
+				expect(averageTestScore([ 0.1, 0.2 ])).toBeCloseTo(0.15);
+				expect(averageTestScore([ 0.1, -0.2 ])).toBe(-0.05);
+				expect(averageTestScore([ -0.1, -0.2 ])).toBeCloseTo(-0.15);
 			});
 		});
 	});

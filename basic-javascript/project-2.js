@@ -161,13 +161,16 @@ const addNumbers = numbers => {
 };
 
 const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
-  for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
-  }
-  return totalSumScores / numberOfScore;
+	let totalSumScores = 0;
+	let numberOfScore = 0;
+	if (!Array.isArray(testScores)) throw new Error(nonArrayTypeError);
+	for (let i = 0; i < testScores.length; i++) {
+		if (typeof(testScores[i]) !== 'number') throw new Error(nonNumberTypeError);
+		totalSumScores += testScores[i];
+		numberOfScore++;
+	}
+	// if testScores is an empty array, return 0
+	return totalSumScores / numberOfScore || 0;
 };
 
 const largestNumber = numbers => {
