@@ -11,8 +11,7 @@ const subtractFive = (num) => {
 };
 
 const areSameLength = (str1, str2) => {
-	if (!(str1 || str2) || typeof str1 !== 'string' || typeof str2 !== 'string')
-		throw new Error('Provide strings to function!');
+	if (!(str1 || str2) || typeof str1 !== 'string' || typeof str2 !== 'string') throw new Error('Provide strings to function!');
 	return str1.length === str2.length;
 };
 
@@ -93,8 +92,7 @@ const cube = (num) => {
 };
 
 const raiseToPower = (num, exponent) => {
-	if (!num || !exponent || typeof num !== 'number' || typeof exponent !== 'number')
-		throw new Error('Only numbers supported!');
+	if (!num || !exponent || typeof num !== 'number' || typeof exponent !== 'number') throw new Error('Only numbers supported!');
 	return num ** exponent;
 };
 
@@ -114,8 +112,7 @@ const addExclamationPoint = (str) => {
 };
 
 const combineNames = (firstName, lastName) => {
-	if (!firstName || !lastName || typeof firstName !== 'string' || typeof lastName !== 'string')
-		throw new Error('Only strings supported!');
+	if (!firstName || !lastName || typeof firstName !== 'string' || typeof lastName !== 'string') throw new Error('Only strings supported!');
 	return `${firstName} ${lastName}`;
 };
 
@@ -125,20 +122,23 @@ const getGreeting = (name) => {
 };
 
 const getRectangleArea = (length, width) => {
-	if (!length || !width || typeof length !== 'number' || typeof width !== 'number')
-		throw new Error('Only numbers supported!');
+	if (!length || !width || typeof length !== 'number' || typeof width !== 'number') throw new Error('Only numbers supported!');
 	return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+	if (!base || !height || typeof base !== 'number' || typeof height !== 'number') throw new Error('Only numbers supported!');
 	return 0.5 * base * height;
 };
 
 const getCircleArea = (radius) => {
+	if (!radius || typeof radius !== 'number') throw new Error('Only numbers supported!');
 	return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+	if (!length || !width || !height || typeof length !== 'number' || typeof width !== 'number' || typeof height !== 'number')
+		throw new Error('Only numbers supported!');
 	return width * height * length;
 };
 

@@ -586,15 +586,78 @@ describe('project-1.js', () => {
 		});
 	});
 
-	// const getTriangleArea = (base, height) => {
-	// 	return 0.5 * base * height;
-	// };
+	describe('getTriangleArea()', () => {
+		// const getTriangleArea = (base, height) => {
+		// 	return 0.5 * base * height;
+		// };
+		// expected computed triangle area
+		it('should return the area of a triangle based on the provided base and height', () => {
+			const actual = helpers.getTriangleArea(2, 2);
+			expect(actual).toEqual(2);
+		});
 
-	// const getCircleArea = (radius) => {
-	// 	return Math.PI * radius * radius;
-	// };
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.getTriangleArea(3);
+			}).toThrowError();
+		});
 
-	// const getRectangularPrismVolume = (length, width, height) => {
-	// 	return width * height * length;
-	// };
+		// input string
+		it('should throw an error when provided string input', () => {
+			expect(() => {
+				helpers.getTriangleArea(3, '3');
+			}).toThrowError();
+		});
+	});
+
+	describe('getCircleArea()', () => {
+		// const getCircleArea = (radius) => {
+		// 	return Math.PI * radius * radius;
+		// };
+		// expected circle area
+		it('should return the area of a circle based on the provided radius', () => {
+			const actual = helpers.getCircleArea(2);
+			expect(actual).toBeCloseTo(12.5663);
+		});
+
+		// input null
+		it('should throw an error when provided null input', () => {
+			expect(() => {
+				helpers.getCircleArea();
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when provided string input', () => {
+			expect(() => {
+				helpers.getCircleArea('3.141592653');
+			}).toThrowError();
+		});
+	});
+
+	describe('getRectangularPrismVolume()', () => {
+		// const getRectangularPrismVolume = (length, width, height) => {
+		// 	return width * height * length;
+		// };
+		// expected prism volume
+		it('should return the volume of the prism based on the provided values', () => {
+			const actual = helpers.getRectangularPrismVolume(2, 2, 2);
+			expect(actual).toEqual(8);
+		});
+
+		// input null
+		it('should throw an error when provided null values', () => {
+			expect(() => {
+				helpers.getRectangularPrismVolume(1, 3);
+			}).toThrowError();
+		});
+
+		// input string
+		it('should throw an error when provided string values', () => {
+			expect(() => {
+				helpers.getRectangularPrismVolume(1, '2', 3);
+			}).toThrowError();
+		});
+	});
 });
