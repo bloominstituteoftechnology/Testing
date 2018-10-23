@@ -65,101 +65,59 @@ describe('isPrime()', () => {
 });
 
 //return first
-describe('returnFirst()', () => {
+describe('arrTest()', () => {
     it('should return the first', () => {
-        const expected = 1;
-        const actual = helpers.returnFirst([1, 3]);
-        expect(actual).toEqual(expected);
-    });
-});
-    
-​​​​​//returnLast​​​​​
-​​​​​describe('returnLast()', () => {​​​​​
-​​​​​    it('should returnLast', () => {​​​​​
-​​​​​        const expected = 3;​​​​​
-​​​​​        const actual = helpers.returnLast([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+        expect(funcs.returnFirst([1, 3])).toEqual(1);
+    })
+})
 
-​​​​​//getArrayLength​​​​​
-​​​​​describe.only('getArrayLength()', () => {​​​​​
-​​​​​    it('should getArrayLength', () => {​​​​​
-​​​​​        const expected = 2;​​​​​
-​​​​​        const actual = helpers.getArrayLength([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//return last
+    it('should return the last item in array', () => {
+        expect(funcs.returnLast([1, 3])).toEqual(3);
+    })    
 
-//incrementByOne​​​​​
-​​​​​describe('incrementByOne()', () => {​​​​​
-​​​​​    it('should incrementByOne', () => {​​​​​
-​​​​​        const expected = [2, 4];​​​​​
-​​​​​        const actual = helpers.incrementByOne([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//get array length
+    it('should get length of array', () => {
+        expect(funcs.getArrayLength([1, 3])).toEqual(2);
+    })
 
-​​​​​//addItemToArray​​​​​
-​​​​​describe('addItemToArray()', () => {​​​​​
-​​​​​    it('should addItemToArray', () => {​​​​​
-​​​​​        const expected = [1, 3, 4];​​​​​
-​​​​​        const actual = helpers.addItemToArray([1, 3], 4);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//increment by one
+    it('increment array items by 1', () => {
+        expect(funcs.incrementByOne([1, 3])).toEqual([2, 4]);
+    })
+
+//add item to array
+    it('should add item to end of array', () => {
+        expect(funcs.addItemToArray([1, 3], 4)).toEqual([1, 3, 4]);
+    })
+
+//add item to front
+    it('should add item to front', () => {
+        expect(funcs.addItemToFront([1, 3], 2)).toEqual([2, 1, 3]);
+    })
 
 
-​​​​​//addItemToFront​​​​​
-​​​​​describe('addItemToFront()', () => {​​​​​
-​​​​​    it('should addItemToFront', () => {​​​​​
-​​​​​        const expected = [2, 1, 3];​​​​​
-​​​​​        const actual = helpers.addItemToFront([1, 3], 2);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//words into a sentence
+    it('should put words into a sentence', () => {
+        expect(funcs.wordsToSentence(['hi', 'dude'])).toEqual('hi dude');
+    })
 
-​​​​​//wordsToSentence​​​​​
-​​​​​describe('wordsToSentence()', () => {​​​​​
-​​​​​    it('should wordsToSentence', () => {​​​​​
-​​​​​        const expected = 'hidude';​
-​​​​​        const actual = helpers.wordsToSentence(['hi', 'dude']);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//contains
+    it('should count how many times item is part of array', () => {
+        expect(funcs.contains([1, 1, 3], 1)).toBe(true);
+    })
 
-​​​​​//contains​​​​​
-​​​​​describe('contains()', () => {​​​​​
-​​​​​    it('should contains', () => {​​​​​
-​​​​​        const expected = 2;​​
-​​​​​        const actual = helpers.contains([1, 1, 3], 1);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//add numbers
+    it('should add numbers together', () => {
+        expect(funcs.addNumbers([1, 3])).toEqual(4);
+    })
 
-​​​​​//addNumbers​​​​​
-​​​​​describe('addNumbers()', () => {​​​​​
-​​​​​    it('should addNumbers', () => {​​​​​
-​​​​​        const expected = 4;​​​​​
-​​​​​        const actual = helpers.addNumbers([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//average test score
+    it('should average the array numbers', () => {
+        expect(funcs.averageTestScore([1, 3])).toEqual(2);
+    })
 
-//averageTestScore​​​​​
-​​​​​describe('averageTestScore()', () => {​​​​​
-​​​​​    it('should averageTestScore', () => {​​​​​
-​​​​​        const expected = 2;​​​​​
-​​​​​        const actual = helpers.averageTestScore([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
-
-    ​​​​​//largestNumber​​​​​
-​​​​​describe('largestNumber()', () => {​​​​​
-​​​​​    it('should largestNumber', () => {​​​​​
-​​​​​        const expected = 2;​​​​​
-​​​​​        const actual = helpers.largestNumber([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
+//largest number
+    it('should find the largest number', () => {
+        expect(funcs.largestNumber([1, 3])).toEqual(3);
+    })
