@@ -1,14 +1,14 @@
 /* eslint-disable arrow-parens */
 
-// const checkForNumber = num => {
-//   if (!num) {
-//     return 0;
-//   }
+const checkForNumber = num => {
+  if (!num) {
+    return 0;
+  }
 
-//   if (typeof num === 'string') {
-//     throw new Error('value must be a number');
-//   }
-// };
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
+};
 
 const multiplyByTen = num => {
   if (!num) {
@@ -18,8 +18,8 @@ const multiplyByTen = num => {
   if (typeof num === 'string') {
     throw new Error('value must be a number');
   }
+  checkForNumber(num);
   
-
   return num * 10;
 };
 
@@ -37,7 +37,16 @@ const subtractFive = num => {
 
 
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2) {
+    return 0;
+  }
+
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    // throw new Error('value must be a string');
+    return null;
+  }
   return str1.length === str2.length;
+
 };
 //areSameLength notes
 //add check for string argument
@@ -171,5 +180,6 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
+  checkForNumber,
 };

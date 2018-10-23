@@ -1,12 +1,13 @@
-const helpers = require('./project-1');
+const helpers = require('./project-1.js');
 
-describe('helpers.js', () => {
+describe('project-1.js', () => {
+
     describe('jest', () => {
         test('should run tests', () => {
             //test everything
         });
         
-        it('should run tests using it() in addition to test()', () =>{
+        it('should run tests using it() in addition to test()', () => {
             // Arrange : set up the world
             // Act : execute the code you're testing
             // Assert : check that it works
@@ -65,23 +66,57 @@ describe('helpers.js', () => {
         });
     });
     
+    // describe('areSameLength', () => {
+    //     it('should return false if strings have different lengths', () => {
+    //         const expected = false;
+
+    //         const actual = helpers.areSameLength('hello', 'hey');
+
+    //         expect(actual).toEqual(expected);
+    //     });
+
+    //     it('should return true if strings have equal lengths', () => {
+    //         const expected = true;
+
+    //         const actual = helpers.areSameLength('hello', 'phone');
+
+    //         expect(actual).toEqual(expected);
+    //     });
+    // });
+
     describe('areSameLength', () => {
-        it('should return false if strings have different lengths', () => {
-            const expected = false;
-
-            const actual = helpers.areSameLength('hello', 'hey');
-
-            expect(actual).toEqual(expected);
+        it('should return true if called with strings of the same length', () => {
+          const str1 = 'foo';
+          const str2 = 'bar';
+    
+          const actual = helpers.areSameLength(str1, str2);
+    
+          expect(actual).toBe(true);
         });
-
-        it('should return true if strings have equal lengths', () => {
-            const expected = true;
-
-            const actual = helpers.areSameLength('hello', 'phone');
-
-            expect(actual).toEqual(expected);
+    
+        it('should return false if called with strings of different length', () => {
+          expect(helpers.areSameLength('ab', 'a')).toBe(false);
         });
-    });
+    
+        it('should return null if one or both arguments is null or undefined', () => {
+          expect(helpers.areSameLength()).toBe(null);
+          expect(helpers.areSameLength('a')).toBe(null);
+          expect(helpers.areSameLength(undefined, 'a')).toBe(null);
+          expect(helpers.areSameLength(null, 'a')).toBe(null);
+          expect(helpers.areSameLength('a', null)).toBe(null);
+        });
+    
+        it('should return null if called with a non string argument', () => {
+          expect(helpers.areSameLength({}, 'a')).toBe(null);
+          expect(helpers.areSameLength([], 'a')).toBe(null);
+          expect(helpers.areSameLength(false, 'a')).toBe(null);
+          expect(helpers.areSameLength('a', {})).toBe(null);
+          expect(helpers.areSameLength('a', [])).toBe(null);
+          expect(helpers.areSameLength('a', true)).toBe(null);
+          expect(helpers.areSameLength(1, 3)).toBe(null);
+          expect(helpers.areSameLength(() => {})).toBe(null);
+        });
+      });
 
     describe('areEqual', () => {
         it('should return false if numbers are not equal', () => {
@@ -118,6 +153,25 @@ describe('helpers.js', () => {
             expect(actual).toEqual(expected);
         });
     });
+
+    describe('greaterThanFifty', () => {
+        it('should return true if the number is greater than 50', () => {
+            const expected = true;
+
+            const actual = helpers.greaterThanFifty(51);
+
+            expect(actual).toEqual(expected);
+        });
+
+        it('should return true if the number is less than or equal to 50', () => {
+            const expected = true;
+
+            const actual = helpers.lessThanNinety(50);
+
+            expect(actual).toEqual(expected);
+        });
+    });
+
 
 
     
