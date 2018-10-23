@@ -45,3 +45,21 @@ describe("invert", () => {
     ).toEqual({ bob: "jones", dave: "smith", tom: "tarpey" });
   });
 });
+
+describe("defaults", () => {
+  test("this should return the default values", () => {
+    expect(
+      objectFunctions.defaults(
+        { dave: "jones", steve: "smith", jim: "bob" },
+        { tim: "nice", google: "dotcom", john: "jimbo" }
+      )
+    ).toEqual({
+      dave: "jones",
+      tim: "nice",
+      john: "jimbo",
+      jim: "bob",
+      google: "dotcom",
+      steve: "smith"
+    });
+  });
+});
