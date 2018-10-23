@@ -123,4 +123,27 @@ test('should combine words to form a sentence', () => {
   expect(sentence).toBe('hello there hello!');
 });
 
-describe('')
+describe('mathematical operations', () => {
+
+  test('adds an array of numbers together', () => {
+    const numbers = [1, 2, 3, 4];
+    const sum = funcs.addNumbers(numbers);
+
+    expect(sum).toEqual(10);
+  });
+
+  test('should return the average of given test scores array', () => {
+    const scores = [100, 100, 50, 100];
+    const average = funcs.averageTestScore(scores);
+
+    expect(average).toEqual(87.5);
+  });
+
+  test('should return the largest integer in a given array', () => {
+    const numbers = [3, 7, 11, 983];
+    const largest = funcs.largestNumber(numbers);
+
+    expect(largest).toEqual(983);
+  });
+
+}); // mathematical operations
