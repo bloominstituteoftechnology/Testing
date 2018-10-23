@@ -67,3 +67,17 @@ describe("fizz buzz", () => {
 		expect(funcs.fizzBuzz(20)).toBe("buzz");
 	});
 });
+describe("is prime", () => {
+	test("if number is less than 0", () => {
+		expect(funcs.isPrime(-3)).toBe(false);
+	});
+	test("if number is 1 or 0", () => {
+		expect(funcs.isPrime(1)).toBe(false);
+	});
+	test("is prime", () => {
+		expect(funcs.isPrime(17)).toBe(true);
+	});
+	test("is not prime", () => {
+		expect(funcs.isPrime(20)).toBe(false);
+	});
+});
