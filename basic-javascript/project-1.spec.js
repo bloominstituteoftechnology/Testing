@@ -35,13 +35,11 @@ test("should equal length", () => {
 
 test("should equal", () => {
   const actual = helpers.areEqual("hello", "hello");
-
   expect(actual).toEqual(true);
 });
 
 test("should NOT be equal", () => {
   const actual = helpers.areEqual("hello", 100);
-
   expect(actual).toEqual(false);
 });
 
