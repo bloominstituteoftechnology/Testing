@@ -144,10 +144,78 @@ describe("project-1", () => {
 
   describe("combineNames", () => {
     it("should combine two names", () => {
-      expect(helpers.combineNames('Brian', 'Ruff')).toEqual('Brian Ruff');
+      expect(helpers.combineNames("Brian", "Ruff")).toEqual("Brian Ruff");
     });
     it("should not combine two names properly", () => {
-      expect(helpers.combineNames('Brian', 'Ruff')).not.toEqual('Brian Ruff - 2')
+      expect(helpers.combineNames("Brian", "Ruff")).not.toEqual(
+        "Brian Ruff - 2"
+      );
+    });
+  });
+  describe("square", () => {
+    it("should sqaure the input", () => {
+      const actual = 4;
+      const expected = 16;
+      expect(helpers.square(actual)).toEqual(expected);
+    });
+  });
+  describe("cube", () => {
+    it("should cube the input", () => {
+      const actual = 4;
+      const expected = 64;
+      expect(helpers.cube(actual)).toEqual(expected);
+    });
+  });
+  describe("raiseToPower", () => {
+    it("should the raise the power of num to exponent", () => {
+      const v1 = 2;
+      const v2 = 4;
+      const expected = 16;
+      expect(helpers.raiseToPower(v1, v2)).toEqual(expected);
+    });
+  });
+  describe("roundNumber", () => {
+    it("should round the passed in number to nearest whole number", () => {
+      const actual = 5.5;
+      const expected = 6;
+      expect(helpers.roundNumber(actual)).toEqual(expected);
+    });
+  });
+  describe("getGreeting", () => {
+    it("should greet user by prepending name with Hello name!", () => {
+      expect(helpers.getGreeting("Brian")).toEqual("Hello Brian!");
+    });
+  });
+  describe("getRectangleArea", () => {
+    const v1 = 2;
+    const v2 = 4;
+    const expected = 8;
+    it("should get area of rectangle", () => {
+      expect(helpers.getRectangleArea(v1, v2)).toEqual(expected);
+    });
+  });
+  describe("getTriangleArea", () => {
+    const v1 = 2;
+    const v2 = 4;
+    const expected = 4;
+    it("should get area of triangle", () => {
+      expect(helpers.getTriangleArea(v1, v2)).toEqual(expected);
+    });
+  });
+  describe("getCircleArea", () => {
+    const v1 = 2;
+    const expected = 12.566370614359172;
+    it("should get area of circle", () => {
+      expect(helpers.getCircleArea(v1)).toEqual(expected);
+    });
+  });
+  describe("getRectangularPrismVolume", () => {
+    const v1 = 2;
+    const v2 = 4;
+    const v3 = 8;
+    const expected = 64;
+    it("should get rectanguler prism value", () => {
+      expect(helpers.getRectangularPrismVolume(v1, v2, v3)).toStrictEqual(expected);
     })
   })
 });
