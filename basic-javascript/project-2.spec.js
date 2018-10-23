@@ -318,6 +318,26 @@ describe.only('project-2.js', () => {
 		// 	arr.push(item);
 		// 	return arr;
 		// };
+		// arr length++ and arr.length-1 === item
+		it('should return the array passed with a new value at the end', () => {
+			const arr = [0, 1, 2, 3, 4];
+			const arrPlusOne = funcs.addItemToArray(arr, 5);
+			const aPOL = arrPlusOne.length;
+
+			expect(aPOL).toEqual(6);
+			expect(arrPlusOne[aPOL - 1]).toEqual(5);
+		});
+
+		// arr isn't an array
+		// item quirks
+		it("should throw an error if arr or item aren't expected datatypes", () => {
+			const arr = [0, 1, 2, 3, 4];
+
+			expect(() => funcs.addItemToArray(arr, null)).toThrowError();
+			expect(() => funcs.addItemToArray(arr, () => {})).toThrowError();
+			expect(() => funcs.addItemToArray('1, 2, 3', 'four')).toThrowError();
+			expect(() => funcs.addItemToArray({ arr }, 5)).toThrowError();
+		});
 	});
 
 	describe('addItemToFront()', () => {

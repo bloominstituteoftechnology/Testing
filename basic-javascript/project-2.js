@@ -99,6 +99,8 @@ const incrementByOne = (arr) => {
 };
 
 const addItemToArray = (arr, item) => {
+	if (!Array.isArray(arr)) throw new Error('Need an array here!');
+	if (item === null || item === undefined || typeof item === 'function') throw new Error('Need an item here!');
 	arr.push(item);
 	return arr;
 };
