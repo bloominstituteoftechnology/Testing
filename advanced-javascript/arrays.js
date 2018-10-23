@@ -31,6 +31,9 @@ const reduce = (elements, cb, memo = elements.shift()) => {
 };
 
 const find = (elements, cb) => {
+  if(!elements || !cb || !(elements instanceof Array) || typeof cb!=='function'){
+    throw new Error('missing array and/or callback');
+  }
   for (let i = 0; i < elements.length; i++) {
     if (cb(elements[i])) return elements[i];
   }

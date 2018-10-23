@@ -73,11 +73,55 @@ describe('Arrays', () => {
 
   describe('find', () => {
     let array = [0,1,2,3];
-    let callback = () => {
-      
-    }
     it('Should return first element of first argument array that triggers true with the second argument callback.', () => {
+      expect(arrayFunctions.find(array, element => {
+        return element===2;
+      })).toBe(2);
+    });
+    it('Should throw error if missing arguments or arguments are of wrong type.', () => {
+      let actual = () => arrayFunctions.find(4,cb);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.find(array, 4);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.find(5, 4);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.find();
+      expect(actual).toThrow();
+    });
+  });
 
-    })
-  })
+  describe('filter', () => {
+    const array = [1,2,3,4,5];
+    it('Should return an array of elements from first argument array that trigger true with the second argument callback.', () => {
+      expect(arrayFunctions.filter(array, element =>{
+        return element>3;
+      })).toEqual([4,5]);
+    });
+    it('Should throw error if missing arguments or arguments are of wrong type.', () => {
+      let actual = () => arrayFunctions.filter(4,cb);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.filter(array, 4);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.filter(5, 4);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.filter();
+      expect(actual).toThrow();
+    });
+  });
+  
+  describe('flatten', () => {
+    it('Should flatten first argument array.', () => {
+      expect(arrayFunctions.flatten([1,2,[3,4],5])).toEqual([1,2,3,4,5]);
+    });
+    it('Should throw error if missing arguments or arguments are of wrong type.', () => {
+      let actual = () => arrayFunctions.filter(4,cb);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.filter(array, 4);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.filter(5, 4);
+      expect(actual).toThrow();
+      actual = () => arrayFunctions.filter();
+      expect(actual).toThrow();
+    });
+  });
 });
