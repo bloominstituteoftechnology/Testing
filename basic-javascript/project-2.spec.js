@@ -345,6 +345,26 @@ describe.only('project-2.js', () => {
 		// 	arr.unshift(item);
 		// 	return arr;
 		// };
+		// arr length++ and arr[0] === item
+		it('should return the array passed with a new value at the beginning', () => {
+			const arr = [0, 1, 2, 3, 4];
+			const arrAtFront = funcs.addItemToFront(arr, -1);
+			const aAFL = arrAtFront.length;
+
+			expect(aAFL).toEqual(6);
+			expect(arrAtFront[0]).toEqual(-1);
+		});
+
+		// arr isn't an array
+		// item quirks
+		it("should throw an error if arr or item aren't expected datatypes", () => {
+			const arr = [0, 1, 2, 3, 4];
+
+			expect(() => funcs.addItemToFront(arr, null)).toThrowError();
+			expect(() => funcs.addItemToFront(arr, () => {})).toThrowError();
+			expect(() => funcs.addItemToFront('1, 2, 3', 'four')).toThrowError();
+			expect(() => funcs.addItemToFront({ arr }, 5)).toThrowError();
+		});
 	});
 
 	describe('wordsToSentence()', () => {
