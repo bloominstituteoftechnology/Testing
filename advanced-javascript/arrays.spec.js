@@ -18,6 +18,7 @@ const {
 	map,
 	reduce,
 	find,
+	filter,
 } = arrayFunctions;
 
 // helper
@@ -66,8 +67,11 @@ describe('Arrays', () => {
 		});
 
 		describe('calling with a non empty array as first arg and function as second arg', () => {
-			it('should map each item in the array given according to the function given', () => {
+			it('should double each number in the array given', () => {
 				expect(map([ 1, 2, 3 ], (num) => { return num * 2; })).toEqual([ 2, 4, 6 ]);
+			});
+
+			it('should turn each letter in the array given to uppercase', () => {
 				expect(map([ 'a', 'b', 'c' ], (letter) => { return letter.toUpperCase(); })).toEqual([ 'A', 'B', 'C' ]);
 			});
 		});
@@ -82,7 +86,7 @@ describe('Arrays', () => {
 		});
 
 		describe('calling with a non empty array as first arg and function as second arg', () => {
-			it('should reduce all the items in the array given according to the function given', () => {
+			it('should reduce all the items in the array to one string seperated by the word and', () => {
 				expect(reduce([ 'take a walk', 'cook dinner', 'go to sleep' ], (memo, item) => { return `${ memo }, and ${ item }`; })).toEqual('take a walk, and cook dinner, and go to sleep');
 			});
 		});
@@ -127,7 +131,7 @@ describe('Arrays', () => {
 		});
 
 		describe('calling with a non empty array as first arg and function as second arg', () => {
-			it('should find the item in the array given according to the function given', () => {
+			it('should find the fruit in the array that is the color red', () => {
 				expect(find([
 					{ fruit: 'banana', color: 'yellow'},
 					{ fruit: 'apple', color: 'red'},
@@ -137,5 +141,24 @@ describe('Arrays', () => {
 		});
 
 		argCheckForFuncsWithBasic2Params(find);
+	});
+
+	// filter()
+	describe('filter', () => {
+		it('should be a function', () => {
+			expect(typeof filter).toBe('function');
+		});
+
+		describe('calling with a non empty array as first arg and function as second arg', () => {
+			it('should filter the numbers in the array and return the ones > 50', () => {
+				expect(filter([ 1, 49, 50, 51, 100 ], (num) => { return num > 50; })).toEqual([ 51, 100 ]);
+			});
+
+			it('should filter the words in the array and return the ones whose length is >= 5', () => {
+				expect(filter([ 'one', 'table', 'lamp', 'burger' ], (word) => { return word.length >= 5; })).toEqual([ 'table', 'burger' ]);
+			});
+		});
+
+		argCheckForFuncsWithBasic2Params(filter);
 	});
 });

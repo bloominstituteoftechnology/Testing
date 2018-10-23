@@ -47,11 +47,12 @@ const find = (elements, cb) => {
 };
 
 const filter = (elements, cb) => {
-  const filteredValues = [];
-  each(elements, item => {
-    if (cb(item)) filteredValues.push(item);
-  });
-  return filteredValues;
+	argCheckForEachFunc(elements, cb);
+	const filteredValues = [];
+	each(elements, item => {
+		if (cb(item)) filteredValues.push(item);
+	});
+	return filteredValues;
 };
 
 const flatten = elements => {
