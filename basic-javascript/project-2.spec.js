@@ -106,4 +106,12 @@ describe('array operations', () => {
     expect(add).toEqual(['one', 'two', 'three', 'four', 'zero']);
   });
 
+  test('returns true if a given item appears in the array', () => {
+      const array = [1, 2, 3, 4];
+      const item = 2;
+      const itemCheck = funcs.contains(array, item);
+
+      expect(itemCheck).toBe(true);
+  });
+
 }); // array operations
