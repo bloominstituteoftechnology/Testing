@@ -1,4 +1,4 @@
-const helpers = require('./project-1');
+const helpers = require('../project-1');
 
 describe('multiplyByTen()', ()=> {
     it('should multiply given number by 10', () => {

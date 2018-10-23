@@ -94,6 +94,10 @@ describe('isInteger()', ()=> {
         const actual = funcs.isInteger(1.1);
         expect(actual).toBeFalsy();
     })
+
+    it('should return null if passed a string', ()=> {
+        expect(funcs.isInteger('hi')).toBe(null);
+    });
 });
 
 describe('fizzBuzz()', ()=> {
@@ -213,6 +217,11 @@ describe('wordsToSentence()', ()=> {
     it('should turn words into a sentence', ()=> {
         const actual = funcs.wordsToSentence(['hello', 'how', 'are', 'you']);
         expect(actual).toBe('hello how are you');
+    });
+
+    it('should return null if passed numbers', ()=> {
+        const actual = funcs.wordsToSentence([1, 2, 3, 4, 5]);
+        expect(actual).toBe(null);
     });
 });
 

@@ -40,6 +40,9 @@ const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
   }
+  if (typeof num === 'string'){
+    return null;
+  }
   return false;
 };
 
@@ -115,6 +118,9 @@ const wordsToSentence = words => {
     } else {
       newSentence += ` ${words[i]}`;
     }
+  }
+  if (typeof words === 'number') {
+    return null;
   }
   return newSentence;
 };
