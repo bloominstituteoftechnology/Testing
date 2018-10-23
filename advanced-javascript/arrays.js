@@ -1,17 +1,27 @@
 /* eslint-disable no-unused-vars, max-len */
 
+// errors
+const {
+	nonArrayTypeError,
+	nonFunctionTypeError,
+	emptyArrayError,
+} = require('../errors/index.js');
+
 const each = (elements, cb) => {
-  for (let i = 0; i < elements.length; i++) {
-    cb(elements[i], i);
-  }
+	for (let i = 0; i < elements.length; i++) {
+		cb(elements[i], i);
+	}
 };
 
 const map = (elements, cb) => {
-  const mappedArr = [];
-  each(elements, item => {
-    mappedArr.push(cb(item));
-  });
-  return mappedArr;
+	if (!Array.isArray(elements)) throw new Error(nonArrayTypeError);
+	if (typeof(cb) !== 'function') throw new Error(nonFunctionTypeError);
+	if (!elements.length) throw new Error(emptyArrayError);
+	const mappedArr = [];
+	each(elements, item => {
+		mappedArr.push(cb(item));
+	});
+	return mappedArr;
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
