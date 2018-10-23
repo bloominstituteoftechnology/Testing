@@ -17,11 +17,34 @@ describe('objects', () => {
   });
 
   describe('keys', () => {
-    it('should be an object', () => {});
+    
+
+    it('should return the keys from the argument object', () => {
+      const expected = ['a', 'b', 'c'];
+
+      const actual = objectFunctions.keys({
+        a: 'valueA', 
+        b: 'valueB', 
+        c: 'valueC'
+      });
+
+      expect(actual).toEqual(expected);
+    });
   });
 
   describe('values', () => {
-    it('should be an object', () => {});
+    it('should return the values from the argument object', () => {
+      const expected = ['valueA', 'valueB', 'valueC'];
+
+      const actual = objectFunctions.values({
+        a: 'valueA', 
+        b: 'valueB', 
+        c: 'valueC'
+      });
+
+      expect(actual).toEqual(expected);
+    });
+
   });
 
   describe('mapObject', () => {
