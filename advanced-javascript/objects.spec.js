@@ -33,3 +33,15 @@ describe("pairs", () => {
     ).toEqual([["dog", "fido"], ["cat", "dave"], ["orange", "annoying"]]);
   });
 });
+
+describe("invert", () => {
+  it("this should swap out the keys with the values of the object", () => {
+    expect(
+      objectFunctions.invert({
+        jones: "bob",
+        smith: "dave",
+        tarpey: "tom"
+      })
+    ).toEqual({ bob: "jones", dave: "smith", tom: "tarpey" });
+  });
+});
