@@ -132,6 +132,193 @@ describe('project-1', () => {
             const expected = 16;
             const actual = helpers.subtract(24,8);
             expect(actual).toEqual(expected);
-        })
+        });
+        it('should add strings', () => {
+            const expected = 12;
+            const actual = helpers.subtract('17','5');
+            expect(actual).toEqual(expected);
+        });
+        it('should return zero when provided alternative input', () => {
+            const result = helpers.subtract('thirty-one', 'sixty');
+            expect(result).toEqual(0);
+        });
+        it('should return zero when provided an invalid input', () => {
+            const result = helpers.subtract({num: 14}, {num: 11});
+            expect(result).toEqual(0);
+        });
+    });
+
+    describe('divide', () => {
+        it('should divide numbers', () => {
+            const expected = 19;
+            const actual = helpers.divide(38,2);
+            expect(actual).toEqual(expected);
+        });
+        it('should divide strings', () => {
+            const expected = 27;
+            const actual = helpers.divide('108','4');
+            expect(actual).toEqual(expected);
+        });
+        it('should return NaN when provided alternative input', () => {
+            const result = helpers.divide('50two', 'error');
+            expect(result).toEqual(NaN);
+        });
+        it('should return infinity when provided an invalid input', () => {
+            const result = helpers.divide([89], { num: true });
+            expect(result).toEqual(Infinity);
+        });
+    });
+
+    describe('multiply', () => {
+        it('should multiply numbers', () => {
+            const expected = 40;
+            const actual = helpers.multiply(2, 20);
+            expect(actual).toEqual(expected);
+        });
+        it('should multiply strings', () => {
+            const expected = 72;
+            const actual = helpers.multiply('6','12');
+            expect(actual).toEqual(expected);
+        });
+        it('should return zero when provided alternative input', () => {
+            const result = helpers.multiply('', false);
+            expect(result).toEqual(0);
+        });
+        it('should return negative zero when provided an invalid input', () => {
+            const result = helpers.multiply(new Date(), document.all);
+            expect(result).toEqual(-0);
+        });
+    });
+
+    describe('getRemainder', () => {
+        it('should get remainder of numbers', () => {
+            const expected = 2;
+            const actual = helpers.getRemainder(8, 6);
+            expect(actual).toEqual(expected);
+        });
+        it('should get remainder of strings', () => {
+            const expected = 0;
+            const actual = helpers.getRemainder('26','13');
+            expect(actual).toEqual(expected);
+        });
+        it('should return undefined when provided alternative input', () => {
+            const result = helpers.getRemainder(Symbol(88), 23.56);
+            expect(result).toEqual(undefined);
+        });
+        it('should return NaN when provided an invalid input', () => {
+            let z;
+            const result = helpers.getRemainder(z, undefined);
+            expect(result).toBe(NaN);
+        });
+    });
+
+    describe('isEven', () => {
+        it('should be even', () => {
+            const result = helpers.isEven(54);
+            expect(result).toBe(true);
+        });
+    });
+
+    describe('isOdd', () => {
+        it('should be odd', () => {
+            const result = helpers.isOdd(59);
+            expect(result).toBe(true);
+        });
+    });
+
+    describe('square', () => {
+        it('should square itself', () => {
+            const expected = 121;
+            const actual = helpers.square(11);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('cube', () => {
+        it('should cube itself', () => {
+            const expected = 64;
+            const actual = helpers.cube(4);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('raiseToPower', () => {
+        it('should raise to a power', () => {
+            const expected = 32;
+            const actual = helpers.raiseToPower(2, 5);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('roundNumber', () => {
+        it('should round a number', () => {
+            const expected = 99;
+            const actual = helpers.roundNumber(98.81);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('roundUp', () => {
+        it('should round up', () => {
+            const expected = 78;
+            const actual = helpers.roundUp(77.39);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('addExclamationPoint', () => {
+        it('should add an exclamation point', () => {
+            const expected = 'Mangos!';
+            const actual = helpers.addExclamationPoint('Mangos');
+            expect(actual).toBe(expected);
+        });
+    });
+
+    describe('combineNames', () => {
+        it('should combine names', () => {
+            const expected = 'Natalia Holt';
+            const actual = helpers.combineNames('Natalia','Holt');
+            expect(actual).toBe(expected);
+        });
+    });
+
+    describe('getGreeting', () => {
+        it('should greet', () => {
+            const expected = 'Hello Martin!'
+            const actual = helpers.getGreeting('Martin');
+            expect(actual).toBe(expected);
+        });
+    }); 
+
+    describe('getRectangleArea', () => {
+        it('should get rectangle area', () => {
+            const expected = 25;
+            const actual = helpers.getRectangleArea(5, 5);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getTriangleArea', () => {
+        it('should get triangle area', () => {
+            const expected = 80;
+            const actual = helpers.getTriangleArea(20, 8);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getCircleArea', () => {
+        it('should get circle area', () => {
+            const expected = 153.93804002589985;
+            const actual = helpers.getCircleArea(7);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getRectangularPrismVolume', () => {
+        it('should get rectangular prism volume', () => {
+            const expected = 252;
+            const actual = helpers.getRectangularPrismVolume(7,4,9);
+            expect(actual).toEqual(expected);
+        });
     });
 });

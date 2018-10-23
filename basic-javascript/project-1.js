@@ -41,19 +41,22 @@ const add = (x, y) => {
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  return ~~x - ~~y;
 };
 
 const divide = (x, y) => {
-  return x / y;
+  return ~~x / ~~y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  return ~~x * ~~y;
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  if (typeof x === 'symbol' || typeof y === 'symbol') {
+    return undefined;
+  }
+  return ~~x % ~~y;
 };
 
 const isEven = num => {
