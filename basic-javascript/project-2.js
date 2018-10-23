@@ -1,34 +1,42 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
+  if (x && y && typeof x === "number" && typeof y === "number") {
+    if (x > y) {
+      return x;
+    } else if (x === y) {
+      return y;
+    }
     return y;
+  } else {
+    return "invalid entry";
   }
-  return y;
 };
 
 const greeting = language => {
-  switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
-    default:
-      return 'Hello!';
+  if (typeof language === 'string') {
+    switch (language) {
+      case 'German':
+        return 'Guten Tag!';
+      case 'Spanish':
+        return 'Hola!';
+      default:
+        return 'Hello!';
+    };
+  } else {
+    return "invalid entry";
   }
 };
 
 const isTenOrFive = num => {
-  if (num === 10 || num === 5) {
+  if (num === 10 || num === 5 && typeof num === 'number') {
     return true;
   }
   return false;
 };
 
 const isInRange = num => {
-  if (num < 50 && num > 20) {
+  if (num < 50 && num > 20 && typeof num === 'number') {
     return true;
   }
   return false;
@@ -42,7 +50,7 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
-  if (num % 5 === 0 && num % 3 === 0) {
+  if (num % 5 === 0 && num % 3 === 0 && typeof num === 'number') {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
     return 'buzz';
@@ -68,27 +76,33 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  return arr[0];
+  return arr === undefined ? null : arr[0];
 };
 
 const returnLast = arr => {
-  return arr[arr.length - 1];
+  return arr === undefined ? null : arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+  return arr === undefined ? null : arr.length;
 };
 
 const incrementByOne = arr => {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
+  if (arr !== undefined) {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i]++;
+    }
+    return arr;
   }
-  return arr;
 };
 
 const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
+  if (arr === undefined) {
+    return null;
+  } else {
+    arr.push(item);
+    return arr;
+  }
 };
 
 const addItemToFront = (arr, item) => {
