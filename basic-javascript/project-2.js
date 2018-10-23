@@ -90,6 +90,8 @@ const getArrayLength = (arr) => {
 };
 
 const incrementByOne = (arr) => {
+	if (!Array.isArray(arr)) throw new Error('Arrays only!');
+	if (arr.length === 0) return undefined;
 	for (let i = 0; i < arr.length; i++) {
 		arr[i]++;
 	}

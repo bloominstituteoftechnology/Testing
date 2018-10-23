@@ -266,7 +266,7 @@ describe.only('project-2.js', () => {
 		// const getArrayLength = (arr) => {
 		// 	return arr.length;
 		// };
-		it('should return the last element of a passed array', () => {
+		it('should return length a passed array', () => {
 			const arr = funcs.getArrayLength([0, 1, 2, 3, 4]);
 
 			expect(arr).toEqual(5);
@@ -293,6 +293,24 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return arr;
 		// };
+		// array values++
+		it('should return the array with incremented values', () => {
+			const arr = funcs.incrementByOne([0, 1, 2, 3]);
+			expect(arr).toEqual([1, 2, 3, 4]);
+		});
+
+		// empty array
+		it('should return undefined if passed an empty array', () => {
+			const empty = funcs.incrementByOne([]);
+			expect(empty).toBeUndefined();
+		});
+
+		// value is non-array
+		it('should throw an error when passed a non-array', () => {
+			expect(() => funcs.incrementByOne(null)).toThrowError();
+			expect(() => funcs.incrementByOne(() => {})).toThrowError();
+			expect(() => funcs.incrementByOne({ arr: [] })).toThrowError();
+		});
 	});
 
 	describe('addItemToArray()', () => {
