@@ -244,4 +244,19 @@ describe('project-2.js', () => {
             expect(actual).toEqual(expected);
         })
     })
+    describe('async tests', () => {
+        it('using a callback', done => {
+            setTimeout(() => {
+                done();
+            }, 2000);
+        });
+        it('using promises', () => {
+            return new Promise(resolve => {
+                setTimeout(resolve, 250)
+            })
+        })
+        it('using async/await', async () => {
+            await new Promise(resolve => setTimeout(resolve, 500));
+        })
+    })
 })

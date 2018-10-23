@@ -14,6 +14,16 @@ describe('project-1.js', () => {
             
             expect(actual).toEqual(expected);
         });
+        it('should return 0 when called with no value', () => {
+            const product = helpers.multiplyByTen();
+
+            expect(product).toBe(0);
+        })
+        it('should throw an error when called with a string', () => {
+            expect(() => {
+                helpers.multiplyByTen('five');
+            }).toThrow();
+        })
         
     })
 
@@ -26,6 +36,16 @@ describe('project-1.js', () => {
             
             expect(actual).toEqual(expected);
         });
+        it('should return 0 when called with no value', () => {
+            const difference = helpers.subtractFive();
+
+            expect(difference).toBe(0);
+        })
+        it('should throw an error when called with a string', () => {
+            expect(() => {
+                helpers.multiplyByTen('five');
+            }).toThrow();
+        })
     })
     describe('areSameLength()', () => {
 
@@ -121,6 +141,7 @@ describe('project-1.js', () => {
 
             expect(actual).toEqual(expected);
         })
+        
     })
 
     describe('getRemainder()', () => {
@@ -285,6 +306,22 @@ describe('project-1.js', () => {
             const actual = helpers.getRectangularPrismVolume(3, 4, 5);
 
             expect(actual).toEqual(expected);
+        })
+    })
+
+    describe('async tests', () => {
+        it('using a callback', done => {
+            setTimeout(() => {
+                done();
+            }, 2000);
+        });
+        it('using promises', () => {
+            return new Promise(resolve => {
+                setTimeout(resolve, 250)
+            })
+        })
+        it('using async/await', async () => {
+            await new Promise(resolve => setTimeout(resolve, 500));
         })
     })
     
