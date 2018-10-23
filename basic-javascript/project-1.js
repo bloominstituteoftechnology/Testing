@@ -1,6 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if(!num) { return 0 };
+
+  if(typeof num === 'string') { 
+    throw new Error('value must be an error');
+  }
+
   return num * 10;
 };
 
