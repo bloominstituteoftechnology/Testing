@@ -1,7 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
+  if(isNaN(x) || isNaN(y)){
+    throw 'error';
+  } else if (x > y) {
     return x;
   } else if (x === y) {
     return y;
@@ -10,10 +12,10 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
-  switch (language) {
-    case 'German':
+  switch (language.toLowerCase()) {
+    case 'german':
       return 'Guten Tag!';
-    case 'Spanish':
+    case 'spanish':
       return 'Hola!';
     default:
       return 'Hello!';

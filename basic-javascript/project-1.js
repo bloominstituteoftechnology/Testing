@@ -1,53 +1,101 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if (num != null && !isNaN(num)) {
+    return num * 10;
+  } else {
+    return 0;
+  }
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (num === undefined) {
+    return "please input a number";
+  } else if (isNaN(num)) {
+    return "please input a number, not a word";
+  } else {
+    return num - 5;
+  }
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (typeof str1 === undefined || typeof str2 === undefined) {
+    throw "You must input something to compare";
+  } else {
+    return str1.length === str2.length;
+  }
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (!x || !y) {
+    throw "error";
+  } else {
+    return x === y;
+  }
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
+  if (!isNaN(num)) {
+    if (num < 90) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    throw "You must input a number";
   }
-  return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
+  if (!isNaN(num)) {
+    if (num > 50) {
+      return true;
+    }
+    return false;
+  } else {
+    throw "You must input a number";
   }
-  return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (isNaN(x) || isNaN(y)) {
+    throw "You can only add numbers";
+  } else {
+    return x + y;
+  }
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if (isNaN(x) || isNaN(y)) {
+    throw "You can only subtract numbers";
+  } else {
+    return x - y;
+  }
 };
 
 const divide = (x, y) => {
-  return x / y;
+  if (isNaN(x) || isNaN(y)) {
+    throw "error";
+  } else {
+    return x / y;
+  }
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if (!x || !y || isNaN(x) || isNaN(y)) {
+    throw "error";
+  } else {
+    return x * y;
+  }
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  if(isNaN(x) || isNaN(y)){
+    throw 'error'
+  } else {
+    return x % y;
+
+  }
 };
 
 const isEven = num => {
@@ -85,7 +133,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
