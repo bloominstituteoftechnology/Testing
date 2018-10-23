@@ -73,16 +73,19 @@ const isPrime = (num) => {
 
 const returnFirst = (arr) => {
 	if (!Array.isArray(arr)) throw new Error('Arrays only!');
+	if (arr.length === 0) return undefined;
 	return arr[0];
 };
 
 const returnLast = (arr) => {
 	if (!Array.isArray(arr)) throw new Error('Arrays only!');
+	if (arr.length === 0) return undefined;
 	return arr[arr.length - 1];
 };
 
 const getArrayLength = (arr) => {
 	if (!Array.isArray(arr)) throw new Error('Arrays only!');
+	if (arr.length === 0) return undefined;
 	return arr.length;
 };
 

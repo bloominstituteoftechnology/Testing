@@ -241,12 +241,49 @@ describe.only('project-2.js', () => {
 		// const returnLast = (arr) => {
 		// 	return arr[arr.length - 1];
 		// };
+		// returns last element
+		it('should return the last element of a passed array', () => {
+			const arr = funcs.returnLast([0, 1, 2, 3, 4]);
+
+			expect(arr).toEqual(4);
+		});
+
+		// empty array
+		it('should return undefined if passed an empty array', () => {
+			const empty = funcs.returnLast([]);
+			expect(empty).toBeUndefined();
+		});
+
+		// value is non-array
+		it('should throw an error if passed a non-array', () => {
+			expect(() => funcs.returnLast('0, 1, 2, 3')).toThrowError();
+			expect(() => funcs.returnLast(() => {})).toThrowError();
+			expect(() => funcs.returnLast(null)).toThrowError();
+		});
 	});
 
 	describe('getArrayLength()', () => {
 		// const getArrayLength = (arr) => {
 		// 	return arr.length;
 		// };
+		it('should return the last element of a passed array', () => {
+			const arr = funcs.getArrayLength([0, 1, 2, 3, 4]);
+
+			expect(arr).toEqual(5);
+		});
+
+		// empty array
+		it('should return undefined if passed an empty array', () => {
+			const empty = funcs.getArrayLength([]);
+			expect(empty).toBeUndefined();
+		});
+
+		// value is non-array
+		it('should throw an error if passed a non-array', () => {
+			expect(() => funcs.getArrayLength('0, 1, 2, 3')).toThrowError();
+			expect(() => funcs.getArrayLength(() => {})).toThrowError();
+			expect(() => funcs.getArrayLength(null)).toThrowError();
+		});
 	});
 
 	describe('incrementByOne()', () => {
