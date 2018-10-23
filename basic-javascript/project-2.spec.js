@@ -65,14 +65,14 @@ describe('isPrime()', () => {
 });
 
 //return first
-​​​​​describe('returnFirst()', () => {​​​​​
-​​​​​    it('should returnFirst', () => {​​​​​
-​​​​​        const expected = 1;​​​​​
-​​​​​        const actual = helpers.returnFirst([1, 3]);​​​​​
-​​​​​        expect(actual).toEqual(expected);​​​​​
-​​​​​    });​​​​​
-​​​​​});​​​​​
-
+describe('returnFirst()', () => {
+    it('should return the first', () => {
+        const expected = 1;
+        const actual = helpers.returnFirst([1, 3]);
+        expect(actual).toEqual(expected);
+    });
+});
+    
 ​​​​​//returnLast​​​​​
 ​​​​​describe('returnLast()', () => {​​​​​
 ​​​​​    it('should returnLast', () => {​​​​​
@@ -83,7 +83,7 @@ describe('isPrime()', () => {
 ​​​​​});​​​​​
 
 ​​​​​//getArrayLength​​​​​
-​​​​​describe('getArrayLength()', () => {​​​​​
+​​​​​describe.only('getArrayLength()', () => {​​​​​
 ​​​​​    it('should getArrayLength', () => {​​​​​
 ​​​​​        const expected = 2;​​​​​
 ​​​​​        const actual = helpers.getArrayLength([1, 3]);​​​​​
@@ -158,7 +158,7 @@ describe('isPrime()', () => {
     ​​​​​//largestNumber​​​​​
 ​​​​​describe('largestNumber()', () => {​​​​​
 ​​​​​    it('should largestNumber', () => {​​​​​
-​​​​​        const expected = 3;​​​​​
+​​​​​        const expected = 2;​​​​​
 ​​​​​        const actual = helpers.largestNumber([1, 3]);​​​​​
 ​​​​​        expect(actual).toEqual(expected);​​​​​
 ​​​​​    });​​​​​
