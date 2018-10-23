@@ -15,15 +15,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no value', () => {
+		// input string
+		it('should throw an error when called with no value or string value', () => {
 			expect(() => {
 				helpers.multiplyByTen();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw error when called with a string', () => {
-			expect(() => {
 				helpers.multiplyByTen('five');
 			}).toThrowError();
 		});
@@ -41,15 +36,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no value', () => {
+		// input string
+		it('should throw an error when called with no value or string value', () => {
 			expect(() => {
 				helpers.subtractFive();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw error when called with a string', () => {
-			expect(() => {
 				helpers.subtractFive('eleven');
 			}).toThrowError();
 		});
@@ -72,15 +62,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no value', () => {
+		// input not string
+		it('should throw an error when called with no value or non-string value', () => {
 			expect(() => {
 				helpers.areSameLength('str1');
-			}).toThrowError();
-		});
-
-		// input not string
-		it('should throw error when called with a non-string', () => {
-			expect(() => {
 				helpers.areSameLength(42, 'as');
 			}).toThrowError();
 		});
@@ -103,15 +88,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error if one or both values are null', () => {
+		// input not number
+		it('should throw an error if one or both values are null or not a number', () => {
 			expect(() => {
 				helpers.areEqual(3);
-			}).toThrowError();
-		});
-
-		// input not number
-		it('should throw an error if one or both values are not a number', () => {
-			expect(() => {
 				helpers.areEqual('3', '4');
 			}).toThrowError();
 		});
@@ -137,15 +117,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error if input is null', () => {
+		// input not number
+		it('should throw an error if input is null or not a number', () => {
 			expect(() => {
 				helpers.lessThanNinety();
-			}).toThrowError();
-		});
-
-		// input not number
-		it('should throw an error if input is not a number', () => {
-			expect(() => {
 				helpers.lessThanNinety('3');
 			}).toThrowError();
 		});
@@ -171,15 +146,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error if input is null', () => {
+		// input not a number
+		it('should throw an error if input is null or not a number', () => {
 			expect(() => {
 				helpers.greaterThanFifty();
-			}).toThrowError();
-		});
-
-		// input not a number
-		it('should throw an error if the input is not a number', () => {
-			expect(() => {
 				helpers.greaterThanFifty('42');
 			}).toThrowError();
 		});
@@ -196,15 +166,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no value', () => {
+		// input string
+		it('should throw an error when called with no value or a string', () => {
 			expect(() => {
 				helpers.add(4);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw error when called with a string', () => {
-			expect(() => {
 				helpers.add('5', 4);
 			}).toThrowError();
 		});
@@ -221,15 +186,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no values', () => {
+		// input string
+		it('should throw an error when called with no values or a string', () => {
 			expect(() => {
 				helpers.subtract(11);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when called with a string', () => {
-			expect(() => {
 				helpers.subtract(4, '4');
 			}).toThrowError();
 		});
@@ -246,15 +206,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no values', () => {
+		// input string
+		it('should throw an error when called with no values or a string', () => {
 			expect(() => {
 				helpers.divide(3);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when called with a string', () => {
-			expect(() => {
 				helpers.divide(10, '2');
 			}).toThrowError();
 		});
@@ -271,15 +226,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when called with no values', () => {
+		// input string
+		it('should throw an error when called with no values or a string', () => {
 			expect(() => {
 				helpers.multiply(10);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when called with a string', () => {
-			expect(() => {
 				helpers.multiply(10, '5');
 			}).toThrowError();
 		});
@@ -296,15 +246,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
+		// input string
 		it('should throw an error when called with no values', () => {
 			expect(() => {
 				helpers.getRemainder(4);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when called with a string', () => {
-			expect(() => {
 				helpers.getRemainder(20, '3');
 			}).toThrowError();
 		});
@@ -324,15 +269,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
+		// input string
 		it('should throw an error when called with no value', () => {
 			expect(() => {
 				helpers.isEven();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when called with a string', () => {
-			expect(() => {
 				helpers.isEven('42');
 			}).toThrowError();
 		});
@@ -352,15 +292,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error if input is null/undefined', () => {
+		// input string
+		it('should throw an error if input is null/undefined or a string', () => {
 			expect(() => {
 				helpers.isOdd();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error if input is a string', () => {
-			expect(() => {
 				helpers.isOdd('27');
 			}).toThrowError();
 		});
@@ -377,21 +312,16 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when input is null/undefined', () => {
+		// input string
+		it('should throw an error when input is null/undefined or a string', () => {
 			expect(() => {
 				helpers.square();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when input is a string', () => {
-			expect(() => {
 				helpers.square('4');
 			}).toThrowError();
 		});
 	});
 
-	describe('cube', () => {
+	describe('cube()', () => {
 		// const cube = (num) => {
 		// 	return num * num * num;
 		// };
@@ -402,15 +332,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided a null value', () => {
+		// input string
+		it('should throw an error when provided a null value or a string', () => {
 			expect(() => {
 				helpers.cube();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided a string value', () => {
-			expect(() => {
 				helpers.cube('4');
 			}).toThrowError();
 		});
@@ -427,15 +352,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input string
+		it('should throw an error when provided null or string input', () => {
 			expect(() => {
 				helpers.raiseToPower(4);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when the provided input is a string', () => {
-			expect(() => {
 				helpers.raiseToPower(2, '4');
 			}).toThrowError();
 		});
@@ -452,15 +372,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input string
+		it('should throw an error when provided null or string input', () => {
 			expect(() => {
 				helpers.roundNumber();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided input is string', () => {
-			expect(() => {
 				helpers.roundNumber('3.141592653');
 			}).toThrowError();
 		});
@@ -477,15 +392,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input string
+		it('should throw an error when provided null or string input', () => {
 			expect(() => {
 				helpers.roundUp();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided input is string', () => {
-			expect(() => {
 				helpers.roundUp('2.222222222');
 			}).toThrowError();
 		});
@@ -516,21 +426,16 @@ describe('project-1.js', () => {
 		// 	return `${firstName} ${lastName}`;
 		// };
 		// expected concated strings
-		it('should return the names provided concatinated', () => {
+		it('should return the names provided concatenated', () => {
 			const actual = helpers.combineNames('Vera', 'Simon');
 			expect(actual).toMatch(/Vera Simon/);
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input number
+		it('should throw an error when provided null or numeric input', () => {
 			expect(() => {
 				helpers.combineNames('Yoko');
-			}).toThrowError();
-		});
-
-		// input number
-		it('should throw an error when provided numbers', () => {
-			expect(() => {
 				helpers.combineNames(13, 'Yeah!');
 			}).toThrowError();
 		});
@@ -547,15 +452,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input number
+		it('should throw an error when provided null or non-string input', () => {
 			expect(() => {
 				helpers.getGreeting();
-			}).toThrowError();
-		});
-
-		// input number
-		it('should throw an error when provided input that is not a string', () => {
-			expect(() => {
 				helpers.getGreeting(42);
 			}).toThrowError();
 		});
@@ -572,15 +472,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null/undefined input', () => {
+		// input string
+		it('should throw an error when provided null/undefined or non-numeric input', () => {
 			expect(() => {
 				helpers.getRectangleArea(3);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided string input', () => {
-			expect(() => {
 				helpers.getRectangleArea(5, '5');
 			}).toThrowError();
 		});
@@ -597,15 +492,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input string
+		it('should throw an error when provided null or non-numeric input', () => {
 			expect(() => {
 				helpers.getTriangleArea(3);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided string input', () => {
-			expect(() => {
 				helpers.getTriangleArea(3, '3');
 			}).toThrowError();
 		});
@@ -622,15 +512,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null input', () => {
+		// input string
+		it('should throw an error when provided null or non-numeric input', () => {
 			expect(() => {
 				helpers.getCircleArea();
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided string input', () => {
-			expect(() => {
 				helpers.getCircleArea('3.141592653');
 			}).toThrowError();
 		});
@@ -647,15 +532,10 @@ describe('project-1.js', () => {
 		});
 
 		// input null
-		it('should throw an error when provided null values', () => {
+		// input string
+		it('should throw an error when provided null or non-numeric values', () => {
 			expect(() => {
 				helpers.getRectangularPrismVolume(1, 3);
-			}).toThrowError();
-		});
-
-		// input string
-		it('should throw an error when provided string values', () => {
-			expect(() => {
 				helpers.getRectangularPrismVolume(1, '2', 3);
 			}).toThrowError();
 		});
