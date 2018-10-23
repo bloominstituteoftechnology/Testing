@@ -1,60 +1,85 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (typeof(num) !== 'number') return 'the input must be a number'; 
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (typeof(num) !== 'number') return 'the input must be a number'; 
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (!str1 || !str2) return 'two strings are required as inputs';
+  else if (typeof(str1) !== 'string' || typeof(str2) !== 'string') return 'both inputs must be a string'; 
+  else return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x === y;
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  if (!num && num !==0) return 'a number is required as input';
+  else if (typeof(num) !== 'number') return 'the input must be a number'; 
+  else if (num < 90) {
     return true;
   }
-  return false;
+  else return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
+  if (!num  && num !==0) return 'a number is required as input';
+  else if (typeof(num) !== 'number') return 'the input must be a number'; 
+  else if (num > 50) {
     return true;
   }
-  return false;
+  else return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x + y;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x - y;
 };
 
 const divide = (x, y) => {
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else if (y === 0) return 'divisor can not be zero'
   return x / y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if ((!x && x !==0) || (!y && y!== 0)) return 'two numbers are required as inputs';
+  else if (typeof(x) !== 'number' || typeof(y) !== 'number') return 'both inputs must be a number';
+  else if (y === 0) return 'divisor can not be zero'
   return x % y;
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
+  if (!num  && num !==0) return 'a number is required as input';
+  else if (typeof(num) !== 'number') return 'the input must be a number'; 
+
+  else if (num % 2 === 0) {
     return true;
   }
-  return false;
+  else return false;
 };
 
 const isOdd = num => {
