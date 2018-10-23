@@ -4,35 +4,52 @@ const helpers = require('./project-1');
 describe('project-1.js', () => {
 
     it('should multiply provided num by 10', () => {
-        const expected = 100;
-      
-        const actual = helpers.multiplyByTen(10);
-      
-        expect(actual).toEqual(expected)
+        expect(helpers.multiplyByTen(10)).toBe(100);
+        expect(helpers.multiplyByTen('10')).toBe(100);
+        expect(helpers.multiplyByTen(undefined)).toBe(undefined);
+        
       
       });
 
     it('should subtract 5 from a num', () => {
-        const expected = 5;
-
-        const actual = helpers.subtractFive(10);
-
-        expect(actual).toEqual(expected);
+        expect(helpers.subtractFive(10)).toBe(5);
+        expect(helpers.subtractFive('10')).toBe(5);
+        expect(helpers.subtractFive(undefined)).toBe(undefined);
+        
     })
 
-    it('should check if same length', () => {
-        const expected = true;
+    describe('check if strings are same length', () => {
 
-        const actual = helpers.areSameLength('ted', 'red');
+        it('should check if same length', () => {
+            const expected = true;
 
-        expect(actual).toBe(expected);
+            const actual = helpers.areSameLength('ted', 'red');
+
+            expect(actual).toBe(expected);
+        })
+
+        it('should return false if called with strings of the different length', () => {
+        
+            expect(helpers.areSameLength('ab', 'a')).toBe(false);
+        })
+    
+        it('should return null if one orboth arguments are undefined', () => {
+            expect(helpers.areSameLength()).toBe(null);
+            expect(helpers.areSameLength('a')).toBe(null);
+            expect(helpers.areSameLength(undefined, 'a')).toBe(null);
+        })
+    
+        it('should return null if called with a non string argument', () => {
+            expect(helpers.areSameLength({}, 'a')).toBe(null);
+        })
+
     })
 
     it('should check to see if x and y are equal', () => {
-        const expected = true;
-
-        const actual = helpers.areEqual('ted', 'ted');
-        expect(actual).toBe(expected);
+        expect(helpers.areEqual('a', 'a')).toBe(true);
+        expect(helpers.areEqual(1,1)).toBe(true);
+        expect(helpers.areEqual(undefined, undefined)).toBe(false);
+        expect(helpers.areEqual(null, null)).toBe(false);
     })
     
     it('should see if num is less than ninety', () => {
