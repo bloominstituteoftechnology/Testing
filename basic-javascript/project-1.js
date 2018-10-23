@@ -38,7 +38,7 @@ const subtractFive = num => {
 
 const areSameLength = (str1, str2) => {
   if (!str1 || !str2) {
-    return 0;
+    return null;
   }
 
   if (typeof str1 !== 'string' || typeof str2 !== 'string') {
