@@ -43,6 +43,7 @@ const isInteger = (num) => {
 };
 
 const fizzBuzz = (num) => {
+	if (typeof num !== 'number') throw new Error('Numbers only!');
 	if (num % 5 === 0 && num % 3 === 0) {
 		return 'fizzbuzz';
 	} else if (num % 5 === 0) {
@@ -54,12 +55,14 @@ const fizzBuzz = (num) => {
 };
 
 const isPrime = (num) => {
-	if (num < 0) {
-		return false;
-	}
-	if (num === 1 || num === 0) {
-		return false;
-	}
+	if (typeof num !== 'number') throw new Error('Numbers only!');
+	// if (num < 0) {
+	// 	return false;
+	// }
+	// if (num === 1 || num === 0) {
+	// 	return false;
+	// }
+	if (num < 2) return false;
 	for (let i = 2; i < num; i++) {
 		if (num % i === 0) {
 			return false;
@@ -69,14 +72,17 @@ const isPrime = (num) => {
 };
 
 const returnFirst = (arr) => {
+	if (!Array.isArray(arr)) throw new Error('Arrays only!');
 	return arr[0];
 };
 
 const returnLast = (arr) => {
+	if (!Array.isArray(arr)) throw new Error('Arrays only!');
 	return arr[arr.length - 1];
 };
 
 const getArrayLength = (arr) => {
+	if (!Array.isArray(arr)) throw new Error('Arrays only!');
 	return arr.length;
 };
 

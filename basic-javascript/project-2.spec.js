@@ -152,6 +152,29 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return num;
 		// };
+		// expected string
+		it('should return the expected string if a multiple of 3 and/or 5', () => {
+			const fizzbuzz = funcs.fizzBuzz(15);
+			const fizz = funcs.fizzBuzz(9);
+			const buzz = funcs.fizzBuzz(10);
+
+			expect(fizzbuzz).toMatch(/^fizzbuzz$/);
+			expect(fizz).toMatch(/^fizz$/);
+			expect(buzz).toMatch(/^buzz$/);
+		});
+
+		// num
+		it('should return the input value if not a multiple of 3 and/or 5', () => {
+			const seven = funcs.fizzBuzz(7);
+			expect(seven).toEqual(7);
+		});
+
+		// input non-numeric
+		it('should throw an error if input is non-numeric', () => {
+			expect(() => funcs.fizzBuzz('7')).toThrowError();
+			expect(() => funcs.fizzBuzz(() => {})).toThrowError();
+			expect(() => funcs.fizzBuzz(null)).toThrowError();
+		});
 	});
 
 	describe('isPrime()', () => {
@@ -169,12 +192,49 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return true;
 		// };
+		// is prime
+		it('should return true if value is prime', () => {
+			const eleven = funcs.isPrime(11);
+			expect(eleven).toBe(true);
+		});
+
+		// isn't prime
+		it("should return false if value isn't prime", () => {
+			const nine = funcs.isPrime(9);
+			expect(nine).toBe(false);
+		});
+
+		// is non-numeric
+		it('should throw an error if value is non-numeric', () => {
+			expect(() => funcs.isPrime('7')).toThrowError();
+			expect(() => funcs.isPrime(() => {})).toThrowError();
+			expect(() => funcs.isPrime(undefined)).toThrowError();
+		});
 	});
 
 	describe('returnFirst()', () => {
 		// const returnFirst = (arr) => {
 		// 	return arr[0];
 		// };
+		// returns first element
+		it('should return the first element of a passed array', () => {
+			const arr = funcs.returnFirst([0, 1, 2, 3, 4]);
+
+			expect(arr).toEqual(0);
+		});
+
+		// empty array
+		it('should return undefined if passed an empty array', () => {
+			const empty = funcs.returnFirst([]);
+			expect(empty).toBeUndefined();
+		});
+
+		// value is non-array
+		it('should throw an error if passed a non-array', () => {
+			expect(() => funcs.returnFirst('0, 1, 2, 3')).toThrowError();
+			expect(() => funcs.returnFirst(() => {})).toThrowError();
+			expect(() => funcs.returnFirst(null)).toThrowError();
+		});
 	});
 
 	describe('returnLast()', () => {
