@@ -10,7 +10,12 @@ const {
 } = require('../errors/index.js');
 
 const getBiggest = (x, y) => {
-	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
+	if (
+		typeof(x) !== 'number' ||
+		typeof(y) !== 'number' ||
+		(x + '') === 'NaN' ||
+		(y + '') === 'NaN'
+	) throw new Error(nonNumberTypeError);
 	if (x > y) {
 		return x;
 	} else if (x === y) {
@@ -32,7 +37,7 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
-	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (typeof(num) !== 'number' || (num + '') === 'NaN') throw new Error(nonNumberTypeError);
 	if (num === 10 || num === 5) {
 		return true;
 	}
@@ -40,7 +45,7 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
-	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (typeof(num) !== 'number' || (num + '') === 'NaN') throw new Error(nonNumberTypeError);
 	if (num < 50 && num > 20) {
 		return true;
 	}
@@ -48,7 +53,7 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
-	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (typeof(num) !== 'number' || (num + '') === 'NaN') throw new Error(nonNumberTypeError);
 	if (Math.floor(num) === num) {
 		return true;
 	}
@@ -56,7 +61,7 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
-	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (typeof(num) !== 'number' || (num + '') === 'NaN') throw new Error(nonNumberTypeError);
 	if (num % 5 === 0 && num % 3 === 0) {
 		return 'fizzbuzz';
 	} else if (num % 5 === 0) {
@@ -68,7 +73,7 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
-	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
+	if (typeof(num) !== 'number' || (num + '') === 'NaN') throw new Error(nonNumberTypeError);
 	if (num < 0) {
 		return false;
 	}
@@ -104,7 +109,7 @@ const incrementByOne = arr => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
 	if (!arr.length) throw new Error(emptyArrayError);
 	for (let i = 0; i < arr.length; i++) {
-		if (typeof(arr[i]) !== 'number') throw new Error(nonNumberTypeError);
+		if (typeof(arr[i]) !== 'number' || (arr[i] + '') === 'NaN') throw new Error(nonNumberTypeError);
 		arr[i]++;
 	}
 	return arr;
@@ -112,14 +117,22 @@ const incrementByOne = arr => {
 
 const addItemToArray = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (item === undefined) throw new Error(undefinedArgumentError);
+	if (
+		item === undefined ||
+		item === null ||
+		(item + '') === 'NaN'
+	) throw new Error(undefinedArgumentError);
 	arr.push(item);
 	return arr;
 };
 
 const addItemToFront = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (item === undefined) throw new Error(undefinedArgumentError);
+	if (
+		item === undefined ||
+		item === null ||
+		(item + '') === 'NaN'
+	) throw new Error(undefinedArgumentError);
 	arr.unshift(item);
 	return arr;
 };
@@ -141,7 +154,11 @@ const wordsToSentence = words => {
 
 const contains = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (item === undefined) throw new Error(undefinedArgumentError);
+	if (
+		item === undefined ||
+		item === null ||
+		(item + '') === 'NaN'
+	) throw new Error(undefinedArgumentError);
 	let itemCounter = 0;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === item) {
@@ -158,7 +175,7 @@ const addNumbers = numbers => {
 	if (!Array.isArray(numbers)) throw new Error(nonArrayTypeError);
 	let sumOfNumbers = 0;
 	for (let i = 0; i < numbers.length; i++) {
-		if (typeof(numbers[i]) !== 'number') throw new Error(nonNumberTypeError);
+		if (typeof(numbers[i]) !== 'number' || (numbers[i] + '') === 'NaN') throw new Error(nonNumberTypeError);
 		sumOfNumbers += numbers[i];
 	}
 	return sumOfNumbers;
@@ -169,7 +186,7 @@ const averageTestScore = testScores => {
 	let numberOfScore = 0;
 	if (!Array.isArray(testScores)) throw new Error(nonArrayTypeError);
 	for (let i = 0; i < testScores.length; i++) {
-		if (typeof(testScores[i]) !== 'number') throw new Error(nonNumberTypeError);
+		if (typeof(testScores[i]) !== 'number' || (testScores[i] + '') === 'NaN') throw new Error(nonNumberTypeError);
 		totalSumScores += testScores[i];
 		numberOfScore++;
 	}
@@ -182,7 +199,7 @@ const largestNumber = numbers => {
 	if (!numbers.length) throw new Error(emptyArrayError);
 	let biggestNumber = numbers[0];
 	for (let i = 0; i < numbers.length; i++) {
-		if (typeof(numbers[i]) !== 'number') throw new Error(nonNumberTypeError);
+		if (typeof(numbers[i]) !== 'number' || (numbers[i] + '') === 'NaN') throw new Error(nonNumberTypeError);
 		if (numbers[i] > biggestNumber) {
 			biggestNumber = numbers[i];
 		}

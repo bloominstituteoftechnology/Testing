@@ -9,7 +9,6 @@ const {
 	undefinedArgumentError,
 } = require('../errors/index.js');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('project-2.js', () => {
 	const {
 		getBiggest,
@@ -35,76 +34,65 @@ describe('project-2.js', () => {
 	// getBiggest()
 	describe('getBiggest()', () => {
 		describe('Calling with a string, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					getBiggest('one', 1);
-				}).toThrow(nonNumberTypeError);
-
-				expect(() => {
-					getBiggest(1, null);
-				}).toThrow(nonNumberTypeError);
-	
-				expect(() => {
-					getBiggest(undefined, 1);
-				}).toThrow(nonNumberTypeError);
+			describe('Calling with number type', () => {
+				it('should return the biggest number', () => {
+					expect(getBiggest(0, 0)).toBe(0);
+					expect(getBiggest(0, 1)).toBe(1);
+					expect(getBiggest(0.1, 0.2)).toBe(0.2);
+					expect(getBiggest(-1, 2)).toBe(2);
+					expect(getBiggest(-2, -1)).toBe(-1);
+				});
 			});
-		});
 
-		describe('Calling with number type', () => {
-			it('should return the biggest number', () => {
-				expect(getBiggest(0, 0)).toBe(0);
-				expect(getBiggest(0, 1)).toBe(1);
-				expect(getBiggest(0.1, 0.2)).toBe(0.2);
-				expect(getBiggest(-1, 2)).toBe(2);
-				expect(getBiggest(-2, -1)).toBe(-1);
+			describe('Calling with non number type', () => {
+				it('should throw an error', () => {
+					expect(() => { getBiggest(NaN, 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest('', 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(false, 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest([], 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest({}, 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(() => {}, 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(null, 1); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(undefined, 1); }).toThrow(nonNumberTypeError);
+	
+					expect(() => { getBiggest(1, NaN); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, ''); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, false); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, []); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, {}); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, () => {}); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, null); }).toThrow(nonNumberTypeError);
+					expect(() => { getBiggest(1, undefined); }).toThrow(nonNumberTypeError);
+				});
 			});
 		});
 	});
 
 	// greeting()
 	describe('greeting()', () => {
-		describe('Calling with a number, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					greeting(1);
-				}).toThrow(nonStringTypeError);
-
-				expect(() => {
-					greeting(null);
-				}).toThrow(nonStringTypeError);
-	
-				expect(() => {
-					greeting(undefined);
-				}).toThrow(nonStringTypeError);
-			});
-		});
-
 		describe('Calling with string type', () => {
 			it('should return hello in the language given', () => {
 				expect(greeting('Spanish')).toBe('Hola!');
 				expect(greeting('English')).toBe('Hello!');
 			});
 		});
+
+		describe('Calling with non string type', () => {
+			it('should throw an error', () => {
+				expect(() => { greeting(1); }).toThrow(nonStringTypeError);
+				expect(() => { greeting(NaN); }).toThrow(nonStringTypeError);
+				expect(() => { greeting(false); }).toThrow(nonStringTypeError);
+				expect(() => { greeting([]); }).toThrow(nonStringTypeError);
+				expect(() => { greeting({}); }).toThrow(nonStringTypeError);
+				expect(() => { greeting(() => {}); }).toThrow(nonStringTypeError);
+				expect(() => { greeting(null); }).toThrow(nonStringTypeError);
+				expect(() => { greeting(undefined); }).toThrow(nonStringTypeError);
+			});
+		});
 	});
 
 	// isTenOrFive()
 	describe('isTenOrFive()', () => {
-		describe('Calling with a string, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					isTenOrFive('one');
-				}).toThrow(nonNumberTypeError);
-
-				expect(() => {
-					isTenOrFive(null);
-				}).toThrow(nonNumberTypeError);
-	
-				expect(() => {
-					isTenOrFive(undefined);
-				}).toThrow(nonNumberTypeError);
-			});
-		});
-
 		describe('Calling with number type', () => {
 			it('should return true if num is 10 or 5', () => {
 				expect(isTenOrFive(10)).toBe(true);
@@ -119,26 +107,23 @@ describe('project-2.js', () => {
 				expect(isTenOrFive(-0.2)).toBe(false);
 			});
 		});
+
+		describe('Calling with non number type', () => {
+			it('should throw an error', () => {
+				expect(() => { isTenOrFive(NaN); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive(''); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive(false); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive([]); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive({}); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive(() => {}); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive(null); }).toThrow(nonNumberTypeError);
+				expect(() => { isTenOrFive(undefined); }).toThrow(nonNumberTypeError);
+			});
+		});
 	});
 
 	// isInRange()
 	describe('isInRange()', () => {
-		describe('Calling with a string, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					isInRange('one');
-				}).toThrow(nonNumberTypeError);
-
-				expect(() => {
-					isInRange(null);
-				}).toThrow(nonNumberTypeError);
-	
-				expect(() => {
-					isInRange(undefined);
-				}).toThrow(nonNumberTypeError);
-			});
-		});
-
 		describe('Calling with number type', () => {
 			it('should return true if num is less than 50 and more than 20', () => {
 				expect(isInRange(21)).toBe(true);
@@ -153,26 +138,23 @@ describe('project-2.js', () => {
 				expect(isInRange(0.2)).toBe(false);
 			});
 		});
+
+		describe('Calling with non number type', () => {
+			it('should throw an error', () => {
+				expect(() => { isInRange(NaN); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange(''); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange(false); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange([]); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange({}); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange(() => {}); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange(null); }).toThrow(nonNumberTypeError);
+				expect(() => { isInRange(undefined); }).toThrow(nonNumberTypeError);
+			});
+		});
 	});
 
 	// isInteger()
 	describe('isInteger()', () => {
-		describe('Calling with a string, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					isInteger('one');
-				}).toThrow(nonNumberTypeError);
-
-				expect(() => {
-					isInteger(null);
-				}).toThrow(nonNumberTypeError);
-	
-				expect(() => {
-					isInteger(undefined);
-				}).toThrow(nonNumberTypeError);
-			});
-		});
-
 		describe('Calling with number type', () => {
 			it('should return true if num is an integer', () => {
 				expect(isInteger(0)).toBe(true);
@@ -185,26 +167,23 @@ describe('project-2.js', () => {
 				expect(isInteger(-0.2)).toBe(false);
 			});
 		});
+
+		describe('Calling with non number type', () => {
+			it('should throw an error', () => {
+				expect(() => { isInteger(NaN); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger(''); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger(false); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger([]); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger({}); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger(() => {}); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger(null); }).toThrow(nonNumberTypeError);
+				expect(() => { isInteger(undefined); }).toThrow(nonNumberTypeError);
+			});
+		});
 	});
 
 	// fizzBuzz()
 	describe('fizzBuzz()', () => {
-		describe('Calling with a string, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					fizzBuzz('one');
-				}).toThrow(nonNumberTypeError);
-
-				expect(() => {
-					fizzBuzz(null);
-				}).toThrow(nonNumberTypeError);
-	
-				expect(() => {
-					fizzBuzz(undefined);
-				}).toThrow(nonNumberTypeError);
-			});
-		});
-
 		describe('Calling with number type', () => {
 			it('should return fizzbuzz if num divisible by both 5 and 3', () => {
 				expect(fizzBuzz(0)).toBe('fizzbuzz');
@@ -230,26 +209,23 @@ describe('project-2.js', () => {
 				expect(fizzBuzz(-7)).toBe(-7);
 			});
 		});
+
+		describe('Calling with non number type', () => {
+			it('should throw an error', () => {
+				expect(() => { fizzBuzz(NaN); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz(''); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz(false); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz([]); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz({}); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz(() => {}); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz(null); }).toThrow(nonNumberTypeError);
+				expect(() => { fizzBuzz(undefined); }).toThrow(nonNumberTypeError);
+			});
+		});
 	});
 
 	// isPrime()
 	describe('isPrime()', () => {
-		describe('Calling with a string, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					isPrime('one');
-				}).toThrow(nonNumberTypeError);
-
-				expect(() => {
-					isPrime(null);
-				}).toThrow(nonNumberTypeError);
-	
-				expect(() => {
-					isPrime(undefined);
-				}).toThrow(nonNumberTypeError);
-			});
-		});
-
 		describe('Calling with number type', () => {
 			it('should return true if num is prime', () => {
 				expect(isPrime(2)).toBe(true);
@@ -262,116 +238,83 @@ describe('project-2.js', () => {
 				expect(isPrime(-1)).toBe(false);
 			});
 		});
+
+		describe('Calling with non number type', () => {
+			it('should throw an error', () => {
+				expect(() => { isPrime(NaN); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime(''); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime(false); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime([]); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime({}); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime(() => {}); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime(null); }).toThrow(nonNumberTypeError);
+				expect(() => { isPrime(undefined); }).toThrow(nonNumberTypeError);
+			});
+		});
 	});
 
 	// returnFirst()
 	describe('returnFirst()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					returnFirst('one');
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					returnFirst(1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					returnFirst({ 'one': 1 });
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					returnFirst(null);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					returnFirst(undefined);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with array type', () => {
+			it('should return the first value of the array', () => {
+				expect(returnFirst([ 1, 2 ])).toBe(1);
+				expect(returnFirst([ { one: 1 }, 2 ])).toEqual({ one: 1 });
+				expect(returnFirst([ [ 1, 2 ], 2 ])).toEqual([ 1, 2 ]);
+			});
+
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
 					returnFirst([]);
 				}).toThrow(emptyArrayError);
 			});
+		});
 
-			it('should return the first value of the array', () => {
-				expect(returnFirst([ 1, 2 ])).toBe(1);
-				expect(returnFirst([ { one: 1 }, 2 ])).toEqual({ one: 1 });
-				expect(returnFirst([ [ 1, 2 ], 2 ])).toEqual([ 1, 2 ]);
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { returnFirst(1); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst(''); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst(false); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst({}); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst(null); }).toThrow(nonArrayTypeError);
+				expect(() => { returnFirst(undefined); }).toThrow(nonArrayTypeError);
 			});
 		});
 	});
 
 	// returnLast()
 	describe('returnLast()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					returnLast('one');
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					returnLast(1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					returnLast({ 'one': 1 });
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					returnLast(null);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					returnLast(undefined);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with array type', () => {
+			it('should return the last value of the array', () => {
+				expect(returnLast([ 1, 2 ])).toBe(2);
+				expect(returnLast([ 2, { one: 1 } ])).toEqual({ one: 1 });
+				expect(returnLast([ 2, [ 1, 2 ] ])).toEqual([ 1, 2 ]);
+			});
+
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
 					returnLast([]);
 				}).toThrow(emptyArrayError);
 			});
+		});
 
-			it('should return the last value of the array', () => {
-				expect(returnLast([ 1, 2 ])).toBe(2);
-				expect(returnLast([ 2, { one: 1 } ])).toEqual({ one: 1 });
-				expect(returnLast([ 2, [ 1, 2 ] ])).toEqual([ 1, 2 ]);
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { returnLast(1); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast(''); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast(false); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast({}); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast(null); }).toThrow(nonArrayTypeError);
+				expect(() => { returnLast(undefined); }).toThrow(nonArrayTypeError);
 			});
 		});
 	});
 
 	// getArrayLength()
 	describe('getArrayLength()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					getArrayLength('one');
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					getArrayLength(1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					getArrayLength({ 'one': 1 });
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					getArrayLength(null);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					getArrayLength(undefined);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with array type', () => {
 			it('should return the length of the array', () => {
 				expect(getArrayLength([])).toBe(0);
@@ -379,207 +322,170 @@ describe('project-2.js', () => {
 				expect(getArrayLength([ 2, [ 1, 2 ], 'three' ])).toBe(3);
 			});
 		});
+
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { getArrayLength(1); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength(''); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength(false); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength({}); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength(null); }).toThrow(nonArrayTypeError);
+				expect(() => { getArrayLength(undefined); }).toThrow(nonArrayTypeError);
+			});
+		});
 	});
 
 	// incrementByOne()
 	describe('incrementByOne()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					incrementByOne('one');
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					incrementByOne(1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					incrementByOne({ 'one': 1 });
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					incrementByOne(null);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					incrementByOne(undefined);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with array type', () => {
+			it('should return the length of the array', () => {
+				expect(incrementByOne([ 0, 1 ])).toEqual([ 1, 2 ]);
+				expect(incrementByOne([ -2, -5.1 ])).toEqual([ -1, -4.1 ]);
+			});
+
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
 					incrementByOne([]);
 				}).toThrow(emptyArrayError);
 			});
 
-			it('should return the length of the array', () => {
-				expect(incrementByOne([ 0, 1 ])).toEqual([ 1, 2 ]);
-				expect(incrementByOne([ -2, -5.1 ])).toEqual([ -1, -4.1 ]);
+			describe('Calling with a non number type in the array', () => {
+				it('should throw an error', () => {
+					expect(() => { incrementByOne([ NaN ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ '' ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ false ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ [] ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ () => {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ null ]); }).toThrow(nonNumberTypeError);
+					expect(() => { incrementByOne([ undefined ]); }).toThrow(nonNumberTypeError);
+				});
+			});
+		});
+
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { incrementByOne(1); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne(''); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne(false); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne({}); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne(null); }).toThrow(nonArrayTypeError);
+				expect(() => { incrementByOne(undefined); }).toThrow(nonArrayTypeError);
 			});
 		});
 	});
 
 	// addItemToArray()
 	describe('addItemToArray()', () => {
-		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					addItemToArray('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addItemToArray(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addItemToArray({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addItemToArray(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					addItemToArray(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
-		describe('Calling with an undefined type for the second argument', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					addItemToArray([ 'one' ], undefined);
-				}).toThrow(undefinedArgumentError);
-			});
-		});
-
-		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
+		describe('Calling with array as first arg and non undefined, null, or NaN type as second arg', () => {
 			it('should return the array with the item pushed onto it', () => {
 				expect(addItemToArray([], 1)).toEqual([ 1 ]);
 				expect(addItemToArray([ 'one' ], 'two')).toEqual([ 'one', 'two' ]);
 				expect(addItemToArray([ { 'one': 1 }, { 'two': 2 } ], { 'three': 3 })).toEqual([ { 'one': 1 }, { 'two': 2 }, { 'three': 3 } ]);
 			});
 		});
+
+		describe('Calling with non array type as the first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { addItemToArray(1, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray(NaN, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray('', 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray(false, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray({}, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray(() => {}, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray(null, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToArray(undefined, 'item'); }).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an undefined, null, or NaN type for the second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { addItemToArray([], undefined); }).toThrow(undefinedArgumentError);
+				expect(() => { addItemToArray([], null); }).toThrow(undefinedArgumentError);
+				expect(() => { addItemToArray([], NaN); }).toThrow(undefinedArgumentError);
+			});
+		});
 	});
 
 	// addItemToFront()
 	describe('addItemToFront()', () => {
-		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					addItemToFront('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addItemToFront(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addItemToFront({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addItemToFront(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					addItemToFront(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
-		describe('Calling with an undefined type for the second argument', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					addItemToFront([ 'one' ], undefined);
-				}).toThrow(undefinedArgumentError);
-			});
-		});
-
-		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
+		describe('Calling with array as first arg and non undefined, null, or NaN type as second arg', () => {
 			it('should return the array with the item unshifted to the front of it', () => {
 				expect(addItemToFront([], 1)).toEqual([ 1 ]);
 				expect(addItemToFront([ 'one' ], 'two')).toEqual([ 'two', 'one' ]);
 				expect(addItemToFront([ { 'one': 1 }, { 'two': 2 } ], { 'three': 3 })).toEqual([ { 'three': 3 }, { 'one': 1 }, { 'two': 2 } ]);
 			});
 		});
+
+		describe('Calling with non array type as the first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { addItemToFront(1, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront(NaN, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront('', 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront(false, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront({}, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront(() => {}, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront(null, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { addItemToFront(undefined, 'item'); }).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an undefined, null, or NaN type for the second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { addItemToFront([], undefined); }).toThrow(undefinedArgumentError);
+				expect(() => { addItemToFront([], null); }).toThrow(undefinedArgumentError);
+				expect(() => { addItemToFront([], NaN); }).toThrow(undefinedArgumentError);
+			});
+		});
 	});
 
 	// wordsToSentence()
 	describe('wordsToSentence()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					wordsToSentence('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					wordsToSentence(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					wordsToSentence({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					wordsToSentence(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					wordsToSentence(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with an array type', () => {
+			it('should return a string with all the words in the array joined by a space', () => {
+				expect(wordsToSentence(['This', 'is', 'a', 'sentence.'])).toBe('This is a sentence.');
+			});
+
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
-					returnFirst([]);
+					wordsToSentence([]);
 				}).toThrow(emptyArrayError);
 			});
 
-			it('should return a string with all the words in the array joined by a space', () => {
-				expect(wordsToSentence(['This', 'is', 'a', 'sentence.'])).toBe('This is a sentence.');
+			describe('Calling with non string type as an element in the array', () => {
+				it('should throw an error', () => {
+					expect(() => { wordsToSentence([ 1 ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ NaN ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ false ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ [] ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ {} ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ () => {} ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ null ]); }).toThrow(nonStringTypeError);
+					expect(() => { wordsToSentence([ undefined ]); }).toThrow(nonStringTypeError);
+				});
+			});
+		});
+
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { wordsToSentence(1); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence(''); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence(false); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence({}); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence(null); }).toThrow(nonArrayTypeError);
+				expect(() => { wordsToSentence(undefined); }).toThrow(nonArrayTypeError);
 			});
 		});
 	});
 
 	// contains()
 	describe('contains()', () => {
-		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					contains('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					contains(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					contains({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					contains(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					contains(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
-		describe('Calling with an undefined type for the second argument', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					contains([ 'one' ], undefined);
-				}).toThrow(undefinedArgumentError);
-			});
-		});
-
 		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
 			it('should return true if item is in array', () => {
 				expect(contains([ 1, 2 ], 1)).toBe(true);
@@ -591,90 +497,73 @@ describe('project-2.js', () => {
 				expect(contains([ 1, 2 ], 3)).toBe(false);
 			});
 		});
+
+		describe('Calling with non array type as the first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { contains(1, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains(NaN, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains('', 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains(false, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains({}, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains(() => {}, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains(null, 'item'); }).toThrow(nonArrayTypeError);
+				expect(() => { contains(undefined, 'item'); }).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an undefined, null, or NaN type for the second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { contains([], undefined); }).toThrow(undefinedArgumentError);
+				expect(() => { contains([], null); }).toThrow(undefinedArgumentError);
+				expect(() => { contains([], NaN); }).toThrow(undefinedArgumentError);
+			});
+		});
 	});
 
 	// addNumbers()
 	describe('addNumbers()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					addNumbers('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addNumbers(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addNumbers({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					addNumbers(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					addNumbers(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with an array type', () => {
-			it('should throw an error if a member of the array is not a number', () => {
-				expect(() => {
-					addNumbers([ 1, 'two' ]);
-				}).toThrow(nonNumberTypeError);
+			it('should return the sum of the numbers in the array', () => {
+				expect(addNumbers([ 1, 2 ])).toBe(3);
+				expect(addNumbers([ 0, -2, 2 ])).toBe(0);
+				expect(addNumbers([ 0.1, 0.2 ])).toBeCloseTo(0.3);
 			});
 
 			it('should return 0 if the array is empty', () => {
 				expect(addNumbers([])).toBe(0);
 			});
 
-			it('should return the sum of the numbers in the array', () => {
-				expect(addNumbers([ 1, 2 ])).toBe(3);
-				expect(addNumbers([ 0, -2, 2 ])).toBe(0);
-				expect(addNumbers([ 0.1, 0.2 ])).toBeCloseTo(0.3);
+			describe('Calling with non number type as an element in the array', () => {
+				it('should throw an error', () => {
+					expect(() => { addNumbers([ '' ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ NaN ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ false ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ [] ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ () => {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ null ]); }).toThrow(nonNumberTypeError);
+					expect(() => { addNumbers([ undefined ]); }).toThrow(nonNumberTypeError);
+				});
+			});
+		});
+
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { addNumbers(1); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers(''); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers(false); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers({}); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers(null); }).toThrow(nonArrayTypeError);
+				expect(() => { addNumbers(undefined); }).toThrow(nonArrayTypeError);
 			});
 		});
 	});
 
 	// averageTestScore()
 	describe('averageTestScore()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					averageTestScore('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					averageTestScore(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					averageTestScore({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					averageTestScore(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					averageTestScore(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with an array type', () => {
-			it('should throw an error if a member of the array is not a number', () => {
-				expect(() => {
-					averageTestScore([ 1, 'two' ]);
-				}).toThrow(nonNumberTypeError);
-			});
-
-			it('should return 0 if the array is empty', () => {
-				expect(averageTestScore([])).toBe(0);
-			});
-
 			it('should return the average of the numbers in the array', () => {
 				expect(averageTestScore([ 1, 2, 3 ])).toBe(2);
 				expect(averageTestScore([ 0 ])).toBe(0);
@@ -682,54 +571,80 @@ describe('project-2.js', () => {
 				expect(averageTestScore([ 0.1, -0.2 ])).toBe(-0.05);
 				expect(averageTestScore([ -0.1, -0.2 ])).toBeCloseTo(-0.15);
 			});
+
+			it('should return 0 if the array is empty', () => {
+				expect(averageTestScore([])).toBe(0);
+			});
+
+			describe('Calling with non number type as an element in the array', () => {
+				it('should throw an error', () => {
+					expect(() => { averageTestScore([ '' ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ NaN ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ false ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ [] ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ () => {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ null ]); }).toThrow(nonNumberTypeError);
+					expect(() => { averageTestScore([ undefined ]); }).toThrow(nonNumberTypeError);
+				});
+			});
+		});
+
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { averageTestScore(1); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore(''); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore(false); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore({}); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore(null); }).toThrow(nonArrayTypeError);
+				expect(() => { averageTestScore(undefined); }).toThrow(nonArrayTypeError);
+			});
 		});
 	});
 
 	// largestNumber()
 	describe('largestNumber()', () => {
-		describe('Calling with a string, number, object, null or undefined type', () => {
-			it('should throw an error', () => {
-				expect(() => {
-					largestNumber('one', 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					largestNumber(1, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					largestNumber({ 'one': 1 }, 1);
-				}).toThrow(nonArrayTypeError);
-
-				expect(() => {
-					largestNumber(null, 1);
-				}).toThrow(nonArrayTypeError);
-	
-				expect(() => {
-					largestNumber(undefined, 1);
-				}).toThrow(nonArrayTypeError);
-			});
-		});
-
 		describe('Calling with an array type', () => {
-			it('should throw an error if the array is empty', () => {
-				expect(() => {
-					largestNumber([]);
-				}).toThrow(emptyArrayError);
-			});
-
-			it('should throw an error if a member of the array is not a number', () => {
-				expect(() => {
-					largestNumber([ 1, 'two' ]);
-				}).toThrow(nonNumberTypeError);
-			});
-
 			it('should return the biggest of the numbers in the array', () => {
 				expect(largestNumber([ 1, 2, 3 ])).toBe(3);
 				expect(largestNumber([ 0 ])).toBe(0);
 				expect(largestNumber([ 0.1, 0.2 ])).toBe(0.2);
 				expect(largestNumber([ 0.1, -0.2 ])).toBe(0.1);
 				expect(largestNumber([ -0.1, -0.2 ])).toBe(-0.1);
+			});
+
+			it('should throw an error if the array is empty', () => {
+				expect(() => {
+					largestNumber([]);
+				}).toThrow(emptyArrayError);
+			});
+
+			describe('Calling with non number type as an element in the array', () => {
+				it('should throw an error', () => {
+					expect(() => { largestNumber([ '' ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ NaN ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ false ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ [] ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ () => {} ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ null ]); }).toThrow(nonNumberTypeError);
+					expect(() => { largestNumber([ undefined ]); }).toThrow(nonNumberTypeError);
+				});
+			});
+		});
+
+		describe('Calling with non array type', () => {
+			it('should throw an error', () => {
+				expect(() => { largestNumber(1); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber(NaN); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber(''); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber(false); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber({}); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber(() => {}); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber(null); }).toThrow(nonArrayTypeError);
+				expect(() => { largestNumber(undefined); }).toThrow(nonArrayTypeError);
 			});
 		});
 	});
