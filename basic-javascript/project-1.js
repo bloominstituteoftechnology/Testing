@@ -1,20 +1,61 @@
 /* eslint-disable arrow-parens */
 
+const checkForNumber = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
+};
+
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
+  checkForNumber(num);
+  
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
+  
   return num - 5;
 };
 
+
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2) {
+    return null;
+  }
+
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    // throw new Error('value must be a string');
+    return null;
+  }
   return str1.length === str2.length;
+
 };
+//areSameLength notes
+//add check for string argument
 
 const areEqual = (x, y) => {
   return x === y;
 };
+//areEqual notes
+// add check for number argument
 
 const lessThanNinety = num => {
   if (num < 90) {
@@ -22,6 +63,7 @@ const lessThanNinety = num => {
   }
   return false;
 };
+// add check for number argument
 
 const greaterThanFifty = num => {
   if (num > 50) {
@@ -29,6 +71,7 @@ const greaterThanFifty = num => {
   }
   return false;
 };
+// add check for number argument
 
 const add = (x, y) => {
   return x + y;
@@ -137,5 +180,6 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
+  checkForNumber,
 };
