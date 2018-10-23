@@ -102,7 +102,7 @@ const wordsToSentence = words => {
     if (i === 0) {
       newSentence += `${words[i]}`;
     } else {
-      newSentence += ` ${words[i]}`;
+      newSentence += `${words[i]}`;
     }
   }
   return newSentence;
