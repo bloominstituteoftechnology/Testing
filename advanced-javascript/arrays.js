@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars, max-len */
 
 const each = (elements, cb) => {
+  const result = [];
   for (let i = 0; i < elements.length; i++) {
-    cb(elements[i], i);
+    result.push(cb(elements[i], i));
   }
+  return result;
 };
 
 const map = (elements, cb) => {
