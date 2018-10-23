@@ -48,3 +48,11 @@ describe("is in range of 20 to 50", () => {
 		expect(funcs.isInRange("3")).toBe(false);
 	});
 });
+describe("is an integar", () => {
+	test("is an integar", () => {
+		expect(funcs.isInteger(40)).toBe(true);
+	});
+	test("is not an integar", () => {
+		expect(funcs.isInteger(5.5)).toBe(false);
+	});
+});
