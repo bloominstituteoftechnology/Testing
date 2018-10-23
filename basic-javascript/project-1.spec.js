@@ -427,5 +427,3 @@ describe('project-1.js', () => {
     })
   })
 })
-
-// add error tests for subtract and fixed code for invalid states

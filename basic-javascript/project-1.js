@@ -192,6 +192,10 @@ const getRectangularPrismVolume = (length, width, height) => {
   }
 };
 
+// const someApiCall = () => {
+//   return new Promise(resolve => resolve => setTimeout(resolve, 250))
+// };
+
 module.exports = {
   multiplyByTen,
   subtractFive,
@@ -217,5 +221,6 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
+  // someApiCall
 };
