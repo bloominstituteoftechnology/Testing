@@ -59,7 +59,15 @@ const isPrime = num => {
   if (num === 1 || num === 0) {
     return false;
   }
-  for (let i = 2; i < num; i++) {
+
+  if (num === 2 || num === 3) {
+    return true;
+  }
+
+  if (num % 2 === 0 || num % 3 === 0) {
+    return false;
+  }
+  for (let i = 5; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
       return false;
     }
@@ -167,5 +175,5 @@ module.exports = {
   contains,
   addNumbers,
   averageTestScore,
-  largestNumber
+  largestNumber,
 };

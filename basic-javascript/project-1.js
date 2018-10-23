@@ -1,14 +1,26 @@
 /* eslint-disable arrow-parens */
 
-const multiplyByTen = num => {
+const multiplyByTen = (num = 0) => {
+  if (
+    Number.isNaN(Number(num)) ||
+    (typeof num !== 'string' && typeof num !== 'number')
+  )
+    throw new Error('argument must be a number');
   return num * 10;
 };
 
-const subtractFive = num => {
+const subtractFive = (num = 0) => {
+  if (
+    Number.isNaN(Number(num)) ||
+    (typeof num !== 'string' && typeof num !== 'number')
+  )
+    throw new Error('argument must be a number');
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string')
+    throw new Error('arguments must be string');
   return str1.length === str2.length;
 };
 
@@ -39,6 +51,7 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
+  if (y === 0) throw new Error('Division by zero');
   return x / y;
 };
 
@@ -88,7 +101,7 @@ const addExclamationPoint = str => {
   return (str += '!');
 };
 
-const combineNames = (firstName, lastName) => {
+const combineNames = (firstName = '', lastName = '') => {
   return `${firstName} ${lastName}`;
 };
 
@@ -97,10 +110,12 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if (length * width < 0) return 0;
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (base * height < 0) return 0;
   return 0.5 * base * height;
 };
 
@@ -137,5 +152,5 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
 };
