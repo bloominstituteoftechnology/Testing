@@ -1,6 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+	if (typeof x !== 'number' || typeof y !== 'number') throw new Error('Numbers only!');
 	if (x > y) {
 		return x;
 	} else if (x === y) {

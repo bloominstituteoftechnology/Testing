@@ -1,6 +1,7 @@
 const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
+// TODO: Remove the .only when done writing all the tests
 describe.only('project-2.js', () => {
 	describe('', () => {
 		// const getBiggest = (x, y) => {
@@ -11,6 +12,26 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return y;
 		// };
+		// expected larger value
+		it('should return the larger of the provided values', () => {
+			const actual = funcs.getBiggest(2, 4);
+			expect(actual).toEqual(4);
+		});
+
+		// when equal
+		it('should return the second value when passed two equal values', () => {
+			const actual = funcs.getBiggest(3, 3);
+			expect(actual).toEqual(3);
+		});
+
+		// null or non-numeric values
+		it('should throw an error when passed a non-numeric value', () => {
+			expect(() => {
+				funcs.getBiggest(null, 3);
+				funcs.getBiggest('3', 2);
+				funcs.getBiggest(42, {});
+			}).toThrowError();
+		});
 	});
 
 	describe('greeting()', () => {
