@@ -115,3 +115,12 @@ describe('array operations', () => {
   });
 
 }); // array operations
+
+test('should combine words to form a sentence', () => {
+  const words = ['hello', 'there', 'hello!'];
+  const sentence = funcs.wordsToSentence(words);
+
+  expect(sentence).toBe('hello there hello!');
+});
+
+describe('')
