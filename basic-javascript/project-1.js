@@ -1,115 +1,189 @@
 /* eslint-disable arrow-parens */
 
+// helpers
+
+const areNums = (...vals) => {
+  return vals.every(val => {
+    return typeof val === 'number' && !isNaN(val);
+  });
+};
+
+const areStrs = (...vals) => {
+  return vals.every(val => {
+    return typeof val === 'string';
+  });
+};
+
+// given
+
 const multiplyByTen = num => {
-  return num * 10;
+  num = +num;
+  return areNums(num)
+    ? num * 10
+    : null;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  num = +num;
+  return areNums(num)
+    ? num - 5
+    : null;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  return areStrs(str1, str2)
+    ? str1.length === str2.length
+    : null;
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  x = +x, y = +y;
+  return areNums(x, y)
+    ? x === y
+    : null;
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
-  }
-  return false;
+  num = +num;
+  return areNums(num)
+    ? num < 90
+    : null;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
-  }
-  return false;
+  num = +num;
+  return areNums(num)
+    ? num > 50
+    : null;
 };
 
 const add = (x, y) => {
-  return x + y;
+  x = +x, y = +y;
+  return areNums(x, y)
+    ? x + y
+    : null;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  x = +x, y = +y;
+  return areNums(x, y)
+    ? x - y
+    : null;
 };
 
 const divide = (x, y) => {
-  return x / y;
+  x = +x, y = +y;
+  return areNums(x, y)
+    ? x / y
+    : null;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  x = +x, y = +y;
+  return areNums(x, y)
+    ? x * y
+    : null;
 };
 
 const getRemainder = (x, y) => {
-  return x % y;
+  x = +x, y = +y;
+  return areNums(x, y)
+    ? x % y
+    : null;
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+  num = +num;
+  return areNums(num)
+    ? num % 2 === 0
+    : null;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
-  }
-  return true;
+  num = +num;
+  return areNums(num)
+    ? num % 2 !== 0
+    : null;
 };
 
 const square = num => {
-  return num * num;
+  num = +num;
+  return areNums(num)
+    ? num * num
+    : null;
 };
 
 const cube = num => {
-  return num * num * num;
+  num = +num;
+  return areNums(num)
+    ? num ** 3
+    : null;
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  num = +num, exponent = +exponent;
+  return areNums(num, exponent)
+    ? num ** exponent
+    : null;
 };
 
 const roundNumber = num => {
-  return Math.round(num);
+  num = +num
+  return areNums(num)
+    ? Math.round(num)
+    : null;
 };
 
 const roundUp = num => {
-  return Math.ceil(num);
+  num = +num
+  return areNums(num)
+    ? Math.ceil(num)
+    : null;
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return areStrs(str)
+    ? (str += '!')
+    : null;
 };
 
-const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+const combineNames = (first, last) => {
+  return areStrs(first, last)
+    ? `${first} ${last}`
+    : null;
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+  return areStrs(name)
+    ? `Hello ${name}!`
+    : null;
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  length = +length, width = +width;
+  return areNums(length, width)
+    ? length * width
+    : null;
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  base = +base, height = +height;
+  return areNums(base, height)
+    ? 0.5 * base * height
+    : null;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  return areNums(radius)
+    ? Math.PI * radius ** 2
+    : null;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  width= +width, height = +height, length = +length;
+  return areNums(width, height, length)
+    ? width * height * length
+    : null;
 };
 
 module.exports = {

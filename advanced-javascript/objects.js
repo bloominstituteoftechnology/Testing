@@ -23,8 +23,8 @@ const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
 const invert = (obj) => {
   Object.keys(obj).forEach((key) => {
     const newKey = obj[key];
-    obj[newKey] = key;
     delete obj[key];
+    obj[newKey] = key;
   });
   return obj;
 };

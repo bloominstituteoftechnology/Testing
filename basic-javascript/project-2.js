@@ -1,12 +1,16 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
+  if (typeof x != 'number' || typeof y != 'number') {
+    return NaN;
+  } else {
+    if (x > y) {
+      return x;
+    } else if (x === y) {
+      return y;
+    }
     return y;
   }
-  return y;
 };
 
 const greeting = language => {
@@ -53,6 +57,7 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (isNaN(+num)) return NaN;
   if (num < 0) {
     return false;
   }
@@ -76,7 +81,7 @@ const returnLast = arr => {
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+  return Array.isArray(arr) ? arr.length : -1;
 };
 
 const incrementByOne = arr => {
@@ -87,12 +92,12 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
-  arr.push(item);
+  item !== undefined ? arr.push(item) : null;
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
-  arr.unshift(item);
+  item !== undefined ? arr.unshift(item) : null;
   return arr;
 };
 
@@ -105,7 +110,7 @@ const wordsToSentence = words => {
       newSentence += ` ${words[i]}`;
     }
   }
-  return newSentence;
+  return newSentence + '.';
 };
 
 const contains = (arr, item) => {
