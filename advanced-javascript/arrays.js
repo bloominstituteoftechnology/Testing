@@ -7,6 +7,14 @@ const {
 	emptyArrayError,
 } = require('../errors/index.js');
 
+// helper
+const argCheckForEachFunc = (elements, cb) => {
+	if (!Array.isArray(elements)) throw new Error(nonArrayTypeError);
+	if (typeof(cb) !== 'function') throw new Error(nonFunctionTypeError);
+	if (!elements.length) throw new Error(emptyArrayError);
+};
+
+
 const each = (elements, cb) => {
 	for (let i = 0; i < elements.length; i++) {
 		cb(elements[i], i);
@@ -14,9 +22,7 @@ const each = (elements, cb) => {
 };
 
 const map = (elements, cb) => {
-	if (!Array.isArray(elements)) throw new Error(nonArrayTypeError);
-	if (typeof(cb) !== 'function') throw new Error(nonFunctionTypeError);
-	if (!elements.length) throw new Error(emptyArrayError);
+	argCheckForEachFunc(elements, cb);
 	const mappedArr = [];
 	each(elements, item => {
 		mappedArr.push(cb(item));
@@ -25,9 +31,7 @@ const map = (elements, cb) => {
 };
 
 const reduce = (elements, cb, memo = elements.shift()) => {
-	if (!Array.isArray(elements)) throw new Error(nonArrayTypeError);
-	if (typeof(cb) !== 'function') throw new Error(nonFunctionTypeError);
-	if (!elements.length) throw new Error(emptyArrayError);
+	argCheckForEachFunc(elements, cb);
 	each(elements, item => {
 		memo = cb(memo, item);
 	});
@@ -35,10 +39,11 @@ const reduce = (elements, cb, memo = elements.shift()) => {
 };
 
 const find = (elements, cb) => {
-  for (let i = 0; i < elements.length; i++) {
-    if (cb(elements[i])) return elements[i];
-  }
-  return undefined;
+	argCheckForEachFunc(elements, cb);
+	for (let i = 0; i < elements.length; i++) {
+		if (cb(elements[i])) return elements[i].fruit;
+	}
+	return undefined;
 };
 
 const filter = (elements, cb) => {
