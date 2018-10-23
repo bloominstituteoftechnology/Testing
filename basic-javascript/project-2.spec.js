@@ -52,3 +52,58 @@ test('should return buzz if divisible by 5, fizz if divisible by 3, number other
 
   // probably should have made this its own suite
 });
+
+test('should return true iff a number is prime', () => {
+  const num = 7;
+  const primeCheck = funcs.isPrime(num);
+
+  expect(primeCheck).toBe(true);
+});
+
+describe('array operations', () => {
+
+  test('should return the first item in a given array', () => {
+    const array = ['one', 'two', 'three', 'four'];
+    const first = funcs.returnFirst(array);
+
+    expect(first).toBe('one');
+  });
+
+  test('should return the last item in a given array', () => {
+    const array = ['one', 'two', 'three', 'four'];
+    const last = funcs.returnLast(array);
+
+    expect(last).toBe('four');
+  });
+
+  test('should return the length of an array', () => {
+    const array = ['one', 'two', 'three', 'four'];
+    const length = funcs.getArrayLength(array);
+
+    expect(length).toEqual(4);
+  });
+
+  test('should add one to each item in a given array', () => {
+    const array = [1, 2, 3, 4];
+    const increment = funcs.incrementByOne(array);
+
+    expect(increment).toEqual([2, 3, 4, 5]);
+  });
+
+  test('should add item to the beginning of an array', () => {
+    const array = ['one', 'two', 'three', 'four'];
+    const toAdd = 'zero';
+    const add = funcs.addItemToFront(array, toAdd);
+
+    expect(add).toEqual(['zero', 'one', 'two', 'three', 'four']); // do not use toBe, checking for deep equality
+  });
+
+  test('should add item to the end of an array', () => {
+    const array = ['one', 'two', 'three', 'four'];
+    const toAdd = 'zero';
+    const add = funcs.addItemToArray(array, toAdd);
+
+    expect(add).toEqual(['one', 'two', 'three', 'four', 'zero']);
+  });
+
+}); // array operations
