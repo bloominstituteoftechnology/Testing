@@ -23,3 +23,14 @@ describe("greeting(language)", () => {
 		expect(funcs.greeting("Italian")).toBe("Hello!");
 	});
 });
+describe("is ten or five", () => {
+	test("is ten", () => {
+		expect(funcs.isTenOrFive(10)).toBe(true);
+	});
+	test("is five", () => {
+		expect(funcs.isTenOrFive(5)).toBe(true);
+	});
+	test("is not 10 or 5", () => {
+		expect(funcs.isTenOrFive(25)).toBe(false);
+	});
+});
