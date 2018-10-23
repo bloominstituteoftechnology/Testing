@@ -1,7 +1,7 @@
 const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
-describe('project-2.js', () => {
+describe.skip('project-2.js', () => {
     describe('getBiggest()', () =>{
         it('Should return biggest value between 2 arguments.', () => {
             const actual = funcs.getBiggest(4, 5);

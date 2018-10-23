@@ -1,7 +1,7 @@
 const helpers = require('./project-1');
 
 // start testing!
-describe('project-1.js', () => {
+describe.skip('project-1.js', () => {
     const apple = 'apple';
     const guava = 'guava';
     const pear = 'pear';
@@ -474,9 +474,9 @@ describe('project-1.js', () => {
             const actual = () => helpers.getCircleArea();
             expect(actual).toThrow();
         });
-        it('Should throw error when called with multiple arguments.', () => {
-            const actual = () => helpers.getCircleArea(4, 5);
-            expect(actual).toThrow();
+        it('Should calculate just first argument when called with multiple arguments.', () => {
+            const actual = helpers.getCircleArea(4, 5);
+            expect(actual).toBeCloseTo(50.2655);
         });
     });
     describe('getRectangularPrismVolume()', () => {
@@ -501,9 +501,9 @@ describe('project-1.js', () => {
             const actual = () => helpers.getRectangularPrismVolume(4, 5);
             expect(actual).toThrow();
         });
-        it('Should throw error when called with more then 3 arguments.', () => {
-            const actual = () => helpers.getRectangularPrismVolume(4, 5, 6, 7);
-            expect(actual).toThrow();
+        it('Should calculate with just first 3 arguments when called with more then 3 arguments.', () => {
+            const actual = helpers.getRectangularPrismVolume(4, 5, 6, 7);
+            expect(actual).toEqual(120);
         });
     });
 });

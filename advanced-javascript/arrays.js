@@ -1,12 +1,21 @@
 /* eslint-disable no-unused-vars, max-len */
 
 const each = (elements, cb) => {
+  // for (let i = 0; i < elements.length; i++) {
+  //   cb(elements[i], i);
+  // }
+  if(!elements || !cb || !(elements instanceof Array) || typeof cb!=='function'){
+    throw new Error('missing array and/or callback');
+  }
   for (let i = 0; i < elements.length; i++) {
-    cb(elements[i], i);
+    elements[i] = cb(elements[i]);
   }
 };
 
 const map = (elements, cb) => {
+  if(!elements || !cb || !(elements instanceof Array) || typeof cb!=='function'){
+    throw new Error('missing array and/or callback');
+  }
   const mappedArr = [];
   each(elements, item => {
     mappedArr.push(cb(item));
