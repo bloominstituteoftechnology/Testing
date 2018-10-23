@@ -57,6 +57,9 @@ describe('project-1.js', () => {
 
         const actual = helpers.lessThanNinety(89);
         expect(actual).toBe(expected);
+
+        expect(helpers.lessThanNinety('89')).toBe(true);
+        expect(helpers.lessThanNinety(undefined)).toBe(undefined);
     })
 
     it('should check to see if num is greater than fifety', () => {
@@ -64,6 +67,8 @@ describe('project-1.js', () => {
 
         const actual = helpers.greaterThanFifty(51);
         expect(actual).toBe(expected);
+        expect(helpers.greaterThanFifty('89')).toBe(true);
+        expect(helpers.greaterThanFifty(undefined)).toBe(undefined);
     })
 
     it('should add x and y', () => {
@@ -71,6 +76,9 @@ describe('project-1.js', () => {
 
         const actual = helpers.add(5,5);
         expect(actual).toEqual(expected);
+        expect(helpers.add(undefined, 5)).toBe(null);
+        expect(helpers.add(5, undefined)).toBe(null);
+        expect(helpers.add(5)).toBe(null);
 
     })
 
@@ -79,6 +87,9 @@ describe('project-1.js', () => {
 
         const actual = helpers.subtract(30, 21);
         expect(actual).toEqual(expected);
+        expect(helpers.subtract(undefined, 5)).toBe(null);
+        expect(helpers.subtract(5, undefined)).toBe(null);
+        expect(helpers.subtract(5)).toBe(null);
     })
 
     it('should divide x by y', () => {
@@ -86,6 +97,9 @@ describe('project-1.js', () => {
 
         const actual = helpers.divide(24, 6);
         expect(actual).toEqual(expected);
+        expect(helpers.divide(undefined, 5)).toBe(null);
+        expect(helpers.divide(5, undefined)).toBe(null);
+        expect(helpers.divide(5)).toBe(null);
     })
 
 
@@ -94,6 +108,9 @@ describe('project-1.js', () => {
 
         const actual = helpers.multiply(3, 3);
         expect(actual).toEqual(expected);
+        expect(helpers.multiply(undefined, 5)).toBe(null);
+        expect(helpers.multiply(5, undefined)).toBe(null);
+        expect(helpers.multiply(5)).toBe(null);
     })
 
 
@@ -102,6 +119,9 @@ describe('project-1.js', () => {
 
         const actual = helpers.getRemainder(24, 7);
         expect(actual).toEqual(expected);
+        expect(helpers.getRemainder(undefined, 5)).toBe(null);
+        expect(helpers.getRemainder(5, undefined)).toBe(null);
+        expect(helpers.getRemainder(5)).toBe(null);
     })
 
     it('should check to see if num is even', () => {

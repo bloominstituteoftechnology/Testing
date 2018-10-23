@@ -31,6 +31,8 @@ const areEqual = (x, y) => {
 const lessThanNinety = num => {
   if (num < 90) {
     return true;
+  } else if (!num){
+    return undefined;
   }
   return false;
 };
@@ -38,27 +40,44 @@ const lessThanNinety = num => {
 const greaterThanFifty = num => {
   if (num > 50) {
     return true;
+  } else if (!num){
+    return undefined;
   }
   return false;
 };
 
 const add = (x, y) => {
+  if(!x || !y || typeof x === undefined || typeof y === undefined){
+    return null;
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if(!x || !y || typeof x === undefined || typeof y === undefined){
+    return null;
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
+  if(!x || !y || typeof x === undefined || typeof y === undefined){
+    return null;
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if(!x || !y || typeof x === undefined || typeof y === undefined){
+    return null;
+  }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if(!x || !y || typeof x === undefined || typeof y === undefined){
+    return null;
+  }
   return x % y;
 };
 
