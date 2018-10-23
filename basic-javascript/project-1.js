@@ -31,8 +31,8 @@ const areSameLength = (str1, str2) => {
 };
 
 const areEqual = (x, y) => {
-  if (typeof x === "undefined" || typeof y === "undefined"){
-    throw new Error('values must not be null');
+  if (typeof x === "undefined" || typeof y === "undefined" || typeof x === null || typeof y === null){
+    throw new Error('values must be defined');
   }
   if (typeof x ==="object" && typeof y ==="object"){
     return JSON.stringify(x)===JSON.stringify(y);
@@ -249,7 +249,7 @@ const getCircleArea = radius => {
   if(typeof radius!=='number'){
     throw new Error('values must be of number type');
   }
-  return Math.PI * radius * radius;
+  return (Math.PI * radius * radius).toFixed(2);
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
@@ -260,6 +260,18 @@ const getRectangularPrismVolume = (length, width, height) => {
     throw new Error('values must be of number type');
   }
   return width * height * length;
+
+  const someApiCall = () =>{
+    return new Promise(resolve=>resolve=>setTimeout(resolve,250));
+  }
+
+  const areSameLength= (str1,str2) =>{
+    if (!str1 || !str2 || typeof str1 != 'string' || typeof str2 != 'string'){
+      return null;
+    }
+    return str1.length === str2.length;
+  }
+
 };
 
 module.exports = {
@@ -288,4 +300,5 @@ module.exports = {
   getTriangleArea,
   getCircleArea,
   getRectangularPrismVolume
+  //,someApiCall
 };

@@ -3,13 +3,9 @@ const helpers = require('./project-1');
 // start testing!
 describe('project-1.js', ()=>{
     describe('jest', ()=>{
-        test('should run tests', () =>{
-            
+        test('should run tests', () =>{ 
         });
-        
-        it ('should run tests using it instead of test',()=>{
-            
-        })
+        it ('should run tests using it instead of test',()=>{})
     })
     describe('multiplyByTen', ()=>{
         it ('should multiply provided number by ten', ()=>{
@@ -17,13 +13,11 @@ describe('project-1.js', ()=>{
             const actual = helpers.multiplyByTen(10);
             expect(actual).toEqual(expected);
         })
-        
         it('should return 0 when called with no value', ()=>{
             const product = helpers.multiplyByTen();
             
             expect(product).toBe(0);
         })
-
         it('should throw error when called with a string',()=>{
             expect(()=>{helpers.multiplyByTen('five');}).toThrow();
         })
@@ -329,7 +323,7 @@ describe('project-1.js', ()=>{
     describe('getCircleArea', ()=>{
         it ('should return the area of a circle based on a radius', ()=>{
             expect(helpers.getCircleArea(3)
-            ).toEqual(9*Math.PI);
+            ).toEqual((9*Math.PI).toFixed(2));
         })
         it('should throw error when called with no values', ()=>{
             expect(()=>{helpers.getCircleArea();}).toThrow();
@@ -354,5 +348,96 @@ describe('project-1.js', ()=>{
             expect(()=>{helpers.getRectangularPrismVolume(3,true,8);}).toThrow();
         })
     })
-
+    
+    
 })
+
+//3 ways to run async tests
+    // describe.skip('async tests', ()=>{
+    //     it('using a callback', done=>{
+    //         setTimeout(()=>{
+    //             done();
+    //         }, 500)
+    //     });
+    //     it('using promises', ()=>{
+    //         return new Promise((resolve =>
+    //             setTimeout(resolve, 250)
+    //         ))
+    //     })
+    //     it('using async/await', async ()=>{
+    //         await new Promise((resolve =>
+    //             setTimeout(resolve, 500)))
+    //     })
+    // })
+
+// describe.skip('tdd practice', ()=>{
+
+//     describe('areSameLength', ()=>{
+//         it('should rturn tru if calld with strings of th sam length', ()=>{
+//             const str1 = 'foo';
+//             const str2 = 'bar';
+//             const actual = helpers.areSameLength(str1, str2);
+            
+//             expect(actual).toBe(true);
+//         })
+        
+//         it('should return false if called with strings of different length', ()=>{
+//             expect(helpers.areSameLength('ab','a')).toBe(false);
+//         })
+        
+//         it('should return null if one or both arguments is undefined', ()=>{
+//             expect(helpers.areSameLength()).toBe(null);
+//             expect(helpers.areSameLength(null,'a')).toBe(null);
+//             expect(helpers.areSameLength(undefined, 'a')).toBe(null);
+//             expect(helpers.areSameLength(null, 'a')).toBe(null);
+//             expect(helpers.areSameLength('a', null)).toBe(null);    
+//         })
+            
+//         it('should retunr null if called with a non-string argument',()=>{
+//             expect(helpers.areSameLength({},'a')).toBe(null);
+//             expect(helpers.areSameLength([],'a')).toBe(null);
+//             expect(helpers.areSameLength(false,'a')).toBe(null);
+//             expect(helpers.areSameLength('a', {})).toBe(null);
+//             expect(helpers.areSameLength('a', [])).toBe(null);
+//             expect(helpers.areSameLength('a',true)).toBe(null);
+//             expect(helpers.areSameLength(1,2)).toBe(null);
+//             expect(helpers.areSameLength(()=>{})).toBe(null);
+//         })
+//     })
+    
+    // describe.only('areEqual', ()=>{
+    //     it ('should determine if two objects are equal', ()=>{
+    //             //string types
+    //             expect(helpers.areEqual('Tsai', 'Huang')).toEqual(false);
+    //             expect(helpers.areEqual('Tsai','Tsai')).toEqual(true);
+    //             //number type
+    //             expect(helpers.areEqual(5, 50)).toEqual(false);
+    //             expect(helpers.areEqual(5, 5)).toEqual(true);
+    //             //boolean type
+    //             expect(helpers.areEqual(true, false)).toEqual(false);
+    //             expect(helpers.areEqual(false, false)).toEqual(true);
+    //             //different variable type
+    //             expect(helpers.areEqual(true, 'true')).toEqual(false);
+    //             expect(helpers.areEqual(true, 0)).toEqual(false);
+    //             //object type
+    //             expect(helpers.areEqual({greeting: {English:"hello", Spanish:"hola"}}, {greeting: "goodbye"})).toEqual(false);
+    //             expect(helpers.areEqual({greeting:{English:"hello", Spanish:"hola"}}, {greeting: {English:"hello", Spanish:"hola"}})).toEqual(true); //deep comparison
+    //             //array type
+    //             expect(helpers.areEqual([1,2,3], [1,2,3,4])).toEqual(false);
+    //             expect(helpers.areEqual([[1, 2],[3,4]], [[1, 2],[3,5]])).toEqual(true);
+    //             expect(helpers.areEqual([[1, 2],[3,4]], [[1, 2],[3,4]])).toEqual(true);
+    //             //function type
+    //             expect(helpers.areEqual(()=>{console.log('hello')}, ()=>{console.log('goodbye')})).toEqual(false);
+    //             expect(helpers.areEqual(()=>{return true}, ()=>{return false})).toEqual(false);
+    //             expect(helpers.areEqual(()=>{return true}, ()=>{return true})).toEqual(true);
+    //         })
+    //     it('should throw error when called with no values', ()=>{   
+    //         expect(()=>{helpers.areEqual();}).toThrow();
+    //         expect(()=>{helpers.areEqual(undefined, 2);}).toThrow();
+    //         expect(()=>{helpers.areEqual(3, undefined);}).toThrow();
+    //         expect(()=>{helpers.areEqual(null, 4);}).toThrow();
+    //         expect(()=>{helpers.areEqual(5, null);}).toThrow();
+
+    //     })
+
+    // })
