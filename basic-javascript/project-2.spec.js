@@ -25,6 +25,7 @@ describe('Testing project-2.js', () => {
 		contains,
 		addNumbers,
 		averageTestScore,
+		largestNumber,
 	} = funcs;
 
 	// getBiggest()
@@ -676,6 +677,55 @@ describe('Testing project-2.js', () => {
 				expect(averageTestScore([ 0.1, 0.2 ])).toBeCloseTo(0.15);
 				expect(averageTestScore([ 0.1, -0.2 ])).toBe(-0.05);
 				expect(averageTestScore([ -0.1, -0.2 ])).toBeCloseTo(-0.15);
+			});
+		});
+	});
+
+	// largestNumber()
+	describe('Testing largestNumber()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					largestNumber('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					largestNumber(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					largestNumber({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					largestNumber(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					largestNumber(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an array type', () => {
+			it('should throw an error if the array is empty', () => {
+				expect(() => {
+					largestNumber([]);
+				}).toThrow(emptyArrayError);
+			});
+
+			it('should throw an error if a member of the array is not a number', () => {
+				expect(() => {
+					largestNumber([ 1, 'two' ]);
+				}).toThrow(nonNumberTypeError);
+			});
+
+			it('should return the biggest of the numbers in the array', () => {
+				expect(largestNumber([ 1, 2, 3 ])).toBe(3);
+				expect(largestNumber([ 0 ])).toBe(0);
+				expect(largestNumber([ 0.1, 0.2 ])).toBe(0.2);
+				expect(largestNumber([ 0.1, -0.2 ])).toBe(0.1);
+				expect(largestNumber([ -0.1, -0.2 ])).toBe(-0.1);
 			});
 		});
 	});

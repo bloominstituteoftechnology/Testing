@@ -174,32 +174,35 @@ const averageTestScore = testScores => {
 };
 
 const largestNumber = numbers => {
-  let biggestInteger = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
-      biggestInteger = numbers[i];
-    }
-  }
-  return biggestInteger;
+	if (!Array.isArray(numbers)) throw new Error(nonArrayTypeError);
+	if (!numbers.length) throw new Error(emptyArrayError);
+	let biggestNumber = numbers[0];
+	for (let i = 0; i < numbers.length; i++) {
+		if (typeof(numbers[i]) !== 'number') throw new Error(nonNumberTypeError);
+		if (numbers[i] > biggestNumber) {
+			biggestNumber = numbers[i];
+		}
+	}
+	return biggestNumber;
 };
 
 module.exports = {
-  getBiggest,
-  greeting,
-  isTenOrFive,
-  isInRange,
-  isInteger,
-  fizzBuzz,
-  isPrime,
-  returnFirst,
-  returnLast,
-  getArrayLength,
-  incrementByOne,
-  addItemToArray,
-  addItemToFront,
-  wordsToSentence,
-  contains,
-  addNumbers,
-  averageTestScore,
-  largestNumber
+	getBiggest,
+	greeting,
+	isTenOrFive,
+	isInRange,
+	isInteger,
+	fizzBuzz,
+	isPrime,
+	returnFirst,
+	returnLast,
+	getArrayLength,
+	incrementByOne,
+	addItemToArray,
+	addItemToFront,
+	wordsToSentence,
+	contains,
+	addNumbers,
+	averageTestScore,
+	largestNumber,
 };
