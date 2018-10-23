@@ -2,6 +2,7 @@ const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
+//============ BIGGEST #
 describe('getBiggest()', () => {
     it('should compare two numbers and return the biggest number', () => {
         const expected = 25;
@@ -10,6 +11,7 @@ describe('getBiggest()', () => {
     });
 });
 
+//============ GREETING
 describe('greeting()', () => {
     it('should return a greeting in chosen language', () => {
         const expected = 'Hola!';
@@ -18,6 +20,7 @@ describe('greeting()', () => {
     });
 });
 
+//============ IS EQUAL TO 10 OR 5
 describe('isTenOrFive()', () => {
     it('should return true if number is equal to 10 or 5', () => {
         const expected = true;
@@ -31,6 +34,7 @@ describe('isTenOrFive()', () => {
     });
 });
 
+//============ IN RANGE OF 20-50
 describe('isInRange()', () => {
     it('should return true if number is less than 50 but greater than 20', () => {
         const expected = true;
@@ -44,6 +48,7 @@ describe('isInRange()', () => {
     });
 });
 
+//============ INTEGER
 describe('isInteger()', () => {
     it('should return true', () => {
         const expected = true;
@@ -57,6 +62,7 @@ describe('isInteger()', () => {
     });
 });
 
+//============ FIZZBUZZ
 describe('fizzBuzz()', () => {
     it('should return correct string', () => {
 	const expected1 = 'fizzbuzz';
@@ -74,6 +80,7 @@ describe('fizzBuzz()', () => {
     });
 });
 
+//============ PRIME
 describe('isPrime()', () => {
 it('should return correct boolean', () => {
 	const expected1 = true;
@@ -89,6 +96,7 @@ it('should return correct boolean', () => {
     });
 });
 
+//============ FIRST IN ARRAY
 describe('returnFirst()', () => {
     it('should return first item in an array', () => {
         const expected = 'first';
@@ -97,6 +105,7 @@ describe('returnFirst()', () => {
     });
 });
 
+//============ LAST IN ARRAY
 describe('returnlast()', () => {
     it('should return last item in an array', () => {
         const expected = 'third';
@@ -105,6 +114,7 @@ describe('returnlast()', () => {
     });
 });
 
+//============ LENGTH OF ARRAY (HOW MANY ITEMS)
 describe('getArrayLength()', () => {
     it('should return array length', () => {
         const expected = 4;
@@ -113,6 +123,7 @@ describe('getArrayLength()', () => {
     });
 });
 
+//============ ADD 1 TO EACH ITEM 
 describe('incrementByOne()', () => {
     it('should add one to each item in array', () => {
         const expected = [3,5,9];
@@ -121,6 +132,7 @@ describe('incrementByOne()', () => {
     });
 });
 
+//============ ADD ITEM TO END OF ARRAY
 describe('addItemToArray()', () => {
     it('should add item to the end of array', () => {
         const expected = ['peanut butter', 'jelly', 'bread'];
@@ -129,6 +141,7 @@ describe('addItemToArray()', () => {
     });
 });
 
+//============ ADD ITEM TO FRONT OF ARRAY
 describe('addItemToFront()', () => {
     it('should add item to the beginnning of array', () => {
         const expected = ['bread', 'peanut butter', 'jelly'];
@@ -137,6 +150,7 @@ describe('addItemToFront()', () => {
     });
 });
 
+//============ WORDS TO SENTENCE
 describe('wordsToSentence()', () => {
     it('should return new sentence', () => {
         const expected = 'H e l l o   W o r l d';
@@ -145,6 +159,7 @@ describe('wordsToSentence()', () => {
     });
 });
 
+//============ IF IT CONTAINS SOMETHING
 describe('contains()', () => {
     it('should return correct boolean', () => {
 	const expected1 = true;
@@ -156,6 +171,7 @@ describe('contains()', () => {
     });
 });
 
+//============ ADDS ALL NUMBERS TOGETHER
 describe('addNumbers()', () => {
     it('should return correct boolean', () => {
 	const expected = 15;
@@ -164,6 +180,7 @@ describe('addNumbers()', () => {
     });
 });
 
+//============ AVERAGE
 describe('averageTestScore()', () => {
     it('should return average test score', () => {
         const expected = 39.6;
@@ -172,6 +189,7 @@ describe('averageTestScore()', () => {
     });
 });
 
+//============ LARGEST # IN ARRAY
 describe('largestNumber()', () => {
     it('should return the largest number from array', () => {
         const expected = 49;
