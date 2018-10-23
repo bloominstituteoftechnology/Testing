@@ -13,6 +13,8 @@ const helpers = require('./project-1');
 //     });   
 // });
 
+
+describe.skip('used to skip testing this file', () => {
 // start testing!
 describe('multiplyByTen()', () => {
     it('should multiply provided number by ten', () => {
@@ -299,4 +301,6 @@ describe('getRectangularPrismVolume()', () => {
 
         expect(actual).toBe(expected);
     });
+});
+
 });
