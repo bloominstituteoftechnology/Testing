@@ -3,6 +3,7 @@ const funcs = require('./project-2');
 const nonNumberTypeError = 'Value must be a number.';
 const nonStringTypeError = 'Value must be a string.';
 const nonArrayTypeError = 'Value must be an array.';
+const emptyArrayError = 'Array cannot be empty.';
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Testing project-2.js', () => {
@@ -20,6 +21,7 @@ describe('Testing project-2.js', () => {
 		incrementByOne,
 		addItemToArray,
 		addItemToFront,
+		wordsToSentence,
 	} = funcs;
 
 	// getBiggest()
@@ -284,7 +286,7 @@ describe('Testing project-2.js', () => {
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
 					returnFirst([]);
-				}).toThrow('Array cannot be empty.');
+				}).toThrow(emptyArrayError);
 			});
 
 			it('should return the first value of the array', () => {
@@ -325,7 +327,7 @@ describe('Testing project-2.js', () => {
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
 					returnLast([]);
-				}).toThrow('Array cannot be empty.');
+				}).toThrow(emptyArrayError);
 			});
 
 			it('should return the last value of the array', () => {
@@ -401,7 +403,7 @@ describe('Testing project-2.js', () => {
 			it('should throw an error if the array is empty', () => {
 				expect(() => {
 					incrementByOne([]);
-				}).toThrow('Array cannot be empty.');
+				}).toThrow(emptyArrayError);
 			});
 
 			it('should return the length of the array', () => {
@@ -493,6 +495,45 @@ describe('Testing project-2.js', () => {
 				expect(addItemToFront([], 1)).toEqual([ 1 ]);
 				expect(addItemToFront([ 'one' ], 'two')).toEqual([ 'two', 'one' ]);
 				expect(addItemToFront([ { 'one': 1 }, { 'two': 2 } ], { 'three': 3 })).toEqual([ { 'three': 3 }, { 'one': 1 }, { 'two': 2 } ]);
+			});
+		});
+	});
+
+	// wordsToSentence()
+	describe('Testing wordsToSentence()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					wordsToSentence('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					wordsToSentence(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					wordsToSentence({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					wordsToSentence(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					wordsToSentence(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an array type', () => {
+			it('should throw an error if the array is empty', () => {
+				expect(() => {
+					returnFirst([]);
+				}).toThrow(emptyArrayError);
+			});
+
+			it('should return a string with all the words in the array joined by a space', () => {
+				expect(wordsToSentence(['This', 'is', 'a', 'sentence.'])).toEqual('This is a sentence.');
 			});
 		});
 	});

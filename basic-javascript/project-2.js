@@ -3,6 +3,7 @@
 const nonNumberTypeError = 'Value must be a number.';
 const nonStringTypeError = 'Value must be a string.';
 const nonArrayTypeError = 'Value must be an array.';
+const emptyArrayError = 'Array cannot be empty.';
 
 const getBiggest = (x, y) => {
 	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);
@@ -80,13 +81,13 @@ const isPrime = num => {
 
 const returnFirst = arr => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (!arr.length) throw new Error('Array cannot be empty.');
+	if (!arr.length) throw new Error(emptyArrayError);
 	return arr[0];
 };
 
 const returnLast = arr => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (!arr.length) throw new Error('Array cannot be empty.');
+	if (!arr.length) throw new Error(emptyArrayError);
 	return arr[arr.length - 1];
 };
 
@@ -97,7 +98,7 @@ const getArrayLength = arr => {
 
 const incrementByOne = arr => {
 	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
-	if (!arr.length) throw new Error('Array cannot be empty.');
+	if (!arr.length) throw new Error(emptyArrayError);
 	for (let i = 0; i < arr.length; i++) {
 		if (typeof(arr[i]) !== 'number') throw new Error(nonNumberTypeError);
 		arr[i]++;
@@ -120,15 +121,18 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
-  for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
-    } else {
-      newSentence += ` ${words[i]}`;
-    }
-  }
-  return newSentence;
+	if (!Array.isArray(words)) throw new Error(nonArrayTypeError);
+	if (!words.length) throw new Error(emptyArrayError);
+	let newSentence = '';
+	for (let i = 0; i < words.length; i++) {
+		if (typeof(words[i]) !== 'string') throw new Error(nonStringTypeError);
+		if (i === 0) {
+			newSentence += `${words[i]}`;
+		} else {
+			newSentence += ` ${words[i]}`;
+		}
+	}
+	return newSentence;
 };
 
 const contains = (arr, item) => {
