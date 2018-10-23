@@ -96,10 +96,13 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
-  }
-  return arr;
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	if (!arr.length) throw new Error('Array cannot be empty.');
+	for (let i = 0; i < arr.length; i++) {
+		if (typeof(arr[i]) !== 'number') throw new Error(nonNumberTypeError);
+		arr[i]++;
+	}
+	return arr;
 };
 
 const addItemToArray = (arr, item) => {

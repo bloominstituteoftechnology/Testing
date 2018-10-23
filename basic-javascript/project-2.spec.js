@@ -17,6 +17,7 @@ describe('Testing project-2.js', () => {
 		returnFirst,
 		returnLast,
 		getArrayLength,
+		incrementByOne,
 	} = funcs;
 
 	// getBiggest()
@@ -362,8 +363,48 @@ describe('Testing project-2.js', () => {
 		describe('Calling with array type', () => {
 			it('should return the length of the array', () => {
 				expect(getArrayLength([])).toBe(0);
-				expect(getArrayLength([ 2, { one: 1 } ])).toEqual(2);
-				expect(getArrayLength([ 2, [ 1, 2 ], 'three' ])).toEqual(3);
+				expect(getArrayLength([ 2, { one: 1 } ])).toBe(2);
+				expect(getArrayLength([ 2, [ 1, 2 ], 'three' ])).toBe(3);
+			});
+		});
+	});
+
+	// incrementByOne()
+	describe('Testing incrementByOne()', () => {
+		describe('Calling with a string, number, object, null or undefined type', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					incrementByOne('one');
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					incrementByOne(1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					incrementByOne({ 'one': 1 });
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					incrementByOne(null);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					incrementByOne(undefined);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with array type', () => {
+			it('should throw an error if the array is empty', () => {
+				expect(() => {
+					incrementByOne([]);
+				}).toThrow('Array cannot be empty.');
+			});
+
+			it('should return the length of the array', () => {
+				expect(incrementByOne([ 0, 1 ])).toEqual([ 1, 2 ]);
+				expect(incrementByOne([ -2, -5.1 ])).toEqual([ -1, -4.1 ]);
 			});
 		});
 	});
