@@ -1,6 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (!x || !y) {
+    return null;
+  }
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("value must be a number");
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -11,16 +17,19 @@ const getBiggest = (x, y) => {
 
 const greeting = language => {
   switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
+    case "German":
+      return "Guten Tag!";
+    case "Spanish":
+      return "Hola!";
     default:
-      return 'Hello!';
+      return "Hello!";
   }
 };
 
 const isTenOrFive = num => {
+  if (typeof num === "string") {
+    throw new Error("value must be a number");
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +37,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (typeof num === "string") {
+    throw new Error("value must be a number");
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -43,11 +55,11 @@ const isInteger = num => {
 
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return "fizzbuzz";
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return "buzz";
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return "fizz";
   }
   return num;
 };
@@ -68,18 +80,30 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (!arr) {
+    return null;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (!arr) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if (!arr) {
+    return null;
+  }
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if (!arr) {
+    return null;
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -87,17 +111,26 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
+  if (!arr || !item) {
+    throw new Error("Provide an array and an item");
+  }
   arr.push(item);
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
+  if (!arr || !item) {
+    throw new Error("Provide an array and an item");
+  }
   arr.unshift(item);
   return arr;
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
+  if (!words) {
+    throw new Error("Provide an array");
+  }
+  let newSentence = "";
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
@@ -122,6 +155,9 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
+  if (!numbers) {
+    throw new Error("Provide an array");
+  }
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOfNumbers += numbers[i];
@@ -130,6 +166,9 @@ const addNumbers = numbers => {
 };
 
 const averageTestScore = testScores => {
+  if (!testScores) {
+    throw new Error("Provide an array");
+  }
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
@@ -140,6 +179,9 @@ const averageTestScore = testScores => {
 };
 
 const largestNumber = numbers => {
+  if (!numbers) {
+    throw new Error("Provide an array");
+  }
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {
