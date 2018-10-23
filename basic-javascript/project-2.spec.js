@@ -146,4 +146,49 @@ describe('project-2.js', () => {
       expect(funcs.incrementByOne([100, 1000, 10000, 100000, 1, 0])).toEqual([101, 1001, 10001, 100001, 2, 1]);
     });
   });
+
+  describe('addItemToArray()', () => {
+    it('should return the array with the item provided in the last position in the array', () => {
+      expect(funcs.addItemToArray([60, 70, 80], 90)).toEqual([60, 70, 80, 90]);
+      expect(funcs.addItemToArray([100, 1000, 10000, 100000, 1, 0], 33)).toEqual([100, 1000, 10000, 100000, 1, 0, 33]);
+    });
+  });
+
+  describe('addItemToFront()', () => {
+    it('should return the array with the item provided in the 0th position in the array', () => {
+      expect(funcs.addItemToFront([60, 70, 80], 90)).toEqual([90, 60, 70, 80]);
+      expect(funcs.addItemToFront([100, 1000, 10000, 100000, 1, 0], 33)).toEqual([33, 100, 1000, 10000, 100000, 1, 0]);
+    });
+  });
+
+  describe('wordsToSentence()', () => {
+    it('should return an array with all words joined into one sentence', () => {
+      expect(funcs.wordsToSentence(["run", "forest", "run"], 0)).toBe("run forest run");
+    });
+  });
+
+  describe('contains()', () => {
+    it('should return true if the item is part of the array. If not, return false.', () => {
+      expect(funcs.contains([ 3, 4, 5], 0)).toBe(false);
+      expect(funcs.contains([ 3, 4, 5], 3)).toBe(true);
+    });
+  });
+
+  describe('addNumbers()', () => {
+    it('should add the numbers and return the sum', () => {
+      expect(funcs.addNumbers([25, 75, 30])).toEqual(130);
+    });
+  });
+
+  describe('averageTestScore()', () => {
+    it('should add the numbers and return the average', () => {
+      expect(funcs.averageTestScore([25, 75, 30])).toEqual(43.333333333333336);
+    });
+  });
+
+  describe('largestNumber()', () => {
+    it('should return the largest number in the array', () => {
+      expect(funcs.largestNumber([25, 75, 30])).toEqual(75);
+    });
+  });
 });
