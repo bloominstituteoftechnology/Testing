@@ -1,4 +1,4 @@
-/* eslint-disable arrow-parens */
+const axios = require('axios')
 
 const getBiggest = (x, y) => {
   if (x > y) {
@@ -136,7 +136,7 @@ const averageTestScore = testScores => {
     totalSumScores += testScores[i];
     numberOfScore++;
   }
-  return totalSumScores / numberOfScore;
+  return Math.floor(totalSumScores / numberOfScore);
 };
 
 const largestNumber = numbers => {
@@ -149,7 +149,16 @@ const largestNumber = numbers => {
   return biggestInteger;
 };
 
+const firstStarWars = () => {
+  let name = axios.get('https://swapi.co/api/people/')
+  .then(res => {
+   return res
+  })
+  return name
+}
+
 module.exports = {
+  firstStarWars,
   getBiggest,
   greeting,
   isTenOrFive,
