@@ -86,6 +86,16 @@ describe('project-1.js', () => {
 
             expect(actual).toEqual(expected);
         });
+        it('should return 0 when called with no value', () => {
+            const number = helpers.lessThanNinety();
+
+            expect(number).toBe(0);
+        })
+        it('should throw an error when called with a string', () => {
+            expect(() => {
+                helpers.lessThanNinety('five');
+            }).toThrow();
+        })
     })
 
     describe('greaterThanFifty()', () => {
@@ -97,6 +107,16 @@ describe('project-1.js', () => {
 
             expect(actual).toEqual(expected);
         });
+        it('should return 0 when called with no value', () => {
+            const number = helpers.greaterThanFifty();
+
+            expect(number).toBe(0);
+        })
+        it('should throw an error when called with a string', () => {
+            expect(() => {
+                helpers.greaterThanFifty('five');
+            }).toThrow();
+        })
     })
 
     describe('add()', () => {
@@ -163,6 +183,16 @@ describe('project-1.js', () => {
             const actual = helpers.isEven(100);
 
             expect(actual).toEqual(expected);
+        })
+        it('should return 0 when called with no value', () => {
+            const number = helpers.isEven();
+
+            expect(number).toBe(0);
+        })
+        it('should throw an error when called with a string', () => {
+            expect(() => {
+                helpers.isEven('five');
+            }).toThrow();
         })
     })
 

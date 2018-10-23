@@ -42,7 +42,7 @@ const lessThanNinety = num => {
   if (typeof num === 'string') {
     throw new Error("value must be a number!");
   }
-  
+
   if (num < 90) {
     return true;
   }
@@ -50,6 +50,13 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   if (num > 50) {
     return true;
   }
@@ -77,6 +84,13 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   if (num % 2 === 0) {
     return true;
   }
@@ -84,6 +98,13 @@ const isEven = num => {
 };
 
 const isOdd = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   if (num % 2 === 0) {
     return false;
   }
@@ -91,22 +112,57 @@ const isOdd = num => {
 };
 
 const square = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   return num * num;
 };
 
 const cube = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num === 'string') {
+    throw new Error("value must be a number!");
+  }
   return Math.ceil(num);
 };
 
