@@ -67,9 +67,72 @@ describe('fizzBuzz()', () => {
 	const actual2 = funcs.fizzBuzz(5)
 	const actual3 = funcs.fizzBuzz(3)
 	const actual4 = funcs.fizzBuzz(1)
-	expect(actual1).toBe(expected1)
-	expect(actual2).toBe(expected2)
-	expect(actual3).toBe(expected3)
-	expect(actual4).toBe(expected4)
+	expect(actual1).toEqual(expected1)
+	expect(actual2).toEqual(expected2)
+	expect(actual3).toEqual(expected3)
+	expect(actual4).toEqual(expected4)
+    });
+});
+
+describe('isPrime()', () => {
+it('should return correct boolean', () => {
+	const expected1 = true;
+	const expected2 = false
+	const actual1 = funcs.isPrime(-1)
+	const actual2 = funcs.isPrime(1)
+	const actual3 = funcs.isPrime(7)
+	const actual4 = funcs.isPrime(4)
+	expect(actual1).toEqual(expected2)
+	expect(actual2).toEqual(expected2)
+	expect(actual3).toEqual(expected1)
+	expect(actual4).toEqual(expected2)
+    });
+});
+
+describe('returnFirst()', () => {
+    it('should return first item in an array', () => {
+        const expected = 'first';
+        const actual = funcs.returnFirst(['first', 'second', 'third']);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('returnlast()', () => {
+    it('should return last item in an array', () => {
+        const expected = 'third';
+        const actual = funcs.returnLast(['first', 'second', 'third']);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('getArrayLength()', () => {
+    it('should return array length', () => {
+        const expected = 4;
+        const actual = funcs.getArrayLength(['first', 'second', 'third', 'fourth']);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('incrementByOne()', () => {
+    it('should add one to each item in array', () => {
+        const expected = [3,5,9];
+        const actual = funcs.incrementByOne([2,4,8]);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('addItemToArray()', () => {
+    it('should add item to the end of array', () => {
+        const expected = ['peanut butter', 'jelly', 'bread'];
+        const actual = funcs.addItemToArray(['peanut butter', 'jelly'], 'bread');
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('addItemToFront()', () => {
+    it('should add item to the beginnning of array', () => {
+        const expected = ['bread', 'peanut butter', 'jelly'];
+        const actual = funcs.addItemToFront(['peanut butter', 'jelly'], 'bread');
+        expect(actual).toEqual(expected);
     });
 });
