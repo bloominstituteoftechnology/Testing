@@ -1,4 +1,6 @@
 const funcs = require('./project-2');
+
+
 test('should run test', () => {
 
 })
@@ -134,3 +136,11 @@ it('should equal 88', () => {
 
     expect(actual).toEqual(88)
 })
+
+describe('firstStarWars', () => {
+    
+    it('should return lukeSkywalker', done => {
+        setTimeout(done, 5000)
+        expect(funcs.firstStarWars()).toEqual("Luke Skywalker")
+    });
+  })
