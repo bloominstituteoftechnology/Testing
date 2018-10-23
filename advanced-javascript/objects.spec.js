@@ -25,3 +25,11 @@ describe("mapObject", () => {
     ).toEqual({ age: 24, dobinseconds: 800, height: 400 });
   });
 });
+
+describe("pairs", () => {
+  test("this should return object and key pairs into pair arrays", () => {
+    expect(
+      objectFunctions.pairs({ dog: "fido", cat: "dave", orange: "annoying" })
+    ).toEqual([["dog", "fido"], ["cat", "dave"], ["orange", "annoying"]]);
+  });
+});
