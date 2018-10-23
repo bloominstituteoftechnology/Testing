@@ -19,6 +19,7 @@ describe('Testing project-2.js', () => {
 		getArrayLength,
 		incrementByOne,
 		addItemToArray,
+		addItemToFront,
 	} = funcs;
 
 	// getBiggest()
@@ -449,6 +450,49 @@ describe('Testing project-2.js', () => {
 				expect(addItemToArray([], 1)).toEqual([ 1 ]);
 				expect(addItemToArray([ 'one' ], 'two')).toEqual([ 'one', 'two' ]);
 				expect(addItemToArray([ { 'one': 1 }, { 'two': 2 } ], { 'three': 3 })).toEqual([ { 'one': 1 }, { 'two': 2 }, { 'three': 3 } ]);
+			});
+		});
+	});
+
+	// addItemToFront()
+	describe('Testing addItemToFront()', () => {
+		describe('Calling with a string, number, object, null or undefined type for the first argument', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					addItemToFront('one', 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addItemToFront(1, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addItemToFront({ 'one': 1 }, 1);
+				}).toThrow(nonArrayTypeError);
+
+				expect(() => {
+					addItemToFront(null, 1);
+				}).toThrow(nonArrayTypeError);
+	
+				expect(() => {
+					addItemToFront(undefined, 1);
+				}).toThrow(nonArrayTypeError);
+			});
+		});
+
+		describe('Calling with an undefined type for the second argument', () => {
+			it('should throw an error', () => {
+				expect(() => {
+					addItemToFront([ 'one' ], undefined);
+				}).toThrow('Item cannot be undefined.');
+			});
+		});
+
+		describe('Calling with an array as first argument and a non undefined type as the second argument', () => {
+			it('should return the array with the item unshifted to the front of it', () => {
+				expect(addItemToFront([], 1)).toEqual([ 1 ]);
+				expect(addItemToFront([ 'one' ], 'two')).toEqual([ 'two', 'one' ]);
+				expect(addItemToFront([ { 'one': 1 }, { 'two': 2 } ], { 'three': 3 })).toEqual([ { 'three': 3 }, { 'one': 1 }, { 'two': 2 } ]);
 			});
 		});
 	});

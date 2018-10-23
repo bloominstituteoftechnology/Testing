@@ -113,8 +113,10 @@ const addItemToArray = (arr, item) => {
 };
 
 const addItemToFront = (arr, item) => {
-  arr.unshift(item);
-  return arr;
+	if (!Array.isArray(arr)) throw new Error(nonArrayTypeError);
+	if (item === undefined) throw new Error('Item cannot be undefined.');
+	arr.unshift(item);
+	return arr;
 };
 
 const wordsToSentence = words => {
