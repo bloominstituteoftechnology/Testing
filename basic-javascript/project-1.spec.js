@@ -1,7 +1,10 @@
 const helpers = require('./project-1');
 
-const nonNumberTypeError = 'Value must be a number.';
-const nonStringTypeError = 'Value must be a string.';
+// errors
+const {
+	nonNumberTypeError,
+	nonStringTypeError,
+} = require('../errors/index.js');
 
 // start testing!
 describe('Testing project-1.js', () => {

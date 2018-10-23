@@ -1,9 +1,12 @@
 /* eslint-disable arrow-parens */
 
-const nonNumberTypeError = 'Value must be a number.';
-const nonStringTypeError = 'Value must be a string.';
-const nonArrayTypeError = 'Value must be an array.';
-const emptyArrayError = 'Array cannot be empty.';
+// errors
+const {
+	nonNumberTypeError,
+	nonStringTypeError,
+	nonArrayTypeError,
+	emptyArrayError,
+} = require('../errors/index.js');
 
 const getBiggest = (x, y) => {
 	if (typeof(x) !== 'number' || typeof(y) !== 'number') throw new Error(nonNumberTypeError);

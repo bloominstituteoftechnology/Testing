@@ -1,9 +1,12 @@
 const funcs = require('./project-2');
 
-const nonNumberTypeError = 'Value must be a number.';
-const nonStringTypeError = 'Value must be a string.';
-const nonArrayTypeError = 'Value must be an array.';
-const emptyArrayError = 'Array cannot be empty.';
+// errors
+const {
+	nonNumberTypeError,
+	nonStringTypeError,
+	nonArrayTypeError,
+	emptyArrayError,
+} = require('../errors/index.js');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('Testing project-2.js', () => {

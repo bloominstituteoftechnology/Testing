@@ -1,7 +1,10 @@
 /* eslint-disable arrow-parens */
 
-const nonNumberTypeError = 'Value must be a number.';
-const nonStringTypeError = 'Value must be a string.';
+// errors
+const {
+	nonNumberTypeError,
+	nonStringTypeError,
+} = require('../errors/index.js');
 
 const multiplyByTen = num => {
 	if (typeof(num) !== 'number') throw new Error(nonNumberTypeError);
