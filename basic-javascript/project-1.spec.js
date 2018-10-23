@@ -136,7 +136,7 @@ describe('helpers.js', () => {
         helpers.add('eight', 'seven');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('subtract()', () => {
     it('should subtract provided numbers', () => {
@@ -158,7 +158,7 @@ describe('helpers.js', () => {
         helpers.subtract('two hundred five', 'five');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('divide()', () => {
     it('should divide provided numbers', () => {
@@ -180,7 +180,7 @@ describe('helpers.js', () => {
         helpers.divide('ten', 'two');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('multiply()', () => {
     it('should multiply provided numbers', () => {
@@ -202,7 +202,7 @@ describe('helpers.js', () => {
         helpers.multiply('five', 'one hundred');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('getRemainder()', () => {
     it('should get the remainder after dividing the provided numbers', () => {
@@ -224,7 +224,7 @@ describe('helpers.js', () => {
         helpers.getRemainder('thirteen', 'five');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('isEven()', () => {
     it('should say true when the remainder is 0 after dividing the provided numbers', () => {
@@ -254,7 +254,7 @@ describe('helpers.js', () => {
         helpers.isEven('one thousand');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('isOdd()', () => {
     it('should say true when the remainder is greater than 0 after dividing the provided numbers', () => {
@@ -284,7 +284,7 @@ describe('helpers.js', () => {
         helpers.isEven('one hundered fifty three');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('square()', () => {
     it('should multiply the provided number by itself', () => {
@@ -306,7 +306,7 @@ describe('helpers.js', () => {
         helpers.square('five');
       }).toThrow();
     });
-  }); 
+  });
 
   describe('cube()', () => {
     it('should multiply the provided number by it times itself 3 times', () => {
@@ -328,6 +328,106 @@ describe('helpers.js', () => {
         helpers.cube('two');
       }).toThrow();
     });
-  }); 
+  });
+
+  describe('raiseToPower()', () => {
+    it('should raise the first provided number to the power of the second provided number', () => {
+      const expected = 64;
+
+      const actual = helpers.raiseToPower(2,6);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('roundNumber()', () => {
+    it('should round the provided number', () => {
+      const expected = 77;
+
+      const actual = helpers.roundNumber(77.15266);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('roundUp()', () => {
+    it('should round the provided number up', () => {
+      const expected = 44;
+
+      const actual = helpers.roundUp(43.3568);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('addExclamationPoint()', () => {
+    it('should add an exclamation point to the end of the provided string', () => {
+      const expected = 'Woohoo!';
+
+      const actual = helpers.addExclamationPoint('Woohoo');
+
+      expect(actual).toBe(expected);
+    });
+  });
+
+  describe('combineNames()', () => {
+    it('should combine firstname and lastname into a string', () => {
+      const expected = 'John Smith';
+
+      const actual = helpers.combineNames('John', 'Smith');
+
+      expect(actual).toBe(expected);
+    });
+  });
+
+  describe('getGreeting()', () => {
+    it('should combine Hello and lastname into a string with an exclamation point at the end', () => {
+      const expected = 'Hello Dolly!';
+
+      const actual = helpers.getGreeting('Dolly');
+
+      expect(actual).toBe(expected);
+    });
+  });
+
+  describe('getRectangleArea()', () => {
+    it('should multiply length by width to get the area of a rectangle', () => {
+      const expected = 72;
+
+      const actual = helpers.getRectangleArea(9, 8);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('getTriangleArea()', () => {
+    it('should multiply 0.5 by base by height to get the area of a triangle', () => {
+      const expected = 656;
+
+      const actual = helpers.getTriangleArea(32, 41);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('getCircleArea()', () => {
+    it('should multiply 3.1415 by radius squared to get the area of a circle', () => {
+      const expected = 16286.016316209487;
+
+      const actual = helpers.getCircleArea(72);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('getRectangularPrismVolume()', () => {
+    it('should multiply width by height by length to get the volume of a rectangular prism', () => {
+      const expected = 396;
+
+      const actual = helpers.getRectangularPrismVolume(3,6,22);
+
+      expect(actual).toEqual(expected);
+    });
+  });
 });
 
