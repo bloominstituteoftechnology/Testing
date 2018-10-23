@@ -1,10 +1,15 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if(num === undefined)
+  return false;
+
   return num * 10;
 };
 
 const subtractFive = num => {
+  if(num === undefined)
+  return false;
   return num - 5;
 };
 
@@ -31,10 +36,14 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if(x === undefined || y === undefined)
+  return false;
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if(x === undefined || y === undefined)
+  return false;
   return x - y;
 };
 
