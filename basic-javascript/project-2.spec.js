@@ -9,3 +9,17 @@ describe("getBiggest()", () => {
 		expect(funcs.getBiggest(3, 7)).toBe(7);
 	});
 });
+describe("greeting(language)", () => {
+	test("default", () => {
+		expect(funcs.greeting()).toBe("Hello!");
+	});
+	test("Spanish", () => {
+		expect(funcs.greeting("Spanish")).toBe("Hola!");
+	});
+	test("German", () => {
+		expect(funcs.greeting("German")).toBe("Guten Tag!");
+	});
+	test("Default unknown language", () => {
+		expect(funcs.greeting("Italian")).toBe("Hello!");
+	});
+});
