@@ -10,14 +10,14 @@ describe('project-1.js', () => {
 	    const actual = funcs.getBiggest(11, 10);
 	    expect(actual).toEqual(expected);
 	});
-	
+
 	it('should get biggest number', () => {
 	    const expected = 10;
 	    const actual = funcs.getBiggest(10, 10);
 	    expect(actual).toEqual(expected);
 	});
     });
-    
+
     //unfinished
     describe('greeting', () => {
 	it('should greet', () => {
