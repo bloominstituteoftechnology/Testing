@@ -1,15 +1,32 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+  if (typeof num === "string") {
+    throw new Error("value must be a number");
+  }
+
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (!num) {
+    return 0;
+  }
+  if (typeof num === "string") {
+    throw new Error("value must be a number");
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (typeof str1 === undefined || typeof str2 === undefined) {
+    throw new Error("Must be valid ");
+  } else {
+    return str1.length === str2.length;
+  }
 };
 
 const areEqual = (x, y) => {
@@ -17,6 +34,9 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
+  if (isNaN(num)) {
+    throw new Error("must input a number");
+  }
   if (num < 90) {
     return true;
   }
@@ -24,6 +44,9 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (isNaN(num)) {
+    throw new Error("value must be a number");
+  }
   if (num > 50) {
     return true;
   }
@@ -31,22 +54,37 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (isNaN(x) || isNaN(y)) {
+    throw new Error("must add NUMBERS");
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (isNaN(x) || isNaN(y)) {
+    throw new Error("must subtract NUMBERS");
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
+  if (isNaN(x) || isNaN(y)) {
+    throw new Error("must divide NUMBERS");
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if (isNaN(x) || isNaN(y)) {
+    throw new Error("must multiply NUMBERS");
+  }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if (isNaN(x) || isNaN(y)) {
+    throw new Error("Values must be NUMBERS");
+  }
   return x % y;
 };
 
@@ -85,7 +123,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
