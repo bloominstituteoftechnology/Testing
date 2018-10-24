@@ -12,7 +12,29 @@ const {
 	values,
 	mapObject,
 	pairs,
+	invert,
 } = objectFunctions;
+
+const testsForFuncsWithSingleObjArg = func => {
+	describe('calling with empty object', () => {
+		it('should throw an error', () => {
+			expect(() => { func({}); }).toThrow(emptyObjectError);
+		});
+	});
+
+	describe('calling with non object type', () => {
+		it('should throw an error', () => {
+			expect(() => { func(1); }).toThrow(nonObjectTypeError);
+			expect(() => { func(NaN); }).toThrow(nonObjectTypeError);
+			expect(() => { func(''); }).toThrow(nonObjectTypeError);
+			expect(() => { func(false); }).toThrow(nonObjectTypeError);
+			expect(() => { func([]); }).toThrow(nonObjectTypeError);
+			expect(() => { func(() => {}); }).toThrow(nonObjectTypeError);
+			expect(() => { func(null); }).toThrow(nonObjectTypeError);
+			expect(() => { func(undefined); }).toThrow(nonObjectTypeError);
+		});
+	});
+};
 
 
 describe('objects', () => {
@@ -32,24 +54,7 @@ describe('objects', () => {
 			});
 		});
 
-		describe('calling with empty object', () => {
-			it('should throw an error', () => {
-				expect(() => { keys({}); }).toThrow(emptyObjectError);
-			});
-		});
-
-		describe('calling with non object type', () => {
-			it('should throw an error', () => {
-				expect(() => { keys(1); }).toThrow(nonObjectTypeError);
-				expect(() => { keys(NaN); }).toThrow(nonObjectTypeError);
-				expect(() => { keys(''); }).toThrow(nonObjectTypeError);
-				expect(() => { keys(false); }).toThrow(nonObjectTypeError);
-				expect(() => { keys([]); }).toThrow(nonObjectTypeError);
-				expect(() => { keys(() => {}); }).toThrow(nonObjectTypeError);
-				expect(() => { keys(null); }).toThrow(nonObjectTypeError);
-				expect(() => { keys(undefined); }).toThrow(nonObjectTypeError);
-			});
-		});
+		testsForFuncsWithSingleObjArg(keys);
 	});
 
 	// values()
@@ -68,24 +73,7 @@ describe('objects', () => {
 			});
 		});
 
-		describe('calling with empty object', () => {
-			it('should throw an error', () => {
-				expect(() => { values({}); }).toThrow(emptyObjectError);
-			});
-		});
-
-		describe('calling with non object type', () => {
-			it('should throw an error', () => {
-				expect(() => { values(1); }).toThrow(nonObjectTypeError);
-				expect(() => { values(NaN); }).toThrow(nonObjectTypeError);
-				expect(() => { values(''); }).toThrow(nonObjectTypeError);
-				expect(() => { values(false); }).toThrow(nonObjectTypeError);
-				expect(() => { values([]); }).toThrow(nonObjectTypeError);
-				expect(() => { values(() => {}); }).toThrow(nonObjectTypeError);
-				expect(() => { values(null); }).toThrow(nonObjectTypeError);
-				expect(() => { values(undefined); }).toThrow(nonObjectTypeError);
-			});
-		});
+		testsForFuncsWithSingleObjArg(values);
 	});
 
 	// mapObject()
@@ -157,23 +145,25 @@ describe('objects', () => {
 			});
 		});
 
-		describe('calling with empty object', () => {
-			it('should throw an error', () => {
-				expect(() => { pairs({}); }).toThrow(emptyObjectError);
+		testsForFuncsWithSingleObjArg(pairs);
+	});
+
+	// invert()
+	describe('invert', () => {
+		it('should be a function', () => {
+			expect(typeof invert).toBe('function');
+		});
+
+		describe('calling with non empty object', () => {
+			it('should return the obj with its key, value pairs inverted', () => {
+				expect(invert({
+					'one': 1,
+					'two': 2,
+					'three': 3,
+				})).toEqual({ 1: 'one', 2: 'two', 3: 'three' });
 			});
 		});
 
-		describe('calling with non object type', () => {
-			it('should throw an error', () => {
-				expect(() => { pairs(1); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs(NaN); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs(''); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs(false); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs([]); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs(() => {}); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs(null); }).toThrow(nonObjectTypeError);
-				expect(() => { pairs(undefined); }).toThrow(nonObjectTypeError);
-			});
-		});
+		testsForFuncsWithSingleObjArg(invert);
 	});
 });

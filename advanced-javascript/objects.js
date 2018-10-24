@@ -42,12 +42,13 @@ const pairs = (obj) => {
 };
 
 const invert = (obj) => {
-  Object.keys(obj).forEach((key) => {
-    const newKey = obj[key];
-    obj[newKey] = key;
-    delete obj[key];
-  });
-  return obj;
+	checkObjArgument(obj);
+	Object.keys(obj).forEach((key) => {
+		const newKey = obj[key];
+		obj[newKey] = key;
+		delete obj[key];
+	});
+	return obj;
 };
 
 const defaults = (obj, defaultProps) => {
