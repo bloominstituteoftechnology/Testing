@@ -18,9 +18,12 @@ const keys = (obj) => {
 };
 
 const values = (obj) => {
-  return Object.keys(obj).map((key) => {
-    return obj[key];
-  });
+	// nulls and arrays are object types
+	if (typeof(obj) !== 'object' || obj === null || Array.isArray(obj)) throw new Error(nonObjectTypeError);
+	if (!Object.keys(obj).length) throw new Error(emptyObjectError);
+	return Object.keys(obj).map((key) => {
+		return obj[key];
+	});
 };
 
 const mapObject = (obj, cb) => {
