@@ -4,13 +4,21 @@
 /* eslint-disable no-unused-vars, arrow-body-style, arrow-parens */
 
 const keys = (obj) => {
-  return Object.keys(obj);
+  const array = Object.keys(obj);
+  if(array.length===0){
+    throw new Error('No keys.');
+  }
+  return array;
 };
 
 const values = (obj) => {
-  return Object.keys(obj).map((key) => {
+  const array = Object.keys(obj).map((key) => {
     return obj[key];
   });
+  if(array.length===0){
+    throw new Error('No values.');
+  }
+  return array;
 };
 
 const mapObject = (obj, cb) => {
@@ -18,7 +26,13 @@ const mapObject = (obj, cb) => {
   return obj;
 };
 
-const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
+const pairs = (obj) => {
+  const array = Object.keys(obj).map((key) => [key, obj[key]]);
+  if(array.length===0){
+    throw new Error('Found nothing in argument.');
+  }
+  return array;
+};
 
 const invert = (obj) => {
   Object.keys(obj).forEach((key) => {
@@ -26,6 +40,9 @@ const invert = (obj) => {
     obj[newKey] = key;
     delete obj[key];
   });
+  if(Object.keys(obj).length===0){
+    throw new Error('Not a proper Object.');
+  }
   return obj;
 };
 

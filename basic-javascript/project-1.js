@@ -105,10 +105,18 @@ const getTriangleArea = (base, height) => {
 };
 
 const getCircleArea = radius => {
+  if(!radius){
+    throw new Error('No radius argument.');
+  }else if(typeof radius === 'string'){
+    throw new Error(`Argument needs to be number. Got a string.`)
+  }
   return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if(!height){
+    throw new Error(arguments.length);
+  }
   return width * height * length;
 };
 
