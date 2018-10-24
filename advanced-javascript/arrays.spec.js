@@ -24,9 +24,13 @@ const {
 } = arrayFunctions;
 
 // helper
-const argCheckForFuncsWithBasic2Params = (func) => {
+const checksForFuncsWithBasic2Params = (func) => {
 	// this will check the arguments for every function that has the
 	// basic (elems, cb) parameters
+	it('should be a function', () => {
+		expect(typeof func).toBe('function');
+	});
+
 	describe('calling an empty array as the first arg', () => {
 		it('should throw an error', () => {
 			expect(() => { func([], () => {}); }).toThrow(emptyArrayError);
@@ -64,25 +68,17 @@ const argCheckForFuncsWithBasic2Params = (func) => {
 describe('Arrays', () => {
 	// each()
 	describe('each', () => {
-		it('should be a function', () => {
-			expect(typeof each).toBe('function');
-		});
-
 		describe('calling with a non empty array as first arg and function as second arg', () => {
 			it('should return undefined since it is just a helper function and shouldn\'t return anything', () => {
 				expect(each([ 1, 2, 3 ], () => {})).toEqual(undefined);
 			});
 		});
 
-		argCheckForFuncsWithBasic2Params(each);
+		checksForFuncsWithBasic2Params(each);
 	});
 
 	// map()
 	describe('map', () => {
-		it('should be a function', () => {
-			expect(typeof map).toBe('function');
-		});
-
 		describe('calling with a non empty array as first arg and function as second arg', () => {
 			it('should double each number in the array given', () => {
 				expect(map([ 1, 2, 3 ], (num) => { return num * 2; })).toEqual([ 2, 4, 6 ]);
@@ -93,7 +89,7 @@ describe('Arrays', () => {
 			});
 		});
 
-		argCheckForFuncsWithBasic2Params(map);
+		checksForFuncsWithBasic2Params(map);
 	});
 
 	// reduce()
@@ -108,7 +104,7 @@ describe('Arrays', () => {
 			});
 		});
 
-		describe('calling an empty array as the first arg', () => {
+		describe('calling with an empty array as the first arg', () => {
 			it('should throw an error', () => {
 				expect(() => { reduce([], () => {}); }).toThrow(emptyArrayError);
 			});
@@ -143,10 +139,6 @@ describe('Arrays', () => {
 
 	// find()
 	describe('find', () => {
-		it('should be a function', () => {
-			expect(typeof find).toBe('function');
-		});
-
 		describe('calling with a non empty array as first arg and function as second arg', () => {
 			it('should find the fruit in the array that is the color red', () => {
 				expect(find([
@@ -157,15 +149,11 @@ describe('Arrays', () => {
 			});
 		});
 
-		argCheckForFuncsWithBasic2Params(find);
+		checksForFuncsWithBasic2Params(find);
 	});
 
 	// filter()
 	describe('filter', () => {
-		it('should be a function', () => {
-			expect(typeof filter).toBe('function');
-		});
-
 		describe('calling with a non empty array as first arg and function as second arg', () => {
 			it('should filter the numbers in the array and return the ones > 50', () => {
 				expect(filter([ 1, 49, 50, 51, 100 ], (num) => { return num > 50; })).toEqual([ 51, 100 ]);
@@ -176,15 +164,11 @@ describe('Arrays', () => {
 			});
 		});
 
-		argCheckForFuncsWithBasic2Params(filter);
+		checksForFuncsWithBasic2Params(filter);
 	});
 
 	// flatten()
 	describe('flatten', () => {
-		it('should be a function', () => {
-			expect(typeof flatten).toBe('function');
-		});
-
 		describe('calling with a non empty array', () => {
 			it('should flatten the array elements in the array given and concats them together', () => {
 				expect(flatten([ [ 'one', [ 'two', [ 'three', 'four' ] ] ], 'five' ])).toEqual([ 'one', 'two', 'three', 'four', 'five' ]);

@@ -3,8 +3,18 @@
 
 /* eslint-disable no-unused-vars, arrow-body-style, arrow-parens */
 
+// errors
+const {
+	nonObjectTypeError,
+	emptyObjectError,
+} = require('../errors/index.js');
+
+
 const keys = (obj) => {
-  return Object.keys(obj);
+	// nulls and arrays are object types
+	if (typeof(obj) !== 'object' || obj === null || Array.isArray(obj)) throw new Error(nonObjectTypeError);
+	if (!Object.keys(obj).length) throw new Error(emptyObjectError);
+	return Object.keys(obj);
 };
 
 const values = (obj) => {
