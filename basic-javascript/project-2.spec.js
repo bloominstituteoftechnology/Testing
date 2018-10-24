@@ -131,4 +131,140 @@ it('is input number an integer', () =>{
 
     })
     });
+
+    describe('is the input number prime', () => {
+
+        it('is less than zero', () =>{
+        
+        const expected = true ;
+                       
+        const actual = funcs.isPrime(5);
+        
+        expect(actual).toEqual(expected);
+                
+                
+        });
+        
+    it('equals 1 or 0', () =>{
+        
+        const expected = true;
+                               
+        const actual = funcs.isPrime(2);
+                
+        expect(actual).toEqual(expected);
+                        
+                        
+        });
+    it('divisible by more numbers than 1 and num', () =>{
+        
+        const expected = true;
+                                   
+        const actual = funcs.isPrime(2);
+                    
+        expect(actual).toEqual(expected);
+                        
+                            
+        });
+    // it('is input number not divis by 5 or 3', () => {
+
+    //     const expected = 7;
+
+
+    //     const actual = funcs.isPrime(7);
+
+    //     expect(actual).toEqual(expected);
+
+    // })
+    });
     
+    it('returns first position in array' ,() => {
+        const expected = 1;
+
+        const actual = funcs.returnFirst([1,2,3]);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('returns last position in array' ,() => {
+        const expected = 1;
+
+        const actual = funcs.returnLast([3,1,1]);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('returns array length' ,() => {
+        const expected = 2;
+
+        const actual = funcs.getArrayLength([3,1]);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('incs everyposition int he array by one' ,() => {
+        const expected = [2, 1];
+
+        const actual = funcs.incrementByOne([1,0]);
+
+        expect(actual).toEqual(expected);
+    })
+
+
+    it('adds item to arr' ,() => {
+        const expected = [2, 1];
+
+        const actual = funcs.addItemToArray([2],1);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('adds item to front of arr' ,() => {
+        const expected = [1, 2];
+
+        const actual = funcs.addItemToFront([2],1);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('adds words to sent' ,() => {
+        const expected = "l e t";
+
+        const actual = funcs.wordsToSentence("let");
+
+        expect(actual).toEqual(expected);
+    })
+
+
+    it('contains input item' ,() => {
+        const expected = true;
+
+        const actual = funcs.contains([1,2,3], 3);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('sums input items if numbers' ,() => {
+        const expected = 0;
+
+        const actual = funcs.addNumbers(1);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('averages a list of numbers' ,() => {
+        const expected = 10;
+
+        const actual = funcs.averageTestScore([10, 10]);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('discovers and return largets number' ,() => {
+        const expected = 10;
+
+        const actual = funcs.largestNumber([5, 10]);
+
+        expect(actual).toEqual(expected);
+    })
+
+
