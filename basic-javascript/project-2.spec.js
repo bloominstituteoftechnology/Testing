@@ -107,9 +107,37 @@ describe('project-2.js', () => {
     });
 
     // contains
-    test("should increment itemCounter variable every time the input is found in an array", () => {
-      const expected = 2;
-      const actual = helpers.contains([1, 2, 2, 4], 2);
+    test("should return true if array contains item", () => {
+      const expected = true;
+      const actual = helpers.contains([1, 2, 3, 4], 2);
+      expect(actual).toEqual(expected);
+    });
+
+    // addNumbers
+    test("should return the sum of all numbers in an array", () => {
+      const expected = 20;
+      const actual = helpers.addNumbers([2, 4, 6, 8]);
+      expect(actual).toEqual(expected);
+    });
+
+    // addNumbers
+    test("should return the sum of all numbers in an array", () => {
+      const expected = 20;
+      const actual = helpers.addNumbers([2, 4, 6, 8]);
+      expect(actual).toEqual(expected);
+    });
+
+    // averageTestScores
+    test("should return the average of all test scores", () => {
+      const expected = 86.5;
+      const actual = helpers.averageTestScore([95, 84, 86, 81]);
+      expect(actual).toEqual(expected);
+    });
+
+    // largestNumber
+    test("should return the largest integer in an array", () => {
+      const expected = 8;
+      const actual = helpers.largestNumber([2, 4, 6, 8]);
       expect(actual).toEqual(expected);
     });
 
