@@ -13,6 +13,7 @@ const {
 	mapObject,
 	pairs,
 	invert,
+	defaults,
 } = objectFunctions;
 
 const testsForFuncsWithSingleObjArg = func => {
@@ -136,7 +137,7 @@ describe('objects', () => {
 		});
 
 		describe('calling with non empty object', () => {
-			it('should return an array of arrays of the object\'s key, value pairs', () => {
+			it('should return an array of arrays of the object\'s key/value pairs', () => {
 				expect(pairs({
 					'one': 1,
 					'two': 2,
@@ -155,7 +156,7 @@ describe('objects', () => {
 		});
 
 		describe('calling with non empty object', () => {
-			it('should return the obj with its key, value pairs inverted', () => {
+			it('should return the obj with its key/value pairs inverted', () => {
 				expect(invert({
 					'one': 1,
 					'two': 2,
@@ -165,5 +166,68 @@ describe('objects', () => {
 		});
 
 		testsForFuncsWithSingleObjArg(invert);
+	});
+
+	// defaults()
+	describe('defaults', () => {
+		it('should be a function', () => {
+			expect(typeof defaults).toBe('function');
+		});
+
+		describe('calling with non empty object', () => {
+			it('should return the first obj with any extra key/value pairs it doesn\'t have from the second obj', () => {
+				expect(defaults({
+					1: 'one',
+					2: 'two',
+					3: 'three',
+				}, {
+					3: 'three',
+					4: 'four',
+					5: 'five',
+				})).toEqual({
+					1: 'one',
+					2: 'two',
+					3: 'three',
+					4: 'four',
+					5: 'five',
+				});
+			});
+		});
+
+		describe('calling with empty object as first or second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { defaults({}, { 'one': 1 }); }).toThrow(emptyObjectError);
+			});
+
+			it('should throw an error', () => {
+				expect(() => { defaults({ 'one': 1 }, {}); }).toThrow(emptyObjectError);
+			});
+		});
+
+		describe('calling with non object type as first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { defaults(1, { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults(NaN, { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults('', { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults(false, { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults([], { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults(() => {}, { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults(null, { 'one': 1 }); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults(undefined, { 'one': 1 }); }).toThrow(nonObjectTypeError);
+			});
+		});
+
+		describe('calling with non object type as second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { defaults({ 'one': 1 }, 1); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, NaN); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, ''); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, false); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, []); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, null); }).toThrow(nonObjectTypeError);
+				expect(() => { defaults({ 'one': 1 }, undefined); }).toThrow(nonObjectTypeError);
+			});
+		});
 	});
 });
