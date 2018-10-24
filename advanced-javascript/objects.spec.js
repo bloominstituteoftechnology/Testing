@@ -65,5 +65,17 @@ describe.only('objects', () => {
       expect(actual).toThrow();
     });
   });
+
+  describe('defaults', () => {
+    it("Should set the first argument object's key:value pairs as the second argument object if the first argument doesn't already have it.", () => {
+      expect(objectFunctions.defaults({sex:'yes', name:'Kev', location:'Mira Mesa'}, obj)).toEqual({id:1,name:'Kev', location:'Mira Mesa', sex:'yes'});
+    });
+    it('Should throw error if missing an argument.', () => {
+      let actual = () => objectFunctions.defaults(obj);
+      expect(actual).toThrow();
+      actual = () => objectFunctions.defaults();
+      expect(actual).toThrow();
+    });
+  });
   // it('should be an object', () => {});
 });
