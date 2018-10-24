@@ -173,7 +173,7 @@ const largestNumber = (numbers) => {
 
 	let biggestInteger = 0;
 	for (let i = 0; i < numbers.length; i++) {
-		if (numbers[i] > biggestInteger) {
+		if (typeof numbers[i] === 'number' && numbers[i] > biggestInteger) {
 			biggestInteger = numbers[i];
 		}
 	}
