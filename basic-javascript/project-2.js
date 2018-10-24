@@ -127,9 +127,11 @@ const wordsToSentence = (words) => {
 	}
 	return newSentence;
 };
-wordsToSentence(['Hi', 'my', 'name', 'is', 'Vera!']);
 
 const contains = (arr, item) => {
+	if (!Array.isArray(arr)) throw new Error('Please pass in an array!');
+	if (typeof item === 'object') return false;
+
 	let itemCounter = 0;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === item) {

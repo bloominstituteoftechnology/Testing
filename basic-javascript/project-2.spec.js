@@ -410,6 +410,24 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return false;
 		// };
+		// item match
+		it('should return true if item is in arr at least once', () => {
+			const arr = [1, 'string', { keey: 'valuee' }, [1, 2]];
+			const itemExists = funcs.contains(arr, 'string');
+			expect(itemExists).toBe(true);
+		});
+
+		// item not in arr
+		it('should return false if item is not in arr', () => {
+			const arr = [1, 'string', { keey: 'valuee' }, [1, 2]];
+			const itemExists = funcs.contains(arr, 'q');
+			expect(itemExists).toBe(false);
+		});
+
+		// arr not array
+		it("should throw an error if arr isn't an array", () => {
+			expect(() => funcs.contains(() => {})).toThrowError();
+		});
 	});
 
 	describe('addNumbers()', () => {
