@@ -449,7 +449,7 @@ describe.only('project-2.js', () => {
 			expect(test2).toEqual(6);
 		});
 
-		// input not arr
+		// input not array
 		it('should throw an error if "numbers" isn\'t an array', () => {
 			expect(() => funcs.addNumbers('0, 1, 2, 3, 4')).toThrowError();
 		});
@@ -465,6 +465,21 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return totalSumScores / numberOfScore;
 		// };
+		// expected average
+		it('should return the average of the values in the array', () => {
+			const cleanScores = [99, 82, 73, 89];
+			const dirtyScores = [52, { item: 'value' }, 73, 49, () => {}, 12];
+			const avgClean = funcs.averageTestScore(cleanScores);
+			const avgDirty = funcs.averageTestScore(dirtyScores);
+
+			expect(avgClean).toBeCloseTo(85.75);
+			expect(avgDirty).toBeCloseTo(46.5);
+		});
+
+		// input not array
+		it('should throw an error if "testScores" is not an array', () => {
+			expect(() => funcs.averageTestScore('array')).toThrowError();
+		});
 	});
 
 	describe('largestNumber()', () => {
@@ -477,5 +492,28 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return biggestInteger;
 		// };
+		// largest number from array
+		it('should return the largest numerical value in an array', () => {
+			const numbers = [2, 27, 42, 5, 666, 9001, 13];
+			const dirtyNumbers = [2, 27, '13', 42, {}, 5, 666, () => {}, 9005, 13];
+			const biggest = funcs.largestNumber(numbers);
+			const dirtyBiggest = funcs.largestNumber(dirtyNumbers);
+
+			expect(biggest).toEqual(9001);
+			expect(dirtyBiggest).toEqual(9005);
+		});
+
+		// no value in 'numbers' is a number
+		it('should return null if none of the array values are numbers', () => {
+			const badNumbers = ['13', {}, 'hiiiii', [1, 2, 3]];
+			const badBiggest = funcs.largestNumber(badNumbers);
+
+			expect(badBiggest).toBeNull();
+		});
+
+		// input is not array
+		it('should throw an error if "numbers" is not an array', () => {
+			expect(() => funcs.largestNumber({ obj: 'value', obj2: 'value2' })).toThrowError();
+		});
 	});
 });

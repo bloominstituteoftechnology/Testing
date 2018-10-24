@@ -154,16 +154,23 @@ const addNumbers = (numbers) => {
 };
 
 const averageTestScore = (testScores) => {
+	if (!Array.isArray(testScores)) throw new Error('Please pass an array!');
 	let totalSumScores = 0;
 	let numberOfScore = 0;
 	for (let i = 0; i < testScores.length; i++) {
-		totalSumScores += testScores[i];
-		numberOfScore++;
+		if (typeof testScores[i] === 'number') {
+			totalSumScores += testScores[i];
+			numberOfScore++;
+		}
 	}
 	return totalSumScores / numberOfScore;
 };
 
 const largestNumber = (numbers) => {
+	if (!Array.isArray(numbers)) throw new Error('Please pass an array!');
+	let numsExist = numbers.some((num) => typeof num === 'number');
+	if (!numsExist) return null;
+
 	let biggestInteger = 0;
 	for (let i = 0; i < numbers.length; i++) {
 		if (numbers[i] > biggestInteger) {
