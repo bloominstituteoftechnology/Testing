@@ -2,6 +2,7 @@ const objectFunctions = require('./objects');
 
 // errors
 const {
+	nonFunctionTypeError,
 	nonObjectTypeError,
 	emptyObjectError,
 } = require('../errors/index.js');
@@ -9,6 +10,7 @@ const {
 const {
 	keys,
 	values,
+	mapObject,
 } = objectFunctions;
 
 
@@ -81,6 +83,59 @@ describe('objects', () => {
 				expect(() => { values(() => {}); }).toThrow(nonObjectTypeError);
 				expect(() => { values(null); }).toThrow(nonObjectTypeError);
 				expect(() => { values(undefined); }).toThrow(nonObjectTypeError);
+			});
+		});
+	});
+
+	// mapObject()
+	describe('mapObject', () => {
+		it('should be a function', () => {
+			expect(typeof mapObject).toBe('function');
+		});
+
+		describe('calling with non empty object', () => {
+			it('should return the obj with its keys transformed by the cb function given', () => {
+				expect(mapObject({
+					1: 'one',
+					2: 'two',
+					3: 'three',
+				}, (value) => { return value.toUpperCase(); })).toEqual({
+					1: 'ONE',
+					2: 'TWO',
+					3: 'THREE',
+				});
+			});
+		});
+
+		describe('calling with empty object as first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { mapObject({}, () => {}); }).toThrow(emptyObjectError);
+			});
+		});
+
+		describe('calling with non object type as first arg', () => {
+			it('should throw an error', () => {
+				expect(() => { mapObject(1, () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject(NaN, () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject('', () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject(false, () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject([], () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject(() => {}, () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject(null, () => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { mapObject(undefined, () => {}); }).toThrow(nonObjectTypeError);
+			});
+		});
+
+		describe('calling with non function type as second arg', () => {
+			it('should throw an error', () => {
+				expect(() => { mapObject({ 'one': 1 }, 1); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, NaN); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, ''); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, false); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, []); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, {}); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, null); }).toThrow(nonFunctionTypeError);
+				expect(() => { mapObject({ 'one': 1 }, undefined); }).toThrow(nonFunctionTypeError);
 			});
 		});
 	});
