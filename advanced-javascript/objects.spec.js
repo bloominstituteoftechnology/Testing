@@ -11,6 +11,7 @@ const {
 	keys,
 	values,
 	mapObject,
+	pairs,
 } = objectFunctions;
 
 
@@ -136,6 +137,42 @@ describe('objects', () => {
 				expect(() => { mapObject({ 'one': 1 }, {}); }).toThrow(nonFunctionTypeError);
 				expect(() => { mapObject({ 'one': 1 }, null); }).toThrow(nonFunctionTypeError);
 				expect(() => { mapObject({ 'one': 1 }, undefined); }).toThrow(nonFunctionTypeError);
+			});
+		});
+	});
+
+	// pairs()
+	describe('pairs', () => {
+		it('should be a function', () => {
+			expect(typeof pairs).toBe('function');
+		});
+
+		describe('calling with non empty object', () => {
+			it('should return an array of arrays of the object\'s key, value pairs', () => {
+				expect(pairs({
+					'one': 1,
+					'two': 2,
+					'three': 3,
+				})).toEqual([ [ 'one', 1 ], [ 'two', 2 ], [ 'three', 3 ] ]);
+			});
+		});
+
+		describe('calling with empty object', () => {
+			it('should throw an error', () => {
+				expect(() => { pairs({}); }).toThrow(emptyObjectError);
+			});
+		});
+
+		describe('calling with non object type', () => {
+			it('should throw an error', () => {
+				expect(() => { pairs(1); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs(NaN); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs(''); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs(false); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs([]); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs(() => {}); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs(null); }).toThrow(nonObjectTypeError);
+				expect(() => { pairs(undefined); }).toThrow(nonObjectTypeError);
 			});
 		});
 	});
