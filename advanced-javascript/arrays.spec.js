@@ -15,6 +15,7 @@ const {
 } = require('../errors/index.js');
 
 const {
+	each,
 	map,
 	reduce,
 	find,
@@ -61,6 +62,21 @@ const argCheckForFuncsWithBasic2Params = (func) => {
 
 
 describe('Arrays', () => {
+	// each()
+	describe('each', () => {
+		it('should be a function', () => {
+			expect(typeof each).toBe('function');
+		});
+
+		describe('calling with a non empty array as first arg and function as second arg', () => {
+			it('should return undefined since it is just a helper function and shouldn\'t return anything', () => {
+				expect(each([ 1, 2, 3 ], () => {})).toEqual(undefined);
+			});
+		});
+
+		argCheckForFuncsWithBasic2Params(each);
+	});
+
 	// map()
 	describe('map', () => {
 		it('should be a function', () => {
