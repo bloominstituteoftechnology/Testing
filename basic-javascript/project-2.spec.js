@@ -2,7 +2,7 @@ const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 // TODO: Remove the .only when done writing all the tests
-describe.only('project-2.js', () => {
+describe('project-2.js', () => {
 	describe('', () => {
 		// const getBiggest = (x, y) => {
 		// 	if (x > y) {
