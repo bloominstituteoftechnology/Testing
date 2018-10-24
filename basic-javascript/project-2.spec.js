@@ -418,7 +418,7 @@ describe.only('project-2.js', () => {
 		});
 
 		// item not in arr
-		it('should return false if item is not in arr', () => {
+		it('should return false if item is not in arr or not alpha-numeric', () => {
 			const arr = [1, 'string', { keey: 'valuee' }, [1, 2]];
 			const itemExists = funcs.contains(arr, 'q');
 			expect(itemExists).toBe(false);
@@ -438,6 +438,21 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return sumOfNumbers;
 		// };
+		// expected sum
+		it('should return the sum of all numbers in the array', () => {
+			const numbers = [0, 1, 2, 3, 4];
+			const numbersPlus = [0, 1, 2, '4', 3];
+			const test1 = funcs.addNumbers(numbers);
+			const test2 = funcs.addNumbers(numbersPlus);
+
+			expect(test1).toEqual(10);
+			expect(test2).toEqual(6);
+		});
+
+		// input not arr
+		it('should throw an error if "numbers" isn\'t an array', () => {
+			expect(() => funcs.addNumbers('0, 1, 2, 3, 4')).toThrowError();
+		});
 	});
 
 	describe('averageTestScore()', () => {

@@ -130,7 +130,7 @@ const wordsToSentence = (words) => {
 
 const contains = (arr, item) => {
 	if (!Array.isArray(arr)) throw new Error('Please pass in an array!');
-	if (typeof item === 'object') return false;
+	if (typeof item !== 'string' && typeof item !== 'number') return false;
 
 	let itemCounter = 0;
 	for (let i = 0; i < arr.length; i++) {
@@ -145,9 +145,10 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = (numbers) => {
+	if (!Array.isArray(numbers)) throw new Error('Arrays only!');
 	let sumOfNumbers = 0;
 	for (let i = 0; i < numbers.length; i++) {
-		sumOfNumbers += numbers[i];
+		if (typeof numbers[i] === 'number') sumOfNumbers += numbers[i];
 	}
 	return sumOfNumbers;
 };
