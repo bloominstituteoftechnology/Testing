@@ -1,0 +1,101 @@
+it('using a callback', (done) => {
+	setTimeout(() => done(), 2000);
+});
+
+it('using promise', () => {
+	return new Promise((resolve) => {
+		setTimeout(resolve, 2000);
+	});
+});
+
+it('using async/await', () => {
+	await new Promise(resolve => setTimeout(resolve, 500));
+});
+
+describe('tdd practice', () => {
+	it('should return true if called with strings of the same length', () => {
+		const str1 = 'foo';
+		const str2 = 'bar';
+		const actual = helpers.areSameLength(str1, str2);
+		expect(actual).toBe(true);
+	});
+
+	it('should return false if called with strings of different length', () => {
+		const str1 = 'foooo';
+		const str2 = 'bar';
+		const actual = helpers.areSameLength(str1, str2);
+		expect(actual).toBe(false);
+	});
+});
+
+// only runs this group
+describe.only(...);
+
+// skip this group
+describe.skip(...);
+
+// run arbitrary code before or after things, like connecting/disconnecting to a database, resetting tables after each test, etc
+// try not to define arbitrary values that are used in the tests. use values from the functions being called instead. :)
+beforeAll()
+
+beforeEach()
+
+afterAll()
+
+afterEach()
+
+
+
+
+function add = () => {
+	return Array.from(arguments).reduce((sum, number) => sum + number, 0);
+};
+
+it('should return the sum of all numbers provided', () => {
+	expect(helpers.add(2, 2, 5)).toEqual(9);
+	expect(helpers.add(1, 2)).toEqual(3);
+	expect(helpers.add(1, 2, 0, 1, 4, 6)).toEqual(14);
+});
+
+
+// Bonus: mock functions?
+
+
+// user stories have scenarios
+// scenarios map nicely to tests
+
+/*
+
+-- USER STORY --
+AS A (role)
+I WANT (to do something)
+SO THAT (I get some value)
+
+as a sales executive
+I want to log into the system
+so that I can see my leads
+
+given a valid username 
+  and valid password
+when the user hits the login button
+then the system will log the user
+  and navigate the user the the dashboard
+
+given a valid username 
+  and invalid password
+when the user hits the login button
+then the system will not log the user in
+  and show an error on screan
+  and keep the user in the login screen
+
+-- SCENARIO --
+GIVEN
+  AND
+  AND
+WHEN
+  AND
+THEN
+  AND
+  AND
+
+*/
