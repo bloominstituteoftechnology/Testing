@@ -88,3 +88,51 @@ describe("isEven()", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("isOdd()", () => {
+  it("should determine whether a number is odd or not", () => {
+    const expected = true;
+    const actual = helpers.isOdd(5);
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe("square()", () => {
+  it("should multiply a num by that num", () => {
+    const expected = 25;
+    const actual = helpers.square(5, 5);
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe("cube()", () => {
+  it("should multiply a num(3)", () => {
+    const expected = 8;
+    const actual = helpers.cube(2, 2, 2);
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe("getRectangleArea()", () => {
+  it("should multiply length x height", () => {
+    const expected = 4;
+    const actual = helpers.getRectangleArea(2, 2);
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe("getRectangularPrismVolume()", () => {
+  it("should multiply length x height x width", () => {
+    const expected = 8;
+    const actual = helpers.getRectangularPrismVolume(2, 2, 2);
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe("roundUp()", () => {
+  it("should round a number up to the nearest whole number", () => {
+    const expected = 8;
+    const actual = helpers.roundUp(7.95);
+    expect(actual).toEqual(expected);
+  });
+});
