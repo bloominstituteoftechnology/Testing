@@ -2,10 +2,6 @@ const helpers = require('./project-1');
 
 // start testing!
 
-test('should run tests', () => {
-	
-});
-
 it('multiplies numbers by 10 isn\'t working', () => {
 	
 const value = helpers.multiplyByTen(7);
