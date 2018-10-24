@@ -113,6 +113,10 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = (words) => {
+	if (!Array.isArray(words)) throw new Error('Only arrays supported!');
+	for (let j = 0; j < words.length; j++) {
+		if (typeof words[j] !== 'string' && typeof words[j] !== 'number') throw new Error('Only alpha-numeric values in the array!');
+	}
 	let newSentence = '';
 	for (let i = 0; i < words.length; i++) {
 		if (i === 0) {
@@ -123,6 +127,7 @@ const wordsToSentence = (words) => {
 	}
 	return newSentence;
 };
+wordsToSentence(['Hi', 'my', 'name', 'is', 'Vera!']);
 
 const contains = (arr, item) => {
 	let itemCounter = 0;

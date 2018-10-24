@@ -379,6 +379,22 @@ describe.only('project-2.js', () => {
 		// 	}
 		// 	return newSentence;
 		// };
+		// returns expected string based on array
+		it('should return a sentence based on the contents of "words"', () => {
+			const arr = ['Hi,', 'my', 'name', 'is', 'Vera!'];
+			const sentence = funcs.wordsToSentence(arr);
+			expect(sentence).toMatch(/^Hi, my name is Vera!$/);
+			// expect(sentence).toEqual('Hi, my name is Vera!');
+		});
+
+		// 'words' isn't an array
+		// 'words' values aren't alpha-numeric
+		it('should throw an error if "words" isn\'t an array or if its values aren\'t alpha-numeric', () => {
+			expect(() => funcs.wordsToSentence(() => {})).toThrowError();
+			expect(() => funcs.wordsToSentence({ Array: ["I'm", 'a', 'little', 'teapot,', 'short', 'and', 'stout!'] })).toThrowError();
+			expect(() => funcs.wordsToSentence(['Hello,', null, "I'm", 'Mrs.', 'Wonderful.'])).toThrowError();
+			expect(() => funcs.wordsToSentence([() => {}, 'A', 'wild', 'sentence', 'appears!'])).toThrowError();
+		});
 	});
 
 	describe('contains()', () => {
