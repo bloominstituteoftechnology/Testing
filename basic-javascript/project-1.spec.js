@@ -1,6 +1,6 @@
 const helpers = require('./project-1');
 
-describe('helpers.js', () => {
+describe('project-1.js', () => {
 	describe('multiplyByTen()', () => {
 		it('should multiply provided number by ten', () => {
 			const expected = 100;
