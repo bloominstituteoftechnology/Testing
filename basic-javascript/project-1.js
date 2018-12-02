@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if(!Number.isInteger(num) || typeof num !== 'number') {
+      return false;
+  }
   return num * 10;
 };
 
@@ -39,6 +42,9 @@ const subtract = (x, y) => {
 };
 
 const divide = (x, y) => {
+  if(x === 0 && y === 0) {
+    return NaN;
+  }
   return x / y;
 };
 
@@ -89,9 +95,15 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
+  if(firstName.match(/(\w+\s+|\s+\w+)/)) {
+    firstName = firstName.trim();
+  }
+  if(lastName.match(/(\w+\s+|\s+\w+)/)) {
+    lastName = lastName.trim();
+  }
+
   return `${firstName} ${lastName}`;
 };
-
 const getGreeting = name => {
   return `Hello ${name}!`;
 };
