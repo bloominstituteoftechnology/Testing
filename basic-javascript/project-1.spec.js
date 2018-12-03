@@ -107,3 +107,9 @@ test('Is Even', () => {
   const result = true;
   expect(isEven(x)).toBe(result);
 });
+
+test('Is Odd', () => {
+  const x = 15;
+  const result = true;
+  expect(isOdd(x)).toBe(result);
+});
