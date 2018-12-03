@@ -151,4 +151,10 @@ describe('helpers', () => {
             expect(helpers.getRectangleArea(5, 2)).toBe(10);
         });
     })
+
+    describe('getTriangleArea', () => {
+        test('get triangle area', () => {
+            expect(helpers.getTriangleArea(5, 5)).toBe(12.5);
+        });
+    })
 })
