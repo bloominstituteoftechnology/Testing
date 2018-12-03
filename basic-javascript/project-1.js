@@ -1,7 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if ((typeof num === 'number' || typeof num === 'string') && num) {
+    if (!isNaN(+num)) {
+      return Number(num) * 10;
+    }
+  }
+  return 'Not a valid number';
 };
 
 const subtractFive = num => {

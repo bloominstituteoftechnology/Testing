@@ -12,6 +12,30 @@ describe('project-1.js', () => {
             const actual = helpers.multiplyByTen(10);
             expect(actual).toEqual(expected);
         });
+
+        it('boolean argument', () => {
+            expect(helpers.multiplyByTen(true)).toEqual('Not a valid number');
+        });
+
+        it('valid string argument', () => {
+            expect(helpers.multiplyByTen('33')).toEqual(330);
+        });
+
+        it('invalid string argument', () => {
+            expect(helpers.multiplyByTen('33dd')).toEqual('Not a valid number');
+        });
+
+        it('empty string argument', () => {
+            expect(helpers.multiplyByTen('')).toEqual('Not a valid number');
+        });
+
+        it('Infinity as string argument', () => {
+            expect(helpers.multiplyByTen('Infinity')).toEqual(Infinity);
+        });
+
+        it('no argument', () => {
+            expect(helpers.multiplyByTen()).toEqual('Not a valid number');
+        });
     });
 
     // subtractFive
