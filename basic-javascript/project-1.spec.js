@@ -125,3 +125,12 @@ describe('isEven function', () => {
         expect(result).toBe(true)
     })
 })
+
+// isOdd Function Test Suite
+describe('isOdd function', () => {
+    test('isOdd works properly', () => {
+        const input1 = 9
+        const result = helpers.isOdd(input1)
+        expect(result).toBe(true)
+    })
+})
