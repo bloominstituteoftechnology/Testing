@@ -76,4 +76,11 @@ describe('funcs', () => {
             expect(funcs.returnLast([0,1,2,3])).toBe(3);
         });
     })
+
+    
+    describe('getArrayLength', () => {
+        test('get length of array!', () => {
+            expect(funcs.getArrayLength([0,1,2,3])).toBe(4);
+        });
+    })
 })
