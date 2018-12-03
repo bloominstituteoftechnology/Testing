@@ -67,4 +67,15 @@ describe('project-1', () => {
             }).toThrow();
         })
     })
+
+    describe('subtract() ', () => {
+        it('should be able to correctly subtract', () => {
+            expect(helpers.subtract(5,1)).toEqual(4);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.subtract(5, 'ten')
+            }).toThrow();
+        })
+    })
 })
