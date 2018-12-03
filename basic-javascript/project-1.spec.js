@@ -175,3 +175,13 @@ describe('roundNumber function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// roundUp Function Test Suite
+describe('roundUp function', () => {
+    test('roundUp works properly', () => {
+        const input = 0.3
+        const expected = 1
+        const actual = helpers.roundUp(input)
+        expect(expected).toBe(actual)
+    })
+})
