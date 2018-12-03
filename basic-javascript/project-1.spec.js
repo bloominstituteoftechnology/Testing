@@ -64,3 +64,10 @@ const boolStr = [areSameLength, areEqual]
 boolStr.forEach(func => test('returns a boolean', () => returnsBooleanStr(func)))
 
 //boolean number based functions
+const returnsBooleanNum = func => {
+    let result = func(2)
+    expect(typeof result === 'boolean').toBeTruthy()
+}
+
+const boolNum = [lessThanNinety, greaterThanFifty, isEven, isOdd]
+boolNum.forEach(func => test('returns a boolean', () => returnsBooleanNum(func)))
