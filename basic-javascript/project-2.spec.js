@@ -7,119 +7,119 @@ describe('Jest', () => {
 });
 
 test('should return the largest number from the two numbers provided', () => {
-    const expected = 100;
-    const actual = helpers.getBiggest
+    const expected = 10;
+    const actual = helpers.getBiggest(5,10)
 
     expect(actual).toEqual(expected);
 });
 
 test('should return hello greeting the language provided', () => {
-    const expected = 5;
-    const actual = helpers.greeting
+    const expected = 'Guten Tag!';
+    const actual = helpers.greeting('german')
 //add edge case for languages not available
     expect(actual).toEqual(expected);
 });
 
 test('should return true when provided number equals five or ten', () => {
     const expected = true;
-    const actual = helpers.isTenOrFive
+    const actual = helpers.isTenOrFive(10)
 //add edge case for when number is not 5 or 10
     expect(actual).toEqual(expected);
 });
 
 test('should return true when number is greater than twenty and is less than fifty', () => {
     const expected = true;
-    const actual = helpers.isInRange 
+    const actual = helpers.isInRange(35) 
 
     expect(actual).toEqual(expected);
 });
 test('should return true when number is an integer', () => {
     const expected = true;
-    const actual = helpers.isInteger
+    const actual = helpers.isInteger(5)
 
     expect(actual).toEqual(expected);
 });
 
 test('should return fizzbuzz for number provided when divisible by three and five, buzz when divisible by three, and fizz when divisble by 5', () => {
-    const expected = 20;
-    const actual = helpers.fizzBuzz
+    const expected = 'fizz';
+    const actual = helpers.fizzBuzz(20)
 
     expect(actual).toEqual(expected);
 });
 test('should return true when number provided is prime', () => {
-    const expected = 10;
-    const actual = helpers.isPrime
+    const expected = true;
+    const actual = helpers.isPrime(3)
 
     expect(actual).toEqual(expected);
 });
 
 test('should return the first index item of provided array', () => {
-    const expected = 4;
-    const actual = helpers.returnFirst
+    const expected = 1;
+    const actual = helpers.returnFirst([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
 });
 test('should return the last index item of provided array', () => {
-    const expected = 100;
-    const actual = helpers.returnLast
+    const expected = 5;
+    const actual = helpers.returnLast([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
 });
 test('should return the length of array provided', () => {
-    const expected = 1;
-    const actual = helpers.getArrayLength
+    const expected = 4;
+    const actual = helpers.getArrayLength([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
 });
 test('should return the index value, after the current index in provided array', () => {
-    const expected = true;
-    const actual = helpers.incrementByOne
+    const expected = 2;
+    const actual = helpers.incrementByOne([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
 });
 test('should return provided array with new item added to the end', () => {
-    const expected = false;
-    const actual = helpers.addItemToArray
+    const expected = [1,2,3,4,5,6];
+    const actual = helpers.addItemToArray([1,2,3,4,5],6)
 //edge case to be added - if X is less than Y
     expect(actual).toEqual(expected);
 });
 
 test('should return provided array with new item added to the beginning', () => {
-    const expected = 25;
-    const actual = helpers.addItemToFront
+    const expected = [6,1,2,3,4,5];
+    const actual = helpers.addItemToFront([1,2,3,4,5],6)
 
     expect(actual).toEqual(expected);
 });
 
 test('should return a single string from an array of strings', () => {
-    const expected = 125;
-    const actual = helpers.wordsToSentence
+    const expected = 'bob likes to paint';
+    const actual = helpers.wordsToSentence['bob ','likes ','to ', 'paint']
 
     expect(actual).toEqual(expected);
 });
 test('should return true when the provided item can be found in the provided array', () => {
-    const expected = 8;
-    const actual = helpers.contains
+    const expected = true;
+    const actual = helpers.contains([1,2,3,4,5],4)
 
     expect(actual).toEqual(expected);
 });
 
 test('should return a single number that is the sum of the values in provided array', () => {
-    const expected = 10;
-    const actual = helpers.addNumbers
+    const expected = 15;
+    const actual = helpers.addNumbers([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
 });
-test('should return sum of the items in provided array, and the total number of items in provided array', () => {
-    const expected = 10;
-    const actual = helpers.averageTestScore
+test('should return sum of the items in provided array, divided by the total number of items in provided array', () => {
+    const expected = 150/5;
+    const actual = helpers.averageTestScore([10,20,30,40,50])
 
     expect(actual).toEqual(expected);
 });
 
 test('should return the biggest number found in the provided array of numbers', () => {
-    const expected = 'hi!';
-    const actual = helpers.largestNumber
+    const expected = 50;
+    const actual = helpers.largestNumber([10,20,30,40,50])
 
     expect(actual).toEqual(expected);
 });
