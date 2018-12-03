@@ -42,3 +42,9 @@ test('Subtract Five', () => {
   const expected = 20;
   expect(subtractFive(input)).toEqual(expected);
 });
+
+test('Are Same Length', () => {
+  const input = 'test';
+  const expected = 'work';
+  expect(areSameLength(input, expected)).toBeTruthy();
+});
