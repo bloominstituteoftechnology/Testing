@@ -87,3 +87,10 @@ test('Divide', () => {
   const result = 10;
   expect(divide(x, y)).toBe(result);
 });
+
+test('Multiply', () => {
+  const x = 2;
+  const y = 5;
+  const result = 10;
+  expect(multiply(x, y)).toBe(result);
+});
