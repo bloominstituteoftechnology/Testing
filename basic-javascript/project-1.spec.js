@@ -60,3 +60,9 @@ test('Less Than Ninety', () => {
   const result = false;
   expect(lessThanNinety(input, result)).toBe(result);
 });
+
+test('Greater Than Fifty', () => {
+  const input = 51;
+  const result = true;
+  expect(greaterThanFifty(input, result)).toBe(result);
+});
