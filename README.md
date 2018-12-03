@@ -13,7 +13,8 @@ Now we start on the other side of the fence, where you have no tests, only worki
 
 ### Assignment
 
-- Use `yarn` to install the necessary dependencies from the `package.json` file.
+x Use `yarn` to install the necessary dependencies from the `package.json` file.
+
 - type `yarn test` to start the test runner.
 - open the `basic-javascript` folder and use `project-1.spec.js` to write tests for the functions inside `project-1.js`.
 - use `project-2.spec.js` to write tests for the functions inside `project-2.js`.
