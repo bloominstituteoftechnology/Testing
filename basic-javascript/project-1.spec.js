@@ -97,4 +97,10 @@ describe('helpers', () => {
             expect(helpers.isOdd(3)).toBeTruthy();
         });
     })
+
+    describe('square', () => {
+        test('check if square', () => {
+            expect(helpers.square(3)).toBe(9);
+        });
+    })
 })
