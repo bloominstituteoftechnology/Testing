@@ -8,8 +8,8 @@
   },
   "author": "Lambda School",
   "license": "MIT",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "jest": "^23.6.0"
-  },
-  "dependencies": {}
+  }
 }
