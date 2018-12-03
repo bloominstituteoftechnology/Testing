@@ -54,6 +54,7 @@ describe('funcs', () => {
             expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
             expect(funcs.fizzBuzz(5)).toBe('buzz');
             expect(funcs.fizzBuzz(3)).toBe('fizz');
+            expect(funcs.fizzBuzz(2)).toBe(2);
         });
     })
 
@@ -104,7 +105,13 @@ describe('funcs', () => {
 
     describe('wordsToSentence', () => {
         test('add words to sentance', () => {
-            expect(funcs.wordsToSentence('hello')).toMatch('h e l l o');
+            expect(funcs.wordsToSentence(['hello', 'world'])).toBe('hello world');
         });
     })
+
+    // describe('contains', () => {
+    //     test('add to front!', () => {
+    //         expect(funcs.contains().toEqual();
+    //     });
+    // })
 })
