@@ -145,4 +145,10 @@ describe('helpers', () => {
             expect(helpers.getGreeting('Shawn')).toBe('Hello Shawn!');
         });
     })
+
+    describe('getRectangleArea', () => {
+        test('get rectangle area', () => {
+            expect(helpers.getRectangleArea(5, 2)).toBe(10);
+        });
+    })
 })
