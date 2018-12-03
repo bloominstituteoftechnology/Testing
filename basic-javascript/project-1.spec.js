@@ -139,7 +139,11 @@ test('Round Number', () => {
   expect(roundNumber(num)).toBe(result);
 });
 
-test('Round Up', () => {});
+test('Round Up', () => {
+  const num = 3.2;
+  const result = 4;
+  expect(roundUp(num)).toBe(result);
+});
 
 test('Add Exclamation Point', () => {});
 
