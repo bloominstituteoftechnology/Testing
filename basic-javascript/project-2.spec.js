@@ -27,6 +27,13 @@ describe('funcs', () => {
             expect(funcs.greeting('English')).toBe('Hello!');
         });
     })
+
+    describe('isTenOrFive', () => {
+        test('is it 10 or 5', () => {
+            expect(funcs.isTenOrFive(6)).toBeFalsy();
+
+        });
+    })
     
 
 })
