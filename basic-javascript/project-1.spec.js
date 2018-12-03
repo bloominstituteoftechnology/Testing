@@ -216,3 +216,14 @@ describe('getGreeting function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// getRectangleArea Function Test Suite
+describe('getRectangleArea function', () => {
+    test('getRectangleArea works properly', () => {
+        const input1 = 2
+        const input2 = 3
+        const expected = 6
+        const actual = helpers.getRectangleArea(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
