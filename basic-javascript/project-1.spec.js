@@ -105,3 +105,14 @@ describe('multiply function', () => {
     })
 })
 
+// getRemainder Function Test Suite
+describe('getRemainder function', () => {
+    test('getRemainder works properly', () => {
+        const input1 = 12
+        const input2 = 5
+        const expected = 2
+        const actual = helpers.getRemainder(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
+
