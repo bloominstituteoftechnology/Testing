@@ -1,14 +1,14 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  if(!num) return 0;
-  if(typeof num === 'string') throw new Error('Value must be a number');
+  if (!num) return 0;
+  if (typeof num === "string") throw new Error("Value must be a number");
   return num * 10;
 };
 
 const subtractFive = num => {
-  if(!num) return 0;
-  if(typeof num === 'string') throw new Error('Value must be a number');
+  if (!num) return 0;
+  if (typeof num === "string") throw new Error("Value must be a number");
   return num - 5;
 };
 
@@ -38,47 +38,47 @@ const greaterThanFifty = num => {
 
 const add = (x, y) => {
   if (!x || !y) return 0;
-    if(typeof x === 'string' || typeof y === 'string'){ 
-      throw new Error('Value must be a number');
-    }
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("Value must be a number");
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
   if (!x || !y) return 0;
-    if(typeof x === 'string' || typeof y === 'string') {
-      throw new Error('Value must be a number');
-    }
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("Value must be a number");
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
   if (!x || !y) return 0;
-    if(typeof x === 'string' || typeof y === 'string') {
-      throw new Error('Value must be a number');
-    }
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("Value must be a number");
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
   if (!x || !y) return 0;
-  if(typeof x === 'string' || typeof y === 'string') {
-    throw new Error('Value must be a number');
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("Value must be a number");
   }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
   if (!x || !y) return 0;
-  if(typeof x === 'string' || typeof y === 'string') {
-    throw new Error('Value must be a number');
+  if (typeof x === "string" || typeof y === "string") {
+    throw new Error("Value must be a number");
   }
   return x % y;
 };
 
 const isEven = num => {
-  if (!num) return false;
-  if(typeof num === 'string') throw new Error('Value must be a number');
+  if (!num) return 0;
+  if (typeof num === "string") throw new Error("Value must be a number");
   if (num % 2 === 0) {
     return true;
   }
@@ -86,84 +86,94 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-if (num % 2 === 0) {
-  return false;
-}
-return true;
+  if (!num) return 0;
+  if (typeof num === "string") throw new Error("Value must be a number");
+  if (num % 2 === 0) {
+    return false;
+  }
+  return true;
 };
 
 const square = num => {
-return num * num;
+  if (!num) return 0;
+  if (typeof num === "string") throw new Error("Value must be a number");
+  return num * num;
 };
 
 const cube = num => {
-return num * num * num;
+  if (!num) return 0;
+  if (typeof num === "string" || typeof exponent === "string")
+    throw new Error("Value must be a number");
+  return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
-return num ** exponent;
+  if (!num || !exponent) return 0;
+  if (typeof num === "string" || typeof exponent === "string")
+    throw new Error("Value must be a number");
+  return num ** exponent;
 };
 
 const roundNumber = num => {
-return Math.round(num);
+  return Math.round(num);
 };
 
 const roundUp = num => {
-return Math.ceil(num);
+  return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
-return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
-return `${firstName} ${lastName}`;
+  return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
-return `Hello ${name}!`;
+  return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
-return length * width;
+  return length * width;
 };
 
 const getTriangleArea = (base, height) => {
-return 0.5 * base * height;
+  return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
-return Math.PI * radius * radius;
+  return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-return width * height * length;
+  return width * height * length;
 };
 
 module.exports = {
-multiplyByTen,
-subtractFive,
-areSameLength,
-areEqual,
-lessThanNinety,
-greaterThanFifty,
-add,
-subtract,
-divide,
-multiply,
-getRemainder,
-isEven,
-isOdd,
-square,
-cube,
-raiseToPower,
-roundNumber,
-roundUp,
-addExclamationPoint,
-combineNames,
-getGreeting,
-getRectangleArea,
-getTriangleArea,
-getCircleArea,
-getRectangularPrismVolume
+  multiplyByTen,
+  subtractFive,
+  areSameLength,
+  areEqual,
+  lessThanNinety,
+  greaterThanFifty,
+  add,
+  subtract,
+  divide,
+  multiply,
+  getRemainder,
+  isEven,
+  isOdd,
+  square,
+  cube,
+  raiseToPower,
+  roundNumber,
+  roundUp,
+  addExclamationPoint,
+  combineNames,
+  getGreeting,
+  getRectangleArea,
+  getTriangleArea,
+  getCircleArea,
+  getRectangularPrismVolume
 };
