@@ -1,4 +1,22 @@
 /* eslint-disable arrow-parens */
+const getType = require('jest-get-type')
+
+
+/**
+ * Accepts a number, returns that number multiplied by 10
+ * @param {num} num 
+ * @returns {num} multiplied by 10
+ */
+
+const testsForNumber = () => {
+  test('tests for number', () => {
+      const input = 'string'
+      const result = multiplyByTen(input)
+      console.log(result)
+      const expectNumber = getType(result)
+      expect(expectNumber === 'number').toBe(true)
+  })
+}
 
 const multiplyByTen = num => {
   return num * 10;
@@ -113,6 +131,7 @@ const getRectangularPrismVolume = (length, width, height) => {
 };
 
 module.exports = {
+  testsForNumber,
   multiplyByTen,
   subtractFive,
   areSameLength,
