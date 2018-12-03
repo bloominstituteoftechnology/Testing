@@ -48,3 +48,39 @@ test('divide', () => {
     const expected = 4
     expect(divide(numX, numY)).toEqual(expected)
 })
+test('multiply', () => {
+    const numX = 20
+    const numY = 5
+    const expected = 100
+    expect(multiply(numX, numY)).toEqual(expected)
+})
+test('get remainder', () => {
+    const numX = 20
+    const numY = 5
+    const expected = 0
+    expect(getRemainder(numX, numY)).toEqual(expected)
+})
+test('is even', () => {
+    const num = 4
+    expect(isEven(num)).toBeTruthy()
+})
+test('is odd', () => {
+    const num = 3
+    expect(isOdd(num)).toBeTruthy()
+})
+test('is square', () => {
+    const num = 3
+    const expected = 9
+    expect(square(num)).toEqual(expected)
+})
+test('cube', () => {
+    const num = 3
+    const expected = 27
+    expect(cube(num)).toEqual(expected)
+})
+test('raise to power', () => {
+    const num = 3
+    const exponent = 3
+    const expected = 27
+    expect(raiseToPower(num, exponent)).toEqual(expected)
+})
