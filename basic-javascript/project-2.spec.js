@@ -120,4 +120,10 @@ describe('funcs', () => {
             expect(funcs.addNumbers([1,2,3])).toBe(6);
         });
     })
+
+    describe('averageTestScore', () => {
+        test('average scores', () => {
+            expect(funcs.averageTestScore([95,95,95,92,91,91])).toBe(93.16666666666667);
+        });
+    })
 })
