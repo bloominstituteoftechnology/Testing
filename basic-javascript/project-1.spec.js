@@ -94,3 +94,86 @@ describe('lessThanNinety', () => {
     expect(lessThanNinety(num)).toBeFalsy()
   })
 })
+
+describe('greaterThanFifty', () => {
+  test('test whether a number is greater than 50', () => {
+    const num = 99
+    expect(greaterThanFifty(num)).toBeTruthy()
+  })
+  test('test whether a number is less than 50', () => {
+    const num = 40
+    expect(greaterThanFifty(num)).toBeFalsy()
+  })
+})
+
+describe('add', () => {
+  test('test whether add works', () => {
+    const num1 = 3
+    const num2 = 7
+    const expected = 10
+    const actual = add(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('subtract', () => {
+  test('test whether subtract works', () => {
+    const num1 = 10
+    const num2 = 7
+    const expected = 3
+    const actual = subtract(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('multiply', () => {
+  test('test whether multiply works', () => {
+    const num1 = 3
+    const num2 = 3
+    const expected = 9
+    const actual = multiply(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('divide', () => {
+  test('test whether divide works', () => {
+    const num1 = 10
+    const num2 = 2
+    const expected = 5
+    const actual = divide(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('getRemainder', () => {
+  test('test whether getRemainder works', () => {
+    const num1 = 10
+    const num2 = 9
+    const expected = 1
+    const actual = getRemainder(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('isEven', () => {
+  test('test whether a number is even', () => {
+    const num = 10
+    expect(isEven(num)).toBeTruthy()
+  })
+  test('test whether a number is not even', () => {
+    const num = 9
+    expect(isEven(num)).toBeFalsy()
+  })
+})
+
+describe('isOdd', () => {
+  test('test whether a number is odd', () => {
+    const num = 9
+    expect(isOdd(num)).toBeTruthy()
+  })
+  test('test whether a number is not odd', () => {
+    const num = 10
+    expect(isOdd(num)).toBeFalsy()
+  })
+})
