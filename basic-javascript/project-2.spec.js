@@ -8,9 +8,9 @@ describe('jest', () => {
 });
 
 describe('funcs', () => {
-    beforeEach(() => {
-        console.log('running');
-    })
+    // beforeEach(() => {
+    //     console.log('running');
+    // })
 
     describe('getBiggest', () => {
         test('get the biggest number', () => {
@@ -68,6 +68,12 @@ describe('funcs', () => {
     describe('returnFirst', () => {
         test('return first!', () => {
             expect(funcs.returnFirst([0,1,2,3])).toBe(0);
+        });
+    })
+
+    describe('returnLast', () => {
+        test('return last!', () => {
+            expect(funcs.returnLast([0,1,2,3])).toBe(3);
         });
     })
 })
