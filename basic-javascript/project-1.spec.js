@@ -12,5 +12,20 @@ describe('project-1.js', () => {
             const actual = helpers.multiplyByTen(12);
             expect(actual).toEqual(expected);
         })
+    }) // multiplybyten
+    describe('subtractFive', () => {
+        it('should subtract by five', () => {
+        const expected = 5;
+        const actual = helpers.subtractFive(10);
+        expect(actual).toEqual(expected);
     })
-})
+    }) // subtractfive
+    describe('areSameLength', () => {
+        it('should return if the same length', () => {
+            const expected = true;
+            const answer = helpers.areSameLength('hola', 'ball');
+            expect(answer).toBe(expected)
+
+        })
+    })
+}) // project js
