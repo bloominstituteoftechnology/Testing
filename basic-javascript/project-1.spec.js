@@ -163,4 +163,10 @@ describe('helpers', () => {
             expect(helpers.getCircleArea(2)).toBe(12.566370614359172);
         });
     })
+
+    describe('getRectangularPrismVolume', () => {
+        test('get rectangular prism volume', () => {
+            expect(helpers.getRectangularPrismVolume(5,8,5)).toBe(200);
+        });
+    })
 })
