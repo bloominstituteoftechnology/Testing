@@ -151,9 +151,18 @@ test('Add Exclamation Point', () => {
   expect(addExclamationPoint(word)).toBe(result);
 });
 
-test('Combine Names', () => {});
+test('Combine Names', () => {
+  const name1 = 'Matt';
+  const name2 = 'Wright';
+  const fullName = 'Matt Wright';
+  expect(combineNames(name1, name2)).toBe(fullName);
+});
 
-test('Get Greeting', () => {});
+test('Get Greeting', () => {
+  const name = 'Matt';
+  const result = 'Hello Matt!';
+  expect(getGreeting(name)).toBe(result);
+});
 
 test('Get Rectangle Area', () => {});
 
