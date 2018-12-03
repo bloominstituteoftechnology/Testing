@@ -61,3 +61,43 @@ test('number is less than 90', () => {
     
     expect(lessThanNinety(input)).toBeTruthy();
 })
+
+test('number is greater than 50', () => {
+    const input = 60;
+    
+    expect(greaterThanFifty(input)).toBeTruthy();
+})
+
+test('adding successful', () => {
+    const input1 = 6;
+    const input2 = 4;
+    const expected = 10; 
+    
+    expect(add(input1,input2)).toEqual(expected);
+})
+
+test('subtracting successful', () => {
+    const input1 = 6;
+    const input2 = 4;
+    const expected = 2; 
+    
+    expect(subtract(input1,input2)).toEqual(expected);
+})
+
+test('dividing successful', () => {
+    const input1 = 6;
+    const input2 = 3;
+    const expected = 2; 
+    
+    expect(divide(input1,input2)).toEqual(expected);
+})
+
+test('multiplying successful', () => {
+    const input1 = 6;
+    const input2 = 2;
+    const expected = 12; 
+    
+    expect(multiply(input1,input2)).toEqual(expected);
+})
+
+
