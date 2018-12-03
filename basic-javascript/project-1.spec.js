@@ -38,7 +38,6 @@ describe('helpers', () => {
 
     describe('areEqual', () => {
         test('check if equal', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             const x = 5;
             const y = 5;
             expect(helpers.areEqual(x, y)).toBeTruthy();
@@ -47,50 +46,49 @@ describe('helpers', () => {
 
     describe('lessThanNinety', () => {
         test('check if < 90', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.lessThanNinety(60)).toBeTruthy();
         });
     })
 
     describe('greaterThanFifty', () => {
         test('check if > 50', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.greaterThanFifty(60)).toBeTruthy();
         });
     })
 
     describe('add', () => {
         test('add two number', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.add(3, 3)).toBe(6);
         });
     })
 
     describe('subtract', () => {
         test('subtract two number', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.subtract(3, 3)).toBe(0);
         });
     })
 
     describe('divide', () => {
         test('divide two number', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.divide(4, 2)).toBe(2);
         });
     })
 
     describe('multiply', () => {
         test('multiply two number', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.multiply(4, 2)).toBe(8);
         });
     })
 
     describe('getRemainder', () => {
         test('getRemainder of two number', () => {
-            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.getRemainder(4, 3)).toBe(1);
+        });
+    })
+
+    describe('isEven', () => {
+        test('check if even', () => {
+            expect(helpers.isEven(4)).toBeTruthy();
         });
     })
 })
