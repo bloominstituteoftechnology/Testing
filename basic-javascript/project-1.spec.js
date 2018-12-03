@@ -125,5 +125,73 @@ describe('math things', () => {
     expect(result).toBe(expected);
   });
 
+  test('square should return 16', () => {
+    const expected = 16;
+    const square = helpers.square;
+
+    const result = square(4);
+
+    expect(result).toBe(expected);
+  });
+
+  test('cube should return 8', () => {
+    const expected = 8;
+    const cube = helpers.cube;
+
+    const result = cube(2);
+
+    expect(result).toBe(expected);
+  });
+
+  test('power should return 64', () => {
+    const expected = 64;
+    const raiseToPower = helpers.raiseToPower;
+
+    const result = raiseToPower(4, 3);
+
+    expect(result).toBe(expected);
+  });
+
+  describe('round number', () => {
+    test('should be integer', () => {
+      const expected = true;
+      const roundNumber = helpers.roundNumber;
+
+      const result = Number.isInteger(roundNumber(4.3));
+
+      expect(result).toBe(expected);
+    });
+
+    test('should return 4', () => {
+      const expected = 4;
+      const roundNumber = helpers.roundNumber;
+
+      const result = roundNumber(4.3);
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe('round up', () => {
+    test('should be integer', () => {
+      const expected = true;
+      const roundUp = helpers.roundUp;
+
+      const result = Number.isInteger(roundUp(4.3));
+
+      expect(result).toBe(expected);
+    });
+
+    test('should return 5', () => {
+      const expected = 5;
+      const roundUp = helpers.roundUp;
+
+      const result = roundUp(4.3);
+
+      expect(result).toBe(expected);
+    });
+  });
+});
+
 
 });
