@@ -79,4 +79,11 @@ describe('helpers', () => {
             expect(helpers.divide(4, 2)).toBe(2);
         });
     })
+
+    describe('multiply', () => {
+        test('multiply two number', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.multiply(4, 2)).toBe(8);
+        });
+    })
 })
