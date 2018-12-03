@@ -49,5 +49,12 @@ describe('funcs', () => {
         });
     })
     
+    describe('fizzBuzz', () => {
+        test('is it a fizzbuzz!', () => {
+            expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
+            expect(funcs.fizzBuzz(5)).toBe('buzz');
+            expect(funcs.fizzBuzz(3)).toBe('fizz');
+        });
+    })
 
 })
