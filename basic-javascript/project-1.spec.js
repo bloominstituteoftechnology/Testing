@@ -154,3 +154,14 @@ describe('cube function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// raiseToPower Function Test Suite
+describe('raiseToPower function', () => {
+    test('raiseToPower works properly', () => {
+        const num = 2
+        const exponent = 3
+        const expected = 8
+        const actual = helpers.raiseToPower(num, exponent)
+        expect(expected).toBe(actual)
+    })
+})
