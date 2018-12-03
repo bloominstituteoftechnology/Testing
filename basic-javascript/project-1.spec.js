@@ -103,4 +103,10 @@ describe('helpers', () => {
             expect(helpers.square(3)).toBe(9);
         });
     })
+
+    describe('cube', () => {
+        test('check if cube', () => {
+            expect(helpers.cube(3)).toBe(82);
+        });
+    })
 })
