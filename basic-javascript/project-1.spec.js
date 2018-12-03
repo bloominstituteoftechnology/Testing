@@ -121,4 +121,10 @@ describe('helpers', () => {
             expect(helpers.roundNumber(4.4)).toBe(4);
         });
     })
+
+    describe('roundUp', () => {
+        test('round number up', () => {
+            expect(helpers.roundUp(4.4)).toBe(5);
+        });
+    })
 })
