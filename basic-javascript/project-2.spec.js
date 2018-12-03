@@ -57,4 +57,11 @@ describe('funcs', () => {
         });
     })
 
+    describe('isPrime', () => {
+        test('is prime!', () => {
+            expect(funcs.isPrime(-1)).toBeFalsy();
+            expect(funcs.isPrime(1)).toBeFalsy();
+            expect(funcs.isPrime(2)).toBeTruthy();
+        });
+    })
 })
