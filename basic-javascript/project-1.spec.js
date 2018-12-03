@@ -100,4 +100,38 @@ test('multiplying successful', () => {
     expect(multiply(input1,input2)).toEqual(expected);
 })
 
+test('get the remainder', () => {
+    const input1 = 10;
+    const input2 = 4;
+    const expected = 2; 
+    
+    expect(getRemainder(input1,input2)).toEqual(expected);
+})
+
+test('is even', () => {
+    const input1 = 10;
+    
+    expect(isEven(input1)).toBeTruthy();
+})
+
+test('is odd', () => {
+    const input1 = 11;
+    
+    expect(isOdd(input1)).toBeTruthy();
+})
+
+test('number squared', () => {
+    const input1 = 10;
+    const expected = 100;
+    
+    expect(square(input1)).toEqual(expected);
+})
+
+test('number cubed', () => {
+    const input1 = 2;
+    const expected = 8;
+    
+    expect(cube(input1)).toEqual(expected);
+})
+
 
