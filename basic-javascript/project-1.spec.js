@@ -26,9 +26,7 @@ const {
     getRectangularPrismVolume 
 } = require('./project-1');
 
-test('jest working', () => {
-
-})
+test('jest working', () => {})
 
 // Test Type of Return Value
 
@@ -69,11 +67,6 @@ boolNum.forEach(func => test('returns a boolean', () => returnsBooleanNum(func))
 
 const validateResults = expected => {
     let actual = []
-    const nums = [multiplyByTen, subtractFive, square, cube, roundNumber, roundUp, getCircleArea, add, subtract, divide, multiply, getRemainder, raiseToPower, getRectangleArea, getTriangleArea, getRectangularPrismVolume]
-    const strs = [addExclamationPoint, combineNames, getGreeting]
-    const boolStr = [areSameLength, areEqual]
-    const boolNum = [lessThanNinety, greaterThanFifty, isEven, isOdd]
-
     nums.forEach(func => {
         let result = func(5)
         result ? result : result = func(5, 2)
@@ -93,16 +86,6 @@ const validateResults = expected => {
         let result = func(2)
         actual.push(result)
     })
-    
-    // let diff = []
-
-    // if (actual.length !== expected.length) return false
-    // for (let i = 0; i < actual.length; ++i) {
-    //     if (actual[i] !== expected[i]) {
-    //         diff.push([actual[i], expected[i]])
-    //     }
-    // } return diff.length > 0 ? diff : 'actual & expectected values are equal'
-
     expect(actual).toEqual(expected)
 }
 
