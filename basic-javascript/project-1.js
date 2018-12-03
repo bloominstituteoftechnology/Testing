@@ -58,10 +58,10 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  if (num % 2 === 1) {
+    return true;
   }
-  return true;
+  return false;
 };
 
 const square = num => {
@@ -97,11 +97,11 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  return Math.abs(length) * Math.abs(width);
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  return 0.5 * Math.abs(base) * Math.abs(height);
 };
 
 const getCircleArea = radius => {
@@ -109,7 +109,7 @@ const getCircleArea = radius => {
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  return Math.abs(width) * Math.abs(height) * Math.abs(length);
 };
 
 module.exports = {
