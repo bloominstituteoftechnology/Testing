@@ -115,4 +115,10 @@ describe('helpers', () => {
             expect(helpers.raiseToPower(4, 4)).toBe(256);
         });
     })
+
+    describe('roundNumber', () => {
+        test('round number', () => {
+            expect(helpers.roundNumber(4.4)).toBe(4);
+        });
+    })
 })
