@@ -66,3 +66,10 @@ test('Greater Than Fifty', () => {
   const result = true;
   expect(greaterThanFifty(input, result)).toBe(result);
 });
+
+test('Add', () => {
+  const x = 4;
+  const y = 6;
+  const result = 10;
+  expect(add(x, y)).toBe(result);
+});
