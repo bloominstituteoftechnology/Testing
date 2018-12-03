@@ -55,5 +55,12 @@ const strs = [addExclamationPoint, combineNames, getGreeting]
 strs.forEach(func => test('returns a string', () => returnsString(func)))
 
 //boolean string based functions
+const returnsBooleanStr = func => {
+    let result = func('jest', 'jest')
+    expect(typeof result === 'boolean').toBeTruthy()
+}
+
+const boolStr = [areSameLength, areEqual]
+boolStr.forEach(func => test('returns a boolean', () => returnsBooleanStr(func)))
 
 //boolean number based functions
