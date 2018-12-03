@@ -91,4 +91,10 @@ describe('helpers', () => {
             expect(helpers.isEven(4)).toBeTruthy();
         });
     })
+
+    describe('isOdd', () => {
+        test('check if odd', () => {
+            expect(helpers.isOdd(3)).toBeTruthy();
+        });
+    })
 })
