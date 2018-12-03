@@ -1,6 +1,7 @@
 const helpers = require('./project-1');
 
 // MultiplyByTen Function Test Suite
+
 describe('multiplyByTen function', () => {
     test('multiplies * 10 properly', () => {
         const input = 1
@@ -27,6 +28,26 @@ describe('areSameLength function', () => {
         const input1 = 'four'
         const input2 = 'five'
         const result = helpers.areSameLength(input1, input2)
+        expect(result).toBe(true)
+    })
+})
+
+// areSameLength Function Test Suite
+describe('areSameLength function', () => {
+    test('areSameLength works properly', () => {
+        const input1 = 'four'
+        const input2 = 'five'
+        const result = helpers.areSameLength(input1, input2)
+        expect(result).toBe(true)
+    })
+})
+
+// areEqual Function Test Suite
+describe('areEqual function', () => {
+    test('areEqual works properly', () => {
+        const input1 = 1
+        const input2 = 1
+        const result = helpers.areEqual(input1, input2)
         expect(result).toBe(true)
     })
 })
