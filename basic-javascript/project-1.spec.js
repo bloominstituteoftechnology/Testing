@@ -72,4 +72,11 @@ describe('helpers', () => {
             expect(helpers.subtract(3, 3)).toBe(0);
         });
     })
+
+    describe('divide', () => {
+        test('divide two number', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.divide(4, 2)).toBe(2);
+        });
+    })
 })
