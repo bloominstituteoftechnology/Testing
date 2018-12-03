@@ -65,4 +65,11 @@ describe('helpers', () => {
             expect(helpers.add(3, 3)).toBe(6);
         });
     })
+
+    describe('subtract', () => {
+        test('subtract two number', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.subtract(3, 3)).toBe(0);
+        });
+    })
 })
