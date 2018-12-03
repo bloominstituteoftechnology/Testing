@@ -133,7 +133,11 @@ test('Raise to Power', () => {
   expect(raiseToPower(x, exponent)).toBe(result);
 });
 
-test('Round Number', () => {});
+test('Round Number', () => {
+  const num = 3.8;
+  const result = 4;
+  expect(roundNumber(num)).toBe(result);
+});
 
 test('Round Up', () => {});
 
