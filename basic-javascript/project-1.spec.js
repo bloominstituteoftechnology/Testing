@@ -77,3 +77,40 @@ test('It correctly multiplies both inputs', () => {
     const actual = helpers.multiply(input1, input2);
     expect(actual).toBe(expected);
 });
+
+test('It correctly returns remainder of input1 divided by input2', () => {
+    const input1 = 10;
+    const input2 = 3;
+    const expected = 1;
+    const actual = helpers.getRemainder(input1, input2);
+    expect(actual).toBe(expected);
+});
+
+test('It returns true if input is even', () => {
+    const input = 4;
+    const expected = true;
+    const actual = helpers.isEven(input);
+    expect(actual).toBe(expected);
+});
+
+test('It returns true if input is odd', () => {
+    const input = 5;
+    const expected = true;
+    const actual = helpers.isOdd(input);
+    expect(actual).toBe(expected);
+});
+
+test('It correctly squares the input', () => {
+    const input = 4;
+    const expected = 16;
+    const actual = helpers.square(input);
+    expect(actual).toBe(expected);
+});
+
+test('It correctly cubes the input', () => {
+    const input = 2;
+    const expected = 8;
+    const actual = helpers.cube(input);
+    expect(actual).toBe(expected);
+});
+
