@@ -27,3 +27,5 @@ test('Get Biggest', () => {
   const result = 8;
   expect(getBiggest(x, y)).toBe(result);
 });
+
+test('Greeting', () => {});
