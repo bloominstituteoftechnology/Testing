@@ -97,6 +97,9 @@ const isOdd = num => {
 };
 
 const square = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return num * num;
 };
 

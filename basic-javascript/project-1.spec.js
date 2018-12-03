@@ -134,4 +134,16 @@ describe('project-1', () => {
         })
     })
 
+    describe('square ', () => {
+        it('should be able to correctly square', () => {
+            expect(helpers.square(5)).toEqual(25);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.square('ten')
+            }).toThrow();
+        })
+    })
+
+
 })
