@@ -104,10 +104,16 @@ const square = num => {
 };
 
 const cube = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if ( (typeof num && typeof exponent)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
   return num ** exponent;
 };
 

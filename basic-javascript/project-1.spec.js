@@ -134,7 +134,7 @@ describe('project-1', () => {
         })
     })
 
-    describe('square ', () => {
+    describe('square() ', () => {
         it('should be able to correctly square', () => {
             expect(helpers.square(5)).toEqual(25);
         })
@@ -145,5 +145,25 @@ describe('project-1', () => {
         })
     })
 
+    describe('cube() ', () => {
+        it('should be able to correctly square', () => {
+            expect(helpers.cube(5)).toEqual(125);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.cube('ten')
+            }).toThrow();
+        })
+    })
 
+    describe('raiseToPower() ', () => {
+        it('should be able to correctly raiseToPower', () => {
+            expect(helpers.raiseToPower(5, 2)).toEqual(125);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.cube('ten', 2)
+            }).toThrow();
+        })
+    })
 })
