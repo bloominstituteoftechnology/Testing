@@ -46,8 +46,25 @@ describe('project-1', () => {
     })
 
     describe('lessThanNinety() ', () => {
-        it('lessThanNinety works properly', () => {
+        it('lessThanNinety should be true', () => {
             expect(helpers.lessThanNinety(80)).toBe(true)
+        })
+    })
+
+    describe('greaterThanFifty() ', () => {
+        it('greaterThanFifty should be true', () => {
+            expect(helpers.greaterThanFifty(51)).toBe(true)
+        })
+    })
+
+    describe('add() ', () => {
+        it('should add and answer correct', () => {
+            expect(helpers.add(5, 1)).toEqual(6)
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.add(5, 'ten')
+            }).toThrow();
         })
     })
 })
