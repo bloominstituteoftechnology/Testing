@@ -56,5 +56,5 @@ module.exports = {
   reduce,
   find,
   filter,
-  flatten,
+  flatten
 };
