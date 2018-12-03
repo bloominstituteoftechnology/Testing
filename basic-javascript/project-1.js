@@ -3,37 +3,37 @@
 const multiplyByTen = num => {
   if(!num) return 0;
   if(typeof num === 'string') throw new Error('Value must be a number');
-return num * 10;
+  return num * 10;
 };
 
 const subtractFive = num => {
   if(!num) return 0;
   if(typeof num === 'string') throw new Error('Value must be a number');
-return num - 5;
+  return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-if (!str1 || !str2) return false;
-return str1.length === str2.length;
+  if (!str1 || !str2) return false;
+  return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
-if (!x || !y) return false;
-return x === y;
+  if (!x || !y) return false;
+  return x === y;
 };
 
 const lessThanNinety = num => {
-if (num < 90) {
-  return true;
-}
-return false;
+  if (num < 90) {
+    return true;
+  }
+  return false;
 };
 
 const greaterThanFifty = num => {
-if (num > 50) {
-  return true;
-}
-return false;
+  if (num > 50) {
+    return true;
+  }
+  return false;
 };
 
 const add = (x, y) => {
@@ -41,7 +41,7 @@ const add = (x, y) => {
     if(typeof x === 'string' || typeof y === 'string'){ 
       throw new Error('Value must be a number');
     }
-return x + y;
+  return x + y;
 };
 
 const subtract = (x, y) => {
@@ -49,7 +49,7 @@ const subtract = (x, y) => {
     if(typeof x === 'string' || typeof y === 'string') {
       throw new Error('Value must be a number');
     }
-return x - y;
+  return x - y;
 };
 
 const divide = (x, y) => {
@@ -57,7 +57,7 @@ const divide = (x, y) => {
     if(typeof x === 'string' || typeof y === 'string') {
       throw new Error('Value must be a number');
     }
-return x / y;
+  return x / y;
 };
 
 const multiply = (x, y) => {
@@ -65,7 +65,7 @@ const multiply = (x, y) => {
   if(typeof x === 'string' || typeof y === 'string') {
     throw new Error('Value must be a number');
   }
-return x * y;
+  return x * y;
 };
 
 const getRemainder = (x, y) => {
@@ -73,14 +73,16 @@ const getRemainder = (x, y) => {
   if(typeof x === 'string' || typeof y === 'string') {
     throw new Error('Value must be a number');
   }
-return x % y;
+  return x % y;
 };
 
 const isEven = num => {
-if (num % 2 === 0) {
-  return true;
-}
-return false;
+  if (!num) return false;
+  if(typeof num === 'string') throw new Error('Value must be a number');
+  if (num % 2 === 0) {
+    return true;
+  }
+  return false;
 };
 
 const isOdd = num => {
