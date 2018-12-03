@@ -126,7 +126,12 @@ test('Cube', () => {
   expect(cube(num)).toBe(result);
 });
 
-test('Raise to Power', () => {});
+test('Raise to Power', () => {
+  const x = 2;
+  const exponent = 4;
+  const result = 16;
+  expect(raiseToPower(x, exponent)).toBe(result);
+});
 
 test('Round Number', () => {});
 
