@@ -80,3 +80,10 @@ test('Subtract', () => {
   const result = 1;
   expect(subtract(x, y)).toBe(result);
 });
+
+test('Divide', () => {
+  const x = 100;
+  const y = 10;
+  const result = 10;
+  expect(divide(x, y)).toBe(result);
+});
