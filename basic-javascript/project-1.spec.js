@@ -1,5 +1,3 @@
-const helpers = require('./project-1');
-
 const {
     multiplyByTen,
     subtractFive,
