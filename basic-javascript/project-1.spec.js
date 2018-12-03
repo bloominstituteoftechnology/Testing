@@ -114,3 +114,39 @@ test('It correctly cubes the input', () => {
     expect(actual).toBe(expected);
 });
 
+test('It raises input1 to power of input2 correctly', () => {
+    const input1 = 3;
+    const input2 = 2;
+    const expected = 9;
+    const actual = helpers.raiseToPower(input1, input2);
+    expect(actual).toBe(expected);
+});
+
+test('It correctly rounds the input', () => {
+    const input = 1.5;
+    const expected = 2;
+    const actual = helpers.roundNumber(input);
+    expect(actual).toBe(expected);
+});
+
+test('It correctly rounds input up', () => {
+    const input = 1.2;
+    const expected = 2;
+    const actual = helpers.roundUp(input);
+    expect(actual).toBe(expected);
+});
+
+test('It correctly adds a ! to the end of the input', () => {
+    const input = 'Daniel';
+    const expected = 'Daniel!';
+    const actual = helpers.addExclamationPoint(input);
+    expect(actual).toBe(expected);
+});
+
+test('Correctly combines input1 and input2', () => {
+    const input1 = 'Daniel';
+    const input2 = 'Ferrer';
+    const expected = 'Daniel Ferrer';
+    const actual = helpers.combineNames(input1, input2);
+    expect(actual).toBe(expected);
+});
