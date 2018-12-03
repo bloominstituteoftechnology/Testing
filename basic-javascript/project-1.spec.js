@@ -62,5 +62,50 @@ describe('math things', () => {
     expect(result).toBe(expected);
   });
 
+  test('add should return 5', () => {
+    const expected = 5;
+    const add = helpers.add;
+
+    const result = add(2, 3);
+
+    expect(result).toBe(expected);
+  });
+
+  test('subtract should return 1', () => {
+    const expected = 1;
+    const subtract = helpers.subtract;
+
+    const result = subtract(3, 2);
+
+    expect(result).toBe(expected);
+  });
+
+  test('divide should return 2', () => {
+    const expected = 2;
+    const divide = helpers.divide;
+
+    const result = divide(10, 5);
+
+    expect(result).toBe(expected);
+  });
+
+  test('multiply should return 6', () => {
+    const expected = 6;
+    const multiply = helpers.multiply;
+
+    const result = multiply(3, 2);
+
+    expect(result).toBe(expected);
+  });
+
+  test('remainder should return 1', () => {
+    const expected = 1;
+    const getRemainder = helpers.getRemainder;
+
+    const result = getRemainder(5, 2);
+
+    expect(result).toBe(expected);
+  });
+
 
 });
