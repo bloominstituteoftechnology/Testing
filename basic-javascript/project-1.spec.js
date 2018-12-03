@@ -83,4 +83,25 @@ describe('subtract function', () => {
     })
 })
 
+// divide Function Test Suite
+describe('divide function', () => {
+    test('divide works properly', () => {
+        const input1 = 15
+        const input2 = 3
+        const expected = 5
+        const actual = helpers.divide(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
+
+// multiply Function Test Suite
+describe('multiply function', () => {
+    test('multiply works properly', () => {
+        const input1 = 5
+        const input2 = 3
+        const expected = 15
+        const actual = helpers.multiply(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
 
