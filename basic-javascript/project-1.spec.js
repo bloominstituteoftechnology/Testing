@@ -52,6 +52,14 @@ describe('areEqual function', () => {
     })
 })
 
+describe('lessThanNinety function', () => {
+    test('lessThanNinety works properly', () => {
+        const input1 = 89
+        const result = helpers.lessThanNinety(input1)
+        expect(result).toBe(true)
+    })
+})
+
 
 
 
