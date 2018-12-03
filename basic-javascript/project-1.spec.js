@@ -60,4 +60,46 @@ describe('project-1', () => {
       expect(addExpected).toBe(5);
     });
   });
+
+  describe('subtract', () => {
+    it('should subtract a value from another', () => {
+      const subtractExpected = helpers.subtract(10, 7);
+      expect(subtractExpected).toBe(3);
+    });
+  });
+
+  describe('divide', () => {
+    it('should divide a value into another', () => {
+      const divideExpected = helpers.divide(10, 2);
+      expect(divideExpected).toBe(5);
+    });
+  });
+
+  describe('multiply', () => {
+    it('should multiply two values together', () => {
+      const multiplyExpected = helpers.multiply(3, 4);
+      expect(multiplyExpected).toBe(12);
+    });
+  });
+
+  describe('getRemainder', () => {
+    it('should get the remainder of two numbers divide into one another', () => {
+      const getRemainderResult = helpers.getRemainder(10, 3);
+      expect(getRemainderResult).toBe(1);
+    });
+  });
+
+  describe('isEven', () => {
+    it('determine if value is even', () => {
+      const isEvenResult = helpers.isEven(10);
+      expect(isEvenResult).toBe(true);
+    });
+  });
+
+  describe('isOdd', () => {
+    it('determine if value is odd', () => {
+      const isOddResult = helpers.isOdd(11);
+      expect(isOddResult).toBe(true);
+    });
+  });
 });
