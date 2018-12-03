@@ -248,3 +248,14 @@ describe('getCircleArea function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+describe('getRectangularPrismVolume function', () => {
+    test('getRectangularPrismVolume works properly', () => {
+        const input1 = 4
+        const input2 = 5
+        const input3 = 8
+        const expected = 160
+        const actual = helpers.getRectangularPrismVolume(input1, input2, input3)
+        expect(expected).toBe(actual)
+    })
+})
