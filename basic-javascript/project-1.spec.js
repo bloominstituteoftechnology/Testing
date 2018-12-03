@@ -23,17 +23,17 @@ describe('testing project-1.js', () => {
 
     describe('areSameLength', () => {
         it('should ensure string lengths are equal', () => {
-            const expected = true;
+            // const expected = true;
             const actual = helpers.areSameLength('book', 'hola');
-            expect(actual).toEqual(expected);
+            expect(actual).toBeTruthy();
         })
     })
 
     describe('areEqual', () => {
         it('should ensure values are equal', () => {
-            const expected = true;
+            // const expected = true;
             const actual = helpers.areEqual(5, 5);
-            expect(actual).toEqual(expected);
+            expect(actual).toBeTruthy();
         })
     })
 
