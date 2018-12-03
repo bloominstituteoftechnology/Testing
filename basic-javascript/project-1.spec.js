@@ -134,4 +134,41 @@ test('number cubed', () => {
     expect(cube(input1)).toEqual(expected);
 })
 
+test('number raised to power of second number', () => {
+    const input1 = 10;
+    const input2 = 3;
+    const expected = 1000;
+    
+    expect(raiseToPower(input1,input2)).toEqual(expected);
+})
+
+test('rounded number', () => {
+    const input1 = 10.1;
+    const expected = 10;
+    
+    expect(roundNumber(input1)).toEqual(expected);
+})
+
+test('round number up', () => {
+    const input1 = 10.1;
+    const expected = 11;
+    
+    expect(roundUp(input1)).toEqual(expected);
+})
+
+test('add exclamation point to string', () => {
+    const string = 'wow';
+    const expected = 'wow!'; 
+    
+    expect(addExclamationPoint(string)).toBe(expected);
+})
+
+test('add names together', () => {
+    const string1 = 'wow';
+    const string2 = 'mom';
+    const expected = 'wow mom'; 
+    
+    expect(combineNames(string1,string2)).toBe(expected);
+})
+
 
