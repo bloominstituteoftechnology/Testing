@@ -25,7 +25,14 @@ describe('project-1.js', () => {
             const expected = true;
             const answer = helpers.areSameLength('hola', 'ball');
             expect(answer).toBe(expected)
-
         })
-    })
+    }) // areSameLength
+    describe('areEqual', () => {
+        it('should say if eqyal', () => {
+            const expected = true;
+            const answer = helpers.areSameLength('100', '100');
+            expect(answer).toBe(expected)
+        })
+    }) // areEqual
+
 }) // project js
