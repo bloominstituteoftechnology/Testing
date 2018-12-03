@@ -161,6 +161,45 @@ describe('project-1 tests', () => {
       expect(helpers.combineNames(5, 5)).toEqual('5 5');
     });
   });
+  describe('greets an inputed name', () => {
+    it('Greeting Cases', ()=>{
+      expect(typeof helpers.getGreeting('Biff') === 'string').toBeTruthy();
+      expect(helpers.getGreeting('Jeff')).toEqual('Hello Jeff!');
+      expect(helpers.getGreeting(5)).toEqual('Hello 5!');
+    });
+  });
+  describe('gets area of rectangle', () => {
+    it('Rectangle Cases', ()=>{
+      expect(typeof helpers.getRectangleArea(2, 2) === 'number').toBeTruthy();
+      expect(helpers.getRectangleArea(3, 45)).toEqual(135);
+      expect(helpers.getRectangleArea(10,5)).toEqual(50);
+      expect(helpers.getRectangleArea('hi','there')).toBeNaN();
+    });
+  });
+  describe('gets area of triangle', () => {
+    it('Triangle Cases', ()=>{
+      expect(typeof helpers.getTriangleArea(2, 2) === 'number').toBeTruthy();
+      expect(helpers.getTriangleArea(3, 40)).toEqual(60);
+      expect(helpers.getTriangleArea(10,5)).toEqual(25);
+      expect(helpers.getTriangleArea('hi','there')).toBeNaN();
+    });
+  });
+  describe('Gets area of a circle', () => {
+    it('Circle Cases', ()=>{
+      expect(typeof helpers.getCircleArea(5) === 'number').toBeTruthy();
+      expect(helpers.getCircleArea(3)).toEqual(9 * Math.PI);
+      expect(helpers.getCircleArea(423)).toEqual(178929 * Math.PI);
+      expect(helpers.getCircleArea('hi')).toBeNaN();
+    });
+  });
+  describe('gets area of rectangular prism', () => {
+    it('Rectangular prism Cases', ()=>{
+      expect(typeof helpers.getRectangularPrismVolume(2, 4, 76) === 'number').toBeTruthy();
+      expect(helpers.getRectangularPrismVolume(3, 5, 2)).toEqual(30);
+      expect(helpers.getRectangularPrismVolume(10, 5, 4)).toEqual(200);
+      expect(helpers.getRectangularPrismVolume('hi','there', 'buddy')).toBeNaN();
+    });
+  });
 });
 
 

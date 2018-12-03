@@ -1,13 +1,6 @@
 /* eslint-disable arrow-parens */
 
-const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
-    return y;
-  }
-  return y;
-};
+const getBiggest = (x, y) => x > y ? x : y;
 
 const greeting = language => {
   switch (language) {
@@ -20,26 +13,11 @@ const greeting = language => {
   }
 };
 
-const isTenOrFive = num => {
-  if (num === 10 || num === 5) {
-    return true;
-  }
-  return false;
-};
+const isTenOrFive = num => num === 10 || num === 5 ? true : false;
 
-const isInRange = num => {
-  if (num < 50 && num > 20) {
-    return true;
-  }
-  return false;
-};
+const isInRange = num => num < 50 && num > 20 ? true : false;
 
-const isInteger = num => {
-  if (Math.floor(num) === num) {
-    return true;
-  }
-  return false;
-};
+const isInteger = num =>  Math.floor(num) === num ? true : false;
 
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
@@ -109,16 +87,8 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      itemCounter++;
-    }
-  }
-  if (itemCounter > 0) {
-    return true;
-  }
-  return false;
+  let itemCounter = arr.indexOf(item)
+  return itemCounter > -1 ? true : false
 };
 
 const addNumbers = numbers => {
