@@ -1,7 +1,7 @@
 const helpers = require('./project-1');
 
 // start testing!
-describe('helpers.js', () => {
+describe('project-1.js', () => {
   describe('multiplyByTen()', () => {
     it('should multiply provided number by 10', () => {
       expect(helpers.multiplyByTen(10)).toEqual(100);
@@ -22,9 +22,24 @@ describe('helpers.js', () => {
       expect(helpers.areSameLength('hi', 'hey')).toBeFalsy();
     });
   });
-  // describe('areEqual', () => {
-  //   it('should ')
-  // });
+  describe('areEqual', () => {
+    it('should return true if equal and false if not', () => {
+      expect(helpers.areEqual(3, 3)).toBeTruthy();
+      expect(helpers.areEqual(3, 4)).toBeFalsy();
+    });
+  });
+  describe('lessThanNinety', () => {
+    it('should return true if equal and false if not', () => {
+      expect(helpers.lessThanNinety(88)).toBeTruthy();
+      expect(helpers.lessThanNinety(91)).toBeFalsy();
+    });
+  });
+  describe('greaterThanFifty', () => {
+    it('should return true if equal and false if not', () => {
+      expect(helpers.greaterThanFifty(88)).toBeTruthy();
+      expect(helpers.greaterThanFifty(45)).toBeFalsy();
+    });
+  });
   describe('add()', () => {
     it('shoud add two values', () => {
       expect(helpers.add(1, 2)).toBe(3);
