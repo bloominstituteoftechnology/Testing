@@ -149,4 +149,18 @@ describe('project-1.js', () => {
             expect( () => { helpers.multiply('four', 'two') }).toThrow();
         });
     });
+    describe('getRemainder', () => {
+        it('should return the remainder of the two numbers', () => {
+            const expected = 6;
+             const actual = helpers.getRemainder(6, 7);
+             expect(actual).toEqual(expected);
+        });
+         it('should return 0 when called with no value', () => {
+            const product = helpers.getRemainder();
+             expect(product).toBe(0);
+        });
+         it('should throw an error when called with a string', () => {
+            expect( () => { helpers.getRemainder('four', 'two') }).toThrow();
+        });
+    });
 });
