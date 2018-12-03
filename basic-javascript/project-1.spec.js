@@ -10,8 +10,11 @@ describe("Jest", () => {
 
 describe("multiplyByTen", () => {
   it("should multiple provided number by ten", () => {
+    // Arrange: setup the world
     const expected = 100;
+    // Act: execute the code you're testing
     const actual = helpers.multiplyByTen(10);
+    // Assert: check that it works
     expect(actual).toEqual(expected);
   });
 });
