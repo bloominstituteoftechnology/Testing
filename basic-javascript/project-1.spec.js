@@ -227,3 +227,14 @@ describe('getRectangleArea function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// getTriangleArea Function Test Suite
+describe('getTriangleArea function', () => {
+    test('getTriangleArea works properly', () => {
+        const input1 = 5
+        const input2 = 8
+        const expected = 20
+        const actual = helpers.getTriangleArea(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
