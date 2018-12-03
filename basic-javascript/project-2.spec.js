@@ -64,4 +64,10 @@ describe('funcs', () => {
             expect(funcs.isPrime(2)).toBeTruthy();
         });
     })
+
+    describe('returnFirst', () => {
+        test('return first!', () => {
+            expect(funcs.returnFirst([0,1,2,3])).toBe(0);
+        });
+    })
 })
