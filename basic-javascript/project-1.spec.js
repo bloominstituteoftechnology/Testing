@@ -185,3 +185,13 @@ describe('roundUp function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// addExclamationPoint Function Test Suite
+describe('addExclamationPoint function', () => {
+    test('addExclamationPoint works properly', () => {
+        const input = 'string'
+        const expected = 'string!'
+        const actual = helpers.addExclamationPoint(input)
+        expect(expected).toBe(actual)
+    })
+})
