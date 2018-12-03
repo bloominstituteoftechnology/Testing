@@ -142,18 +142,33 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if (!length || !width) return 0;
+  if (typeof length === "string" || typeof width === "string")
+    throw new Error("Value must exist");
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (!base || !height) return 0;
+  if (typeof base === "string" || typeof height === "string")
+    throw new Error("Value must exist");
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
+  if (!radius) return 0;
+  if (typeof radius === "string") throw new Error("Value must exist");
   return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if (!length || !width || !height) return 0;
+  if (
+    typeof length === "string" ||
+    typeof width === "string" ||
+    typeof height === "string"
+  )
+    throw new Error("Value must exist");
   return width * height * length;
 };
 
