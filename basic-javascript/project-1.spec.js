@@ -81,4 +81,95 @@ describe('helpers.js', () => {
 			expect(actual).toBe(3);
 		});
 	});
+
+	describe('isEven', () => {
+		it('it should check if num is even', () => {
+			const actual = helpers.isEven(12);
+			expect(actual).toBe(true);
+		});
+	});
+
+	describe('isOdd', () => {
+		it('Should test if num is odd', () => {
+			const actual = helpers.isOdd(11);
+			expect(actual).toBe(true);
+		});
+	});
+
+	describe('square', () => {
+		it('Should check if the given value is the sqrt of num', () => {
+			const actual = helpers.square(4);
+			expect(actual).toBe(16);
+		});
+	});
+
+	describe('cube', () => {
+		it('should check if the given value is the cube of num', () => {
+			const actual = helpers.cube(2);
+			expect(actual).toBe(8);
+		});
+	});
+
+	describe('raiseToPower', () => {
+		it('should raise num to a given exponent', () => {
+			const actual = helpers.raiseToPower(3, 3);
+			expect(actual).toBe(27);
+		});
+	});
+
+	describe('roundNumber', () => {
+		it('should round num', () => {
+			const actual = helpers.roundNumber(3.5);
+			expect(actual).toBe(4);
+		});
+	});
+
+	describe('roundUp', () => {
+		it('should round a number up', () => {
+			const actual = helpers.roundUp(2.1);
+			expect(actual).toBe(3);
+		});
+	});
+
+	describe('addExclamationPoint', () => {
+		it('should add an exclamation at the end', () => {
+			const actual = helpers.addExclamationPoint('sfsfsd');
+			expect(actual).toBe('sfsfsd!');
+		});
+	});
+
+	describe('combineNames', () => {
+		it('should combine a firstname and lastname', () => {
+			const actual = helpers.combineNames('carlos', 'lantigua');
+			expect(actual).toBe('carlos lantigua');
+		});
+	});
+
+	describe('getGreeting', () => {
+		it('Should put your name into a greeting', () => {
+			const actual = helpers.getGreeting('Carlos');
+			expect(actual).toBe('Hello Carlos!');
+		});
+	});
+
+	describe('getRectangleArea', () => {
+		it('Should get the area of a rectangle', () => {
+			const actual = helpers.getRectangleArea(3, 10);
+			expect(actual).toBe(30);
+		});
+	});
+
+	describe('getTriangleArea', () => {
+		it('should get the rectangle area of a shape', () => {
+			const actual = helpers.getTriangleArea(3, 4);
+			expect(actual).toBe(6);
+		});
+	});
+
+	describe('getRectangularPrismVolume', () => {
+		it('should get the rectangular prism volume', () => {
+			const actual = helpers.getRectangularPrismVolume(2, 2, 2);
+			expect(actual).toBe(8);
+		});
+	});
 });
