@@ -133,4 +133,10 @@ describe('helpers', () => {
             expect(helpers.addExclamationPoint('hello')).toBe('hello!');
         });
     })
+
+    describe('combineNames', () => {
+        test('add first and last name', () => {
+            expect(helpers.combineNames('Shawn', 'Antonucci')).toBe('Shawn Antonucci');
+        });
+    })
 })
