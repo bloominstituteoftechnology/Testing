@@ -85,7 +85,18 @@ describe('project-1', () => {
         })
         it('should throw err when calling other than number', () => {
             expect(() => {
-                helpers.subtract(5, 'ten')
+                helpers.divide(5, 'ten')
+            }).toThrow();
+        })
+    })
+
+    describe('multiply() ', () => {
+        it('should be able to correctly multiply', () => {
+            expect(helpers.multiply(6,2)).toEqual(12);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.multiply(5, 'ten')
             }).toThrow();
         })
     })
