@@ -1,3 +1,12 @@
 const funcs = require('./project-2');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
+// getBiggest Function Test Suite
+describe('getBiggest test suite', () => {
+    test('getBiggest works properly', () => {
+        const input1 = 8
+        const input2 = 3
+        const expected = 8
+        const actual = funcs.getBiggest(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
