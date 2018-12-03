@@ -113,7 +113,7 @@ describe('project-1', () => {
     })
 
     describe('isEven() ', () => {
-        it('should be able to correctly get remainder', () => {
+        it('should be able to correctly get isEven', () => {
             expect(helpers.isEven(4)).toBe(true);
         })
         it('should throw err when calling other than number', () => {
@@ -122,4 +122,16 @@ describe('project-1', () => {
             }).toThrow();
         })
     })
+
+    describe('isOdd() ', () => {
+        it('should be able to correctly get isOdd', () => {
+            expect(helpers.isOdd(5)).toBe(true);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.isOdd('ten')
+            }).toThrow();
+        })
+    })
+
 })

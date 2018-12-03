@@ -90,6 +90,9 @@ const isOdd = num => {
   if (num % 2 === 0) {
     return false;
   }
+  else if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return true;
 };
 
