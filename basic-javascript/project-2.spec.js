@@ -44,3 +44,13 @@ describe('isInRange test suite', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// isInteger Function Test Suite
+describe('isInteger test suite', () => {
+    test('isInteger works properly', () => {
+        const input1 = 4
+        const expected = true
+        const actual = funcs.isInteger(input1)
+        expect(expected).toBe(actual)
+    })
+})
