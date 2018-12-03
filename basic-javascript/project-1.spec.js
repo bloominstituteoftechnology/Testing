@@ -184,4 +184,10 @@ test('Get Circle Area', () => {
   expect(getCircleArea(radius)).toBe(result);
 });
 
-test('Get Rectangular Prism Volume', () => {});
+test('Get Rectangular Prism Volume', () => {
+  const width = 2;
+  const height = 3;
+  const length = 4;
+  const volume = 24;
+  expect(getRectangularPrismVolume(width, height, length)).toBe(volume);
+});
