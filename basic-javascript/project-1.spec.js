@@ -150,3 +150,42 @@ test('Correctly combines input1 and input2', () => {
     const actual = helpers.combineNames(input1, input2);
     expect(actual).toBe(expected);
 });
+
+test('Correctly returns greeting using input', () => {
+    const input = 'Daniel';
+    const expected = 'Hello Daniel!';
+    const actual = helpers.getGreeting(input);
+    expect(actual).toBe(expected);
+});
+
+test('It correctly returns area, by multiplying input1 by input2', () => {
+    const input1 = 2;
+    const input2 = 2;
+    const expected = 4;
+    const actual = helpers.getRectangleArea(input1, input2);
+    expect(actual).toBe(expected);
+});
+
+test('Correctly returns area of triangle', () => {
+    const input1 = 5;
+    const input2 = 4;
+    const expected = 10;
+    const actual = helpers.getTriangleArea(input1, input2);
+    expect(actual).toBe(expected);
+});
+
+test('Correctly returns area of circle', () => {
+    const input = 5;
+    const expected = 78.53981633974483;
+    const actual = helpers.getCircleArea(input);
+    expect(actual).toBe(expected);
+});
+
+test('Correctly returns rectangular prism volume', () => {
+    const input1 = 2;
+    const input2 = 2;
+    const input3 = 2;
+    const expected = 8;
+    const actual = helpers.getRectangularPrismVolume(input1, input2, input3);
+    expect(actual).toBe(expected);
+});
