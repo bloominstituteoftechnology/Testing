@@ -158,12 +158,13 @@ describe('project-1', () => {
 
     describe('raiseToPower() ', () => {
         it('should be able to correctly raiseToPower', () => {
-            expect(helpers.raiseToPower(5, 2)).toEqual(125);
+            expect(helpers.raiseToPower(5, 2)).toEqual(25);
         })
         it('should throw err when calling other than number', () => {
             expect(() => {
-                helpers.cube('ten', 2)
+                helpers.raiseToPower('ten', 2)
             }).toThrow();
         })
     })
+
 })

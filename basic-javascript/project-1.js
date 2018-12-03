@@ -111,7 +111,7 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  if ( (typeof num && typeof exponent)  !== 'number' ) {
+  if ( (typeof num !== 'number') || (typeof exponent !== 'number') ) {
     throw new Error('either x or y should be number')
   }
   return num ** exponent;
