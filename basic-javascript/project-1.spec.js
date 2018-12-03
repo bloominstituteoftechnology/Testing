@@ -101,3 +101,9 @@ test('Get Remainder', () => {
   const result = 0;
   expect(getRemainder(x, y)).toBe(result);
 });
+
+test('Is Even', () => {
+  const x = 20;
+  const result = true;
+  expect(isEven(x)).toBe(result);
+});
