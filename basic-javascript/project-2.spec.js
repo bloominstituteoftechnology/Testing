@@ -19,8 +19,12 @@ const {
     largestNumber
 } = require('./project-2');
 
+test('Jest runs', () => {
+
+});
+
 test('get Biggest', () => {
-    
+
     expect(getBiggest(5, 6)).toBe(6);
     expect(getBiggest(5, 5)).toBe(5);
     expect(getBiggest(9, 5)).toBe(9);
@@ -108,7 +112,7 @@ test('contains', () => {
 });
 
 test('add numbers', () => {
-    expect(addNumbers([2,3,4,5])).toEqual(14);
+    expect(addNumbers([2, 3, 4, 5])).toEqual(14);
 })
 
 test('average Test Score', () => {
@@ -118,8 +122,6 @@ test('average Test Score', () => {
 });
 
 test('largest Number', () => {
-    const input = [80, 50, 43, 100, 95, 89, 99, 95];
-    const expected = 100;
     expect(largestNumber([80, 50, 43, 100, 95, 89, 99, 95])).toEqual(100);
     expect(largestNumber([80, 50, 143, 100, 95, 89, 99, 95])).toEqual(143);
 });
