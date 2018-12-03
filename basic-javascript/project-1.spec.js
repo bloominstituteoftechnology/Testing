@@ -84,3 +84,57 @@ test('raise to power', () => {
     const expected = 27
     expect(raiseToPower(num, exponent)).toEqual(expected)
 })
+test('round number', () => {
+    const num = 3.49
+    const expected = 3
+    expect(roundNumber(num)).toEqual(expected)
+})
+test('round up', () => {
+    const num = 2.9
+    const expected = 3
+    expect(roundUp(num)).toEqual(expected)
+})
+describe('add exclamation point', () => {
+    test('works with str', ()  => {
+        const str = 'hello'
+        const expected = 'hello!'
+        expect(addExclamationPoint(str)).toEqual(expected)
+    })
+})
+describe('combined names', () => {
+    test('names with strings', () => {
+        const first = 'james'
+        const second = 'junior'
+        const expected = 'james junior'
+        expect(combineNames(first, second)).toEqual(expected)
+    })
+})
+test('get greeting', () => {
+    const name = 'tim'
+    const expected = `Hello ${name}!`
+    expect(getGreeting(name)).toEqual(expected)
+})
+test('rectangle area', () => {
+    const length = 2
+    const width = 4
+    const expected = 8
+    expect(getRectangleArea(length, width)).toEqual(expected)
+})
+test('triangle area', () => {
+    const base = 2
+    const height = 4
+    const expected = 4
+    expect(getTriangleArea(base, height)).toEqual(expected)
+})
+test('circle area', () => {
+    const radius = 5
+    const expected = 78.53981633974483
+    expect(getCircleArea(radius)).toEqual(expected)
+})
+test('get rectangular prism volume', () => {
+    const length = 5
+    const width = 6
+    const height = 4
+    const expected = 120
+    expect(getRectangularPrismVolume(length, width, height)).toEqual(expected)
+})
