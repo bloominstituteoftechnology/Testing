@@ -44,4 +44,10 @@ describe('project-1', () => {
             expect(helpers.areEqual(5,5)).toBe(true);
         })
     })
+
+    describe('lessThanNinety() ', () => {
+        it('lessThanNinety works properly', () => {
+            expect(helpers.lessThanNinety(80)).toBe(true)
+        })
+    })
 })
