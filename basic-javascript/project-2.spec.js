@@ -101,4 +101,10 @@ describe('funcs', () => {
             expect(funcs.addItemToFront([0,1,2], 3)).toEqual([3,0,1,2]);
         });
     })
+
+    describe('wordsToSentence', () => {
+        test('add words to sentance', () => {
+            expect(funcs.wordsToSentence('hello')).toMatch('h e l l o');
+        });
+    })
 })
