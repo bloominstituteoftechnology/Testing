@@ -35,7 +35,7 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
-  if (Math.floor(num) === num) {
+  if (Number.isInteger(num)) {
     return true;
   }
   return false;
