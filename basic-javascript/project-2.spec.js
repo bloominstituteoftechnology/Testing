@@ -95,4 +95,10 @@ describe('funcs', () => {
             expect(funcs.addItemToArray([0,1,2], 3)).toEqual([0,1,2,3]);
         });
     })
+
+    describe('addItemToFront', () => {
+        test('add to front!', () => {
+            expect(funcs.addItemToFront([0,1,2], 3)).toEqual([3,0,1,2]);
+        });
+    })
 })
