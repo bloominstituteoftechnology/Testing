@@ -109,9 +109,9 @@ describe('funcs', () => {
         });
     })
 
-    // describe('contains', () => {
-    //     test('add to front!', () => {
-    //         expect(funcs.contains().toEqual();
-    //     });
-    // })
+    describe('contains', () => {
+        test('contains items!', () => {
+            expect(funcs.contains([1,2,3], 3)).toBeTruthy();
+        });
+    })
 })
