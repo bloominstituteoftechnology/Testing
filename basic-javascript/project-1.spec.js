@@ -112,4 +112,14 @@ describe('project-1', () => {
         })
     })
 
+    describe('isEven() ', () => {
+        it('should be able to correctly get remainder', () => {
+            expect(helpers.isEven(4)).toBe(true);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.isEven('ten')
+            }).toThrow();
+        })
+    })
 })

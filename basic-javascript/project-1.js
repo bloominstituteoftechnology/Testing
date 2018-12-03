@@ -80,6 +80,9 @@ const isEven = num => {
   if (num % 2 === 0) {
     return true;
   }
+  else if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return false;
 };
 
