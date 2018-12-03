@@ -17,17 +17,11 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
-  }
-  return false;
+  return num < 90
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
-  }
-  return false;
+  return num > 50;
 };
 
 const add = (x, y) => {
@@ -51,17 +45,11 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+  return num % 2 === 0; 
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
-  }
-  return true;
+  return !(num % 2 === 0);
 };
 
 const square = num => {
