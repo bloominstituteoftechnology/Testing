@@ -83,4 +83,10 @@ describe('funcs', () => {
             expect(funcs.getArrayLength([0,1,2,3])).toBe(4);
         });
     })
+
+    describe('incrementByOne', () => {
+        test('increment!', () => {
+            expect(funcs.incrementByOne([0,1,2,3])).toEqual([1,2,3,4]);
+        });
+    })
 })
