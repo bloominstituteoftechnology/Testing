@@ -72,4 +72,15 @@ describe('add function', () => {
     })
 })
 
+// subtract Function Test Suite
+describe('subtract function', () => {
+    test('subtract works properly', () => {
+        const input1 = 4
+        const input2 = 3
+        const expected = 1
+        const actual = helpers.subtract(input1, input2)
+        expect(expected).toBe(actual)
+    })
+})
+
 
