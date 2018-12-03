@@ -10,3 +10,27 @@ describe('getBiggest test suite', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// greeting Function Test Suite
+describe('greeting test suite', () => {
+    test('greeting in german', () => {
+        const input1 = 'German'
+        const expected = 'Guten Tag!'
+        const actual = funcs.greeting(input1)
+        expect(expected).toBe(actual)
+    })
+
+    test('greeting in spanish', () => {
+        const input2 = 'Spanish'
+        const expected = 'Hola!'
+        const actual = funcs.greeting(input2)
+        expect(expected).toBe(actual)
+    })
+
+    test('default greeting', () => {
+        const input3 = 'Anything'
+        const expected = 'Hello!'
+        const actual = funcs.greeting(input3)
+        expect(expected).toBe(actual)
+    })
+})
