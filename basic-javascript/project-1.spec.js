@@ -3,7 +3,7 @@ const helpers = require('./project-1');
 // start testing!
 describe('project-1', () => {
    
-    describe('multiplyByTen()', () => {
+    describe('multiplyByTen() ', () => {
         it('should provide right answer when mutiply by 10', () => {
             expect(helpers.multiplyByTen(10)).toEqual(100);
         });
@@ -21,7 +21,7 @@ describe('project-1', () => {
         })
     })
 
-    describe('subtractFive', () => {
+    describe('subtractFive() ', () => {
         it('shou provide right answer when subract 5', () => {
             expect(helpers.subtractFive(10)).toEqual(5);
         })
@@ -31,8 +31,17 @@ describe('project-1', () => {
                 helpers.subtractFive('ten')
             }).toThrow();
         })
-        
     })
 
+    describe('areSameLenghth() ', () => {
+        it('shoud provide right answer when provide same number', () => {
+            expect(helpers.areSameLength(5,5)).toBe(true);
+        })
+    }) 
 
+    describe('areEqual() ', () => {
+        it('should be equal ', () => {
+            expect(helpers.areEqual(5,5)).toBe(true);
+        })
+    })
 })
