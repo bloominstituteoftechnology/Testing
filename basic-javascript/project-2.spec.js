@@ -114,4 +114,10 @@ describe('funcs', () => {
             expect(funcs.contains([1,2,3], 3)).toBeTruthy();
         });
     })
+
+    describe('addNumbers', () => {
+        test('add sum', () => {
+            expect(funcs.addNumbers([1,2,3])).toBe(6);
+        });
+    })
 })
