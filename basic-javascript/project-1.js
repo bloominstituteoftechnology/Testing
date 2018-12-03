@@ -8,15 +8,7 @@ const getType = require('jest-get-type')
  * @returns {num} multiplied by 10
  */
 
-const testsForNumber = () => {
-  test('tests for number', () => {
-      const input = 'string'
-      const result = multiplyByTen(input)
-      console.log(result)
-      const expectNumber = getType(result)
-      expect(expectNumber === 'number').toBe(true)
-  })
-}
+
 
 const multiplyByTen = num => {
   return num * 10;
@@ -76,10 +68,10 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
+  if (num % 2 !== 0) {
+    return true;
   }
-  return true;
+  return false;
 };
 
 const square = num => {
@@ -131,7 +123,6 @@ const getRectangularPrismVolume = (length, width, height) => {
 };
 
 module.exports = {
-  testsForNumber,
   multiplyByTen,
   subtractFive,
   areSameLength,
