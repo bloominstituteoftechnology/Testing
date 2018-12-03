@@ -139,4 +139,10 @@ describe('helpers', () => {
             expect(helpers.combineNames('Shawn', 'Antonucci')).toBe('Shawn Antonucci');
         });
     })
+
+    describe('getGreeting', () => {
+        test('get greeted', () => {
+            expect(helpers.getGreeting('Shawn')).toBe('Hello Shawn!');
+        });
+    })
 })
