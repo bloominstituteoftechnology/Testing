@@ -92,3 +92,55 @@ test("square 5 is 25", () => {
 test("cube 5 is 125", () => {
   expect(helpers.cube(5)).toBe(125);
 });
+
+test("power 2**4 is 16", () => {
+  expect(helpers.raiseToPower(2, 4)).toBe(16);
+});
+
+test("round 9.9 is 10", () => {
+  expect(helpers.roundNumber(9.9)).toBe(10);
+});
+
+test("roundUp 1.1 is 2", () => {
+  expect(helpers.roundUp(1.1)).toBe(2);
+});
+
+test("add exclamation to Welcome", () => {
+  const str = "Welcome";
+  const endStr = "Welcome!";
+
+  expect(helpers.addExclamationPoint(str)).toBe(endStr);
+});
+
+test("combine names Peter Pham", () => {
+  const fname = "Peter";
+  const lname = "Pham";
+  const fullname = "Peter Pham";
+
+  expect(helpers.combineNames(fname, lname)).toBe(fullname);
+});
+
+test("add greeting to Peter", () => {
+  const name = "Peter";
+  const greeting = "Hello Peter!";
+
+  expect(helpers.getGreeting(name)).toBe(greeting);
+});
+
+test("rect area l=2 h=2", () => {
+  expect(helpers.getRectangleArea(2, 2)).toBe(4);
+});
+
+test("tri area b=2 h=3", () => {
+  expect(helpers.getTriangleArea(2, 3)).toBe(3);
+});
+
+test("circle area r=2", () => {
+  const area = Math.PI * 2 * 2;
+
+  expect(helpers.getCircleArea(2)).toBe(area);
+});
+
+test("rect vol l=2 h=4 w=1", () => {
+  expect(helpers.getRectangularPrismVolume(2, 1, 4)).toBe(8);
+});
