@@ -189,5 +189,12 @@ describe('project-1', () => {
         })
     })
 
+    describe('addExclamationPoint() ', () => {
+        it('should be able to correctly addExclamationPoint', () => {
+            expect(helpers.addExclamationPoint('hello')).toEqual('hello!');
+        })
+    })
+
+
 
 })
