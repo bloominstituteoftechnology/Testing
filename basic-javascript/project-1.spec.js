@@ -164,7 +164,12 @@ test('Get Greeting', () => {
   expect(getGreeting(name)).toBe(result);
 });
 
-test('Get Rectangle Area', () => {});
+test('Get Rectangle Area', () => {
+  const length = 3;
+  const width = 5;
+  const area = 15;
+  expect(getRectangleArea(length, width)).toBe(area);
+});
 
 test('Get Triangle Area', () => {});
 
