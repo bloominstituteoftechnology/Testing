@@ -171,7 +171,12 @@ test('Get Rectangle Area', () => {
   expect(getRectangleArea(length, width)).toBe(area);
 });
 
-test('Get Triangle Area', () => {});
+test('Get Triangle Area', () => {
+  const base = 5;
+  const height = 4;
+  const result = 10;
+  expect(getTriangleArea(base, height)).toBe(result);
+});
 
 test('Get Circle Area', () => {});
 
