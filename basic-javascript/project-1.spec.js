@@ -206,3 +206,13 @@ describe('combineNames function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// getGreeting Function Test Suite
+describe('getGreeting function', () => {
+    test('getGreeting works properly', () => {
+        const name1 = 'Jordan'
+        const expected = 'Hello Jordan!'
+        const actual = helpers.getGreeting(name1)
+        expect(expected).toBe(actual)
+    })
+})
