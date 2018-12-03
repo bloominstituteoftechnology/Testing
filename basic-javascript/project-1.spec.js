@@ -107,5 +107,23 @@ describe('math things', () => {
     expect(result).toBe(expected);
   });
 
+  test('is even - should return true', () => {
+    const expected = true;
+    const isEven = helpers.isEven;
+
+    const result = isEven(2);
+
+    expect(result).toBe(expected);
+  });
+
+  test('is odd - should return true', () => {
+    const expected = true;
+    const isOdd = helpers.isOdd;
+
+    const result = isOdd(3);
+
+    expect(result).toBe(expected);
+  });
+
 
 });
