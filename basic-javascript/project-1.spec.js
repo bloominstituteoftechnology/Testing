@@ -29,4 +29,10 @@ describe('helpers', () => {
         });
     })
     
+    describe('areSameLength', () => {
+        test('check if same length', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.areSameLength('hello', 'words')).toBeTruthy();
+        });
+    })
 })
