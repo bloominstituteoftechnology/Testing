@@ -106,7 +106,13 @@ describe('helpers', () => {
 
     describe('cube', () => {
         test('check if cube', () => {
-            expect(helpers.cube(3)).toBe(82);
+            expect(helpers.cube(3)).toBe(27);
+        });
+    })
+
+    describe('raiseToPower', () => {
+        test('Pow', () => {
+            expect(helpers.raiseToPower(4, 4)).toBe(256);
         });
     })
 })
