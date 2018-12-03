@@ -167,4 +167,16 @@ describe('project-1', () => {
         })
     })
 
+    describe('roundNumber() ', () => {
+        it('should be able to correctly round number', () => {
+            expect(helpers.roundNumber(5.25)).toEqual(5);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.raiseToPower('ten')
+            }).toThrow();
+        })
+    })
+
+
 })

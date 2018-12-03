@@ -118,6 +118,9 @@ const raiseToPower = (num, exponent) => {
 };
 
 const roundNumber = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return Math.round(num);
 };
 
