@@ -86,4 +86,11 @@ describe('helpers', () => {
             expect(helpers.multiply(4, 2)).toBe(8);
         });
     })
+
+    describe('getRemainder', () => {
+        test('getRemainder of two number', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.getRemainder(4, 3)).toBe(1);
+        });
+    })
 })
