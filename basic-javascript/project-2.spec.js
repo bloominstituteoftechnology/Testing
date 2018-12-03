@@ -34,3 +34,13 @@ describe('greeting test suite', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// isInRange Function Test Suite
+describe('isInRange test suite', () => {
+    test('isInRange works properly', () => {
+        const input1 = 49
+        const expected = true
+        const actual = funcs.isInRange(input1)
+        expect(expected).toBe(actual)
+    })
+})
