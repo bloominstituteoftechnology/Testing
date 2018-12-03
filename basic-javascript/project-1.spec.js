@@ -26,5 +26,41 @@ describe('math things', () => {
     expect(result).toBe(expected);
   });
 
+  test('same length - should return false', () => {
+    const expected = false;
+    const areSameLength = helpers.areSameLength;
+
+    const result = areSameLength('classic', 'cars');
+
+    expect(result).toBe(expected);
+  });
+
+  test('equal - should return false', () => {
+    const expected = false;
+    const areEqual = helpers.areEqual;
+
+    const result = areEqual(5, '5');
+
+    expect(result).toBe(expected);
+  });
+
+  test('less than 90 - should return true', () => {
+    const expected = true;
+    const lessThanNinety = helpers.lessThanNinety;
+
+    const result = lessThanNinety(5);
+
+    expect(result).toBe(expected);
+  });
+
+  test('greater than 50 - should return true', () => {
+    const expected = true;
+    const greaterThanFifty = helpers.greaterThanFifty;
+
+    const result = greaterThanFifty(51);
+
+    expect(result).toBe(expected);
+  });
+
 
 });
