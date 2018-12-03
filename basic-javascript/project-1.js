@@ -8,8 +8,13 @@ const subtractFive = num => {
   return num - 5;
 };
 
+// Refactored to return 'true' if strings are same length, else 'false'
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (str1.length === str2.length) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const areEqual = (x, y) => {
