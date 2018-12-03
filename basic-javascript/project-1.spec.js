@@ -94,3 +94,10 @@ test('Multiply', () => {
   const result = 10;
   expect(multiply(x, y)).toBe(result);
 });
+
+test('Get Remainder', () => {
+  const x = 50;
+  const y = 2;
+  const result = 0;
+  expect(getRemainder(x, y)).toBe(result);
+});
