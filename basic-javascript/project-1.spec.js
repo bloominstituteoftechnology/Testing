@@ -145,7 +145,11 @@ test('Round Up', () => {
   expect(roundUp(num)).toBe(result);
 });
 
-test('Add Exclamation Point', () => {});
+test('Add Exclamation Point', () => {
+  const word = 'Surprise';
+  const result = 'Surprise!';
+  expect(addExclamationPoint(word)).toBe(result);
+});
 
 test('Combine Names', () => {});
 
