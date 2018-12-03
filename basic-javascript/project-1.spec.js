@@ -238,3 +238,13 @@ describe('getTriangleArea function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// getCircleArea Function Test Suite
+describe('getCircleArea function', () => {
+    test('getCircleArea works properly', () => {
+        const input1 = 4
+        const expected = 50.26548245743669
+        const actual = helpers.getCircleArea(input1)
+        expect(expected).toBe(actual)
+    })
+})
