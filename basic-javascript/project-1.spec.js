@@ -113,3 +113,9 @@ test('Is Odd', () => {
   const result = true;
   expect(isOdd(x)).toBe(result);
 });
+
+test('Square', () => {
+  const num = 2;
+  const result = 4;
+  expect(square(num)).toBe(result);
+});
