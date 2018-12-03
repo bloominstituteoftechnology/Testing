@@ -2,9 +2,6 @@ const helpers = require('./project-1');
 
 // start testing!
 
-test('environment tests sucessfully', () => {
-
-})
 
 describe('testing project-1.js', () => {
 
