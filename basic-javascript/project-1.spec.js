@@ -34,20 +34,21 @@ test('areSameLength', () => {
     const expected = true;
 
     // Act
-    let actual = helpers.(input1, input2);
+    let actual = helpers.areSameLength(input1, input2);
 
     // Assert
     expect(actual).toBe(expected);
 });
 
-/*
-test('', () => {
+
+test('areEqual', () => {
     // Arrange
-    const input = 5;
-    const expected = 50;
+    const input1 = 5;
+    const input2 = 5;
+    const expected = true;
 
     // Act
-    let actual = helpers.(input);
+    let actual = helpers.areEqual(input);
 
     // Assert
     expect(actual).toBe(expected);
