@@ -135,4 +135,18 @@ describe('project-1.js', () => {
             expect( () => { helpers.divide('five', 'five') }).toThrow();
         });
     });
+    describe('multiply', () => {
+        it('should multiply the two numbers together', () => {
+            const expected = 8;
+             const actual = helpers.multiply(4, 2);
+             expect(actual).toEqual(expected);
+        });
+         it('should return 0 when called with no value', () => {
+            const product = helpers.multiply();
+             expect(product).toBe(0);
+        });
+         it('should throw an error when called with a string', () => {
+            expect( () => { helpers.multiply('four', 'two') }).toThrow();
+        });
+    });
 });
