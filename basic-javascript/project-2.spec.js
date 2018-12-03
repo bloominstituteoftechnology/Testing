@@ -41,6 +41,13 @@ describe('funcs', () => {
 
         });
     })
+
+    describe('isInteger', () => {
+        test('is it a integer', () => {
+            expect(funcs.isInteger(30)).toBeTruthy();
+
+        });
+    })
     
 
 })
