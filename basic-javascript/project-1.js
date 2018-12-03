@@ -17,8 +17,13 @@ const areSameLength = (str1, str2) => {
   }
 };
 
+// Refactored to return 'true' if nums are equal, else 'false'
 const areEqual = (x, y) => {
-  return x === y;
+  if (x === y) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const lessThanNinety = num => {
