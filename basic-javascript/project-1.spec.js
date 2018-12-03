@@ -54,3 +54,9 @@ test('Are Equal', () => {
   const y = 100;
   expect(areEqual(x, y)).toBeTruthy();
 });
+
+test('Less Than Ninety', () => {
+  const input = 91;
+  const result = false;
+  expect(lessThanNinety(input, result)).toBe(result);
+});
