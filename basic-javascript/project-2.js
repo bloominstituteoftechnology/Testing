@@ -68,6 +68,9 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if(arr.length === 0) {
+    return false;
+  }
   return arr[0];
 };
 
