@@ -11,3 +11,12 @@ describe('multiplyByTen', () => {
     expect(actual).toBe(expected);
   });
 });
+
+test('subtract by 5', () => {
+  const input = 25;
+  const expected = 20;
+
+  const actual = helpers.subtractFive(input);
+
+  expect(actual).toBe(expected);
+});
