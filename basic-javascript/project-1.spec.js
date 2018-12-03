@@ -134,3 +134,13 @@ describe('isOdd function', () => {
         expect(result).toBe(true)
     })
 })
+
+// square Function Test Suite
+describe('square function', () => {
+    test('square works properly', () => {
+        const input1 = 2
+        const expected = 4
+        const actual = helpers.square(input1)
+        expect(expected).toBe(actual)
+    })
+})
