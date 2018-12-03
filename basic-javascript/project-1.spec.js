@@ -100,6 +100,16 @@ describe('project-1', () => {
             }).toThrow();
         })
     })
-
+    
+    describe('getRemainder() ', () => {
+        it('should be able to correctly get remainder', () => {
+            expect(helpers.getRemainder(5,2)).toEqual(1);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getRemainder(5, 'ten')
+            }).toThrow();
+        })
+    })
 
 })
