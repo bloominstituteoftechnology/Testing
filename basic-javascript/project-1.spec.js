@@ -35,4 +35,13 @@ describe('helpers', () => {
             expect(helpers.areSameLength('hello', 'words')).toBeTruthy();
         });
     })
+
+    describe('areEqual', () => {
+        test('check if equal', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            const x = 5;
+            const y = 5;
+            expect(helpers.areEqual(x, y)).toBeTruthy();
+        });
+    })
 })
