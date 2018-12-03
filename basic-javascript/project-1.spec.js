@@ -144,3 +144,13 @@ describe('square function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// cube Function Test Suite
+describe('cube function', () => {
+    test('cube works properly', () => {
+        const input1 = 2
+        const expected = 8
+        const actual = helpers.cube(input1)
+        expect(expected).toBe(actual)
+    })
+})
