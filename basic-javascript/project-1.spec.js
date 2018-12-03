@@ -195,3 +195,14 @@ describe('addExclamationPoint function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// combineNames Function Test Suite
+describe('combineNames function', () => {
+    test('combineNames works properly', () => {
+        const name1 = 'Jordan'
+        const name2 = 'Stoddard'
+        const expected = 'Jordan Stoddard'
+        const actual = helpers.combineNames(name1, name2)
+        expect(expected).toBe(actual)
+    })
+})
