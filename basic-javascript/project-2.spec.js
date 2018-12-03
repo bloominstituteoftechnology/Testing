@@ -30,7 +30,14 @@ describe('funcs', () => {
 
     describe('isTenOrFive', () => {
         test('is it 10 or 5', () => {
-            expect(funcs.isTenOrFive(6)).toBeFalsy();
+            expect(funcs.isTenOrFive(5)).toBeTruthy();
+
+        });
+    })
+
+    describe('isInRange', () => {
+        test('is it in range', () => {
+            expect(funcs.isInRange(30)).toBeTruthy();
 
         });
     })
