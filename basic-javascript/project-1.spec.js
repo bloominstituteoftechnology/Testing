@@ -32,6 +32,7 @@ test('jest working', () => {
 
 })
 
+//number based functions
 const returnsNumber = func => {
     let result = func(3)
     result ? result : result = func(2, 6)
@@ -41,3 +42,18 @@ const returnsNumber = func => {
 
 const nums = [multiplyByTen, subtractFive, square, cube, roundNumber, roundUp, getCircleArea, add, subtract, divide, multiply, getRemainder, raiseToPower, getRectangleArea, getTriangleArea, getRectangularPrismVolume]
 nums.forEach(func => test('returns a number', () => returnsNumber(func)))
+
+
+//string based functions
+const returnsString = func => {
+    let result = func('test')
+    result.includes('undefined') ? result = func('infinite', 'jest') : result
+    expect(typeof result === 'string').toBeTruthy()
+}
+
+const strs = [addExclamationPoint, combineNames, getGreeting]
+strs.forEach(func => test('returns a string', () => returnsString(func)))
+
+//boolean string based functions
+
+//boolean number based functions
