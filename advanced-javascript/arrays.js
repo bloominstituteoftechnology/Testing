@@ -50,11 +50,11 @@ const flatten = elements => {
 
 /* eslint-enable no-unused-vars, max-len */
 
-module.exports = {
-  each,
-  map,
-  reduce,
-  find,
-  filter,
-  flatten,
-};
+// module.exports = {
+//   each,
+//   map,
+//   reduce,
+//   find,
+//   filter,
+//   flatten,
+// };
