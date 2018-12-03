@@ -73,3 +73,10 @@ test('Add', () => {
   const result = 10;
   expect(add(x, y)).toBe(result);
 });
+
+test('Subtract', () => {
+  const x = 10;
+  const y = 9;
+  const result = 1;
+  expect(subtract(x, y)).toBe(result);
+});
