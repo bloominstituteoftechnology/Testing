@@ -13,7 +13,16 @@ test('multiply num by ten', () => {
 
 test('subtract 5 from num', () => {
     const expected = 10;
-    result = helpers.subtractFive(15);
+    const result = helpers.subtractFive(15);
 
     expect(result).toEqual(expected);
+})
+
+describe('strings should equal same length', () => {
+    test('string should be same length', () => {
+        const a = 'hello';
+        const b = 'olleh';
+        expect(helpers.areSameLength(a, b)).toBeTruthy();
+    })
+    
 })
