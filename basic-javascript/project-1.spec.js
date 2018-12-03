@@ -116,3 +116,12 @@ describe('getRemainder function', () => {
     })
 })
 
+
+// isEven Function Test Suite
+describe('isEven function', () => {
+    test('isEven works properly', () => {
+        const input1 = 10
+        const result = helpers.isEven(input1)
+        expect(result).toBe(true)
+    })
+})
