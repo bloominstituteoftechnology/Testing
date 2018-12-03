@@ -89,4 +89,10 @@ describe('funcs', () => {
             expect(funcs.incrementByOne([0,1,2,3])).toEqual([1,2,3,4]);
         });
     })
+
+    describe('addItemToArray', () => {
+        test('increment!', () => {
+            expect(funcs.addItemToArray([0,1,2], 3)).toEqual([0,1,2,3]);
+        });
+    })
 })
