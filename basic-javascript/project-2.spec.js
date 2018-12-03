@@ -1,4 +1,4 @@
-const funcs = require('./project-2');
+const helpers = require('./project-2');
 
 describe('Jest', () => {
     test('Jest runs', () => {
@@ -15,8 +15,9 @@ test('should return the largest number from the two numbers provided', () => {
 
 test('should return hello greeting the language provided', () => {
     const expected = 'Guten Tag!';
-    const actual = helpers.greeting('german')
+    const actual = helpers.greeting('German')
 //add edge case for languages not available
+// add edge case for when language isn't capitalized
     expect(actual).toEqual(expected);
 });
 
@@ -40,8 +41,8 @@ test('should return true when number is an integer', () => {
     expect(actual).toEqual(expected);
 });
 
-test('should return fizzbuzz for number provided when divisible by three and five, buzz when divisible by three, and fizz when divisble by 5', () => {
-    const expected = 'fizz';
+test('should return fizzbuzz for number provided when divisible by three and five, buzz when divisible by five, and fizz when divisble by three', () => {
+    const expected = 'buzz';
     const actual = helpers.fizzBuzz(20)
 
     expect(actual).toEqual(expected);
@@ -71,8 +72,8 @@ test('should return the length of array provided', () => {
 
     expect(actual).toEqual(expected);
 });
-test('should return the index value, after the current index in provided array', () => {
-    const expected = 2;
+test('should return each index value in the provided array by 1', () => {
+    const expected = [2,3,4,5,6];
     const actual = helpers.incrementByOne([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
@@ -93,7 +94,7 @@ test('should return provided array with new item added to the beginning', () => 
 
 test('should return a single string from an array of strings', () => {
     const expected = 'bob likes to paint';
-    const actual = helpers.wordsToSentence['bob ','likes ','to ', 'paint']
+    const actual = helpers.wordsToSentence(['bob','likes','to', 'paint'])
 
     expect(actual).toEqual(expected);
 });
