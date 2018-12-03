@@ -119,3 +119,29 @@ test('Square', () => {
   const result = 4;
   expect(square(num)).toBe(result);
 });
+
+test('Cube', () => {
+  const num = 2;
+  const result = 8;
+  expect(cube(num)).toBe(result);
+});
+
+test('Raise to Power', () => {});
+
+test('Round Number', () => {});
+
+test('Round Up', () => {});
+
+test('Add Exclamation Point', () => {});
+
+test('Combine Names', () => {});
+
+test('Get Greeting', () => {});
+
+test('Get Rectangle Area', () => {});
+
+test('Get Triangle Area', () => {});
+
+test('Get Circle Area', () => {});
+
+test('Get Rectangular Prism Volume', () => {});
