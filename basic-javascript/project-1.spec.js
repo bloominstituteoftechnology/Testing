@@ -232,3 +232,62 @@ describe('addExclamationPoint', () => {
     expect(actual).toBe(expected)
   })
 })
+
+describe('combineNames', () => {
+  test('test whether combineNames() combines names', () => {
+    const string1 = 'blah'
+    const string2 = 'rar'
+    const expected = 'blah rar'
+    const actual = combineNames(string1, string2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('getGreeting', () => {
+  test('test whether getGreeting() creates greeting', () => {
+    const string = 'blah'
+    const expected = 'Hello blah!'
+    const actual = getGreeting(string)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('getRectangleArea', () => {
+  test('test whether getRectangleArea() returns rectangle area', () => {
+    const num1 = 5
+    const num2 = 7
+    const expected = 35
+    const actual = getRectangleArea(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('getTriangleArea', () => {
+  test('test whether getTriangleArea() returns triangle area', () => {
+    const num1 = 5
+    const num2 = 7
+    const expected = num1 * num2 * 0.5
+    const actual = getTriangleArea(num1, num2)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('getCircleArea', () => {
+  test('test whether getCircleArea() returns circle area', () => {
+    const num = 5
+    const expected = Math.PI * num * num
+    const actual = getCircleArea(num)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('getRectangularPrismVolume', () => {
+  test('test whether getRectangularPrismVolume() returns rectangular prism area', () => {
+    const num1 = 5
+    const num2 = 4
+    const num3 = 7
+    const expected = num1 * num2 * num3
+    const actual = getRectangularPrismVolume(num1, num2, num3)
+    expect(actual).toBe(expected)
+  })
+})
