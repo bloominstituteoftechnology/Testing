@@ -37,3 +37,58 @@ describe("lessThanNinety", () => {
     expect(helpers.lessThanNinety(100)).toBe(false);
   });
 });
+
+describe("greaterThanFifty", () => {
+  test("100 > 50", () => {
+    expect(helpers.greaterThanFifty(100)).toBe(true);
+  });
+  test("10 > 50", () => {
+    expect(helpers.greaterThanFifty(10)).toBe(false);
+  });
+});
+
+test("add 2 + 3", () => {
+  expect(helpers.add(2, 3)).toBe(5);
+});
+
+test("subtract 10 - 7", () => {
+  expect(helpers.subtract(10, 7)).toBe(3);
+});
+
+test("divide 100 / 4", () => {
+  expect(helpers.divide(100, 4)).toBe(25);
+});
+
+test("multiply 5 * 5", () => {
+  expect(helpers.multiply(5, 5)).toBe(25);
+});
+
+test("remainder 10 % 7", () => {
+  expect(helpers.getRemainder(10, 7)).toBe(3);
+});
+
+describe("isEven", () => {
+  test("10", () => {
+    expect(helpers.isEven(10)).toBe(true);
+  });
+  test("7", () => {
+    expect(helpers.isEven(7)).toBe(false);
+  });
+});
+
+describe("isOdd", () => {
+  test("10", () => {
+    expect(helpers.isOdd(10)).toBe(false);
+  });
+  test("7", () => {
+    expect(helpers.isOdd(7)).toBe(true);
+  });
+});
+
+test("square 5 is 25", () => {
+  expect(helpers.square(5)).toBe(25);
+});
+
+test("cube 5 is 125", () => {
+  expect(helpers.cube(5)).toBe(125);
+});
