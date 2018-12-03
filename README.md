@@ -23,3 +23,5 @@ As you write your tests, bugs in the code may be revealed, feel free to correct 
 ## Stretch Goal
 
 Open the `advanced-javascript` folder and write tests for the `arrays.js` and `object.js` files inside the corresponding `*.spec.js` files.
+
+
