@@ -91,35 +91,44 @@ describe('areEqual', () => {
 
   test('true and true are equal', () => {
  
-    const result = areSameLength(true, true)
+    const result = areEqual(true, true)
 
     expect(result).toBe(true)   
   })
-  test('', () => {
+  test('strings', () => {
   
     const input1 = 'apple';
 
     const input2 = 'bears';
 
-    const expected = ''
+    const result = areEqual(input2, input1)
 
-    const result = areSameLength(true, true)
-
-    expect(result).toBe(true)   
+    expect(result).toBe(false)   
   })
 })
 
 describe('lessThanNinety', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+  it('returns true when it\'s input is less then ninety', ()=>{
+    expect(2+2).toBe(4)
 
-}) 
+  }) 
 
-  test('test', () => {
+  test('3 is lessThenNinety', () => {
 
-    const input = 5;
+    const input = 3;
 
-    const expected = 50;
+    const expected = true;
+
+    const result = lessThanNinety(input)
+
+    expect(result).toBe(expected)
+  })
+
+  test('100 isn\'t lessThenNinety', () => {
+
+    const input = 100;
+
+    const expected = false;
 
     const result = lessThanNinety(input)
 
@@ -129,135 +138,169 @@ it('description', ()=>{
 
 
 describe('greaterThanFifty', ()=>{
-it('description', ()=>{
+it('returns true when it\'s input is less then fifty', ()=>{
   expect(2+2).toBe(4)
 
 }) 
 
-  test('test', () => {
+  test('5 is less then fifty', () => {
 
     const input = 5;
 
-    const expected = 50;
+    const expected = false;
 
     const result = greaterThanFifty(input)
 
     expect(result).toBe(expected)
   })
+
+  test('51 is greater then fifty', () => {
+
+    const input = 51;
+
+    const expected = true;
+
+    const result = greaterThanFifty(input)
+
+    expect(result).toBe(expected)
+  })
+
+
 })
+
+
+
 describe('add', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('adds two numbers', ()=>{
+  expect(add(2,2)).toBe(4)
 
 }) 
 
-  test('test', () => {
+  test('3 and 4 equal 7', () => {
 
-    const input = 5;
+    const input = [3, 4];
 
-    const expected = 50;
+    const expected = 7;
 
-    const result = add(input)
+    const result = add(...input)
 
     expect(result).toBe(expected)
   })
 })
 describe('subtract', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('subtracts one number from another number', ()=>{
+  expect(subtract).toBe(0)
 
 }) 
 
-  test('test', () => {
+  test('5 subtracted from 4 = -1', () => {
 
-    const input = 5;
+    const input = [5, 4];
 
-    const expected = 50;
+    const expected = -1;
 
-    const result = subtract(input)
+    const result = subtract(...input)
 
     expect(result).toBe(expected)
   })
 })
 describe('divide', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('divides a number', ()=>{
+  expect(divide(8, 2)).toBe(4)
 
 }) 
 
-  test('test', () => {
+  test('20 divided by 5 is 4', () => {
 
-    const input = 5;
+    const input = [20, 5];
 
-    const expected = 50;
+    const expected = 4;
 
-    const result = divide(input)
+    const result = divide(...input)
 
     expect(result).toBe(expected)
   })
 })
+
 describe('multiply', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('multiplys a number by another number', ()=>{
+  expect(multiply(2,2)).toBe(4)
 
 }) 
 
   test('test', () => {
 
-    const input = 5;
+    const input = [3, 5];
 
-    const expected = 50;
+    const expected = 15;
 
     const result = multiply(input)
 
     expect(result).toBe(expected)
   })
 })
+
 describe('getRemainder', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('applys modulo to number by another number', ()=>{
+  expect(getRemainder(3,2)).toBe(1)
 
 }) 
 
-  test('test', () => {
+  test('the remainder of 7 / 2 is 1', () => {
 
-    const input = 5;
+    const input = [7, 2];
 
-    const expected = 50;
+    const expected = 1;
 
-    const result = getRemainder(input)
+    const result = getRemainder(...input)
 
-    expect(result).toBe(expected)
+    expect(result).toStrictEqual(1)
   })
 })
+
 describe('isEven', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('return true if even', ()=>{
+  expect(isEven(2)).toBe(true)
 
 }) 
 
-  test('test', () => {
+  test('4 is even', () => {
 
-    const input = 5;
+    const input = 4;
 
-    const expected = 50;
+    const expected = true;
 
     const result = isEven(input)
 
     expect(result).toBe(expected)
   })
+
 })
 describe('isOdd', ()=>{
-it('description', ()=>{
-  expect(2+2).toBe(4)
+it('return true if odd', ()=>{
+  expect(isOdd(7)).toBe(true)
 
 }) 
 
-  test('test', () => {
 
-    const input = 5;
+  test('33 is odd', () => {
 
-    const expected = 50;
+    const input = 33;
+
+    const expected = true;
+
+    const result = isOdd(input)
+
+    expect(result).toBe(expected)
+  })
+
+
+
+  test('44 is not odd', () => {
+
+    const input = 44;
+
+    const expected = false;
 
     const result = isOdd(input)
 
