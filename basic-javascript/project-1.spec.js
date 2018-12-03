@@ -127,4 +127,10 @@ describe('helpers', () => {
             expect(helpers.roundUp(4.4)).toBe(5);
         });
     })
+
+    describe('addExclamationPoint', () => {
+        test('add ExclamationPoint', () => {
+            expect(helpers.addExclamationPoint('hello')).toBe('hello!');
+        });
+    })
 })
