@@ -177,3 +177,58 @@ describe('isOdd', () => {
     expect(isOdd(num)).toBeFalsy()
   })
 })
+
+describe('square', () => {
+  test('test whether square() returns square', () => {
+    const num = 9
+    const expected = num * num
+    const actual = square(num)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('cube', () => {
+  test('test whether cube() returns cube', () => {
+    const num = 9
+    const expected = num * num * num
+    const actual = cube(num)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('raiseToPower', () => {
+  test('test whether raiseToPower() raises to power', () => {
+    const num = 9
+    const power = 2
+    const expected = num ** power
+    const actual = raiseToPower(num, power)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('roundNumber', () => {
+  test('test whether roundNumber() rounds number', () => {
+    const num = 9.1
+    const expected = Math.round(num)
+    const actual = roundNumber(num)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('roundUp', () => {
+  test('test whether roundUp() rounds number up', () => {
+    const num = 9.8
+    const expected = Math.ceil(num)
+    const actual = roundUp(num)
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('addExclamationPoint', () => {
+  test('test whether addExclamationPoint() adds !', () => {
+    const string = 'blah'
+    const expected = 'blah!'
+    const actual = addExclamationPoint(string)
+    expect(actual).toBe(expected)
+  })
+})
