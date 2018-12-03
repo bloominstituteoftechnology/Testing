@@ -165,3 +165,13 @@ describe('raiseToPower function', () => {
         expect(expected).toBe(actual)
     })
 })
+
+// roundNumber Function Test Suite
+describe('roundNumber function', () => {
+    test('roundNumber works properly', () => {
+        const input = 0.7
+        const expected = 1
+        const actual = helpers.roundNumber(input)
+        expect(expected).toBe(actual)
+    })
+})
