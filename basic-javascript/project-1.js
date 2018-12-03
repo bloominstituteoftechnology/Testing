@@ -51,11 +51,14 @@ const subtract = (x, y) => {
   if ( (typeof x && typeof y)  !== 'number' ) {
     throw new Error('either x or y should be number')
   }
-  
+
   return x - y;
 };
 
 const divide = (x, y) => {
+  if ( (typeof x && typeof y)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
   return x / y;
 };
 

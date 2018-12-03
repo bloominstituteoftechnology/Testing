@@ -78,4 +78,17 @@ describe('project-1', () => {
             }).toThrow();
         })
     })
+
+    describe('divide() ', () => {
+        it('should be able to correctly divide', () => {
+            expect(helpers.divide(6,2)).toEqual(3);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.subtract(5, 'ten')
+            }).toThrow();
+        })
+    })
+
+
 })
