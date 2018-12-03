@@ -157,4 +157,10 @@ describe('helpers', () => {
             expect(helpers.getTriangleArea(5, 5)).toBe(12.5);
         });
     })
+
+    describe('getCircleArea', () => {
+        test('get circle area', () => {
+            expect(helpers.getCircleArea(2)).toBe(12.566370614359172);
+        });
+    })
 })
