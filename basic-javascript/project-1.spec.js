@@ -199,7 +199,7 @@ describe("project-1.js", () => {
       const actual = helpers.isOdd(3);
       expect(actual).toEqual(expected);
     });
-    it("should return false when called with no value", () => {
+    it("should return 0 when called with no value", () => {
       const product = helpers.isOdd();
       expect(product).toBe(0);
     });
@@ -215,7 +215,7 @@ describe("project-1.js", () => {
       const actual = helpers.square(2);
       expect(actual).toEqual(expected);
     });
-    it("should return false when called with no value", () => {
+    it("should return 0 when called with no value", () => {
       const product = helpers.square();
       expect(product).toBe(0);
     });
@@ -231,7 +231,7 @@ describe("project-1.js", () => {
       const actual = helpers.cube(2);
       expect(actual).toEqual(expected);
     });
-    it("should return false when called with no value", () => {
+    it("should return 0 when called with no value", () => {
       const product = helpers.cube();
       expect(product).toBe(0);
     });
@@ -247,13 +247,29 @@ describe("project-1.js", () => {
       const actual = helpers.raiseToPower(2, 2);
       expect(actual).toEqual(expected);
     });
-    it("should return false when called with no value", () => {
+    it("should return 0 when called with no value", () => {
       const product = helpers.raiseToPower();
       expect(product).toBe(0);
     });
     it("should throw an error when called with a string", () => {
       expect(() => {
         helpers.raiseToPower("four", "four");
+      }).toThrow();
+    });
+  });
+  describe("roundNumber", () => {
+    it("should return the rounded number", () => {
+      const expected = 2;
+      const actual = helpers.roundNumber(1.7);
+      expect(actual).toEqual(expected);
+    });
+    it("should return 0 when called with no value", () => {
+      const product = helpers.roundNumber();
+      expect(product).toBe(0);
+    });
+    it("should throw an error when called with a string", () => {
+      expect(() => {
+        helpers.roundNumber("four", "four");
       }).toThrow();
     });
   });
