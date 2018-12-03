@@ -51,4 +51,11 @@ describe('helpers', () => {
             expect(helpers.lessThanNinety(60)).toBeTruthy();
         });
     })
+
+    describe('greaterThanFifty', () => {
+        test('check if > 50', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.greaterThanFifty(60)).toBeTruthy();
+        });
+    })
 })
