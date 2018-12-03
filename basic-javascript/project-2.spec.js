@@ -126,4 +126,10 @@ describe('funcs', () => {
             expect(funcs.averageTestScore([95,95,95,92,91,91])).toBe(93.16666666666667);
         });
     })
+
+    describe('largestNumber', () => {
+        test('find largest number', () => {
+            expect(funcs.largestNumber([95,95,95,92,91,91])).toBe(95);
+        });
+    })
 })
