@@ -20,156 +20,57 @@ const {
 } = require('./project-2');
 
 test('get Biggest', () => {
-    const input = 5;
-    const inputTwo = 6;
-    const expected = 6;
-    expect(getBiggest(input, inputTwo)).toBe(expected);
-});
-
-test('get Biggest', () => {
-    const input = 5;
-    const inputTwo = 5;
-    const expected = 5;
-    expect(getBiggest(input, inputTwo)).toBe(expected);
-});
-
-test('get Biggest', () => {
-    const input = 9;
-    const inputTwo = 5;
-    const expected = 9;
-    expect(getBiggest(input, inputTwo)).toBe(expected);
+    
+    expect(getBiggest(5, 6)).toBe(6);
+    expect(getBiggest(5, 5)).toBe(5);
+    expect(getBiggest(9, 5)).toBe(9);
 });
 
 test('greeting', () => {
-    const input = 'German';
-    const expected = 'Guten Tag!';
-    expect(greeting(input)).toBe(expected);
+    expect(greeting('German')).toBe('Guten Tag!');
+    expect(greeting('Spanish')).toBe('Hola!');
+    expect(greeting('English')).toBe('Hello!');
 });
 
-test('greeting', () => {
-    const input = 'Spanish';
-    const expected = 'Hola!';
-    expect(greeting(input)).toBe(expected);
-});
-
-test('greeting', () => {
-    const input = 'English';
-    const expected = 'Hello!';
-    expect(greeting(input)).toBe(expected);
-});
 
 test('is Ten Or Five', () => {
-    const input = 4;
-    const expected = false;
-    expect(isTenOrFive(input)).toBe(expected);
-});
-
-test('is Ten Or Five', () => {
-    const input = 5;
-    const expected = true;
-    expect(isTenOrFive(input)).toBe(expected);
-});
-
-test('is Ten Or Five', () => {
-    const input = 10;
-    const expected = true;
-    expect(isTenOrFive(input)).toBe(expected);
+    expect(isTenOrFive(4)).toBe(false);
+    expect(isTenOrFive(5)).toBe(true);
+    expect(isTenOrFive(10)).toBe(true);
 });
 
 test('is In Range', () => {
-    const input = 5;
-    const expected = false;
-    expect(isInRange(input)).toBe(expected);
-});
-
-test('is In Range', () => {
-    const input = 25;
-    const expected = true;
-    expect(isInRange(input)).toBe(expected);
-});
-
-test('is In Range', () => {
-    const input = 50;
-    const expected = false;
-    expect(isInRange(input)).toBe(expected);
+    expect(isInRange(5)).toBe(false);
+    expect(isInRange(25)).toBe(true);
+    expect(isInRange(50)).toBe(false);
 });
 
 test('is Integer', () => {
-    const input = 5;
-    const expected = true;
-    expect(isInteger(input)).toBe(expected);
-});
-
-test('is Integer', () => {
-    const input = 5.1;
-    const expected = false;
-    expect(isInteger(input)).toBe(expected);
+    expect(isInteger(5)).toBe(true);
+    expect(isInteger(5.1)).toBe(false);
 });
 
 test('fizzBuzz', () => {
-    const input = 5;
-    const expected = 'buzz';
-    expect(fizzBuzz(input)).toBe(expected);
-});
-
-test('fizzBuzz', () => {
-    const input = 3;
-    const expected = 'fizz';
-    expect(fizzBuzz(input)).toBe(expected);
-});
-
-test('fizzBuzz', () => {
-    const input = 2;
-    const expected = 2;
-    expect(fizzBuzz(input)).toBe(expected);
-});
-
-test('fizzBuzz', () => {
-    const input = 15;
-    const expected = 'fizzbuzz';
-    expect(fizzBuzz(input)).toBe(expected);
+    expect(fizzBuzz(5)).toBe('buzz');
+    expect(fizzBuzz(3)).toBe('fizz');
+    expect(fizzBuzz(2)).toBe(2);
+    expect(fizzBuzz(15)).toBe('fizzbuzz');
 });
 
 test('is Prime', () => {
-    const input = 13;
-    const expected = true;
-    expect(isPrime(input)).toBe(expected);
-});
-
-test('is Prime', () => {
-    const input = 4;
-    const expected = false;
-    expect(isPrime(input)).toBe(expected);
-});
-
-test('is Prime', () => {
-    const input = 67;
-    const expected = true;
-    expect(isPrime(input)).toBe(expected);
+    expect(isPrime(13)).toBe(true);
+    expect(isPrime(4)).toBe(false);
+    expect(isPrime(67)).toBe(true);
 });
 
 test('return First', () => {
-    const input = [1, 2, 3, 4];
-    const expected = 1;
-    expect(returnFirst(input)).toBe(expected);
-});
-
-test('return First', () => {
-    const input = ['cat', 'dog', 'bird'];
-    const expected = 'cat';
-    expect(returnFirst(input)).toBe(expected);
+    expect(returnFirst([1, 2, 3, 4])).toBe(1);
+    expect(returnFirst(['cat', 'dog', 'bird'])).toBe('cat');
 });
 
 test('return Last', () => {
-    const input = ['cat', 'dog', 'bird'];
-    const expected = 'bird';
-    expect(returnLast(input)).toBe(expected);
-});
-
-test('return Last', () => {
-    const input = [1, 2, 3, 4];
-    const expected = 4;
-    expect(returnLast(input)).toBe(expected);
+    expect(returnLast(['cat', 'dog', 'bird'])).toBe('bird');
+    expect(returnLast([1, 2, 3, 4])).toBe(4);
 });
 
 test('getArray Length', () => {
@@ -185,32 +86,13 @@ test('increment By One', () => {
 });
 
 test('add Item To Array', () => {
-    const input = [1, 2, 3, 4];
-    const inputTwo = 7;
-    const expected = [1, 2, 3, 4, 7];
-    expect(addItemToArray(input, inputTwo)).toEqual(expected);
-});
-
-test('add Item To Array', () => {
-    const input = ['cat', 'dog', 'bird'];
-    const inputTwo = 'fish';
-    const expected = ['cat', 'dog', 'bird', 'fish'];
-    expect(addItemToArray(input, inputTwo)).toEqual(expected);
-});
-
-
-test('add Item To Front', () => {
-    const input = ['cat', 'dog', 'bird'];
-    const inputTwo = 'fish';
-    const expected = ['fish', 'cat', 'dog', 'bird'];
-    expect(addItemToFront(input, inputTwo)).toEqual(expected);
+    expect(addItemToArray([1, 2, 3, 4], 7)).toEqual([1, 2, 3, 4, 7]);
+    expect(addItemToArray(['cat', 'dog', 'bird'], 'fish')).toEqual(['cat', 'dog', 'bird', 'fish']);
 });
 
 test('add Item To Front', () => {
-    const input = [1, 2, 3, 4];
-    const inputTwo = 7;
-    const expected = [7, 1, 2, 3, 4];
-    expect(addItemToFront(input, inputTwo)).toEqual(expected);
+    expect(addItemToFront(['cat', 'dog', 'bird'], 'fish')).toEqual(['fish', 'cat', 'dog', 'bird']);
+    expect(addItemToFront([1, 2, 3, 4], 7)).toEqual([7, 1, 2, 3, 4]);
 });
 
 test('words To Sentence', () => {
@@ -221,17 +103,13 @@ test('words To Sentence', () => {
 
 test('contains', () => {
     const input = ['cat', 'dog', 'bird'];
-    const inputTwo = 'fish';
-    const expected = false;
-    expect(contains(input, inputTwo)).toEqual(expected);
+    expect(contains(input, 'fish')).toEqual(false);
+    expect(contains(input, 'cat')).toEqual(true);
 });
 
-test('contains', () => {
-    const input = ['cat', 'dog', 'bird'];
-    const inputTwo = 'cat';
-    const expected = true;
-    expect(contains(input, inputTwo)).toEqual(expected);
-});
+test('add numbers', () => {
+    expect(addNumbers([2,3,4,5])).toEqual(14);
+})
 
 test('average Test Score', () => {
     const input = [80, 50, 43, 100, 95, 89, 99, 95];
@@ -242,11 +120,6 @@ test('average Test Score', () => {
 test('largest Number', () => {
     const input = [80, 50, 43, 100, 95, 89, 99, 95];
     const expected = 100;
-    expect(largestNumber(input)).toEqual(expected);
-});
-
-test('largest Number', () => {
-    const input = [80, 50, 143, 100, 95, 89, 99, 95];
-    const expected = 143;
-    expect(largestNumber(input)).toEqual(expected);
+    expect(largestNumber([80, 50, 43, 100, 95, 89, 99, 95])).toEqual(100);
+    expect(largestNumber([80, 50, 143, 100, 95, 89, 99, 95])).toEqual(143);
 });
