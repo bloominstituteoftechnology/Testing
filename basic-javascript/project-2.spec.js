@@ -162,3 +162,99 @@ describe('returnLast', () => {
     });
 });
 
+describe('getArrayLength', () => {
+    test('Correctly returns length of input', () => {
+        const input = [1,2,3,4,5];
+        const expected = 5;
+        const actual = funcs.getArrayLength(input);
+        expect(actual).toBe(expected);
+    });
+});
+
+describe('incrementByOne', () => {
+    test('Correctly increments each item in array by 1', () => {
+        const input = [1,2,3,4,5];
+        const expected = [2,3,4,5,6];
+        const actual = funcs.incrementByOne(input);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('addItemToArray', () => {
+    test('Correcttly adds item, input2 to the array, input1', () => {
+        const input1 = [1,2,3,4];
+        const input2 = 5;
+        const expected = [1,2,3,4,5];
+        const actual = funcs.addItemToArray(input1, input2);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('addItemToFront', () => {
+    test('Correcttly adds item, input2 to the from of array, input1', () => {
+        const input1 = [2,3,4,5];
+        const input2 = 1;
+        const expected = [1,2,3,4,5];
+        const actual = funcs.addItemToFront(input1, input2);
+        expect(actual).toEqual(expected);
+    });
+});
+
+describe('wordsToSentence', () => {
+    test('Correctly returns single word as sentence', () => {
+        const input = ['Daniel'];
+        const expected = 'Daniel';
+        const actual = funcs.wordsToSentence(input);
+        expect(actual).toBe(expected);
+    });
+    test('Correctly returns sentence from array of words', () => {
+        const input = ['Daniel', 'goes', 'to', 'Lambda', 'School'];
+        const expected = 'Daniel goes to Lambda School';
+        const actual = funcs.wordsToSentence(input);
+        expect(actual).toBe(expected);
+    });
+});
+
+describe('contains', () => {
+    test('Returns false when no items are included in array', () => {
+        const input1 = [1,2,3,4,5];
+        const input2 = 6;
+        const expected = false;
+        const actual = funcs.contains(input1, input2);
+        expect(actual).toBe(expected);
+    });
+    test('Returns true when array contains item provided', () => {
+        const input1 = [1,2,3,4,5];
+        const input2 = 1;
+        const expected = true;
+        const actual = funcs.contains(input1, input2);
+        expect(actual).toBe(expected);
+    });
+});
+
+describe('addNumbers', () => {
+    test('Returns sum of numbers in array', () => {
+        const input = [1,2,3,4,5];
+        const expected = 15;
+        const actual = funcs.addNumbers(input);
+        expect(actual).toBe(expected);
+    });
+});
+
+describe('averageTestScore', () => {
+    test('Returns average of items in input array', () => {
+        const input = [90, 86, 75, 98];
+        const expected = 87.25;
+        const actual = funcs.averageTestScore(input);
+        expect(actual).toBe(expected);
+    });
+});
+
+describe('largestNumber', () => {
+    test('Correctly returns largest number item in array', () => {
+        const input = [1,2,3,4,5];
+        const expected = 5;
+        const actual = funcs.largestNumber(input);
+        expect(actual).toBe(expected);
+    });
+});
