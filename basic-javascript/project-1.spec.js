@@ -81,20 +81,41 @@ test('raise to power', () => {
   expect(helpers.raiseToPower(3, 5)).toBe(243);
 });
 
-test('round number', () => {});
+test('round number', () => {
+  expect(helpers.roundNumber(3.5)).toBe(4);  
+  expect(helpers.roundNumber(3.2)).toBe(3);  
+});
 
-test('round number up', () => {});
+test('round number up', () => {
+  expect(helpers.roundUp(3.7)).toBe(4);
+  expect(helpers.roundUp(3.2)).toBe(4);
+});
 
-test('add exclamation point', () => {});
+test('add exclamation point', () => {
+  expect(helpers.addExclamationPoint('wow')).toBe('wow!');
+});
 
-test('combine names', () => {});
+test('combine names', () => {
+  expect(helpers.combineNames('wow', '!')).toBe('wow !');
+  expect(helpers.combineNames('steve', 'smodish')).toBe('steve smodish');
+});
 
-test('get greeting', () => {});
+test('get greeting', () => {
+  expect(helpers.getGreeting('tim')).toBe('Hello tim!');
+});
 
-test('get rectangle area', () => {});
+test('get rectangle area', () => {
+  expect(helpers.getRectangleArea(3, 10)).toBe(30);
+});
 
-test('get triangle area', () => {});
+test('get triangle area', () => {
+  expect(helpers.getTriangleArea(3, 10)).toBe(15);
+});
 
-test('get circle area', () => {});
+test('get circle area', () => {
+  expect(helpers.getCircleArea(10)).toBe(314.15926535897932384626433832795);
+});
 
-test('get rectangular prism volume', () => {});
+test('get rectangular prism volume', () => {
+  expect(helpers.getRectangularPrismVolume(3, 10, 5)).toBe(150);
+});
