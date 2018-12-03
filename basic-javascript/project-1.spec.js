@@ -1,3 +1,1 @@
-const helpers = require('./project-1');
-
-// start testing!
+const helpers = require('./project-1')
