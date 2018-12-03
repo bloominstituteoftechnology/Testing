@@ -33,18 +33,24 @@ describe('Jest', () => {
 
 test('Multiply By Ten', () => {
   const input = 3;
-  const expected = 30;
-  expect(multiplyByTen(input)).toEqual(expected);
+  const result = 30;
+  expect(multiplyByTen(input)).toEqual(result);
 });
 
 test('Subtract Five', () => {
   const input = 25;
-  const expected = 20;
-  expect(subtractFive(input)).toEqual(expected);
+  const result = 20;
+  expect(subtractFive(input)).toEqual(result);
 });
 
 test('Are Same Length', () => {
-  const input = 'test';
-  const expected = 'work';
-  expect(areSameLength(input, expected)).toBeTruthy();
+  const input1 = 'test';
+  const input2 = 'work';
+  expect(areSameLength(input1, input2)).toBeTruthy();
+});
+
+test('Are Equal', () => {
+  const x = 100;
+  const y = 100;
+  expect(areEqual(x, y)).toBeTruthy();
 });
