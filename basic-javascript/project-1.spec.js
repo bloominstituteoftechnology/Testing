@@ -273,4 +273,56 @@ describe("project-1.js", () => {
       }).toThrow();
     });
   });
+  describe("roundUp", () => {
+    it("should return the rounded number upwards", () => {
+      const expected = 2;
+      const actual = helpers.roundUp(1.7);
+      expect(actual).toEqual(expected);
+    });
+    it("should return 0 when called with no value", () => {
+      const product = helpers.roundUp();
+      expect(product).toBe(0);
+    });
+    it("should throw an error when called with a string", () => {
+      expect(() => {
+        helpers.roundUp("four");
+      }).toThrow();
+    });
+  });
+  describe("addExclamationPoint", () => {
+    it("should add an exclamation point to the end", () => {
+      const expected = "hello!";
+      const actual = helpers.addExclamationPoint("hello");
+      expect(actual).toEqual(expected);
+    });
+    it("should thow an error called with no value", () => {
+      expect(() => {
+        helpers.addExclamationPoint();
+      }).toThrow();
+    });
+  });
+  describe("combineNames", () => {
+    it("should combine the two names", () => {
+      const expected = "nico yazawa";
+      const actual = helpers.combineNames("nico", "yazawa");
+      expect(actual).toEqual(expected);
+    });
+    it("should thow an error called with no value", () => {
+      expect(() => {
+        helpers.combineNames();
+      }).toThrow();
+    });
+  });
+  describe("getGreeting", () => {
+    it("should return a greeting", () => {
+      const expected = "Hello nico!";
+      const actual = helpers.getGreeting("nico");
+      expect(actual).toEqual(expected);
+    });
+    it("should thow an error when called with no value", () => {
+      expect(() => {
+        helpers.getGreeting();
+      }).toThrow();
+    });
+  });
 });
