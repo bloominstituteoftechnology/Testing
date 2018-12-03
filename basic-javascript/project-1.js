@@ -125,6 +125,9 @@ const roundNumber = num => {
 };
 
 const roundUp = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return Math.ceil(num);
 };
 

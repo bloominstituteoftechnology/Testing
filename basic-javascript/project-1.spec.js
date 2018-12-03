@@ -173,7 +173,18 @@ describe('project-1', () => {
         })
         it('should throw err when calling other than number', () => {
             expect(() => {
-                helpers.raiseToPower('ten')
+                helpers.roundNumber('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('roundUp() ', () => {
+        it('should be able to correctly roundUp', () => {
+            expect(helpers.roundUp(5.25)).toEqual(6);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.roundUp('ten')
             }).toThrow();
         })
     })
