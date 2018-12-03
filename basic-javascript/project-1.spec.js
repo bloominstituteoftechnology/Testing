@@ -58,4 +58,11 @@ describe('helpers', () => {
             expect(helpers.greaterThanFifty(60)).toBeTruthy();
         });
     })
+
+    describe('add', () => {
+        test('add two number', () => {
+            // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
+            expect(helpers.add(3, 3)).toBe(6);
+        });
+    })
 })
