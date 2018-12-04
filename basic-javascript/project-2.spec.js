@@ -144,3 +144,22 @@ describe('fizzBuzz function', () => {
     expect(fizzBuzz(37)).toBe(37);
   });
 });
+
+describe('isPrime function', () => {
+  it('should return false if num is less than or equal to 1', () => {
+    expect(isPrime(1)).toBe(false);
+    expect(isPrime(-1)).toBe(false);
+    expect(isPrime(0)).toBe(false);
+  });
+
+  it('should return false if num is divisible by anything other than itself and 1', () => {
+    expect(isPrime(4)).toBe(false);
+    expect(isPrime(10)).toBe(false);
+  });
+
+  it('should return true if num is not divisible by anything other than itself and 1', () => {
+    expect(isPrime(2)).toBe(true);
+    expect(isPrime(13)).toBe(true);
+    expect(isPrime(127)).toBe(true);
+  });
+});
