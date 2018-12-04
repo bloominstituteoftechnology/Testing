@@ -28,6 +28,11 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if(!num) {
+    return;
+  } else if (typeof num !== 'number') {
+    return null;
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -35,6 +40,11 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if(!num) {
+    return;
+  } else if (typeof num !== 'number') {
+    return null;
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,6 +52,11 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if(!num) {
+    return;
+  } else if (typeof num !== 'number') {
+    return null;
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -53,6 +68,11 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if(num === undefined) {
+    return;
+  } else if (typeof num !== 'number') {
+    return null;
+  }
   if (num < 0) {
     return false;
   }
@@ -68,18 +88,38 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if(arr === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if(arr === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if(arr === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  }
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if(arr === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -87,16 +127,31 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
+  if(arr === undefined || item === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  }
   arr.push(item);
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
+  if(arr === undefined || item === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  }
   arr.unshift(item);
   return arr;
 };
 
 const wordsToSentence = words => {
+  if(words === undefined) {
+    return;
+  } else if (typeof words !== "object" && !Array.isArray(words)) {
+    return null;
+  } else {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
@@ -106,6 +161,8 @@ const wordsToSentence = words => {
     }
   }
   return newSentence;
+}
+  
 };
 
 const contains = (arr, item) => {
