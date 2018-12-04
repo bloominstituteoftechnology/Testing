@@ -118,9 +118,75 @@ describe('fizzBuzz', () => {
   });
   it(`returns 'fizz' if input is divisible by 3`, () => {
     //act
-    const numOne = 22;
+    const numOne = 21;
 
     //assert
     expect(fizzBuzz(numOne)).toEqual('fizz');
+  });
+});
+
+describe('isPrime', () => {
+  // arrange
+  const isPrime = funcs.isPrime;
+
+  it('returns error if input is not a number', () => {
+    //act
+    const strOne = 'German';
+
+    //assert
+    expect(() => {
+      isPrime(strOne);
+    }).toThrow();
+  });
+  it(`returns 'true' if input is prime`, () => {
+    //act
+    const numOne = 37;
+
+    //assert
+    expect(isPrime(numOne)).toEqual(true);
+  });
+});
+
+describe('isPrime', () => {
+  // arrange
+  const isPrime = funcs.isPrime;
+
+  it('returns error if input is not a number', () => {
+    //act
+    const strOne = 'German';
+
+    //assert
+    expect(() => {
+      isPrime(strOne);
+    }).toThrow();
+  });
+  it(`returns 'true' if input is prime`, () => {
+    //act
+    const numOne = 37;
+
+    //assert
+    expect(isPrime(numOne)).toEqual(true);
+  });
+});
+
+describe('returnFirst', () => {
+  // arrange
+  const returnFirst = funcs.returnFirst;
+
+  it('returns error if input is not an array', () => {
+    //act
+    const strOne = 'apples';
+
+    //assert
+    expect(() => {
+      returnFirst(strOne);
+    }).toThrow();
+  });
+  it(`returns first item in array`, () => {
+    //act
+    const numOne = [NaN];
+
+    //assert
+    expect(returnFirst(numOne)).toEqual(numOne[0]);
   });
 });

@@ -67,16 +67,22 @@ const isPrime = num => {
   }
   if (num === 1 || num === 0) {
     return false;
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
       return false;
     }
   }
+
   return true;
 };
 
 const returnFirst = arr => {
+  if (!isAnArray(arr)) {
+    throw new Error();
+  }
   return arr[0];
 };
 
