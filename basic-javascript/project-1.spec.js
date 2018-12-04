@@ -7,23 +7,46 @@ test('not sure what i am doing yet', () => {
 
 });
 
-describe('project-1 testing', () => { 
-    it('should multiply by ten', () => {
-        expect(helpers.multiplyByTen(10)).toEqual(100);
-        // make sure input is a number
-        // make sure output is a nuber
+describe('project-1 testing', () => {
+    describe('multiply by ten function', () => {
+        it('checks for a number or intended number input', () => {
+            expect(helpers.multiplyByTen('4')).toBe(40);
+            expect(helpers.multiplyByTen([1,2,3])).toBe(NaN);
+            expect(helpers.multiplyByTen('four')).toBe(NaN);
+        });
+
+        it('multiplies by ten', () => {
+            expect(helpers.multiplyByTen(10)).toEqual(100);
+        });
+        
+        it('able to multiple negative numbers', () => {
+            expect(helpers.multiplyByTen(-10)).toBe(-100);
+        });
+
+    }); 
+
+    describe('subtract five function', () => {
+        it('take five away from argument', () => {
+            expect(helpers.subtractFive(10)).toEqual(5);
+        });
+
+        it('checks for a number or intended number input', () => {
+            expect(helpers.subtractFive('10')).toBe(5);
+            expect(helpers.subtractFive([1, 2, 3])).toBe(NaN);
+            expect(helpers.subtractFive('ten')).toBe(NaN);
+        });
+
+        it('able to handle a negative return', () => {
+            expect(helpers.subtractFive(3)).toBe(-2);
+        });
     });
 
-    it('should subtract five', () => {
-        expect(helpers.subtractFive(10)).toEqual(5);
-        // make sure input is a number
-        // make sure output is a nuber
-    });
-
-    it('are same length', () => {
-        expect(helpers.areSameLength('bob', 'sam')).toBe(true);
-        // make sure input is a string
-        // make sure output is a boolean
+    describe('same length checker function', () => {
+        it('check if the strings are the same length and return boolean', () => {
+            expect(helpers.areSameLength('bob', 'sam')).toBe(true);
+            // make sure input is a string
+            // make sure output is a boolean
+        });
     });
 
     it('are two numbers equal', () => {
