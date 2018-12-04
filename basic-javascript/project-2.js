@@ -10,6 +10,9 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
+  if (typeof language !== 'string') {
+    return 'Please enter a language';
+  }
   switch (language) {
     case 'German':
       return 'Guten Tag!';
