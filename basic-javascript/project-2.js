@@ -84,14 +84,23 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr.length <= 0) {
+    return null;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length <= 0) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if (typeof arr === 'number') {
+    return null;
+  }
   return arr.length;
 };
 

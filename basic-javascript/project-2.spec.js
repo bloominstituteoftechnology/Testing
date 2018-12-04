@@ -65,8 +65,35 @@ describe('project-2', () => {
   });
 
   describe('returnFirst', () => {
-    it('returns the first number in an array', () => {
-      expect(funcs.returnFirst([null, 2, 3])).toBe(null);
+    it('returns the first item in an array', () => {
+      expect(funcs.returnFirst(['bruh', 2, 3])).toBe('bruh');
+    });
+    it('returns null with an empty array', () => {
+      expect(funcs.returnLast([])).toBe(null);
+    });
+  });
+
+  describe('returnLast', () => {
+    it('returns the last item in an array', () => {
+      expect(funcs.returnLast([3])).toBe(3);
+    });
+    it('returns null with an empty array', () => {
+      expect(funcs.returnLast([])).toBe(null);
+    });
+  });
+
+  describe('getArrayLength', () => {
+    it('returns the length of a given array', () => {
+      expect(funcs.getArrayLength([1, 2, 3])).toBe(3);
+    });
+    it('returns null upon a non-array entry', () => {
+      expect(funcs.getArrayLength(23)).toBe(null);
+    });
+  });
+
+  describe('incrementByOne', () => {
+    it('adds one to each value in a given array', () => {
+      expect(funcs.incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
     });
   });
   //end test suite
