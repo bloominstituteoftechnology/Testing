@@ -212,8 +212,7 @@ describe('lessThanNinety', () => {
     expect(lessThanNinety(num1)).toBeFalsy;
     expect(lessThanNinety(num2)).toBeTruthy;
   });
-
-})
+});
 
 // greaterThanFifty
 describe('greaterThanFifty', () => {
@@ -242,7 +241,7 @@ describe('greaterThanFifty', () => {
     expect(greaterThanFifty()).toBeFalsy();
   });
 
-  test('expects the parameter is under 90', () => {
+  test('expects the parameter to be greater than 50', () => {
     const num1 = 50;
     const num2 = 50.1;
     expect(num2).toBeGreaterThan(50)
@@ -847,7 +846,7 @@ describe('getRectangularPrismVolume', () => {
     const width = Math.random();
     const height = Math.random();
     const result = getRectangularPrismVolume(length, width, height);
-    expect(result).toBe(length * width * height);
+    expect(result).toBeCloseTo(length * width * height);
     expect(result).toMatchSnapshot(expect.any(Number));
   });
 

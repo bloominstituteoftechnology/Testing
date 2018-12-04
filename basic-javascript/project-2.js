@@ -1,12 +1,8 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
-    return y;
-  }
-  return y;
+  if (typeof Number(x) !== 'number' || typeof Number(y) !== 'number') {return NaN}
+  return x > y ? x: y;
 };
 
 const greeting = language => {
