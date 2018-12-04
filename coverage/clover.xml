@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1543891426541" clover="3.2.0">
+  <project timestamp="1543891426541" name="All files">
+    <metrics statements="105" coveredstatements="52" conditionals="17" coveredconditionals="4" methods="46" coveredmethods="10" elements="168" coveredelements="66" complexity="0" loc="105" ncloc="105" packages="2" files="3" classes="3">
+      <package name="advanced-javascript">
+        <metrics statements="48" coveredstatements="14" conditionals="9" coveredconditionals="0" methods="21" coveredmethods="0"/>
+        <file name="arrays.js" path="/Users/katjohnnson/LambdaSchool/Testing/advanced-javascript/arrays.js">
+          <metrics statements="27" coveredstatements="7" conditionals="7" coveredconditionals="0" methods="10" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="17" count="1" type="cond" truecount="0" falsecount="1"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+        </file>
+        <file name="objects.js" path="/Users/katjohnnson/LambdaSchool/Testing/advanced-javascript/objects.js">
+          <metrics statements="21" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="11" coveredmethods="0"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="basic-javascript">
+        <metrics statements="57" coveredstatements="38" conditionals="8" coveredconditionals="4" methods="25" coveredmethods="10"/>
+        <file name="project-1.js" path="/Users/katjohnnson/LambdaSchool/Testing/basic-javascript/project-1.js">
+          <metrics statements="57" coveredstatements="38" conditionals="8" coveredconditionals="4" methods="25" coveredmethods="10"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="12" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="12" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="14" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="11" type="stmt"/>
+          <line num="19" count="1" type="stmt"/>
+          <line num="20" count="12" type="cond" truecount="2" falsecount="0"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="24" count="12" type="cond" truecount="2" falsecount="0"/>
+          <line num="25" count="5" type="stmt"/>
+          <line num="27" count="7" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="31" count="16" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="35" count="23" type="stmt"/>
+          <line num="38" count="1" type="stmt"/>
+          <line num="39" count="23" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+          <line num="43" count="19" type="stmt"/>
+          <line num="46" count="1" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="50" count="1" type="stmt"/>
+          <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="57" count="1" type="stmt"/>
+          <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="64" count="1" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="68" count="1" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="72" count="1" type="stmt"/>
+          <line num="73" count="0" type="stmt"/>
+          <line num="76" count="1" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="80" count="1" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
+          <line num="84" count="1" type="stmt"/>
+          <line num="85" count="0" type="stmt"/>
+          <line num="88" count="1" type="stmt"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="92" count="1" type="stmt"/>
+          <line num="93" count="0" type="stmt"/>
+          <line num="96" count="1" type="stmt"/>
+          <line num="97" count="0" type="stmt"/>
+          <line num="100" count="1" type="stmt"/>
+          <line num="101" count="0" type="stmt"/>
+          <line num="104" count="1" type="stmt"/>
+          <line num="105" count="0" type="stmt"/>
+          <line num="108" count="1" type="stmt"/>
+          <line num="109" count="0" type="stmt"/>
+          <line num="112" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

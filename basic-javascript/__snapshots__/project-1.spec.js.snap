@@ -2,7 +2,73 @@
 
 exports[`add adds two parameters 1`] = `Object {}`;
 
+exports[`add adds two parameters 2`] = `Object {}`;
+
+exports[`addExclamationPoint adds an 1`] = `Object {}`;
+
+exports[`addExclamationPoint adds an exclam 1`] = `Object {}`;
+
+exports[`addExclamationPoint adds an exclamation point after a strin 1`] = `Object {}`;
+
+exports[`cube cubes a number 1`] = `Object {}`;
+
+exports[`divide divides the 1st parameter by the 2nd parameter 1`] = `Object {}`;
+
+exports[`divide divides the 1st parameter by the 2nd parameter 2`] = `Object {}`;
+
+exports[`getCircleArea calculates  a number 1`] = `Object {}`;
+
+exports[`getCircleArea calculates the area of a circle 1`] = `Object {}`;
+
+exports[`getCircleArea squares a number 1`] = `Object {}`;
+
+exports[`getRectangleArea multiplies 2 parameters 1`] = `Object {}`;
+
+exports[`getRectangleArea multiplies 2 parameters 2`] = `Object {}`;
+
+exports[`getRectangularPrismVolume multiplies 2 parameters 1`] = `Object {}`;
+
+exports[`getRectangularPrismVolume multiplies 3 parameters 1`] = `Object {}`;
+
+exports[`getRemainder provides 1 for odds and 0 for evens when the 2nd parameter is 2 1`] = `Object {}`;
+
+exports[`getRemainder provides the remainder after dividing the 1st parameter by the 2nd parameter 1`] = `Object {}`;
+
+exports[`getTriangleArea multiplies 2 parameters 1`] = `Object {}`;
+
+exports[`getTriangleArea multiplies 2 parameters and divde it by 2 1`] = `Object {}`;
+
+exports[`multiply multiplies 2 parameters 1`] = `Object {}`;
+
+exports[`multiply multiplies 2 parameters 2`] = `Object {}`;
+
+exports[`multiply multiplies 2 parameters 3`] = `Object {}`;
+
+exports[`multiply multiplies 2 parameters 4`] = `Object {}`;
+
 exports[`multiplyByTen multiplies a parameter by 10 1`] = `Object {}`;
+
+exports[`raiseToPower raises the 1st parameter to the power of the 2nd parameter 1`] = `Object {}`;
+
+exports[`roundNumber rounds a number 1`] = `Object {}`;
+
+exports[`roundNumber rounds a number up if 1`] = `Object {}`;
+
+exports[`roundNumber rounds a number up if the  1`] = `Object {}`;
+
+exports[`roundNumber rounds a number up if the dec 1`] = `Object {}`;
+
+exports[`roundNumber rounds a number up if the decimal is .5 or more 1`] = `Object {}`;
+
+exports[`roundNumber rounds a number up if the decimal is .5 or more 2`] = `Object {}`;
+
+exports[`roundUp rounds a number up if the decimal is .5 or more 1`] = `Object {}`;
+
+exports[`roundUp rounds a number up if the decimal is greater than 0 1`] = `Object {}`;
+
+exports[`square squares a number 1`] = `Object {}`;
+
+exports[`square squares a number 2`] = `Object {}`;
 
 exports[`subtract subtracts the 2nd parameter from the 1st parameter 1`] = `Object {}`;
 

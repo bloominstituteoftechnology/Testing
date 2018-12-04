@@ -70,7 +70,8 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  // return num ** exponent;
+  return Math.pow(num, exponent);
 };
 
 const roundNumber = num => {
