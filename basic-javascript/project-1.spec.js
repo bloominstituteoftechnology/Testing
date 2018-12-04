@@ -49,4 +49,48 @@ describe("project-1.js helpers", () => {
       expect(typeof helpers.lessThanNinety(89)).toBe("boolean");
     });
   });
+
+  describe("greaterThanFifty()", () => {
+    it("should be greater than fifty", () => {
+      expect(helpers.greaterThanFifty(51)).toBeTruthy();
+    });
+  });
+
+  describe("add()", () => {
+    it("should receive a number", () => {
+      expect(typeof helpers.add(1, 2)).toBe("number");
+    });
+
+    it("should add received numbers", () => {
+      expect(helpers.add(1, 2)).toEqual(3);
+    });
+  });
+
+  describe("subtract()", () => {
+    it("should receive a number", () => {
+      expect(typeof helpers.subtract(3, 2)).toBe("number");
+    });
+
+    it("should subtract received numbers", () => {
+      expect(helpers.subtract(3, 2)).toEqual(1);
+    });
+  });
+
+  describe("divide()", () => {
+    it("should receive a number", () => {
+      expect(typeof helpers.divide(1, 2)).toBe("number");
+    });
+    it("should divide received numbers", () => {
+      expect(helpers.divide(4, 2)).toEqual(2);
+    });
+  });
+
+  describe("multiply()", () => {
+    it("should receive a number", () => {
+      expect(typeof helpers.multiply(1, 2)).toBe("number");
+    });
+    it("should divide received numbers", () => {
+      expect(helpers.multiply(2, 2)).toEqual(4);
+    });
+  });
 });
