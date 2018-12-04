@@ -75,48 +75,24 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
-  for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
-    } else {
-      newSentence += ` ${words[i]}`;
-    }
-  }
-  return newSentence;
+  return words.join(' ');
 };
 
 const contains = (arr, item) => {
-  let itemCounter = arr.indexOf(item)
-  return itemCounter > -1 ? true : false
+  let itemCounter = arr.indexOf(item);
+  return itemCounter > -1 ? true : false;
 };
 
 const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
-  }
-  return sumOfNumbers;
+  return numbers.reduce((total, number) => total + number, 0);
 };
 
 const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
-  for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
-  }
-  return totalSumScores / numberOfScore;
+  return testScores.reduce((total, score) => total + score, 0) / testScores.length;
 };
 
 const largestNumber = numbers => {
-  let biggestInteger = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
-      biggestInteger = numbers[i];
-    }
-  }
-  return biggestInteger;
+  return Math.max(...numbers);
 };
 
 module.exports = {
