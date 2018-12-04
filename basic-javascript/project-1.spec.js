@@ -76,6 +76,101 @@ describe('multiply', ()=>{
     })
 })
 describe('getRemainder',()=>{
-    
+   test('number', ()=>{
+       expect(helpers.getRemainder(7,2)).toBe(1)
+   }) 
+})
+describe('isEven', ()=>{
+    test('true', ()=>{
+        expect(helpers.isEven(6)).toBe(true)
+    })
+    test('false',()=>{
+        expect(helpers.isEven(5)).toBe(false)
+    })
+})
+describe('isOdd', ()=>{
+    test('true', ()=>{
+        expect(helpers.isOdd(5)).toBe(true)
+    })
+    test('false',()=>{
+        expect(helpers.isOdd(6)).toBe(false)
+    })
+})
+describe('square',()=>{
+    test('positive',()=>{
+        expect(helpers.square(5)).toBe(25)
+    })
+    test('negative',()=>{
+        expect(helpers.square(-5)).toBe(25)
+    })
+})
+describe('cube',()=>{
+    test('positive',()=>{
+        expect(helpers.cube(5)).toBe(125)
+    })
+    test('negative', ()=>{
+        expect(helpers.cube(-5)).toBe(-125)
+    })
+})
+describe('raisePower',()=>{
+    test('positive',()=>{
+        expect(helpers.raiseToPower(3,2)).toBe(9)
+    })
+    test('negative',()=>{
+        expect(helpers.raiseToPower(-3,2)).toBe(9)
+    })
+})
+describe('roundNumber',()=>{
+    test('under5',()=>{
+        expect(helpers.roundNumber(10.4)).toBe(10)
+    })
+    test('above5',()=>{
+        expect(helpers.roundNumber(10.5)).toBe(11)
+    })
+})
+describe('roundUp',()=>{
+    test('under5',()=>{
+        expect(helpers.roundUp(10.4)).toBe(11)
+    })
+    test('above5',()=>{
+        expect(helpers.roundUp(10.5)).toBe(11)
+    })
+})
+describe('addExclaimationPoint',()=>{
+    test('string',()=>{
+        expect(helpers.addExclamationPoint('Hello')).toBe('Hello!')
+    })
+})
+describe('combineName',()=>{
+    test('name',()=>{
+        expect(helpers.combineNames('Quan','Nguyen')).toBe('Quan Nguyen')
+    })
+})
+describe('getGreeting',()=>{
+    test('hello',()=>{
+        expect(helpers.getGreeting('Quan')).toBe('Hello Quan')
+    })
+})
+describe('getRectangle',()=>{
+    test('area',()=>{
+        expect(helpers.getRectangleArea(5,4)).toBe(20)
+    })
+})
+describe('getTriangle',()=>{
+    test('area',()=>{
+        expect(helpers.getTriangleArea(5,4)).toBe(10)
+    })
+})
+describe('getCircle',()=>{
+    test('area',()=>{
+        test('number',()=>{
+            expect(helpers.getCircleArea(5)).toBeCloseTo(78.53)
+        })
+    })
+})
+describe('getPrism',()=>{
+    test('area',()=>{
+        expect(helpers.getRectangularPrismVolume(5,4,3)).toBe(60)
+    })
 })
 // start testing!
