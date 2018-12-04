@@ -117,3 +117,35 @@ test("should add an item to beginning of array", () => {
 
   expect(funcs.addItemToFront(arr, 7)).toEqual(arr2);
 });
+
+test("should duplicate string into another string of same value", () => {
+  const words = "Iamtoocoolfortesting.";
+  const sentence = "I a m t o o c o o l f o r t e s t i n g .";
+
+  expect(funcs.wordsToSentence(words)).toBe(sentence);
+});
+
+describe("counter", () => {
+  const arr = ["apples", "oranges", "pears"];
+  test("should return false for item not in the array", () => {
+    expect(funcs.contains(arr, "peaches")).toBe(false);
+  });
+  test("should return true for item in the array", () => {
+    expect(funcs.contains(arr, "pears")).toBe(true);
+  });
+});
+
+test("should sum up numbers starting from number counting down to 0", () => {
+  const arr = [1, 2, 3, 4, 5];
+  expect(funcs.addNumbers(arr)).toBe(15);
+});
+
+test("should return avg test score of an array of scores", () => {
+  const arr = [93, 95, 97];
+  expect(funcs.averageTestScore(arr)).toBe(95);
+});
+
+test("should return largest number in the array", () => {
+  const arr = [1, 4, 7, 5, 10, 9];
+  expect(funcs.largestNumber(arr)).toBe(10);
+});
