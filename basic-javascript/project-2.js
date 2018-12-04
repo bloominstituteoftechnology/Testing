@@ -1,13 +1,15 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
+  if(typeof x !== 'number' || typeof y !== 'number') {
+    return null
+    } else if (x > y) {
+      return x;
+    } else if (x === y) {
+      return y;
+    }
     return y;
   }
-  return y;
-};
 
 const greeting = language => {
   switch (language) {
@@ -109,14 +111,10 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
-      itemCounter++;
+      return item
     }
-  }
-  if (itemCounter > 0) {
-    return true;
   }
   return false;
 };
