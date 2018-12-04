@@ -210,3 +210,17 @@ describe('incrementByOne function', () => {
     expect(incrementByOne([])).toBe([]);
   });
 });
+
+describe('addItemToArray function', () => {
+  it('should return array with item added to end', () => {
+    expect(addItemToArray([5], 6)).toBe([5, 6]);
+    expect(addItemToArray([], 'wow')).toBe(['wow']);
+  });
+});
+
+describe('addItemToFront function', () => {
+  it('should return array with item added to front', () => {
+    expect(addItemToFront([5], 6)).toBe([6, 5]);
+    expect(addItemToFront([], 'wow')).toBe(['wow']);
+  });
+});
