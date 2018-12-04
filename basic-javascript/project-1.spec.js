@@ -102,4 +102,32 @@ describe('project-1', () => {
       expect(isOddResult).toBe(true);
     });
   });
+
+  describe('square', () => {
+    it('determine the square of a given number', () => {
+      const squareResult = helpers.square(3);
+      expect(squareResult).toBe(9);
+    });
+  });
+
+  describe('raiseToPower', () => {
+    it('raises the first number to the power of the second', () => {
+      const raiseToPowerResult = helpers.raiseToPower(5, 2);
+      expect(raiseToPowerResult).toBe(25);
+    });
+  });
+
+  describe('roundNumber', () => {
+    it('rounds number to the nearest whole digit', () => {
+      const roundNumberResult = helpers.roundNumber(4.8);
+      expect(roundNumberResult).toBe(5);
+    });
+  });
+
+  describe('roundUp', () => {
+    it('rounds number, upward, to the nearest whole digit', () => {
+      const roundUpResult = helpers.roundUp(4.1);
+      expect(roundUpResult).toBe(5);
+    });
+  });
 });
