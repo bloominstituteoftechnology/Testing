@@ -81,3 +81,21 @@ describe('isTenOrFive function', () => {
     expect(isTenOrFive(NaN)).toBe(false);
   });
 });
+
+describe('isInRange function', () => {
+  it('should return true if arg is between 20 and 50', () => {
+    expect(isInRange(21)).toBe(true);
+    expect(isInRange(49)).toBe(true);
+  });
+
+  it('should return false if arg is not between 20 and 50', () => {
+    expect(isInRange(1)).toBe(false);
+    expect(isInRange(500)).toBe(false);
+    expect(isInRange('5')).toBe(false);
+    expect(isInRange([5])).toBe(false);
+    expect(isInRange({ key: 5 })).toBe(false);
+    expect(isInRange(null)).toBe(false);
+    expect(isInRange(true)).toBe(false);
+    expect(isInRange(NaN)).toBe(false);
+  });
+});
