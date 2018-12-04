@@ -22,7 +22,7 @@ const {
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
 test('Get Biggest', () => {
-  expect(getBiggest(8, 10)).toBe(6);
+  expect(getBiggest(8, 10)).toBe(10);
   expect(getBiggest(3, 3)).toBe(3);
   expect(getBiggest(5, 2)).toBe(5);
 });
@@ -52,12 +52,24 @@ test('isInteger', () => {
 
 test('fizzBuzz', () => {
   expect(fizzBuzz(30)).toBe('fizzbuzz');
-  expect(fizzbuzz(5)).toBe('buzz');
+  expect(fizzBuzz(5)).toBe('buzz');
   expect(fizzBuzz(3)).toBe('fizz');
   expect(fizzBuzz(1)).toBe(1);
 });
 
 test('Is Prime', () => {
   expect(isPrime(7)).toBe(true);
-  expect(isPrime(2)).toBe(false);
+  expect(isPrime(8)).toBe(false);
+});
+
+test('Return First', () => {
+  expect(returnFirst([1, 2, 3])).toBe(1);
+  expect(returnFirst(['Jonas', 'Henry', 'Norah', 'Gemma', 'Evan'])).toBe(
+    'Jonas'
+  );
+});
+
+test('Return Last', () => {
+  expect(returnLast([1, 2, 3])).toBe(3);
+  expect(returnLast(['Jonas', 'Henry', 'Norah', 'Gemma', 'Evan'])).toBe('Evan');
 });
