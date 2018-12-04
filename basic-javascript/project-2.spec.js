@@ -63,3 +63,24 @@ test('add item to array', () => {
     const item = 'zero'
     expect(addItemToFront(arr, item)).toEqual([...arr])
 })
+test('words to sentence', () => {
+    const words = ['i', 'like', 'cookies']
+    expect(wordsToSentence(words)).toEqual('i like cookies')
+})
+test('contains', () => {
+    const arr = ['one', 'two', 'three']
+    const item = 'two'
+    expect(contains(arr, item)).toEqual('two')
+})
+test('add numbers', () => {
+    const numbers = [1,2,3]
+    expect(addNumbers(numbers)).toEqual(6)
+})
+test('average test score', () => {
+    const testScores = [20, 50, 30]
+    expect(averageTestScore(testScores)).toEqual(33.333333333333336)
+})
+test('largest number', () => {
+    const numbers = [20,50,100,213]
+    expect(largestNumber(numbers)).toEqual(213)
+})
