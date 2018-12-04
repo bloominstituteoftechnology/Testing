@@ -174,4 +174,49 @@ describe("project-1.js helpers", () => {
       expect(helpers.combineNames("Bob", "Marley")).toBe("Bob Marley");
     });
   });
+
+  describe("getGreeting()", () => {
+    it("should return a string", () => {
+      expect(typeof helpers.getGreeting("hey")).toBe("string");
+    });
+    it("should greet the received name", () => {
+      expect(helpers.getGreeting("Gabe")).toBe("Hello Gabe!");
+    });
+  });
+
+  describe("getRectangleArea()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.getRectangleArea(2, 2)).toBe("number");
+    });
+    it("should get the rectangle area of received numbers", () => {
+      expect(helpers.getRectangleArea(2, 2)).toEqual(4);
+    });
+  });
+
+  describe("getTriangleArea()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.getTriangleArea(2, 2)).toBe("number");
+    });
+    it("should get the triangle area of received numbers", () => {
+      expect(helpers.getTriangleArea(4, 5)).toEqual(10);
+    });
+  });
+
+  describe("getCircleArea()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.getCircleArea(2)).toBe("number");
+    });
+    it("should get the circle area of received number", () => {
+      expect(helpers.getCircleArea(3)).toEqual(28.274333882308138);
+    });
+  });
+
+  describe("getRectangularPrismVolume", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.getRectangularPrismVolume(2, 2, 2)).toBe("number");
+    });
+    it("should get the rectangular prism volume of received numbers", () => {
+      expect(helpers.getRectangularPrismVolume(2, 3, 4)).toEqual(24);
+    });
+  });
 });
