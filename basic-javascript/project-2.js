@@ -1,13 +1,6 @@
 /* eslint-disable arrow-parens */
 
-const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
-    return y;
-  }
-  return y;
-};
+const getBiggest = (x, y) => x > y ? x : y;
 
 const greeting = language => {
   switch (language) {
@@ -20,28 +13,14 @@ const greeting = language => {
   }
 };
 
-const isTenOrFive = num => {
-  if (num === 10 || num === 5) {
-    return true;
-  }
-  return false;
-};
+const isTenOrFive = num => num === 10 || num === 5 ? true : false;
 
-const isInRange = num => {
-  if (num < 50 && num > 20) {
-    return true;
-  }
-  return false;
-};
+const isInRange = num => num < 50 && num > 20 ? true : false;
 
-const isInteger = num => {
-  if (Math.floor(num) === num) {
-    return true;
-  }
-  return false;
-};
+const isInteger = num => Math.floor(num) === num ? true : false;
 
 const fizzBuzz = num => {
+  // return num % 5 === 0 && num % 3 === 0 ? 'fizzbuzz' : num % 5 === 0 ? 'buzz' : num %   3 === 0 ? 'fizz' : num;
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -80,10 +59,7 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
-  }
-  return arr;
+  return arr.map(item => item + 1);
 };
 
 const addItemToArray = (arr, item) => {
@@ -97,56 +73,24 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
-  for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
-    } else {
-      newSentence += ` ${words[i]}`;
-    }
-  }
-  return newSentence;
+  return words.join(' ');
 };
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      itemCounter++;
-    }
-  }
-  if (itemCounter > 0) {
-    return true;
-  }
-  return false;
+  let itemCounter = arr.indexOf(item);
+  return itemCounter > -1 ? true : false;
 };
 
 const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
-  }
-  return sumOfNumbers;
+  return numbers.reduce((total, number) => total + number, 0);
 };
 
 const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
-  for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
-  }
-  return totalSumScores / numberOfScore;
+  return testScores.reduce((total, score) => total + score, 0) / testScores.length;
 };
 
 const largestNumber = numbers => {
-  let biggestInteger = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
-      biggestInteger = numbers[i];
-    }
-  }
-  return biggestInteger;
+  return Math.max(...numbers);
 };
 
 module.exports = {
