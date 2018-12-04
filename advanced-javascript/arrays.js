@@ -58,3 +58,5 @@ module.exports = {
   filter,
   flatten,
 };
+
+console.log(find([1, 2, 3], (item) => {item + 'hello'}))
