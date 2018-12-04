@@ -8,9 +8,9 @@ const arrayFunctions = require("./arrays");
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe("Arrays", () => {
-  describe("each", () => {
-    const { each } = arrayFunctions;
+  const { each, map, reduce, find, filter, flatten } = arrayFunctions;
 
+  describe("each", () => {
     it("should be a function", () => {
       expect(typeof each).toBe("function");
     });
@@ -31,7 +31,6 @@ describe("Arrays", () => {
   });
 
   describe("map", () => {
-    const map = arrayFunctions.map;
     const arr = [1, 2, 3];
     const cb = item => item + 1;
     const example = map(arr, cb);
@@ -52,8 +51,44 @@ describe("Arrays", () => {
   });
 
   describe("reduce", () => {
-    const { reduce } = arrayFunctions;
+    it("when passed an array, a callback and an optional accumulator value, will return the accumulator value mutated by each item in the array executed by the callback", () => {
+      expect(reduce([1, 2, 3], (val, next) => val + next, 4)).toBe(10);
+    });
 
-    it("", () => {});
+    it("when not passed the optional accumulator value, will initialize it to be zero and run function normally", () => {
+      expect(reduce([1, 2, 3], (val, next) => val + next)).toBe(6);
+    });
+  });
+
+  describe("find", () => {
+    it('when passed an array and a callback, runs each item in order through the callback and returns the first item that has the callback return "true"', () => {
+      expect(find([1, 2, 3], item => item > 2)).toBe(3);
+    });
+
+    it("returns undefined if not items passed through the callback return true", () => {
+      expect(find([1, 2, 3], item => item > 20)).toBe(undefined);
+    });
+  });
+
+  describe("filter", () => {
+    it('when passed an array and a callback, returns a new array containing only items that returned as "true" when passed through the callback', () => {
+      expect(filter([1, 2, 3], item => item > 1)).toEqual([2, 3]);
+    });
+
+    it("returns a new empty array when none of the items returned as true when passed through the callback", () => {
+      expect(filter([1, 2, 3], item => item > 5)).toEqual([]);
+    });
+  });
+
+  describe("flatten", () => {
+    it("when passed an array containing items, some of which might be nested arrays, returns a new array composed of each of the same items but removed from their nested arrays(if any) by first passing them through a reduce function", () => {
+      expect(flatten([1, 2, [3]])).toEqual([1, 2, 3]);
+    });
+
+    it("when passed an array of only non-array items, still copies all items to a new array instead of returning the original array", () => {
+      const arr = [1, 2, 3];
+      expect(flatten(arr)).toEqual([1, 2, 3]);
+      expect(flatten(arr) === arr).toBe(false);
+    });
   });
 });
