@@ -1,20 +1,16 @@
 const helpers = require('./project-1');
+const {isNumber, isString} = require('./isChecks.js')
 
-const isNumber = func => {
 
-}
+
 
 
 // MultiplyByTen Function Test Suite
 describe('multiplyByTen function', () => {
-    test('multiplies * 10 properly', () => {
-        const input = 1
-        const expected = 10
-        const actual = helpers.multiplyByTen(input)
-        expect(actual).toBe(expected)
+    it('multiplies * 10 properly', () => {
+        expect(helpers.multiplyByTen(1)).toBe(10)
     })
-
-
+    isNumber(helpers.multiplyByTen)
 
 })
 
@@ -26,6 +22,7 @@ describe('subtractFive function', () => {
         const actual = helpers.subtractFive(input)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.subtractFive)
 })
 
 // areSameLength Function Test Suite
@@ -46,6 +43,7 @@ describe('areEqual function', () => {
         const result = helpers.areEqual(input1, input2)
         expect(result).toBe(true)
     })
+    isNumber(helpers.areEqual)
 })
 
 
@@ -56,6 +54,7 @@ describe('lessThanNinety function', () => {
         const result = helpers.lessThanNinety(input1)
         expect(result).toBe(true)
     })
+    isNumber(helpers.lessThanNinety)
 })
 
 // greaterThanFifty Function Test Suite
@@ -65,6 +64,7 @@ describe('greaterThanFifty function', () => {
         const result = helpers.greaterThanFifty(input1)
         expect(result).toBe(true)
     })
+    isNumber(helpers.greaterThanFifty)
 })
 
 // add Function Test Suite
@@ -76,6 +76,7 @@ describe('add function', () => {
         const actual = helpers.add(input1, input2)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.add)
 })
 
 // subtract Function Test Suite
@@ -87,6 +88,7 @@ describe('subtract function', () => {
         const actual = helpers.subtract(input1, input2)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.subtract)
 })
 
 // divide Function Test Suite
@@ -98,6 +100,7 @@ describe('divide function', () => {
         const actual = helpers.divide(input1, input2)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.divide)
 })
 
 // multiply Function Test Suite
@@ -120,6 +123,7 @@ describe('getRemainder function', () => {
         const actual = helpers.getRemainder(input1, input2)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.getRemainder)
 })
 
 
@@ -130,6 +134,7 @@ describe('isEven function', () => {
         const result = helpers.isEven(input1)
         expect(result).toBe(true)
     })
+    isNumber(helpers.isEven)
 })
 
 // isOdd Function Test Suite
@@ -149,6 +154,7 @@ describe('square function', () => {
         const actual = helpers.square(input1)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.square)
 })
 
 // cube Function Test Suite
@@ -159,6 +165,7 @@ describe('cube function', () => {
         const actual = helpers.cube(input1)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.cube)
 })
 
 // raiseToPower Function Test Suite
@@ -170,6 +177,7 @@ describe('raiseToPower function', () => {
         const actual = helpers.raiseToPower(num, exponent)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.raiseToPower)
 })
 
 // roundNumber Function Test Suite
@@ -180,6 +188,7 @@ describe('roundNumber function', () => {
         const actual = helpers.roundNumber(input)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.roundNumber)
 })
 
 // roundUp Function Test Suite
@@ -190,6 +199,7 @@ describe('roundUp function', () => {
         const actual = helpers.roundUp(input)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.roundUp)
 })
 
 // addExclamationPoint Function Test Suite
@@ -200,6 +210,8 @@ describe('addExclamationPoint function', () => {
         const actual = helpers.addExclamationPoint(input)
         expect(expected).toBe(actual)
     })
+    isString(helpers.addExclamationPoint)
+    
 })
 
 // combineNames Function Test Suite
@@ -232,6 +244,7 @@ describe('getRectangleArea function', () => {
         const actual = helpers.getRectangleArea(input1, input2)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.getRectangleArea)
 })
 
 // getTriangleArea Function Test Suite
@@ -243,6 +256,7 @@ describe('getTriangleArea function', () => {
         const actual = helpers.getTriangleArea(input1, input2)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.getTriangleArea)
 })
 
 // getCircleArea Function Test Suite
@@ -253,6 +267,7 @@ describe('getCircleArea function', () => {
         const actual = helpers.getCircleArea(input1)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.getCircleArea)
 })
 
 // getRectangularPrismVolume Function Test Suite
@@ -265,4 +280,5 @@ describe('getRectangularPrismVolume function', () => {
         const actual = helpers.getRectangularPrismVolume(input1, input2, input3)
         expect(expected).toBe(actual)
     })
+    isNumber(helpers.getRectangularPrismVolume)
 })
