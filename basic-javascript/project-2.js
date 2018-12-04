@@ -1,12 +1,16 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
+    if(!x || !y) return undefined;
+
+    if((typeof x || typeof y) !== 'number') return null;
+    
+    if (x > y) {
+      return x;
+    } else if (x === y) {
+      return y;
+    }
     return y;
-  }
-  return y;
 };
 
 const greeting = language => {
@@ -21,6 +25,8 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if(!num)  return undefined;
+
   if (num === 10 || num === 5) {
     return true;
   }
@@ -28,6 +34,8 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if(!num)  return undefined;
+
   if (num < 50 && num > 20) {
     return true;
   }
@@ -35,6 +43,8 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if(!num)  return undefined;
+
   if (Math.floor(num) === num) {
     return true;
   }
@@ -68,18 +78,38 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  } else {
+      if(arr.length === 0) return undefined;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  } else {
+      if(arr.length === 0) return undefined;
+  }
+  
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  }
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  } else {
+      if(arr.length === 0) return undefined;
+  }
+
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
