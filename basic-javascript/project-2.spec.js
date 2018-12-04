@@ -187,3 +187,15 @@ describe('returnLast function', () => {
     expect(returnLast([])).toBe(undefined);
   });
 });
+
+describe('getArrayLength function', () => {
+  it('should return length of arg array', () => {
+    expect(getArrayLength([5])).toBe(1);
+    expect(getArrayLength([5, 6, 7, 8])).toBe(4);
+    expect(getArrayLength(['one', 'two', 'three'])).toBe(3);
+  });
+
+  it('should return 0 if arg is empty array', () => {
+    expect(getArrayLength([])).toBe(0);
+  });
+});
