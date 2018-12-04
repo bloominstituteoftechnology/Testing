@@ -33,6 +33,8 @@ const isTenOrFive = num => {
 const isInRange = num => {
   if (num < 50 && num > 20) {
     return true;
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   return false;
 };
@@ -40,6 +42,8 @@ const isInRange = num => {
 const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   return false;
 };
@@ -51,6 +55,8 @@ const fizzBuzz = num => {
     return 'buzz';
   } else if (num % 3 === 0) {
     return 'fizz';
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   return num;
 };

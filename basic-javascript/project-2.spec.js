@@ -38,10 +38,10 @@ describe('greeting', () => {
 });
 
 describe('isTenOrFive', () => {
-  it('returns error if input is a string', () => {
-    // arrange
-    const isTenOrFive = funcs.isTenOrFive;
+  // arrange
+  const isTenOrFive = funcs.isTenOrFive;
 
+  it('returns error if input is a string', () => {
     //act
     const strOne = 'German';
 
@@ -51,12 +51,76 @@ describe('isTenOrFive', () => {
     }).toThrow();
   });
   it('returns true if input is 5', () => {
-    // arrange
-    const isTenOrFive = funcs.isTenOrFive;
     //act
     const numOne = 5;
 
     //assert
     expect(isTenOrFive(numOne)).toEqual(true);
+  });
+});
+
+describe('isInRange', () => {
+  // arrange
+  const isInRange = funcs.isInRange;
+
+  it('returns error if input is not a number', () => {
+    //act
+    const strOne = 'German';
+
+    //assert
+    expect(() => {
+      isInRange(strOne);
+    }).toThrow();
+  });
+  it('returns true if input is 22', () => {
+    //act
+    const numOne = 22;
+
+    //assert
+    expect(isInRange(numOne)).toEqual(true);
+  });
+});
+
+describe('isInteger', () => {
+  // arrange
+  const isInteger = funcs.isInteger;
+
+  it('returns error if input is not a number', () => {
+    //act
+    const strOne = 'German';
+
+    //assert
+    expect(() => {
+      isInteger(strOne);
+    }).toThrow();
+  });
+  it('returns true if input is 22', () => {
+    //act
+    const numOne = 22;
+
+    //assert
+    expect(isInteger(numOne)).toEqual(true);
+  });
+});
+
+describe('fizzBuzz', () => {
+  // arrange
+  const fizzBuzz = funcs.fizzBuzz;
+
+  it('returns error if input is not a number', () => {
+    //act
+    const strOne = 'German';
+
+    //assert
+    expect(() => {
+      fizzBuzz(strOne);
+    }).toThrow();
+  });
+  it(`returns 'fizz' if input is divisible by 3`, () => {
+    //act
+    const numOne = 22;
+
+    //assert
+    expect(fizzBuzz(numOne)).toEqual('fizz');
   });
 });
