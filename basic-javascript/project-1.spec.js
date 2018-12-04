@@ -82,7 +82,7 @@ describe("project-1.js", () => {
       expect(actual).toEqual(expected);
     });
     it("should return false when called with no value", () => {
-      const product = helpers.lessThanNinety();
+      const product = helpers.lessThanNinety(0);
       expect(product).toBe(false);
     });
   });
