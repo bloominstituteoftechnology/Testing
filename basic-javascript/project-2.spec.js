@@ -163,3 +163,15 @@ describe('isPrime function', () => {
     expect(isPrime(127)).toBe(true);
   });
 });
+
+describe('returnFirst function', () => {
+  it('should return first item in array arg', () => {
+    expect(returnFirst([5])).toBe(5);
+    expect(returnFirst([5, 6, 7, 8])).toBe(5);
+    expect(returnFirst(['one', 'two', 'three'])).toBe('one');
+  });
+
+  it('should return undefinied if arg is empty array', () => {
+    expect(returnFirst([])).toBe(undefined);
+  });
+});
