@@ -142,3 +142,110 @@ describe('fizzBuzz function', ()=>{
         })
     })
 }) 
+
+describe('isPrime function', ()=>{
+    it('should return true for prime numbers',()=>{
+        expect(funcs.isPrime(5)).toBe(true)
+    })
+    it('should return false for non-prime numbers',()=>{
+        expect(funcs.isPrime(8)).toBe(false)
+    })
+    describe('should return false for non-number params',()=>{
+        it('should return false for strings', ()=>{
+            expect(funcs.isPrime('hi')).toBe(false);
+        })
+        it('should return false for objects', ()=>{
+            expect(funcs.isPrime({1:'any'})).toBe(false);
+        })
+        it('should return false for boolean values', ()=>{
+            expect(funcs.isPrime(false)).toBe(false);
+        })
+    }) 
+})
+
+describe('returnFirst function', ()=>{
+    it('should return first value in array',()=>{
+        expect(funcs.returnFirst([1,2,'a'])).toBe(1)
+    })
+
+    describe('should return null for non-array params',()=>{
+        it('should return null for strings', ()=>{
+            expect(funcs.returnFirst('hi')).toBe(null);
+        })
+        it('should return null for numbers', ()=>{
+            expect(funcs.returnFirst(34)).toBe(null)
+        })
+        it('should return null for objects', ()=>{
+            expect(funcs.returnFirst({1:'any'})).toBe(null);
+        })
+        it('should return null for boolean values', ()=>{
+            expect(funcs.returnFirst(false)).toBe(null);
+        })
+    })
+})
+
+describe('returnLast function', ()=>{
+    it('should return last value in array',()=>{
+        expect(funcs.returnLast([1,2,'a'])).toBe('a')
+    })
+
+    describe('should return null for non-array params',()=>{
+        it('should return null for strings', ()=>{
+            expect(funcs.returnLast('hi')).toBe(null);
+        })
+        it('should return null for numbers', ()=>{
+            expect(funcs.returnLast(34)).toBe(null)
+        })
+        it('should return null for objects', ()=>{
+            expect(funcs.returnLast({1:'any'})).toBe(null);
+        })
+        it('should return null for boolean values', ()=>{
+            expect(funcs.returnLast(false)).toBe(null);
+        })
+    })
+})
+
+describe('getArrayLength function', ()=>{
+    it('should return last value in array',()=>{
+        expect(funcs.getArrayLength([1,2,'a'])).toBe(3)
+    })
+
+    describe('should return null for non-array params',()=>{
+        it('should return null for strings', ()=>{
+            expect(funcs.getArrayLength('hi')).toBe(null);
+        })
+        it('should return null for numbers', ()=>{
+            expect(funcs.getArrayLength(34)).toBe(null)
+        })
+        it('should return null for objects', ()=>{
+            expect(funcs.getArrayLength({1:'any'})).toBe(null);
+        })
+        it('should return null for boolean values', ()=>{
+            expect(funcs.getArrayLength(false)).toBe(null);
+        })
+    })
+})
+
+describe('incrementByOne function', ()=>{
+    it('should increment all values in array by 1',()=>{
+        expect(funcs.incrementByOne([1,2,3])).toEqual([2,3,4])
+    })
+    it('should return null for arrays that contain non-number values', ()=>{
+        expect(funcs.incrementByOne([1,2,'three'])).toBe(null)
+    }) 
+
+    describe('should return null for non-array params',()=>{
+        it('should return null for strings', ()=>{
+            expect(funcs.incrementByOne('hi')).toBe(null);
+        })
+        it('should return null for numbers', ()=>{
+            expect(funcs.incrementByOne(34)).toBe(null)
+        })
+        it('should return null for objects', ()=>{
+            expect(funcs.incrementByOne({1:'any'})).toBe(null);
+        })
+        it('should return null for boolean values', ()=>{
+            expect(funcs.incrementByOne(false)).toBe(null);
+        })
+    })
+})

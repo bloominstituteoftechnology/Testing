@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (typeof x !== 'number'||typeof y !== 'number'){
+  if (typeof x !== "number" || typeof y !== "number") {
     return null;
   }
   if (x > y) {
@@ -13,21 +13,20 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
-  if (typeof language !== 'string'){
+  if (typeof language !== "string") {
     return null;
   }
   switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
+    case "German":
+      return "Guten Tag!";
+    case "Spanish":
+      return "Hola!";
     default:
-      return 'Hello!';
+      return "Hello!";
   }
 };
 
 const isTenOrFive = num => {
-
   if (num === 10 || num === 5) {
     return true;
   }
@@ -35,7 +34,7 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
-  if (typeof num !== 'number'){
+  if (typeof num !== "number") {
     return false;
   }
   if (num < 50 && num > 20) {
@@ -52,20 +51,23 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
-  if (typeof num !== 'number'){
+  if (typeof num !== "number") {
     return null;
   }
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return "fizzbuzz";
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return "buzz";
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return "fizz";
   }
   return num;
 };
 
 const isPrime = num => {
+  if (typeof num !== "number") {
+    return false;
+  }
   if (num < 0) {
     return false;
   }
@@ -81,18 +83,33 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  return arr[0];
+  if (!Array.isArray(arr)) {
+    return null;
+  } else {
+    return arr[0];
+  }
 };
 
 const returnLast = arr => {
-  return arr[arr.length - 1];
+  if (!Array.isArray(arr)) {
+    return null;
+  } else {
+    return arr[arr.length - 1];
+  }
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+  if (!Array.isArray(arr)) {
+    return null;
+  } else {
+    return arr.length;
+  }
 };
 
 const incrementByOne = arr => {
+  if (!Array.isArray(arr)|| arr.some(x => typeof x !== 'number')) {
+    return null;
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -110,7 +127,7 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
+  let newSentence = "";
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
