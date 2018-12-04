@@ -90,4 +90,16 @@ test('Add Item To Array', () => {
     'Gemma',
     'Evan'
   ]);
+  expect(addItemToArray([1, 2, 3], 0)).toEqual([1, 2, 3, 0]);
+});
+
+test('Add Item To Front', () => {
+  expect(addItemToFront(['Henry', 'Norah', 'Gemma', 'Evan'], 'Jonas')).toEqual([
+    'Jonas',
+    'Henry',
+    'Norah',
+    'Gemma',
+    'Evan'
+  ]);
+  expect(addItemToFront([1, 2, 3], 0)).toEqual([0, 1, 2, 3]);
 });
