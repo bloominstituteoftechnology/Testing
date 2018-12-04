@@ -119,3 +119,9 @@ test('Contains', () => {
 test('Add Numbers', () => {
   expect(addNumbers([1, 2, 3, 4])).toEqual(10);
 });
+
+test('Average Test Score', () => {
+  const scores = [90, 85, 67, 100];
+  const avg = 85.5;
+  expect(averageTestScore(scores)).toEqual(avg);
+});
