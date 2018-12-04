@@ -17,9 +17,10 @@ const isTenOrFive = num => num === 10 || num === 5 ? true : false;
 
 const isInRange = num => num < 50 && num > 20 ? true : false;
 
-const isInteger = num =>  Math.floor(num) === num ? true : false;
+const isInteger = num => Math.floor(num) === num ? true : false;
 
 const fizzBuzz = num => {
+  // return num % 5 === 0 && num % 3 === 0 ? 'fizzbuzz' : num % 5 === 0 ? 'buzz' : num %   3 === 0 ? 'fizz' : num;
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -58,6 +59,7 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  // return arr.forEach((num, i) => num[i]++);
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
