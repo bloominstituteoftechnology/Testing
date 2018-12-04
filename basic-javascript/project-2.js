@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (typeof x !== 'number'||typeof y !== 'number'){
+    return null;
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -24,9 +27,7 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
-  if (typeof num !== 'number'){
-    return null;
-  }
+
   if (num === 10 || num === 5) {
     return true;
   }
@@ -34,6 +35,9 @@ const isTenOrFive = num => {
 };
 
 const isInRange = num => {
+  if (typeof num !== 'number'){
+    return false;
+  }
   if (num < 50 && num > 20) {
     return true;
   }
@@ -48,6 +52,9 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (typeof num !== 'number'){
+    return null;
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
