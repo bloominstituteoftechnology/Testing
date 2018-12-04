@@ -201,4 +201,12 @@ describe('project-1', () => {
         })
     })
 
+    describe('getGreeting() ', () => {
+        it('should be able to correctly getGreeting', () => {
+            expect(helpers.getGreeting('yanrong')).toEqual('Hello yanrong!');
+        })
+    })
+
+
+
 })
