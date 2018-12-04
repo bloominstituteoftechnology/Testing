@@ -108,4 +108,13 @@ describe('helper2.js', () => {
 			expect(ugghh).toBe(true);
 		});
 	});
+
+	describe('averageTestScore', () => {
+		test('gets the average of all test scores', () => {
+			const yup = funcs.averageTestScore([ 20, 13, 43 ]);
+			expect(yup).toEqual(25);
+		});
+	});
+
+	describe('');
 });

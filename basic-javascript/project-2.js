@@ -136,7 +136,8 @@ const averageTestScore = (testScores) => {
 		totalSumScores += testScores[i];
 		numberOfScore++;
 	}
-	return totalSumScores / numberOfScore;
+	const sum = totalSumScores / numberOfScore;
+	return Math.floor(sum);
 };
 
 const largestNumber = (numbers) => {
