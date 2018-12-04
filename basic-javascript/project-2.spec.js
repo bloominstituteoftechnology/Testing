@@ -4,11 +4,16 @@ const funcs = require('./project-2');
 describe("getBiggest", () => {
   
 
-    test("2 , 5", () => {
+    test("should return a bigger number when argument with two numbers are sent", () => {
       expect(funcs.getBiggest(2,5)).toBe(5);
-    });
-    test("10, 4", () => {
       expect(funcs.getBiggest(10, 4)).toBe(10);
+    });
+
+
+    it('should return null when any of the arguments are not strings', () => {
+      expect(funcs.getBiggest('1', 1)).toBe(null);
+      expect(funcs.getBiggest([], 'a')).toBe(null);
+      expect(funcs.getBiggest('1', {})).toBe(null);
     });
   });
 
