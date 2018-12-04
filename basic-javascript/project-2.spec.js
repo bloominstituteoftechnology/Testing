@@ -36,3 +36,27 @@ describe('greeting', () => {
     expect(isAString(strOne)).toEqual(true);
   });
 });
+
+describe('isTenOrFive', () => {
+  it('returns error if input is a string', () => {
+    // arrange
+    const isTenOrFive = funcs.isTenOrFive;
+
+    //act
+    const strOne = 'German';
+
+    //assert
+    expect(() => {
+      isTenOrFive(strOne);
+    }).toThrow();
+  });
+  it('returns true if input is 5', () => {
+    // arrange
+    const isTenOrFive = funcs.isTenOrFive;
+    //act
+    const numOne = 5;
+
+    //assert
+    expect(isTenOrFive(numOne)).toEqual(true);
+  });
+});

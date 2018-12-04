@@ -1,3 +1,4 @@
+const { isANumber, isAString, isAnArray, isAnObject, isAfunction, isBoolean } = require('@coetry/simpletypes');
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
@@ -23,6 +24,8 @@ const greeting = language => {
 const isTenOrFive = num => {
   if (num === 10 || num === 5) {
     return true;
+  } else if (isAString(num)) {
+    throw new Error();
   }
   return false;
 };
