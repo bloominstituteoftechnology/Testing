@@ -213,5 +213,15 @@ describe('project-2', () => {
             expect(funcs.averageTestScore([93,'94',93])).toBe(null);
         })
     })
+
+    describe('largestNumber Function', () => {
+        it('If a array of number was enter, return the largest number', () => {
+            expect(funcs.largestNumber([1,2,3,4,5])).toBe(5);
+        })
+        it('If anything another than number was in the array, return null', () => {
+            expect(funcs.averageTestScore([1,2,'3',4,5])).toBe(null);
+        })
+    })
+    
     
 })

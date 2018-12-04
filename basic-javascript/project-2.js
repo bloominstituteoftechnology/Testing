@@ -190,6 +190,9 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null;
+    }
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
