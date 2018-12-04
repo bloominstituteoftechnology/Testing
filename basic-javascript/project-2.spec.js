@@ -35,6 +35,11 @@ describe('Get Biggest',() => {
         const result = getBiggest(input,input);
         expect(result).toBe(expected)
     })
+    it('should return null', () => {
+        expect(getBiggest('1', "hello")).toBe(null);
+        expect(getBiggest([], 'a')).toBe(null);
+        expect(getBiggest('1', {})).toBe(null);
+    });
 })
 
 describe('Greeting By Language',()=>{
@@ -203,5 +208,89 @@ describe('Get array length',()=>{
         const expected = 4;
         const result = getArrayLength(input);
         expect(result).toEqual(expected)
+    })
+})
+
+describe('Increment by One',()=>{
+    const input = [0,1,2,3];
+    test('Increment by 1',() => {
+        const expected = [1,2,3,4];
+        expect(incrementByOne(input)).toEqual(expected);
+    })
+    test('Returns Array',() => {
+        const result = incrementByOne(input);
+        expect(typeof result).toBe("object");//come back to this one
+    })
+})
+
+describe('Add Item to Array',() => {
+    const arr = [1,2,3]
+    test('Adds Item',() => {
+        const addedItem = 100;
+        const result = addItemToArray(arr,addedItem);
+        expect(result).toEqual([1,2,3,100])
+    })
+})
+
+describe('Add Item to the Front',()=>{
+    const arr = [1,2,3]
+    test('Adds Item to the front',() => {
+        const added = 0;
+        const expected = [added,...arr]
+        const result = addItemToFront(arr,added)
+        expect(result).toEqual(expected)
+    })
+})
+
+describe('Words to Sentence', () => {
+    const words = ["hello","world","!"]
+    test("Function works", () => {
+        expect(wordsToSentence(words)).toBe("hello world !")
+    })
+})
+
+
+describe('Contains Function', () => {
+    const arr = [1,"hello","world",object = {name : "Drew"}]
+    it("returns truthy to an object", ()=>{
+        expect(contains(arr, object)).toBeTruthy
+    })
+    it("returns truthy to an string", ()=>{
+        expect(contains(arr, "hello")).toBeTruthy
+    })
+    it("returns truthy to an number", ()=>{
+        expect(contains(arr, 1)).toBeTruthy
+    })
+    it("returns false if it doesn't contain item", ()=>{
+        expect(contains(arr, "NOT PRESENT")).toBeFalsy;
+    })
+})
+
+describe('Add Numbers', () => {
+    const nums = [1,2,3,4,-5];
+    const trickyBoi = [1,2,"3",7]
+    it('Adds integers', () => {
+        expect(addNumbers(nums)).toBe(5)
+    })
+    it('returns null if something other than a number is passed', () => {
+        expect(addNumbers(trickyBoi)).toBeNull;
+    })
+})
+
+describe('Average Test Score', () => {
+    const scores = [100,95,80,100]
+    it('Return correct Average', () => {
+        expect(averageTestScore(scores)).toBe(93.75)
+    })
+})
+
+describe('Largest Number', () => {
+    const nums = [1,77,32,55,123,-4]
+    it('Returns Largest Number', () => {
+        expect(largestNumber(nums)).toBe(nums[4])
+    })
+    it('returns largest of negatives', () => {
+        const negatives = [-1,-55,-3];
+        expect(largestNumber(negatives)).toBe(-1)
     })
 })
