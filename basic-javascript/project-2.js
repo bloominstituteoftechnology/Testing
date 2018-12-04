@@ -1,13 +1,15 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
+  if(typeof x !== 'number' || typeof y !== 'number') {
+    return null
+    } else if (x > y) {
+      return x;
+    } else if (x === y) {
+      return y;
+    }
     return y;
   }
-  return y;
-};
 
 const greeting = language => {
   switch (language) {
