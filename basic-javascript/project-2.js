@@ -149,23 +149,23 @@ const largestNumber = numbers => {
   return biggestInteger;
 };
 
-// module.exports = {
-//   getBiggest,
-//   greeting,
-//   isTenOrFive,
-//   isInRange,
-//   isInteger,
-//   fizzBuzz,
-//   isPrime,
-//   returnFirst,
-//   returnLast,
-//   getArrayLength,
-//   incrementByOne,
-//   addItemToArray,
-//   addItemToFront,
-//   wordsToSentence,
-//   contains,
-//   addNumbers,
-//   averageTestScore,
-//   largestNumber
-// };
+module.exports = {
+  getBiggest,
+  greeting,
+  isTenOrFive,
+  isInRange,
+  isInteger,
+  fizzBuzz,
+  isPrime,
+  returnFirst,
+  returnLast,
+  getArrayLength,
+  incrementByOne,
+  addItemToArray,
+  addItemToFront,
+  wordsToSentence,
+  contains,
+  addNumbers,
+  averageTestScore,
+  largestNumber
+};
