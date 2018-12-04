@@ -81,51 +81,51 @@ describe('project-2', () => {
     });
 
     // addItemToArray
-    describe('', () => {
-        it('', () => {
-
+    describe('addItemToArray', () => {
+        it('should add new element to end of array', () => {
+            expect(funcs.addItemToArray([1, 2], 3)).toEqual([1, 2, 3]);
         });
     });
 
     // addItemToFront
-    describe('', () => {
-        it('', () => {
-
+    describe('addItemToFront', () => {
+        it('should add new element to front of array', () => {
+            expect(funcs.addItemToFront([2, 3], 1)).toEqual([1, 2, 3]);
         });
     });
 
     // wordsToSentence
-    describe('', () => {
-        it('', () => {
-
+    describe('wordsToSentence', () => {
+        it('should concatenate words in array', () => {
+            expect(funcs.wordsToSentence(['I', 'love', 'dogs!'])).toEqual('I love dogs!');
         });
     });
 
     // contains
-    describe('', () => {
-        it('', () => {
-
+    describe('contains', () => {
+        it('should return true if item exists in array', () => {
+            expect(funcs.contains([1, 2, 3], 2)).toBe(true);
         });
     });
 
     // addNumbers
-    describe('', () => {
-        it('', () => {
-
+    describe('addNumbers', () => {
+        it('should sum numbers in array', () => {
+            expect(funcs.addNumbers([1, 2, 3])).toEqual(6);
         });
     });
 
     // averageTestScore
-    describe('', () => {
-        it('', () => {
-
+    describe('averageTestScore', () => {
+        it('should return average of numbers in array', () => {
+            expect(funcs.averageTestScore([1, 2, 3])).toEqual(2);
         });
     });
 
     // largestNumber
-    describe('', () => {
-        it('', () => {
-
+    describe('largestNumber', () => {
+        it('should return largest number in array', () => {
+            expect(funcs.largestNumber([1, 2, 3])).toEqual(3);
         });
     });
 });

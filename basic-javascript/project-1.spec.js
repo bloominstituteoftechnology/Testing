@@ -112,84 +112,98 @@ describe('project-1.js', () => {
         });
     });
 
+    // isEven
     describe('isEven', () => {
         it('returns true if number is even', () => {
             expect(helpers.isEven(4)).toBe(true);
         });
     });
 
+    // isOdd
     describe('isOdd', () => {
         it('returns true if number is odd', () => {
             expect(helpers.isOdd(4)).toBe(false);
         });
     });
 
+    // square
     describe('square', () => {
         it('returns square of number', () => {
             expect(helpers.square(2)).toEqual(4);
         });
     });
 
+    // cube
     describe('cube', () => {
         it('returns cube of number', () => {
             expect(helpers.cube(2)).toEqual(8);
         });
     });
 
+    // raiseToPower
     describe('raiseToPower', () => {
         it('returns first number to the power of the second number', () => {
             expect(helpers.raiseToPower(2, 3)).toEqual(8);
         });
     });
 
+    // roundNumber
     describe('roundNumber', () => {
         it('returns Math.round() applied to number', () => {
             expect(helpers.roundNumber(1.8)).toEqual(2);
         });
     });
 
+    // roundUp
     describe('roundUp', () => {
         it('rounds number to next highest integer', () => {
             expect(helpers.roundUp(-3.33)).toEqual(-3);
         });
     });
 
+    // addExclamationPoint
     describe('addExclamationPoint', () => {
         it('returns string with ! added to end', () => {
             expect(helpers.addExclamationPoint('Hello')).toEqual('Hello!');
         });
     });
 
+    // combineNames
     describe('combineNames', () => {
         it('returns concatenation of first and second strings with space separator ', () => {
             expect(helpers.combineNames('Sarah', 'Tennis')).toEqual('Sarah Tennis');
         });
     });
 
+    // getGreeting
     describe('getGreeting', () => {
         it('returns greeting string, adds "Hello " to front and "!" to end of argument', () => {
             expect(helpers.getGreeting('Sarah')).toEqual('Hello Sarah!');
         });
     });
 
+    // getRectangleArea
     describe('getRectangleArea', () => {
         it('returns area of rectangle given side lengths', () => {
             expect(helpers.getRectangleArea(10, 5)).toEqual(50);
         });
     });
 
+    // getTriangleArea
     describe('getTriangleArea', () => {
         it('returns area of triangle given length of base and height', () => {
             expect(helpers.getTriangleArea(10, 5)).toEqual(25);
         });
     });
 
+    // getCircleArea
     describe('getCircleArea', () => {
         it('returns area of circle given radius', () => {
             expect(helpers.getCircleArea(1)).toEqual(3.14);
         });
     });
 
+    // getRectangularPrismVolume
     describe('getRectangularPrismVolume', () => {
         it('returns volume of rectangular prism ', () => {
             expect(helpers.getRectangularPrismVolume(2, 2, 2)).toEqual(8);
