@@ -148,6 +148,9 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
+  if(!item) {
+    return null;
+  }
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {

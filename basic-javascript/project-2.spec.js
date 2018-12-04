@@ -183,5 +183,16 @@ describe('project-2', () => {
         })
     })
     
+    describe('contains Function', () => {
+        it('If the array contain the item more than once, return true', () => {
+            expect(funcs.contains([4,5,4,6,7], 4)).toBe(true);
+        })
+        it('If the array don;t contain the item, return false', () => {
+            expect(funcs.contains([4,5,4,6,7], 8)).toBe(false);
+        })
+        it('If item ws not provide, return null', () => {
+            expect(funcs.contains([4,5,4,6,7])).toBe(null);
+        })
+    })
     
 })
