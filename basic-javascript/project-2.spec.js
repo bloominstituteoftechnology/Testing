@@ -32,3 +32,9 @@ test('Greeting', () => {
   expect(greeting('Spanish')).toBe('Hola!');
   expect(greeting('English')).toBe('Hello!');
 });
+
+test('Is Ten of Five', () => {
+  expect(isTenOrFive(5)).toBe(true);
+  expect(isTenOrFive(10)).toBe(true);
+  expect(isTenOrFive(4)).toBe(false);
+});
