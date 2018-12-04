@@ -38,12 +38,6 @@ describe('multiplyByTen', () => {
 
   it('multiplies a parameter by 10', () => {
     expect (multiplyByTen(2.4)).toBe(24);
-    expect (multiplyByTen(-1)).toBe(-10);
-    expect (multiplyByTen(0)).toBe(0);
-    const input = Math.random();
-    const result = multiplyByTen(input);
-    expect(result).toBe(input * 10);
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
@@ -60,6 +54,15 @@ describe('multiplyByTen', () => {
     expect(multiplyByTen( { greeting: 'hi'} )).toBeFalsy();
     expect(multiplyByTen(NaN)).toBeFalsy();
     expect(multiplyByTen()).toBeFalsy();
+  });
+
+  test('multiplies a parameter by 10', () => {
+    expect (multiplyByTen(-1)).toBe(-10);
+    expect (multiplyByTen(0)).toBe(0);
+    const input = Math.random();
+    const result = multiplyByTen(input);
+    expect(result).toBe(input * 10);
+    expect(result).toMatchSnapshot(expect.any(Number));
   });
 })
 

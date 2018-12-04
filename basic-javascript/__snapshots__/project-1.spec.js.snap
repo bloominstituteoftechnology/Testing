@@ -32,6 +32,8 @@ exports[`multiply multiplies 2 parameters 2`] = `Object {}`;
 
 exports[`multiplyByTen multiplies a parameter by 10 1`] = `Object {}`;
 
+exports[`multiplyByTen multiplies a parameter by 10 2`] = `Object {}`;
+
 exports[`raiseToPower raises the 1st parameter to the power of the 2nd parameter 1`] = `Object {}`;
 
 exports[`raiseToPower raises the 1st parameter to the power of the 2nd parameter 2`] = `Object {}`;

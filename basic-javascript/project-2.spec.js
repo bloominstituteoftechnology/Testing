@@ -38,7 +38,6 @@ describe('getBiggest', () => {
     expect(getBiggest(input1, input1)).toBe(input1);
     expect(result).toBe(input1);
     expect(result2).toBe(input1);
-    expect(result).toBeGreaterThanOrEqual(result-1)
     expect(getBiggest(input1, input3)).toBe(Math.max(input1, input3));
   });
 
@@ -111,8 +110,8 @@ describe('isInRange', () => {
   test('returns true if the number is between 20 and 50', () => {
         
     // Arrange: setup the world
-    const input1 = Math.random() * 10;
-    const input2 = Math.random() * 10 + 55;
+    const input1 = Math.random() * 19;
+    const input2 = Math.random() + 50.0001;
     const input3 = Math.random() + 35;
     // Act: execute the code you're testing
     const result = isInRange(input1);
@@ -132,23 +131,84 @@ describe('isInRange', () => {
   });
 })
 
-// const isInteger = num => {
-//   if (Math.floor(num) === num) {
-//     return true;
-//   }
-//   return false;
-// };
+  // isInteger
+describe('isInteger', () => {
 
-// const fizzBuzz = num => {
-//   if (num % 5 === 0 && num % 3 === 0) {
-//     return 'fizzbuzz';
-//   } else if (num % 5 === 0) {
-//     return 'buzz';
-//   } else if (num % 3 === 0) {
-//     return 'fizz';
-//   }
-//   return num;
-// };
+  it('determines if a parameter is an integer', () => {
+    expect(isInteger(35)).toBe(true);
+    expect(isInteger(Math.PI)).toBe(false);
+  });
+
+  test('returns a boolean', () => {
+    const input1 = Math.random()
+    const result = isInteger(input1);
+    expect(typeof result === 'boolean').toBeTruthy();
+  });
+
+  test('returns true if the number is zero or a negative integer', () => {
+        
+    // Arrange: setup the world
+    const input1 = 0;
+    const input2 = -10;
+    const input3 = -5.5
+    // Act: execute the code you're testing
+    const result = isInteger(input1);
+    const result2 = isInteger(input2);
+    const result3 = isInteger(input3);
+    // Assert: check that it works
+    // expect(getBiggest(input1, input1)).toBe(input1);
+    expect(result).toBe(true);
+    expect(result2).toBe(true);
+    expect(result3).toBe(false);
+  });
+
+  test('expects the parameter to be a number, not a string', () => {
+    expect(isInteger('35')).toBeFalsy();
+    expect(isInteger(35)).toBeTruthy();
+    expect(isInteger()).toBeFalsy();
+  });
+})
+
+describe('fizzBuzz', () => {
+
+  it('determines if a parameter a multiple of 3 and/or 5', () => {
+    expect(fizzBuzz(15)).toBe('fizzbuzz');
+    expect(fizzBuzz(3)).toBe('fizz');
+    expect(fizzBuzz(5)).toBe('buzz');
+    expect(fizzBuzz(Math.PI)).toBe(Math.PI);
+  });
+
+  test('returns a string or a number', () => {
+    const input1 = Math.random()
+    const result = fizzBuzz(input1);
+    const result2 = fizzBuzz(15);
+    expect(typeof result === 'string' || typeof result === 'number').toBeTruthy
+    expect(typeof result2 === 'string').toBeTruthy();
+  });
+
+  test('returns true if the number is zero or a negative integer', () => {
+        
+    // Arrange: setup the world
+    const input1 = 6;
+    const input2 = 10;
+    const input3 = -30;
+    // Act: execute the code you're testing
+    const result = fizzBuzz(input1);
+    const result2 = fizzBuzz(input2);
+    const result3 = fizzBuzz(input3);
+    // Assert: check that it works
+    // expect(getBiggest(input1, input1)).toBe(input1);
+    expect(result).toBe('fizz');
+    expect(result2).toBe('buzz');
+    expect(result3).toBe('fizzbuzz');
+  });
+
+  test('expects the parameter to be a number, not a string', () => {
+    expect(fizzBuzz('30')).toBe('fizzbuzz');
+    expect(fizzBuzz(35)).toBeTruthy();
+    expect(fizzBuzz()).toBeFalsy();
+  });
+})
 
 // const isPrime = num => {
 //   if (num < 0) {
