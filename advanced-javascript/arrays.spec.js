@@ -25,9 +25,35 @@ describe('Arrays', () => {
     it('should invoke the callback function at least once', () => {
       const mockCallback = jest.fn()
 
-      const elements = [3,4,3,3]
+      const elements = [ 3, 4, 3, 3 ]
       arrF.each(elements, mockCallback)
       expect(mockCallback).toHaveBeenCalled()
+    })
+  })
+
+  describe('map', () => {
+    it('should accept an array and a callback function', () => {
+      const elements = [ 3, 4, 23, 3 ]
+      const cb = element => {
+        element * 2
+      }
+      expect(elements.length).toBeGreaterThan(0)
+      expect(typeof cb).toBe('function')
+    })
+    it('should invoke the callback function at least once', () => {
+      const mockCallback = jest.fn()
+      const elements = [ 3, 4, 3, 3 ]
+      arrF.map(elements, mockCallback)
+      expect(mockCallback).toHaveBeenCalled()
+    })
+
+    it('should execute the callback on each array item', () => {
+      const elements = [ 1, 2, 3, 4 ]
+      const cb = item => item * 2
+      const mock = jest.fn(() => {
+        return arrF.map(elements, cb)
+      })
+      expect(mock(elements, cb)).toEqual([ 2, 4, 6, 8 ])
     })
   })
 })
