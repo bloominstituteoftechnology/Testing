@@ -76,6 +76,9 @@ const isPrime = num => {
       return false;
     }
   }
+  if (typeof num !== 'number') {
+    return null;
+  }
   return true;
 };
 

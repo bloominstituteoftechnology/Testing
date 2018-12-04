@@ -102,4 +102,14 @@ describe('project-2', () => {
             expect(funcs.fizzBuzz('sss')).toBe(null);
         })
     })
+
+    describe('isPrime Function', () => {
+        it('If the number is prime number, it should return true', () => {
+            expect(funcs.isPrime(2)).toBe(true);
+            expect(funcs.isPrime(28)).toBe(false);
+        })
+        it('If number is not a number, it should return null', () => {
+            expect(funcs.isPrime('ss')).toBe(null);
+        })
+    })
 })
