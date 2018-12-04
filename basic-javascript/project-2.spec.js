@@ -48,5 +48,26 @@ describe('project-2', () => {
       expect(funcs.isInteger('twenty-three')).toBe(null);
     });
   });
+
+  describe('fizzBuzz', () => {
+    it('determines if a number is provided', () => {
+      expect(funcs.fizzBuzz('not a number')).toBe('Please input number');
+    });
+    it('determines if a 0 has been entered', () => {
+      expect(funcs.fizzBuzz(0)).toBe('Please enter a number greater than 0');
+    });
+  });
+
+  describe('isPrime', () => {
+    it('determines if a number is provided', () => {
+      expect(funcs.isPrime('this is not a number')).toBe('Please input number');
+    });
+  });
+
+  describe('returnFirst', () => {
+    it('returns the first number in an array', () => {
+      expect(funcs.returnFirst([null, 2, 3])).toBe(null);
+    });
+  });
   //end test suite
 });

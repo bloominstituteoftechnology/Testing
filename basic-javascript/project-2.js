@@ -51,7 +51,11 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
-  if (num % 5 === 0 && num % 3 === 0) {
+  if (typeof num !== 'number') {
+    return 'Please input number';
+  } else if (num <= 0) {
+    return 'Please enter a number greater than 0';
+  } else if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
     return 'buzz';
@@ -62,6 +66,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (typeof num !== 'number') {
+    return 'Please input number';
+  }
   if (num < 0) {
     return false;
   }
