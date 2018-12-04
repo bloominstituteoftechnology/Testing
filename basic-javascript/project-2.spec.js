@@ -118,3 +118,29 @@ describe('isInteger function', () => {
     expect(isInteger(NaN)).toBe(false);
   });
 });
+
+describe('fizzBuzz function', () => {
+  it('should return fizzbuzz if arg is divisible by 5 and 3', () => {
+    expect(fizzBuzz(15)).toBe('fizzbuzz');
+    expect(fizzBuzz(30)).toBe('fizzbuzz');
+    expect(fizzBuzz(300)).toBe('fizzbuzz');
+  });
+
+  it('should return buzz if arg is divisible by 5 and not 3', () => {
+    expect(fizzBuzz(5)).toBe('buzz');
+    expect(fizzBuzz(10)).toBe('buzz');
+    expect(fizzBuzz(1000)).toBe('buzz');
+  });
+
+  it('should return buzz if arg is divisible by 5 and not 3', () => {
+    expect(fizzBuzz(3)).toBe('fizz');
+    expect(fizzBuzz(6)).toBe('fizz');
+    expect(fizzBuzz(9003)).toBe('fizz');
+  });
+
+  it('should return arg if arg is not divisible by 5 or 3', () => {
+    expect(fizzBuzz(2)).toBe(2);
+    expect(fizzBuzz(4)).toBe(4);
+    expect(fizzBuzz(37)).toBe(37);
+  });
+});
