@@ -165,6 +165,9 @@ const getCircleArea = radius => {
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if ( (typeof length !== 'number') || (typeof height !== 'number') || (typeof width !== 'number') ) {
+    throw new Error('either base or height should be number')
+  }
   return width * height * length;
 };
 

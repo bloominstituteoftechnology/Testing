@@ -235,7 +235,18 @@ describe('project-1', () => {
         })
         it('should throw err when calling other than number', () => {
             expect(() => {
-                helpers.getTriangleArea('ten')
+                helpers.getCircleArea('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('getRectangularPrismVolume() ', () => {
+        it('should be able to correctly get Rectangular Prism Volume', () => {
+            expect(helpers.getRectangularPrismVolume(4,5,2)).toEqual(40);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getRectangularPrismVolume('ten', 3, 'sam')
             }).toThrow();
         })
     })
