@@ -78,7 +78,7 @@ describe('subtractFive', () => {
   });
 
   test('returns a number', () => {
-    const input = 12;
+    const input = Math.random();
     const result = subtractFive(input);
     expect(typeof result === 'number').toBeTruthy();
   });
@@ -111,14 +111,9 @@ describe('areSameLength', () => {
   });
 
   test('expects the parameter to be a string', () => {
-
-    const str1 = 'kat';
-    const str2 = 'gem';
-    
-    expect(typeof str1 === 'string').toBeTruthy();
-    expect(typeof str2 === 'string').toBeTruthy();
     expect(areSameLength('one', 'two')).toBeTruthy();
     expect(areSameLength('one', 'three')).toBeFalsy();
+    expect(areSameLength([], 23)).toBeFalsy();
   });
 
   test('expects the parameters to have equal length', () => {
@@ -131,30 +126,26 @@ describe('areSameLength', () => {
     const result = areSameLength(str1, str2);
     const result2 = areSameLength(str1, str3);
     // Assert: check that it works
-    expect(typeof str1 === 'string').toBeTruthy();
-    expect(typeof str2 === 'string').toBeTruthy();
-    expect(typeof str3 === 'string').toBeTruthy();
-    expect(areSameLength(str1, str2)).toBeTruthy();
-    expect(areSameLength(str1, str3)).toBeFalsy();
     expect(result).toBeTruthy();
     expect(result2).toBeFalsy();
   });
 
-  test('throws an error if given non-string', () => {
-    expect(() => areSameLength([])).toThrow();
-    expect(() => areSameLength(10)).toThrow();
-    expect(() => areSameLength({})).toThrow();
-    expect(() => areSameLength(true)).toThrow();
-    expect(() => areSameLength(null)).toThrow();
+  test('throws an error if parameter is null', () => {
+    expect(() => areSameLength(null, 'kat')).toThrow();
   })
-})
+
+  test('throws an error if there are 1 or less parameters', () => {
+    expect(() => areSameLength('kat')).toThrow();
+    expect(() => areSameLength()).toThrow();
+  })
+});
 
 
 // areEqual
 describe('areEqual', () => {
 
   it('compares whether 2 parameters are strictly equal', () => {
-    expect(areEqual('Kat', 'Gem')).toBe(false);
+    expect(areEqual('Kat', 'kat')).toBe(false);
     expect(areEqual('5', 5)).toBe(false);
     expect(areEqual(5, 5)).toBe(true);
   });
@@ -166,14 +157,13 @@ describe('areEqual', () => {
     expect(typeof result === 'boolean').toBeTruthy();
   });
 
-
   test('expects the 2 parameters to be strictly equal', () => {
     const param1 = '5';
     const param2 = 5;
     const param3 = true;
-    expect(areEqual(param1, param1)).toStrictEqual(areEqual(param1, param1));
-    expect(areEqual(param2, param2)).toStrictEqual(areEqual(param2, param2));
-    expect(areEqual(param3, param3)).toStrictEqual(areEqual(param3, param3))
+    expect(areEqual(param1, param2)).toStrictEqual(false);
+    expect(areEqual(param2, param2)).toStrictEqual(true);
+    expect(areEqual(param3, param3)).toBeTruthy()
     expect(areEqual(param1, param2)).toBeFalsy();
   });
 })
@@ -204,14 +194,6 @@ describe('lessThanNinety', () => {
     expect(lessThanNinety(NaN)).toBeFalsy();
     expect(lessThanNinety()).toBeFalsy();
   });
-
-  test('expects the parameter is under 90', () => {
-    const num1 = 89;
-    const num2 = 90;
-    expect(num1).toBeLessThan(90)
-    expect(lessThanNinety(num1)).toBeFalsy;
-    expect(lessThanNinety(num2)).toBeTruthy;
-  });
 });
 
 // greaterThanFifty
@@ -240,28 +222,14 @@ describe('greaterThanFifty', () => {
     expect(greaterThanFifty(NaN)).toBeFalsy();
     expect(greaterThanFifty()).toBeFalsy();
   });
-
-  test('expects the parameter to be greater than 50', () => {
-    const num1 = 50;
-    const num2 = 50.1;
-    expect(num2).toBeGreaterThan(50)
-    expect(greaterThanFifty(num1)).toBeFalsy;
-    expect(greaterThanFifty(num2)).toBeTruthy;
-  });
 });
 
 // add
 describe('add', () => {
 
   it('adds two parameters', () => {
-    expect (add(5, '5')).toBe('55');
-    expect (add(0, 5)).toBe(5);
-    expect (add(-10, 5)).toBe(-5);
-    const input1 = Math.random();
-    const input2 = Math.random();
-    const result = add(input1, input2);
-    expect(result).toBe(input1 + input2);
-    expect(result).toMatchSnapshot(expect.any(Number));
+    expect (add(10, 5)).toBe(15);
+    expect(add('last', 'Name')).toBe('lastName');
   });
 
   test('returns a number or a string', () => {
@@ -271,24 +239,25 @@ describe('add', () => {
     expect(typeof result === 'number' || typeof result === 'string').toBeTruthy();
   });
 
-  test('expects the parameter to be a number or a string', () => {
+  test('expects the parameters to be a number or a string', () => {
     expect(add('5', '5')).toBeTruthy();
     expect(add(5, 5)).toBeTruthy();
     expect(add('hi ', 'five')).toBeTruthy();
-    expect(add(NaN)).toBeFalsy();
+    expect(add(NaN, 5)).toBeFalsy();
     expect(add()).toBeFalsy();
   });
 
-  test('adds two parameters', () => {
-    expect (add(5, '5')).toBe('55');
+  it('adds two parameters', () => {
     expect (add(0, 5)).toBe(5);
     expect (add(-10, 5)).toBe(-5);
-    expect(add('hi ', 'five')).toBe('hi five');
+    expect (add(5, '5')).toBe('55');
+    expect(add('my', 'Str')).toBe('myStr');
     expect(add(true, true)).toBe(2);
     const input1 = Math.random();
     const input2 = Math.random();
     const result = add(input1, input2);
     expect(result).toBe(input1 + input2);
+    expect(result).toMatchSnapshot(expect.any(Number));
   });
 });
 
@@ -297,15 +266,6 @@ describe('subtract', () => {
 
   it('subtracts the 2nd parameter from the 1st parameter', () => {
     expect(subtract(23, 8)).toBe(15)
-    expect (subtract(0, 5)).toBe(-5);
-    expect (subtract(-10, 5)).toBe(-15);
-    expect(subtract('5', '6')).toBe(-1);
-    expect(subtract('5', '5')).toBe(0);
-    const input1 = Math.random();
-    const input2 = Math.random();
-    const result = subtract(input1, input2);
-    expect(result).toBe(input1 - input2);
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
@@ -317,7 +277,6 @@ describe('subtract', () => {
 
   test('expects the parameter to be a number or number-string', () => {
     expect(subtract('5', '6')).toBeTruthy();
-    expect(subtract('5', '5')).toBeFalsy();
     expect(subtract(5, 6)).toBeTruthy();
     expect(subtract(5, 5)).toBeFalsy();
     expect(subtract('hi ', 'five')).toBeNaN();
@@ -332,7 +291,6 @@ describe('subtract', () => {
   });
 
   test('subtracts the 2nd parameter from the 1st parameter', () => {
-    expect(subtract(23, 8)).toBe(15)
     expect (subtract(0, 5)).toBe(-5);
     expect (subtract(-10, 5)).toBe(-15);
     expect(subtract('5', '6')).toBe(-1);
@@ -348,18 +306,7 @@ describe('subtract', () => {
 describe('divide', () => {
 
   it('divides the 1st parameter by the 2nd parameter', () => {
-    expect(divide(15, 5)).toBe(3)
-    expect (divide(0, 5)).toBe(0);
-    expect (divide(5, 0)).toBe(Infinity);
-    expect (divide(-5, 0)).toBe(-Infinity);
-    expect (divide(-10, 5)).toBe(-2);
-    expect(divide('5', '1')).toBe(5);
-    expect(divide('5', '5')).toBe(1);
-    const input1 = Math.random();
-    const input2 = Math.random();
-    const result = divide(input1, input2);
-    expect(result).toBe(input1 / input2);
-    expect(result).toMatchSnapshot(expect.any(Number));
+    expect(divide(15, 5)).toBe(3);
   });
 
   test('returns a number', () => {
@@ -379,7 +326,6 @@ describe('divide', () => {
   });
 
   test('divides the 1st parameter by the 2nd parameter', () => {
-    expect(divide(15, 5)).toBe(3)
     expect (divide(0, 5)).toBe(0);
     expect (divide(5, 0)).toBe(Infinity);
     expect (divide(-5, 0)).toBe(-Infinity);
@@ -397,16 +343,7 @@ describe('divide', () => {
 describe('multiply', () => {
 
   it('multiplies 2 parameters', () => {
-    expect(multiply(1, 8)).toBe(8)
-    expect (multiply(0, 5)).toBe(0);
-    expect (multiply(-10, 8)).toBe(-80);
-    expect(multiply('1', '8')).toBe(8);
-    expect(multiply('0', '5')).toBe(0);
-    const input1 = Math.random();
-    const input2 = Math.random();
-    const result = multiply(input1, input2);
-    expect(result).toBe(input1 * input2);
-    expect(result).toMatchSnapshot(expect.any(Number));
+    expect(multiply(1, 8)).toBe(8);
   });
 
   test('returns a number', () => {
@@ -426,7 +363,6 @@ describe('multiply', () => {
   });
 
   test('multiplies 2 parameters', () => {
-    expect(multiply(1, 8)).toBe(8)
     expect (multiply(0, 5)).toBe(0);
     expect (multiply(-10, 8)).toBe(-80);
     expect(multiply('1', '8')).toBe(8);
@@ -445,11 +381,6 @@ describe('getRemainder', () => {
   it('provides the remainder after dividing the 1st parameter by the 2nd parameter', () => {
     expect(getRemainder(9, 3)).toBe(0)
     expect (getRemainder(9, 2)).toBe(1);
-    const input1 = Math.random();
-    const input2 = Math.random();
-    const result = getRemainder(input1, input2);
-    expect(result).toBe(input1 % input2);
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
@@ -526,14 +457,7 @@ describe('isOdd', () => {
 describe('square', () => {
 
   it('squares a number', () => {
-    expect(square(0)).toBe(0);
     expect(square(3)).toBe(9);
-    expect(square('3')).toBe(9);
-    const input = Math.random();
-    const result = square(input);
-    expect(result).toBe(input * input);
-    expect(result).toBe(Math.pow(input, 2));
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
@@ -547,6 +471,16 @@ describe('square', () => {
     expect(square('5')).toBeTruthy();
     expect(square(0)).toBeFalsy();
   });
+
+  test('squares a number', () => {
+    expect(square(0)).toBe(0);
+    expect(square('3')).toBe(9);
+    const input = Math.random();
+    const result = square(input);
+    expect(result).toBe(input * input);
+    expect(result).toBe(Math.pow(input, 2));
+    expect(result).toMatchSnapshot(expect.any(Number));
+  });
 });
 
 
@@ -554,7 +488,6 @@ describe('square', () => {
 describe('cube', () => {
 
   it('cubes a number', () => {
-    expect(cube(0)).toBe(0);
     expect(cube(3)).toBe(27);
     expect(cube('3')).toBe(27);
     const input = Math.random();
@@ -575,19 +508,23 @@ describe('cube', () => {
     expect(cube('5')).toBeTruthy();
     expect(cube(0)).toBeFalsy();
   });
+
+  test('cubes a number', () => {
+    expect(cube(0)).toBe(0);
+    expect(cube('3')).toBe(27);
+    const input = Math.random();
+    const result = cube(input);
+    expect(result).toBe(input * input * input);
+    expect(result).toBe(Math.pow(input, 3));
+    expect(result).toMatchSnapshot(expect.any(Number));
+  });
 });
 
 // raiseToPower
 describe('raiseToPower', () => {
 
   it('raises the 1st parameter to the power of the 2nd parameter', () => {
-    const input = Math.random();
-    expect(raiseToPower(input, 0)).toBe(1);
-    expect(raiseToPower(0, input)).toBe(0);
     expect(raiseToPower(3, 4)).toBe(81);
-    const result = raiseToPower(input, input);
-    expect(result).toBe(Math.pow(input, input));
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
@@ -600,18 +537,23 @@ describe('raiseToPower', () => {
     expect(raiseToPower(5, 5)).toBeTruthy();
     expect(raiseToPower(0, 5)).toBeFalsy();
   });
+
+  test('raises the 1st parameter to the power of the 2nd parameter', () => {
+    const input = Math.random();
+    expect(raiseToPower(input, 0)).toBe(1);
+    expect(raiseToPower(0, input)).toBe(0);
+    const result = raiseToPower(input, input);
+    expect(result).toBe(Math.pow(input, input));
+    expect(result).toMatchSnapshot(expect.any(Number));
+  });
 });
 
 // roundNumber
 describe('roundNumber', () => {
 
   it('rounds a number up if the decimal is .5 or more', () => {
-    expect(roundNumber(0.5)).toBe(1);
+    expect(roundNumber(5.5)).toBe(6);
     expect(roundNumber(0.45)).toBe(0);
-    const input = Math.random();
-    const result = roundNumber(input);
-    expect(result).toBe(Math.round(input));
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
@@ -624,6 +566,16 @@ describe('roundNumber', () => {
     expect(roundNumber(0.5)).toBeTruthy();
     expect(roundNumber(0.4)).toBeFalsy();
   });
+
+  test('rounds a number up if the decimal is .5 or more', () => {
+    expect(roundNumber(-5.51)).toBe(-6);
+    expect(roundNumber(-5.5)).toBe(-5);
+    expect(roundNumber(-0.5)).toBe(-0);
+    const input = Math.random();
+    const result = roundNumber(input);
+    expect(result).toBe(Math.round(input));
+    expect(result).toMatchSnapshot(expect.any(Number));
+  });
 });
 
 // roundUp
@@ -632,11 +584,6 @@ describe('roundUp', () => {
   it('rounds a number up if the decimal is greater than 0', () => {
     expect(roundUp(0.001)).toBe(1);
     expect(roundUp(0.0)).toBe(0);
-    const input = Math.random();
-    const result = roundUp(input);
-    expect(result).toBe(Math.ceil(input));
-    expect(result).toBeGreaterThanOrEqual(input);
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
 
@@ -649,6 +596,16 @@ describe('roundUp', () => {
   test('expects the parameter to be a number', () => {
     expect(roundUp(0.001)).toBeTruthy();
     expect(roundUp(0.0)).toBeFalsy();
+  });
+
+  test('rounds a number up if the decimal is greater than 0', () => {
+    expect(roundUp(-0.6)).toBe(-0);
+    expect(roundUp(-5.4)).toBe(-5);
+    const input = Math.random();
+    const result = roundUp(input);
+    expect(result).toBe(Math.ceil(input));
+    expect(result).toBeGreaterThanOrEqual(input);
+    expect(result).toMatchSnapshot(expect.any(Number));
   });
 });
 
@@ -837,17 +794,7 @@ describe('getCircleArea', () => {
 describe('getRectangularPrismVolume', () => {
 
   it('multiplies 3 parameters', () => {
-    expect(getRectangularPrismVolume(1, 8, 2)).toBe(16)
-    expect (getRectangularPrismVolume(0, 5, 1)).toBe(0);
-    expect (getRectangularPrismVolume(-10, 8, 1)).toBe(-80);
-    expect(getRectangularPrismVolume('1', '8', '1')).toBe(8);
-    expect(getRectangularPrismVolume('0', '5', '1')).toBe(0);
-    const length = Math.random();
-    const width = Math.random();
-    const height = Math.random();
-    const result = getRectangularPrismVolume(length, width, height);
-    expect(result).toBeCloseTo(length * width * height);
-    expect(result).toMatchSnapshot(expect.any(Number));
+    expect(getRectangularPrismVolume(3, 8, 2)).toBe(48)
   });
 
   test('returns a number', () => {
@@ -865,5 +812,18 @@ describe('getRectangularPrismVolume', () => {
     expect(getRectangularPrismVolume(5, 0, 1)).toBeFalsy();
     expect(getRectangularPrismVolume('hi ', 'five', '!')).toBeNaN();
     expect(getRectangularPrismVolume()).toBeNaN();
+  });
+
+  test('multiplies 3 parameters', () => {
+    expect (getRectangularPrismVolume(0, 5, 1)).toBe(0);
+    expect (getRectangularPrismVolume(-10, 8, 1)).toBe(-80);
+    expect(getRectangularPrismVolume('1', '8', '1')).toBe(8);
+    expect(getRectangularPrismVolume('0', '5', '1')).toBe(0);
+    const length = Math.random();
+    const width = Math.random();
+    const height = Math.random();
+    const result = getRectangularPrismVolume(length, width, height);
+    expect(result).toBeCloseTo(length * width * height);
+    expect(result).toMatchSnapshot(expect.any(Number));
   });
 });

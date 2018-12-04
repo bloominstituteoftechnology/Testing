@@ -15,10 +15,7 @@ describe('Jest', () => {
 describe('getBiggest', () => {
 
   it('compares 2 numbers and/or string-numbers and returns the largest number', () => {
-    const input1 = Math.random()*100;
-    const input2 = Math.random();
-    // expect(getBiggest(6, 5)).toBe(6);
-    expect(getBiggest(input1, input2)).toBe(Math.max(input1, input2));
+    expect(getBiggest(6, 5)).toBe(6);
   });
 
   test('returns a number', () => {
@@ -28,20 +25,12 @@ describe('getBiggest', () => {
     expect(typeof result === 'number').toBeTruthy();
   });
 
-  test('expects the parameters to be numbers and/or string-numbers', () => {
-    const input1 = Math.random();
-    const input2 = Math.random() + '';
-    const result = getBiggest(input1, input2);
-    expect(typeof Number(input1) === 'number').toBeTruthy();
-    expect(typeof Number(input2) === 'number').toBeTruthy();
-  });
-
-
   test('returns the largest number', () => {
         
     // Arrange: setup the world
     const input1 = Math.random() * 100;
     const input2 = input1 - 1;
+    const input3 = Math.random() * 100;
     // Act: execute the code you're testing
     const result = getBiggest(input1, input2);
     const result2 = getBiggest(input2, input1);
@@ -50,6 +39,7 @@ describe('getBiggest', () => {
     expect(result).toBe(input1);
     expect(result2).toBe(input1);
     expect(result).toBeGreaterThanOrEqual(result-1)
+    expect(getBiggest(input1, input3)).toBe(Math.max(input1, input3));
   });
 
   test('expects the parameter to be a number or a string-number', () => {
@@ -59,19 +49,17 @@ describe('getBiggest', () => {
   });
 })
 
-// addExclamationPoint
+// greeting
 describe('greeting', () => {
 
-  it('adds an exclamation point after a string using concatenation', () => {
+  it('return a greeting based on the input', () => {
     const input1 = 'German';
-    const input2 = 'Spanish';
+    const input2 = 'Swedish';
     const result = greeting(input1);
     const result2 = greeting(input2);
-    expect (greeting(input1)).toBe('Guten Tag!');
-    expect (greeting(input2)).toBe('Hola!');
-    expect (greeting(!result || !result2)).toBe('Hello!');
+    expect (result).toBe('Guten Tag!');
+    expect (result2).toBe('Hello!');
   });
-
 
   test('returns a string', () => {
     const input1 = '';
@@ -79,38 +67,70 @@ describe('greeting', () => {
     expect(typeof result === 'string').toBeTruthy();
   });
 
-  test('expects the parameter to be a number or a string (including empty strings)', () => {
-    expect(greeting('5')).toBeTruthy();
-    expect(greeting(5)).toBeTruthy();
-    expect(greeting('')).toBeTruthy();
+  test('return a greeting based on the input', () => {
+    const input1 = 'German';
+    const input2 = 'Spanish';
+    const result = greeting(input1);
+    const result2 = greeting(input2);
+    const result3 = greeting(!input1 || !input2);
+    expect (result).toBe('Guten Tag!');
+    expect (result2).toBe('Hola!');
+    expect (result3).toBe('Hello!');
   });
 });
 
+describe('isTenOrFive', () => {
 
-// const greeting = language => {
-//   switch (language) {
-//     case 'German':
-//       return 'Guten Tag!';
-//     case 'Spanish':
-//       return 'Hola!';
-//     default:
-//       return 'Hello!';
-//   }
-// };
+  it('compares parameter to 10 or 5 and returns a boolean', () => {
+    const input1 = Math.random();
+    const input2 = 5;
+    expect(isTenOrFive(input2)).toBe(true);
+    expect(isTenOrFive(input1)).toBe(false);
+  });
 
-// const isTenOrFive = num => {
-//   if (num === 10 || num === 5) {
-//     return true;
-//   }
-//   return false;
-// };
+  test('returns a boolean', () => {
+    const input1 = Math.random()*20;
+    const result = isTenOrFive(input1);
+    expect(typeof result === 'boolean').toBeTruthy();
+  });
+})
 
-// const isInRange = num => {
-//   if (num < 50 && num > 20) {
-//     return true;
-//   }
-//   return false;
-// };
+// isInRange
+describe('isInRange', () => {
+
+  it('determines if the num is between 20 and 50', () => {
+    expect(isInRange(35)).toBeTruthy();
+  });
+
+  test('returns a boolean', () => {
+    const input1 = Math.random()
+    const result = isInRange(input1);
+    expect(typeof result === 'boolean').toBeTruthy();
+  });
+
+  test('returns true if the number is between 20 and 50', () => {
+        
+    // Arrange: setup the world
+    const input1 = Math.random() * 10;
+    const input2 = Math.random() * 10 + 55;
+    const input3 = Math.random() + 35;
+    // Act: execute the code you're testing
+    const result = isInRange(input1);
+    const result2 = isInRange(input2);
+    const result3 = isInRange(input3);
+    // Assert: check that it works
+    // expect(getBiggest(input1, input1)).toBe(input1);
+    expect(result).toBe(false);
+    expect(result2).toBe(false);
+    expect(result3).toBe(true);
+  });
+
+  test('expects the parameter to be a number or a string-number', () => {
+    expect(isInRange('35')).toBeTruthy();
+    expect(isInRange(35)).toBeTruthy();
+    expect(isInRange()).toBeFalsy();
+  });
+})
 
 // const isInteger = num => {
 //   if (Math.floor(num) === num) {
