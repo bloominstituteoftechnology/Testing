@@ -18,4 +18,35 @@ describe('project-2', () => {
       expect(funcs.greeting(1)).toBe('Please enter a language');
     });
   });
+
+  describe('isTenOrFive', () => {
+    it('determines if a number entered is either ten or five', () => {
+      expect(funcs.isTenOrFive(10)).toBeLessThanOrEqual;
+    });
+
+    it('returns null if a non-number is entered', () => {
+      expect(funcs.isTenOrFive('ten')).toBeNull;
+    });
+  });
+
+  describe('isInRange', () => {
+    it('determines if a given value is greater than 20', () => {
+      expect(funcs.isInRange(21)).toBe(true);
+    });
+
+    it('determines if a given value is less than 50', () => {
+      expect(funcs.isInRange(51)).toBe(false);
+    });
+  });
+
+  describe('isInteger', () => {
+    it('determines if a number is, in fact, an integer', () => {
+      expect(funcs.isInteger(23)).toBe(true);
+    });
+
+    it('returns null if input is not a number', () => {
+      expect(funcs.isInteger('twenty-three')).toBe(null);
+    });
+  });
+  //end test suite
 });

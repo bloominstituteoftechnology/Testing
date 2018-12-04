@@ -24,6 +24,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if (typeof language !== 'string') {
+    return null;
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -38,6 +41,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (typeof num !== 'number') {
+    return null;
+  }
   if (Math.floor(num) === num) {
     return true;
   }
