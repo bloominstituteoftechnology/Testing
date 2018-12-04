@@ -66,4 +66,40 @@ describe('project-2', () => {
             expect(funcs.getArrayLength([4,3,5,7,5,6,7])).toEqual(7)
         })
     })
+
+    describe('incrementByOne', () => {
+        it('returns all numbers in array + 1', () => {
+            expect(funcs.incrementByOne([4,5,6,7])).toEqual([5,6,7,8])
+        })
+    })
+
+    describe('addItemToArray', () => {
+        it('returns array + item', () => {
+            expect(funcs.addItemToArray([4,5,6,7], 8)).toEqual([4,5,6,7,8])
+        })
+    })
+
+    describe('addItemToFront', () => {
+        it('returns array + item added to begining', () => {
+            expect(funcs.addItemToFront([4,5,6,7], 8)).toEqual([8,4,5,6,7])
+        })
+    })
+
+    describe('wordsToSentence', () => {
+        it('returnsadded words', () => {
+            expect(funcs.wordsToSentence('this is awesome')).toBe('this is awesome')
+        })
+    })
+
+    describe('contains', () => {
+        it('if array contains number, returns true', () => {
+            expect(funcs.contains([1,2,3,4,5],5)).toBeTruthy()
+        })
+    })
+
+    describe('contains', () => {
+        it('if array contains number, returns true', () => {
+            expect(funcs.contains([1,2,3,4,5],5)).toBeTruthy()
+        })
+    })
 })
