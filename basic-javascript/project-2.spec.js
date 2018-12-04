@@ -123,8 +123,72 @@ describe('project-2.js', () => {
             //expect(funcs.isPrime(0.3)).toBe(false);
         })
     });
-//returnFirst
 
+    //TEST FOR FUNCTION ** returnFirst **
+    describe('isInteger', () => {
+        it('should return first element of given array..', () => {
+            const expected = 10;
+            const actual = funcs.returnFirst([10,20,30]);
+            expect(actual).toBe(expected);
+        });
+        
+        it('should return null if given is not an array', () => {
+            expect(funcs.returnFirst(80)).toBe(null);
+        })
+
+        it('should return undefined if given array is empty', () => {
+            expect(funcs.returnFirst([])).toBe(undefined);
+        })
+    });
+
+    //TEST FOR FUNCTION ** returnLast **
+    describe('isInteger', () => {
+        it('should return first element of given array..', () => {
+            const expected = 30;
+            const actual = funcs.returnLast([10,20,30]);
+            expect(actual).toBe(expected);
+        });
+        
+        it('should return null if given is not an array', () => {
+            expect(funcs.returnLast(80)).toBe(null);
+        })
+
+        it('should return undefined if given array is empty', () => {
+            expect(funcs.returnLast([])).toBe(undefined);
+        })
+    });
+    
+    //TEST FOR FUNCTION ** getArrayLength **
+    describe('isInteger', () => {
+        it('should return lat element of given array..', () => {
+            const expected = 3;
+            const actual = funcs.getArrayLength([10,20,30]);
+            expect(actual).toBe(expected);
+        });
+        
+        it('should return null if given is not an array', () => {
+            expect(funcs.getArrayLength(80)).toBe(null);
+        })
+    });
+    
+    //TEST FOR FUNCTION ** incrementByOne **
+    describe('isInteger', () => {
+        it('should return array with all element incremented by one .', () => {
+            const expected = [11, 21, 31];
+           //console.log(expected);
+            const actual = funcs.incrementByOne([10, 20, 30]);
+            //console.log(actual);
+            expect(actual).toEqual(expected);
+        });
+        
+        it('should return null if given is not an array', () => {
+            expect(funcs.incrementByOne(80)).toBe(null);
+        })
+
+        it('should return undefined if given array is empty', () => {
+            expect(funcs.incrementByOne([])).toBe(undefined);
+        })
+    });
 
 });
 

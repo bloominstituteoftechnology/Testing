@@ -78,7 +78,7 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  if(typeof arr !== Array) {
+  if(arr.constructor !== Array) {
       return null;
   } else {
       if(arr.length === 0) return undefined;
@@ -87,14 +87,29 @@ const returnFirst = arr => {
 };
 
 const returnLast = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  } else {
+      if(arr.length === 0) return undefined;
+  }
+  
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  }
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if(arr.constructor !== Array) {
+      return null;
+  } else {
+      if(arr.length === 0) return undefined;
+  }
+
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
