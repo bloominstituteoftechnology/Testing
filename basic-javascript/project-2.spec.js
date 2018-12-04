@@ -153,4 +153,15 @@ describe('project-2', () => {
             expect(funcs.incrementByOne()).toBe(null);
         })
     })
+
+    describe('addItemToArray Function', () => {
+        it('If array was provide, and item was provide, add item to the array', () => {
+            expect(funcs.addItemToArray([3,53,2,4], 22)).toEqual([3,53,2,4,22]);
+            expect(funcs.addItemToArray([3,53,2,4], 'ss')).toEqual([3,53,2,4,'ss']);
+        })
+        it('If item was not provide, return the array', () => {
+            expect(funcs.addItemToArray([3,53,2,4])).toEqual([3,53,2, 4]);
+        })
+    })
+    
 })

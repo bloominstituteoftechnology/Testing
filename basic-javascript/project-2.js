@@ -117,6 +117,12 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
+  if(!item) {
+    return arr;
+  }
+  if (!arr && !item) {
+    return null;
+  }
   arr.push(item);
   return arr;
 };
