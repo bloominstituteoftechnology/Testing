@@ -148,7 +148,7 @@ describe('combineName',()=>{
 })
 describe('getGreeting',()=>{
     test('hello',()=>{
-        expect(helpers.getGreeting('Quan')).toBe('Hello Quan')
+        expect(helpers.getGreeting('Quan')).toBe('Hello Quan!')
     })
 })
 describe('getRectangle',()=>{
@@ -163,9 +163,7 @@ describe('getTriangle',()=>{
 })
 describe('getCircle',()=>{
     test('area',()=>{
-        test('number',()=>{
-            expect(helpers.getCircleArea(5)).toBeCloseTo(78.53)
-        })
+            expect(helpers.getCircleArea(5)).toBeCloseTo(78.53981633974483)
     })
 })
 describe('getPrism',()=>{
