@@ -103,4 +103,22 @@ describe("project-2.js functions", () => {
       expect(funcs.getArrayLength([1, 2, 3])).toBe(3);
     });
   });
+
+  describe("incrementByOne()", () => {
+    it("should return an array", () => {
+      expect(Array.isArray(funcs.incrementByOne([1, 2, 3]))).toBe(true);
+    });
+  });
+
+  describe("addItemToArray()", () => {
+    it("should return an array", () => {
+      expect(Array.isArray(funcs.addItemToArray([1, 2, 3], 4))).toBe(true);
+    });
+  });
+
+  describe("addItemToFront()", () => {
+    it("should return an array", () => {
+      expect(Array.isArray(funcs.addItemToArray([1, 2, 3], 4))).toBe(true);
+    });
+  });
 });
