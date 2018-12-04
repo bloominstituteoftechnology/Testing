@@ -76,7 +76,7 @@ const returnLast = arr => {
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+  return arr.length-1;
 };
 
 const incrementByOne = arr => {
