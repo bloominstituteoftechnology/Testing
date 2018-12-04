@@ -42,3 +42,23 @@ describe('getBiggest function', () => {
     expect(getBiggest(1)).toBe(undefined);
   });
 });
+
+describe('greeting function', () => {
+  it('should return greeting in argument language', () => {
+    expect(greeting('German')).toBe('Guten Tag!');
+    expect(greeting('Spanish')).toBe('Hola!');
+  });
+
+  it('should return "Hello!" when no argument is passed', () => {
+    expect(greeting()).toBe('Hello!');
+  });
+
+  it('should return "Hello!" when type of argument is not string', () => {
+    expect(greeting(1)).toBe('Hello!');
+    expect(greeting([])).toBe('Hello!');
+    expect(greeting({})).toBe('Hello!');
+    expect(greeting(null)).toBe('Hello!');
+    expect(greeting(false)).toBe('Hello!');
+    expect(greeting(NaN)).toBe('Hello!');
+  });
+});
