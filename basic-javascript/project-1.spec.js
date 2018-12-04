@@ -36,6 +36,7 @@ test('number is less than 90', () => {
     expect(helpers.lessThanNinety(input)).toBeTruthy();
 })
 
+
 test('number is greater than 50', () => {
     const input = 60;
     
