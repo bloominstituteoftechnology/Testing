@@ -78,7 +78,7 @@ describe('Project 2', () => {
                 const actual = isInteger(5);
                 expect(actual).toBeTruthy();
             });
-            test('not integer', () => {
+            test('is not integer', () => {
                 const actual = isInteger(5.4);
                 expect(actual).toBeFalsy();
             });
@@ -107,33 +107,45 @@ describe('Project 2', () => {
 
     describe('7-12', () => {
         // 7.
-        test('isPrime', () => {
-
+        describe('isPrime', () => {
+            test('is prime', () => {
+                const actual = isPrime(5);
+                expect(actual).toBeTruthy();
+            });
+            test('is not prime', () => {
+                const actual = isPrime(10);
+                expect(actual).toBeFalsy();
+            });
         });
 
         // 8.
-        test('', () => {
-
+        test('returnFirst', () => {
+            const actual = returnFirst([5,9,10]);
+            expect(actual).toBe(5);
         });
 
         // 9.
-        test('', () => {
-
+        test('returnLast', () => {
+            const actual = returnLast([5,9,10]);
+            expect(actual).toBe(10);
         });
 
         // 10.
-        test('', () => {
-
+        test('getArrayLength', () => {
+            const actual = getArrayLength([5,9,10]);
+            expect(actual).toBe(3);
         });
 
         // 11.
-        test('', () => {
-
+        test('incrementByOne', () => {
+            const actual = incrementByOne([5,9,10]);
+            expect(actual).toEqual([6,10,11]);
         });
 
         // 12.
-        test('', () => {
-
+        test('addItemToArray', () => {
+            const actual = addItemToArray([5,9,10], 11);
+            expect(actual).toEqual([5,9,10,11]);
         });
     });
 
