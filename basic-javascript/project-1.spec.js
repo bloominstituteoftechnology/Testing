@@ -50,22 +50,22 @@ describe('Project 1', () => {
             const a = 'yusuf';
             const b = 'nafey';
             const actual = areSameLength(a, b);
-            expect(actual).toBeTruthy;
+            expect(actual).toBeTruthy();
         });
 
         // 4. 
         test('areEqual', () => {
-            const a = 5;
-            const b = 9;
+            const a = 8;
+            const b = 8;
             const actual = areEqual(a, b)
-            expect(actual).toBeTruthy;
+            expect(actual).toBeTruthy();
         });
 
         // 5. 
         test('lessThanNinety', () => {
             const input = 1;
             const actual = lessThanNinety(input)
-            expect(actual).toBeTruthy;
+            expect(actual).toBeTruthy();
         });
     });
 
@@ -74,7 +74,7 @@ describe('Project 1', () => {
         test('greaterThanFifty', () => {
             const input = 51;
             const actual = greaterThanFifty(input);
-            expect(actual).toBeTruthy;
+            expect(actual).toBeTruthy();
         });
 
         // 7. 
@@ -117,13 +117,13 @@ describe('Project 1', () => {
         // 12.
         test('isEven', () => {
             const actual = isEven(6);
-            expect(actual).toBeTruthy;
+            expect(actual).toBeTruthy();
         });
 
         // 13.
         test('isOdd', () => {
             const actual = isOdd(5);
-            expect(actual).toBeTruthy; 
+            expect(actual).toBeTruthy(); 
         });
 
         // 14.
