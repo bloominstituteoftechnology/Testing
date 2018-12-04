@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`add adds two parameters 1`] = `Object {}`;
+
 exports[`multiplyByTen multiplies a parameter by 10 1`] = `Object {}`;
+
+exports[`subtract subtracts the 2nd parameter from the 1st parameter 1`] = `Object {}`;
+
+exports[`subtract subtracts the 2nd parameter from the 1st parameter 2`] = `Object {}`;
+
+exports[`subtractFive subtracts 5 from a parameter 1`] = `Object {}`;
