@@ -58,6 +58,8 @@ const fizzBuzz = num => {
     return 'buzz';
   } else if (num % 3 === 0) {
     return 'fizz';
+  } else if (num % 5 !==0 || num % 3 !==0 || typeof num !== 'number') {
+    return null;
   }
   return num;
 };

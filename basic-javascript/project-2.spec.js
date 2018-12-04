@@ -86,4 +86,20 @@ describe('project-2', () => {
             expect(funcs.isInteger({})).toBe(null);
         })
     })
+
+    describe('fizzBuzz Function', () => {
+        it('If the number can be divide by 5, and divide by 3, return fizzbuzz', () => {
+            expect(funcs.fizzBuzz(15)).toBe('fizzbuzz');
+        })
+        it('If the number can be divide by 5, but can not divide by 3, return buzz', () => {
+            expect(funcs.fizzBuzz(5)).toBe('buzz');
+        })
+        it('If the number can not be divide by 5, but can be divide by 3, return fizz', () => {
+            expect(funcs.fizzBuzz(3)).toBe('fizz');
+        })
+        it('If the number can not be divide by 5, and can not divide by 3, or it is not a number, return null', () => {
+            expect(funcs.fizzBuzz(17)).toBe(null);
+            expect(funcs.fizzBuzz('sss')).toBe(null);
+        })
+    })
 })
