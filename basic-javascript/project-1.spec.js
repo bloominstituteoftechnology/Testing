@@ -179,7 +179,17 @@ describe('project-1.js', () => {
     // getTriangleArea
     describe('getTriangleArea', () => {
         it('returns area of triangle given length of base and height', () => {
-            expect(helpers.getTriangleArea(10, 5)).toEqual(25);
+            expect(helpers.getTriangleArea(10, 10)).toEqual(50);
+            expect(helpers.getTriangleArea(10)).toEqual(50);
+            expect(helpers.getTriangleArea(10, 0)).toEqual(0);
+        });
+        it('returns undefined for all but positive numbers', () => {
+            expect(helpers.getTriangleArea('tree')).toEqual(undefined);
+            expect(helpers.getTriangleArea(7, '7')).toEqual(undefined);
+            expect(helpers.getTriangleArea(-1, -3)).toEqual(undefined);
+        });
+        it('returns a number', () => {
+            expect(typeof helpers.getTriangleArea(10,10)).toEqual('number');
         });
     });
 

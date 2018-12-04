@@ -105,8 +105,14 @@ const getRectangleArea = (length, width) => {
   return length * width;
 };
 
-const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+const getTriangleArea = (base, height = base) => {
+  if (typeof base === 'number' && typeof height === 'number') {
+    if (base >= 0 && height >= 0) {
+      return 0.5 * base * height;
+    } else {
+      return undefined;
+    }
+  }
 };
 
 const getCircleArea = radius => {
