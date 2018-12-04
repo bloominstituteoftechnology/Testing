@@ -1,6 +1,6 @@
 const { getBiggest, greeting, isTenOrFive, isInRange, isInteger, fizzBuzz, isPrime, returnFirst, returnLast, getArrayLength, incrementByOne, addItemToArray, addItemToFront, wordsToSentence, contains, addNumbers, averageTestScore, largestNumber } = require('./project-2');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
+
 describe('get biggest', () => {
     test('numbers work', () => {
         const x = 'string'
@@ -12,4 +12,8 @@ describe('get biggest', () => {
         const y = {}
         expect(getBiggest(x,y)).toBe(null)
     })
+})
+test('receives greeting', () => {
+    const language = 'german'
+    expect(greeting(language)).toBeTruthy()
 })
