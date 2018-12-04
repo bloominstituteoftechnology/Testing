@@ -194,5 +194,32 @@ describe('math things', () => {
 });
 
 describe('word things', () => {
+  test('should add exclamation point', () => {
+    const expected = 'Hello!';
+    const addExclamationPoint = helpers.addExclamationPoint;
+
+    const result = addExclamationPoint('Hello');
+
+    expect(result).toBe(expected);
+  });
+
+  test('should add combine names', () => {
+    const expected = 'Zach Arney';
+    const combineNames = helpers.combineNames;
+
+    const result = combineNames('Zach', 'Arney');
+
+    expect(result).toBe(expected);
+  });
+
+  test('should add greeting', () => {
+    const expected = 'Hello Zach!';
+    const getGreeting = helpers.getGreeting;
+
+    const result = getGreeting('Zach');
+
+    expect(result).toBe(expected);
+  });
+});
   
 })
