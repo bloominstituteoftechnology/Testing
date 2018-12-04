@@ -62,3 +62,9 @@ describe('greeting function', () => {
     expect(greeting(NaN)).toBe('Hello!');
   });
 });
+
+describe('isTenOrFive function', () => {
+  it('should return true if arg is 10 or 5', () => {
+    expect(isTenOrFive(10)).toBe(true);
+    expect(isTenOrFive(5)).toBe(true);
+  });
