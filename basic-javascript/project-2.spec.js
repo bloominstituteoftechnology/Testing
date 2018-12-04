@@ -68,7 +68,10 @@ test('addItemToFront', () => {
 });
 
 test('wordsToSentence', () => {
-  expect(funcs.wordsToSentence(["Don't", "be", "too", "proud", "of", "this", "technological", "terror", "you've", "constructed"])).toBe("Don't be too proud of this technological terror you've constructed");  
+  expect(
+    funcs
+      .wordsToSentence(["Don't", "be", "too", "proud", "of", "this", "technological", "terror", "you've", "constructed"]))
+      .toBe("Don't be too proud of this technological terror you've constructed");  
 });
 
 test('contains', () => {
@@ -81,7 +84,7 @@ test('addNumbers', () => {
 });
 
 test('averageTestScore', () => {
-  expect(funcs.averageTestScore([90, 42, 98])).toBe(76.666666666666666666666666666667);
+  expect(funcs.averageTestScore([90, 42, 98])).toBeCloseTo(76.67);
 });
 
 test('largestNumber', () => {

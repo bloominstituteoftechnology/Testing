@@ -113,7 +113,7 @@ test('get triangle area', () => {
 });
 
 test('get circle area', () => {
-  expect(helpers.getCircleArea(10)).toBe(314.15926535897932384626433832795);
+  expect(helpers.getCircleArea(10)).toBeCloseTo(314.159);
 });
 
 test('get rectangular prism volume', () => {
