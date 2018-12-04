@@ -59,11 +59,7 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
-  // return arr.forEach((num, i) => num[i]++);
-  for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
-  }
-  return arr;
+  return arr.map(item => item + 1);
 };
 
 const addItemToArray = (arr, item) => {

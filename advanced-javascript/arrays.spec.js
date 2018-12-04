@@ -12,18 +12,21 @@ describe('Arrays', () => {
     it('should be a function', () => {
       const each = arrayFunctions.each;
       expect(typeof each).toBe('function');
-    });
+    });    
   });
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
       expect(typeof map).toBe('function');
+      const cb = item => item + 1;
+      expect(map([1, 2, 3, 4], cb)).toEqual([2, 3, 4, 5]);
     });
   });
   describe('reduce', () => {
     it('should be a function', () => {
       const reduce = arrayFunctions.reduce;
       expect(typeof reduce).toBe('function');
+      expect(reduce([1, 2, 3, 4], item=>item + item, 3)).toEqual(48);
     });
   });
   describe('find', () => {

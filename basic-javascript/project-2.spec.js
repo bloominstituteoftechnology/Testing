@@ -10,8 +10,8 @@ describe('Project 2 Answers', () => {
       expect(funcs.getBiggest(21, 20.9)).toEqual(21);
     });
   });
-  describe('Gets Biggest of Two Numbers', () => {
-    it('Get Biggest Cases', ()=>{
+  describe('Greets in multiple languages', () => {
+    it('Greeting', ()=>{
       expect(typeof funcs.greeting('Japanese') === 'string').toBeTruthy();
       expect(funcs.greeting('German')).toEqual('Guten Tag!');
       expect(funcs.greeting('Spanish')).toEqual('Hola!');
