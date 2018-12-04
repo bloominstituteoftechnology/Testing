@@ -52,4 +52,26 @@ describe('project-2', () => {
             expect(funcs.isTenOrFive()).toBe(null);
         })
     })
+
+    describe('isInRange Function', () => {
+        it('If number is greater than 20, and less than 50, it should return true', () => {
+            expect(funcs.isInRange(48)).toBe(true);
+        })
+        it('If number is greter than 20, and greter than 50, it should return false', () => {
+            expect(funcs.isInRange(51)).toBe(false);
+        })
+        it('If number is least than 20, and less than 50, it should return false', () => {
+            expect(funcs.isInRange(19)).toBe(false);
+        })
+        it('If number is equal to 20, it should return false', () => {
+            expect(funcs.isInRange(20)).toBe(false);
+        })
+        it('If number is equal to 50, it should return false', () => {
+            expect(funcs.isInRange(50)).toBe(false);
+        })
+        it('If number is other than number, such as string, it should return null', () => {
+            expect(funcs.isInRange('sss')).toBe(null);
+            expect(funcs.isInRange()).toBe(null);
+        })
+    })
 })

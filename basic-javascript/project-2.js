@@ -36,6 +36,8 @@ const isTenOrFive = num => {
 const isInRange = num => {
   if (num < 50 && num > 20) {
     return true;
+  } else if (typeof num !== 'number') {
+    return null;
   }
   return false;
 };
