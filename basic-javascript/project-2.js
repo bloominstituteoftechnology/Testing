@@ -166,44 +166,68 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
-  let itemCounter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      itemCounter++;
+  if(arr === undefined || item === undefined) {
+    return;
+  } else if (typeof arr !== "object" && !Array.isArray(arr)) {
+    return null;
+  } else {
+    let itemCounter = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {
+        itemCounter++;
+      }
     }
+    if (itemCounter > 0) {
+      return true;
+    }
+    return false;
   }
-  if (itemCounter > 0) {
-    return true;
-  }
-  return false;
 };
 
-const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
+const addNumbers = numbers => { ////////////////////////// ADD CHECK IN ARRAY FOR NUMBERS
+  if(numbers === undefined) {
+    return;
+  } else if (typeof numbers !== "object" && !Array.isArray(numbers)) {
+    return null;
+  } else {
+    let sumOfNumbers = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sumOfNumbers += numbers[i];
+    }
+    return sumOfNumbers;
   }
-  return sumOfNumbers;
 };
 
 const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
-  for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
+  if(testScores === undefined) {
+    return;
+  } else if (typeof testScores !== "object" && !Array.isArray(testScores)) {
+    return null;
+  } else {
+    let totalSumScores = 0;
+    let numberOfScore = 0;
+    for (let i = 0; i < testScores.length; i++) {
+      totalSumScores += testScores[i];
+      numberOfScore++;
+    }
+    return totalSumScores / numberOfScore;
   }
-  return totalSumScores / numberOfScore;
 };
 
 const largestNumber = numbers => {
-  let biggestInteger = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
-      biggestInteger = numbers[i];
+  if(numbers === undefined) {
+    return;
+  } else if (typeof numbers !== "object" && !Array.isArray(numbers)) {
+    return null;
+  } else {
+    let biggestInteger = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] > biggestInteger) {
+        biggestInteger = numbers[i];
+      }
     }
+    return biggestInteger;
   }
-  return biggestInteger;
 };
 
 module.exports = {

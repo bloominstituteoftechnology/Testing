@@ -227,5 +227,66 @@ describe('wordsToSentence', () => {
     })
 })
 
+describe('contains', () => {
+    test('returns true the array does contain the item', () => {
+        expect(funcs.contains([1,2,3], 1)).toBe(true);
+    })
+
+    test('returns false if array does not contain the item', () => {
+        expect(funcs.contains([1,2,3], 4)).toBe(false);
+    })
+
+    test('returns null if param is not an array', () => {
+        expect(funcs.contains('string', 'string')).toBe(null)
+    })
+
+    test('returns undefined if no param is passed', () => {
+        expect(funcs.contains()).toBe(undefined)
+    })
+})
+
+describe('addNumbers', () => {
+    test('returns the sum of every value in the array', () => {
+        expect(funcs.addNumbers([1,2,3])).toBe(6);
+    })
+
+    test('returns null if param is not an array', () => {
+        expect(funcs.addNumbers('string')).toBe(null)
+    })
+
+    test('returns undefined if no param is passed', () => {
+        expect(funcs.addNumbers()).toBe(undefined)
+    })
+})
+
+describe('averageTestScore', () => {
+    test('returns the average value of the array', () => {
+        expect(funcs.averageTestScore([1,2,3])).toBe(2);
+    })
+
+    test('returns null if param is not an array', () => {
+        expect(funcs.averageTestScore('string')).toBe(null)
+    })
+
+    test('returns undefined if no param is passed', () => {
+        expect(funcs.averageTestScore()).toBe(undefined)
+    })
+})
+
+describe('largestNumber', () => {
+    test('returns the largest number in the array', () => {
+        expect(funcs.largestNumber([1,2,3])).toBe(3);
+    })
+
+    test('returns null if param is not an array', () => {
+        expect(funcs.largestNumber('string')).toBe(null)
+    })
+
+    test('returns undefined if no param is passed', () => {
+        expect(funcs.largestNumber()).toBe(undefined)
+    })
+})
+
+
 
 
