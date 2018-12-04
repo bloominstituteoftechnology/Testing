@@ -175,3 +175,15 @@ describe('returnFirst function', () => {
     expect(returnFirst([])).toBe(undefined);
   });
 });
+
+describe('returnLast function', () => {
+  it('should return first item in array arg', () => {
+    expect(returnLast([5])).toBe(5);
+    expect(returnLast([5, 6, 7, 8])).toBe(8);
+    expect(returnLast(['one', 'two', 'three'])).toBe('three');
+  });
+
+  it('should return undefinied if arg is empty array', () => {
+    expect(returnLast([])).toBe(undefined);
+  });
+});
