@@ -1,5 +1,9 @@
 const helpers = require('./project-2');
-
+   // low hanging fruit
+    // obvious happy path
+    // obvious sad path
+    // edge/corner cases
+    
 describe('Jest', () => {
     test('Jest runs', () => {
     
@@ -13,7 +17,7 @@ test('should return the largest number from the two numbers provided', () => {
     expect(actual).toEqual(expected);
 });
 
-test('should return hello greeting the language provided', () => {
+test('should return hello greeting in the language provided', () => {
     const expected = 'Guten Tag!';
     const actual = helpers.greeting('German')
 //add edge case for languages not available
@@ -60,12 +64,14 @@ test('should return the first index item of provided array', () => {
 
     expect(actual).toEqual(expected);
 });
+
 test('should return the last index item of provided array', () => {
     const expected = 5;
     const actual = helpers.returnLast([1,2,3,4,5])
 
     expect(actual).toEqual(expected);
 });
+
 test('should return the length of array provided', () => {
     const expected = 4;
     const actual = helpers.getArrayLength([1,2,3,4,5])
@@ -81,7 +87,7 @@ test('should return each index value in the provided array by 1', () => {
 test('should return provided array with new item added to the end', () => {
     const expected = [1,2,3,4,5,6];
     const actual = helpers.addItemToArray([1,2,3,4,5],6)
-//edge case to be added - if X is less than Y
+
     expect(actual).toEqual(expected);
 });
 
