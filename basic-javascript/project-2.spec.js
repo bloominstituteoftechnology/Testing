@@ -66,3 +66,54 @@ describe("fizzBuzz", () => {
     expect(funcs.fizzBuzz(7)).toBe(7);
   });
 });
+
+describe("isPrime", () => {
+  test("should be false for numbers < 0", () => {
+    expect(funcs.isPrime(-3)).toBe(false);
+  });
+  test("should be false for 0, 1, or non-prime", () => {
+    expect(funcs.isPrime(1)).toBe(false);
+  });
+  test("should be true for prime", () => {
+    expect(funcs.isPrime(7)).toBe(true);
+  });
+});
+
+test("should return first item in an array", () => {
+  const arr = [1, 2, 3, 4];
+
+  expect(funcs.returnFirst(arr)).toBe(1);
+});
+
+test("should return last item in an array", () => {
+  const arr = [1, 2, 3, 4];
+
+  expect(funcs.returnLast(arr)).toBe(4);
+});
+
+test("should return length of array", () => {
+  const arr = [1, 2, 3, 4];
+
+  expect(funcs.getArrayLength(arr)).toBe(4);
+});
+
+test("should increment each array element by one", () => {
+  const arr = [1, 2, 3, 4];
+  const arr2 = [2, 3, 4, 5];
+
+  expect(funcs.incrementByOne(arr)).toEqual(arr2);
+});
+
+test("should add an item to end of array", () => {
+  const arr = [1, 2, 3, 4];
+  const arr2 = [1, 2, 3, 4, 7];
+
+  expect(funcs.addItemToArray(arr, 7)).toEqual(arr2);
+});
+
+test("should add an item to beginning of array", () => {
+  const arr = [1, 2, 3, 4];
+  const arr2 = [7, 1, 2, 3, 4];
+
+  expect(funcs.addItemToFront(arr, 7)).toEqual(arr2);
+});
