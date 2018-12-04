@@ -97,6 +97,9 @@ const returnLast = arr => {
 };
 
 const getArrayLength = arr => {
+  if(!arr) {
+    return null;
+  }
   return arr.length;
 };
 

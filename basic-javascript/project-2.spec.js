@@ -124,12 +124,21 @@ describe('project-2', () => {
     })
 
     describe('returunLast Function', () => {
-        it('If inpit a array of string or number, it should return the last item in the arrya', () => {
+        it('If input a array of string or number, it should return the last item in the arrya', () => {
             expect(funcs.returnLast([3,2,1,0])).toBe(0);
             expect(funcs.returnLast(['ss', 'aa', 5])).toBe(5);
         })
         it('If a empty array, it should return null', () => {
             expect(funcs.returnFirst([])).toBe(null);
+        })
+    })
+
+    describe('getArrayLength Function', () => {
+        it('If input a array, it should return the length of array', () => {
+            expect(funcs.getArrayLength([1,5,1,5,4])).toBe(5);
+        })
+        it('If no Array was enter, it should return null', () => {
+            expect(funcs.getArrayLength()).toBe(null);
         })
     })
 })
