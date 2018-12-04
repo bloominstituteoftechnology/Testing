@@ -125,3 +125,7 @@ test('Average Test Score', () => {
   const avg = 85.5;
   expect(averageTestScore(scores)).toEqual(avg);
 });
+
+test('Largest Number', () => {
+  expect(largestNumber([3, 60, 105, 52, 8, 10])).toEqual(105);
+});
