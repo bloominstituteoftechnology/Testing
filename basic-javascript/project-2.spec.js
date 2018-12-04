@@ -199,3 +199,14 @@ describe('getArrayLength function', () => {
     expect(getArrayLength([])).toBe(0);
   });
 });
+
+describe('incrementByOne function', () => {
+  it('should return array with each item incremented by 1', () => {
+    expect(incrementByOne([5])).toBe(6);
+    expect(incrementByOne([5, 6, 7, 8])).toBe(6, 7, 8, 9);
+  });
+
+  it('should return empty array if arg is empty array', () => {
+    expect(incrementByOne([])).toBe([]);
+  });
+});
