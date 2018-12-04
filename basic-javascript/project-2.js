@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if(typeof x != "number" || typeof y != "number"){
+    return null;
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -108,6 +111,7 @@ const wordsToSentence = words => {
   return newSentence;
 };
 
+
 const contains = (arr, item) => {
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -122,12 +126,18 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
+
+  if(numbers.some(isNaN)){
+    return null;
+  }else{
+    let sumOfNumbers = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sumOfNumbers += numbers[i];
+    }
+    return sumOfNumbers;
   }
-  return sumOfNumbers;
 };
+
 
 const averageTestScore = testScores => {
   let totalSumScores = 0;
@@ -140,7 +150,7 @@ const averageTestScore = testScores => {
 };
 
 const largestNumber = numbers => {
-  let biggestInteger = 0;
+  let biggestInteger = -10000000000;//lazy
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
