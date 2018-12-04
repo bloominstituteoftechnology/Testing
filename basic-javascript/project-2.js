@@ -104,7 +104,13 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  if (!arr) {
+    return null;
+  }
   for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== 'number') {
+      return null;
+    }
     arr[i]++;
   }
   return arr;

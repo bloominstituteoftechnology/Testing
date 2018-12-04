@@ -141,4 +141,16 @@ describe('project-2', () => {
             expect(funcs.getArrayLength()).toBe(null);
         })
     })
+
+    describe('incrementByOne Function', () => {
+        it('If input a array of number, every number in the array should be inrement by one', () => {
+            expect(funcs.incrementByOne([3,2,5,4,3])).toEqual([4,3,6,5,4]);
+        })
+        it('If input a array of number plus string, it should return null', () => {
+            expect(funcs.incrementByOne([4,2,'5',4,3])).toBe(null);
+        })
+        it('If no array was enter, return null', () => {
+            expect(funcs.incrementByOne()).toBe(null);
+        })
+    })
 })
