@@ -39,11 +39,11 @@ const defaults = (obj, defaultProps) => {
 
 /* eslint-enable no-unused-vars */
 
-module.exports = {
-  keys,
-  values,
-  mapObject,
-  pairs,
-  invert,
-  defaults
-};
+// module.exports = {
+//   keys,
+//   values,
+//   mapObject,
+//   pairs,
+//   invert,
+//   defaults
+// };
