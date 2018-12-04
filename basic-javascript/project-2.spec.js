@@ -73,3 +73,7 @@ test('Return Last', () => {
   expect(returnLast([1, 2, 3])).toBe(3);
   expect(returnLast(['Jonas', 'Henry', 'Norah', 'Gemma', 'Evan'])).toBe('Evan');
 });
+
+test('Get Array Length', () => {
+  expect(getArrayLength(['Jonas', 'Henry', 'Norah', 'Gemma', 'Evan'])).toBe(5);
+});
