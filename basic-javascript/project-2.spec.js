@@ -190,5 +190,82 @@ describe('project-2.js', () => {
         })
     });
 
+    //TEST FOR FUNCTION ** addItemToArray **
+    describe('addItemToArray', () => {
+        it('should add given item to array at the end..', () => {
+            const expected = [10, 20, 30, "abc"];
+            const actual = funcs.addItemToArray([10, 20, 30], "abc");
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    //TEST FOR FUNCTION ** addItemToFront **
+    describe('addItemToFront', () => {
+        it('should add given item to array at the front..', () => {
+            const expected = ["abc", 10, 20, 30];
+            const actual = funcs.addItemToFront([10, 20, 30], "abc");
+            expect(actual).toEqual(expected);
+        });
+    });
+    
+    //TEST FOR FUNCTION ** wordsToSentence **
+    describe('wordsToSentence', () => {
+	    it('should return sentence', () => {
+	        const arr = ['Hello', 'World!'];
+	        const expected = 'Hello World!';
+	        const actual = funcs.wordsToSentence(arr);
+	        expect(actual).toEqual(expected);
+	    });
+    });
+    
+    //TEST FOR FUNCTION ** contains **
+    describe('contains', () => {
+    	it('should return true', () => {
+    	    const arr = [10,20,25];
+	        const item = 25;
+    	    const expected = true;
+    	    const actual = funcs.contains(arr, item);
+    	    expect(actual).toEqual(expected);
+    	});
+    
+        it('should return false', () => {
+    	    const arr = [10,20];
+	        const item = 25;
+    	    const expected = false;
+    	    const actual = funcs.contains(arr, item);
+    	    expect(actual).toEqual(expected);
+    	});
+    });
+    
+    //TEST FOR FUNCTION ** addNumbers **
+    describe('addNumbers', () => {
+        it('should return added values', () => {
+            const numbers = [10, 10, 10];
+            const expected = 30;
+            const actual = funcs.addNumbers(numbers);
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    //TEST FOR FUNCTION ** averageTestScore **
+    describe('averageTestScore', () => {
+        it('should return average score', () => {
+            const totalSumScores = [10, 10];
+            const expected = 10;
+            const actual = funcs.averageTestScore(totalSumScores);
+            expect(actual).toEqual(expected);
+        });
+    });
+    
+    //TEST FOR FUNCTION ** largestNumber **
+    describe('largestNumber', () => {
+	    it('should return average score', () => {
+	        const totalSumScores = [10,20,30,40,50];
+	        const expected = 50;
+	        const actual = funcs.largestNumber(totalSumScores);
+	        expect(actual).toEqual(expected);
+	    });
+    });
+
 });
 
