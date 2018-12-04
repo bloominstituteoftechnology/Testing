@@ -30,13 +30,13 @@ describe("project-1.js", () => {
     test("Should return false if both strings' length are different", () => {
       const input1 = "hello";
       const input2 = "hi";
-      expect(areSameLength(input1, input2)).toBeFalsy();
+      expect(areSameLength(input1, input2)).toBe(false);
     });
 
     test("Should return true if both strings' length are same", () => {
       const input1 = "hello";
       const input2 = "there";
-      expect(areSameLength(input1, input2)).toBeTruthy();
+      expect(areSameLength(input1, input2)).toBe(true);
     });
   });
 
@@ -47,13 +47,13 @@ describe("project-1.js", () => {
       test("Should return false if both strings are not equal", () => {
         const input1 = "jasmine";
         const input2 = "23";
-        expect(areEqual(input1, input2)).toBeFalsy();
+        expect(areEqual(input1, input2)).toBe(false);
       });
 
       test("Should return true if both strings are equal", () => {
         const input1 = "jasmine";
         const input2 = "jasmine";
-        expect(areEqual(input1, input2)).toBeTruthy();
+        expect(areEqual(input1, input2)).toBe(true);
       });
     });
 
@@ -61,13 +61,13 @@ describe("project-1.js", () => {
       test("Should return false if both numbers are not equal", () => {
         const input1 = 0;
         const input2 = 1;
-        expect(areEqual(input1, input2)).toBeFalsy();
+        expect(areEqual(input1, input2)).toBe(false);
       });
 
       test("Should return true if both numbers are equal", () => {
         const input1 = 0;
         const input2 = 0;
-        expect(areEqual(input1, input2)).toBeTruthy();
+        expect(areEqual(input1, input2)).toBe(true);
       });
     });
 
@@ -75,13 +75,13 @@ describe("project-1.js", () => {
       test("Should return false if both boolean values are not equal", () => {
         const input1 = true;
         const input2 = false;
-        expect(areEqual(input1, input2)).toBeFalsy();
+        expect(areEqual(input1, input2)).toBe(false);
       });
 
       test("Should return true if both boolean values are equal", () => {
         const input1 = false;
         const input2 = false;
-        expect(areEqual(input1, input2)).toBeTruthy();
+        expect(areEqual(input1, input2)).toBe(true);
       });
     });
   });
@@ -91,12 +91,12 @@ describe("project-1.js", () => {
 
     test("Should return false if number is greater than or equal 90", () => {
       const input = 90;
-      expect(lessThanNinety(input)).toBeFalsy();
+      expect(lessThanNinety(input)).toBe(false);
     });
 
     test("Should return true if number is less than 90", () => {
       const input = 10;
-      expect(lessThanNinety(input)).toBeTruthy();
+      expect(lessThanNinety(input)).toBe(true);
     });
   });
 
@@ -105,12 +105,12 @@ describe("project-1.js", () => {
 
     test("Should return false if number is less than or equal to 50", () => {
       const input = 50;
-      expect(greaterThanFifty(input)).toBeFalsy();
+      expect(greaterThanFifty(input)).toBe(false);
     });
 
     test("Should return true if number is greater than 50", () => {
       const input = 51;
-      expect(greaterThanFifty(input)).toBeTruthy();
+      expect(greaterThanFifty(input)).toBe(true);
     });
   });
 
@@ -174,12 +174,12 @@ describe("project-1.js", () => {
 
     test("Should return false if number is not even", () => {
       const input = 45;
-      expect(isEven(input)).toBeFalsy();
+      expect(isEven(input)).toBe(false);
     });
 
     test("Should return true if number is even", () => {
       const input = 88;
-      expect(isEven(input)).toBeTruthy();
+      expect(isEven(input)).toBe(true);
     });
   });
 
@@ -188,12 +188,12 @@ describe("project-1.js", () => {
 
     test("Should return false if number is not odd", () => {
       const input = 42;
-      expect(isOdd(input)).toBeFalsy();
+      expect(isOdd(input)).toBe(false);
     });
 
     test("Should return true if number is odd", () => {
       const input = 23;
-      expect(isOdd(input)).toBeTruthy();
+      expect(isOdd(input)).toBe(true);
     });
   });
 
