@@ -1,7 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if ((typeof num === 'number' || typeof num === 'string') && num) {
+    if (!isNaN(+num)) {
+      return Number(num) * 10;
+    }
+  }
+  return 'Not a valid number';
 };
 
 const subtractFive = num => {
@@ -100,12 +105,18 @@ const getRectangleArea = (length, width) => {
   return length * width;
 };
 
-const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+const getTriangleArea = (base, height = base) => {
+  if (typeof base === 'number' && typeof height === 'number') {
+    if (base >= 0 && height >= 0) {
+      return 0.5 * base * height;
+    } else {
+      return undefined;
+    }
+  }
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  return Number((Math.PI * radius * radius).toFixed(2));
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
