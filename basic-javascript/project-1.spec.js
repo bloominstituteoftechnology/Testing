@@ -57,7 +57,7 @@ describe("project-1.js helpers", () => {
   });
 
   describe("add()", () => {
-    it("should receive a number", () => {
+    it("should return a number", () => {
       expect(typeof helpers.add(1, 2)).toBe("number");
     });
 
@@ -67,7 +67,7 @@ describe("project-1.js helpers", () => {
   });
 
   describe("subtract()", () => {
-    it("should receive a number", () => {
+    it("should return a number", () => {
       expect(typeof helpers.subtract(3, 2)).toBe("number");
     });
 
@@ -77,7 +77,7 @@ describe("project-1.js helpers", () => {
   });
 
   describe("divide()", () => {
-    it("should receive a number", () => {
+    it("should return a number", () => {
       expect(typeof helpers.divide(1, 2)).toBe("number");
     });
     it("should divide received numbers", () => {
@@ -86,11 +86,56 @@ describe("project-1.js helpers", () => {
   });
 
   describe("multiply()", () => {
-    it("should receive a number", () => {
+    it("should return a number", () => {
       expect(typeof helpers.multiply(1, 2)).toBe("number");
     });
     it("should divide received numbers", () => {
       expect(helpers.multiply(2, 2)).toEqual(4);
+    });
+  });
+
+  describe("getRemainder()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.getRemainder(1, 2)).toBe("number");
+    });
+    it("should get the remainder of received numbers", () => {
+      expect(helpers.getRemainder(4, 3)).toEqual(1);
+    });
+  });
+
+  describe("isEven()", () => {
+    it("should return a boolean", () => {
+      expect(typeof helpers.isEven(2)).toBe("boolean");
+    });
+    it("should be even", () => {
+      expect(helpers.isEven(2)).toBeTruthy();
+    });
+  });
+
+  describe("isOdd()", () => {
+    it("should return a boolean", () => {
+      expect(typeof helpers.isOdd(1)).toBe("boolean");
+    });
+    it("should be odd", () => {
+      expect(helpers.isOdd(1)).toBeTruthy();
+    });
+  });
+
+  describe("square()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.square(2)).toBe("number");
+    });
+    it("should get the square of received number", () => {
+      expect(helpers.square(2)).toEqual(4);
+    });
+  });
+
+  describe("cube()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.cube(2)).toBe("number");
+    });
+    it("should calculate the cube of received number", () => {
+      expect(helpers.cube(2)).toEqual(8);
     });
   });
 });
