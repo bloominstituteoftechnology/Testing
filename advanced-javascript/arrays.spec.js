@@ -1,4 +1,9 @@
-const arrayFunctions = require('./arrays');
+const {each,
+  map,
+  reduce,
+  find,
+  filter,
+  flatten,} = require('./arrays');
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -8,10 +13,23 @@ const arrayFunctions = require('./arrays');
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
-  describe('map', () => {
+  
+  // // each function test suite
+  // describe('each function test suite', () => {
+  //   it('', () => {
+  //     const arr1 = [1, 2, 3, 4]
+  //     expect(each(arr1, (item, item) => item)).toBe('function');
+  //   });
+  // })
+
+// map function test suite
+  describe('map function test suite', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      const map1 = map;
+      expect(typeof map1).toBe('function');
     });
   });
+
+
+
 });

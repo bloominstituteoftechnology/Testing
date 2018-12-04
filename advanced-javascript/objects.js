@@ -4,7 +4,12 @@
 /* eslint-disable no-unused-vars, arrow-body-style, arrow-parens */
 
 const keys = (obj) => {
-  return Object.keys(obj);
+  if (typeof obj !== 'object') {
+    return null
+  } else {
+ return Object.keys(obj)
+  }
+
 };
 
 const values = (obj) => {
@@ -14,7 +19,7 @@ const values = (obj) => {
 };
 
 const mapObject = (obj, cb) => {
-  Object.keys(obj).forEach((key) => (obj[key] = cb(obj[key])));
+  Object.keys(obj).forEach((key) => (obj[key] = values(obj[key])));
   return obj;
 };
 
