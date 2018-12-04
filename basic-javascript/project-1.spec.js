@@ -7,34 +7,21 @@ const helpers = require('./project-1');
 describe('project-1.js', () => {
     // multiplyByTen  
     describe('multipyByTen', () => {
-        it('should multipy provided number by ten', () => {
-            const expected = 100; // expected = 101 --> FAIL
-            const actual = helpers.multiplyByTen(10);
-            expect(actual).toEqual(expected);
-        });
-
-        it('boolean argument', () => {
+        it('should return "Not a valid number" for invalid or empty input', () => {
             expect(helpers.multiplyByTen(true)).toEqual('Not a valid number');
-        });
-
-        it('valid string argument', () => {
-            expect(helpers.multiplyByTen('33')).toEqual(330);
-        });
-
-        it('invalid string argument', () => {
+            expect(helpers.multiplyByTen('true')).toEqual('Not a valid number');
             expect(helpers.multiplyByTen('33dd')).toEqual('Not a valid number');
-        });
-
-        it('empty string argument', () => {
-            expect(helpers.multiplyByTen('')).toEqual('Not a valid number');
-        });
-
-        it('Infinity as string argument', () => {
-            expect(helpers.multiplyByTen('Infinity')).toEqual(Infinity);
-        });
-
-        it('no argument', () => {
             expect(helpers.multiplyByTen()).toEqual('Not a valid number');
+            expect(helpers.multiplyByTen(undefined)).toEqual('Not a valid number');
+            expect(helpers.multiplyByTen(null)).toEqual('Not a valid number');
+            expect(helpers.multiplyByTen('')).toEqual('Not a valid number');
+            expect(helpers.multiplyByTen(NaN)).toEqual('Not a valid number');
+        });
+        it('should return result of multiplying parameter by ten', () => {
+            expect(helpers.multiplyByTen('33')).toEqual(330);
+            expect(helpers.multiplyByTen(33)).toEqual(330);
+            expect(helpers.multiplyByTen('Infinity')).toEqual(Infinity);
+            expect(helpers.multiplyByTen(Infinity)).toEqual(Infinity);
         });
     });
 
@@ -58,7 +45,7 @@ describe('project-1.js', () => {
     // areEqual
     describe('areEqual', () => {
         it('should return true if arguments are deep equal', () => {
-            const actual = helpers.areEqual({ name: 'Sarah'}, { name: 'Sarah'});
+            const actual = helpers.areEqual({ name: 'Sarah' }, { name: 'Sarah' });
             expect(actual).toBe(false);
         });
     });
