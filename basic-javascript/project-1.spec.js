@@ -229,5 +229,16 @@ describe('project-1', () => {
         })
     })
 
+    describe('getCircleArea() ', () => {
+        it('should be able to correctly get circle Area', () => {
+            expect(helpers.getCircleArea(4)).toEqual(50);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getTriangleArea('ten')
+            }).toThrow();
+        })
+    })
+
 
 })
