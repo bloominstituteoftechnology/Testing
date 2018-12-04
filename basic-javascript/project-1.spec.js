@@ -221,5 +221,40 @@ describe('word things', () => {
     expect(result).toBe(expected);
   });
 });
-  
-})
+describe('geometry', () => {
+  test('rectangle area should return 12', () => {
+    const expected = 12;
+    const getRectangleArea = helpers.getRectangleArea;
+
+    const result = getRectangleArea(4, 3);
+
+    expect(result).toBe(expected);
+  });
+
+  test('triangle area should return 6', () => {
+    const expected = 6;
+    const getTriangleArea = helpers.getTriangleArea;
+
+    const result = getTriangleArea(4, 3);
+
+    expect(result).toBe(expected);
+  });
+
+  test('circle area should return pi', () => {
+    const expected = Math.PI;
+    const getCircleArea = helpers.getCircleArea;
+
+    const result = getCircleArea(1);
+
+    expect(result).toBe(expected);
+  });
+
+  test('rectangular prism volume should return 36', () => {
+    const expected = 36;
+    const getRectangularPrismVolume = helpers.getRectangularPrismVolume;
+
+    const result = getRectangularPrismVolume(3, 3, 4);
+
+    expect(result).toBe(expected);
+  });
+});
