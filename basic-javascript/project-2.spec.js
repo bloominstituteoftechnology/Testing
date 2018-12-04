@@ -7,15 +7,11 @@ test('should run tests', () => {});
 describe('project-1.js', () => {    
     describe('getBiggest', () => {
         it('should get the biggest number', () => {
-            const expected = 10;
-            const actual = funcs.getBiggest(10, 9)
-            expect(actual).toEqual(expected);
+            expect(funcs.getBiggest(10, 9)).toEqual(10);
         });
 
         it('should get the biggest number', () => {
-            const expected = 10;
-            const actual = funcs.getBiggest(10, 10)
-            expect(actual).toEqual(expected);
+            expect(funcs.getBiggest(10, 10)).toEqual(10);
         });
     });
     
@@ -28,271 +24,133 @@ describe('project-1.js', () => {
 
     describe('isTenOrFive', () => {
         it('should check if 10 or 5', () => {
-            const expected = true;
-	        const actual = funcs.isTenOrFive(10);
-            expect(actual).toEqual(expected);
+            expect(funcs.isTenOrFive(10)).toEqual(true);
         });
 
         it('should check if 10 or 5', () => {
-            const expected = false;
-	        const actual = funcs.isTenOrFive(4);
-            expect(actual).toEqual(expected);
+            expect(funcs.isTenOrFive(4)).toEqual(false);
         });
     });
 
     describe('isInRange', () => {
         it('should check if it\'s in range', () => {
-            const expected = true;
-	        const actual = funcs.isInRange(30);
-            expect(actual).toEqual(expected);
+            expect(funcs.isInRange(30)).toEqual(true);
         });
 
         it('should check if it\'s in range', () => {
-            const expected = false;
-	        const actual = funcs.isInRange(19);
-            expect(actual).toEqual(expected);
+            expect(funcs.isInRange(19)).toEqual(false);
         });
     });
 
     describe('isInteger', () => {
         it('should check to see if it is an integer', () => {
-            const expected = true;
-            const actual = funcs.isInteger(10)
-            expect(actual).toEqual(expected);
+            expect(funcs.isInteger(10)).toEqual(true);
         });
 
         it('should check to see if it is an integer', () => {
-            const expected = false;
-            const actual = funcs.isInteger(10.5)
-            expect(actual).toEqual(expected);
+            expect(funcs.isInteger(10.5)).toEqual(false);
         });
     });
 
     describe('fizzBuzz', () => {
         it('should return fizz', () => {
-            const expected = 'fizz';
-            const actual = funcs.fizzBuzz(9);
-            expect(actual).toEqual(expected);
+            expect(funcs.fizzBuzz(9)).toEqual('fizz');
         });
 
         it('should return buzz', () => {
-            const expected = 'buzz';
-            const actual = funcs.fizzBuzz(25);
-            expect(actual).toEqual(expected);
+            expect(funcs.fizzBuzz(25)).toEqual('buzz');
         });
         
         it('should return fizzbuzz', () => {
-            const expected = 'fizzbuzz';
-            const actual = funcs.fizzBuzz(15);
-            expect(actual).toEqual(expected);
+            expect(funcs.fizzBuzz(15)).toEqual('fizzbuzz');
         });
     });
 
     describe('isPrime', () => {
         it('should return false', () => {
-            const expected = false;
-            const actual = funcs.isPrime(-3);
-            expect(actual).toEqual(expected);
+            expect(funcs.isPrime(-3)).toEqual(false);
         });
 
         it('should return false', () => {
-            const expected = false;
-            const actual = funcs.isPrime(1);
-            expect(actual).toEqual(expected);
+            expect(funcs.isPrime(1)).toEqual(false);
         });
 
         it('should return false', () => {
-            const expected = false;
-            const actual = funcs.isPrime(15);
-            expect(actual).toEqual(expected);
+            expect(funcs.isPrime(15)).toEqual(false);
         });
 
         it('should return true', () => {
-            const expected = true;
-            const actual = funcs.isPrime(5);
-            expect(actual).toEqual(expected);
+            expect(funcs.isPrime(5)).toEqual(true);
         });
     });
 
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
+    describe('returnFirst', () => {
+        it('should return first item in array', () => {
+            expect(funcs.returnFirst(['cool', 'guy'])).toEqual('cool');
+        });
+    });
 
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
+    describe('returnLast', () => {
+        it('should return last item in array', () => {
+            expect(funcs.returnLast(['cool', 'guy'])).toEqual('guy');
+        });
+    });
 
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
+    describe('getArrayLength', () => {
+        it('should return length of array', () => {
+            expect(funcs.getArrayLength(['cool', 'guy'])).toEqual(2);
+        });
+    });
 
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
+    describe('incrementByOne', () => {
+        it('should increment by one', () => {
+            expect(funcs.incrementByOne([3, 4])).toEqual([4, 5]);
+        });
+    });
 
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
+    describe('addItemToArray', () => {
+        it('should add an item to an array', () => {
+            expect(funcs.addItemToArray([1, 2], 3)).toEqual([1, 2, 3]);
+        });
+    });
 
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
+    describe('addItemToFront', () => {
+        it('should add an item to the front of an array', () => {
+            expect(funcs.addItemToFront([1, 2], 3)).toEqual([3, 1, 2]);
+        });
+    });
 
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
+    describe('wordsToSentence', () => {
+        it('should return a sentence', () => {
+            expect(funcs.wordsToSentence(['Good', 'day!'])).toBe('Good day!');
+        });
+    });
 
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
+    describe('contains', () => {
+        it('should return true', () => {
+            expect(funcs.contains([1, 2], 2)).toBe(true);
+        });
 
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
+        it('should return false', () => {
+            expect(funcs.contains([1, 2], 3)).toBe(false);
+        });
+    });
 
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
+    describe('addNumbers', () => {
+        it('should add numbers', () => {
+            expect(funcs.addNumbers([1, 2])).toEqual(3);
+        });
+    });
 
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
+    describe('averageTestScore', () => {
+        it('should get average test score', () => {
+            expect(funcs.averageTestScore([50, 100])).toEqual(75);
+        });
+    });
 
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
-
-    // describe('getBiggest', () => {
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 9)
-    //         expect(actual).toEqual(expected);
-    //     });
-
-    //     it('should get the biggest number', () => {
-    //         const expected = 10;
-    //         const actual = funcs.getBiggest(10, 10)
-    //         expect(actual).toEqual(expected);
-    //     });
-    // });
+    describe('largestNumber', () => {
+        it('should get largest number', () => {
+            expect(funcs.largestNumber([50, 100, 101])).toEqual(101);
+        });
+    });
 });
