@@ -90,6 +90,9 @@ const returnFirst = arr => {
 };
 
 const returnLast = arr => {
+  if (arr.length < 1) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 

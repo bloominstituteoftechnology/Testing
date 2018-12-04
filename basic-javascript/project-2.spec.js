@@ -122,4 +122,14 @@ describe('project-2', () => {
             expect(funcs.returnFirst([])).toBe(null);
         })
     })
+
+    describe('returunLast Function', () => {
+        it('If inpit a array of string or number, it should return the last item in the arrya', () => {
+            expect(funcs.returnLast([3,2,1,0])).toBe(0);
+            expect(funcs.returnLast(['ss', 'aa', 5])).toBe(5);
+        })
+        it('If a empty array, it should return null', () => {
+            expect(funcs.returnFirst([])).toBe(null);
+        })
+    })
 })
