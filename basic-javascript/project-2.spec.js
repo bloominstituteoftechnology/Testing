@@ -75,4 +75,32 @@ describe("project-2.js functions", () => {
       expect(funcs.fizzBuzz(9)).toMatch("fizz");
     });
   });
+
+  describe("isPrime()", () => {
+    it("should return a boolean", () => {
+      expect(typeof funcs.isPrime(3)).toBe("boolean");
+    });
+  });
+
+  describe("returnFirst()", () => {
+    it("should return the first item in a given array", () => {
+      expect(funcs.returnFirst(["hi", 2, 3])).toBe("hi");
+    });
+  });
+
+  describe("returnLast()", () => {
+    it("should return the last item in a given array", () => {
+      expect(funcs.returnLast([1, 2, 3, 4, 5])).toBe(5);
+    });
+  });
+
+  describe("getArrayLength()", () => {
+    it("should return a number", () => {
+      expect(typeof funcs.getArrayLength([1, 2, 3])).toBe("number");
+    });
+
+    it("should return a given array's length", () => {
+      expect(funcs.getArrayLength([1, 2, 3])).toBe(3);
+    });
+  });
 });
