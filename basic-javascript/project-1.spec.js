@@ -34,7 +34,7 @@ describe('Project 1', () => {
             const input = 5;
             const expected = 50;
             const actual = multiplyByTen(input);
-            expect(actual).toEqual(expected);
+            expect(actual).toEqual(expected); 
         });
 
         // 2. 

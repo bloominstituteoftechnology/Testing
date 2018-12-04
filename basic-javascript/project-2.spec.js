@@ -24,32 +24,84 @@ describe('Project 2', () => {
     describe('1-6', () => {
         // 1.
         test('getBiggest', () => {
-
+            const actual = getBiggest(3, 4);
+            expect(actual).toBe(4);
         });
 
         // 2.
-        test('greeting', () => {
-
+        describe('greeting', () => {
+            test('German', () => {
+                const actual = greeting('German');
+                expect(actual).toBe('Guten Tag!');
+            });
+            test('Spanish', () => {
+                const actual = greeting('Spanish');
+                expect(actual).toBe('Hola!');
+            });
+            test('Default', () => {
+                const actual = greeting('default');
+                expect(actual).toBe('Hello!');
+            });
         });
 
         // 3.
-        test('isTenOrFive', () => {
-
+        describe('isTenOrFive', () => {
+            test('is ten', () => {
+                const actual = isTenOrFive(10);
+                expect(actual).toBeTruthy();
+            });
+            test('is five', () => {
+                const actual = isTenOrFive(5);
+                expect(actual).toBeTruthy();
+            });
+            test('is not ten or five', () => {
+                const actual = isTenOrFive(7);
+                expect(actual).toBeFalsy();
+            });
         });
 
         // 4.
-        test('isInRange', () => {
-
+        describe('isInRange', () => {
+            test('is in range', () => {
+                const actual = isInRange(25);
+                expect(actual).toBeTruthy();
+            });
+            test('not in range', () => {
+                const actual = isInRange(51);
+                expect(actual).toBeFalsy();
+            });
         });
 
         // 5.
-        test('isInteger', () => {
-
+        describe('isInteger', () => {
+            test('is integer', () => {
+                const actual = isInteger(5);
+                expect(actual).toBeTruthy();
+            });
+            test('not integer', () => {
+                const actual = isInteger(5.4);
+                expect(actual).toBeFalsy();
+            });
         });
 
         // 6.
-        test('fizzBuzz', () => {
-
+        describe('fizzBuzz', () => {
+            test('returns fizzbuzz', () => {
+                const actual = fizzBuzz(15);
+                expect(actual).toBe('fizzbuzz');
+            });
+            test('returns buzz', () => {
+                const actual = fizzBuzz(5);
+                expect(actual).toBe('buzz');
+            });
+            test('returns fizz', () => {
+                const actual = fizzBuzz(3);
+                expect(actual).toBe('fizz');
+            });
+            test('returns number', () => {
+                const actual = fizzBuzz(2);
+                expect(actual).toBe(2);
+            });
         });
     });
 
