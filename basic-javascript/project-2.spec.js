@@ -97,9 +97,21 @@ describe('project-2', () => {
         })
     })
 
-    describe('contains', () => {
-        it('if array contains number, returns true', () => {
-            expect(funcs.contains([1,2,3,4,5],5)).toBeTruthy()
+    describe('addNumbers', () => {
+        it('adds numbers or array together', () => {
+            expect(funcs.addNumbers([1,2,3])).toEqual(6)
+        })
+    })
+
+    describe('averageTestScore', () => {
+        it('gets average of numbers given', () => {
+            expect(funcs.averageTestScore([2,2,2,1,1,2,2,2,1,1,1,1])).toEqual(1.5)
+        })
+    })
+
+    describe('largestNumber', () => {
+        it('gets largest number given', () => {
+            expect(funcs.largestNumber([4,4,56,8,58,2545,25,6666,8989898])).toEqual(8989898)
         })
     })
 })
