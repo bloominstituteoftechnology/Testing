@@ -103,3 +103,9 @@ test('Add Item To Front', () => {
   ]);
   expect(addItemToFront([1, 2, 3], 0)).toEqual([0, 1, 2, 3]);
 });
+
+test('Words To Sentence', () => {
+  expect(wordsToSentence(['This', 'is', 'a', 'sentence'])).toEqual(
+    'This is a sentence'
+  );
+});
