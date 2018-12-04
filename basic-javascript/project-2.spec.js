@@ -81,3 +81,13 @@ test('Get Array Length', () => {
 test('Increment By One', () => {
   expect(incrementByOne([5, 6, 7, 8])).toEqual([6, 7, 8, 9]);
 });
+
+test('Add Item To Array', () => {
+  expect(addItemToArray(['Jonas', 'Henry', 'Norah', 'Gemma'], 'Evan')).toEqual([
+    'Jonas',
+    'Henry',
+    'Norah',
+    'Gemma',
+    'Evan'
+  ]);
+});
