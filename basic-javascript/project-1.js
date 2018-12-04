@@ -145,12 +145,15 @@ const getGreeting = name => {
 
 const getRectangleArea = (length, width) => {
   if ( (typeof length !== 'number') || (typeof width !== 'number') ) {
-    throw new Error('either x or y should be number')
+    throw new Error('either lenght or width should be number')
   }
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if ( (typeof base !== 'number') || (typeof height !== 'number') ) {
+    throw new Error('either base or height should be number')
+  }
   return 0.5 * base * height;
 };
 
