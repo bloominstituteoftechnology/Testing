@@ -130,4 +130,53 @@ describe('project-1', () => {
       expect(roundUpResult).toBe(5);
     });
   });
+
+  describe('addExclamationPoint', () => {
+    it('adds an exclamation point to the end', () => {
+      const addExclamationPointResult = helpers.addExclamationPoint('bruh');
+      expect(addExclamationPointResult.charAt(4)).toBe('!');
+    });
+  });
+
+  describe('getGreeting', () => {
+    it('says hello to a name, in lieu of real friends', () => {
+      const getGreetingResult = helpers.getGreeting('bummings');
+      expect(getGreetingResult).toBe('Hello bummings!');
+    });
+  });
+
+  describe('getRectangleArea', () => {
+    it('produces the area of a rectangle', () => {
+      const getRectangleAreaResult = helpers.getRectangleArea(3, 4);
+      expect(getRectangleAreaResult).toBe(12);
+    });
+  });
+
+  describe('getTriangleArea', () => {
+    it('produces the area of a triangle', () => {
+      const getTriangleAreaResult = helpers.getTriangleArea(3, 4);
+      expect(getTriangleAreaResult).toBe(6);
+    });
+  });
+
+  describe('getCircleArea', () => {
+    it('produces the area of a circle', () => {
+      const getCircleAreaResult = helpers.getCircleArea(3);
+      expect(getCircleAreaResult).toBe(Math.PI * 3 * 3);
+    });
+  });
+
+  describe('getRectangularPrismVolume', () => {
+    it('produces the volume of a rectangular prism', () => {
+      const getRectangularPrismVolumeResult = helpers.getRectangularPrismVolume(
+        3,
+        4,
+        5
+      );
+      expect(getRectangularPrismVolumeResult).toBe(60);
+    });
+  });
+  //
+  //
+  //
 });
