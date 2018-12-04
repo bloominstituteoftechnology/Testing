@@ -166,6 +166,9 @@ const contains = (arr, item) => {
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if(typeof numbers[i] !== 'number') {
+      return null;
+    }
     sumOfNumbers += numbers[i];
   }
   return sumOfNumbers;

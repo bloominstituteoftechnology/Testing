@@ -194,5 +194,16 @@ describe('project-2', () => {
             expect(funcs.contains([4,5,4,6,7])).toBe(null);
         })
     })
+
+    describe('addNumbers Function', () => {
+        it('If array of number of provide, return the addnumbers', () => {
+            expect(funcs.addNumbers([4,5,4,6])).toBe(19);
+            expect(funcs.addNumbers([4])).toBe(4);
+        })
+        it('If anything another than number was in the array, return null', () => {
+            expect(funcs.addNumbers([4,'4',5])).toBe(null);
+        })
+    })
+    
     
 })
