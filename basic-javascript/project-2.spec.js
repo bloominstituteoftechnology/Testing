@@ -124,6 +124,7 @@ describe("wordsToSentence", () => {
   });
 });
 
+// checks if array contains an item
 describe("contains", () => {
   test("checks if array contains an item", () => {
     const arr = [1, 2, 3, 4, 5];
@@ -134,6 +135,7 @@ describe("contains", () => {
   });
 });
 
+// adds numbers
 describe("addNumbers", () => {
   test("adds numbers in an array", () => {
     const numbers = [5, 10, 15, 20];
@@ -144,6 +146,7 @@ describe("addNumbers", () => {
   });
 });
 
+// average test score from an array 
 describe("averageTestScore", () => {
   test("averages the scores in an array", () => {
     const scores = [95, 91, 55, 45, 85];
