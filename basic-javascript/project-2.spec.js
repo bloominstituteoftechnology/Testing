@@ -116,5 +116,10 @@ describe('helper2.js', () => {
 		});
 	});
 
-	describe('');
+	describe('largestNumber', () => {
+		test('should find the largest number in an array', () => {
+			const woah = funcs.largestNumber([ 1, 3, 1000, 2 ]);
+			expect(woah).toEqual(1000);
+		});
+	});
 });
