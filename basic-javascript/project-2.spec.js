@@ -112,4 +112,14 @@ describe('project-2', () => {
             expect(funcs.isPrime('ss')).toBe(null);
         })
     })
+
+    describe('returnFirst Function', () => {
+        it('If input a array of string or number, it should return the first number or string in the array', () => {
+            expect(funcs.returnFirst([3,2,1,0])).toBe(3);
+            expect(funcs.returnFirst(['ss','aa',5])).toBe('ss');
+        })
+        it('If a empty array, it should return null', () => {
+            expect(funcs.returnFirst([])).toBe(null);
+        })
+    })
 })
