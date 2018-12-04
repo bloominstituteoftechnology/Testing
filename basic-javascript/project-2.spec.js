@@ -99,3 +99,22 @@ describe('isInRange function', () => {
     expect(isInRange(NaN)).toBe(false);
   });
 });
+
+describe('isInteger function', () => {
+  it('should return true if arg is between 20 and 50', () => {
+    expect(isInteger(1)).toBe(true);
+    expect(isInteger(0)).toBe(true);
+    expect(isInteger(-1)).toBe(true);
+  });
+
+  it('should return false if arg is not between 20 and 50', () => {
+    expect(isInteger(1.1)).toBe(false);
+    expect(isInteger(0.1)).toBe(false);
+    expect(isInteger('5')).toBe(false);
+    expect(isInteger([5])).toBe(false);
+    expect(isInteger({ key: 5 })).toBe(false);
+    expect(isInteger(null)).toBe(false);
+    expect(isInteger(true)).toBe(false);
+    expect(isInteger(NaN)).toBe(false);
+  });
+});
