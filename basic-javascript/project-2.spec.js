@@ -112,6 +112,27 @@ describe('project-2 testing', () => {
         // make sure array items are all trimed of spaces
     })
 
-    
+    it('should check for a word within an array', () => {
+        expect(funcs.contains(['hungry', 'hungry', 'hippo'], 'hippo')).toBe(true);
+        expect(funcs.contains(['hungry', 'hungry', 'hippo'], 'badger')).toBe(false);
+        // make sure input one is an array
+        // make sure second input is not undefined or null
+    });
+
+    it('should add a list of number together', () => {
+        expect(funcs.addNumbers([1,2,3,4])).toBe(10);
+        // make sure input is an array of numbers
+    });
+
+    it('should find the average test score', () => {
+        expect(funcs.averageTestScore([4,3,2,4,3])).toBe(3.2);
+        // make sure the input is an array of numbers
+    });
+
+    it('should find the largest number in an array', () => {
+        expect(funcs.largestNumber([4,3,8,2])).toBe(8);
+        expect(funcs.largestNumber([2])).toBe(2);
+        // make sure the input is an array of numbers
+    });
 
 });
