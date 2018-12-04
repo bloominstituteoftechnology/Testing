@@ -195,6 +195,10 @@ describe('project-1', () => {
         })
     })
 
-
+    describe('combineNames() ', () => {
+        it('should be able to correctly combine Name', () => {
+            expect(helpers.combineNames('yanrong', 'xu')).toEqual('yanrong xu');
+        })
+    })
 
 })
