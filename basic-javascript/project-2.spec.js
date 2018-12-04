@@ -128,6 +128,7 @@ describe("Funcs", () => {
       expect(isPrime(NaN)).toBe(null);
     });
   });
+
   describe("returnFirst", () => {
     const { returnFirst } = funcs;
 
@@ -167,6 +168,81 @@ describe("Funcs", () => {
     const { incrementByOne } = funcs;
     it("increments each object in a passed array and returns the modified array", () => {
       expect(incrementByOne([1, 2, 3])).toEqual([2, 3, 4]);
+    });
+  });
+
+  describe("addItemToArray", () => {
+    const { addItemToArray } = funcs;
+    it("when passed an array and an item, returns a mutated version of that array with the item added to the end of it", () => {
+      expect(addItemToArray([1, 2, 3], 4)).toEqual([1, 2, 3, 4]);
+    });
+  });
+
+  describe("addItemToFront", () => {
+    const { addItemToFront } = funcs;
+    it("when passed an array and an item, returns a mutated version of the array with the item put at the first index", () => {
+      expect(addItemToFront([1, 2, 3], 4)).toEqual([4, 1, 2, 3]);
+    });
+  });
+
+  describe("wordsToSentence", () => {
+    const { wordsToSentence } = funcs;
+    it("when passed an array of strings(words), returns a new string with the words added in order separated by a space(sentence)", () => {
+      expect(wordsToSentence(["Hello", "there"])).toBe("Hello there");
+    });
+  });
+
+  describe("contains", () => {
+    const { contains } = funcs;
+    it("when passed an array and an item, returns true if the array includes the item", () => {
+      expect(contains([1, 2, 3], 2)).toBe(true);
+    });
+
+    it("returns false when the passed array does not contain the item", () => {
+      expect(contains([1, 2, 3], 4)).toBe(false);
+    });
+  });
+
+  describe("addNumbers", () => {
+    const { addNumbers } = funcs;
+    it("returns the sum of each number in a passed array of numbers", () => {
+      expect(addNumbers([1, 2, 3])).toBe(6);
+    });
+
+    it("returns null when passed an empty array", () => {
+      expect(addNumbers([])).toBe(null);
+    });
+  });
+
+  describe("averageTestScore", () => {
+    const { averageTestScore } = funcs;
+    it("when passed an array of numbers, returns the numerical average of all those numbers", () => {
+      expect(averageTestScore([1, 2, 3])).toBe(2);
+    });
+
+    it("will ignore non-number objects in the array and only use included number objects", () => {
+      expect(averageTestScore([1, 2, 3, NaN])).toBe(2);
+      expect(averageTestScore([1, 2, 3, "not a number"])).toBe(2);
+      expect(averageTestScore([1, 2, 3, undefined])).toBe(2);
+    });
+
+    it("will return undefined if the passed array is either empty or contains no numbers", () => {
+      expect(averageTestScore(["string", NaN, undefined])).toBe(undefined);
+    });
+  });
+
+  describe("largestNumber", () => {
+    const { largestNumber } = funcs;
+    it("when passed an array, returns the largest number in that array", () => {
+      expect(largestNumber([1, 2, 50])).toBe(50);
+    });
+
+    it("returns zero when no numbers in the array are larger than zero", () => {
+      expect(largestNumber([-1, -15, -2])).toBe(0);
+    });
+
+    it("returns null if passed an array that is either empty or contains no numbers", () => {
+      expect(largestNumber(["string", NaN, undefined])).toBe(null);
     });
   });
 });

@@ -140,6 +140,11 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
+  // added case for an empty array being passed (originally would still return zero)
+  if (!numbers.length) {
+    return null;
+  }
+
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOfNumbers += numbers[i];
@@ -151,19 +156,40 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
+    //added if statement making sure items are numbers
+    if (typeof testScores[i] === "number" && testScores[i]) {
+      totalSumScores += testScores[i];
+      numberOfScore++;
+    }
+  }
+  //added check for if the passed array is either empty or has no valid numbers
+  if (numberOfScore === 0) {
+    return undefined;
   }
   return totalSumScores / numberOfScore;
 };
 
 const largestNumber = numbers => {
   let biggestInteger = 0;
+  //added countNumbers here to track how many numbers are in the array during the for loop
+  let countNumbers = 0;
+
   for (let i = 0; i < numbers.length; i++) {
+    //tracking amount of numbers in the array
+    if (typeof numbers[i] === "number" && numbers[i]) {
+      countNumbers++;
+    }
+
+    // if array contains no numbers or is empty, will return null instead of zero
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
   }
+
+  if (countNumbers === 0) {
+    return null;
+  }
+
   return biggestInteger;
 };
 
