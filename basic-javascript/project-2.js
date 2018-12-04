@@ -11,12 +11,12 @@ const getBiggest = (x, y) => {
 
 const greeting = language => {
   switch (language) {
-    case 'German':
-      return 'Guten Tag!';
-    case 'Spanish':
-      return 'Hola!';
+    case "German":
+      return "Guten Tag!";
+    case "Spanish":
+      return "Hola!";
     default:
-      return 'Hello!';
+      return "Hello!";
   }
 };
 
@@ -43,11 +43,11 @@ const isInteger = num => {
 
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
-    return 'fizzbuzz';
+    return "fizzbuzz";
   } else if (num % 5 === 0) {
-    return 'buzz';
+    return "buzz";
   } else if (num % 3 === 0) {
-    return 'fizz';
+    return "fizz";
   }
   return num;
 };
@@ -64,18 +64,36 @@ const isPrime = num => {
       return false;
     }
   }
-  return true;
+  //added if statement to account for non-number being passed
+  if (num && typeof num === "number" && num != NaN) {
+    return true;
+  } else {
+    return null;
+  }
 };
 
 const returnFirst = arr => {
+  //added if statement to return undefined if passed empty array
+  if (!arr.length) {
+    return undefined;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  //added if statement to return undefined if passed empty array
+  if (!arr.length) {
+    return undefined;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  // added if statement to return undefined if passed non-array object
+  if (!Array.isArray(arr)) {
+    return undefined;
+  }
+
   return arr.length;
 };
 
@@ -97,7 +115,7 @@ const addItemToFront = (arr, item) => {
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
+  let newSentence = "";
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;

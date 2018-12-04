@@ -10,17 +10,23 @@ const arrayFunctions = require("./arrays");
 describe("Arrays", () => {
   describe("each", () => {
     const { each } = arrayFunctions;
-    const arr = [1, 2, 3];
-    const cb = item => item + 1;
 
     it("should be a function", () => {
       expect(typeof each).toBe("function");
     });
 
     it("should run the given callback function once for each item in the given array", () => {
-      const check = jest.fn();
-      each(arr, check);
-      expect(check).toHaveBeenCalledTimes(3);
+      const arr = [1, 2, 3];
+      const cb = jest.fn();
+      each(arr, cb);
+      expect(cb).toHaveBeenCalledTimes(3);
+    });
+
+    it("should return undefined since there is nothing actually being returned", () => {
+      const arr = [, 1, 2, 3];
+      const cb = jest.fn();
+      const example = each(arr, cb);
+      expect(example).toBeUndefined();
     });
   });
 
