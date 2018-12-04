@@ -22,10 +22,9 @@ const {
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 
 test('Get Biggest', () => {
-  const x = 8;
-  const y = 4;
-  const result = 8;
-  expect(getBiggest(x, y)).toBe(result);
+  expect(getBiggest(8, 10)).toBe(6);
+  expect(getBiggest(3, 3)).toBe(3)
+  expect(getBiggest(5, 2)).toBe(5)
 });
 
 test('Greeting', () => {});
