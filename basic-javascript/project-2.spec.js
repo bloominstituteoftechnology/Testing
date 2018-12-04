@@ -115,3 +115,7 @@ test('Contains', () => {
   expect(contains(family, 'Gemma')).toEqual(true);
   expect(contains(family, 'Natalie')).toEqual(false);
 });
+
+test('Add Numbers', () => {
+  expect(addNumbers([1, 2, 3, 4])).toEqual(10);
+});
