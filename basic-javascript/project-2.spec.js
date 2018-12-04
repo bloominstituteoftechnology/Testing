@@ -19,4 +19,26 @@ const {
   largestNumber,
 } = require('./project-2');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
+describe('getBiggest function', () => {
+  it('should return largest argument when arguements are not equal', () => {
+    expect(getBiggest(1, 2)).toBe(2);
+    expect(getBiggest(1, -2)).toBe(1);
+  });
+
+  it('should return second argument when arguments are equal', () => {
+    expect(getBiggest(1, 1)).toBe(1);
+  });
+
+  it('should return undefined when type of either argument is not number', () => {
+    expect(getBiggest(1, '1')).toBe(undefined);
+    expect(getBiggest(1, [])).toBe(undefined);
+    expect(getBiggest(1, {})).toBe(undefined);
+    expect(getBiggest(1, null)).toBe(undefined);
+    expect(getBiggest(1, false)).toBe(undefined);
+    expect(getBiggest(1, NaN)).toBe(undefined);
+  });
+
+  it('should return undefined when either argument is missing', () => {
+    expect(getBiggest(1)).toBe(undefined);
+  });
+});
