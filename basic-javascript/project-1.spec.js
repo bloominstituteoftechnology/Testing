@@ -48,12 +48,6 @@ describe('project-1', () => {
     });
   });
 
-  // describe('add', () => {
-  //   it('should add two numbers together', () => {
-  //     const addExpected = helpers.add(2, 3);
-  //     expect(addExpected).toBe(5)
-  //   });
-
   describe('add', () => {
     it('should add two values together', () => {
       const addExpected = helpers.add(2, 3);
@@ -90,21 +84,21 @@ describe('project-1', () => {
   });
 
   describe('isEven', () => {
-    it('determine if value is even', () => {
+    it('determines if value is even', () => {
       const isEvenResult = helpers.isEven(10);
       expect(isEvenResult).toBe(true);
     });
   });
 
   describe('isOdd', () => {
-    it('determine if value is odd', () => {
+    it('determines if value is odd', () => {
       const isOddResult = helpers.isOdd(11);
       expect(isOddResult).toBe(true);
     });
   });
 
   describe('square', () => {
-    it('determine the square of a given number', () => {
+    it('determines the square of a given number', () => {
       const squareResult = helpers.square(3);
       expect(squareResult).toBe(9);
     });
@@ -176,7 +170,4 @@ describe('project-1', () => {
       expect(getRectangularPrismVolumeResult).toBe(60);
     });
   });
-  //
-  //
-  //
 });
