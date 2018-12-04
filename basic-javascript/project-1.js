@@ -4,14 +4,16 @@ const getType = require('jest-get-type')
 
 /**
  * Accepts a number, returns that number multiplied by 10
- * @param {num} num 
- * @returns {num} multiplied by 10
+ * @param {number} num 
+ * @returns {number} multiplied by 10
  */
 
-
-
 const multiplyByTen = num => {
-  return num * 10;
+  if (Number.isNaN(num) === true) {
+    return undefined
+  } else {
+    return num * 10;
+  }
 };
 
 const subtractFive = num => {

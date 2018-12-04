@@ -1,5 +1,10 @@
 const helpers = require('./project-1');
 
+const isNumber = func => {
+
+}
+
+
 // MultiplyByTen Function Test Suite
 describe('multiplyByTen function', () => {
     test('multiplies * 10 properly', () => {
@@ -8,6 +13,8 @@ describe('multiplyByTen function', () => {
         const actual = helpers.multiplyByTen(input)
         expect(actual).toBe(expected)
     })
+
+
 
 })
 
@@ -30,7 +37,6 @@ describe('areSameLength function', () => {
         expect(result).toBe(true)
     })
 })
-
 
 // areEqual Function Test Suite
 describe('areEqual function', () => {
@@ -249,6 +255,7 @@ describe('getCircleArea function', () => {
     })
 })
 
+// getRectangularPrismVolume Function Test Suite
 describe('getRectangularPrismVolume function', () => {
     test('getRectangularPrismVolume works properly', () => {
         const input1 = 4
