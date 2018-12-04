@@ -19,24 +19,24 @@ describe('greeting', () => {
 
 describe('isTenOrFive', () => {
     it('It should return true for 5 or 10 and false for 8', () => {
-        expect(funcs.isTenOrFive(10)).toEqual(true);
-        expect(funcs.isTenOrFive(5)).toEqual(true);
-        expect(funcs.isTenOrFive(8)).toEqual(false);
+        expect(funcs.isTenOrFive(10)).toBe(true);
+        expect(funcs.isTenOrFive(5)).toBe(true);
+        expect(funcs.isTenOrFive(8)).toBe(false);
     })
 })
 
 describe('isInRange', () => {
     it('It should return true if the number is less than 50 and greater than 20, and false if the number is greater than 50', () => {
-        expect(funcs.isInRange(21)).toEqual(true);
-        expect(funcs.isInRange(49)).toEqual(true);
-        expect(funcs.isInRange(51)).toEqual(false);
+        expect(funcs.isInRange(21)).toBe(true);
+        expect(funcs.isInRange(49)).toBe(true);
+        expect(funcs.isInRange(51)).toBe(false);
     })
 })
 
 describe('isInteger', () => {
     it('If the number is not a fixed number, it should return false', () => {
-        expect(funcs.isInteger(40)).toEqual(true);
-        expect(funcs.isInteger(40.5)).toEqual(false);
+        expect(funcs.isInteger(40)).toBe(true);
+        expect(funcs.isInteger(40.5)).toBe(false);
     })
 })
 
@@ -49,8 +49,8 @@ describe('fizzBuzz', () => {
 
 describe('isPrime', () => {
     it('it returns true for prime numbers and false for other numbers', () => {
-        expect(funcs.isPrime(37)).toEqual(true);
-        expect(funcs.isPrime(44)).toEqual(false);
+        expect(funcs.isPrime(37)).toBe(true);
+        expect(funcs.isPrime(44)).toBe(false);
     })
 })
 
@@ -96,8 +96,8 @@ describe('wordsToSentence', () => {
 
 describe('contains', () => {
     it('it should return true if the array contains the same item ', () => {
-        expect(funcs.contains(['one'], 'one')).toEqual(true);
-        expect(funcs.contains(['one'], 'two')).toEqual(false);
+        expect(funcs.contains(['one'], 'one')).toBe(true);
+        expect(funcs.contains(['one'], 'two')).toBe(false);
     })
 })
 
@@ -119,10 +119,4 @@ describe('largestNumber', () => {
         expect(funcs.largestNumber([1, 5, 20])).toEqual(20);
     })
 })
-
-
-
-
-
-
 

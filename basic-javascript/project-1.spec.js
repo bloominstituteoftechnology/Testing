@@ -15,25 +15,25 @@ describe('subtractFive', () => {
 
 describe('areSameLength', () => {
     it('it checks if both of the strings are the same length', () => {
-        expect(helpers.areSameLength('string', 'writer')).toEqual(true);
+        expect(helpers.areSameLength('string', 'writer')).toBe(true);
     })
 })
 
 describe('areEqual', () => {
     it('it checks if two numbers are equal', () => {
-        expect(helpers.areEqual(5, 5)).toEqual(true);
+        expect(helpers.areEqual(5, 5)).toBe(true);
     })
 })
 
 describe('lessThanNinety', () => {
     it('it checks if a number is less than 90', () => {
-        expect(helpers.lessThanNinety(89)).toEqual(true);
+        expect(helpers.lessThanNinety(89)).toBe(true);
     })
 })
 
 describe('greaterThanFifty', () => {
     it('it checks if a number is greater than 51', () => {
-        expect(helpers.greaterThanFifty(51)).toEqual(true);
+        expect(helpers.greaterThanFifty(51)).toBe(true);
     })
 })
 
@@ -69,13 +69,13 @@ describe('getRemainder', () => {
 
 describe('isEven', () => {
     it('it checks if a number is even', () => {
-        expect(helpers.isEven(8)).toEqual(true);
+        expect(helpers.isEven(8)).toBe(true);
     })
 })
 
 describe('isOdd', () => {
     it('it checks if a number is odd', () => {
-        expect(helpers.isOdd(9)).toEqual(true);
+        expect(helpers.isOdd(9)).toBe(true);
     })
 })
 
