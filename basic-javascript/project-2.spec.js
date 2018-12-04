@@ -29,5 +29,89 @@ describe('project-2 testing', () => {
     it('change a float into an integer', () => {
         expect(funcs.isInteger(3.2)).toBe(false);
         expect(funcs.isInteger(4)).toBe(true);
+        // make sure input is a number
     });
+
+    describe('fizzbuzz function testing', () => {
+        it('should be divisible by 5', () => {
+            expect(funcs.fizzBuzz(20)).toBe('buzz');
+        });
+
+        it('should be divisible by 3', () => {
+            expect(funcs.fizzBuzz(9)).toBe('fizz');
+        });
+
+        it('should be divisible by both 5 & 3', () => {
+            expect(funcs.fizzBuzz(30)).toBe('fizzbuzz');
+        });
+
+        it('return the number if not divisable by 5 or 3', () => {
+            expect(funcs.fizzBuzz(14)).toBe(14);
+        })
+        // make sure input is a number
+    });
+
+    describe('if the number is prime', () => {
+        it('check if the number is less than zero', () => {
+            expect(funcs.isPrime(-2)).toBe(false);
+        });
+
+        it('return false if the number is 1 or 0', () => {
+            expect(funcs.isPrime(1)).toBe(false);
+        });
+
+        it('check to see if number is divisible by more than just itself', () => {
+            expect(funcs.isPrime(7)).toBe(true);
+            expect(funcs.isPrime(6)).toBe(false);
+            expect(funcs.isPrime(3)).toBe(true);
+        })
+        // make sure input is a number
+    });
+
+    it('should return first item in an array', () => {
+        expect(funcs.returnFirst([1,2,3])).toBe(1);
+        expect(funcs.returnFirst(['hi', 'hey', 'hello'])).toBe('hi');
+        // make sure input is an array
+    });
+
+    it('should return the last item in an array', () => {
+        expect(funcs.returnLast([1,2,3])).toBe(3);
+        expect(funcs.returnLast(['hi', 'hey', 'hello'])).toBe('hello');
+        // make sure input is an array
+    });
+
+    it('should return the length of the array', () => {
+        expect(funcs.getArrayLength([])).toBe(0);
+        expect(funcs.getArrayLength([1])).toBe(1);
+        expect(funcs.getArrayLength([1,2])).toBe(2);
+        expect(funcs.getArrayLength([1,2,3])).toBe(3);
+        // make sure input is an array
+    });
+
+    it('should increase the argument by one', () => {
+        expect(funcs.incrementByOne([4,5])).toEqual([5,6]);
+        // make sure input is correct
+    });
+
+    it('should take an item and add it to an array', () => {
+        expect(funcs.addItemToArray([1,2,3], 4)).toEqual([1,2,3,4]);
+        // make sure input one is an array
+        // make sure second input is not undefined or null
+    });
+
+    it('should add an item to the front of an array', () => {
+        expect(funcs.addItemToFront([2,3,4], 1)).toEqual([1,2,3,4]);
+        // make sure input one is an array
+        // make sure second input is not undefine or null
+    });
+
+    it('should create sentence from words array', () => {
+        expect(funcs.wordsToSentence(['do', 'you', 'need', 'help'])).toBe('do you need help');
+        // make sure input is an array
+        // make sure array is made of strings
+        // make sure array items are all trimed of spaces
+    })
+
+    
+
 });
