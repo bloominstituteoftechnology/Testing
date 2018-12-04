@@ -164,4 +164,14 @@ describe('project-2', () => {
         })
     })
     
+    describe('addItemToFront Function', () => {
+        it('If array was provide, and item was provide, add item to the front of array', () => {
+            expect(funcs.addItemToFront([3,53,2,4], 22)).toEqual([22,3,53,2,4]);
+            expect(funcs.addItemToFront([3,53,2,4], 'ss')).toEqual(['ss',3,53,2,4]);
+        })
+        it('If item was not provide, return the array', () => {
+            expect(funcs.addItemToFront([3,53,2,4])).toEqual([3,53,2, 4]);
+        })
+    })
+    
 })

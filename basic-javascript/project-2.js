@@ -120,14 +120,14 @@ const addItemToArray = (arr, item) => {
   if(!item) {
     return arr;
   }
-  if (!arr && !item) {
-    return null;
-  }
   arr.push(item);
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
+  if(!item) {
+    return arr;
+  }
   arr.unshift(item);
   return arr;
 };
