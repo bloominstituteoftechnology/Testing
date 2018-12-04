@@ -144,6 +144,9 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if ( (typeof length !== 'number') || (typeof width !== 'number') ) {
+    throw new Error('either x or y should be number')
+  }
   return length * width;
 };
 

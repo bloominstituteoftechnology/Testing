@@ -207,6 +207,18 @@ describe('project-1', () => {
         })
     })
 
+    describe('getRectangleArea() ', () => {
+        it('should be able to correctly get rectangle Area', () => {
+            expect(helpers.getRectangleArea(4,5)).toEqual(20);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getRectangleArea('ten', 5)
+            }).toThrow();
+        })
+    })
+
+    
 
 
 })
