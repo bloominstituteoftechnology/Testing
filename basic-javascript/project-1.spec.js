@@ -138,4 +138,40 @@ describe("project-1.js helpers", () => {
       expect(helpers.cube(2)).toEqual(8);
     });
   });
+
+  describe("raiseToPower()", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.raiseToPower(2)).toBe("number");
+    });
+    it("should raise to the nth power", () => {
+      expect(helpers.raiseToPower(3, 2)).toEqual(9);
+    });
+  });
+
+  describe("roundNumber", () => {
+    it("should return a number", () => {
+      expect(typeof helpers.roundNumber(2.2)).toBe("number");
+    });
+    it("should round up the number", () => {
+      expect(helpers.roundNumber(4.8)).toEqual(5);
+    });
+  });
+
+  describe("addExclamationPoint()", () => {
+    it("should return a string", () => {
+      expect(typeof helpers.addExclamationPoint("hey")).toBe("string");
+    });
+    it("should add an exclamation point to received string", () => {
+      expect(helpers.addExclamationPoint("hey")).toBe("hey!");
+    });
+  });
+
+  describe("combineNames()", () => {
+    it("should return a string", () => {
+      expect(typeof helpers.combineNames("Bob", "Marley")).toBe("string");
+    });
+    it("should combine first name and last name", () => {
+      expect(helpers.combineNames("Bob", "Marley")).toBe("Bob Marley");
+    });
+  });
 });
