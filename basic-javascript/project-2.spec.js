@@ -109,3 +109,9 @@ test('Words To Sentence', () => {
     'This is a sentence'
   );
 });
+
+test('Contains', () => {
+  const family = ['Jonas', 'Henry', 'Norah', 'Gemma', 'Evan'];
+  expect(contains(family, 'Gemma')).toEqual(true);
+  expect(contains(family, 'Natalie')).toEqual(false);
+});
