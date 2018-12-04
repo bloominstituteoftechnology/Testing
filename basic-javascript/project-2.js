@@ -45,6 +45,8 @@ const isInRange = num => {
 const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
+  } else if (typeof num !== 'number') {
+    return null;
   }
   return false;
 };

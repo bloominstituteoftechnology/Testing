@@ -74,4 +74,16 @@ describe('project-2', () => {
             expect(funcs.isInRange()).toBe(null);
         })
     })
+
+    describe('isInteger Function', () => {
+        it('If the number equal interger, it should return true', () => {
+            expect(funcs.isInteger(15)).toBe(true);
+        })
+        it('If the number not equal to interger, it should return false', () => {
+            expect(funcs.isInteger(15.6)).toBe(false);
+        })
+        it('If the number is not a number, it should return null', () => {
+            expect(funcs.isInteger({})).toBe(null);
+        })
+    })
 })
