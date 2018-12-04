@@ -17,3 +17,19 @@ test('receives greeting', () => {
     const language = 'german'
     expect(greeting(language)).toBeTruthy()
 })
+test('is ten or five', () => {
+    const num = 10
+    expect(isTenOrFive(num)).toBeTruthy()
+})
+test('is in range', () => {
+    const num = 40
+    expect(isInRange(num)).toBeTruthy()
+})
+test('is integer', () => {
+    const num = 3
+    expect(isInteger(num)).toBeTruthy()
+})
+test('fizz buzz', () => {
+    const num = 20
+    expect(fizzBuzz(num)).toBeTruthy()
+})
