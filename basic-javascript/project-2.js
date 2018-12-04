@@ -178,6 +178,9 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (typeof testScores[i] !== 'number') {
+      return null;
+    }
     totalSumScores += testScores[i];
     numberOfScore++;
   }

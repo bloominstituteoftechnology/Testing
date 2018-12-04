@@ -204,6 +204,14 @@ describe('project-2', () => {
             expect(funcs.addNumbers([4,'4',5])).toBe(null);
         })
     })
-    
+
+    describe('averageTestScore Function', () => {
+        it('If a array of test score was enter, return the averge test Score', () => {
+            expect(funcs.averageTestScore([95,93,93])).toBeCloseTo(93.67,2)
+        })
+        it('If anything another than number was in the array, return null', () => {
+            expect(funcs.averageTestScore([93,'94',93])).toBe(null);
+        })
+    })
     
 })
