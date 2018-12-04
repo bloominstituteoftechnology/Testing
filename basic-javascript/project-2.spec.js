@@ -24,7 +24,7 @@ describe('project-2.js', () => {
     });
   });
   describe('isInRange()', () => {
-    it('should return true if 10 || 5', () => {
+    it('should return true if in betweeen 20 and 50', () => {
       expect(funcs.isInRange(40)).toBeTruthy();
       expect(funcs.isInRange(10)).toBeFalsy();
       expect(funcs.isInRange(51)).toBeFalsy();

@@ -9,6 +9,9 @@ describe('project-1.js', () => {
     it('should return zero when called with no value', () => {
       expect(helpers.multiplyByTen()).toBe(0);
     });
+    it('should call an error if called with string', () => {
+      expect(() => helpers.multiplyByTen('5').toBe(105));
+    });
   });
   describe('subtractFive()', () => {
     it('should return provided number minus 5', () => {
