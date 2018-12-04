@@ -134,6 +134,9 @@ const addItemToFront = (arr, item) => {
 
 const wordsToSentence = words => {
   let newSentence = '';
+  if (!words) {
+    return null;
+  }
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;

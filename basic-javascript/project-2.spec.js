@@ -173,5 +173,15 @@ describe('project-2', () => {
             expect(funcs.addItemToFront([3,53,2,4])).toEqual([3,53,2, 4]);
         })
     })
+
+    describe('wordsToSentence Function', () => {
+        it('If array of words provide, it should return a sentence', () => {
+            expect(funcs.wordsToSentence(['kam','is','best','PM'])).toBe('kam is best PM')
+        })
+        it('If not array of world was provide, it should return null', () => {
+            expect(funcs.wordsToSentence()).toBe(null);
+        })
+    })
+    
     
 })
