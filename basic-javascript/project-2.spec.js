@@ -25,12 +25,15 @@ describe('funcs', () => {
             expect(funcs.greeting('German')).toBe('Guten Tag!');
             expect(funcs.greeting('Spanish')).toBe('Hola!');
             expect(funcs.greeting('English')).toBe('Hello!');
+            expect(funcs.greeting()).toBe('Hello!');
+            expect(funcs.greeting(5)).toBe('Hello!');
         });
     })
 
     describe('isTenOrFive', () => {
         test('is it 10 or 5', () => {
             expect(funcs.isTenOrFive(5)).toBeTruthy();
+            expect(funcs.isTenOrFive(2)).toBeFalsy();
 
         });
     })
@@ -38,6 +41,7 @@ describe('funcs', () => {
     describe('isInRange', () => {
         test('is it in range', () => {
             expect(funcs.isInRange(30)).toBeTruthy();
+            expect(funcs.isInRange(10)).toBeFalsy();
 
         });
     })
@@ -45,6 +49,7 @@ describe('funcs', () => {
     describe('isInteger', () => {
         test('is it a integer', () => {
             expect(funcs.isInteger(30)).toBeTruthy();
+            expect(funcs.isInteger(30.5)).toBeFalsy();
 
         });
     })
@@ -55,6 +60,8 @@ describe('funcs', () => {
             expect(funcs.fizzBuzz(5)).toBe('buzz');
             expect(funcs.fizzBuzz(3)).toBe('fizz');
             expect(funcs.fizzBuzz(2)).toBe(2);
+            expect(funcs.fizzBuzz('hello')).toBeTruthy();
+            expect(funcs.fizzBuzz(1)).toBeTruthy();
         });
     })
 
@@ -112,6 +119,7 @@ describe('funcs', () => {
     describe('contains', () => {
         test('contains items!', () => {
             expect(funcs.contains([1,2,3], 3)).toBeTruthy();
+            expect(funcs.contains([1,2,3], 4)).toBeFalsy();
         });
     })
 

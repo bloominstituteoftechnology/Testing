@@ -6,11 +6,12 @@ describe('jest', () => {
 
     });
 });
+  
 
 describe('helpers', () => {
-    beforeEach(() => {
-        console.log('running');
-    })
+    // beforeEach(() => {
+    //     console.log('running');
+    // })
 
     describe('multiplyByTen', () => {
         test('multiples by 10', () => {
@@ -33,6 +34,7 @@ describe('helpers', () => {
         test('check if same length', () => {
             // expect(helpers.areSameLength('abc', 'bgv').toHaveLength(3));
             expect(helpers.areSameLength('hello', 'words')).toBeTruthy();
+            expect(helpers.areSameLength('hello', 'word')).toBeFalsy();
         });
     })
 
