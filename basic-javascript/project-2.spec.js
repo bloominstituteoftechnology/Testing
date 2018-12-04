@@ -95,19 +95,22 @@ describe('project-2.js', () => {
   describe('incrementByOne()', () => {
     it('should return array with one more value', () => {
       const arr = [1, 2, 3, 4, 5];
-      expect(funcs.incrementByOne(arr)).toBe(arr);
+      const result = [2, 3, 4, 5, 6];
+      expect(funcs.incrementByOne(arr)).toEqual(result);
     });
   });
   describe('addItemToArray()', () => {
     it('should return array with item added to end', () => {
       const arr = [1, 2, 3, 4, 5];
-      expect(funcs.addItemToArray(arr, 'item')).toBe(arr);
+      const result = [1, 2, 3, 4, 5, 'item'];
+      expect(funcs.addItemToArray(arr, 'item')).toEqual(result);
     });
   });
   describe('addItemToFront()', () => {
     it('should return array with item added to front', () => {
       const arr = [1, 2, 3, 4, 5];
-      expect(funcs.addItemToFront(arr, 'item')).toBe(arr);
+      const result = ['item', 1, 2, 3, 4, 5];
+      expect(funcs.addItemToFront(arr, 'item')).toEqual(result);
     });
   });
   describe('wordsToSentence()', () => {
@@ -127,23 +130,23 @@ describe('project-2.js', () => {
       let item = 'that';
       expect(funcs.contains(sentence, item)).toBeFalsy();
     });
-    describe('addNumbers()', () => {
-      it('should return sum of numbers', () => {
-        let numbers = [1, 2, 3, 4, 5];
-        expect(funcs.addNumbers(numbers)).toBe(15);
-      });
+  });
+  describe('addNumbers()', () => {
+    it('should return sum of numbers', () => {
+      let numbers = [1, 2, 3, 4, 5];
+      expect(funcs.addNumbers(numbers)).toBe(15);
     });
-    describe('averageTestScore()', () => {
-      it('should return average test score', () => {
-        let numbers = [50, 80, 90, 65, 50];
-        expect(funcs.averageTestScore(numbers)).toBe(67);
-      });
+  });
+  describe('averageTestScore()', () => {
+    it('should return average test score', () => {
+      let numbers = [50, 80, 90, 65, 50];
+      expect(funcs.averageTestScore(numbers)).toBe(67);
     });
-    describe('largestNumber()', () => {
-      it('should return largest number', () => {
-        let numbers = [50, 80, 90, 65, 50];
-        expect(funcs.largestNumber(numbers)).toBe(90);
-      });
+  });
+  describe('largestNumber()', () => {
+    it('should return largest number', () => {
+      let numbers = [50, 80, 90, 65, 50];
+      expect(funcs.largestNumber(numbers)).toBe(90);
     });
   });
 });
