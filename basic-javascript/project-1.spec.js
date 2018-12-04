@@ -25,7 +25,12 @@ describe('testing project-1.js', () => {
         it('should ensure string lengths are equal', () => {
             // const expected = true;
             const actual = helpers.areSameLength('book', 'hola');
-            expect(actual).toBeTruthy();
+            expect(actual).toBe(true);
+        })
+
+        it('should return false when strings of different lengths are input', () => {
+            const actual = helpers.areSameLength('cup', 'bowl');
+            expect(actual).toBe(false);
         })
     })
 
@@ -33,7 +38,7 @@ describe('testing project-1.js', () => {
         it('should ensure values are equal', () => {
             // const expected = true;
             const actual = helpers.areEqual(5, 5);
-            expect(actual).toBeTruthy();
+            expect(actual).toBe(true);
         })
     })
 
@@ -99,6 +104,11 @@ describe('testing project-1.js', () => {
             const actual = helpers.isEven(6);
             expect(actual).toEqual(expected);
         })
+
+        it('should return false if the input is odd', () => {
+            const actual = helpers.isEven(5);
+            expect(actual).toBe(false);
+        })
     })
 
     describe('isOdd', () => {
@@ -106,6 +116,11 @@ describe('testing project-1.js', () => {
             const expected = true;
             const actual = helpers.isOdd(5);
             expect(actual).toEqual(expected);
+        })
+
+        it('should return false if an input is even', () => {
+            const actual = helpers.isOdd(4);
+            expect(actual).toBe(false);
         })
     })
 
