@@ -121,4 +121,55 @@ describe("project-2.js functions", () => {
       expect(Array.isArray(funcs.addItemToArray([1, 2, 3], 4))).toBe(true);
     });
   });
+
+  describe("wordsToSentence()", () => {
+    it("should return a string", () => {
+      expect(typeof funcs.wordsToSentence("hello world")).toBe("string");
+    });
+  });
+
+  describe("contains()", () => {
+    const arr = [1, 2, 3];
+
+    it("should return a boolean", () => {
+      expect(typeof funcs.contains(arr, 3)).toBe("boolean");
+    });
+
+    it("should be true if the array contains the second argument's value", () => {
+      expect(funcs.contains(arr, 1)).toBe(true);
+    });
+  });
+
+  describe("addNumbers()", () => {
+    const numbers = [1, 2, 3, 4];
+    it("should return a number", () => {
+      expect(typeof funcs.addNumbers(1234)).toBe("number");
+    });
+
+    it("should add the received array of numbers", () => {
+      expect(funcs.addNumbers(numbers)).toEqual(10);
+    });
+  });
+
+  describe("averageTestScore()", () => {
+    const scores = [90, 87, 65, 80, 79];
+    it("should return a number", () => {
+      expect(typeof funcs.averageTestScore(scores)).toBe("number");
+    });
+    it("should return the average of the given array of test scores", () => {
+      expect(funcs.averageTestScore(scores)).toEqual(80.2);
+    });
+  });
+
+  describe("largestNumber()", () => {
+    const numbers = [1, 2, 3, 4, 5];
+
+    it("should return a number", () => {
+      expect(typeof funcs.largestNumber(numbers)).toBe("number");
+    });
+
+    it("should return the largest integer", () => {
+      expect(funcs.largestNumber(numbers)).toBe(5);
+    });
+  });
 });
