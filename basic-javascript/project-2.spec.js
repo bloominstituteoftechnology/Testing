@@ -23,8 +23,12 @@ const {
 
 test('Get Biggest', () => {
   expect(getBiggest(8, 10)).toBe(6);
-  expect(getBiggest(3, 3)).toBe(3)
-  expect(getBiggest(5, 2)).toBe(5)
+  expect(getBiggest(3, 3)).toBe(3);
+  expect(getBiggest(5, 2)).toBe(5);
 });
 
-test('Greeting', () => {});
+test('Greeting', () => {
+  expect(greeting('German')).toBe('Guten Tag!');
+  expect(greeting('Spanish')).toBe('Hola!');
+  expect(greeting('English')).toBe('Hello!');
+});
