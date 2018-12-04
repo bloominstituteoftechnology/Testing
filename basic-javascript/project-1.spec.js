@@ -2,16 +2,14 @@ const helpers = require("./project-1");
 
 // start testing!
 describe("Helpers", () => {
+  // note: I intentionally wrote more lines of code per test than necessary to make this project more interesting and less tedious. the first test is how they would all ideally be written,
+  // which is how all tests in arrays.spec and objects.spec are(last I checked) written
   describe("multiplyByTen", () => {
-    test("multiples num by 10", () => {
-      // Arrange:
-      const input = 10;
-      const expected = 100;
-      // Act:
-      const result = helpers.multiplyByTen(input);
-
-      // Expect:
-      expect(result).toBe(expected);
+    it("multiples num by 10", () => {
+      //ideally the function would already been deconstructed off the helpers file at the top of the page along with all others
+      // ex: const {multiplyByTen, subtractFive, [etc...]} = helpers
+      const { multiplyByTen } = helpers;
+      expect(multiplyByTen(5)).toBe(50);
     });
   });
 
