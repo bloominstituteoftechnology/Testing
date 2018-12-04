@@ -264,3 +264,159 @@ describe('cube', () => {
     expect(twentySeven).toEqual(27);
   });
 });
+
+describe('raiseToPower', () => {
+  it('returns a num raised to an exponent', () => {
+    // arrange
+    const raiseToPower = helpers.raiseToPower;
+
+    //act
+    const numOne = 3;
+    const exponentOne = 3;
+
+    const twentySeven = raiseToPower(numOne, exponentOne);
+
+    //assert
+    expect(twentySeven).toEqual(27);
+  });
+});
+
+describe('roundNumber', () => {
+  it('returns a whole number given a number', () => {
+    // arrange
+    const roundNumber = helpers.roundNumber;
+
+    //act
+    const numOne = 3.25;
+
+    const three = roundNumber(numOne);
+
+    //assert
+    expect(three).toEqual(3);
+  });
+});
+
+describe('roundUp', () => {
+  it('returns a whole number given a number, rounding up', () => {
+    // arrange
+    const roundUp = helpers.roundUp;
+
+    //act
+    const numOne = 3.25;
+
+    const four = roundUp(numOne);
+
+    //assert
+    expect(four).toEqual(4);
+  });
+});
+
+describe('addExclamationPoint', () => {
+  it('Adds an exclamation point to a string and returns new string', () => {
+    // arrange
+    const addExclamationPoint = helpers.addExclamationPoint;
+
+    //act
+    const strOne = "You're the best";
+
+    const exclamationAdded = addExclamationPoint(strOne);
+
+    //assert
+    expect(exclamationAdded).toBe("You're the best!");
+  });
+});
+
+describe('combineNames', () => {
+  it('Given two strings it combines and returns them as one', () => {
+    // arrange
+    const combineNames = helpers.combineNames;
+
+    //act
+    const strOne = "You're the best";
+    const strTwo = 'around!';
+
+    const oneName = combineNames(strOne, strTwo);
+
+    //assert
+    expect(oneName).toBe("You're the best around!");
+  });
+});
+
+describe('getGreeting', () => {
+  it(`Adds 'hello' in front of input string`, () => {
+    // arrange
+    const getGreeting = helpers.getGreeting;
+
+    //act
+    const strOne = 'Baloney';
+
+    const helloName = getGreeting(strOne);
+
+    //assert
+    expect(helloName).toBe('Hello Baloney!');
+  });
+});
+
+describe('getRectangleArea', () => {
+  it(`multiplies two nums`, () => {
+    // arrange
+    const getRectangleArea = helpers.getRectangleArea;
+
+    //act
+    const numOne = 5;
+    const numTwo = 3;
+
+    const fifteen = getRectangleArea(numOne, numTwo);
+
+    //assert
+    expect(fifteen).toEqual(15);
+  });
+});
+
+describe('getTriangleArea', () => {
+  it(`multiplies base * height * 0.5`, () => {
+    // arrange
+    const getTriangleArea = helpers.getTriangleArea;
+
+    //act
+    const numOne = 5;
+    const numTwo = 2;
+
+    const five = getTriangleArea(numOne, numTwo);
+
+    //assert
+    expect(five).toEqual(5);
+  });
+});
+
+describe('getCircleArea', () => {
+  it(`multiplies pi * radius squared`, () => {
+    // arrange
+    const getCircleArea = helpers.getCircleArea;
+
+    //act
+    const numOne = 5;
+
+    const areaOfCircleWithRadiusFive = getCircleArea(numOne);
+
+    //assert
+    expect(areaOfCircleWithRadiusFive).toEqual(78.53981633974483);
+  });
+});
+
+describe('getRectangularPrismVolume', () => {
+  it(`multiplies three nums together`, () => {
+    // arrange
+    const getRectangularPrismVolume = helpers.getRectangularPrismVolume;
+
+    //act
+    const numOne = 5;
+    const numTwo = 2;
+    const numThree = 3;
+
+    const thirty = getRectangularPrismVolume(numOne, numTwo, numThree);
+
+    //assert
+    expect(thirty).toEqual(30);
+  });
+});
