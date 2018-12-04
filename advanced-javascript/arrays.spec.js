@@ -1,4 +1,4 @@
-const arrayFunctions = require('./arrays');
+const arrF = require('./arrays')
 
 // we've gone ahead and gotten a start here for you,
 // except, for some reason, none of our current assertions are working.
@@ -8,10 +8,26 @@ const arrayFunctions = require('./arrays');
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
-  describe('map', () => {
+  describe('each', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
-    });
-  });
-});
+      const each = arrF.each
+      expect(typeof each).toBe('function')
+    })
+    it('should accept an array and a callback function', () => {
+      const elements = [ 3, 4, 23, 3 ]
+      const cb = element => {
+        element * 2
+      }
+      expect(elements.length).toBeGreaterThan(0)
+      expect(typeof cb).toBe('function')
+    })
+
+    it('should invoke the callback function at least once', () => {
+      const mockCallback = jest.fn()
+
+      const elements = [3,4,3,3]
+      arrF.each(elements, mockCallback)
+      expect(mockCallback).toHaveBeenCalled()
+    })
+  })
+})
