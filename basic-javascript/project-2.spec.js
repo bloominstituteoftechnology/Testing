@@ -58,3 +58,55 @@ describe('greeting', () => {
     expect(greeting(';lkjafoiehafpoieaiea')).toBe('Hello!')
   })
 })
+
+describe('isTenOrFive', () => {
+  test('returns true if param is 5', () => {
+    expect(isTenOrFive(5)).toBe(true)
+  })
+
+  test('returns true if param is 10', () => {
+    expect(isTenOrFive(10)).toBe(true)
+  })
+
+  test('returns true if param is not 5 or 10', () => {
+    expect(isTenOrFive(9)).toBe(false)
+  })
+})
+
+describe('isInRange', () => {
+  test('returns true if param is 5', () => {
+    expect(isInRange(5)).toBe(false)
+  })
+
+  test('returns true if param is 25', () => {
+    expect(isInRange(25)).toBe(true)
+  })
+})
+
+describe('isInteger', () => {
+  test('returns true if param is integer', () => {
+    expect(isInteger(5)).toBe(true)
+  })
+
+  test('returns false if param is not integer', () => {
+    expect(isInteger('25')).toBe(false)
+  })
+})
+
+describe('fizzBuzz', () => {
+  test('returns fizzbuzz', () => {
+    expect(fizzBuzz(15)).toBe('fizzbuzz')
+  })
+
+  test('returns fizz', () => {
+    expect(fizzBuzz(3)).toBe('fizz')
+  })
+
+  test('returns buzz', () => {
+    expect(fizzBuzz(10)).toBe('buzz')
+  })
+
+  test('returns number', () => {
+    expect(fizzBuzz(7)).toBe(7)
+  })
+})
