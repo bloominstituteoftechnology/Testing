@@ -10,6 +10,9 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
+  if (typeof language !== 'string'){
+    return null;
+  }
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -21,6 +24,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if (typeof num !== 'number'){
+    return null;
+  }
   if (num === 10 || num === 5) {
     return true;
   }
