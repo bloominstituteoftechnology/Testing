@@ -28,18 +28,13 @@ const {
 
 test('jest working', () => {})
 
-// Test Type of Return Value
-
 const returnsNumber = func => {
-    let result = func(5)
-    result ? result : result = func(5, 2)
-    result ? result : result = func(1, 2, 3)
+    let result = func(5, 1, 2)
     expect(typeof result === 'number').toBeTruthy()
 }
 
 const returnsString = func => {
-    let result = func('test')
-    result.includes('undefined') ? result = func('infinite', 'jest') : result
+    let result = func('test', 'foo')
     expect(typeof result === 'string').toBeTruthy()
 }
 
@@ -68,14 +63,11 @@ boolNum.forEach(func => test('returns a boolean', () => returnsBooleanNum(func))
 const validateResults = expected => {
     let actual = []
     nums.forEach(func => {
-        let result = func(5)
-        result ? result : result = func(5, 2)
-        result ? result : result = func(1, 2, 3)
+        let result = func(5, 2, 3)
         actual.push(result)
     })
     strs.forEach(func => {
-        let result = func('test')
-        result.includes('undefined') ? result = func('infinite', 'jest') : result
+        let result = func('test', 'foo')
         actual.push(result)
     })
     boolStr.forEach(func => {
@@ -89,5 +81,5 @@ const validateResults = expected => {
     expect(actual).toEqual(expected)
 }
 
-let expected = [50,-4,25,125,5,5,78.53981633974483,7,3,2.5,10,1,25,10,5,6,'test!','infinite jest','Hello test!',true,true,true,false,true,false ]
+let expected = [50, 0, 25, 125, 5, 5, 78.53981633974483, 7, 3, 2.5, 10, 1, 25, 10, 5, 30, "test!", "test foo", "Hello test!", true, true, true, false, true, false]
 test('validate results', () => validateResults(expected))
