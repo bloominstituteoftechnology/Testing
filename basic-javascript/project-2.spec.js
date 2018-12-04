@@ -151,33 +151,45 @@ describe('Project 2', () => {
 
     describe('13-18', () => {
         // 13.
-        test('', () => {
-
+        test('addItemToFront', () => {
+            const actual = addItemToFront([5,9,10], 11);
+            expect(actual).toEqual([11,5,9,10]);
         });
 
         // 14.
-        test('', () => {
-
+        test('wordsToSentence', () => {
+            const actual = wordsToSentence(['Hello', 'how', 'are', 'you?']);
+            expect(actual).toBe('Hello how are you?');
         });
 
         // 15.
-        test('', () => {
-
+        describe('contains', () => {
+            test('does contain', () => {
+                const actual = contains([1,2,3], 3);
+                expect(actual).toBeTruthy();
+            });
+            test('does not contain', () => {
+                const actual = contains([1,2,3], 4);
+                expect(actual).toBeFalsy();
+            });
         });
 
         // 16.
-        test('', () => {
-
+        test('addNumbers', () => {
+            const actual = addNumbers([2,5,3]);
+            expect(actual).toBe(10);
         });
 
         // 17.
-        test('', () => {
-
+        test('averageTestScore', () => {
+            const actual = averageTestScore([100,80,90]);
+            expect(actual).toBe(90);
         });
 
         // 18.
-        test('', () => {
-
+        test('largestNumber', () => {
+            const actual = largestNumber([20,50,100]);
+            expect(actual).toBe(100);
         });
     });
 });
