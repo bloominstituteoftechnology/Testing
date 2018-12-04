@@ -13,9 +13,21 @@ describe('testing project-2.js', () => {
     })
 
     describe('greeting', () => {
-        it('should return a greeting in the specified language', () => {
+        it('should return a greeting in Spanish', () => {
             const expected = 'Hola!';
             const actual = funcs.greeting('Spanish');
+            expect(actual).toEqual(expected);
+        })
+
+        it('should return the greeting in German', () => {
+            const expected = 'Guten Tag!';
+            const actual = funcs.greeting('German');
+            expect(actual).toEqual(expected);
+        })
+
+        it('should return Hello! if no input specified', () => {
+            const expected = 'Hello!';
+            const actual = funcs.greeting(null);
             expect(actual).toEqual(expected);
         })
     })
@@ -26,6 +38,11 @@ describe('testing project-2.js', () => {
             const actual = funcs.isTenOrFive(5);
             expect(actual).toEqual(expected);
         })
+
+        it('should return false if the number is not 10 or 5', () => {
+            const actual = funcs.isTenOrFive(4);
+            expect(actual).toBe(false);
+        })
     })
 
     describe('isInRange', () => {
@@ -33,6 +50,11 @@ describe('testing project-2.js', () => {
             const expected = true;
             const actual = funcs.isInRange(30);
             expect(actual).toEqual(expected);
+        })
+
+        it('should return false given a number outside the range', () => {
+            const actual = funcs.isInRange(15);
+            expect(actual).toBe(false);
         })
     })
 
@@ -42,12 +64,29 @@ describe('testing project-2.js', () => {
             const actual = funcs.isInteger(4);
             expect(actual).toEqual(expected);
         })
+
+        it('should return false if the input is not an integer', () => {
+            const actual = funcs.isInteger(4.5);
+            expect(actual).toBe(false);
+        })
     })
 
     describe('fizzBuzz', () => {
-        it('should perform standard fizzbuzz operations', () => {
+        it('should return fizzbuzz if divisible by 5 and 3', () => {
             const expected = 'fizzbuzz';
             const actual = funcs.fizzBuzz(15);
+            expect(actual).toEqual(expected);
+        })
+
+        it('should return buzz if divisible by 5', () => {
+            const expected = 'buzz';
+            const actual = funcs.fizzBuzz(20);
+            expect(actual).toEqual(expected);
+        })
+
+        it('should return fizz if divisible by 3', () => {
+            const expected = 'fizz';
+            const actual = funcs.fizzBuzz(6);
             expect(actual).toEqual(expected);
         })
     })
@@ -57,6 +96,11 @@ describe('testing project-2.js', () => {
             const expected = true;
             const actual = funcs.isPrime(7);
             expect(actual).toEqual(expected);
+        })
+
+        it('should return false if the number is not a prime number', () => {
+            const actual = funcs.isPrime(12);
+            expect(actual).toBe(false);
         })
     })
 
