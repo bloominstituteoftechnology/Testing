@@ -18,23 +18,31 @@ describe('project-2.js', () => {
   });
   describe('isTenOrFive()', () => {
     it('should return true if 10 || 5', () => {
-      expect(funcs.isTenOrFive(10)).toBeTruthy();
-      expect(funcs.isTenOrFive(5)).toBeTruthy();
-      expect(funcs.isTenOrFive(4)).toBeFalsy();
+      expect(funcs.isTenOrFive(10)).toBe(true);
+      expect(funcs.isTenOrFive(5)).toBe(true);
+    });
+    it('should return false if not 10 || 5', () => {
+      expect(funcs.isTenOrFive(4)).toBe(false);
     });
   });
   describe('isInRange()', () => {
     it('should return true if in betweeen 20 and 50', () => {
-      expect(funcs.isInRange(40)).toBeTruthy();
-      expect(funcs.isInRange(10)).toBeFalsy();
-      expect(funcs.isInRange(51)).toBeFalsy();
+      expect(funcs.isInRange(40)).toBe(true);
+    });
+    it('should return false if not between 20 and 50', () => {
+      expect(funcs.isInRange(10)).toBe(false);
+      expect(funcs.isInRange(51)).toBe(false);
     });
   });
   describe('isInteger()', () => {
     it('should return true if integer', () => {
-      expect(funcs.isInteger(40)).toBeTruthy();
-      expect(funcs.isInteger('10')).toBeFalsy();
-      expect(funcs.isInteger(51.5)).toBeFalsy();
+      expect(funcs.isInteger(40)).toBe(true);
+    });
+    it('should return false if a float', () => {
+      expect(funcs.isInteger(51.5)).toBe(false);
+    });
+    it('should return false if a string', () => {
+      expect(funcs.isInteger('10')).toBe(false);
     });
   });
   describe('fizzBuzz()', () => {
@@ -46,6 +54,9 @@ describe('project-2.js', () => {
     });
     it('should return buzz', () => {
       expect(funcs.fizzBuzz(10)).toBe('buzz');
+    });
+    it('should return value if not divisable by 3 or 5', () => {
+      expect(funcs.fizzBuzz(2)).toBe(2);
     });
   });
   describe('isPrime()', () => {
