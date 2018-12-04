@@ -38,3 +38,26 @@ test('Is Ten of Five', () => {
   expect(isTenOrFive(10)).toBe(true);
   expect(isTenOrFive(4)).toBe(false);
 });
+
+test('Is In Range', () => {
+  expect(isInRange(30)).toBe(true);
+  expect(isInRange(1)).toBe(false);
+  expect(isInRange(58)).toBe(false);
+});
+
+test('isInteger', () => {
+  expect(isInteger(1)).toBe(true);
+  expect(isInteger(1.5)).toBe(false);
+});
+
+test('fizzBuzz', () => {
+  expect(fizzBuzz(30)).toBe('fizzbuzz');
+  expect(fizzbuzz(5)).toBe('buzz');
+  expect(fizzBuzz(3)).toBe('fizz');
+  expect(fizzBuzz(1)).toBe(1);
+});
+
+test('Is Prime', () => {
+  expect(isPrime(7)).toBe(true);
+  expect(isPrime(2)).toBe(false);
+});
