@@ -68,3 +68,16 @@ describe('isTenOrFive function', () => {
     expect(isTenOrFive(10)).toBe(true);
     expect(isTenOrFive(5)).toBe(true);
   });
+
+  it('should return false if arg is not 10 or 5', () => {
+    expect(isTenOrFive(1)).toBe(false);
+    expect(isTenOrFive(500)).toBe(false);
+    expect(isTenOrFive('10')).toBe(false);
+    expect(isTenOrFive('5')).toBe(false);
+    expect(isTenOrFive([5])).toBe(false);
+    expect(isTenOrFive({ key: 5 })).toBe(false);
+    expect(isTenOrFive(null)).toBe(false);
+    expect(isTenOrFive(true)).toBe(false);
+    expect(isTenOrFive(NaN)).toBe(false);
+  });
+});
