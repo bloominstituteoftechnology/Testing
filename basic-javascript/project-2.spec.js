@@ -34,4 +34,22 @@ describe('project-2', () => {
             expect(funcs.greeting('german')).toBe('Guten Tag!');
         })
     })
+
+    describe('isTenOrFive Function', () => {
+        it('If number equal five, it should return true', () => {
+            expect(funcs.isTenOrFive(5)).toBe(true);
+        })
+        it('If number equal ten, it should return true', () => {
+            expect(funcs.isTenOrFive(10)).toBe(true);
+        })
+        it('If number equal to number other than ten, it should return false', () => {
+            expect(funcs.isTenOrFive(15)).toBe(false);
+        })
+        it('if number is equal to string or anything other than number, it should return null', () => {
+            expect(funcs.isTenOrFive('15')).toBe(null);
+            expect(funcs.isTenOrFive({})).toBe(null);
+            expect(funcs.isTenOrFive('sfs/./')).toBe(null);
+            expect(funcs.isTenOrFive()).toBe(null);
+        })
+    })
 })

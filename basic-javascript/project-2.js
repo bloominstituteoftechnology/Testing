@@ -27,6 +27,8 @@ const greeting = language => {
 const isTenOrFive = num => {
   if (num === 10 || num === 5) {
     return true;
+  } else if (typeof num !== 'number') {
+    return null;
   }
   return false;
 };
