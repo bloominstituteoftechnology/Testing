@@ -59,7 +59,7 @@ boolStr.forEach(func => test('returns a boolean', () => returnsBooleanStr(func))
 
 const boolNum = [lessThanNinety, greaterThanFifty, isEven, isOdd]
 boolNum.forEach(func => test('returns a boolean', () => returnsBooleanNum(func)))
-
+ 
 const validateResults = expected => {
     let actual = []
     nums.forEach(func => {

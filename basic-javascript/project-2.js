@@ -53,6 +53,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (typeof num !== 'number' || isNaN(num)) {
+    throw new Error()
+  }
   if (num < 0) {
     return false;
   }
