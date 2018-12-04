@@ -27,11 +27,11 @@ const {
 } = require('./project-1');
 
 // start testing!
-describe('Multiply by ten', ()=>{
-it('multiplys a number by ten', ()=>{
-  expect(2+2).toBe(4)
+describe('multiplyByTen', ()=>{
+  it('multiplys a number by ten', ()=>{
+    expect(2+2).toBe(4)
 
-}) 
+  }) 
 
   test('multiplyByTen', () => {
 
@@ -188,14 +188,14 @@ it('adds two numbers', ()=>{
   })
 })
 describe('subtract', ()=>{
-it('subtracts one number from another number', ()=>{
-  expect(subtract).toBe(0)
+  it('subtracts one number from another number', ()=>{
+    expect(subtract(2,2)).toBe(0)
 
-}) 
+  }) 
 
-  test('5 subtracted from 4 = -1', () => {
+  test('5 subtracted from 4 is -1', () => {
 
-    const input = [5, 4];
+    const input = [4, 5];
 
     const expected = -1;
 
@@ -228,7 +228,7 @@ it('multiplys a number by another number', ()=>{
 
 }) 
 
-  test('test', () => {
+  test('3 multiplied by 5 is 15', () => {
 
     const input = [3, 5];
 
@@ -272,7 +272,7 @@ it('return true if even', ()=>{
 
     const result = isEven(input)
 
-    expect(result).toBe(expected)
+    expect(result).toBeEven(expected)
   })
 
 })
@@ -307,22 +307,24 @@ it('return true if odd', ()=>{
     expect(result).toBe(expected)
   })
 })
+
 describe('square', ()=>{
 it('description', ()=>{
   expect(2+2).toBe(4)
 
 }) 
 
-  test('test', () => {
-
+  test('should return the square of an input', () => {
     const input = 5;
-
     const expected = 50;
-
     const result = square(input)
-
     expect(result).toBe(expected)
+    expect(5).toBe(25)
+    expect(3).toBe(9)
+    expect(4).toBe(16)
   })
+
+
 })
 describe('cube', ()=>{
 it('description', ()=>{
