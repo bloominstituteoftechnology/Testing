@@ -1,3 +1,255 @@
 const helpers = require('./project-1');
 
 // start testing!
+describe('project-1', () => {
+   
+    describe('multiplyByTen() ', () => {
+        it('should provide right answer when mutiply by 10', () => {
+            expect(helpers.multiplyByTen(10)).toEqual(100);
+        });
+
+        it('should return 0 when no number is calling', () => {
+            expect(helpers.multiplyByTen()).toBe(0);
+        })
+        it('should throw err when call other than number', () => {
+            expect(() => {
+                helpers.multiplyByTen('five')})
+                .toThrow();
+            expect(() => {
+                helpers.multiplyByTen('/,.')})
+                .toThrow();
+        })
+    })
+
+    describe('subtractFive() ', () => {
+        it('shou provide right answer when subract 5', () => {
+            expect(helpers.subtractFive(10)).toEqual(5);
+        })
+
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.subtractFive('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('areSameLenghth() ', () => {
+        it('shoud provide right answer when provide same number', () => {
+            expect(helpers.areSameLength(5,5)).toBe(true);
+        })
+    }) 
+
+    describe('areEqual() ', () => {
+        it('should be equal ', () => {
+            expect(helpers.areEqual(5,5)).toBe(true);
+        })
+    })
+
+    describe('lessThanNinety() ', () => {
+        it('lessThanNinety should be true', () => {
+            expect(helpers.lessThanNinety(80)).toBe(true)
+        })
+    })
+
+    describe('greaterThanFifty() ', () => {
+        it('greaterThanFifty should be true', () => {
+            expect(helpers.greaterThanFifty(51)).toBe(true)
+        })
+    })
+
+    describe('add() ', () => {
+        it('should add and answer correct', () => {
+            expect(helpers.add(5, 1)).toEqual(6)
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.add(5, 'ten')
+            }).toThrow();
+        })
+    })
+
+    describe('subtract() ', () => {
+        it('should be able to correctly subtract', () => {
+            expect(helpers.subtract(5,1)).toEqual(4);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.subtract(5, 'ten')
+            }).toThrow();
+        })
+    })
+
+    describe('divide() ', () => {
+        it('should be able to correctly divide', () => {
+            expect(helpers.divide(6,2)).toEqual(3);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.divide(5, 'ten')
+            }).toThrow();
+        })
+    })
+
+    describe('multiply() ', () => {
+        it('should be able to correctly multiply', () => {
+            expect(helpers.multiply(6,2)).toEqual(12);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.multiply(5, 'ten')
+            }).toThrow();
+        })
+    })
+    
+    describe('getRemainder() ', () => {
+        it('should be able to correctly get remainder', () => {
+            expect(helpers.getRemainder(5,2)).toEqual(1);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getRemainder(5, 'ten')
+            }).toThrow();
+        })
+    })
+
+    describe('isEven() ', () => {
+        it('should be able to correctly get isEven', () => {
+            expect(helpers.isEven(4)).toBe(true);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.isEven('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('isOdd() ', () => {
+        it('should be able to correctly get isOdd', () => {
+            expect(helpers.isOdd(5)).toBe(true);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.isOdd('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('square() ', () => {
+        it('should be able to correctly square', () => {
+            expect(helpers.square(5)).toEqual(25);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.square('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('cube() ', () => {
+        it('should be able to correctly square', () => {
+            expect(helpers.cube(5)).toEqual(125);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.cube('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('raiseToPower() ', () => {
+        it('should be able to correctly raiseToPower', () => {
+            expect(helpers.raiseToPower(5, 2)).toEqual(25);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.raiseToPower('ten', 2)
+            }).toThrow();
+        })
+    })
+
+    describe('roundNumber() ', () => {
+        it('should be able to correctly round number', () => {
+            expect(helpers.roundNumber(5.25)).toEqual(5);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.roundNumber('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('roundUp() ', () => {
+        it('should be able to correctly roundUp', () => {
+            expect(helpers.roundUp(5.25)).toEqual(6);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.roundUp('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('addExclamationPoint() ', () => {
+        it('should be able to correctly addExclamationPoint', () => {
+            expect(helpers.addExclamationPoint('hello')).toEqual('hello!');
+        })
+    })
+
+    describe('combineNames() ', () => {
+        it('should be able to correctly combine Name', () => {
+            expect(helpers.combineNames('yanrong', 'xu')).toEqual('yanrong xu');
+        })
+    })
+
+    describe('getGreeting() ', () => {
+        it('should be able to correctly getGreeting', () => {
+            expect(helpers.getGreeting('yanrong')).toEqual('Hello yanrong!');
+        })
+    })
+
+    describe('getRectangleArea() ', () => {
+        it('should be able to correctly get rectangle Area', () => {
+            expect(helpers.getRectangleArea(4,5)).toEqual(20);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getRectangleArea('ten', 5)
+            }).toThrow();
+        })
+    })
+
+    describe('getTriangleArea() ', () => {
+        it('should be able to correctly get triangle Area', () => {
+            expect(helpers.getTriangleArea(4,5)).toEqual(10);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getTriangleArea('ten', 5)
+            }).toThrow();
+        })
+    })
+
+    describe('getCircleArea() ', () => {
+        it('should be able to correctly get circle Area', () => {
+            expect(helpers.getCircleArea(4)).toEqual(50);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getCircleArea('ten')
+            }).toThrow();
+        })
+    })
+
+    describe('getRectangularPrismVolume() ', () => {
+        it('should be able to correctly get Rectangular Prism Volume', () => {
+            expect(helpers.getRectangularPrismVolume(4,5,2)).toEqual(40);
+        })
+        it('should throw err when calling other than number', () => {
+            expect(() => {
+                helpers.getRectangularPrismVolume('ten', 3, 'sam')
+            }).toThrow();
+        })
+    })
+
+
+})

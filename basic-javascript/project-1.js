@@ -1,10 +1,19 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+  if (typeof num !== "number") {
+    throw new Error('value must be a number')
+  }
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (typeof num !== 'number') {
+    throw new Error('value must be a number')
+  }
   return num - 5;
 };
 
@@ -31,28 +40,48 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if ( (typeof x && typeof y)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
+
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if ( (typeof x && typeof y)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
+
   return x - y;
 };
 
 const divide = (x, y) => {
+  if ( (typeof x && typeof y)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if ( (typeof x && typeof y)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if ( (typeof x && typeof y)  !== 'number' ) {
+    throw new Error('either x or y should be number')
+  }
   return x % y;
 };
 
 const isEven = num => {
   if (num % 2 === 0) {
     return true;
+  }
+  else if (typeof num !== 'number') {
+    throw new Error('it should be the number')
   }
   return false;
 };
@@ -61,26 +90,44 @@ const isOdd = num => {
   if (num % 2 === 0) {
     return false;
   }
+  else if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return true;
 };
 
 const square = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return num * num;
 };
 
 const cube = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if ( (typeof num !== 'number') || (typeof exponent !== 'number') ) {
+    throw new Error('either x or y should be number')
+  }
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if (typeof num !== 'number') {
+    throw new Error('it should be the number')
+  }
   return Math.ceil(num);
 };
 
@@ -97,18 +144,30 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if ( (typeof length !== 'number') || (typeof width !== 'number') ) {
+    throw new Error('either lenght or width should be number')
+  }
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if ( (typeof base !== 'number') || (typeof height !== 'number') ) {
+    throw new Error('either base or height should be number')
+  }
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  if (typeof radius !== 'number') {
+    throw new Error('it should be the number')
+  }
+  return Math.round(Math.PI * radius * radius);
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if ( (typeof length !== 'number') || (typeof height !== 'number') || (typeof width !== 'number') ) {
+    throw new Error('either base or height should be number')
+  }
   return width * height * length;
 };
 

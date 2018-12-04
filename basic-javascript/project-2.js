@@ -5,6 +5,8 @@ const getBiggest = (x, y) => {
     return x;
   } else if (x === y) {
     return y;
+  } else if (typeof x !=='number' || typeof y !=='number') {
+    return null;
   }
   return y;
 };
@@ -12,8 +14,10 @@ const getBiggest = (x, y) => {
 const greeting = language => {
   switch (language) {
     case 'German':
+    case 'german':
       return 'Guten Tag!';
     case 'Spanish':
+    case 'spanish':
       return 'Hola!';
     default:
       return 'Hello!';
@@ -23,6 +27,8 @@ const greeting = language => {
 const isTenOrFive = num => {
   if (num === 10 || num === 5) {
     return true;
+  } else if (typeof num !== 'number') {
+    return null;
   }
   return false;
 };
@@ -30,6 +36,8 @@ const isTenOrFive = num => {
 const isInRange = num => {
   if (num < 50 && num > 20) {
     return true;
+  } else if (typeof num !== 'number') {
+    return null;
   }
   return false;
 };
@@ -37,6 +45,8 @@ const isInRange = num => {
 const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
+  } else if (typeof num !== 'number') {
+    return null;
   }
   return false;
 };
@@ -48,6 +58,8 @@ const fizzBuzz = num => {
     return 'buzz';
   } else if (num % 3 === 0) {
     return 'fizz';
+  } else if (num % 5 !==0 || num % 3 !==0 || typeof num !== 'number') {
+    return null;
   }
   return num;
 };
@@ -64,40 +76,67 @@ const isPrime = num => {
       return false;
     }
   }
+  if (typeof num !== 'number') {
+    return null;
+  }
   return true;
 };
 
 const returnFirst = arr => {
+  if (arr.length < 1) {
+    return null;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length < 1) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if(!arr) {
+    return null;
+  }
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if (!arr) {
+    return null;
+  }
   for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== 'number') {
+      return null;
+    }
     arr[i]++;
   }
   return arr;
 };
 
 const addItemToArray = (arr, item) => {
+  if(!item) {
+    return arr;
+  }
   arr.push(item);
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
+  if(!item) {
+    return arr;
+  }
   arr.unshift(item);
   return arr;
 };
 
 const wordsToSentence = words => {
   let newSentence = '';
+  if (!words) {
+    return null;
+  }
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
       newSentence += `${words[i]}`;
@@ -109,6 +148,9 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
+  if(!item) {
+    return null;
+  }
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
@@ -124,6 +166,9 @@ const contains = (arr, item) => {
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if(typeof numbers[i] !== 'number') {
+      return null;
+    }
     sumOfNumbers += numbers[i];
   }
   return sumOfNumbers;
@@ -133,6 +178,9 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (typeof testScores[i] !== 'number') {
+      return null;
+    }
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -142,6 +190,9 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null;
+    }
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
