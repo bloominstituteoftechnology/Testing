@@ -77,3 +77,7 @@ test('Return Last', () => {
 test('Get Array Length', () => {
   expect(getArrayLength(['Jonas', 'Henry', 'Norah', 'Gemma', 'Evan'])).toBe(5);
 });
+
+test('Increment By One', () => {
+  expect(incrementByOne([5, 6, 7, 8])).toEqual([6, 7, 8, 9]);
+});
