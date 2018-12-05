@@ -28,10 +28,8 @@ const {
 // start testing!
 
 
-test('jest working', () => {
 
-})
-
+/*
 //number based functions
 const returnsNumber = func => {
     let result = func(3)
@@ -72,6 +70,10 @@ const returnsBooleanNum = func => {
 const boolNum = [lessThanNinety, greaterThanFifty, isEven, isOdd]
 boolNum.forEach(func => test('returns a boolean', () => returnsBooleanNum(func)))
 
+
+*/
+
+
 //check actual vs expected outcomes.
 const validateResults = expected => {
     let actual = []
@@ -91,7 +93,7 @@ const validateResults = expected => {
         actual.push(result)
     })
     boolStr.forEach(func => {
-        let result = func('blah', 'dah')
+        let result = func('xxxtttfffeee', 'xxxtttfffeee')
         actual.push(result)
     })
     boolNum.forEach(func => {
@@ -102,11 +104,17 @@ const validateResults = expected => {
     expect(actual).toEqual(expected)
 }
 
-let expected = [50, -4, 25, 125, 5, 5, 78.53981633974483, 7, 3, 2.5, 10, 1, 25, 10, 5, 6, 'test!', 'blah dah', 'Hello test!', true, true, true, false, true, false]
+let expected = [50, -4, 25, 125, 5, 5, 78.53981633974483, 7, 3, 2.5, 10, 1, 25, 10, 5, 6, 'test!', 'test1 test2', 'Hello test!', true, true, true, false, true, false]
 test('validate results', () => validateResults(expected))
+
+
+
+
 
 //Not sure if the above was true "unit" testing, so redoing this a different way
 
+
+/*
 const helpers = require("./project-1");
 
 describe("multipliesByTen", () => {
@@ -228,3 +236,5 @@ describe("getRectangularPrismVolume", () => {
     const volume = helpers.getRectangularPrismVolume(2, 3, 4);
     expect(volume).toBe(24);
 });
+
+*/
