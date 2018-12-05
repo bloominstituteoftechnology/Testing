@@ -1,3 +1,4 @@
+const { isANumber, isAString, isAnArray, isAnObject, isAfunction, isBoolean } = require('@coetry/simpletypes');
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
@@ -23,6 +24,8 @@ const greeting = language => {
 const isTenOrFive = num => {
   if (num === 10 || num === 5) {
     return true;
+  } else if (isAString(num)) {
+    throw new Error();
   }
   return false;
 };
@@ -30,6 +33,8 @@ const isTenOrFive = num => {
 const isInRange = num => {
   if (num < 50 && num > 20) {
     return true;
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   return false;
 };
@@ -37,6 +42,8 @@ const isInRange = num => {
 const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   return false;
 };
@@ -48,6 +55,8 @@ const fizzBuzz = num => {
     return 'buzz';
   } else if (num % 3 === 0) {
     return 'fizz';
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   return num;
 };
@@ -58,24 +67,36 @@ const isPrime = num => {
   }
   if (num === 1 || num === 0) {
     return false;
+  } else if (!isANumber(num)) {
+    throw new Error();
   }
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
       return false;
     }
   }
+
   return true;
 };
 
 const returnFirst = arr => {
+  if (!isAnArray(arr)) {
+    throw new Error();
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (!isAnArray(arr)) {
+    throw new Error();
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if (!isAnArray(arr)) {
+    throw new Error();
+  }
   return arr.length;
 };
 
