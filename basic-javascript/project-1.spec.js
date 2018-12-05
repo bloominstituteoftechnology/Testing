@@ -9,6 +9,7 @@ describe.only('project-1', ()=>{
 describe('multipyByTen', ()=>{
     it('should multiply num by 10', ()=>{
     const variable = Math.floor(Math.random())
+    
     expect(helpers.multiplyByTen(variable)).toBe(variable * 10)
     
     
