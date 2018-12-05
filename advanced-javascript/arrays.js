@@ -7,6 +7,9 @@ const each = (elements, cb) => {
 };
 
 const map = (elements, cb) => {
+  if (!elements || !cb) {
+    return;
+  }
   const mappedArr = [];
   each(elements, item => {
     mappedArr.push(cb(item));
@@ -56,5 +59,5 @@ module.exports = {
   reduce,
   find,
   filter,
-  flatten,
+  flatten
 };
