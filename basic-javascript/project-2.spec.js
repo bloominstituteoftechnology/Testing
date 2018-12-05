@@ -51,6 +51,12 @@ describe("fizzBuzz", () => {
     const actual = funcs.fizzBuzz(10);
     expect(actual).toEqual(expected);
   });
+
+  it("should check make sure argument is a number", () => {
+    expect(funcs.fizzBuzz("test")).toBe(null);
+    expect(funcs.fizzBuzz("")).toBe(null);
+    expect(funcs.fizzBuzz({})).toBe(null);
+  });
 });
 
 describe("isPrime", () => {

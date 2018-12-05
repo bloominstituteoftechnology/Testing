@@ -15,7 +15,7 @@ describe("multiplyByTen", () => {
     // Act: execute the code you're testing
     const actual = helpers.multiplyByTen(10);
     // Assert: check that it works
-    expect(actual).toEqual(expected);
+    expect(actual).toBe(expected);
   });
 });
 
