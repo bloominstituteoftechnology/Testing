@@ -15,6 +15,8 @@ const greeting = language => {
       return 'Guten Tag!';
     case 'Spanish':
       return 'Hola!';
+    case "Russian":
+      return "Zdrastvuytye!";
     default:
       return 'Hello!';
   }
@@ -68,18 +70,22 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (!Array.isArray(arr)) return null;
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (!Array.isArray(arr)) return null;
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if (!Array.isArray(arr)) return null;
   return arr.length;
 };
 
 const incrementByOne = arr => {
+  if (!Array.isArray(arr)) return null;
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
@@ -87,16 +93,19 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
+  if (!Array.isArray(arr)) return null;
   arr.push(item);
   return arr;
 };
 
 const addItemToFront = (arr, item) => {
+  if (!Array.isArray(arr)) return null;
   arr.unshift(item);
   return arr;
 };
 
 const wordsToSentence = words => {
+  if (!Array.isArray(words)) return null;
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
@@ -109,6 +118,7 @@ const wordsToSentence = words => {
 };
 
 const contains = (arr, item) => {
+  if (!Array.isArray(arr)) return null;
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
@@ -122,6 +132,7 @@ const contains = (arr, item) => {
 };
 
 const addNumbers = numbers => {
+  if (!Array.isArray(numbers)) return null;
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOfNumbers += numbers[i];
@@ -130,6 +141,7 @@ const addNumbers = numbers => {
 };
 
 const averageTestScore = testScores => {
+  if (!Array.isArray(testScores)) return null;
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
@@ -140,7 +152,8 @@ const averageTestScore = testScores => {
 };
 
 const largestNumber = numbers => {
-  let biggestInteger = 0;
+  if (!Array.isArray(numbers)) return null;
+  let biggestInteger = numbers[0];
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
