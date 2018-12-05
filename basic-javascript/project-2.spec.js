@@ -212,3 +212,25 @@ describe('returnLast', () => {
     expect(returnLast(arrOne)).toEqual(arrOne[arrOne.length - 1]);
   });
 });
+
+describe('getArrayLength', () => {
+  // arrange
+  const getArrayLength = funcs.getArrayLength;
+
+  it('returns error if input is not an array', () => {
+    //act
+    const strOne = 'apples';
+
+    //assert
+    expect(() => {
+      getArrayLength(strOne);
+    }).toThrow();
+  });
+  it(`returns the array length given an array`, () => {
+    //act
+    const arrOne = ['pizza', 'burgers'];
+
+    //assert
+    expect(getArrayLength(arrOne)).toEqual(arrOne.length);
+  });
+});

@@ -94,6 +94,9 @@ const returnLast = arr => {
 };
 
 const getArrayLength = arr => {
+  if (!isAnArray(arr)) {
+    throw new Error();
+  }
   return arr.length;
 };
 
