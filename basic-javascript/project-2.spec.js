@@ -184,9 +184,31 @@ describe('returnFirst', () => {
   });
   it(`returns first item in array`, () => {
     //act
-    const numOne = [NaN];
+    const arrOne = ['pizza', 'burgers'];
 
     //assert
-    expect(returnFirst(numOne)).toEqual(numOne[0]);
+    expect(returnFirst(arrOne)).toEqual(arrOne[0]);
+  });
+});
+
+describe('returnLast', () => {
+  // arrange
+  const returnLast = funcs.returnLast;
+
+  it('returns error if input is not an array', () => {
+    //act
+    const strOne = 'apples';
+
+    //assert
+    expect(() => {
+      returnLast(strOne);
+    }).toThrow();
+  });
+  it(`returns the last item in array`, () => {
+    //act
+    const arrOne = ['pizza', 'burgers'];
+
+    //assert
+    expect(returnLast(arrOne)).toEqual(arrOne[arrOne.length - 1]);
   });
 });

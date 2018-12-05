@@ -87,6 +87,9 @@ const returnFirst = arr => {
 };
 
 const returnLast = arr => {
+  if (!isAnArray(arr)) {
+    throw new Error();
+  }
   return arr[arr.length - 1];
 };
 
