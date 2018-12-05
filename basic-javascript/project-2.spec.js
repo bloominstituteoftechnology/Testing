@@ -169,6 +169,7 @@ describe('isInteger', () => {
   });
 })
 
+// fizzBuzz
 describe('fizzBuzz', () => {
 
   it('determines if a parameter a multiple of 3 and/or 5', () => {
@@ -210,20 +211,109 @@ describe('fizzBuzz', () => {
   });
 })
 
-// const isPrime = num => {
-//   if (num < 0) {
-//     return false;
-//   }
-//   if (num === 1 || num === 0) {
-//     return false;
-//   }
-//   for (let i = 2; i < num; i++) {
-//     if (num % i === 0) {
-//       return false;
-//     }
-//   }
-//   return true;
-// };
+  // isPrime
+  describe('isPrime', () => {
+
+    it('determines if a parameter is an integer', () => {
+      expect(isPrime(81749)).toBe(true);
+      expect(isPrime(Math.PI)).toBe(false);
+    });
+  
+    test('returns a boolean', () => {
+      const input1 = Math.random()
+      const result = isPrime(input1);
+      expect(typeof result === 'boolean').toBeTruthy();
+    });
+  
+    test('returns false if the number is less than 2', () => {
+          
+      // Arrange: setup the world
+      const input1 = Math.random() * -1;
+      const input2 = 0;
+      const input3 = 1;
+      // Act: execute the code you're testing
+      const result = isPrime(input1);
+      const result2 = isPrime(input2);
+      const result3 = isPrime(input3);
+      // Assert: check that it works
+      // expect(getBiggest(input1, input1)).toBe(input1);
+      expect(result).toBe(false);
+      expect(result2).toBe(false);
+      expect(result3).toBe(false);
+    });
+  
+    test('expects the parameter to be a number, not a string', () => {
+      expect(isPrime('2')).toBeFalsy();
+      expect(isPrime(2)).toBeTruthy();
+      expect(isPrime(null)).toBeFalsy();
+    });
+  })
+
+  // returnFirst
+  describe('returnFirst', () => {
+
+it('returns the first item in an array', () => {
+  expect(returnFirst([1, 2, 3])).toBe(1);
+  expect(returnFirst(['Gem', 'Kat'])).toBe('Gem');
+});
+
+test('expects the parameter to be an array', () => {
+  const valuesToCheck =[
+    1, 
+    0,  
+    {id: 1},
+    function aNum(num) {return num},
+    Date.now(),
+    NaN,
+    true,
+    false
+  ]
+  valuesToCheck.forEach(val => {
+    expect(returnFirst(val)).toBeUndefined();
+  })
+  expect(returnFirst(['first', 'second'])).toBeTruthy();
+});
+
+  test('expect array to have length', () => {
+    expect(returnFirst([])).toBeUndefined();
+  })
+
+  test('expect string to return null', () => {
+    expect(returnFirst('')).toBeNull();
+    expect(returnFirst('a string')).toBeNull();
+  })
+
+
+  test('throws an error if the parameter is null or undefined', () => {
+    expect(() => returnFirst()).toThrow();
+    expect(() => returnFirst(undefined)).toThrow();
+    expect(() => returnFirst(null)).toThrow();
+  })
+
+
+// test('returns false if the number is less than 2', () => {
+      
+//   // Arrange: setup the world
+//   const input1 = Math.random() * -1;
+//   const input2 = 0;
+//   const input3 = 1;
+//   // Act: execute the code you're testing
+//   const result = returnFirst(input1);
+//   const result2 = returnFirst(input2);
+//   const result3 = returnFirst(input3);
+//   // Assert: check that it works
+//   // expect(getBiggest(input1, input1)).toBe(input1);
+//   expect(result).toBe(false);
+//   expect(result2).toBe(false);
+//   expect(result3).toBe(false);
+// });
+
+// test('expects the parameter to be a number, not a string', () => {
+//   expect(isPrime('2')).toBeFalsy();
+//   expect(isPrime(2)).toBeTruthy();
+//   expect(isPrime(null)).toBeFalsy();
+// });
+})
 
 // const returnFirst = arr => {
 //   return arr[0];
@@ -307,23 +397,51 @@ describe('fizzBuzz', () => {
 //   return biggestInteger;
 // };
 
-// module.exports = {
-//   getBiggest,
-//   greeting,
-//   isTenOrFive,
-//   isInRange,
-//   isInteger,
-//   fizzBuzz,
-//   isPrime,
-//   returnFirst,
-//   returnLast,
-//   getArrayLength,
-//   incrementByOne,
-//   addItemToArray,
-//   addItemToFront,
-//   wordsToSentence,
-//   contains,
-//   addNumbers,
-//   averageTestScore,
-//   largestNumber
-// };
+// const isNum = val => {
+//   return val === 0 || typeof val/1 === 'number';
+// }
+
+// const isNumOrParsedStrNum = val => {
+//   const parsed = parseFloat(val)
+//   return typeof parsed === 'number' && Boolean(val) || parsed === 0;
+// }
+
+// const isNan = val => {
+//   return (isNum(val) === false && typeof val === 'number')
+// }
+
+// const isEmptyStr = val => {
+//   return !Boolean(val) && typeof val === 'string';
+// }
+
+// const valType = (valArr) => {
+//   if (Object.prototype.toString.call(valArr).slice(8, -1) !== 'Array') {
+//     valArr = [valArr]
+//   }
+//   return valArr.map(val => Object.prototype.toString.call(val).slice(8, -1))
+// }
+
+// const convertStrNum = strNum => {
+//   return parseFloat(strNum)
+// }
+
+module.exports = {
+  getBiggest,
+  greeting,
+  isTenOrFive,
+  isInRange,
+  isInteger,
+  fizzBuzz,
+  isPrime,
+  returnFirst,
+  returnLast,
+  getArrayLength,
+  incrementByOne,
+  addItemToArray,
+  addItemToFront,
+  wordsToSentence,
+  contains,
+  addNumbers,
+  averageTestScore,
+  largestNumber
+};

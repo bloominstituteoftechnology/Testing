@@ -1,5 +1,33 @@
 /* eslint-disable arrow-parens */
 
+// const isNum = val => {
+//   return val === 0 || typeof val/1 === 'number';
+// }
+
+// const isNumOrParsedStrNum = val => {
+//   const parsed = parseFloat(val)
+//   return typeof parsed === 'number' && Boolean(val) || parsed === 0;
+// }
+
+// const isNan = val => {
+//   return (isNum(val) === false && typeof val === 'number')
+// }
+
+// const isEmptyStr = val => {
+//   return !Boolean(val) && typeof val === 'string';
+// }
+
+// const valType = (valArr) => {
+//   if (Object.prototype.toString.call(valArr).slice(8, -1) !== 'Array') {
+//     valArr = [valArr]
+//   }
+//   return valArr.map(val => Object.prototype.toString.call(val).slice(8, -1))
+// }
+
+// const convertStrNum = strNum => {
+//   return parseFloat(strNum)
+// }
+
 const getBiggest = (x, y) => {
   if (typeof Number(x) !== 'number' || typeof Number(y) !== 'number') {return NaN}
   return x > y ? x: y;
@@ -49,6 +77,7 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (!!num === false || (Math.floor(num) !== num || typeof num === 'object')) {return false};
   if (num < 0) {
     return false;
   }
@@ -64,7 +93,8 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  return arr[0];
+  // if (Object.prototype.toString.call(arr).slice(8, -1) === 'Array' && !arr.length) {return null};
+  return typeof arr === 'string' ? null: arr[0];
 };
 
 const returnLast = arr => {

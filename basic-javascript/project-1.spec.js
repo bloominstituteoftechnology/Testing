@@ -1,5 +1,13 @@
 // const helpers = require('./project-1');
-const { multiplyByTen, subtractFive,
+const { 
+  isNum, 
+  isNumOrParsedStrNum,
+  isNan,
+  isEmptyStr,
+  convertStrNum, 
+  valType, 
+  multiplyByTen, 
+  subtractFive,
   areSameLength,
   areEqual,
   lessThanNinety,
@@ -26,6 +34,11 @@ const { multiplyByTen, subtractFive,
 
 // start testing!
 /* eslint-disable arrow-parens */
+
+const bigNum = Math.pow(2, 81);
+const smallNum = Math.pow(-2, 81);
+
+
 describe('Jest', () => {
   test('Jest runs', () => {
   
@@ -47,8 +60,9 @@ describe('multiplyByTen', () => {
   });
 
   test('expects the parameter to be a number or a string-number', () => {
-    expect(multiplyByTen('5')).toBeTruthy();
     expect(multiplyByTen(5)).toBeTruthy();
+    expect(multiplyByTen('5')).toBeTruthy();
+    expect(multiplyByTen('5px')).toBeTruthy();
     expect(multiplyByTen('hi')).toBeFalsy();
     expect(multiplyByTen(['hi'])).toBeFalsy();
     expect(multiplyByTen( { greeting: 'hi'} )).toBeFalsy();
@@ -59,10 +73,9 @@ describe('multiplyByTen', () => {
   test('multiplies a parameter by 10', () => {
     expect (multiplyByTen(-1)).toBe(-10);
     expect (multiplyByTen(0)).toBe(0);
-    const input = Math.random();
-    const result = multiplyByTen(input);
-    expect(result).toBe(input * 10);
-    expect(result).toMatchSnapshot(expect.any(Number));
+    expect(multiplyByTen(bigNum)).toBe(bigNum * 10);
+    expect(multiplyByTen(smallNum)).toBe(smallNum * 10);
+    expect(multiplyByTen(bigNum)).toMatchSnapshot(expect.any(Number));
   });
 })
 
@@ -74,26 +87,25 @@ describe('subtractFive', () => {
     expect (subtractFive(12)).toBe(7);
     expect (subtractFive(5)).toBe(0);
     expect (subtractFive(0)).toBe(-5);
-    const input = Math.random();
-    const result = subtractFive(input);
-    expect(result).toBe(input - 5);
-    expect(result).toMatchSnapshot(expect.any(Number));
   });
 
   test('returns a number', () => {
-    const input = Math.random();
-    const result = subtractFive(input);
+    const result = subtractFive(bigNum);
     expect(typeof result === 'number').toBeTruthy();
   });
 
   test('expects the parameter to be a number or a string-number', () => {
-    expect(subtractFive('10')).toBeTruthy();
     expect(subtractFive(10)).toBeTruthy();
+    expect(subtractFive('10')).toBeTruthy();
+    expect(subtractFive('10px')).toBeTruthy();
     expect(subtractFive('hi')).toBeFalsy();
     expect(subtractFive(['hi'])).toBeFalsy();
     expect(subtractFive( { greeting: 'hi'} )).toBeFalsy();
     expect(subtractFive(NaN)).toBeFalsy();
     expect(subtractFive()).toBeFalsy();
+    expect(subtractFive(bigNum)).toBe(bigNum - 5);
+    expect(subtractFive(smallNum)).toBe(smallNum - 5);
+    expect(subtractFive(bigNum)).toMatchSnapshot(expect.any(Number));
   });
 })
 
@@ -108,10 +120,15 @@ describe('areSameLength', () => {
 
   test('returns a boolean', () => {
     const str1 = 'Kat';
-    const str2 = 'Gem';
+    const str2 = 'Gemma';
     const result = areSameLength(str1, str2);
     expect(typeof result === 'boolean').toBeTruthy();
   });
+
+  // it('throws for non-strings', () => {
+  //   const notStr = ['Kat', 'Gemma'];
+  //   expect(() => areSameLength(notStr, notStr)).toThrow('Parameters must be strings');
+  // })
 
   test('expects the parameter to be a string', () => {
     expect(areSameLength('one', 'two')).toBeTruthy();
@@ -128,9 +145,11 @@ describe('areSameLength', () => {
     // Act: execute the code you're testing
     const result = areSameLength(str1, str2);
     const result2 = areSameLength(str1, str3);
+    const result3 = areSameLength(str1, '');
     // Assert: check that it works
     expect(result).toBeTruthy();
     expect(result2).toBeFalsy();
+    expect(result3).toBeFalsy();
   });
 
   test('throws an error if parameter is null', () => {
