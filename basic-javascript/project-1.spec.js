@@ -131,15 +131,32 @@ describe('project-1.js', () => {
     it('should return rectangle area', () => {
       expect(helpers.getRectangleArea(3, 4)).toBe(12);
     });
+    it('should convert negative param to absolute', () => {
+      expect(helpers.getRectangleArea(-3, 4)).toBe(12);
+    });
   });
   describe('getTriangleArea()', () => {
     it('should return triangle area', () => {
       expect(helpers.getTriangleArea(3, 4)).toBe(6);
     });
+    it('should convert negative param to absolute', () => {
+      expect(helpers.getTriangleArea(-3, 4)).toBe(6);
+    });
   });
   describe('getCircleArea()', () => {
     it('should return triangle area with two decimal places', () => {
       expect(helpers.getCircleArea(3)).toBe(28.27);
+    });
+    it('should treat negative param values as positive', () => {
+      expect(helpers.getCircleArea(-3)).toBe(28.27);
+    });
+  });
+  describe('getRectangularPrismVolume()', () => {
+    it('should return volume', () => {
+      expect(helpers.getRectangularPrismVolume(3, 3, 3)).toBe(27);
+    });
+    it('should treat negative param values as positive', () => {
+      expect(helpers.getRectangularPrismVolume(3, 3, -3)).toBe(27);
     });
   });
 });

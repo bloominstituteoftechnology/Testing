@@ -61,17 +61,20 @@ describe('project-2.js', () => {
   });
   describe('isPrime()', () => {
     it('should return false if less than 0', () => {
-      expect(funcs.isPrime(-1)).toBeFalsy();
+      expect(funcs.isPrime(-1)).toBe(false);
     });
     it('should return false if 0 or 1', () => {
-      expect(funcs.isPrime(0)).toBeFalsy();
-      expect(funcs.isPrime(1)).toBeFalsy();
+      expect(funcs.isPrime(0)).toBe(false);
+      expect(funcs.isPrime(1)).toBe(false);
     });
     it('should return false if remander === 0', () => {
-      expect(funcs.isPrime(10)).toBeFalsy();
+      expect(funcs.isPrime(10)).toBe(false);
     });
     it('should return true if only divisible by 1 and itself', () => {
-      expect(funcs.isPrime(3)).toBeTruthy();
+      const primes = [3, 5, 7, 11, 13, 41, 43, 53, 83, 97];
+      for (let i = 0; i < primes.length; i++) {
+        expect(funcs.isPrime(primes[i])).toBe(true);
+      }
     });
   });
   describe('returnFirst()', () => {
@@ -79,17 +82,29 @@ describe('project-2.js', () => {
       const arr = [1, 2, 3, 4, 5];
       expect(funcs.returnFirst(arr)).toBe(arr[0]);
     });
+    it('should return null if empty array', () => {
+      const arr = [];
+      expect(funcs.returnFirst(arr)).toBe(null);
+    });
   });
   describe('returnLast()', () => {
     it('should return last item in array', () => {
       const arr = [1, 2, 3, 4, 5];
       expect(funcs.returnLast(arr)).toBe(arr[arr.length - 1]);
     });
+    it('should return null if no empty array', () => {
+      const arr = [];
+      expect(funcs.returnFirst(arr)).toBe(null);
+    });
   });
   describe('getArrayLength()', () => {
     it('should return array length', () => {
       const arr = [1, 2, 3, 4, 5];
       expect(funcs.getArrayLength(arr)).toBe(arr.length);
+    });
+    it('should return 0 if array is empty', () => {
+      const arr = [];
+      expect(funcs.getArrayLength(arr)).toBe(0);
     });
   });
   describe('incrementByOne()', () => {
