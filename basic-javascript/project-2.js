@@ -10,6 +10,9 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
+  if (typeof language !== 'string') {
+    return 'Please enter a language';
+  }
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -21,6 +24,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
+  if (typeof language !== 'string') {
+    return null;
+  }
   if (num === 10 || num === 5) {
     return true;
   }
@@ -35,6 +41,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (typeof num !== 'number') {
+    return null;
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,7 +51,11 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
-  if (num % 5 === 0 && num % 3 === 0) {
+  if (typeof num !== 'number') {
+    return 'Please input number';
+  } else if (num <= 0) {
+    return 'Please enter a number greater than 0';
+  } else if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
     return 'buzz';
@@ -53,6 +66,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (typeof num !== 'number') {
+    return 'Please input number';
+  }
   if (num < 0) {
     return false;
   }
@@ -68,14 +84,23 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr.length <= 0) {
+    return null;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length <= 0) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
+  if (typeof arr === 'number') {
+    return null;
+  }
   return arr.length;
 };
 
@@ -99,6 +124,9 @@ const addItemToFront = (arr, item) => {
 const wordsToSentence = words => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
+    if (typeof words[i] !== 'string') {
+      return null;
+    }
     if (i === 0) {
       newSentence += `${words[i]}`;
     } else {
@@ -133,6 +161,9 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (testScores[i] > 100) {
+      return 'Cannot submit test score greater than 100';
+    }
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -142,6 +173,9 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return 'Array can only contain numbers';
+    }
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
