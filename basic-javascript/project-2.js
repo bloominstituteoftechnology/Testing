@@ -124,6 +124,9 @@ const addItemToFront = (arr, item) => {
 const wordsToSentence = words => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
+    if (typeof words[i] !== 'string') {
+      return null;
+    }
     if (i === 0) {
       newSentence += `${words[i]}`;
     } else {
@@ -158,6 +161,9 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (testScores[i] > 100) {
+      return 'Cannot submit test score greater than 100';
+    }
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -167,6 +173,9 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return 'Array can only contain numbers';
+    }
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
