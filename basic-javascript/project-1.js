@@ -105,7 +105,7 @@ const getTriangleArea = (base, height) => {
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  return Number((Math.PI * radius * radius).toFixed(2));
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
