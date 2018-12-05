@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
   return num * 10;
 };
 
@@ -73,7 +76,7 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  return num ** Math.abs(exponent);
 };
 
 const roundNumber = num => {
@@ -97,19 +100,19 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  return Math.abs(length) * Math.abs(width);
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  return 0.5 * Math.abs(base) * Math.abs(height);
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  return Number.parseFloat((Math.PI * radius * radius).toFixed(2));
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  return Math.abs(width) * Math.abs(height) * Math.abs(length);
 };
 
 module.exports = {
