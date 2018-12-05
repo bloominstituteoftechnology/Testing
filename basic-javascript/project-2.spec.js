@@ -2,9 +2,16 @@ const funcs = require('./project-2');
 
 // whoops.. there is no test suite for this file. You'll simply just have to create one :/
 describe('project-2 testing', () => {
-    it('find the largest number', () => {
-        expect(funcs.getBiggest(10, 8)).toBe(10);
-        expect(funcs.getBiggest(8, 12)).toBe(12);
+    describe('find the largest number', () => {
+        it('takes two number inputs and returns the largest of the two', () => {
+            expect(funcs.getBiggest(10, 8)).toBe(10);
+            expect(funcs.getBiggest(8, 12)).toBe(12);
+        });
+        it('should return NaN for anything that is not a number', () => {
+            expect(funcs.getBiggest('a', 'b')).toBe(NaN);
+            expect(funcs.getBiggest('a', 2)).toBe(NaN);
+            expect(funcs.getBiggest(undefined, null)).toBe(NaN);
+        });
         // make sure the input is a number
     });
 
@@ -33,22 +40,32 @@ describe('project-2 testing', () => {
     });
 
     describe('fizzbuzz function testing', () => {
+        it('should have a number as an input', () => {
+            expect(funcs.fizzBuzz('a')).toBe(NaN);
+            expect(funcs.fizzBuzz([])).toBe(NaN);
+            expect(funcs.fizzBuzz({})).toBe(NaN);
+            expect(funcs.fizzBuzz(undefined)).toBe(NaN);
+            expect(funcs.fizzBuzz(NaN)).toBe(NaN);
+            expect(funcs.fizzBuzz(null)).toBe(NaN);
+        });
         it('should be divisible by 5', () => {
             expect(funcs.fizzBuzz(20)).toBe('buzz');
+            expect(funcs.fizzBuzz(2)).toBe(2);
         });
 
         it('should be divisible by 3', () => {
             expect(funcs.fizzBuzz(9)).toBe('fizz');
+            expect(funcs.fizzBuzz(4)).toBe(4);
         });
 
         it('should be divisible by both 5 & 3', () => {
             expect(funcs.fizzBuzz(30)).toBe('fizzbuzz');
+            expect(funcs.fizzBuzz(17)).toBe(17);
         });
 
         it('return the number if not divisable by 5 or 3', () => {
             expect(funcs.fizzBuzz(14)).toBe(14);
         })
-        // make sure input is a number
     });
 
     describe('if the number is prime', () => {
@@ -93,12 +110,18 @@ describe('project-2 testing', () => {
         // make sure input is correct
     });
 
-    it('should take an item and add it to an array', () => {
-        expect(funcs.addItemToArray([1,2,3], 4)).toEqual([1,2,3,4]);
-        // make sure input one is an array
-        // make sure second input is not undefined or null
+    describe('add an item to an array', () => {
+        it('make sure input contains an array else return null', () => {
+            expect(funcs.addItemToArray(2, 4)).toBe(null);
+        });
+        it('should make sure the second input is a number or return NaN', () => {
+            expect(funcs.addItemToArray([2], 'b')).toBe(NaN);
+        });
+        it('should take an item and add it to an array', () => {
+            expect(funcs.addItemToArray([1,2,3], 4)).toEqual([1,2,3,4]);
+        });
     });
-
+    
     it('should add an item to the front of an array', () => {
         expect(funcs.addItemToFront([2,3,4], 1)).toEqual([1,2,3,4]);
         // make sure input one is an array

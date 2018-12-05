@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    return NaN;
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -42,6 +45,9 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (typeof num !== 'number') {
+    return NaN;
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -87,8 +93,14 @@ const incrementByOne = arr => {
 };
 
 const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
+  if (!Array.isArray(arr)) {
+    return null;
+  } else if (typeof item !== 'number') {
+    return NaN;
+  } else {
+    arr.push(item);
+    return arr;
+  }
 };
 
 const addItemToFront = (arr, item) => {
