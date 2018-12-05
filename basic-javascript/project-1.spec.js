@@ -350,7 +350,7 @@ describe('helpers library', () => {
 
   }) 
 
-    test('test', () => {
+    test('should return cube', () => {
 
       const input = 3;
 
@@ -361,8 +361,8 @@ describe('helpers library', () => {
     })
 
     it('should return the cube of a number', () => {
-      expect(5).toBe(125)
-      expect(9).toBe(729)
+      expect(cube(5)).toBe(125)
+      expect(cube(9)).toBe(729)
 
     })
   })
@@ -380,10 +380,10 @@ describe('helpers library', () => {
       expect(raiseToPower(3, 5)).toBe(243)
     })
   })
-  describe('roundNumber', ()=>{
+  describe('roundNumber', () => {
     test('should return an integer', () => {
 
-      const input = 5.5;
+      const input = 5.3;
 
       const expected = 5;
 
@@ -438,7 +438,7 @@ describe('helpers library', () => {
 
       const input = [ 'bob', 'apple' ];
 
-      const expected = 50;
+      const expected = 'bob apple';
 
       const result = combineNames(...input)
 
@@ -486,15 +486,15 @@ describe('helpers library', () => {
 
   }) 
 
-    test('test', () => {
+    test('should get area of triangle', () => {
 
-      const input = 5;
+      const input = [ 5, 3 ];
 
-      const expected = 50;
+      const expected = 7.5;
 
-      const result = getTriangleArea(input)
+      const result = getTriangleArea(...input)
 
-      expect(result).toBe(expected)
+      expect(result).toBeCloseTo(expected)
     })
   })
   describe('getCircleArea', ()=>{
@@ -503,17 +503,18 @@ describe('helpers library', () => {
 
   }) 
 
-    test('test', () => {
+    test('should return the area of a given radius', () => {
 
       const input = 5;
 
-      const expected = 50;
+      const expected = 78.539; //78.539816339744831
 
       const result = getCircleArea(input)
 
-      expect(result).toBe(expected)
+      expect(result).toBeCloseTo(expected)
     })
   })
+
   describe('getRectangularPrismVolume', ()=>{
   it('description', ()=>{
     expect(2+2).toBe(4)
@@ -522,13 +523,13 @@ describe('helpers library', () => {
 
     test('test', () => {
 
-      const input = 5;
+      const input = [ 5, 6, 7 ];
 
-      const expected = 50;
+      const expected = 210;
 
-      const result = getRectangularPrismVolume(input)
+      const result = getRectangularPrismVolume(...input)
 
-      expect(result).toBeNaN()
+      expect(result).toBe(expected)
     })
   })
 });

@@ -26,7 +26,7 @@ describe('helpers library', () => {
     expect(func(...test[0])).toBe(test[1])
   }
   const againstUndefined = func => test => {
-    expect(func(test[0])).toBeUndefined()
+    expect(func(...test)).toBeUndefined()
   }
   ${strArr.map(funcName => `
 
@@ -58,7 +58,9 @@ describe('helpers library', () => {
 
     it('should return null', () => {
       const tests = [
-        [ 5, 25 ],
+         [], 
+         [undefined],
+         ['a'],
       ]
       tests.forEach(againstUndefined(${funcName})))
         expect(${funcName}()).toBeUndefined();
