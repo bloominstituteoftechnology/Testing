@@ -12,6 +12,8 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
-    "@coetry/simpletypes": "^0.0.2"
+    "@coetry/simpletypes": "^0.0.2",
+    "react": "^16.6.3",
+    "react-test-renderer": "^16.6.3"
   }
 }
