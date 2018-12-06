@@ -125,11 +125,6 @@ describe('areSameLength', () => {
     expect(typeof result === 'boolean').toBeTruthy();
   });
 
-  // it('throws for non-strings', () => {
-  //   const notStr = ['Kat', 'Gemma'];
-  //   expect(() => areSameLength(notStr, notStr)).toThrow('Parameters must be strings');
-  // })
-
   test('expects the parameter to be a string', () => {
     expect(areSameLength('one', 'two')).toBeTruthy();
     expect(areSameLength('one', 'three')).toBeFalsy();

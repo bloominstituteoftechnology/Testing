@@ -1,9 +1,5 @@
-const { getBiggest, greeting, isTenOrFive, isInRange, isInteger, fizzBuzz, isPrime, returnFirst, returnLast, getArrayLength, incrementByOne, addItemToArray, addItemToFront, wordsToSentence, contains, addNumbers, averageTestScore, largestNumber } = require('./project-2');
+const { getBiggest, greeting, isTenOrFive, isInRange, isInteger, fizzBuzz, isPrime, returnFirst, returnLast, getArrayLength, incrementByOne, addItemToEndOfArray, addItemToFront, wordsToSentence, contains, addNumbers, averageTestScore, largestNumber } = require('./project-2');
 
-// whoops.. there is no test suite for this file. You'll simply just have to create one :/
-
-
-/* eslint-disable arrow-parens */
 
 describe('Jest', () => {
   test('Jest runs', () => {
@@ -19,26 +15,14 @@ describe('getBiggest', () => {
   });
 
   test('returns a number', () => {
-    const input1 = Math.random();
-    const input2 = Math.random();
-    const result = getBiggest(input1, input2);
-    expect(typeof result === 'number').toBeTruthy();
+    expect(typeof getBiggest(0, 0) === 'number').toBeTruthy();
   });
 
   test('returns the largest number', () => {
-        
-    // Arrange: setup the world
-    const input1 = Math.random() * 100;
-    const input2 = input1 - 1;
-    const input3 = Math.random() * 100;
-    // Act: execute the code you're testing
-    const result = getBiggest(input1, input2);
-    const result2 = getBiggest(input2, input1);
-    // Assert: check that it works
+    const input1 = 100;
+    const input2 = -100;
     expect(getBiggest(input1, input1)).toBe(input1);
-    expect(result).toBe(input1);
-    expect(result2).toBe(input1);
-    expect(getBiggest(input1, input3)).toBe(Math.max(input1, input3));
+    expect(getBiggest(input2, input1)).toBe(input1);
   });
 
   test('expects the parameter to be a number or a string-number', () => {
@@ -52,45 +36,30 @@ describe('getBiggest', () => {
 describe('greeting', () => {
 
   it('return a greeting based on the input', () => {
-    const input1 = 'German';
-    const input2 = 'Swedish';
-    const result = greeting(input1);
-    const result2 = greeting(input2);
-    expect (result).toBe('Guten Tag!');
-    expect (result2).toBe('Hello!');
+    expect (greeting('German')).toBe('Guten Tag!');
+    expect (greeting('Swedish')).toBe('Hello!');
   });
 
   test('returns a string', () => {
-    const input1 = '';
-    const result = greeting(input1);
-    expect(typeof result === 'string').toBeTruthy();
+    expect(typeof greeting('') === 'string').toBeTruthy();
   });
 
   test('return a greeting based on the input', () => {
-    const input1 = 'German';
-    const input2 = 'Spanish';
-    const result = greeting(input1);
-    const result2 = greeting(input2);
-    const result3 = greeting(!input1 || !input2);
-    expect (result).toBe('Guten Tag!');
-    expect (result2).toBe('Hola!');
-    expect (result3).toBe('Hello!');
+    expect (greeting('German')).toBe('Guten Tag!');
+    expect (greeting('Spanish')).toBe('Hola!');
+    expect (greeting(!('Spanish') || !('German'))).toBe('Hello!');
   });
 });
 
 describe('isTenOrFive', () => {
 
   it('compares parameter to 10 or 5 and returns a boolean', () => {
-    const input1 = Math.random();
-    const input2 = 5;
-    expect(isTenOrFive(input2)).toBe(true);
-    expect(isTenOrFive(input1)).toBe(false);
+    expect(isTenOrFive(5)).toBe(true);
+    expect(isTenOrFive(6)).toBe(false);
   });
 
   test('returns a boolean', () => {
-    const input1 = Math.random()*20;
-    const result = isTenOrFive(input1);
-    expect(typeof result === 'boolean').toBeTruthy();
+    expect(typeof isTenOrFive(6) === 'boolean').toBeTruthy();
   });
 })
 
@@ -102,26 +71,13 @@ describe('isInRange', () => {
   });
 
   test('returns a boolean', () => {
-    const input1 = Math.random()
-    const result = isInRange(input1);
-    expect(typeof result === 'boolean').toBeTruthy();
+    expect(typeof isInRange(1) === 'boolean').toBeTruthy();
   });
 
   test('returns true if the number is between 20 and 50', () => {
-        
-    // Arrange: setup the world
-    const input1 = Math.random() * 19;
-    const input2 = Math.random() + 50.0001;
-    const input3 = Math.random() + 35;
-    // Act: execute the code you're testing
-    const result = isInRange(input1);
-    const result2 = isInRange(input2);
-    const result3 = isInRange(input3);
-    // Assert: check that it works
-    // expect(getBiggest(input1, input1)).toBe(input1);
-    expect(result).toBe(false);
-    expect(result2).toBe(false);
-    expect(result3).toBe(true);
+    expect(isInRange(19.999)).toBe(false);
+    expect(isInRange(50.0001)).toBe(false);
+    expect(isInRange(20.0001)).toBe(true);
   });
 
   test('expects the parameter to be a number or a string-number', () => {
@@ -140,26 +96,13 @@ describe('isInteger', () => {
   });
 
   test('returns a boolean', () => {
-    const input1 = Math.random()
-    const result = isInteger(input1);
-    expect(typeof result === 'boolean').toBeTruthy();
+    expect(typeof isInteger(Math.PI) === 'boolean').toBeTruthy();
   });
 
   test('returns true if the number is zero or a negative integer', () => {
-        
-    // Arrange: setup the world
-    const input1 = 0;
-    const input2 = -10;
-    const input3 = -5.5
-    // Act: execute the code you're testing
-    const result = isInteger(input1);
-    const result2 = isInteger(input2);
-    const result3 = isInteger(input3);
-    // Assert: check that it works
-    // expect(getBiggest(input1, input1)).toBe(input1);
-    expect(result).toBe(true);
-    expect(result2).toBe(true);
-    expect(result3).toBe(false);
+    expect(isInteger(0)).toBe(true);
+    expect(isInteger(-10)).toBe(true);
+    expect(isInteger(-5.5)).toBe(false);
   });
 
   test('expects the parameter to be a number, not a string', () => {
@@ -176,11 +119,11 @@ describe('fizzBuzz', () => {
     expect(fizzBuzz(15)).toBe('fizzbuzz');
     expect(fizzBuzz(3)).toBe('fizz');
     expect(fizzBuzz(5)).toBe('buzz');
-    expect(fizzBuzz(Math.PI)).toBe(Math.PI);
+    expect(fizzBuzz(1)).toBe(1);
   });
 
   test('returns a string or a number', () => {
-    const input1 = Math.random()
+    const input1 = fizzBuzz(1);
     const result = fizzBuzz(input1);
     const result2 = fizzBuzz(15);
     expect(typeof result === 'string' || typeof result === 'number').toBeTruthy
@@ -188,26 +131,14 @@ describe('fizzBuzz', () => {
   });
 
   test('returns true if the number is zero or a negative integer', () => {
-        
-    // Arrange: setup the world
-    const input1 = 6;
-    const input2 = 10;
-    const input3 = -30;
-    // Act: execute the code you're testing
-    const result = fizzBuzz(input1);
-    const result2 = fizzBuzz(input2);
-    const result3 = fizzBuzz(input3);
-    // Assert: check that it works
-    // expect(getBiggest(input1, input1)).toBe(input1);
-    expect(result).toBe('fizz');
-    expect(result2).toBe('buzz');
-    expect(result3).toBe('fizzbuzz');
+    expect(fizzBuzz(0)).toBe('fizzbuzz');
+    expect(fizzBuzz(-30)).toBe('fizzbuzz');
   });
 
-  test('expects the parameter to be a number, not a string', () => {
-    expect(fizzBuzz('30')).toBe('fizzbuzz');
+  test('expects the parameter to be a number (including string-numbers), not a string', () => {
+    expect(fizzBuzz('30px')).toBe('fizzbuzz');
     expect(fizzBuzz(35)).toBeTruthy();
-    expect(fizzBuzz()).toBeFalsy();
+    expect(fizzBuzz('hi')).toBeNull();
   });
 })
 
@@ -220,26 +151,13 @@ describe('fizzBuzz', () => {
     });
   
     test('returns a boolean', () => {
-      const input1 = Math.random()
-      const result = isPrime(input1);
-      expect(typeof result === 'boolean').toBeTruthy();
+      expect(typeof isPrime(10) === 'boolean').toBeTruthy();
     });
   
     test('returns false if the number is less than 2', () => {
-          
-      // Arrange: setup the world
-      const input1 = Math.random() * -1;
-      const input2 = 0;
-      const input3 = 1;
-      // Act: execute the code you're testing
-      const result = isPrime(input1);
-      const result2 = isPrime(input2);
-      const result3 = isPrime(input3);
-      // Assert: check that it works
-      // expect(getBiggest(input1, input1)).toBe(input1);
-      expect(result).toBe(false);
-      expect(result2).toBe(false);
-      expect(result3).toBe(false);
+      expect(isPrime(0)).toBe(false);
+      expect(isPrime(1)).toBe(false);
+      expect(isPrime(-3)).toBe(false);
     });
   
     test('expects the parameter to be a number, not a string', () => {
@@ -249,8 +167,8 @@ describe('fizzBuzz', () => {
     });
   })
 
-  // returnFirst
-  describe('returnFirst', () => {
+// returnFirst
+describe('returnFirst', () => {
 
 it('returns the first item in an array', () => {
   expect(returnFirst([1, 2, 3])).toBe(1);
@@ -279,10 +197,9 @@ test('expects the parameter to be an array', () => {
   })
 
   test('expect string to return null', () => {
-    expect(returnFirst('')).toBeNull();
-    expect(returnFirst('a string')).toBeNull();
+    expect(returnFirst('')).toBe(null);
+    expect(returnFirst('a string')).toBe(null);
   })
-
 
   test('throws an error if the parameter is null or undefined', () => {
     expect(() => returnFirst()).toThrow();
@@ -290,42 +207,225 @@ test('expects the parameter to be an array', () => {
     expect(() => returnFirst(null)).toThrow();
   })
 
-
-// test('returns false if the number is less than 2', () => {
-      
-//   // Arrange: setup the world
-//   const input1 = Math.random() * -1;
-//   const input2 = 0;
-//   const input3 = 1;
-//   // Act: execute the code you're testing
-//   const result = returnFirst(input1);
-//   const result2 = returnFirst(input2);
-//   const result3 = returnFirst(input3);
-//   // Assert: check that it works
-//   // expect(getBiggest(input1, input1)).toBe(input1);
-//   expect(result).toBe(false);
-//   expect(result2).toBe(false);
-//   expect(result3).toBe(false);
-// });
-
-// test('expects the parameter to be a number, not a string', () => {
-//   expect(isPrime('2')).toBeFalsy();
-//   expect(isPrime(2)).toBeTruthy();
-//   expect(isPrime(null)).toBeFalsy();
-// });
+  test('expects the return to be of any value', () => {
+    const checkTruthyReturns =[
+      [1], 
+      ['string', 'another string'],  
+      [{id: 1}],
+      [function aNum(num) {return num}],
+      [Date.now()],
+      [true],
+    ]
+    checkTruthyReturns.forEach(ret => {
+      expect(returnFirst(ret)).toBeTruthy();
+    })
+    const checkFalsyReturns = [
+      [0],  
+      [-0],
+      [NaN],
+      [false],
+      [null],
+      [undefined],
+      [''],
+    ]
+    checkFalsyReturns.forEach(ret => {
+      expect(returnFirst(ret)).toBeFalsy();
+    })
+  });
 })
 
-// const returnFirst = arr => {
-//   return arr[0];
-// };
+// returnLast
+describe('returnLast', () => {
 
-// const returnLast = arr => {
-//   return arr[arr.length - 1];
-// };
+  it('returns the last item in an array', () => {
+    expect(returnLast([1, 2, 3])).toBe(3);
+    expect(returnLast(['Gem', 'Kat'])).toBe('Kat');
+  });
+  
+  test('expects the parameter to be an array', () => {
+    const valuesToCheck =[
+      1, 
+      0,  
+      {id: 1},
+      function aNum(num) {return num},
+      Date.now(),
+      NaN,
+      true,
+      false
+    ]
+    valuesToCheck.forEach(val => {
+      expect(returnLast(val)).toBeUndefined();
+    })
+    expect(returnLast(['first', 'second'])).toBeTruthy();
+  });
+  
+    test('expect array to have length', () => {
+      expect(returnLast([])).toBeUndefined();
+    })
+  
+    test('expect string to return null', () => {
+      expect(returnLast('')).toBe(null);
+      expect(returnLast('a string')).toBe(null);
+    })
+  
+    test('throws an error if the parameter is null or undefined', () => {
+      expect(() => returnLast()).toThrow();
+      expect(() => returnLast(undefined)).toThrow();
+      expect(() => returnLast(null)).toThrow();
+    })
+  
+    test('expects the return to be of any value', () => {
+      const checkTruthyReturns =[
+        [1], 
+        ['string', 'another string'],  
+        [{id: 1}],
+        [function aNum(num) {return num}],
+        [Date.now()],
+        [true],
+      ]
+      checkTruthyReturns.forEach(ret => {
+        expect(returnLast(ret)).toBeTruthy();
+      })
+      const checkFalsyReturns = [
+        [0],  
+        [-0],
+        [NaN],
+        [false],
+        [null],
+        [undefined],
+        [''],
+      ]
+      checkFalsyReturns.forEach(ret => {
+        expect(returnLast(ret)).toBeFalsy();
+      })
+    });
+  })
 
-// const getArrayLength = arr => {
-//   return arr.length;
-// };
+// getArrayLength
+describe('getArrayLength', () => {
+
+  it('returns the length of an array', () => {
+    expect(getArrayLength([1, 2, 3])).toBe(3);
+    expect(getArrayLength(['Gem', 'Kat'])).toBe(2);
+    expect(getArrayLength([])).toBe(0);
+  });
+  
+  test('expects the parameter to be an array', () => {
+    const valuesToCheck =[
+      1, 
+      0,  
+      {id: 1},
+      Date.now(),
+      NaN,
+      true,
+      false
+    ]
+    valuesToCheck.forEach(val => {
+      expect(getArrayLength(val)).toBeUndefined();
+    })
+    expect(getArrayLength(function aNum(num) {return num})).toBeNull();
+
+    expect(getArrayLength([1])).toBeTruthy();
+  });
+
+  test('expect string to return null', () => {
+    expect(getArrayLength('')).toBe(null);
+    expect(getArrayLength('a string')).toBe(null);
+  })
+
+  test('throws an error if the parameter is null or undefined', () => {
+    expect(() => getArrayLength()).toThrow();
+    expect(() => getArrayLength(undefined)).toThrow();
+    expect(() => getArrayLength(null)).toThrow();
+  })
+  
+  test('expects the return to be a number', () => {
+    const checkReturns =[
+      [1], 
+      ['string'],  
+      [{id: 1}],
+      [function aNum(num) {return num}],
+      [Date.now()],
+      [true],
+    ]
+    checkReturns.forEach(ret => {
+      expect(getArrayLength(ret)).toBe(1);
+      expect(getArrayLength(ret)).toEqual(expect.any(Number));
+    })
+    const checkFalsyReturns = [
+      [0],  
+      [-0],
+      [NaN],
+      [false],
+      [null],
+      [undefined],
+      [''],
+    ]
+    checkFalsyReturns.forEach(ret => {
+      expect(getArrayLength(ret)).toBe(1);
+    })
+  });
+})
+
+// wordsToSentence
+describe('wordsToSentence', () => {
+
+  it('combines the elements of an array into a string', () => {
+    expect(wordsToSentence([1, 2, 3])).toBe('1 2 3');
+    expect(wordsToSentence(['Passed', 'the', 'test!'])).toBe('Passed the test!');
+    expect(wordsToSentence([])).toBe('');
+  });
+  
+  test('throws an error if the parameter is not an array', () => {
+    const valuesToCheck =[
+      1, 
+      0,  
+      {id: 1},
+      Date.now(),
+      function aNum(num) {return num},
+      NaN,
+      true,
+      false,
+      '',
+      'string',
+      undefined,
+      null,
+    ]
+    valuesToCheck.forEach(val => {
+      expect(() => wordsToSentence(val)).toThrowError();
+    })
+    expect(() => wordsToSentence()).toThrow();
+
+    expect(wordsToSentence([1])).toBeTruthy();
+  });
+  
+  test('expects the return to be a string', () => {
+    const checkReturns =[
+      [1], 
+      ['string'],  
+      [{id: 1}],
+      [function aNum(num) {return num}],
+      [Date.now()],
+      [true],
+      [0],  
+      [-0],
+      [NaN],
+      [false],
+    ]
+    checkReturns.forEach(ret => {
+      expect(wordsToSentence(ret)).toBeTruthy();
+      expect(wordsToSentence(ret)).toEqual(expect.any(String));
+    })
+    const checkFalsyReturns = [
+      [null],
+      [undefined],
+      [''],
+    ]
+    checkFalsyReturns.forEach(ret => {
+      expect(wordsToSentence(ret)).toBeFalsy();
+    })
+  });
+})
 
 // const incrementByOne = arr => {
 //   for (let i = 0; i < arr.length; i++) {
@@ -344,17 +444,6 @@ test('expects the parameter to be an array', () => {
 //   return arr;
 // };
 
-// const wordsToSentence = words => {
-//   let newSentence = '';
-//   for (let i = 0; i < words.length; i++) {
-//     if (i === 0) {
-//       newSentence += `${words[i]}`;
-//     } else {
-//       newSentence += ` ${words[i]}`;
-//     }
-//   }
-//   return newSentence;
-// };
 
 // const contains = (arr, item) => {
 //   let itemCounter = 0;
@@ -437,7 +526,7 @@ module.exports = {
   returnLast,
   getArrayLength,
   incrementByOne,
-  addItemToArray,
+  addItemToEndOfArray,
   addItemToFront,
   wordsToSentence,
   contains,
