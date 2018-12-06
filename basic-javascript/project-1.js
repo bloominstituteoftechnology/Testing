@@ -1,14 +1,45 @@
 /* eslint-disable arrow-parens */
 
+const isNum = val => {
+  return val === 0 || typeof val/1 === 'number';
+}
+
+const isNumOrParsedStrNum = val => {
+  const parsed = parseFloat(val)
+  return typeof parsed === 'number' && Boolean(val) || parsed === 0;
+}
+
+const isNan = val => {
+  return (isNum(val) === false && typeof val === 'number')
+}
+
+const isEmptyStr = val => {
+  return !Boolean(val) && typeof val === 'string';
+}
+
+const valType = (valArr) => {
+  if (Object.prototype.toString.call(valArr).slice(8, -1) !== 'Array') {
+    valArr = [valArr]
+  }
+  return valArr.map(val => Object.prototype.toString.call(val).slice(8, -1))
+}
+
+const convertStrNum = strNum => {
+  return parseFloat(strNum)
+}
+
 const multiplyByTen = num => {
-  return num * 10;
+  return parseFloat(num) * 10;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  return parseFloat(num) - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  // if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+  //   throw new Error('Parameters must be strings')
+  // }
   return str1.length === str2.length;
 };
 
@@ -17,10 +48,7 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
-  }
-  return false;
+  return num < 90 ? true: false;
 };
 
 const greaterThanFifty = num => {
@@ -73,7 +101,8 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  // return num ** exponent;
+  return Math.pow(num, exponent);
 };
 
 const roundNumber = num => {
@@ -113,6 +142,12 @@ const getRectangularPrismVolume = (length, width, height) => {
 };
 
 module.exports = {
+  isNum, 
+  valType,
+  isNumOrParsedStrNum,
+  isNan,
+  isEmptyStr,
+  convertStrNum,
   multiplyByTen,
   subtractFive,
   areSameLength,

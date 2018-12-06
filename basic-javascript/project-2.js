@@ -1,12 +1,36 @@
 /* eslint-disable arrow-parens */
 
+// const isNum = val => {
+//   return val === 0 || typeof val/1 === 'number';
+// }
+
+// const isNumOrParsedStrNum = val => {
+//   const parsed = parseFloat(val)
+//   return typeof parsed === 'number' && Boolean(val) || parsed === 0;
+// }
+
+// const isNan = val => {
+//   return (isNum(val) === false && typeof val === 'number')
+// }
+
+// const isEmptyStr = val => {
+//   return !Boolean(val) && typeof val === 'string';
+// }
+
+// const valType = (valArr) => {
+//   if (Object.prototype.toString.call(valArr).slice(8, -1) !== 'Array') {
+//     valArr = [valArr]
+//   }
+//   return valArr.map(val => Object.prototype.toString.call(val).slice(8, -1))
+// }
+
+// const convertStrNum = strNum => {
+//   return parseFloat(strNum)
+// }
+
 const getBiggest = (x, y) => {
-  if (x > y) {
-    return x;
-  } else if (x === y) {
-    return y;
-  }
-  return y;
+  if (typeof Number(x) !== 'number' || typeof Number(y) !== 'number') {return NaN}
+  return x > y ? x: y;
 };
 
 const greeting = language => {
@@ -42,6 +66,8 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  num = parseFloat(num)
+  if (isNaN(num) || typeof num !== 'number') {return null}
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -53,6 +79,7 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (!!num === false || (Math.floor(num) !== num || typeof num === 'object')) {return false};
   if (num < 0) {
     return false;
   }
@@ -68,15 +95,16 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
-  return arr[0];
+  return typeof arr === 'string' ? null: arr[0];
 };
 
 const returnLast = arr => {
-  return arr[arr.length - 1];
+  return typeof arr === 'string' ? null: arr[arr.length - 1];
 };
 
 const getArrayLength = arr => {
-  return arr.length;
+  if (typeof arr === 'function') {return null}
+  return typeof arr === 'string' ? null: arr.length;
 };
 
 const incrementByOne = arr => {
@@ -86,26 +114,16 @@ const incrementByOne = arr => {
   return arr;
 };
 
-const addItemToArray = (arr, item) => {
-  arr.push(item);
-  return arr;
+const addItemToEndOfArray = (arr, item) => {
+  return arr.push(item);
 };
 
 const addItemToFront = (arr, item) => {
-  arr.unshift(item);
-  return arr;
+  return arr.unshift(item);
 };
 
 const wordsToSentence = words => {
-  let newSentence = '';
-  for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
-    } else {
-      newSentence += ` ${words[i]}`;
-    }
-  }
-  return newSentence;
+  return words.map(w => w).join(' ')
 };
 
 const contains = (arr, item) => {
@@ -161,7 +179,7 @@ module.exports = {
   returnLast,
   getArrayLength,
   incrementByOne,
-  addItemToArray,
+  addItemToEndOfArray,
   addItemToFront,
   wordsToSentence,
   contains,
