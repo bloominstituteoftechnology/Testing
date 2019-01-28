@@ -83,11 +83,18 @@ describe('My Math Library', () => {
     });
 
 
-    describe('', () => {
-
+    describe('the `Subtract()` 2 numbers function', () => {
+        test('if `subtract` will subtract 2 numbers passed to it', () => {
+            expect(helpers.subtract(2, 1)).toBe(1);
+            expect(helpers.subtract(25, 7)).toBe(18);
+        });
     });
 
-    describe('', () => {});
+    describe('the `divide()` 2 numbers function', () => {
+        test('that `divide()` will divie on nuber by the other correctly', () =>{
+            expect(helpers.divide(20, 10)).toEqual(2);
+        });
+    });
 
     describe('', () => {});
 
