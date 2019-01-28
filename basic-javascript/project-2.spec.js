@@ -43,10 +43,20 @@ const funcs = require('./project-2');
     });
 
     describe('the is Integer function', () => {
-        expect
+        expect(funcs.isInteger(7)).toBe(true);
+        expect(funcs.isInteger(17)).toBe(true);
+
+        expect(funcs.isInteger(17.5)).toBe(false);
+        expect(funcs.isInteger(2.222111111111111111)).toBe(false);
 
     });
-    describe('', () => {});
+    describe('the fizz buzz function', () => {
+        expect(funcs.fizzBuzz(15)).toEqual('fizzbuzz');
+        expect(funcs.fizzBuzz(3)).toBe('fizz');
+
+        expect(funcs.fizzBuzz(5)).toEqual('buzz');
+
+    });
     describe('', () => {});
     describe('', () => {});
     // describe('', () => {});
