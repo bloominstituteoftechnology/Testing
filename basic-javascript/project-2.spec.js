@@ -34,7 +34,7 @@ const funcs = require('./project-2');
 
         
     });
-    describe('the isin Range function', () => {
+    describe('the is in Range function', () => {
         expect(funcs.isInRange(25)).toEqual(true);
 
         expect(funcs.isInRange(5)).toEqual(false);
@@ -42,7 +42,10 @@ const funcs = require('./project-2');
 
     });
 
-    describe('', () => {});
+    describe('the is Integer function', () => {
+        expect
+
+    });
     describe('', () => {});
     describe('', () => {});
     describe('', () => {});
