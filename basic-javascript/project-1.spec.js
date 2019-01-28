@@ -32,6 +32,18 @@ describe("Project-1", () => {
     test("Same length", () => {
       expect(helpers.areSameLength("hello", "three"));
     });
+
+    test("Throw an error if an argument is not a string", () => {
+        expect(() => {
+          helpers.areSameLength(5, "five").toThrow();
+        });
+        expect(() => {
+            helpers.areSameLength(5, null).toThrow();
+          });
+          expect(() => {
+            helpers.areSameLength("Five", 3).toThrow();
+          });
+      });
   });
 
   describe("areEqual(x, y)", () => {
