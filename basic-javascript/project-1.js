@@ -1,14 +1,29 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+
+  if (typeof num !== "number") {
+    throw new Error("Please provide a number!");
+  }
+
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (typeof num !== "number") {
+    throw new Error("Please provide a number!");
+  }
+
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !== "string" || typeof str2 !== "string") {
+    throw new Error("Please provide strings")
+  }
   return str1.length === str2.length;
 };
 
@@ -31,10 +46,17 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (typeof x !== "number" || typeof y !== "number") {
+    throw new Error("Please provide numbers!");
+  }
+
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (typeof x !== "number" || typeof y !== "number") {
+    throw new Error("Please provide numbers!");
+  }
   return x - y;
 };
 
