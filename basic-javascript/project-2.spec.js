@@ -53,11 +53,13 @@ const funcs = require('./project-2');
     describe('the fizz buzz function', () => {
         expect(funcs.fizzBuzz(15)).toEqual('fizzbuzz');
         expect(funcs.fizzBuzz(3)).toBe('fizz');
-
         expect(funcs.fizzBuzz(5)).toEqual('buzz');
 
+
     });
-    describe('', () => {});
+    describe('the is prime function', () => {
+        
+    });
     describe('', () => {});
     // describe('', () => {});
     // describe('', () => {});
