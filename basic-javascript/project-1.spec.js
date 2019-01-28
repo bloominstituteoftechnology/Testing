@@ -52,11 +52,40 @@ describe('My Math Library', () => {
         });
     });
 
-    describe('the `lessThanNinety()` function.', () => {});
+    describe('the `lessThanNinety()` function.', () => {
+        it('should return tru if a number is less than or  90', () => {
+            expect(helpers.lessThanNinety(70)). toEqual(true);
+        });
 
-    describe('', () => {});
+        it('should return false if a number is greater than or equal to 90', () => {
+            expect(helpers.lessThanNinety(170)). toEqual(false);
+        });
+    });
 
-    describe('', () => {});
+    describe('the `greaterThanFifty()` function.', () => {
+        it('should be false if not greate r than 50', () => {
+            expect(helpers.greaterThanFifty(10)).toBe(false);
+        });
+        it('should be true if greater than 50', () => {
+            expect(helpers.greaterThanFifty(100)).toBe(true);
+        });
+    });
+
+    describe('the add() method', () => {
+        // test happy path
+        test('adds two numbers correctly', () => {
+            //assertion using matchers
+            expect(helpers.add(22, 2)).toEqual(24);
+
+            // expext(helpers.add(12, 1)).toBe(13);
+            
+        });
+    });
+
+
+    describe('', () => {
+
+    });
 
     describe('', () => {});
 
