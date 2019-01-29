@@ -4,12 +4,12 @@
   "description": "Practice exercises to learn the syntax for testing javascript code.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch --verbose"
   },
   "author": "Lambda School",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^24.0.0"
   },
   "dependencies": {}
 }
