@@ -9,9 +9,38 @@ const arrayFunctions = require('./arrays');
 
 describe('Arrays', () => {
   describe('map', () => {
+
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
+    });
+
+    it('should return a new array with the result of the callback performed on each item in the array', () => {
+      const map = arrayFunctions.map;
+      const testArr = [1,2,3,4,5];
+      const testCb = (x) => {
+        return x + 1
+      }
+      const actual = map(testArr, testCb);
+      expect(actual).toEqual([2,3,4,5,6]);
+      expect(map(actual, testCb)).toEqual([3,4,5,6,7]);
+    })
+  });
+  describe('each', () => {
+    it('should be a function', () => {
+      const map = arrayFunctions.map;
+      expect(typeof map).toBe('function');
+
+      const testArr = [1,2,3,4,5];
+      const testCb = (x) => {
+        return x + 1
+      }
+
+      const actual = map(testArr, testCb);
+
+      expect(actual).toEqual([2,3,4,5,6]);
+      expect(map(actual, testCb)).toEqual([3,4,5,6,7]);
+
     });
   });
 });
