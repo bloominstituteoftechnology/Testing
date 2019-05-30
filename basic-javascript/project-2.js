@@ -124,7 +124,7 @@ const contains = (arr, item) => {
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
+    sumOfNumbers += parseInt(numbers[i]);
   }
   return sumOfNumbers;
 };
