@@ -11,7 +11,11 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
+    });
+    it('should map elements', () => {
+      const array = [1, 2, 3];
+      expect().toBe('function');
     });
   });
 });
