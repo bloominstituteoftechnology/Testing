@@ -7,11 +7,26 @@ const arrayFunctions = require('./arrays');
 // hint 1. - you need to pass data to the functions and get expected output.
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
+// describe('Arrays', () => {
+//   describe('map', () => {
+//     it('should be a function', () => {
+//       const map = arrayFunctions.map;
+//       expect(typeof map).toBe('object');
+//     });
+//   });
+// });
+
 describe('Arrays', () => {
+  let myArr = ['One', 'Two'];
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
     });
+    it('should not modify the provided array', () => {
+      let myArrCopy = Array.from(myArr);
+      arrayFunctions.map(myArr, (x) => x + "!");
+      expect(myArrCopy).toEqual(myArr)
+    })
   });
 });
