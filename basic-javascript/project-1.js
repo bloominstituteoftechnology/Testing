@@ -12,6 +12,8 @@ const areSameLength = (str1, str2) => {
   return str1.length === str2.length;
 };
 
+// okay let's change something again
+
 const areEqual = (x, y) => {
   return x === y;
 };
