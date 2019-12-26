@@ -58,7 +58,7 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
+  if (isEven(num)) {
     return false;
   }
   return true;
