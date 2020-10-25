@@ -1,15 +1,15 @@
 {
-  "name": "testingjs",
-  "version": "1.1.0",
-  "description": "Practice exercises to learn the syntax for testing javascript code.",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --watch"
-  },
-  "author": "Lambda School",
-  "license": "MIT",
-  "devDependencies": {
-    "jest": "^23.6.0"
-  },
-  "dependencies": {}
+	"name": "testingjs",
+	"version": "1.1.0",
+	"description": "Practice exercises to learn the syntax for testing javascript code.",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --watch"
+	},
+	"author": "Lambda School",
+	"license": "MIT",
+	"devDependencies": {
+		"jest": "^23.6.0"
+	},
+	"dependencies": {}
 }
