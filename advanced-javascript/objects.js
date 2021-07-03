@@ -30,12 +30,16 @@ const invert = (obj) => {
 };
 
 const defaults = (obj, defaultProps) => {
+
+
   Object.keys(defaultProps).forEach((key) => {
     if (Object.prototype.hasOwnProperty.call(obj, key)) return;
     obj[key] = defaultProps[key];
   });
   return obj;
 };
+
+
 
 /* eslint-enable no-unused-vars */
 
@@ -47,3 +51,4 @@ module.exports = {
   invert,
   defaults
 };
+
