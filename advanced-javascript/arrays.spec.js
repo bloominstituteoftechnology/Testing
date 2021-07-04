@@ -15,3 +15,13 @@ describe('Arrays', () => {
     });
   });
 });
+
+describe('arrays', () => {
+  describe('each', () => {
+    it('should be a function', () => {
+    const each = arrayFunctions.each(array, cb)
+
+    expect(array).toBe(1,2,3)
+    })
+  });
+});
