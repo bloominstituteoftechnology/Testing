@@ -1,5 +1,5 @@
 /* eslint-disable arrow-parens */
-
+//#1
 const getBiggest = (x, y) => {
   if (x > y) {
     return x;
@@ -8,7 +8,7 @@ const getBiggest = (x, y) => {
   }
   return y;
 };
-
+//#2
 const greeting = language => {
   switch (language) {
     case 'German':
@@ -19,28 +19,28 @@ const greeting = language => {
       return 'Hello!';
   }
 };
-
+//#3
 const isTenOrFive = num => {
   if (num === 10 || num === 5) {
     return true;
   }
   return false;
 };
-
+//#4
 const isInRange = num => {
   if (num < 50 && num > 20) {
     return true;
   }
   return false;
 };
-
+//#5
 const isInteger = num => {
   if (Math.floor(num) === num) {
     return true;
   }
   return false;
 };
-
+//#6
 const fizzBuzz = num => {
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
@@ -51,7 +51,7 @@ const fizzBuzz = num => {
   }
   return num;
 };
-
+//#7
 const isPrime = num => {
   if (num < 0) {
     return false;
@@ -66,36 +66,36 @@ const isPrime = num => {
   }
   return true;
 };
-
+//#8
 const returnFirst = arr => {
   return arr[0];
 };
-
+//#9
 const returnLast = arr => {
   return arr[arr.length - 1];
 };
-
+//#10
 const getArrayLength = arr => {
   return arr.length;
 };
-
+//#11
 const incrementByOne = arr => {
   for (let i = 0; i < arr.length; i++) {
     arr[i]++;
   }
   return arr;
 };
-
+//#12
 const addItemToArray = (arr, item) => {
   arr.push(item);
   return arr;
 };
-
+//#13
 const addItemToFront = (arr, item) => {
   arr.unshift(item);
   return arr;
 };
-
+//#14
 const wordsToSentence = words => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
@@ -107,7 +107,7 @@ const wordsToSentence = words => {
   }
   return newSentence;
 };
-
+//#15
 const contains = (arr, item) => {
   let itemCounter = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -120,7 +120,7 @@ const contains = (arr, item) => {
   }
   return false;
 };
-
+//#16
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
@@ -128,7 +128,7 @@ const addNumbers = numbers => {
   }
   return sumOfNumbers;
 };
-
+//#17
 const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
@@ -138,7 +138,7 @@ const averageTestScore = testScores => {
   }
   return totalSumScores / numberOfScore;
 };
-
+//#18
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
