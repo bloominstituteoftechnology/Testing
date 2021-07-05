@@ -17,21 +17,27 @@ const areEqual = (x, y) => {
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
-    return true;
+  if(Number(num)){
+    if (num < 90) {
+      return true;
+    }
   }
   return false;
 };
 
 const greaterThanFifty = num => {
-  if (num > 50) {
-    return true;
+  if (Number(num)) {
+    if (num > 50) {
+      return true;
+    }
   }
   return false;
 };
 
 const add = (x, y) => {
-  return x + y;
+  let _x = (x || 0);
+  let _y = (y || 0)
+  return _x + _y;
 };
 
 const subtract = (x, y) => {

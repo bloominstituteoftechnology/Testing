@@ -10,10 +10,11 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
-  switch (language) {
-    case 'German':
+  let lang = language.toLowerCase();
+  switch (lang) {
+    case 'german':
       return 'Guten Tag!';
-    case 'Spanish':
+    case 'spanish':
       return 'Hola!';
     default:
       return 'Hello!';
