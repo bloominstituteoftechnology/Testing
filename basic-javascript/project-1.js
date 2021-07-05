@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  return num * 10 || 0;
 };
 
 const subtractFive = num => {
@@ -9,6 +9,11 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2) return false;
+
+  str1 = str1.toString();
+  str2 = str2.toString();
+
   return str1.length === str2.length;
 };
 
@@ -30,19 +35,34 @@ const greaterThanFifty = num => {
   return false;
 };
 
-const add = (x, y) => {
-  return x + y;
+const add = (x = 0, y = 0) => {
+  if (
+    Number.isNaN(Number.parseFloat(x)) ||
+    Number.isNaN(Number.parseFloat(y))
+  ) {
+    return 0;
+  }
+  return parseFloat(x) + parseFloat(y);
 };
 
-const subtract = (x, y) => {
-  return x - y;
+const subtract = (x = 0, y = 0) => {
+  if (
+    Number.isNaN(Number.parseFloat(x)) ||
+    Number.isNaN(Number.parseFloat(y))
+  ) {
+    return 0;
+  }
+  return parseFloat(x) - parseFloat(y);
 };
 
-const divide = (x, y) => {
+const divide = (x, y = 1) => {
+  if (y === 0) {
+    throw "Can't divide by zero";
+  }
   return x / y;
 };
 
-const multiply = (x, y) => {
+const multiply = (x = 1, y = 1) => {
   return x * y;
 };
 
@@ -85,7 +105,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
