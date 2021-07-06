@@ -5,11 +5,20 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
+  if (num === undefined) {
+    return false;
+  } else if (num === typeof '') {
+    return false;
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if ((typeof str1 !== 'string') || (typeof str2 !== 'string')) {
+    return undefined;
+  } else {
+    return str1.length === str2.length;
+  }
 };
 
 const areEqual = (x, y) => {
@@ -73,7 +82,11 @@ const cube = num => {
 };
 
 const raiseToPower = (num, exponent) => {
-  return num ** exponent;
+  const result = num ** exponent;
+  if (result > Number.MAX_VALUE) {
+    return 'too big for js!'
+  }
+  return result;
 };
 
 const roundNumber = num => {
