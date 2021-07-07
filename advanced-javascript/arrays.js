@@ -48,6 +48,15 @@ const flatten = elements => {
   return flattenedArr;
 };
 
+let test = [
+  1,
+  [2,3],
+  4,
+  [5,6]
+]
+
+console.log(flatten(test));
+
 /* eslint-enable no-unused-vars, max-len */
 
 module.exports = {
