@@ -28,7 +28,7 @@ const find = (elements, cb) => {
   return undefined;
 };
 
-const filter = (elements, cb) => {
+const filter = (element, cb) => {
   const filteredValues = [];
   each(elements, item => {
     if (cb(item)) filteredValues.push(item);
@@ -56,5 +56,5 @@ module.exports = {
   reduce,
   find,
   filter,
-  flatten,
+  flatten
 };
