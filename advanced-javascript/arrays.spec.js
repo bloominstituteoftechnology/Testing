@@ -11,7 +11,10 @@ describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
       const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof map).toBe('function');
+    });
+    it('should map arguments', () => {
+      expect(arrayFunctions.map([1, 2, 3, 4, 5], (x) => x * 2)).toEqual([2, 4, 6, 8, 10]);
     });
   });
 });
