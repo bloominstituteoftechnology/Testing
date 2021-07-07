@@ -11,12 +11,14 @@ const getBiggest = (x, y) => {
 
 const greeting = language => {
   switch (language) {
+    default:
+      return 'Hello!';
     case 'German':
       return 'Guten Tag!';
     case 'Spanish':
       return 'Hola!';
-    default:
-      return 'Hello!';
+    case 'Chinese':
+      return 'Ni hao!';
   }
 };
 
@@ -68,10 +70,16 @@ const isPrime = num => {
 };
 
 const returnFirst = arr => {
+  if (arr.length === 0) {
+    return null;
+  }
   return arr[0];
 };
 
 const returnLast = arr => {
+  if (arr.length === 0) {
+    return null;
+  }
   return arr[arr.length - 1];
 };
 
@@ -81,6 +89,9 @@ const getArrayLength = arr => {
 
 const incrementByOne = arr => {
   for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== 'number') {
+      continue;
+    }
     arr[i]++;
   }
   return arr;
@@ -124,6 +135,9 @@ const contains = (arr, item) => {
 const addNumbers = numbers => {
   let sumOfNumbers = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      continue;
+    }
     sumOfNumbers += numbers[i];
   }
   return sumOfNumbers;
@@ -133,6 +147,9 @@ const averageTestScore = testScores => {
   let totalSumScores = 0;
   let numberOfScore = 0;
   for (let i = 0; i < testScores.length; i++) {
+    if (typeof testScores[i] !== 'number') {
+      continue;
+    }
     totalSumScores += testScores[i];
     numberOfScore++;
   }
@@ -142,6 +159,9 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      continue;
+    }
     if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }

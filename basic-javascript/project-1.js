@@ -9,6 +9,8 @@ const subtractFive = num => {
 };
 
 const areSameLength = (str1, str2) => {
+  str1 = str1.toString();
+  str2 = str2.toString();
   return str1.length === str2.length;
 };
 
@@ -51,14 +53,18 @@ const getRemainder = (x, y) => {
 };
 
 const isEven = num => {
-  if (num % 2 === 0) {
+  if (typeof num !== 'number') {
+    return false;
+  } else if (num % 2 === 0) {
     return true;
   }
   return false;
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
+  if (typeof num !== 'number') {
+    return false;
+  } if (num % 2 === 0) {
     return false;
   }
   return true;
@@ -89,27 +95,43 @@ const addExclamationPoint = str => {
 };
 
 const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+  if (typeof firstName !== 'string' && typeof lastName === 'string') {
+    return lastName;
+  } else if (typeof firstName === 'string' && typeof lastName !== 'string') {
+    return firstName;
+  } else if (typeof firstName !== 'string' && typeof lastName !== 'string') {
+    return false;
+  } return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
-  return `Hello ${name}!`;
+  if (typeof name !== 'string') {
+    return false;
+  } return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
-  return length * width;
+  if (typeof (length || width) !== 'number') {
+    return false;
+  } return length * width;
 };
 
 const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
+  if (typeof (base || height) !== 'number') {
+    return false;
+  } return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
-  return Math.PI * radius * radius;
+  if (typeof (radius) !== 'number') {
+    return false;
+  } return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
+  if (typeof (length || width || height) !== 'number') {
+    return false;
+  } return width * height * length;
 };
 
 module.exports = {
