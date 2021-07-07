@@ -1,12 +1,25 @@
 /* eslint-disable no-unused-vars, max-len */
 
+
+// each works together with a few funcs
 const each = (elements, cb) => {
   for (let i = 0; i < elements.length; i++) {
     cb(elements[i], i);
   }
 };
 
+
+
+// only works with arr arg AND func arg
 const map = (elements, cb) => {
+  if (typeof cb !== 'function') {
+    return 'Did not provide a function'
+  }
+
+  if (!Array.isArray(elements) || elements.length === 0) {
+    return 'Need to pass a valid Array'
+  }
+
   const mappedArr = [];
   each(elements, item => {
     mappedArr.push(cb(item));
@@ -14,12 +27,26 @@ const map = (elements, cb) => {
   return mappedArr;
 };
 
+
+
+// only works with arr arg AND func arg
 const reduce = (elements, cb, memo = elements.shift()) => {
+  if (typeof cb !== 'function') {
+    return 'Did not provide a function'
+  }
+
+  if (!Array.isArray(elements) || elements.length === 0) {
+    return 'Need to pass a valid Array'
+  }
+  
   each(elements, item => {
     memo = cb(memo, item);
   });
   return memo;
 };
+
+
+
 
 const find = (elements, cb) => {
   for (let i = 0; i < elements.length; i++) {
@@ -28,6 +55,9 @@ const find = (elements, cb) => {
   return undefined;
 };
 
+
+
+
 const filter = (elements, cb) => {
   const filteredValues = [];
   each(elements, item => {
@@ -35,6 +65,9 @@ const filter = (elements, cb) => {
   });
   return filteredValues;
 };
+
+
+
 
 const flatten = elements => {
   const flattenedArr = reduce(
