@@ -43,7 +43,7 @@ const flatten = elements => {
       if (Array.isArray(item)) return memo.concat(flatten(item));
       return memo.concat(item);
     },
-    []
+    [],
   );
   return flattenedArr;
 };

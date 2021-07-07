@@ -1,19 +1,41 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
-  return num * 10;
+  if (typeof num !== "number") {
+    num = parseInt(num, 10);
+    return num * 10;
+  } else {
+    return num * 10;
+  }
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (isNaN(num)) {
+    return "missing number";
+  } else {
+    return num - 5;
+  }
 };
-
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (str1 && str2) {
+    return str1.length === str2.length;
+  } else {
+    return "missing one of the arguments";
+  }
 };
 
 const areEqual = (x, y) => {
-  return x === y;
+  if (typeof x === "object" || typeof y === "object") {
+    for (let i = 0; i < y.length; i++) {
+      if (x[i] !== y[i]) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  } else {
+    return x === y;
+  }
 };
 
 const lessThanNinety = num => {
@@ -31,24 +53,65 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x + y;
+    }
+  } else {
+    return x + y;
+  }
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x - y;
+    }
+  } else {
+    return x - y;
+  }
 };
 
 const divide = (x, y) => {
-  return x / y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x / y;
+    }
+  } else {
+    return x / y;
+  }
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if (typeof x === "string" || typeof y === "string") {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    if (isNaN(x) || isNaN(y)) {
+      return "Provide a number";
+    } else {
+      return x * y;
+    }
+  } else {
+    return x * y;
+  }
 };
 
 const getRemainder = (x, y) => {
   return x % y;
 };
+// finished up to here
 
 const isEven = num => {
   if (num % 2 === 0) {
@@ -61,7 +124,8 @@ const isOdd = num => {
   if (num % 2 === 0) {
     return false;
   }
-  return true;
+  // changed below to false from true
+  return false;
 };
 
 const square = num => {
@@ -85,7 +149,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
@@ -137,5 +201,5 @@ module.exports = {
   getRectangleArea,
   getTriangleArea,
   getCircleArea,
-  getRectangularPrismVolume
+  getRectangularPrismVolume,
 };
