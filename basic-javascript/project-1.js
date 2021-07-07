@@ -1,22 +1,37 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (num === undefined) {
+    return false;
+  }
   return num * 10;
 };
 
 const subtractFive = num => {
+  if (num === undefined) {
+    return false;
+  }
   return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+  if (!str1 || !str2) {
+    return null;
+  }
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   return x === y;
 };
 
 const lessThanNinety = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num < 90) {
     return true;
   }
@@ -24,6 +39,9 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num > 50) {
     return true;
   }
@@ -31,26 +49,44 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   return x / y;
 };
 
 const multiply = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   return x * y;
 };
 
 const getRemainder = (x, y) => {
+  if (x === undefined || y === undefined) {
+    return false;
+  }
   return x % y;
 };
 
 const isEven = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num % 2 === 0) {
     return true;
   }
@@ -58,6 +94,9 @@ const isEven = num => {
 };
 
 const isOdd = num => {
+  if (num === undefined) {
+    return false;
+  }
   if (num % 2 === 0) {
     return false;
   }
@@ -65,50 +104,86 @@ const isOdd = num => {
 };
 
 const square = num => {
+  if (num === undefined) {
+    return false;
+  }
   return num * num;
 };
 
 const cube = num => {
+  if (num === undefined) {
+    return false;
+  }
   return num * num * num;
 };
 
 const raiseToPower = (num, exponent) => {
+  if (num === undefined || exponent === undefined) {
+    return false;
+  }
   return num ** exponent;
 };
 
 const roundNumber = num => {
+  if (num === undefined) {
+    return false;
+  }
   return Math.round(num);
 };
 
 const roundUp = num => {
+  if (num === undefined) {
+    return false;
+  }
   return Math.ceil(num);
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  if (!str) {
+    return null;
+  }
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {
+  if (!firstName || !lastName) {
+    return null;
+  }
   return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
+  if (!name) {
+    return null;
+  }
   return `Hello ${name}!`;
 };
 
 const getRectangleArea = (length, width) => {
+  if (length === undefined || width === undefined) {
+    return false;
+  }
   return length * width;
 };
 
 const getTriangleArea = (base, height) => {
+  if (base === undefined || height === undefined) {
+    return false;
+  }
   return 0.5 * base * height;
 };
 
 const getCircleArea = radius => {
+  if (radius === undefined) {
+    return false;
+  }
   return Math.PI * radius * radius;
 };
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if (length === undefined || width === undefined || height === undefined) {
+    return false;
+  }
   return width * height * length;
 };
 
