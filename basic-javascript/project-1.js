@@ -1,25 +1,52 @@
 /* eslint-disable arrow-parens */
 
+const numberCheck = 'input must be a number';
+const numbersCheck = 'inputs must be numbers';
+
 const multiplyByTen = num => {
+  if (num === undefined){
+    return false;
+  }else{
   return num * 10;
+  }
 };
 
 const subtractFive = num => {
+  if (typeof num === !Number){
+    number = Number(num);
+    return number-5;
+  } else if (num === undefined){
+    return false;
+  }else{
   return num - 5;
+  }
 };
 
 const areSameLength = (str1, str2) => {
-  return str1.length === str2.length;
+  if (!str1 || !str2) {
+    const message = 'must input two strings'
+    return message;
+  } else if (str1.length === str2.length);{
+    return true;
+  } 
 };
 
 const areEqual = (x, y) => {
+  if ( x === !Number || y === !Number){
+    return false;
+  }else if (!x || !y) {
+    return 'both values must be defined'
+  }else{
   return x === y;
+  }
 };
 
 const lessThanNinety = num => {
-  if (num < 90) {
+  if (num === !Number){
+    return 'value must be a number';
+  }else if (num < 90) {
     return true;
-  }
+  } 
   return false;
 };
 
@@ -31,22 +58,45 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
-  return x + y;
+  if (typeof(x) !== 'number' || typeof(y) !== 'number'){
+    return 'values must both be numbers';
+  }
+  const a = x || 0;
+  const b = y || 0;
+  return a + b;
 };
 
 const subtract = (x, y) => {
-  return x - y;
+  if (typeof(x) !== 'number' || typeof(y) !== 'number'){
+    return 'values must both be numbers';
+  }
+  const a = x || 0;
+  const b = y || 0;
+  return a - b;
 };
 
 const divide = (x, y) => {
+  if ((!x && x !==0) || (!y && y!==0)) return 'must have two numbers'
+  else if (typeof(x) !=='number'|| typeof(y) !== 'number') 
+    return 'both values must be numbers';
+  else if (y === 0) return 'cannot divide by 0';
   return x / y;
 };
 
 const multiply = (x, y) => {
-  return x * y;
+  if ((!x && x !==0) || (!y && y!==0)) 
+  {return 'must have two numbers';
+}else if (typeof(x) !=='number'|| typeof(y) !== 'number') 
+  return 'both values must be numbers';
+  return x * y; 
 };
 
 const getRemainder = (x, y) => {
+  if ((!x && x !==0) || (!y && y!==0)) {
+    return 'must have two numbers'
+  }else if (typeof(x) !=='number'|| typeof(y) !== 'number') {
+    return 'both values must be numbers';
+  }else if (y === 0){ return 'cannot divide by 0'};
   return x % y;
 };
 
@@ -85,14 +135,25 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
+  if(!str){
+    return false;
+  }else{
   return (str += '!');
+  }
 };
 
 const combineNames = (firstName, lastName) => {
+  if(!firstName||!lastName){
+    return false;
+  }else{
   return `${firstName} ${lastName}`;
+  }
 };
 
 const getGreeting = name => {
+  if(!name){
+    return 'Hello!'
+  }
   return `Hello ${name}!`;
 };
 
@@ -110,6 +171,7 @@ const getCircleArea = radius => {
 
 const getRectangularPrismVolume = (length, width, height) => {
   return width * height * length;
+
 };
 
 module.exports = {

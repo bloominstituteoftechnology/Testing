@@ -1,7 +1,15 @@
 /* eslint-disable arrow-parens */
 
+//frequent operations
+// if ( x === !Number || y === !Number){return 'both values must be numbers'};
+// if (!x || !y) {return 'both values must be defined'};
+
 const getBiggest = (x, y) => {
-  if (x > y) {
+  if ( typeof(x) !== 'number' || typeof(y) !== 'number'){
+    return 'both values must be numbers'
+} else if (!x || !y) {
+    return 'both values must be defined'
+}else if (x > y) {
     return x;
   } else if (x === y) {
     return y;
@@ -21,7 +29,9 @@ const greeting = language => {
 };
 
 const isTenOrFive = num => {
-  if (num === 10 || num === 5) {
+  if (!num) {
+    return false;
+  }else if (num === 10 || num === 5) {
     return true;
   }
   return false;
@@ -80,10 +90,13 @@ const getArrayLength = arr => {
 };
 
 const incrementByOne = arr => {
+  if (!arr) {return 'sorry, entries can\'t be blank'}
+  else{
   for (let i = 0; i < arr.length; i++) {
-    arr[i]++;
+      arr[i]++;
+    }
+    return arr;
   }
-  return arr;
 };
 
 const addItemToArray = (arr, item) => {
@@ -100,9 +113,9 @@ const wordsToSentence = words => {
   let newSentence = '';
   for (let i = 0; i < words.length; i++) {
     if (i === 0) {
-      newSentence += `${words[i]}`;
+      newSentence += `${words[i].toString()}`;
     } else {
-      newSentence += ` ${words[i]}`;
+      newSentence += ` ${words[i].toString()}`;
     }
   }
   return newSentence;
