@@ -10,8 +10,33 @@ const arrayFunctions = require('./arrays');
 describe('Arrays', () => {
   describe('map', () => {
     it('should be a function', () => {
-      const map = arrayFunctions.map;
+      const map = arrayFunctions.map([1,2,3], (item) => {
+        return item * 2;
+      });
       expect(typeof map).toBe('object');
     });
+
+    it('should map to a new array', () => {
+      const map = arrayFunctions.map([1,2,3], (item) => {
+        return item * 2;
+      });
+      expect(map).toEqual([2,4,6]);
+    })
   });
+
+  describe('reduce', () => {
+    it('should be a number', () => {
+      const reduce = arrayFunctions.reduce([1,2,3], (memo, item) => {
+        return memo + item
+      });
+      expect(typeof reduce).toBe('number');
+    })
+
+    it('should return the array elements summed together', () => {
+      const reduce = arrayFunctions.reduce([1,2,3], (memo, item) => {
+        return memo + item
+      });
+      expect(reduce).toBe(6);
+    })
+  })
 });
