@@ -1,6 +1,9 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
+  if(x === undefined || y === undefined){
+    return undefined
+  }
   if (x > y) {
     return x;
   } else if (x === y) {
@@ -53,6 +56,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if(!Number.isInteger(num)){
+    return false;
+  }
   if (num < 0) {
     return false;
   }
