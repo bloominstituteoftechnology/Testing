@@ -5,7 +5,7 @@ const multiplyByTen = num => {
 };
 
 const subtractFive = num => {
-  return num - 5;
+    return num - 5;
 };
 
 const areSameLength = (str1, str2) => {

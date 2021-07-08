@@ -15,3 +15,27 @@ describe('Arrays', () => {
     });
   });
 });
+//describe('Arrays', () => {
+
+  //each 
+  describe('each', () => {
+    it('should be a function', () => {
+      const each = arrayFunctions.each;
+      expect(typeof each).toBe('function'); 
+    })
+    it('should should console.log each number', () => {
+      console.log = jest.fn(); 
+      
+      arrayFunctions.each([1,2,3], (num) => {
+        console.log(num);
+      }); 
+      
+      // expect(arrayFunctions.each([1,2,3]), (element) => {
+      //   console.log(element)
+      // }); 
+      // The first argument of the first call to the function was 'hello'. 
+      expect(console.log.mock.calls[0] [0]).toBe(1);
+      expect(console.log.mock.calls[1] [0]).toBe(2);
+      expect(console.log.mock.calls[2] [0]).toBe(3);
+    })
+  });
