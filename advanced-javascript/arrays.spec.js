@@ -8,10 +8,73 @@ const arrayFunctions = require('./arrays');
 // hint 2. - you should test the data type being called back, and perform some sort of operation on the data.
 
 describe('Arrays', () => {
-  describe('map', () => {
+  describe('each', () => {
+    const each = arrayFunctions.each;
     it('should be a function', () => {
-      const map = arrayFunctions.map;
-      expect(typeof map).toBe('object');
+      expect(typeof each).toBe('function');
+    });
+    it('should return undefined', () => {
+      expect(typeof each([1, 2, 3], (item) => {
+        return (item + 1);
+      })).toBe('undefined');
+    });
+  });
+
+  describe('map', () => {
+    const map = arrayFunctions.map;
+    it('should be a function', () => {
+      expect(typeof map).toBe('function');
+    });
+    it('should return an array', () => {
+      expect(Array.isArray(map([1, 2, 3], (item) => {
+        return (item + 1);
+      }))).toBe(true);
+    });
+  });
+
+  describe('reduce', () => {
+    const reduce = arrayFunctions.reduce;
+    it('should be a function', () => {
+      expect(typeof reduce).toBe('function');
+    });
+    it('should return a number', () => {
+      expect(typeof reduce([1, 2, 3], (item, acc) => {
+        return item + acc
+      })).toBe('number');
+    });
+  });
+
+  describe('find', () => {
+    const find = arrayFunctions.find;
+    it('should be a function', () => {
+      expect(typeof find).toBe('function');
+    });
+    it('should return an element of the array, same type', () => {
+      expect(typeof find(['test', 'hello', 'find'], (item) => {
+        return item === 'hello'
+      })).toBe('string');
+    })
+  });
+
+  describe('filter', () => {
+    const filter = arrayFunctions.filter;
+    it('should be a function', () => {
+      expect(typeof filter).toBe('function');
+    });
+    it('should return an array of filtered items', () => {
+      expect(Array.isArray(filter(['test', 'hello', 'find'], (item) => {
+        item.includes('f')
+      }))).toBe(true);
+    });
+  });
+
+  describe('flatten', () => {
+    const flatten = arrayFunctions.flatten;
+    it('should be a function', () => {
+      expect(typeof flatten).toBe('function');
+    });
+    it('should return an array', () => {
+      expect(Array.isArray(flatten([1, 2, [3, 4, 5], 6]))).toBe(true);
     });
   });
 });
