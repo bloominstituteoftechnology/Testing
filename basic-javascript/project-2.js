@@ -1,7 +1,11 @@
 /* eslint-disable arrow-parens */
 
 const getBiggest = (x, y) => {
-  if (x > y) {
+
+  if (typeof x !== 'number' || typeof y !== 'number')
+    {return undefined;
+    }
+    else if (x > y) {
     return x;
   } else if (x === y) {
     return y;
@@ -10,6 +14,9 @@ const getBiggest = (x, y) => {
 };
 
 const greeting = language => {
+  if (typeof language !== 'string')
+    {return false;
+    }
   switch (language) {
     case 'German':
       return 'Guten Tag!';
@@ -35,6 +42,9 @@ const isInRange = num => {
 };
 
 const isInteger = num => {
+  if (num === 0)  {
+    return false;
+  }
   if (Math.floor(num) === num) {
     return true;
   }
@@ -42,6 +52,9 @@ const isInteger = num => {
 };
 
 const fizzBuzz = num => {
+  if (typeof num !== 'number')  {
+    return false;
+  }
   if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
   } else if (num % 5 === 0) {
@@ -53,6 +66,9 @@ const fizzBuzz = num => {
 };
 
 const isPrime = num => {
+  if (typeof num !== 'number')  {
+    return false;
+  }
   if (num < 0) {
     return false;
   }
@@ -142,7 +158,10 @@ const averageTestScore = testScores => {
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > biggestInteger) {
+    if (typeof numbers[i] !== 'number') {
+    return undefined;
+  }
+    else if (numbers[i] > biggestInteger) {
       biggestInteger = numbers[i];
     }
   }

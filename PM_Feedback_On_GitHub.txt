@@ -1,0 +1,12 @@
+### Assignment
+* [ ] install the necessary dependencies from the `package.json` file.
+* [ ] start the test runner.
+* [ ] write tests for the functions inside `project-1.js`.
+* [ ] write tests for the functions inside `project-2.js`.
+
+As you write your tests, bugs in the code may be revealed, feel free to correct and _refactor_ the source code to sitisfy your tests.
+
+## Stretch Goal
+Open the `advanced-javascript` folder and write tests for the 
+* [ ] write tests for the `arrays.js`  
+* [ ] write tests for the `object.js` 

@@ -1,22 +1,39 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+	if (typeof num !== 'number') {
+    return undefined;
+  } 
   return num * 10;
 };
 
 const subtractFive = num => {
-  return num - 5;
+  if (typeof num !== 'number') {
+    return undefined;
+  }return num - 5;
 };
 
 const areSameLength = (str1, str2) => {
+	if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    return false;
+  }
+  if (typeof str1 === undefined || typeof str2 === undefined) {
+    return false;
+  }
   return str1.length === str2.length;
 };
 
 const areEqual = (x, y) => {
+  if (typeof str1 === undefined || typeof str2 === undefined) {
+    return false;
+  }
   return x === y;
 };
 
 const lessThanNinety = num => {
+  if (typeof num !== 'number') {
+    return undefined;
+  }
   if (num < 90) {
     return true;
   }
@@ -24,6 +41,9 @@ const lessThanNinety = num => {
 };
 
 const greaterThanFifty = num => {
+  if (typeof num !== 'number') {
+    return undefined;
+  }
   if (num > 50) {
     return true;
   }
@@ -31,14 +51,23 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (typeof x !== 'number' || typeof y !== 'number' ) {
+    return undefined;
+  }
   return x + y;
 };
 
 const subtract = (x, y) => {
+  if (typeof x !== 'number' || typeof y !== 'number' ) {
+    return undefined;
+  }
   return x - y;
 };
 
 const divide = (x, y) => {
+  if (typeof x !== 'number' || typeof y !== 'number' || y === 0 ) {
+    return undefined;
+  }
   return x / y;
 };
 
@@ -58,7 +87,7 @@ const isEven = num => {
 };
 
 const isOdd = num => {
-  if (num % 2 === 0) {
+  if ((typeof num !== 'number') || (num % 2 === 0) ) {
     return false;
   }
   return true;
@@ -97,6 +126,8 @@ const getGreeting = name => {
 };
 
 const getRectangleArea = (length, width) => {
+  if ((typeof length !== 'number' || typeof width !== 'number') || (length < 0  || width < 0)) {
+    return undefined;}
   return length * width;
 };
 
